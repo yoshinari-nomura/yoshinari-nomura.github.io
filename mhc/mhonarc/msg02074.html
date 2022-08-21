@@ -1,0 +1,123 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:02075] Re: iCalendar &#45;> MHC? -->
+<!--X-From-R13: Kbfuvnxv Ynfnunen <xnfnunenNap.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Wed, 23 Mar 2005 01:41:44 +0900 (JST) -->
+<!--X-Message-Id: 20050323.014144.200446372.kasahara@nc.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 87k6nzkdfo.wl%felix.klee@inka.de -->
+<!--X-Reference: 20050323.012138.47755149.kasahara@nc.kyushu&#45;u.ac.jp -->
+<!--X-Reference: 878y4fy760.wl%felix.klee@inka.de -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:02075] Re: iCalendar -&gt; MHC?</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg02073.html">Date Prev</a>][<a href="msg02075.html">Date Next</a>][<a href="msg02073.html">Thread Prev</a>][<a href="msg02075.html">Thread Next</a>][<a href="maillist.html#02074">Date Index</a>][<a href="threads.html#02074">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:02075] Re: iCalendar -&gt; MHC?</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:felix.klee@DOMAIN.HIDDEN">felix.klee@xxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:02075] Re: iCalendar -&gt; MHC?</li>
+<li><em>From</em>: Yoshiaki Kasahara &lt;<a href="mailto:kasahara@DOMAIN.HIDDEN">kasahara@xxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Wed, 23 Mar 2005 01:41:44 +0900 (JST)</li>
+<li><em>Cc</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:878y4fy760.wl%25felix.klee@DOMAIN.HIDDEN">878y4fy760.wl%felix.klee@xxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:87k6nzkdfo.wl%25felix.klee@DOMAIN.HIDDEN">87k6nzkdfo.wl%felix.klee@xxxxxxx</a>&gt;	&lt;<a href="mailto:20050323.012138.47755149.kasahara@DOMAIN.HIDDEN">20050323.012138.47755149.kasahara@xxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:878y4fy760.wl%25felix.klee@DOMAIN.HIDDEN">878y4fy760.wl%felix.klee@xxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>On Tue, 22 Mar 2005 17:30:47 +0100,
+	&quot;Felix E. Klee&quot; &lt;felix.klee@xxxxxxx&gt; said:
+
+&gt; Thanks.  That makes the above warning go away.  But the program still
+&gt; fails when I click on an event spitting out the following error message:
+
+Ahh...  I believe this bug had been fixed in CVS HEAD... I'm sorry I'm
+not sure about the status of released tarballs...
+
+Please change lines around 259 as follows,
+
+--- gemcal.in   5 Aug 2000 19:51:58 -0000       1.3
++++ gemcal.in   20 Feb 2024 01:42:57 -0000      1.4
+@@ -253,8 +253,8 @@
+       @sch .set_duration(b, e)
+       @date_box .update
+     }
+-    @subj_ent = GtkEntry .new(&quot;Subject:  &quot;) .border_width = 3
+-    @cat_ent  = GtkEntry .new(&quot;Category: &quot;) .border_width = 3
++    @subj_ent = GtkEntry .new(&quot;Subject:  &quot;) .border_width(3)
++    @cat_ent  = GtkEntry .new(&quot;Category: &quot;) .border_width(3)
+
+     @subj_ent .signal_connect('changed'){
+       @sch .set_subject(Kconv::tojis(@subj_ent .dump))
+	    
+-- 
+Yoshiaki Kasahara
+Computing and Communications Center, Kyushu University
+kasahara@xxxxxxxxxxxxxxxxx
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="02075" href="msg02075.html">[mhc:02076] Re: iCalendar -&gt; MHC?</a></strong>
+<ul><li><em>From:</em> Felix E. Klee</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="02069" href="msg02069.html">[mhc:02070] Re: iCalendar -&gt; MHC?</a></strong>
+<ul><li><em>From:</em> Felix E. Klee</li></ul></li>
+<li><strong><a name="02072" href="msg02072.html">[mhc:02073] Re: iCalendar -&gt; MHC?</a></strong>
+<ul><li><em>From:</em> Yoshiaki Kasahara</li></ul></li>
+<li><strong><a name="02073" href="msg02073.html">[mhc:02074] Re: iCalendar -&gt; MHC?</a></strong>
+<ul><li><em>From:</em> Felix E. Klee</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg02073.html">[mhc:02074] Re: iCalendar -&gt; MHC?</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg02075.html">[mhc:02076] Re: iCalendar -&gt; MHC?</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg02073.html">[mhc:02074] Re: iCalendar -&gt; MHC?</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg02075.html">[mhc:02076] Re: iCalendar -&gt; MHC?</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#02074"><strong>Date</strong></a></li>
+<li><a href="threads.html#02074"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

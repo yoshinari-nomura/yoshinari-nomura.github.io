@@ -1,0 +1,38 @@
+Index: mhc-minibuf.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc-minibuf.el,v
+retrieving revision 1.16
+diff -u -r1.16 mhc-minibuf.el
+--- mhc-minibuf.el	8 Sep 2004 09:12:10 -0000	1.16
++++ mhc-minibuf.el	1 Jan 2005 16:40:00 -0000
+@@ -26,8 +26,8 @@
+ ;; (make-variable-buffer-local 'mhc-minibuf-candidate-overlay)
+ ;; (make-variable-buffer-local 'mhc-minibuf-candidate-buffer)
+ 
+-(defun mhc-minibuf-read (&optional prompt default
+-				   buffer cand offset to-s delimiter)
++(defun mhc-minibuf-read (prompt &optional default
++				buffer cand offset to-s delimiter)
+   (if mhc-minibuf-candidate-overlay
+       (delete-overlay mhc-minibuf-candidate-overlay))
+   (setq mhc-minibuf-candidate-buffer    buffer
+@@ -265,7 +265,8 @@
+ 	     (current-buffer)
+ 	     candidate
+ 	     0
+-	     (function mhc-minibuf/date-to-string))
++	     (function mhc-minibuf/date-to-string)
++	     "[^,-]")
+ 	    str-list (mhc-misc-split str)
+ 	    ret       nil
+ 	    error    nil)
+@@ -314,7 +315,8 @@
+ 		   (current-buffer)
+ 		   candidate
+ 		   0
+-		   (function mhc-minibuf/time-to-string)))
++		   (function mhc-minibuf/time-to-string)
++		   "[^,-]"))
+ 	(cond 
+ 	 ((and (string-match
+ 		"^\\([0-9]+:[0-9]+\\)\\(-\\([0-9]+:[0-9]+\\)\\)?$" str)

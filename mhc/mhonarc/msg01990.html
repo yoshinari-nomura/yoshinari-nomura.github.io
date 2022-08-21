@@ -1,0 +1,156 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01991] Re: FYI: mhc2palm with LANSync -->
+<!--X-From-R13: YAWS Vvqrgnxn (=?vfb&#45;2022&#45;wc?P?UlDQAVS5BwTDFwCoYSW=?=) <uvqrNxbvr.bet> -->
+<!--X-Date: Fri, 12 Nov 2004 14:32:56 +0900 (JST) -->
+<!--X-Message-Id: 20041112.143256.226801666.hide@koie.org -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Reference: 20040622.181838.104115004.hide@koie.org -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01991] Re: FYI: mhc2palm with LANSync</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01989.html">Date Prev</a>][<a href="msg01991.html">Date Next</a>][<a href="msg01925.html">Thread Prev</a>][<a href="msg01933.html">Thread Next</a>][<a href="maillist.html#01990">Date Index</a>][<a href="threads.html#01990">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01991] Re: FYI: mhc2palm with LANSync</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01991] Re: FYI: mhc2palm with LANSync</li>
+<li><em>From</em>: KOIE Hidetaka (&#x9BC9;&#x6C5F;&#x82F1;&#x9686;) &lt;<a href="mailto:hide@DOMAIN.HIDDEN">hide@xxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Fri, 12 Nov 2004 14:32:56 +0900 (JST)</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20040622.181838.104115004.hide@DOMAIN.HIDDEN">20040622.181838.104115004.hide@xxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:20040622.181838.104115004.hide@DOMAIN.HIDDEN">20040622.181838.104115004.hide@xxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>FreeBSD current&#x306E;&#x8ABF;&#x5B50;&#x304C;&#x308F;&#x308B;&#x304F;&#x3066;
+USB sync&#x304C;&#x3067;&#x304D;&#x306A;&#x304F;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;
+LAN sync&#x306B;&#x518D;&#x6311;&#x6226;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;
+
+  Message-Id: &lt;20040622.181838.104115004.hide@xxxxxxxx&gt;
+  Date:       Tue, 22 Jun 2004 18:18:38 +0900 (JST)
+  From:       KOIE Hidetaka (&#x9BC9;&#x6C5F;&#x82F1;&#x9686;) &lt;hide@xxxxxxxx&gt;
+  Subject:    [mhc:01926] FYI: mhc2palm with LANSync
+
+  | &#x8868;: pilot-xfer -l&#x306E;&#x6642;&#x9593;
+  | &#x63A5;&#x7D9A;       &#x6642;&#x9593;(sec)
+  | usb        00:15
+  | wlan       00:26
+  | wlan(save) 02:08
+
+  | &#x7701;&#x96FB;&#x529B;&#x30E2;&#x30FC;&#x30C9;&#x3067;&#x306F;&#x3064;&#x304B;&#x3044;&#x3082;&#x306E;&#x306B;&#x306A;&#x3089;&#x3093;&#x306E;&#x3067;
+  | &#x3061;&#x3087;&#x3063;&#x3068;&#x304C;&#x3063;&#x304B;&#x308A;&#x3002;
+
+tcpdump+tcptrace&#x3067;&#x30D1;&#x30B1;&#x30C3;&#x30C8;&#x3092;&#x8ABF;&#x3079;&#x3066;&#x307F;&#x305F;&#x3089;
+PC&#x5074;&#x304C;100ms&#x304F;&#x3089;&#x3044;&#x30D1;&#x30B1;&#x30C3;&#x30C8;&#x3092;&#x51FA;&#x3059;&#x306E;&#x304C;&#x9045;&#x308C;&#x3066;&#x3044;&#x308B;&#x3088;&#x3046;&#x306B;&#x898B;&#x3048;&#x305F;&#x306E;&#x3067;
+sysctl net.inet.tcp.delayed_ack=0&#x3067;DelayedAck&#x3092;&#x6B62;&#x3081;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#x304C;&#x52B9;&#x304B;&#x305A;&#x3002;
+&#x3067;&#x3001;pilot-link&#x306E;&#x30BD;&#x30FC;&#x30B9;&#x3092;&#x307F;&#x3066;&#x307F;&#x308B;&#x3068;
+CP_NODELAY&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x3066;&#x306A;&#x304B;&#x3063;&#x305F;&#x306E;&#x3067;
+&#x8A2D;&#x5B9A;&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x305F;&#x3089;&#x5287;&#x7684;&#x306B;&#x6539;&#x5584;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;
+pilot-xfer -l&#x306E;&#x6642;&#x9593;&#x3092;&#x8A08;&#x3063;&#x3066;&#x307F;&#x308B;&#x3068;00:35 sec&#x306A;&#x306E;&#x3067;&#x304B;&#x306A;&#x308A;&#x5B9F;&#x7528;&#x7684;&#x306B;&#x306A;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;
+
+&#x306A;&#x305C;&#x3053;&#x308C;&#x3067;&#x901F;&#x304F;&#x306A;&#x308B;&#x306E;&#x304B;&#x7406;&#x89E3;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;&#x304C;
+&#x305F;&#x3076;&#x3093;TH55&#x306E;&#x7701;&#x96FB;&#x529B;&#x306E;&#x30BF;&#x30A4;&#x30DE;&#x3068;PC&#x306E;TCP&#x30BF;&#x30A4;&#x30DE;&#x3068;&#x304C;&#x5E72;&#x6E09;&#x3057;&#x3066;&#x3044;&#x308B;&#x3067;&#x3057;&#x3087;&#x3046;&#x306D;&#x3002;
+
+--
+&#x9BC9;&#x6C5F;&#x82F1;&#x9686; &lt;hide@xxxxxxxx&gt;
+</pre><pre>--- libpisock/inet.c.orig	Sat Dec 14 22:37:17 2002
++++ libpisock/inet.c	Fri Nov 12 13:54:22 2004
+@@ -175,6 +175,20 @@
+ 	return dev;
+ }
+ 
++#if 1 /* koie */
++#include &lt;netinet/tcp.h&gt;
++static void
++pi_inet_set_nodelay(int sd)
++{
++	int one = 1;
++#if defined SOL_TCP
++	setsockopt(sd, SOL_TCP, TCP_NODELAY, (char*) &amp;one, sizeof one);
++#elif defined IPPROTO_TCP
++	setsockopt(sd, IPPROTO_TCP, TCP_NODELAY, (char*) &amp;one, sizeof one);
++#endif
++}
++#endif
++
+ /***********************************************************************
+  *
+  * Function:    pi_inet_connect
+@@ -232,6 +246,9 @@
+ 		    &quot;DEV CONNECT Inet: Unable to connect\n&quot;));
+ 		return -1;
+ 	}
++#if 1 /* koie */
++	pi_inet_set_nodelay(ps-&gt;sd);
++#endif
+ 	
+ 	ps-&gt;raddr 	= malloc(addrlen);
+ 	memcpy(ps-&gt;raddr, addr, addrlen);
+@@ -389,6 +406,9 @@
+  	sd = accept(ps-&gt;sd, addr, addrlen);
+ 	if (sd &lt; 0)
+ 		goto fail;
++#if 1 /* koie */
++	pi_inet_set_nodelay(sd);
++#endif
+ 
+ 	pi_socket_setsd(acpt, sd);
+ 	pi_socket_init(acpt);
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="01925" href="msg01925.html">[mhc:01926] FYI: mhc2palm with LANSync</a></strong>
+<ul><li><em>From:</em> &#x9BC9;&#x6C5F;&#x82F1;&#x9686;</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01989.html">[mhc:01990] Re: another patch for mhc-guess.el</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01991.html">[mhc:01992] mhc2palm/palm2mhc &#x3067;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x3092;&#x6271;&#x3046;</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01925.html">[mhc:01926] FYI: mhc2palm with LANSync</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01933.html">[mhc:01934] today &#x3067;&#x30E1;&#x30FC;&#x30EB;&#x9001;&#x308B;&#x3068;&#x304D;&#x306B;&#x306E; Date &#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x30C9;&#x3092;&#x8FFD;&#x52A0;</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01990"><strong>Date</strong></a></li>
+<li><a href="threads.html#01990"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

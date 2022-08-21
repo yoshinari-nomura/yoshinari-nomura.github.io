@@ -1,0 +1,140 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01433] Re: Can mhc2palm export ``X&#45;SC&#45;Location:'' value ? -->
+<!--X-From-R13: Kbfuvanev @bzhen <abzNpfpr.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Wed, 12 Sep 2001 12:55:23 +0900 -->
+<!--X-Message-Id: 20010912125523G.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: sa6wv36fj81.wl@nifty.com -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01433] Re: Can mhc2palm export ``X-SC-Location:'' value ?</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01431.html">Date Prev</a>][<a href="msg01433.html">Date Next</a>][<a href="msg01431.html">Thread Prev</a>][<a href="msg01434.html">Thread Next</a>][<a href="maillist.html#01432">Date Index</a>][<a href="threads.html#01432">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01433] Re: Can mhc2palm export ``X-SC-Location:'' value ?</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01433] Re: Can mhc2palm export ``X-SC-Location:'' value ?</li>
+<li><em>From</em>: Yoshinari Nomura &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Wed, 12 Sep 2001 12:55:23 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:sa6wv36fj81.wl@DOMAIN.HIDDEN">sa6wv36fj81.wl@xxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:sa6wv36fj81.wl@DOMAIN.HIDDEN">sa6wv36fj81.wl@xxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x4E43;&#x6751;&#x3067;&#x3059;&#xFF0E;
+
+On Tue, 11 Sep 2001 13:24:14 +0900,
+	&quot;Bun'ei OTOKAWA&quot; &lt;Bunei.Otokawa@xxxxxxxxx&gt; said:
+
+&gt;   subject [location]
+&gt; 
+&gt; &#x306E;&#x3088;&#x3046;&#x306A;&#x5F62;&#x3067;&#x8FFD;&#x52A0;&#x3055;&#x308C;&#x308B;&#x3068;&#x4FBF;&#x5229;&#x3067;&#x306F;&#x306A;&#x3044;&#x304B;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x304C;&#x3044;&#x304B;&#x304C;&#x3067;&#x3057;&#x3087;
+
+&#x3053;&#x3093;&#x306A;&#x611F;&#x3058;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#xFF0E;&#x4E00;&#x5FDC;&#x53CC;&#x65B9;&#x306E;&#x901A;&#x4FE1;&#x3067;&#x3046;&#x307E;&#x304F;&#x3044;&#x3063;&#x3066;&#x305D;&#x3046;&#x306A;&#x611F;&#x3058;&#x3067;&#x3059;&#xFF0E;
+Trunk &#x306B;&#x306F;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x6E08;&#x307F;&#x3067;&#x3059;&#xFF0E;
+--
+nom
+
+
+Index: mhc-palm.rb
+===================================================================
+RCS file: /cvsroot/mhc/ruby-ext/lib/mhc-palm.rb,v
+retrieving revision 1.6
+diff -u -r1.6 mhc-palm.rb
+--- mhc-palm.rb	2001/02/06 13:36:01	1.6
++++ mhc-palm.rb	2001/09/12 03:30:24
+@@ -579,7 +579,8 @@
+     xsc[&quot;Record-Id&quot;]  = create_message_id(@id .to_s) # xxx
+     xsc[&quot;Pilot-Attr&quot;] = attribute_string
+     xsc[&quot;Pilot-Id&quot;]   = @id
+-    xsc[&quot;Subject&quot;]    = Kconv::tojis(@description)
++    xsc[&quot;Subject&quot;]    = Kconv::tojis(Kconv::toeuc(@description) .sub(/\[[^\]]*\]\s*$/, ''))
++    xsc[&quot;Location&quot;]   = Kconv::tojis($1) if Kconv::toeuc(@description) =~ /\[([^\]]+)\]\s*$/
+     xsc[&quot;Note&quot;]       = Kconv::tojis(@note)
+     xsc[&quot;Category&quot;]   = @category  if category?
+     xsc[&quot;Alarm&quot;]      = alarm
+Index: mhc-schedule.rb
+===================================================================
+RCS file: /cvsroot/mhc/ruby-ext/lib/mhc-schedule.rb,v
+retrieving revision 1.12
+diff -u -r1.12 mhc-schedule.rb
+--- mhc-schedule.rb	2001/05/22 02:02:43	1.12
++++ mhc-schedule.rb	2001/09/12 03:30:24
+@@ -844,7 +844,12 @@
+     contents = datebk3_icon + &quot;\n&quot; + contents if datebk3_icon
+     pi_rec .set_note(contents)
+ 
+-    pi_rec .set_description(subject)
++    if (location .to_s != '')
++      pi_rec .set_description(subject + '[' + location .to_s + ']')
++    else
++      pi_rec .set_description(subject)
++    end
++      
+     return pi_rec
+   end
+ 
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01434" href="msg01434.html">[mhc:01435] Re: Can mhc2palm export ``X-SC-Location:'' value ?</a></strong>
+<ul><li><em>From:</em> Bun'ei OTOKAWA</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="01431" href="msg01431.html">[mhc:01432] Can mhc2palm export ``X-SC-Location:'' value ?</a></strong>
+<ul><li><em>From:</em> Bun'ei OTOKAWA</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01431.html">[mhc:01432] Can mhc2palm export ``X-SC-Location:'' value ?</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01433.html">[mhc:01434] Emacs on WindowsCE</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01431.html">[mhc:01432] Can mhc2palm export ``X-SC-Location:'' value ?</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01434.html">[mhc:01435] Re: Can mhc2palm export ``X-SC-Location:'' value ?</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01432"><strong>Date</strong></a></li>
+<li><a href="threads.html#01432"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

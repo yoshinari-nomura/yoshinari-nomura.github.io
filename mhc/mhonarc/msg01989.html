@@ -1,0 +1,123 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01990] Re: another patch for mhc&#45;guess.el -->
+<!--X-From-R13: fnxhenNgraabqnv.pbz -->
+<!--X-Date: Mon, 01 Nov 2004 18:32:01 +0900 (JST) -->
+<!--X-Message-Id: 20041101.183201.60852183.sakura@tennodai.com -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 20041101.162156.68544500.nogunogu@mva.biglobe.ne.jp -->
+<!--X-Reference: 20041101.165611.123113351.sakura@tennodai.com -->
+<!--X-Reference: 20041101.174637.123573175.nogunogu@mva.biglobe.ne.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01990] Re: another patch for mhc-guess.el</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01988.html">Date Prev</a>][<a href="msg01990.html">Date Next</a>][<a href="msg01988.html">Thread Prev</a>][<a href="msg01991.html">Thread Next</a>][<a href="maillist.html#01989">Date Index</a>][<a href="threads.html#01989">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01990] Re: another patch for mhc-guess.el</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a>, <a href="mailto:nogunogu@DOMAIN.HIDDEN">nogunogu@xxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01990] Re: another patch for mhc-guess.el</li>
+<li><em>From</em>: <a href="mailto:sakura@DOMAIN.HIDDEN">sakura@xxxxxxxxxxxx</a></li>
+<li><em>Date</em>: Mon, 01 Nov 2004 18:32:01 +0900 (JST)</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20041101.174637.123573175.nogunogu@DOMAIN.HIDDEN">20041101.174637.123573175.nogunogu@xxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:20041101.162156.68544500.nogunogu@DOMAIN.HIDDEN">20041101.162156.68544500.nogunogu@xxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20041101.165611.123113351.sakura@DOMAIN.HIDDEN">20041101.165611.123113351.sakura@xxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20041101.174637.123573175.nogunogu@DOMAIN.HIDDEN">20041101.174637.123573175.nogunogu@xxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x304D;&#x3086;&#x304D;&#x3067;&#x3059;&#x3002;
+
+&gt; &#x300C;&#x3069;&#x306E;&#x5909;&#x6570;&#x3092;&#x3044;&#x3058;&#x308C;&#x3070;&#x3044;&#x3044;&#x306E;&#x304B;&#x300D;&#x3067;&#x60A9;&#x307F;&#x307E;&#x3057;&#x305F;&#x306E;&#x3067;...&#x3002;
+&gt; (&#x5C11;&#x306A;&#x304F;&#x3068;&#x3082;&#x3001;mhc 0.25 + snap (mhc-current-snap20041020)&#x306E;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3067;
+&gt;  &#x306F;mhc-guess-location-list &#x306E;&#x30AB;&#x30B9;&#x30BF;&#x30DE;&#x30A4;&#x30BA;&#x3092;&#x89E3;&#x8AAC;&#x3057;&#x3066;&#x3044;&#x308B;&#x6587;&#x66F8;&#x306F;&#x306A;&#x3055;&#x305D;&#x3046;&#x3067;&#x3059;)
+
+&#x305F;&#x3068;&#x3048;&#x3070;&#x3001;
+
+    C-h v mhc-guess-location-list RET
+    M-x describe-variable mhc-guess-location-list RET
+
+&#x306A;&#x3069;&#x3092;&#x3059;&#x308C;&#x3070;&#x3001;&#x4E00;&#x5FDC;&#x82F1;&#x8A9E;&#x306E;&#x30D8;&#x30EB;&#x30D7;&#x304C;&#x51FA;&#x308B;&#x3088;&#x3046;&#x306B;&#x4F5C;&#x3089;&#x308C;&#x3066;&#x3044;&#x308B;&#x3088;&#x3046;&#x3067;&#x3059;&#x3002;&#x4EE5;&#x4E0B;&#x304C;
+&#x8868;&#x793A;&#x3055;&#x308C;&#x308B;&#x30D8;&#x30EB;&#x30D7;&#x3067;&#x3059;&#x3002;
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
+mhc-guess-location-list's value is 
+nil
+
+Documentation:
+*List of the regexps of the location, like this
+  '(&quot;&#x7B2C;?[0-9&#xFF10;-&#xFF19;&#x3007;-&#x4E5D;]+&#x5FDC;&#x63A5;&#x5BA4;?&quot;
+    &quot;&#x7B2C;?[0-9&#xFF10;-&#xFF19;&#x3007;-&#x4E5D;]+&#x4F1A;&#x8B70;&#x5BA4;[0-9&#xFF10;-&#xFF19;&#x3007;-&#x4E5D;]?&quot;))
+
+Defined in `mhc-guess'.
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
+
+M-x describe-variable &#x7B49;&#x3067;&#x306F;&#x88DC;&#x5B8C;&#x304C;&#x52B9;&#x304F;&#x306E;&#x3067;&#x3001; mhc- &#x3067;&#x59CB;&#x307E;&#x308B;&#x5909;&#x6570;&#x540D;&#x306E;&#x4E00;&#x89A7;
+&#x3092;&#x8868;&#x793A;&#x3057;&#x3066;&#x3001;&#x305D;&#x306E;&#x4E2D;&#x304B;&#x3089;&#x95A2;&#x4FC2;&#x3057;&#x305D;&#x3046;&#x306A;&#x3082;&#x306E;&#x3092;&#x63A2;&#x3057;&#x305F;&#x308A;&#x3059;&#x308B;&#x306E;&#x304C;&#x5E38;&#x5957;&#x624B;&#x6BB5;&#x3067;&#x3059;&#x304C;&#x3001;
+&#x30D8;&#x30EB;&#x30D7;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x306A;&#x3044;&#x5909;&#x6570;&#x3082;&#x3042;&#x308B;&#x3088;&#x3046;&#x3067;&#x3059;&#x3057;&#x3001;&#x79C1;&#x81EA;&#x8EAB;&#x306F;&#x30BD;&#x30FC;&#x30B9;&#x3092;&#x898B;&#x305F;&#x308A;&#x3082;&#x3059;&#x308B;
+&#x306E;&#x3067;&#x3001;&#x3042;&#x307E;&#x308A;&#x53C2;&#x8003;&#x306B;&#x306A;&#x3089;&#x306A;&#x3044;&#x304B;&#x3082;&#x3057;&#x308C;&#x307E;&#x305B;&#x3093;&#x3002;
+
+-- 
+sakura@xxxxxxxxxxxx
+<a  rel="nofollow" href="http://www.tennodai.com/~sakura/">http://www.tennodai.com/~sakura/</a>
+
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="01986" href="msg01986.html">[mhc:01987] another patch for mhc-guess.el (Re:  Re: patch for mhc-guess.el)</a></strong>
+<ul><li><em>From:</em> NOGUCHI Yusuke</li></ul></li>
+<li><strong><a name="01987" href="msg01987.html">[mhc:01988] Re: another patch for mhc-guess.el</a></strong>
+<ul><li><em>From:</em> sakura</li></ul></li>
+<li><strong><a name="01988" href="msg01988.html">[mhc:01989] Re: another patch for mhc-guess.el</a></strong>
+<ul><li><em>From:</em> NOGUCHI Yusuke</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01988.html">[mhc:01989] Re: another patch for mhc-guess.el</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01990.html">[mhc:01991] Re: FYI: mhc2palm with LANSync</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01988.html">[mhc:01989] Re: another patch for mhc-guess.el</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01991.html">[mhc:01992] mhc2palm/palm2mhc &#x3067;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x3092;&#x6271;&#x3046;</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01989"><strong>Date</strong></a></li>
+<li><a href="threads.html#01989"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00176] Re: font&#45;lock for MHC -->
+<!--X-From-R13: =?vfb&#45;2022&#45;wc?P?UlDQXE8ynvG5UluQ?= <xhevfhNfjyno.pfpr.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Wed, 22 Sep 1999 05:09:19 +0900 -->
+<!--X-Message-Id: 19990922050918V.kurisu@swlab.csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 19990922040853Q.kurisu@swlab.csce.kyushu&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00176] Re: font-lock for MHC</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00174.html">Date Prev</a>][<a href="msg00176.html">Date Next</a>][<a href="msg00174.html">Thread Prev</a>][<a href="msg00178.html">Thread Next</a>][<a href="maillist.html#00175">Date Index</a>][<a href="threads.html#00175">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00176] Re: font-lock for MHC</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00176] Re: font-lock for MHC</li>
+<li><em>From</em>: &#x30AF;&#x30EA;&#x30B9; &lt;<a href="mailto:kurisu@DOMAIN.HIDDEN">kurisu@xxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Wed, 22 Sep 1999 05:09:19 +0900</li>
+<li><em>In-reply-to</em>: Your message of &quot;Wed, 22 Sep 1999 04:08:54 +0900&quot;	&lt;<a href="mailto:19990922040853Q.kurisu@DOMAIN.HIDDEN">19990922040853Q.kurisu@xxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Posted</em>: Wed, 22 Sep 1999 05:09:18 +0900</li>
+<li><em>References</em>: &lt;<a href="mailto:19990922040853Q.kurisu@DOMAIN.HIDDEN">19990922040853Q.kurisu@xxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>From: &#x30AF;&#x30EA;&#x30B9; &lt;kurisu@xxxxxxxxxxxxxxxxxxxxxxxxx&gt;
+Subject: [mhc:00175] font-lock for MHC
+Date: Wed, 22 Sep 1999 04:08:54 +0900
+
+&gt; From: Yoshinari NOMURA &lt;nom@xxxxxxxxxxxxxxxxxxx&gt;
+&gt; Subject: [mhc:00174] Re: mhc on UNiX MAGAZINE 1999/10
+&gt; Date: Wed, 22 Sep 1999 02:00:49 +0900
+&gt; 
+&gt; &gt; &#x4EE5;&#x524D;&#x3001;ML &#x306B; hilit19 &#x306E;&#x8A2D;&#x5B9A;&#x3092;&#x6295;&#x3052;&#x307E;&#x3057;&#x305F;&#x304C;&#x3001;font-lock &#x7248;&#x3092;&#x66F8;&#x3044;&#x3066;&#x308B;
+&gt; &gt; &#x65B9;&#x306F;&#x5FA1;&#x4E00;&#x5831;&#x3092;&#x3002;
+&gt; 
+&gt; &#x3053;&#x3052;&#x306A;&#x98A8;&#x306B;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002;&#x3069;&#x3052;&#x306A;&#x611F;&#x3058;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;?
+
+&#x3061;&#x3087;&#x3063;&#x3068;&#x9593;&#x9055;&#x3063;&#x3066;&#x307E;&#x3057;&#x305F;&#x3002;
+
+# &#x3067;&#x3001;mew &#x306E; summary mode buffer &#x304C;&#x771F;&#x3063;&#x9752;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3057;&#x305F;&#x3002;&#x3002;
+
+ ---[from here]-----------------------------------------------------
+ (add-hook 'mew-summary-scan-sentinel-hook
+ 	  'font-lock-fontify-buffer)
+ 
+ (make-face 'mhc-summary-sunday-face)
+ (make-face 'mhc-summary-saturday-face)
+ (set-face-foreground 'mhc-summary-sunday-face &quot;red&quot;)
+ (set-face-foreground 'mhc-summary-saturday-face &quot;blue&quot;)
+ 
+ (setq mhc-summary-font-lock-keywords
+       '((&quot;^.*\\(Sun\\|&#x65E5; \\).*$&quot; . 'mhc-summary-sunday-face)
+-        (&quot;^.*\\Sat.*$&quot;           . 'mhc-summary-saturday-face)))
++        (&quot;^.*Sat.*$&quot;             . 'mhc-summary-saturday-face)))
+ 
+ (add-hook 'mhc-summary-mode-hook
+ 	  (function
+ 	   (lambda ()
+ 	     (make-local-variable 'font-lock-defaults)
+ 	     (setq font-lock-defaults '(mhc-summary-font-lock-keywords t))
+ 	     )))
+ ---[end here]------------------------------------------------------
+
+mhc &#x3067;&#x4F7F;&#x3046; font-lock &#x306E; keyword &#x304C; mew &#x306E; summary &#x3067;&#x3082;&#x4F7F;&#x308F;&#x308C;&#x3066;&#x3057;&#x307E;&#x3046;&#x3093;
+&#x3067;&#x3059;&#x306D;&#x3002;&#x5F53;&#x7136;&#x3068;&#x8A00;&#x3048;&#x3070;&#x5F53;&#x7136;&#x306A;&#x3093;&#x3067;&#x3059;&#x304C;&#x3001;&#x3046;&#x307E;&#x3044;&#x907F;&#x3051;&#x65B9;&#x306F;&#x306A;&#x3044;&#x3082;&#x306E;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;?
+
+---------------------------------------------------------------
+  &#x4E5D;&#x5DDE;&#x5927;&#x5B66;&#x5927;&#x5B66;&#x9662;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x60C5;&#x5831;&#x79D1;&#x5B66;&#x7814;&#x7A76;&#x79D1;&#x60C5;&#x5831;&#x5DE5;&#x5B66;&#x5C02;&#x653B;  &#x6817;&#x6816; &#x76F4;&#x58EB;
+  E-mail kurisu@xxxxxxxxxxxxxxxxxxxxxxxxx
+---------------------------------------------------------------
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00178" href="msg00178.html">[mhc:00179] Re: font-lock for MHC</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00174" href="msg00174.html">[mhc:00175] font-lock for MHC</a></strong>
+<ul><li><em>From:</em> &#x30AF;&#x30EA;&#x30B9;</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00174.html">[mhc:00175] font-lock for MHC</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00176.html">[mhc:00177] &#x5C0F;&#x30CD;&#x30BF;</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00174.html">[mhc:00175] font-lock for MHC</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00178.html">[mhc:00179] Re: font-lock for MHC</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00175"><strong>Date</strong></a></li>
+<li><a href="threads.html#00175"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

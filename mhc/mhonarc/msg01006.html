@@ -1,0 +1,130 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01007] delete from TODO list -->
+<!--X-From-R13: Kbvpuv @OYOKO[O <lbvpuvNrxra.culf.antbln&#45;h.np.wc> -->
+<!--X-Date: Mon, 28 Aug 2000 23:13:21 +0900 -->
+<!--X-Message-Id: 86ya1hh3su.wl@e&#45;ppp3.eken.phys.nagoya&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01007] delete from TODO list</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01005.html">Date Prev</a>][<a href="msg01007.html">Date Next</a>][<a href="msg01005.html">Thread Prev</a>][<a href="msg01025.html">Thread Next</a>][<a href="maillist.html#01006">Date Index</a>][<a href="threads.html#01006">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01007] delete from TODO list</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: Mhc ML &lt;<a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Subject</em>: [mhc:01007] delete from TODO list</li>
+<li><em>From</em>: Yoichi NAKAYAMA &lt;<a href="mailto:yoichi@DOMAIN.HIDDEN">yoichi@xxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Mon, 28 Aug 2000 23:13:21 +0900</li>
+<li><em>Organization</em>: E-ken, Dept. of Physics, Nagoya University, JAPAN</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: Wanderlust/2.3.0 (Roam) EMY/1.13.8 (Tastes differ) SLIM/1.14.2 (&#x52A0;&#x8B77;&#x4E9C;&#x4F9D;) APEL/10.2 Emacs/20.7 (i386-unknown-freebsdelf3.4) MULE/4.1 (&#x8475;)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x306A;&#x304B;&#x3084;&#x307E;&#x3067;&#x3059;
+&#x3084;&#x308A;&#x7D42;&#x3048;&#x305F; TODO &#x304C; TODO &#x30EA;&#x30B9;&#x30C8;&#x306B;&#x3044;&#x3063;&#x3071;&#x3044;&#x305F;&#x307E;&#x3063;&#x3066;&#x304D;&#x305F;&#x306E;&#x3067;
+DONE &#x306E;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x304C;&#x3064;&#x3044;&#x305F;&#x3084;&#x3064;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x30EA;&#x30B9;&#x30C8;&#x304B;&#x3089;&#x5916;&#x308C;&#x308B;&#x3088;&#x3046;&#x306B;
+&#x3059;&#x308B;&#x64CD;&#x4F5C;&#x3092;&#x4F5C;&#x3063;&#x3066;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#xFF0E;
+&#xFF03; elisp &#x3061;&#x3083;&#x3093;&#x3068;&#x66F8;&#x3051;&#x306A;&#x3044;&#x306E;&#x3067;&#x307E;&#x305A;&#x3044;&#x66F8;&#x304D;&#x65B9;&#x3057;&#x3066;&#x308B;&#x304B;&#x3082;&#x3067;&#x3059;&#x304C;&#xFF0E;
+&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x3064;&#x3044;&#x305F;&#x3082;&#x306E;&#x3092;&#x30EA;&#x30B9;&#x30C8;&#x306B;&#x51FA;&#x3055;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x65B9;&#x304C;&#x3088;&#x3044;&#x306E;
+&#x304B;&#x3082;&#x3057;&#x308C;&#x306A;&#x3044;&#x306E;&#x3067;&#x3059;&#x304C;&#xFF0C;DONE &#x306A;&#x5974;&#x3082;&#x8981;&#x3089;&#x306A;&#x304F;&#x306A;&#x308B;&#x307E;&#x3067;&#x306F;&#x30EA;&#x30B9;&#x30C8;
+&#x306B;&#x6B8B;&#x3057;&#x3066;&#x304A;&#x304D;&#x305F;&#x3044;&#x6C17;&#x5206;&#x3060;&#x3063;&#x305F;&#x306E;&#x3067;&#x2026;&#xFF0E;
+
+--- mhc/emacs/mhc.el	Fri Aug 25 14:30:38 2000
++++ yoichi/mhc/emacs/mhc.el	Mon Aug 28 23:01:25 2000
+@@ -518,6 +518,14 @@
+   (mhc-draft-finish)
+   (message &quot;&quot;))
+ 
++(defun mhc-todo-set-as-not-todo ()
++  &quot;Delete TODO already DONE from TODO list.&quot;
++  (interactive)
++  (mhc-modify-file (mhc-summary-filename))
++  (mhc-draft-set-as-not-todo)
++  (mhc-draft-finish)
++  (message &quot;&quot;))
++
+ (defcustom mhc-browse-x-url-function 'browse-url
+   &quot;*A function to browse URL.&quot;
+   :group 'mhc
+
+--- mhc/emacs/mhc-draft.el	Thu Aug 10 12:58:02 2000
++++ yoichi/mhc/emacs/mhc-draft.el	Mon Aug 28 22:46:49 2000
+@@ -141,6 +141,14 @@
+   (if (mhc-draft-in-category-p &quot;todo&quot;)
+       (mhc-draft-delete-category &quot;done&quot;)))
+ 
++(defun mhc-draft-set-as-not-todo ()
++  &quot;Set current draft as NOT-TODO.&quot;
++  (interactive)
++  (if (mhc-draft-in-category-p &quot;todo done&quot;)
++      (progn
++       (mhc-draft-append-category &quot;Done&quot;)
++       (mhc-draft-delete-category &quot;todo&quot;))))
++
+ (defun mhc-draft-append-category (category)
+   &quot;Append CATEGORY if it is not contained yet.&quot;
+   (mhc-header-narrowing
+
+-- 
+Yoichi Nakayama &lt;yoichi@xxxxxxxxxxxxxxxxxxxxxxxx&gt;
+ E-ken, Dept. of Physics, Nagoya University 
+ <a  rel="nofollow" href="http://www.eken.phys.nagoya-u.ac.jp/~yoichi/">http://www.eken.phys.nagoya-u.ac.jp/~yoichi/</a>
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01025" href="msg01025.html">[mhc:01026] Re: delete from TODO list</a></strong>
+<ul><li><em>From:</em> OHTAKI Naoto</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01005.html">[mhc:01006] Re: &#x671F;&#x65E5;&#x306E;&#x904E;&#x304E;&#x305F; TODO</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01007.html">[mhc:01008] Re: &#x671F;&#x65E5;&#x306E;&#x904E;&#x304E;&#x305F; TODO</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01005.html">[mhc:01006] Re: &#x671F;&#x65E5;&#x306E;&#x904E;&#x304E;&#x305F; TODO</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01025.html">[mhc:01026] Re: delete from TODO list</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01006"><strong>Date</strong></a></li>
+<li><a href="threads.html#01006"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

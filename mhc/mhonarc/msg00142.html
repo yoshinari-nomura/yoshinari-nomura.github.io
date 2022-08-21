@@ -1,0 +1,202 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00143] Re: 0.21b1 -->
+<!--X-From-R13: Khfhxr @AUGQVW <abthpuvNpfpr.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Thu, 15 Jul 1999 14:25:30 +0900 -->
+<!--X-Message-Id: 19990715142527D.noguchi@csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Reference: 19990708130455Q.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00143] Re: 0.21b1</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00141.html">Date Prev</a>][<a href="msg00143.html">Date Next</a>][<a href="msg00146.html">Thread Prev</a>][<a href="msg00140.html">Thread Next</a>][<a href="maillist.html#00142">Date Index</a>][<a href="threads.html#00142">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00143] Re: 0.21b1</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00143] Re: 0.21b1</li>
+<li><em>From</em>: Yusuke NOGUCHI &lt;<a href="mailto:noguchi@DOMAIN.HIDDEN">noguchi@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Thu, 15 Jul 1999 14:25:30 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:19990708130455Q.nom@DOMAIN.HIDDEN">19990708130455Q.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Posted</em>: Thu, 15 Jul 1999 14:25:27 +0900</li>
+<li><em>References</em>: &lt;<a href="mailto:19990708130455Q.nom@DOMAIN.HIDDEN">19990708130455Q.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x306E;&#x3050;&#x3061;@&#x4E5D;&#x5927; &#x3067;&#x3059;&#x3002;
+
+From: Yoshinari NOMURA &lt;nom@xxxxxxxxxxxxxxxxxxx&gt;
+Subject: [mhc:00135] 0.21b1
+Date: Thu, 8 Jul 1999 13:04:57 +0900
+
+&gt; &#x4E43;&#x6751;&#x3067;&#x3059;&#x3002;0.21b1 &#x3067;&#x3059;&#x3002;&#x3061;&#x3087;&#x3053;&#x3061;&#x3087;&#x3053;&#x3068;&#x30D0;&#x30B0;&#x30D5;&#x30A3;&#x30C3;&#x30AF;&#x30B9;&#x3067;&#x3059;&#x3002;
+
+&#x3042;&#x3041;&#x3001;iconname &#x304C;&#x53CD;&#x6620;&#x3055;&#x308C;&#x3066;&#x306A;&#x3044;&#x3043;&#x3002;
+WindowMaker &#x306F;&#x3001;title &#x3068; iconname &#x3092;&#x305D;&#x308C;&#x305E;&#x308C;&#x3057;&#x3068;&#x304B;&#x306A;&#x3044;&#x3068;&#x3044;&#x3051;&#x306A;&#x3044;&#x3088;&#x3046;&#x306A;
+&#x306E;&#x3067;&#x3001;&#x3088;&#x308D;&#x3057;&#x304F;&#x304A;&#x9858;&#x3044;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x3042;&#x3068;&#x3001;&#x81EA;&#x5206;&#x306E;&#x74B0;&#x5883;&#x3067;&#x306F;&#x6700;&#x521D;&#x306B;&#x51FA;&#x3066;&#x304F;&#x308B;&#x30AB;&#x30EC;&#x30F3;&#x30C0;&#x306E;&#x6A2A;&#x5E45;&#x304C;&#x72ED;&#x3059;&#x304E;&#x3066; Sat &#x304C;&#x5207;&#x308C;
+&#x3066;&#x3057;&#x307E;&#x3046;&#x306E;&#x3067; window &#x306E;&#x6A2A;&#x5E45;&#x3092;&#x5C11;&#x3057;&#x3070;&#x304B;&#x308A;&#x5E83;&#x3052;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+
+</pre><pre>*** tkcalendar.rb.org	Thu Jul 15 14:09:02 1999
+--- tkcalendar.rb	Thu Jul 15 14:17:34 1999
+***************
+*** 165,170 ****
+--- 165,171 ----
+    def scan(yyyy, mm)
+      w = day_of_week(yyyy, mm, 1)
+      @parent .title(&quot;#{yyyy}&#x5E74; #{mm}&#x6708;&quot;)
++     @parent .iconname(&quot;#{yyyy}&#x5E74; #{mm}&#x6708;&quot;)
+      mFrame = TkFrame .new(self){pack('fill' =&gt; 'both', 'expand' =&gt; 'y')}
+      dListbox = []
+  
+***************
+*** 683,689 ****
+      else
+        MonthList .new(w = TkToplevel .new, @yyyy, @mm + 1)
+      end
+!     w .minsize(200, 125)
+    end
+  
+    def  nextmonth2
+--- 684,690 ----
+      else
+        MonthList .new(w = TkToplevel .new, @yyyy, @mm + 1)
+      end
+!     w .minsize(250, 125)
+    end
+  
+    def  nextmonth2
+***************
+*** 700,706 ****
+      else
+        MonthList .new(w = TkToplevel .new, @yyyy, @mm - 1)
+      end
+!     w .minsize(200, 125)
+    end
+  
+    def  prevmonth2
+--- 701,707 ----
+      else
+        MonthList .new(w = TkToplevel .new, @yyyy, @mm - 1)
+      end
+!     w .minsize(250, 125)
+    end
+  
+    def  prevmonth2
+***************
+*** 756,762 ****
+  	  text 'month';
+  	  command proc{
+  	    MonthList .new(p = TkToplevel .new)
+! 	    p .minsize(200, 125)
+  	  }
+  	}
+        end
+--- 757,763 ----
+  	  text 'month';
+  	  command proc{
+  	    MonthList .new(p = TkToplevel .new)
+! 	    p .minsize(250, 125)
+  	  }
+  	}
+        end
+***************
+*** 847,852 ****
+--- 848,854 ----
+  def mkText(path)
+    TkToplevel.new {|t|
+      title &quot;Schedule: #{path}&quot;
++     iconname &quot;Schedule: #{path}&quot;
+  
+      TkFrame.new(t){|f|
+        pack('fill' =&gt; 'both', 'expand' =&gt; 'yes')
+***************
+*** 871,884 ****
+  ##
+  root = Tk .root
+  root .title 'TkCalendar'
+  root .geometry(&quot;100x125+0+0&quot;)
+  
+  m = MonthList .new(p1 = TkToplevel .new)
+! p1 .minsize(200, 125)
+  p1 .geometry(&quot;100x125&quot;)
+  
+  d = DayList .new(p2 = root)
+! p2 .minsize(200, 125)
+  p2 .geometry(&quot;100x125&quot;)
+  
+  timer = Tick .new
+--- 873,887 ----
+  ##
+  root = Tk .root
+  root .title 'TkCalendar'
++ root .iconname 'TkCalendar'
+  root .geometry(&quot;100x125+0+0&quot;)
+  
+  m = MonthList .new(p1 = TkToplevel .new)
+! p1 .minsize(250, 125)
+  p1 .geometry(&quot;100x125&quot;)
+  
+  d = DayList .new(p2 = root)
+! p2 .minsize(250, 125)
+  p2 .geometry(&quot;100x125&quot;)
+  
+  timer = Tick .new
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00134" href="msg00134.html">[mhc:00135] 0.21b1</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00141.html">[mhc:00142] Re: syntax of X-SC-Duration:</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00143.html">[mhc:00144] Mhc buffer is not killed</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00146.html">[mhc:00147] Re: 0.21b1</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00140.html">[mhc:00141] syntax of X-SC-Duration:</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00142"><strong>Date</strong></a></li>
+<li><a href="threads.html#00142"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

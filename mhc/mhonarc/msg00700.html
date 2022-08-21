@@ -1,0 +1,168 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00701] Re: mhc&#45;snap20000606 (Re:  Modification for pure Gnus) -->
+<!--X-From-R13: Kbfuvanev @bzhen <abzNpfpr.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Tue, 06 Jun 2000 19:01:58 +0900 -->
+<!--X-Message-Id: 20000606190158D.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: mpa8zwkbh8e.fsf@olive.kuee.kyoto&#45;u.ac.jp -->
+<!--X-Reference: 20000606152918E.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00701] Re: mhc-snap20000606 (Re:  Modification for pure Gnus)</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00699.html">Date Prev</a>][<a href="msg00701.html">Date Next</a>][<a href="msg00699.html">Thread Prev</a>][<a href="msg00701.html">Thread Next</a>][<a href="maillist.html#00700">Date Index</a>][<a href="threads.html#00700">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00701] Re: mhc-snap20000606 (Re:  Modification for pure Gnus)</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00701] Re: mhc-snap20000606 (Re:  Modification for pure Gnus)</li>
+<li><em>From</em>: Yoshinari Nomura &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Tue, 06 Jun 2000 19:01:58 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20000606152918E.nom@DOMAIN.HIDDEN">20000606152918E.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:mpa8zwkbh8e.fsf@DOMAIN.HIDDEN">mpa8zwkbh8e.fsf@xxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20000606152918E.nom@DOMAIN.HIDDEN">20000606152918E.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>On Tue, 06 Jun 2000 15:29:18 +0900,
+	Yoshinari Nomura &lt;nom@xxxxxxxxxxxxxxxxxxx&gt; said:
+
+&gt; &#x4E43;&#x6751;&#x3067;&#x3059;&#x3002;&#x3084;&#x3063;&#x3071;&#x308A;&#x3001;&#x3082;&#x3046; 1&#x56DE;&#x30B9;&#x30CA;&#x30C3;&#x30D7;&#x3092;&#x51FA;&#x3059;&#x3053;&#x3068;&#x306B;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;
+&gt; quickhack &#x3067;&#x3059;&#x3002;
+&gt; 
+&gt;   <a  rel="nofollow" href="http://www.quickhack.net/mhc/arc/mhc-snap20000606.tar.gz">http://www.quickhack.net/mhc/arc/mhc-snap20000606.tar.gz</a>
+
+&#x3061;&#x3087;&#x3068;&#x3084;&#x308A;&#x3059;&#x304E;&#x3002;&#x3002;&#x3002;&#x30D0;&#x30B0;&#x3092;&#x8FBC;&#x3081;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3057;&#x305F;&#x3002;
+&#x4EE5;&#x4E0B; diff &#x3067;&#x3059;&#x3002;CVS &#x306B;&#x306F; commit &#x6E08;&#x307F;&#x3067;&#x3059;&#x3002;
+
+tar.gz &#x3082;&#x4F5C;&#x308A;&#x306A;&#x304A;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;&#x4EE5;&#x4E0B;&#x304B;&#x3089;&#x3069;&#x3046;&#x305E;&#x3002;
+
+  <a  rel="nofollow" href="http://www.quickhack.net/mhc/arc/mhc-snap20000606-2.tar.gz">http://www.quickhack.net/mhc/arc/mhc-snap20000606-2.tar.gz</a>
+--
+nom
+
+Index: mhc-date.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc-date.el,v
+retrieving revision 1.1.1.1.2.1
+diff -u -r1.1.1.1.2.1 mhc-date.el
+--- mhc-date.el	2000/06/06 06:07:39	1.1.1.1.2.1
++++ mhc-date.el	2000/06/06 09:49:29
+@@ -101,10 +101,10 @@
+    (dtime&lt; t1 t2)
+    (dtime= t1 t2)))
+ 
+-(defmacro dtime-to-s (dtime &amp;optional need-sec)
+-  (` (if (, need-sec)
+-	 (apply (quote format) &quot;%02d:%02d:%02d&quot; (, dtime))
+-       (apply (quote format) &quot;%02d:%02d&quot; (, dtime)))))
++(defsubst dtime-to-s (dtime &amp;optional need-sec)
++  (if need-sec
++      (apply 'format &quot;%02d:%02d:%02d&quot; dtime)
++    (apply 'format &quot;%02d:%02d&quot; dtime)))
+ 
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;;; ddate
+@@ -215,8 +215,9 @@
+ 
+ ;; for X-SC-*
+ 
+-(defmacro ddate-to-s (ddate)
+-  (` (apply (quote format) &quot;%04d%02d%02d&quot; (, ddate))))
++
++(defsubst ddate-to-s (ddate)
++  (apply 'format &quot;%04d%02d%02d&quot; ddate))
+ 
+ (defmacro ddate-yymm-s (ddate)
+   (` (apply (quote format) &quot;%04d%02d&quot; (, ddate))))
+Index: mhc-minibuf.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc-minibuf.el,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 mhc-minibuf.el
+--- mhc-minibuf.el	2000/05/25 05:11:32	1.1.1.1
++++ mhc-minibuf.el	2000/06/06 09:49:29
+@@ -201,8 +201,8 @@
+ 					default)
+ 				       (t
+ 					(mapconcat 
+-					 '(lambda (ddate)
+-					    (ddate-to-s1 ddate &quot;/&quot;))
++					 (function (lambda (ddate)
++						     (ddate-to-s1 ddate &quot;/&quot;)))
+ 					 default
+ 					 &quot; &quot;))))
+ 				  (current-buffer)
+@@ -257,7 +257,7 @@
+ 		   (current-buffer)
+ 		   candidate
+ 		   0
+-		   'dtime-to-s))
++		   (function dtime-to-s)))
+ 	(cond 
+ 	 ((and (string-match
+ 		&quot;^\\([0-9]+:[0-9]+\\)\\(-\\([0-9]+:[0-9]+\\)\\)?$&quot; str)
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00701" href="msg00701.html">[mhc:00702] Re: mhc-snap20000606 (Re:  Modification for pure Gnus)</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00698" href="msg00698.html">[mhc:00699] Modification for pure Gnus</a></strong>
+<ul><li><em>From:</em> TSUCHIYA Masatoshi</li></ul></li>
+<li><strong><a name="00699" href="msg00699.html">[mhc:00700] mhc-snap20000606 (Re:  Modification for pure Gnus)</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00699.html">[mhc:00700] mhc-snap20000606 (Re:  Modification for pure Gnus)</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00701.html">[mhc:00702] Re: mhc-snap20000606 (Re:  Modification for pure Gnus)</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00699.html">[mhc:00700] mhc-snap20000606 (Re:  Modification for pure Gnus)</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00701.html">[mhc:00702] Re: mhc-snap20000606 (Re:  Modification for pure Gnus)</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00700"><strong>Date</strong></a></li>
+<li><a href="threads.html#00700"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

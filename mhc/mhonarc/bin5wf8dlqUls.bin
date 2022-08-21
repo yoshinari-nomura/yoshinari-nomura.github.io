@@ -1,0 +1,18 @@
+Index: mhc-wl.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc-wl.el,v
+retrieving revision 1.24
+diff -u -r1.24 mhc-wl.el
+--- mhc-wl.el	2002/01/11 09:14:21	1.24
++++ mhc-wl.el	2002/02/06 12:08:26
+@@ -164,8 +164,8 @@
+     (wl-summary-buffer-set-folder (mhc-wl/date-to-folder date))
+     (make-local-variable 'wl-summary-highlight)
+     (setq wl-summary-highlight nil)
+-    (make-local-variable 'wl-message-buffer-prefetch-folder-type-list)
+-    (setq wl-message-buffer-prefetch-folder-type-list nil)
++    (make-local-variable 'wl-message-buffer-prefetch-depth)
++    (setq wl-message-buffer-prefetch-depth nil)
+     (static-if (boundp 'wl-summary-buffer-next-folder-function)
+ 	(setq wl-summary-buffer-next-folder-function
+ 	      (lambda () (mhc-goto-next-month 1)

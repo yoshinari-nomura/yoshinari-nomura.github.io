@@ -1,0 +1,49 @@
+#!/usr/local/bin/ruby
+
+$last_mid_rand = 'AAAA'
+$last_mid_time = nil
+$i = 0
+
+$DOMAIN = 'set_your_domain'
+
+def create_message_id(domain = $DOMAIN)
+  mid_time = Time .now .strftime("%Y%m%d%H%M%S")
+  mid_user = Process .uid .to_s
+
+  if $last_mid_time && mid_time == $last_mid_time
+    $i += 1
+    $last_mid_rand .succ!
+    mid_rand = $last_mid_rand
+  else
+    $last_mid_rand = 'AAAA'
+    mid_rand = $last_mid_rand
+    $i = 0
+  end
+
+  mid_rand += '-' + $$ .to_s
+  $last_mid_time = mid_time
+  return '<' + mid_time + mid_rand + '.' + mid_user + '@' + domain + '>'
+end
+
+
+while path = ARGV .shift
+  file = File .open(path)
+  contents = file .gets(nil)
+  file .close
+
+  if contents =~ /X-SC-Record-Id:/
+    print "#{path} has X-SC-Record-Id: ignored.\n"
+
+  else
+    print "add  X-SC-Record-Id: to #{path}.\n"
+
+    contents .sub!(/^/np, "X-SC-Record-Id: " +
+		   create_message_id() + "\n")
+    ##  contents .sub!(/\n\n/np, "\nX-SC-Record-Id: " +
+    ##		 create_message_id() + "\n\n")
+
+    file = File .open(path, "w")
+    file << contents
+    file .close
+  end
+end

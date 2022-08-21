@@ -1,0 +1,141 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00615] Display icons on XEmacs -->
+<!--X-From-R13: Khhvpuv Frenavfuv <grenavfvNtbubzr.bet> -->
+<!--X-Date: Fri, 26 May 2000 18:46:24 +0900 -->
+<!--X-Message-Id: fzu2fliqy2.wl@gohome.org -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Derived: bin8ioxMsrwS5.bin -->
+<!--X-Derived: binTTRRKMQnFE.bin -->
+<!--X-Derived: binJfuS91DL7l.bin -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00615] Display icons on XEmacs</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00613.html">Date Prev</a>][<a href="msg00615.html">Date Next</a>][<a href="msg00613.html">Thread Prev</a>][<a href="msg00616.html">Thread Next</a>][<a href="maillist.html#00614">Date Index</a>][<a href="threads.html#00614">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00615] Display icons on XEmacs</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: MHC ML &lt;<a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Subject</em>: [mhc:00615] Display icons on XEmacs</li>
+<li><em>From</em>: Yuuichi Teranishi &lt;<a href="mailto:teranisi@DOMAIN.HIDDEN">teranisi@xxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Fri, 26 May 2000 18:46:24 +0900</li>
+<li><em>Mail-reply-to</em>: <a href="mailto:teranisi@DOMAIN.HIDDEN">teranisi@xxxxxxxxxxxxx</a></li>
+<li><em>Organization</em>: HeavyLispers, Yokosuka, JAPAN</li>
+<li><em>Posted</em>: Fri, 26 May 2000 18:47:01 +0900</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: Wanderlust/2.3.0 (Roam) EMY/1.13.6 (Life is balance) Chao/1.14.1 (Rokujiz&#x14D;) APEL/10.2 MULE XEmacs/21.2 (beta32) (Kastor &amp; Polydeukes) (i386-ibmpc-freebsd3)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>
+XEmacs &#x3067;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x8868;&#x793A;&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002;
+
+&#x305F;&#x3068;&#x3048;&#x3070;&#x6DFB;&#x4ED8;&#x306E;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x8A2D;&#x5B9A;&#x3092;&#x3059;&#x308B;&#x3068;&#x3001;
+&#x3053;&#x3093;&#x306A;&#x98A8;&#x306B;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;&#x2192; <a  rel="nofollow" href="http://www.gohome.org/tmp/dump.gif">http://www.gohome.org/tmp/dump.gif</a>
+
+&#x8A2D;&#x5B9A;&#x4F8B;:
+
+;; &#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x7F6E;&#x5834;
+(setq mhc-xmas-icon-path &quot;~/mhc-icons&quot;)
+
+;; &#x30AB;&#x30C6;&#x30B4;&#x30EA;&#x540D;&#x3068;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x540D;&#x306E; alist
+(setq mhc-xmas-category-icon-alist
+  '((&quot;Holiday&quot;     . &quot;Holiday.xpm&quot;)
+    (&quot;Work&quot;        . &quot;Business.xpm&quot;)
+    (&quot;Private&quot;     . &quot;Private.xpm&quot;)
+    (&quot;Anniversary&quot; . &quot;Anniversary.xpm&quot;)
+    (&quot;Birthday&quot;    . &quot;Birthday.xpm&quot;)
+    (&quot;Other&quot;       . &quot;Other.xpm&quot;)))
+
+
+&#x4EE5;&#x4E0B;&#x3001;
+&#x30FB;&#x8FFD;&#x52A0;&#x30D5;&#x30A1;&#x30A4;&#x30EB; (mhc-xmas.el)
+&#x30FB;mhc-snap20000526 &#x304B;&#x3089;&#x306E;&#x5DEE;&#x5206; (mhc.el.diff)
+&#x30FB;16 &#x30C9;&#x30C3;&#x30C8;&#x7528;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x30A2;&#x30A4;&#x30B3;&#x30F3; (mhc-icons.tar.gz)
+&#x3092;&#x6DFB;&#x4ED8;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+
+&#x554F;&#x984C;&#x70B9;&#x306F;&#x3001;
+
+&#x30FB;&#x5168;&#x89D2;&#x30D5;&#x30A9;&#x30F3;&#x30C8;&#x306E;&#x5E45;&#x306B;&#x5408;&#x308F;&#x305B;&#x305F;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7528;&#x610F;&#x3057;&#x306A;&#x3044;&#x3068;
+  &#x53F3;&#x5074;&#x306E;&#x30AB;&#x30EC;&#x30F3;&#x30C0;&#x30FC;&#x8868;&#x793A;&#x304C;&#x304A;&#x304B;&#x3057;&#x304F;&#x306A;&#x3063;&#x3066;&#x3057;&#x307E;&#x3046;&#x3002;
+&#x30FB;&#x30AB;&#x30C6;&#x30B4;&#x30EA;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x3092;&#x5B9A;&#x7FA9;&#x3057;&#x3066;&#x3044;&#x308B;&#x304C;&#x3001;&#x3053;&#x308C;&#x3067;&#x3044;&#x3044;&#x306E;&#x304B;&#xFF1F;
+  (&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x6BCE;&#x306B;&#x9078;&#x3073;&#x305F;&#x3044;&#xFF1F;)
+&#x30FB;&#x8907;&#x6570;&#x30AB;&#x30C6;&#x30B4;&#x30EA;&#x306E;&#x3068;&#x304D;&#x3069;&#x3046;&#x3059;&#x308B;&#x304B;
+&#x30FB;FSF Emacs &#x3067;&#x3082;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x8868;&#x793A;&#x3057;&#x305F;&#x3044;(&#xFF1F;)
+
+&#x2026;&#x3068;&#x3044;&#x3063;&#x305F;&#x3068;&#x3053;&#x308D;&#x3067;&#x3059;&#x3002;
+
+</pre><p><strong>Attachment:
+<a href="bin8ioxMsrwS5.bin" ><tt>mhc-xmas.el</tt></a></strong><br>
+<em>Description:</em> Binary data</p>
+<p><strong>Attachment:
+<a href="binTTRRKMQnFE.bin" ><tt>mhc.el.diff</tt></a></strong><br>
+<em>Description:</em> application/octed-stream</p>
+<p><strong>Attachment:
+<a href="binJfuS91DL7l.bin" ><tt>mhc-icons.tar.gz</tt></a></strong><br>
+<em>Description:</em> Binary data</p>
+<pre>
+;; &#x5927;&#x90E8;&#x5206;&#x306F;&#x53BB;&#x5E74;&#x66F8;&#x3044;&#x305F;&#x3082;&#x306E;&#x306A;&#x3093;&#x3067;&#x3059;&#x304C;&#x3001;&#x307B;&#x3063;&#x305F;&#x3089;&#x304B;&#x3057;&#x306B;&#x306A;&#x3063;&#x3066;&#x307E;&#x3057;&#x305F;(^^;;&#x3002;
+--
+Yuuichi Teranishi (&#x5BFA;&#x897F;&#x88D5;&#x4E00;) &lt;teranisi@xxxxxxxxxx&gt;
+PGP 5.0i Public Key: <a  rel="nofollow" href="http://www.gohome.org/pgp5/teranisi.key">http://www.gohome.org/pgp5/teranisi.key</a>
+&quot;The movement you need is on your shoulder...&quot;
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00616" href="msg00616.html">[mhc:00617] Re: Display icons on XEmacs</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+<li><strong><a name="00626" href="msg00626.html">[mhc:00627] Re: Display icons on XEmacs</a></strong>
+<ul><li><em>From:</em> Yuuichi Teranishi/&#x5BFA;&#x897F;&#x88D5;&#x4E00;</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00613.html">[mhc:00614] mhc-snap20000526</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00615.html">[mhc:00616] Re: Pserver</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00613.html">[mhc:00614] mhc-snap20000526</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00616.html">[mhc:00617] Re: Display icons on XEmacs</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00614"><strong>Date</strong></a></li>
+<li><a href="threads.html#00614"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

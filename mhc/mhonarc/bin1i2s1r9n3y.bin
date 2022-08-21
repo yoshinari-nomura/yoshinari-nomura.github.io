@@ -1,0 +1,18 @@
+Index: mhc-vars.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc-vars.el,v
+retrieving revision 1.13
+diff -u -r1.13 mhc-vars.el
+--- mhc-vars.el	2002/09/19 09:05:48	1.13
++++ mhc-vars.el	2002/10/29 02:48:12
+@@ -113,8 +113,8 @@
+   "*Wide scope method in summary mode."
+   :group 'mhc
+   :type '(radio (const :tag "No use" nil)
+-		(const :tag "Complete week scope" 'week)
+-		(const :tag "Wide week scope" 'wide)
++		(const :tag "Complete week scope" week)
++		(const :tag "Wide week scope" wide)
+ 		(integer :tag "Scope wide size (>=0)" 3)))
+ 
+ (provide 'mhc-vars)

@@ -1,0 +1,147 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01823] Re: mhc&#45;0.25.1 on T&#45;gnus ? -->
+<!--X-From-R13: Fnxrfuv FOYWKO[O <gnxvlnznNzrpu.rat.bfnxn&#45;ph.np.wc> -->
+<!--X-Date: Tue, 03 Jun 2003 09:10:26 +0900 -->
+<!--X-Message-Id: uof1g2f7x.fsf@penguin.mech.eng.osaka&#45;cu.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: u1xyhi56a.fsf@penguin.mech.eng.osaka&#45;cu.ac.jp -->
+<!--X-Reference: uadd0haf5.wl%miyoshi@boreas.dti.ne.jp -->
+<!--X-Reference: uadd0sgdf.fsf@TAMA.pot.chan.ne.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01823] Re: mhc-0.25.1 on T-gnus ?</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01821.html">Date Prev</a>][<a href="msg01823.html">Date Next</a>][<a href="msg01821.html">Thread Prev</a>][<a href="msg01824.html">Thread Next</a>][<a href="maillist.html#01822">Date Index</a>][<a href="threads.html#01822">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01823] Re: mhc-0.25.1 on T-gnus ?</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01823] Re: mhc-0.25.1 on T-gnus ?</li>
+<li><em>From</em>: Takeshi TAKIYAMA &lt;<a href="mailto:takiyama@DOMAIN.HIDDEN">takiyama@xxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Tue, 03 Jun 2003 09:10:26 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:uadd0haf5.wl%25miyoshi@DOMAIN.HIDDEN">uadd0haf5.wl%miyoshi@xxxxxxxxxxxxxxxx</a>&gt; (<a href="mailto:miyoshi@DOMAIN.HIDDEN">miyoshi@xxxxxxxxxxxxx</a>'s message of &quot;Mon, 02 Jun 2003 22:32:46 +0900&quot;)</li>
+<li><em>References</em>: &lt;<a href="mailto:u1xyhi56a.fsf@DOMAIN.HIDDEN">u1xyhi56a.fsf@xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt; &lt;<a href="mailto:uadd0haf5.wl%25miyoshi@DOMAIN.HIDDEN">uadd0haf5.wl%miyoshi@xxxxxxxxxxxxxxxx</a>&gt; &lt;<a href="mailto:uadd0sgdf.fsf@DOMAIN.HIDDEN">uadd0sgdf.fsf@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: T-gnus/6.15.7 (based on Oort Gnus v0.07) (revision 01) SEMI/1.14.4 (Hosorogi) FLIM/1.14.4 (Kashiharajing&#x16B;-mae) APEL/10.3 Emacs/20.7 (i386-msvc-nt5.0.2195) MULE/4.1 (AOI) Meadow/1.15 (SHOUBU:63)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x7027;&#x5C71;&#x3067;&#x3059;&#x3002;
+
+&#x304A;&#x4E16;&#x8A71;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;
+
+In    mhc 01822   &quot; [mhc:01822] Re: mhc-0.25.1 on T-gnus ? &quot;
+      Mon, 02 Jun 2003 23:28:44 +0900
+      &#x7530;&#x4E2D; &#x4FCA;&#x660E; &lt;toc@xxxxxxxxx&gt; wrote:
+
+&gt;  BackTrace&#x306E;&#x65B9;&#x304C; d:/usr/local/Mail/... &#x3092;&#x898B;&#x306B;&#x3044;&#x3063;&#x3066;&#x3044;&#x308B;&#x306E;&#x304C;
+&gt; &#x6C17;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;&#x7027;&#x5C71;&#x3055;&#x3093;&#x306E;&#x74B0;&#x5883;&#x3067;&#x306F; ~/Mail = d:/usr/local/Mail 
+&gt; &#x3067;&#x3059;&#x304B;&#xFF1F;&#x305D;&#x3046;&#x3067;&#x306A;&#x3051;&#x308C;&#x3070; mhc-mail-path &#x3092;&#x6B63;&#x3057;&#x304F;&#x8A2D;&#x5B9A;&#x3059;&#x308B;&#x3068;&#x3069;&#x3046;
+&gt; &#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#xFF1F;
+
+&#x306F;&#x3044;&#x3001;.emacs&#x3067;
+
+(setq mhc-mailer-package 'gnus)
+(autoload 'mhc-mode &quot;mhc&quot; nil t)
+(add-hook 'gnus-summary-mode-hook 'mhc-mode)
+(add-hook 'gnus-group-mode-hook 'mhc-mode)
+
+(setq mhc-base-folder &quot;+schedule&quot;)
+(setq mhc-mail-path   (expand-file-name &quot;d:/usr/local/Mail&quot;))
+
+&#x3068;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+
+
+In    mhc 01821   &quot; [mhc:01821] Re: mhc-0.25.1 on T-gnus ? &quot;
+      Mon, 02 Jun 2003 22:32:46 +0900
+      miyoshi@xxxxxxxxxxxxx wrote:
+
+&#x4E09;&#x597D;&#x3055;&#x3093;&#x3002;&#x3044;&#x3064;&#x3082;&#x3042;&#x3061;&#x3053;&#x3061;&#x3067;&#x304A;&#x4E16;&#x8A71;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+
+&gt; &#x3069;&#x306E;&#x3088;&#x3046;&#x306B;&#x3057;&#x3066; MHC &#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x307E;&#x3057;&#x305F;&#x304B;?
+&gt; &#x8A73;&#x3057;&#x3044;&#x624B;&#x9806;&#x3092;&#x6559;&#x3048;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;
+
+(1) MHC &#x306E;web&#x3088;&#x308A; mhc-0.25.1.tar.gz &#x3092; get
+(2) tar&#x3057;&#x3066;&#x3001;mhc-0.25.1/emacs/&#x3000;&#x4EE5;&#x4E0B; &#x306E;&#x5168;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;
+   Meadow/site-lisp/mhc/&#x306B; cp
+(3) .emacs &#x306B;&#x4E0A;&#x8A18;&#x306E;&#x3068;&#x304A;&#x308A;&#x8FFD;&#x8A18;
+
+
+&#x305F;&#x3068;&#x3048;&#x3070;&#x3001;6&#x6708;5&#x65E5;&#x306B;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x307E;&#x3059;&#x3068;
+nnvirtual:+/2/06 [0]&#x306E;&#x30D0;&#x30C3;&#x30D5;&#x30A1;&#x306B;
+
+06/01 Sun              
+06/02 Mon              
+06/03 Tue              
+06/04 Wed
+
+&#x3053;&#x308C;&#x3060;&#x3051;&#x51FA;&#x529B;&#x3055;&#x308C;&#x3066;&#x3001;backtrace &#x3092;&#x306F;&#x304D;&#x307E;&#x3059;&#x3002;
+
+
+;; cygwin&#x304C;&#x3000;d:/cygwin/&#x4EE5;&#x4E0B;&#x306B;&#x3042;&#x308B;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;&#x3053;&#x308C;&#x3068;&#x306E;&#x95A2;&#x4FC2;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;?
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01824" href="msg01824.html">[mhc:01825] Re: mhc-0.25.1 on T-gnus ?</a></strong>
+<ul><li><em>From:</em> miyoshi</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="01816" href="msg01816.html">[mhc:01817] mhc-0.25.1 on T-gnus ?</a></strong>
+<ul><li><em>From:</em> Takeshi TAKIYAMA</li></ul></li>
+<li><strong><a name="01820" href="msg01820.html">[mhc:01821] Re: mhc-0.25.1 on T-gnus ?</a></strong>
+<ul><li><em>From:</em> miyoshi</li></ul></li>
+<li><strong><a name="01821" href="msg01821.html">[mhc:01822] Re: mhc-0.25.1 on T-gnus ?</a></strong>
+<ul><li><em>From:</em> &#x7530;&#x4E2D; &#x4FCA;&#x660E;</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01821.html">[mhc:01822] Re: mhc-0.25.1 on T-gnus ?</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01823.html">[mhc:01824] Re: Postscript &#x306E;&#x751F;&#x6210;</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01821.html">[mhc:01822] Re: mhc-0.25.1 on T-gnus ?</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01824.html">[mhc:01825] Re: mhc-0.25.1 on T-gnus ?</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01822"><strong>Date</strong></a></li>
+<li><a href="threads.html#01822"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

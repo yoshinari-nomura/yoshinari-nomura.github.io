@@ -1,0 +1,135 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01408] mhc2palm doesn't work on Mac OS X -->
+<!--X-From-R13: FOYSpuv [nfnfuv <znfnNFOYSpuba.@SF> -->
+<!--X-Date: Fri, 03 Aug 2001 09:37:51 +0900 (JST) -->
+<!--X-Message-Id: 20010803.093751.38583623.masa@TAKEchon.NET -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01408] mhc2palm doesn't work on Mac OS X</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01406.html">Date Prev</a>][<a href="msg01408.html">Date Next</a>][<a href="msg01405.html">Thread Prev</a>][<a href="msg01408.html">Thread Next</a>][<a href="maillist.html#01407">Date Index</a>][<a href="threads.html#01407">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01408] mhc2palm doesn't work on Mac OS X</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01408] mhc2palm doesn't work on Mac OS X</li>
+<li><em>From</em>: TAKEchi Masashi &lt;<a href="mailto:masa@DOMAIN.HIDDEN">masa@xxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Fri, 03 Aug 2001 09:37:51 +0900 (JST)</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x307F;&#x306A;&#x3055;&#x3093;&#x521D;&#x3081;&#x307E;&#x3057;&#x3066;&#xFF0C;&#x30BF;&#x30B1;&#x30C1;&#x30DE;&#x30B5;&#x30B7;&#x3067;&#x3059;&#x3002;
+
+Mac OS X (10.0.4) &#x306B;&#x3066; MHC (0.25) &#x3092;&#x5229;&#x7528;&#x3057;&#x3088;&#x3046;&#x3068;&#x3057;&#x305F;&#x3068;&#x3053;&#x308D;&#xFF0C;mhc2palm
+&#x304C;&#x6B63;&#x5E38;&#x306B;&#x52D5;&#x4F5C;&#x3057;&#x307E;&#x305B;&#x3093;&#x3002;
+
+ruby &#x306B;&#x95A2;&#x3057;&#x3066;&#x306F; mhc2palm &#x304C;&#x5229;&#x7528;&#x3057;&#x305F;&#x3044;&#x304C;&#x70BA;&#x306B;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x305F;&#x304F;&#x3089;&#x3044;&#x306E;&#x7D20;
+&#x4EBA;&#x306A;&#x306E;&#x3067;&#x30C7;&#x30D0;&#x30C3;&#x30B0;&#x3057;&#x3088;&#x3046;&#x306B;&#x3082;&#x624B;&#x306E;&#x3064;&#x3051;&#x3069;&#x3053;&#x308D;&#x304C;&#x89E3;&#x3089;&#x306A;&#x3044;&#x59CB;&#x672B;&#x3067;&#x3059;&#x3002;
+
+&#x4EE5;&#x4E0B;&#x306B;&#x7D4C;&#x904E;&#x5831;&#x544A;&#x81F4;&#x3057;&#x307E;&#x3059;&#x3002;
+
+ruby &#x306F; 1.6.4 &#x3092;&#x30BD;&#x30FC;&#x30B9;&#x3088;&#x308A;&#xFF0C;
+$ ./configure --without-gcc
+$ make
+$ sudo make install
+
+&#x3068;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;
+
+pilot-link &#x95A2;&#x9023;&#x306F; pilot-xfer &#x304C;&#x6B63;&#x5E38;&#x306B;&#x52D5;&#x4F5C;&#x3057;&#x3066;&#x304A;&#x308A;&#xFF0C;ruby-ext &#x306E; make
+install &#x306F;&#x6B63;&#x5E38;&#x306B;&#x7D42;&#x4E86;&#x3057;&#x305F;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;&#x78BA;&#x8A8D;&#x4E8B;&#x9805;&#x304C;&#x3042;&#x308C;&#x3070;&#x30A2;&#x30C9;&#x30D0;&#x30A4;&#x30B9;&#x4E0B;&#x3055;&#x3044;&#x3002;
+&#x305D;&#x306E;&#x5F8C;&#x306B; mhc2palm &#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3068;&#x4EE5;&#x4E0B;&#x306E;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x7D42;&#x4E86;&#x3057;&#x307E;&#x3059;&#x3002;
+
+-- &#x3053;&#x3053;&#x304B;&#x3089;
+$ ./mhc2palm -a -d /dev/tty.KeyUSA19191.1
+Press Sync Button                                                               
+/usr/local/lib/ruby/1.6/mhc-schedule.rb:1163:in `format': invalid
+value for Integer: &quot;08&quot; (ArgumentError)
+        from /usr/local/lib/ruby/1.6/mhc-schedule.rb:1163:in `regist'
+        from /usr/local/lib/ruby/1.6/mhc-schedule.rb:1162:in `each'
+        from /usr/local/lib/ruby/1.6/mhc-schedule.rb:1162:in `regist'
+        from /usr/local/lib/ruby/1.6/mhc-schedule.rb:1156:in `each'
+        from /usr/local/lib/ruby/1.6/mhc-schedule.rb:1156:in `regist'
+        from /usr/local/lib/ruby/1.6/mhc-schedule.rb:1235:in `update_slot'
+        from /usr/local/lib/ruby/1.6/mhc-schedule.rb:1201:in `update'
+        from /usr/local/lib/ruby/1.6/mhc-schedule.rb:1200:in `each'
+        from /usr/local/lib/ruby/1.6/mhc-schedule.rb:1200:in `update'
+        from /usr/local/lib/ruby/1.6/mhc-schedule.rb:1125:in `search1'
+        from /usr/local/lib/ruby/1.6/mhc-schedule.rb:1091:in `search'
+        from /usr/local/lib/ruby/1.6/mhc-schedule.rb:1090:in `each'
+        from /usr/local/lib/ruby/1.6/mhc-schedule.rb:1090:in `search'
+        from /usr/local/lib/ruby/1.6/mhc-schedule.rb:1078:in `each_sch'
+        from ./mhc2palm:124
+-- &#x3053;&#x3053;&#x307E;&#x3067;
+
+-i &#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x3068;&#xFF0C;Palm &#x5074;&#x306E;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x304C;&#x6D88;&#x3055;&#x308C;&#x305F;&#x5F8C;&#x306B;&#x4E0A;&#x8A18;&#x30A8;&#x30E9;&#x30FC;
+&#x304C;&#x767A;&#x751F;&#x3057;&#x307E;&#x3059; (&#x73FE;&#x5728;&#x79C1;&#x306E; Pilot &#x306F;&#x30AB;&#x30E9;&#x72B6;&#x614B; :(
+
+&#x3064;&#x3044;&#x6700;&#x8FD1;&#x307E;&#x3067; Linux &#x3067;&#x751F;&#x6D3B;&#x3057;&#x3066;&#x3044;&#x305F;&#x306E;&#x3067;&#x3059;&#x304C;&#xFF0C;&#x305D;&#x306E; Linux &#x30DE;&#x30B7;&#x30F3;&#x304C;&#x58CA;&#x308C;&#x3066;&#x3057;
+&#x307E;&#x3044;&#xFF0C;&#x3042;&#x308F;&#x3066;&#x3066;&#x8077;&#x5834;&#x306E; Mac OS X &#x306B;&#x30E1;&#x30FC;&#x30EB;&#x74B0;&#x5883;&#x305D;&#x306E;&#x4ED6;&#x3092;&#x69CB;&#x7BC9;&#x3057;&#x3066;&#x3044;&#x308B;&#x6700;&#x4E2D;&#x3067;&#x3059;&#x3002;
+
+&#x4F55;&#x304B;&#x89E3;&#x6C7A;&#x7B56;&#xFF0C;&#x8A66;&#x3057;&#x3066;&#x307F;&#x308B;&#x4E8B;&#x7B49;&#x304C;&#x3042;&#x308C;&#x3070;&#x30A2;&#x30C9;&#x30D0;&#x30A4;&#x30B9;&#x3057;&#x3066;&#x4E0B;&#x3055;&#x3044;&#x3002;
+&#x4EE5;&#x4E0A;&#xFF0C;&#x3088;&#x308D;&#x3057;&#x304F;&#x304A;&#x9858;&#x3044;&#x3057;&#x307E;&#x3059;&#x3002;
+
+/**
+ * TAKEchi Masashi      <a  rel="nofollow" href="http://www.TAKEchon.NET/">http://www.TAKEchon.NET/</a>
+ *                      Anytime anywhere; TAKE it EASY!
+ */
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01408" href="msg01408.html">[mhc:01409] Re: mhc2palm doesn't work on Mac OS X</a></strong>
+<ul><li><em>From:</em> WATANABE Hirofumi</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01406.html">[mhc:01407] Re: mhc2palm &#x3067;&#x30A8;&#x30E9;&#x30FC;</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01408.html">[mhc:01409] Re: mhc2palm doesn't work on Mac OS X</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01405.html">[mhc:01406] Re: mhc2palm &#x3067;&#x30A8;&#x30E9;&#x30FC;</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01408.html">[mhc:01409] Re: mhc2palm doesn't work on Mac OS X</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01407"><strong>Date</strong></a></li>
+<li><a href="threads.html#01407"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

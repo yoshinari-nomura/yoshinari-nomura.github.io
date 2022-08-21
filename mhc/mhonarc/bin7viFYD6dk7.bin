@@ -1,0 +1,23 @@
+Index: wl-summary.el
+===================================================================
+RCS file: /cvs/root/wanderlust/wl/wl-summary.el,v
+retrieving revision 1.117
+diff -u -r1.117 wl-summary.el
+--- wl-summary.el	2002/01/31 22:03:24	1.117
++++ wl-summary.el	2002/02/06 12:06:52
+@@ -5244,10 +5244,11 @@
+ 	    (if (not wl-summary-indent-length-limit)
+ 		(wl-horizontal-recenter)))
+ 	  (wl-highlight-summary-displaying)
+-	  (wl-message-buffer-prefetch-next folder num
+-					   wl-message-buffer-prefetch-depth
+-					   (current-buffer)
+-					   wl-summary-buffer-mime-charset)
++	  (if wl-message-buffer-prefetch-depth
++	      (wl-message-buffer-prefetch-next folder num
++					       wl-message-buffer-prefetch-depth
++					       (current-buffer)
++					       wl-summary-buffer-mime-charset))
+ 	  (run-hooks 'wl-summary-redisplay-hook))
+       (message "No message to display."))))
+ 

@@ -1,0 +1,187 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00293] multiple histories (was Re: mhc&#45;insert&#45;schedule, per&#45;week support, and view by category) -->
+<!--X-From-R13: fra_zyNrppbflf.pbz -->
+<!--X-Date: Tue, 14 Dec 1999 19:58:01 +0900 -->
+<!--X-Message-Id: 19991214195749G.1000@eccosys.com -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Reference: 19991213184214K.1000@eccosys.com -->
+<!--X-Reference: 19991213191820D.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Reference: 19991213213852E.1000@eccosys.com -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00293] multiple histories (was Re: mhc-insert-schedule, per-week support, and view by category)</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00291.html">Date Prev</a>][<a href="msg00293.html">Date Next</a>][<a href="msg00291.html">Thread Prev</a>][<a href="msg00293.html">Thread Next</a>][<a href="maillist.html#00292">Date Index</a>][<a href="threads.html#00292">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00293] multiple histories (was Re: mhc-insert-schedule, per-week support, and view by category)</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00293] multiple histories (was Re: mhc-insert-schedule, per-week support, and view by category)</li>
+<li><em>From</em>: <a href="mailto:sen_ml@DOMAIN.HIDDEN">sen_ml@xxxxxxxxxxx</a></li>
+<li><em>Date</em>: Tue, 14 Dec 1999 19:58:01 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:19991213213852E.1000@DOMAIN.HIDDEN">19991213213852E.1000@xxxxxxxxxxx</a>&gt;</li>
+<li><em>Posted</em>: Tue, 14 Dec 1999 19:57:49 +0900</li>
+<li><em>References</em>: &lt;<a href="mailto:19991213184214K.1000@DOMAIN.HIDDEN">19991213184214K.1000@xxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:19991213191820D.nom@DOMAIN.HIDDEN">19991213191820D.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:19991213213852E.1000@DOMAIN.HIDDEN">19991213213852E.1000@xxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>History &#x95A2;&#x4FC2;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x9593;&#x9055;&#x3048;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3057;&#x305F;&#x3002;(^^;
+
+(defvar mhc-month-hist nil)
+
+&gt; (defun mhc-input-month (prompt)
+&gt;   (let ((ret nil) (month-str (ddate-yymm-s1 (ddate-now) &quot;/&quot;)))
+&gt;     (while (null ret)
+&gt;       (setq month-str 
+&gt; 	    (read-from-minibuffer
+&gt; 	     (concat prompt &quot;(yyyy/mm) : &quot;) month-str nil nil mhc-month-hist))
+                                                              ^^^^^^^^^^^^^^
+                                                              'mhc-month-hist
+&gt;       (if (string-match &quot;\\([0-9]+\\)/\\([0-9]+\\)&quot; month-str)
+&gt; 	  (setq ret(ddate-new (ddate-substring-to-int month-str 1)
+&gt; 			      (ddate-substring-to-int month-str 2) 1 t))))
+&gt;     ret))
+
+&#x306E;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;&#x3054;&#x3081;&#x3093;&#x306A;&#x3055;&#x3044; m(__)m
+
+&#x8907;&#x6570; History &#x306E;&#x304A;&#x8A66;&#x3057;&#x7248;&#x306E;&#x30D1;&#x30C3;&#x30C1;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002;
+
+&#xFF03; mhc-input-time &#x3042;&#x305F;&#x308A;&#x306F;&#x5BFE;&#x5FDC;&#x3057;&#x3066;&#x306A;&#x3044;&#x3067;&#x3059;&#x3002;
+</pre><pre>--- mhc-snap19991211/emacs/mhc.el	Sat Dec 11 17:58:16 1999
++++ mhc-snap19991211a/emacs/mhc.el	Tue Dec 14 19:08:33 1999
+@@ -124,12 +124,14 @@
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;; goto-*
+ 
++(defvar mhc-month-hist nil)
++
+ (defun mhc-input-month (prompt)
+   (let ((ret nil) (month-str (ddate-yymm-s1 (ddate-now) &quot;/&quot;)))
+     (while (null ret)
+       (setq month-str 
+ 	    (read-from-minibuffer
+-	     (concat prompt &quot;(yyyy/mm) : &quot;) month-str))
++	     (concat prompt &quot;(yyyy/mm) : &quot;) month-str nil nil 'mhc-month-hist))
+       (if (string-match &quot;\\([0-9]+\\)/\\([0-9]+\\)&quot; month-str)
+ 	  (setq ret(ddate-new (ddate-substring-to-int month-str 1)
+ 			      (ddate-substring-to-int month-str 2) 1 t))))
+@@ -579,11 +581,15 @@
+     ;;(mhc-sch-set-duration  sch (mhc-input-duration))
+   sch))
+ 
++(defvar mhc-subject-hist nil)
+ 
+ (defun mhc-input-subject (&amp;optional prompt default)
+   (interactive)
+   (read-from-minibuffer  (or prompt &quot;Subject: &quot;)
+-			 (or default &quot;&quot;)))
++			 (or default &quot;&quot;)
++			 nil nil 'mhc-subject-hist))
++
++(defvar mhc-category-hist nil)
+ 
+ (defun mhc-input-category (&amp;optional prompt default)
+   (interactive)
+@@ -591,16 +597,19 @@
+     (if (and default (listp default))
+ 	(setq default (mhc-misc-join default &quot; &quot;)))
+     (if (string= &quot;&quot; (setq in (read-from-minibuffer  (or prompt &quot;Category: &quot;)
+-						    (or default &quot;&quot;))))
++						    (or default &quot;&quot;)
++						    nil nil 'mhc-category-hist)))
+ 	nil
+       (mhc-misc-split in))))
+ 
++(defvar mhc-duration-hist nil)
++
+ (defun mhc-input-duration (&amp;optional prompt default)
+   (interactive)
+   (let ((str (or default &quot;&quot;)) date-b date-e)
+     (catch 'ok
+       (while t
+-	(setq str (read-from-minibuffer (concat (or prompt &quot;&quot;) &quot;Date: &quot;) str))
++	(setq str (read-from-minibuffer (concat (or prompt &quot;&quot;) &quot;Date: &quot;) str nil nil 'mhc-duration-hist))
+ 	(cond 
+ 	 ((and (string-match
+ 		&quot;^\\([0-9]+/[0-9]+/[0-9]+\\)-\\([0-9]+/[0-9]+/[0-9]+\\)$&quot; str)
+@@ -779,6 +788,8 @@
+      ))
+   (exchange-point-and-mark))
+ 
++(defvar mhc-date-hist nil)
++
+ (defun mhc-input-date (&amp;optional prompt default)
+   (interactive)
+   (let* ((ddate (or default (ddate-now)))
+@@ -786,7 +797,8 @@
+     ;; input ddate string.
+     (setq in (read-from-minibuffer
+ 	      (concat (or prompt &quot;&quot;) &quot; (yyyy/mm/dd) : &quot;)
+-	      (ddate-to-s1 ddate &quot;/&quot;)))
++	      (ddate-to-s1 ddate &quot;/&quot;)
++	      nil nil 'mhc-date-hist))
+     ;; check format
+     (if (not (string-match
+ 	      &quot;\\([0-9]+\\)/\\([0-9]+\\)/\\([0-9]+\\)&quot;
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00289" href="msg00289.html">[mhc:00290] mhc-insert-schedule, per-week support, and view by category (was Re: support for location?)</a></strong>
+<ul><li><em>From:</em> sen_ml</li></ul></li>
+<li><strong><a name="00290" href="msg00290.html">[mhc:00291] Re: mhc-insert-schedule, per-week support, and view by category (was Re: support for location?)</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+<li><strong><a name="00291" href="msg00291.html">[mhc:00292] Re: mhc-insert-schedule, per-week support, and view by category</a></strong>
+<ul><li><em>From:</em> sen</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00291.html">[mhc:00292] Re: mhc-insert-schedule, per-week support, and view by category</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00293.html">[mhc:00294] mhc-0.24 Released</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00291.html">[mhc:00292] Re: mhc-insert-schedule, per-week support, and view by category</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00293.html">[mhc:00294] mhc-0.24 Released</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00292"><strong>Date</strong></a></li>
+<li><a href="threads.html#00292"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

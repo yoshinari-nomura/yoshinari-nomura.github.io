@@ -1,0 +1,65 @@
+Index: mhc-e21.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc-e21.el,v
+retrieving revision 1.2
+diff -u -r1.2 mhc-e21.el
+--- mhc-e21.el	2001/12/25 15:40:55	1.2
++++ mhc-e21.el	2002/10/15 11:23:40
+@@ -131,20 +131,6 @@
+ 	(add-text-properties pos (point) props))
+       (setq icons (cdr icons)))))
+ 
+-(defun mhc-input-category (&optional prompt default)
+-  (interactive)
+-  (let ((completion-ignore-case t)
+-	(table (nconc (mapcar (lambda (x) (list (car x)))
+-			      mhc-category-face-alist)
+-		      (list (list "Todo") (list "Done")))))
+-    (completing-read-multiple (or prompt "Category: ")  ;PROMPT
+-			      table
+-			      nil                 ;PREDICATE
+-			      nil                 ;REQUIRE-MATCH
+-			      default             ;INITIAL-INPUT
+-			      'mhc-category-hist  ;HIST
+-			      )))
+-
+ (provide 'mhc-e21)
+ 
+ ;;; Copyright Notice:
+Index: mhc-minibuf.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc-minibuf.el,v
+retrieving revision 1.12
+diff -u -r1.12 mhc-minibuf.el
+--- mhc-minibuf.el	2001/12/25 15:40:55	1.12
++++ mhc-minibuf.el	2002/10/15 11:23:41
+@@ -348,14 +348,27 @@
+ 
+ (defvar mhc-category-hist nil)
+ 
+-(unless (fboundp 'mhc-input-category)
++(if (fboundp 'completing-read-multiple)
++    (defun mhc-input-category (&optional prompt default)
++      (interactive)
++      (let ((completion-ignore-case t)
++	    (table (nconc (mapcar (lambda (x) (list (car x)))
++				  mhc-category-face-alist)
++			  (list (list "Todo") (list "Done")))))
++	(completing-read-multiple (or prompt "Category: ")  ;PROMPT
++				  table
++				  nil                 ;PREDICATE
++				  nil                 ;REQUIRE-MATCH
++				  default             ;INITIAL-INPUT
++				  'mhc-category-hist  ;HIST
++				  )))
+   (defun mhc-input-category (&optional prompt default)
+     (interactive)
+     (let (in)
+       (and default
+ 	   (listp default)
+ 	   (setq default (mapconcat 'identity default " ")))
+-      (if (string= "" (setq in (read-from-minibuffer 
++      (if (string= "" (setq in (read-from-minibuffer
+ 				(or prompt "Category: ")
+ 				(or default "")
+ 				nil nil 'mhc-category-hist)))

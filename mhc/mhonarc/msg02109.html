@@ -1,0 +1,263 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:02110] patch (today.in) -->
+<!--X-From-R13: @AUGQVW Khfhxr <abthabthNzin.ovtybor.ar.wc> -->
+<!--X-Date: Sun, 24 Apr 2005 19:45:13 +0900 (JST) -->
+<!--X-Message-Id: 20050424.194513.128885546.nogunogu@mva.biglobe.ne.jp -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:02110] patch (today.in)</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg02108.html">Date Prev</a>][<a href="msg02110.html">Date Next</a>][<a href="msg02111.html">Thread Prev</a>][<a href="msg02110.html">Thread Next</a>][<a href="maillist.html#02109">Date Index</a>][<a href="threads.html#02109">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:02110] patch (today.in)</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:02110] patch (today.in)</li>
+<li><em>From</em>: NOGUCHI Yusuke &lt;<a href="mailto:nogunogu@DOMAIN.HIDDEN">nogunogu@xxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Sun, 24 Apr 2005 19:45:13 +0900 (JST)</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x91CE;&#x53E3;&#x3067;&#x3059;&#x3002;
+
+&#x751F;&#x6D3B;&#x74B0;&#x5883;&#x306F;&#x3001;WinXP + Meadow + Cygwin &#x3068;&#x3044;&#x3046;&#x72B6;&#x6CC1;&#x3067;&#x3059;&#x3002;
+
+  localhost &#x3067;&#x306F; smtp &#x30B5;&#x30FC;&#x30D0;&#x304C;&#x52D5;&#x3044;&#x3066;&#x3044;&#x306A;&#x3044;
+
+&#x5834;&#x5408;&#x306B;&#x3001; today &#x3067;&#x300C;ISP&#x306E; smtp &#x30B5;&#x30FC;&#x30D0;&#x3092;&#x5229;&#x7528;&#x3057;&#x3066;&#x300D;&#x30E1;&#x30FC;&#x30EB;&#x3092;&#x9001;&#x308A;&#x305F;&#x3044;&#x3068;&#x601D;&#x3044;&#x3001;
+&#x6DFB;&#x4ED8;&#x306E;&#x3088;&#x3046;&#x306B;&#x624B;&#x3092;&#x5165;&#x308C;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002;
+
+&#x79C1;&#x306E;&#x5229;&#x7528;&#x3057;&#x3066;&#x3044;&#x308B; ISP &#x3067;&#x306F;&#x3001;
+  &#x30FB;From: &#x304C;&#x305D;&#x306E;ISP&#x306E;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3067;&#x306A;&#x3044;&#x3068;&#x30C0;&#x30E1;
+  &#x30FB;&#x307E;&#x305A; SMTP-AUTH &#x3067;&#x8A8D;&#x8A3C;&#x3057;&#x306A;&#x3044;&#x3068;&#x30C0;&#x30E1;
+&#x3068;&#x3044;&#x3046;&#x5236;&#x7D04;&#x304C;&#x3042;&#x308A;&#x307E;&#x3057;&#x3066;&#x3001;&#x305D;&#x308C;&#x306B;&#x3082;&#x5BFE;&#x5FDC;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x3066;&#x307F;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+  --mail=ToADDRESS[[ToADDRESS2,...],FromAddress]
+                         send a e-mail to ToADDRESS(s) instead of listing
+                         to stdout.
+                         If you want to specify From:, set FromAddress.
+  --smtpserver=HOSTNAME[,ACCOUNT,PASSWD,AUTHTYPE]
+                         specify SMTP Server when sending e-mail.
+                         If you have to use SMTP-AUTH, use below:
+                            ACCOUNT:  Account for SMTP AUTH
+                            PASSWD:   Passowrd for SMTP AUTH
+                            AUTHTYPE: Authentication method for SMTP AUTH
+                                      (&quot;plain&quot; or &quot;cram_md5&quot; or &quot;login&quot;)
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+&#x4EE5;&#x4E0A;&#x3001;&#x3054;&#x691C;&#x8A0E;&#x3044;&#x305F;&#x3060;&#x3051;&#x308C;&#x3070;&#x5E78;&#x3044;&#x3067;&#x3059;&#x3002;
+-- 
+NOGUCHI Yusuke &lt;nogunogu@xxxxxxxxxxxxxxxxx&gt;
+</pre><pre>*** mhc-current-snap20050420/today.in	Mon Jan 12 19:24:37 2004
+--- mhc-current-snap20050420-new/today.in	Sun Apr 24 19:41:28 2005
+***************
+*** 17,24 ****
+  
+  $DEBUG2       = false
+  
+- MailServer    = 'localhost'  ## for --mail option
+  MyHostName    = 'localhost'  ## for --mail option
+  
+  require 'mhc-schedule'
+  require 'mhc-kconv'
+--- 17,27 ----
+  
+  $DEBUG2       = false
+  
+  MyHostName    = 'localhost'  ## for --mail option
++ smtpServer    = 'localhost'  ## for --mail option
++ smtp_account = nil
++ smtp_passwd = nil
++ smtp_type = nil
+  
+  require 'mhc-schedule'
+  require 'mhc-kconv'
+***************
+*** 49,65 ****
+  def usage(do_exit = true)
+    STDERR .print &quot;usage: today [options]
+    Show your today's schedules.
+!   --help               show this message.
+!   --format=FORMAT      change output format to one of: ps, html
+!   --category=CATEGORY  pick only in CATEGORY. 
+!                        '!' and space separated multiple values are allowed.
+!   --date=strig[+n]     set a period of date.
+!                        string is one of these:
+!                          today, tomorrow, sun ... sat, yyyymmdd, yyyymm
+!                        yyyymm lists all days in the month.
+!                        list n+1 days of schedules if +n is given.
+!                        default value is 'today+0'
+!   --mail=ADDRESS       send a e-mail to ADDRESS instead of listing to stdout.\n&quot;
+    exit if do_exit
+  end
+  
+--- 52,79 ----
+  def usage(do_exit = true)
+    STDERR .print &quot;usage: today [options]
+    Show your today's schedules.
+!   --help                 show this message.
+!   --format=FORMAT        change output format to one of: ps, html
+!   --category=CATEGORY    pick only in CATEGORY. 
+!                          '!' and space separated multiple values are allowed.
+!   --date=strig[+n]       set a period of date.
+!                          string is one of these:
+!                            today, tomorrow, sun ... sat, yyyymmdd, yyyymm
+!                          yyyymm lists all days in the month.
+!                          list n+1 days of schedules if +n is given.
+!                          default value is 'today+0'
+!   --mail=ToADDRESS[[ToADDRESS2,...],FromAddress]
+!                          send a e-mail to ToADDRESS(s) instead of listing 
+!                          to stdout.
+!                          If you want to specify From:, set FromAddress.
+!   --smtpserver=HOSTNAME[,ACCOUNT,PASSWD,AUTHTYPE]
+!                          specify SMTP Server when sending e-mail.
+!                          If you have to use SMTP-AUTH, use below:
+!                             ACCOUNT:  Account for SMTP AUTH
+!                             PASSWD:   Passowrd for SMTP AUTH
+!                             AUTHTYPE: Authentication method for SMTP AUTH
+!                                       (\&quot;plain\&quot; or \&quot;cram_md5\&quot; or \&quot;login\&quot;)
+! \n&quot;
+    exit if do_exit
+  end
+  
+***************
+*** 235,242 ****
+      date_from, date_to = string_to_date($1, $3) || usage()
+  
+    when /^--mail=(.+)/
+!     mail_address = $1
+! 
+    else
+      usage()
+    end
+--- 249,275 ----
+      date_from, date_to = string_to_date($1, $3) || usage()
+  
+    when /^--mail=(.+)/
+!     mail_address = $1 .split(',')
+!     if mail_address .size &gt; 1
+!       from_addr = mail_address[-1]
+!       mail_address .delete_at(-1)
+!       to_addr = mail_address
+!     else
+!       to_addr = mail_address[0]
+!       from_addr = &quot;secretary-of-&quot; + to_addr
+!     end
+!   when /^--smtpserver=(.+)/
+!     smtpServer, smtp_account, smtp_passwd, smtp_type = $1 .split(',')
+!     case smtp_type
+!     when &quot;plain&quot;
+!       smtp_type = :plain
+!     when &quot;login&quot;
+!       smtp_type = :login
+!     when &quot;cram_md5&quot;
+!       smtp_type = :cram_md5
+!     else
+!       usage()
+!     end
+    else
+      usage()
+    end
+***************
+*** 251,259 ****
+  db = MhcScheduleDB .new
+  
+  if mail_address
+!   header    = &quot;To: #{mail_address}\n&quot;
+!   header   += &quot;From: secretary-of-#{mail_address}\n&quot;
+    header   += &quot;Subject: Today's schedule (#{date_from .to_s})\n&quot;
+    header   += &quot;\n&quot;
+    header   += &quot;#{user_name}'s schedule: \n\n&quot;
+    contents  = 
+--- 284,294 ----
+  db = MhcScheduleDB .new
+  
+  if mail_address
+!   date = Time.now.strftime(&quot;%a, %d %b %Y %H:%M:%S %z&quot;)
+!   header    = &quot;To: #{to_addr.join(' ,')}\n&quot;
+!   header   += &quot;From: #{from_addr}\n&quot;
+    header   += &quot;Subject: Today's schedule (#{date_from .to_s})\n&quot;
++   header   += &quot;Date: #{date}\n&quot;
+    header   += &quot;\n&quot;
+    header   += &quot;#{user_name}'s schedule: \n\n&quot;
+    contents  = 
+***************
+*** 261,268 ****
+  
+    if contents &amp;&amp; contents != ''
+      message = MhcKconv::tomail(header + contents)
+!     Net::SMTPSession .start(MailServer, 25, MyHostName) {|server|
+!       server .sendmail(message, mail_address, [mail_address])
+      }
+    end
+  else
+--- 296,303 ----
+  
+    if contents &amp;&amp; contents != ''
+      message = MhcKconv::tomail(header + contents)
+!     Net::SMTPSession .start(smtpServer, 25, MyHostName, smtp_account, smtp_passwd, smtp_type) {|server|
+!       server .sendmail(message, from_addr, to_addr)
+      }
+    end
+  else
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="02110" href="msg02110.html">[mhc:02111] Re: patch (today.in)</a></strong>
+<ul><li><em>From:</em> NOGUCHI Yusuke</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg02108.html">[mhc:02109] Re: patch (mhc2ol.in, ruby-ext/lib/mhc-schedule.rb)</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg02110.html">[mhc:02111] Re: patch (today.in)</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg02111.html">[mhc:02112] Re: mhc-draft-unuse-hdr-list &#x3078;&#x306E;&#x8FFD;&#x52A0;&#x30A8;&#x30F3;&#x30C8;&#x30EA;&#x5E0C;&#x671B;</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg02110.html">[mhc:02111] Re: patch (today.in)</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#02109"><strong>Date</strong></a></li>
+<li><a href="threads.html#02109"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

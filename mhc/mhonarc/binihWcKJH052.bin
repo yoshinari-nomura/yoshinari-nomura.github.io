@@ -1,0 +1,10 @@
+--- /home/yoichi/../working/elisp/mhc/mhc/emacs/mhc.el	Fri Oct  6 19:24:25 2000
++++ /usr/local/share/emacs/site-lisp/mhc/mhc.el	Mon Oct  9 22:49:06 2000
+@@ -143,6 +143,7 @@
+ \\[mhc-import]	Register the reviewing mail to schdule
+ \\[mhc-delete]	Delete the schdule on the cursor line
+ \\[mhc-set-default-category]	Edit the schdule on the cursor line
++\\[mhc-modify]	Modify the schdule on the cursor line
+ \\[mhc-edit]	Create new schdule file
+ \\[mhc-set-default-category]	Change default category
+ \\[mhc-calendar]	Display 3 months mini calendar

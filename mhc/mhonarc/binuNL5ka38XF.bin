@@ -1,0 +1,21 @@
+--- mhc.el.orig	Mon Apr 17 13:00:06 2000
++++ mhc.el	Tue Apr 18 09:39:12 2000
+@@ -30,6 +30,7 @@
+ ;;   (setq mhc-mailer-package 'gnus)
+ ;;   (autoload 'mhc-mode "mhc" nil t)
+ ;;   (add-hook 'gnus-summary-mode-hook 'mhc-mode)
++;;   (add-hook 'gnus-group-mode-hook 'mhc-mode)
+ 
+ (require 'mhc-misc)
+ (require 'mhc-date)
+@@ -431,7 +432,9 @@
+ 	  (setcar (cdr (gnus-info-method (gnus-get-info pvgroup))) methods)
+ 	  (save-window-excursion
+ 	    (if (gnus-group-read-group 0 t pvgroup)
+-		(kill-buffer nil)))
++		(progn
++		  (gnus-summary-rescan-group)
++		  (kill-buffer nil))))
+ 	  (make-local-variable 'gnus-newsgroup-data)))))
+     (message "Scanning %s ..." (ddate-yymm-s1 ddate "/"))
+     (mhc-sch-scan (ddate-mm-first-day ddate)

@@ -1,0 +1,164 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00342] mhc on XEmacs -->
+<!--X-From-R13: Vvqrlhxv EVWDOW (=?vfb&#45;2022&#45;wc?P?UlDQD3WjLw0bAHCoYSW=?=) <fuvenvNeqzt.ztpf.zrv.pb.wc> -->
+<!--X-Date: Fri, 14 Jan 2000 20:00:36 +0900 -->
+<!--X-Message-Id: 20000114.195929.46107889.shirai@rdmg.mgcs.mei.co.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00342] mhc on XEmacs</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00340.html">Date Prev</a>][<a href="msg00342.html">Date Next</a>][<a href="msg00346.html">Thread Prev</a>][<a href="msg00347.html">Thread Next</a>][<a href="maillist.html#00341">Date Index</a>][<a href="threads.html#00341">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00342] mhc on XEmacs</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00342] mhc on XEmacs</li>
+<li><em>From</em>: Hideyuki SHIRAI (&#x767D;&#x4E95;&#x79C0;&#x884C;) &lt;<a href="mailto:shirai@DOMAIN.HIDDEN">shirai@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Fri, 14 Jan 2000 20:00:36 +0900</li>
+<li><em>Posted</em>: Fri, 14 Jan 2000 19:59:29 +0900 (JST)</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x767D;&#x4E95;&#x3067;&#x3059;&#x3002;
+
+XEmacs &#x3067; mhc &#x3092;&#x4F7F;&#x3046;&#x3068;&#x304D;&#x306E;&#x4E0D;&#x5177;&#x5408;&#x3092; 2&#x3064;&#x307B;&#x3069;&#x898B;&#x4ED8;&#x3051;&#x307E;&#x3057;&#x305F;&#x3002;
+emacs-version =&gt; &quot;21.2 (beta26) &quot;Millenium&quot; XEmacs Lucid&quot; &#x3067;&#x3059;&#x3002;
+
+1. rescan &#x306E;&#x3068;&#x304D;&#x3001;(what-line) &#x306E;&#x623B;&#x308A;&#x5024;&#x304C; 't' &#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x7834;
+ &#x7DBB;&#x3059;&#x308B;&#x3002;
+
+simple.el &#x3067;&#x306F;
+(defun what-line ()
+  &lt;&lt;snip&gt;&gt;
+		 (message &quot;Line %d&quot; buffer-line)))))))
+  (setq zmacs-region-stays t)) =&gt; &#x3053;&#x308C;&#x304C;&#x623B;&#x308A;&#x5024;&#x306B;&#x306A;&#x308B;
+
+&#x3067;&#x3059;&#x3063;&#x3066;&#x3002;&#x30D1;&#x30C3;&#x30C1;&#x53C2;&#x7167;&#x3002;
+
+# &#x306A;&#x3093;&#x304B;&#x306E;&#x672C;&#x3067; what-line &#x306F; elisp &#x304B;&#x3089;&#x4F7F;&#x3046;&#x306A;&#x3063;&#x3066;&#x66F8;&#x3044;&#x3066;&#x3042;&#x3063;&#x305F;&#x3088;&#x3046;
+# &#x306A;&#x304B;&#x3059;&#x304B;&#x306A;&#x8A18;&#x61B6;&#x304C;&#x3042;&#x308B;&#x306E;&#x3060;&#x3051;&#x3069;&#x3002;&#x3002;&#x3002;
+
+
+2. &#x540C;&#x4E00; buffer &#x306B;&#x7E26;&#x578B;&#x30AB;&#x30EC;&#x30F3;&#x30C0;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;&#x3068;&#x3001;&#x8868;&#x793A;&#x304C;&#x4E71;&#x308C;&#x308B;&#x3002;
+ (tab=8 &#x3067;&#x898B;&#x3066;&#x306D;)
+
+01/01  Sat             &#x5143;&#x65E5;						  |    December 1999
+                       &#x6B63;&#x6708;&#x4F11;&#x307F;					  | Su Mo Tu We Th Fr Sa
+------------------------------------------------------			  |           1  2  3  4 
+01/02 (Sun)            &#x6B63;&#x6708;&#x4F11;&#x307F;					  |  5  6  7  8  9 10 11
+01/03  Mon             &#x6B63;&#x6708;&#x4F11;&#x307F;					  | 12 13 14 15 16 17 18
+01/04  Tue             &#x6B63;&#x6708;&#x4F11;&#x307F;					  | 19 20 21 22 23 24 25
+01/05  Wed 09:00-09:20 &#x59CB;&#x696D;&#x5F0F;					  | 26 27 28 29 30 31
+01/06  Thu             						  |
+01/07  Fri 15:00       &#x4E8B;&#x696D;&#x8A08;&#x753B;&#x518D;&#x691C;&#x8A0E;(&#x30E9;&#x30F3;&#x30AF;)			  |    January 2000
+           16:00       &#x9032;&#x6357;&#x5831;&#x544A;					  | Su Mo Tu We Th Fr Sa
+01/08  Sat 09:30       &#x65B0;&#x4E95;&#x6B6F;&#x79D1;					  |                    1
+------------------------------------------------------			  |  2  3  4  5  6  7  8 
+
+mhc-cal-move-to-column-force (column) &#x3057;&#x305F;&#x5834;&#x6240;&#x304C;&#x3001;&#x3082;&#x3068;&#x3082;&#x3068;&#x304A;&#x304B;&#x3057;
+&#x3044;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;
+(put-text-property (point-min) (point-max) 'invisible nil)
+&#x3057;&#x3066;&#x307F;&#x308B;&#x3068;
+
+
+01/01  Sat             &#x5143;&#x65E5;						  |    December 1999
+0 |                        &#x6B63;&#x6708;&#x4F11;&#x307F;					  | Su Mo Tu We Th Fr Sa
+------------------------------------------------------			  |           1  2  3  4 
+0 | 01/02 (Sun)            &#x6B63;&#x6708;&#x4F11;&#x307F;					  |  5  6  7  8  9 10 11
+0 | 01/03  Mon             &#x6B63;&#x6708;&#x4F11;&#x307F;					  | 12 13 14 15 16 17 18
+0 | 01/04  Tue             &#x6B63;&#x6708;&#x4F11;&#x307F;					  | 19 20 21 22 23 24 25
+0 | 01/05  Wed 09:00-09:20 &#x59CB;&#x696D;&#x5F0F;					  | 26 27 28 29 30 31
+0 | 01/06  Thu             						  |
+0 | 01/07  Fri 15:00       &#x4E8B;&#x696D;&#x8A08;&#x753B;&#x518D;&#x691C;&#x8A0E;(&#x30E9;&#x30F3;&#x30AF;)			  |    January 2000
+0 |            16:00       &#x9032;&#x6357;&#x5831;&#x544A;					  | Su Mo Tu We Th Fr Sa
+0 | 01/08  Sat 09:30       &#x65B0;&#x4E95;&#x6B6F;&#x79D1;					  |                    1
+------------------------------------------------------			  |  2  3  4  5  6  7  8 
+
+&#x3068;&#x306A;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;&#x79C1;&#x306E;&#x5834;&#x5408;&#x306F;&#x3053;&#x308C;&#x304C;&#x6B63;&#x3057;&#x3044;&#x4F4D;&#x7F6E;&#x3067;&#x3059;&#x3002;&#x3053;&#x3061;&#x3089;&#x306F;&#x3001;&#x3069;&#x3046;&#x5BFE;&#x51E6;
+&#x3059;&#x308C;&#x3070;&#x3044;&#x3044;&#x306E;&#x304B;&#x308F;&#x304B;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;
+
+-- 
+&#x767D;&#x4E95;&#x79C0;&#x884C; (<a  rel="nofollow" href="mailto:shirai@xxxxxxxxxxxxxxxxxxx">mailto:shirai@xxxxxxxxxxxxxxxxxxx</a>)
+
+&#x4EE5;&#x4E0B;&#x3001;what-line &#x7528;&#x306E;&#x30D1;&#x30C3;&#x30C1;&#x3067;&#x3059;&#x3002;info &#x306E;&#x307E;&#x3093;&#x307E;&#x3002;
+
+--- mhc.el.orig	Fri Jan 14 18:44:02 2000
++++ mhc.el	Fri Jan 14 19:32:52 2000
+@@ -179,8 +179,8 @@
+ (defun mhc-rescan-month (&amp;optional hide-private)
+   (interactive &quot;P&quot;)
+   (let ((category (mhc-category-convert mhc-default-category))
+-	(line (string-to-int
+-	       (substring (what-line) (string-match &quot;[0-9]+&quot; (what-line))))))
++	(line (+ (count-lines (point-min) (point))
++		 (if (= (current-column) 0) 1 0))))
+     (mhc-scan-month
+      (mhc-current-ddate-month)
+      mhc-mailer-package
+@@ -457,7 +457,6 @@
+ 	 (add-hook 'post-command-hook 'mhc-calendar-post-command))))
+ 
+ (defun mhc-calendar-post-command ()
+-  (interactive)
+   (if (and mhc-calendar-date
+ 	   (get-buffer mhc-calendar-buffer))
+       (let ((win (selected-window))
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00347" href="msg00347.html">[mhc:00348] Re: mhc on XEmacs</a></strong>
+<ul><li><em>From:</em> &#x767D;&#x4E95;&#x79C0;&#x884C;</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00340.html">[mhc:00341] calendar-other-window</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00342.html">[mhc:00343] mhc snap20000112 impression</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00346.html">[mhc:00347] Re: ruby for Windows.</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00347.html">[mhc:00348] Re: mhc on XEmacs</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00341"><strong>Date</strong></a></li>
+<li><a href="threads.html#00341"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

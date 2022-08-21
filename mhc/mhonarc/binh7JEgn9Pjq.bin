@@ -1,0 +1,32 @@
+Index: ruby-ext/lib/mhc-palm.rb
+===================================================================
+RCS file: /cvsroot/mhc/ruby-ext/lib/mhc-palm.rb,v
+retrieving revision 1.11
+diff -u -r1.11 mhc-palm.rb
+--- ruby-ext/lib/mhc-palm.rb	22 Jun 2004 10:09:15 -0000	1.11
++++ ruby-ext/lib/mhc-palm.rb	19 Sep 2008 08:57:46 -0000
+@@ -668,7 +668,7 @@
+       part1_is_header = false
+     end
+ 
+-    part1 .split("\n") .each{|line|
++    part1 .to_s .split("\n") .each{|line|
+       if !(string =~ /^[ \t]+/ or string =~ /^[A-Za-z0-9_-]+:/)
+ 	part1_is_header = false
+       end
+Index: ruby-ext/lib/mhc-schedule.rb
+===================================================================
+RCS file: /cvsroot/mhc/ruby-ext/lib/mhc-schedule.rb,v
+retrieving revision 1.23
+diff -u -r1.23 mhc-schedule.rb
+--- ruby-ext/lib/mhc-schedule.rb	3 Oct 2005 14:23:03 -0000	1.23
++++ ruby-ext/lib/mhc-schedule.rb	19 Sep 2008 08:57:47 -0000
+@@ -1298,7 +1298,7 @@
+     parent = File .dirname(dir)
+     if makedir_or_higher(parent)
+       Dir .mkdir(dir)
+-      File .open(dir, "r") .fsync .close if File .method_defined?("fsync")
++      File .open(dir, "r") {|f| f .sync} if File .method_defined?("fsync")
+       return true
+     end
+     return false

@@ -1,0 +1,155 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00499] Re: About T&#45;gnus support ( Re: Variable binding depth exceeds max&#45;specpdl&#45;size ) -->
+<!--X-From-R13: [WKAEVW [nfnabev <zvlbfuvNuey.uvgnpuv.pb.wc> -->
+<!--X-Date: Tue, 18 Apr 2000 09:58:09 +0900 -->
+<!--X-Message-Id: wkn1msql7v.fsf@metaxa.hrl.hitachi.co.jp -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Reference: 20000301182205S.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Reference: 200004161441.XAA17560@crest.csce.kyushu&#45;u.ac.jp -->
+<!--X-Reference: wk4s92829k.fsf@miyoshi.ask.ne.jp -->
+<!--X-Reference: mpa1z45v9ol.fsf_&#45;_@olive.kuee.kyoto&#45;u.ac.jp -->
+<!--X-Reference: wkr9c54hlp.fsf@metaxa.hrl.hitachi.co.jp -->
+<!--X-Reference: mpak8hxmp49.fsf@olive.kuee.kyoto&#45;u.ac.jp -->
+<!--X-Reference: wkitxhgm0i.fsf@metaxa.hrl.hitachi.co.jp -->
+<!--X-Reference: mpad7noz1xo.fsf@olive.kuee.kyoto&#45;u.ac.jp -->
+<!--X-Derived: binuNL5ka38XF.bin -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00499] Re: About T-gnus support ( Re: Variable binding depth exceeds max-specpdl-size )</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00497.html">Date Prev</a>][<a href="msg00499.html">Date Next</a>][<a href="msg00497.html">Thread Prev</a>][<a href="msg00503.html">Thread Next</a>][<a href="maillist.html#00498">Date Index</a>][<a href="threads.html#00498">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00499] Re: About T-gnus support ( Re: Variable binding depth exceeds max-specpdl-size )</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00499] Re: About T-gnus support ( Re: Variable binding depth exceeds max-specpdl-size )</li>
+<li><em>From</em>: MIYOSHI Masanori &lt;<a href="mailto:miyoshi@DOMAIN.HIDDEN">miyoshi@xxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Tue, 18 Apr 2000 09:58:09 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:mpad7noz1xo.fsf@DOMAIN.HIDDEN">mpad7noz1xo.fsf@xxxxxxxxxxxxxxxxxxxxxxxx</a>&gt; (TSUCHIYA Masatoshi's message of &quot;Tue, 18 Apr 2000 09:29:41 +0900&quot;)</li>
+<li><em>Posted</em>: 18 Apr 2000 09:57:56 +0900</li>
+<li><em>References</em>: &lt;<a href="mailto:20000301182205S.nom@DOMAIN.HIDDEN">20000301182205S.nom@xxxxxxxxxxxxxxxxxxx</a>&gt; &lt;<a href="mailto:200004161441.XAA17560@DOMAIN.HIDDEN">200004161441.XAA17560@xxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt; &lt;<a href="mailto:wk4s92829k.fsf@DOMAIN.HIDDEN">wk4s92829k.fsf@xxxxxxxxxxxxxxxxx</a>&gt; &lt;<a href="mailto:mpa1z45v9ol.fsf_-_@DOMAIN.HIDDEN">mpa1z45v9ol.fsf_-_@xxxxxxxxxxxxxxxxxxxxxxxx</a>&gt; &lt;<a href="mailto:wkr9c54hlp.fsf@DOMAIN.HIDDEN">wkr9c54hlp.fsf@xxxxxxxxxxxxxxxxxxxxxxxx</a>&gt; &lt;<a href="mailto:mpak8hxmp49.fsf@DOMAIN.HIDDEN">mpak8hxmp49.fsf@xxxxxxxxxxxxxxxxxxxxxxxx</a>&gt; &lt;<a href="mailto:wkitxhgm0i.fsf@DOMAIN.HIDDEN">wkitxhgm0i.fsf@xxxxxxxxxxxxxxxxxxxxxxxx</a>&gt; &lt;<a href="mailto:mpad7noz1xo.fsf@DOMAIN.HIDDEN">mpad7noz1xo.fsf@xxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: Nana-gnus/7.1.0.16 SEMI/1.13.7 (Awazu) FLIM/1.13.2 (Kasanui) Emacs/20.6 (i386-*-windows98.2222) MULE/4.1 (AOI) Meadow/1.13 Beta1 (TANAHASHI:61)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&gt;&gt;&gt;&gt;&gt; [mhc : No.00498] &#x306B;&#x3066;
+&gt;&gt;&gt;&gt;&gt; &quot;&#x571F;&#x5C4B;&quot; = TSUCHIYA Masatoshi &lt;tsuchiya@xxxxxxxxxxxxxxxxxxxxxxx&gt; &#x3055;&#x3093;&#x306F;&#x66F8;&#x304D;&#x307E;&#x3057;&#x305F;:
+&#x571F;&#x5C4B;&gt; &#x305F;&#x3060;&#x3001;&#x3053;&#x308C;&#x3063;&#x3066; 
+
+&#x571F;&#x5C4B;&gt;   (save-window-excursion
+&#x571F;&#x5C4B;&gt;     (if (gnus-group-read-group 0 t pvgroup)
+&#x571F;&#x5C4B;&gt;         (progn
+&#x571F;&#x5C4B;&gt;           (gnus-summary-rescan-group)
+&#x571F;&#x5C4B;&gt;           (kill-buffer nil))))
+
+&#x571F;&#x5C4B;&gt; &#x3067;&#x306F;&#x306A;&#x3044;&#x306E;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#x3002;
+
+&#x571F;&#x5C4B;&gt; # &#x305D;&#x3046;&#x3057;&#x306A;&#x3044;&#x3068;&#x3001;kill-buffer &#x3092;&#x884C;&#x3046;&#x6761;&#x4EF6;&#x306E;&#x771F;&#x7406;&#x5024;&#x304C;&#x524D;&#x3068;&#x306F;&#x9055;&#x3063;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3059;
+&#x571F;&#x5C4B;&gt; # &#x304C;&#x3002;
+
+&#x3068;&#x307B;&#x307B;&#x307B;&#x3063;&#x3002;&#x304A;&#x3063;&#x3057;&#x3083;&#x308B;&#x901A;&#x308A;&#x3067;&#x3059;&#x3002;
+&#x60C5;&#x3051;&#x306A;&#x3044;&#x9593;&#x9055;&#x3048;&#x3092;&#x3057;&#x3066;&#x3057;&#x307E;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;&#x3059;&#x307F;&#x307E;&#x305B;&#x3093;&#x3002;
+
+&#x4E00;&#x5FDC;&#x4FEE;&#x6B63;&#x7248;&#x306E;&#x30D1;&#x30C3;&#x30C1;&#x3092;&#x6DFB;&#x4ED8;&#x3057;&#x307E;&#x3059;&#x3002;
+
+&#x3082;&#x3063;&#x3068;&#x3088;&#x3044;&#x89E3;&#x6C7A;&#x65B9;&#x6CD5;&#x3092;&#x3060;&#x308C;&#x304B;&#x8003;&#x3048;&#x3066;&#x304F;&#x308C;&#x306A;&#x3044;&#x304B;&#x306A;&#x3068;&#x601D;&#x3044;&#x3064;&#x3064;&#x3001;
+&#x4FEE;&#x6B63;&#x5185;&#x5BB9;&#x306E;&#x3053;&#x3068;&#x306B;&#x5C11;&#x3057;&#x89E6;&#x308C;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x3053;&#x3067;&#x306F;&#x3001;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x306E;&#x30B0;&#x30EB;&#x30FC;&#x30D7;(nnvirtual &#x3092;&#x4F7F;&#x3063;&#x3066;&#x3044;&#x308B;)&#x306E;&#x30E1;&#x30C3;
+&#x30BB;&#x30FC;&#x30B8;&#x3092;&#x5F37;&#x5236;&#x7684;&#x306B; rescan &#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x4FEE;&#x6B63;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;
+Nana-gnus 6.13.9 &#x3067;&#x306F;&#x3001;&#x305D;&#x306E;&#x30B0;&#x30EB;&#x30FC;&#x30D7;&#x306B;&#x5BFE;&#x5FDC;&#x3059;&#x308B; gnus &#x306E;&#x30B5;&#x30DE;&#x30EA;&#x30D0;&#x30C3;&#x30D5;&#x30A1;
+&#x304C;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3044;&#x5834;&#x5408;(&#x4E0A;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3067;&#x306F; kill &#x3057;&#x3066;&#x3044;&#x308B;)&#x306F;&#x3001;&#x6697;&#x9ED9;&#x306E;&#x3046;&#x3061;&#x306B;&#x3001;
+&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x3092; rescan &#x3057;&#x3066;&#x3044;&#x307E;&#x3057;&#x305F;&#x3002;&#x3057;&#x304B;&#x3057;&#x3001;Nana7, T-gnus6.14 &#x3067;&#x306F;
+&#x305D;&#x3046;&#x3067;&#x306F;&#x306A;&#x3044;&#x3088;&#x3046;&#x3067;&#x3059;&#x3002;&#x5F93;&#x3063;&#x3066;&#x3001;&#x660E;&#x793A;&#x7684;&#x306B; rescan &#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;
+
+&#x571F;&#x5C4B;&gt; &#x6628;&#x65E5;&#x304B;&#x3089;&#x3001;&#x305A;&#x30FC;&#x3063;&#x3068; MHC &#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x89E6;&#x3063;&#x3066;&#x307E;&#x3059;&#x3002;&#x3053;&#x3093;&#x306A;&#x306B;&#x8208;&#x596E;&#x3055;&#x305B;&#x3066;&#x304F;&#x308C;&#x308B; 
+&#x571F;&#x5C4B;&gt; Elisp &#x306B;&#x51FA;&#x4F1A;&#x3063;&#x305F;&#x306E;&#x306F;&#x3001;&#x968F;&#x5206;&#x4E45;&#x3057;&#x3076;&#x308A;&#x3067;&#x3059;&#x3002;&#x4F5C;&#x8005;&#x306E;&#x53CA;&#x6751;&#x3055;&#x3093;&#x306B;&#x5927;&#x611F;&#x8B1D;&#x3067;&#x3059;&#x306D;&#x3002;
+
+&#x307B;&#x3093;&#x3068;&#x3001;MHC &#x3066;&#x697D;&#x3057;&#x304F;&#x3066;&#x4FBF;&#x5229;&#x3067;&#x3059;&#x3088;&#x306D;&#x3002;
+
+&#x79C1;&#x306E;&#x5834;&#x5408;&#x3001;&#x30E1;&#x30FC;&#x30EB;&#x3067;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x304C;&#x6C7A;&#x307E;&#x308B;&#x3053;&#x3068;&#x304C;&#x591A;&#x3044;&#x306E;&#x3067;&#x3001;&#x3068;&#x3063;&#x3066;&#x3082;&#x91CD;
+&#x5B9D;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;&#x4EE5;&#x524D;&#x306F;&#x3001;Palm &#x3067;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x7BA1;&#x7406;&#x3057;&#x3066;&#x3044;&#x3066;&#x3082;&#x3001;&#x7D50;&#x5C40;&#x5BFE;&#x5FDC;
+&#x3059;&#x308B;&#x30E1;&#x30FC;&#x30EB;&#x3092;&#x63A2;&#x3059;&#x306F;&#x3081;&#x306B;&#x306A;&#x308B;&#x3053;&#x3068;&#x304C;&#x591A;&#x304F;&#x3066;&#x3001;&#x4E0D;&#x4FBF;&#x306B;&#x601D;&#x3063;&#x3066;&#x3044;&#x307E;&#x3057;&#x305F;&#x3002;
+
+</pre><p><strong>Attachment:
+<a href="binuNL5ka38XF.bin" ><tt>mhc.el.diff</tt></a></strong><br>
+<em>Description:</em> Binary data</p>
+<pre>
+--
+&#x4E09;&#x597D; &#x96C5;&#x5247; <a  rel="nofollow" href="mailto:miyoshi@xxxxxxxxx">mailto:miyoshi@xxxxxxxxx</a>
+          <a  rel="nofollow" href="http://www.ask.ne.jp/~miyoshi/">http://www.ask.ne.jp/~miyoshi/</a> (Meadow &#x306E;&#x30DA;&#x30FC;&#x30B8;&#x4F5C;&#x6210;&#x4E2D;)</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00503" href="msg00503.html">[mhc:00504] Re: About T-gnus support ( Re: Variable binding depth exceeds max-specpdl-size )</a></strong>
+<ul><li><em>From:</em> TSUCHIYA Masatoshi</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00427" href="msg00427.html">[mhc:00428] mhc-snap20000301</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+<li><strong><a name="00481" href="msg00481.html">[mhc:00482] Variable binding depth exceeds max-specpdl-size</a></strong>
+<ul><li><em>From:</em> TSUCHIYA Masatoshi</li></ul></li>
+<li><strong><a name="00484" href="msg00484.html">[mhc:00485] Re: Variable binding depth exceeds max-specpdl-size</a></strong>
+<ul><li><em>From:</em> MIYOSHI Masanori</li></ul></li>
+<li><strong><a name="00487" href="msg00487.html">[mhc:00488] About T-gnus support ( Re: Variable binding depth exceeds max-specpdl-size )</a></strong>
+<ul><li><em>From:</em> TSUCHIYA Masatoshi</li></ul></li>
+<li><strong><a name="00489" href="msg00489.html">[mhc:00490] Re: About T-gnus support ( Re: Variable binding depth exceeds max-specpdl-size )</a></strong>
+<ul><li><em>From:</em> MIYOSHI Masanori</li></ul></li>
+<li><strong><a name="00491" href="msg00491.html">[mhc:00492] Re: About T-gnus support ( Re: Variable binding depth exceeds max-specpdl-size )</a></strong>
+<ul><li><em>From:</em> TSUCHIYA Masatoshi</li></ul></li>
+<li><strong><a name="00495" href="msg00495.html">[mhc:00496] Re: About T-gnus support ( Re: Variable binding depth exceeds max-specpdl-size )</a></strong>
+<ul><li><em>From:</em> MIYOSHI Masanori</li></ul></li>
+<li><strong><a name="00497" href="msg00497.html">[mhc:00498] Re: About T-gnus support ( Re: Variable binding depth exceeds max-specpdl-size )</a></strong>
+<ul><li><em>From:</em> TSUCHIYA Masatoshi</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00497.html">[mhc:00498] Re: About T-gnus support ( Re: Variable binding depth exceeds max-specpdl-size )</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00499.html">[mhc:00500] Re: About T-gnus support ( Re: Variable binding depth exceeds max-specpdl-size )</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00497.html">[mhc:00498] Re: About T-gnus support ( Re: Variable binding depth exceeds max-specpdl-size )</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00503.html">[mhc:00504] Re: About T-gnus support ( Re: Variable binding depth exceeds max-specpdl-size )</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00498"><strong>Date</strong></a></li>
+<li><a href="threads.html#00498"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

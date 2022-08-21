@@ -1,0 +1,55 @@
+--- today.in.orig	2000-12-20 21:08:36.000000000 +0900
++++ today.in	2002-06-27 21:15:31.000000000 +0900
+@@ -13,6 +13,7 @@
+ ##
+ ##    Yoshinari Nomura <nom@quickhack.net>
+ ##    OHARA Shigeki <os@iij.ad.jp>
++##    MAKINO Takashi <makino@cyber.office.ne.jp>
+ ##
+ 
+ $DEBUG2       = false
+@@ -50,7 +51,7 @@
+   STDERR .print "usage: today [options]
+   Show your today's schedules.
+   --help               show this message.
+-  --format=FORMAT      change output format to one of: ps, html
++  --format=FORMAT      change output format to one of: ps, html, n50x
+   --category=CATEGORY  pick only in CATEGORY. 
+                        '!' and space separated multiple values are allowed.
+   --date=strig[+n]     set a period of date.
+@@ -167,6 +168,26 @@
+   MhcKconv::tohtml(buffer)
+ }
+ 
++formatter_n50x = Proc .new{|date, items|
++  ret = ''
++  heading = format ("DATE:%04d/%02d/%02d/", date .y, date .m, date .d)
++  items .each{|sch|
++    ret += heading + format("%s\nPLAN:%s%s\n",
++			    if sch .time_b
++			      sch .time_b .to_s
++			    else
++			      '00:00'
++			    end,
++			    sch .subject,
++			    if sch .location and sch .location != ''
++			      ' [' + sch .location + ']'
++			    else
++			      ''
++			    end)
++  }
++  MhcKconv::todisp(ret)
++}
++
+ ################################################################
+ ## hook
+ 
+@@ -227,6 +248,8 @@
+       hook_proc = hook_ps
+       date_from = date_from .m_first_day
+       date_to   = date_from .m_last_day
++    when 'n50x'
++      formatter = formatter_n50x
+     else
+       formatter = formatter_normal
+     end

@@ -1,0 +1,147 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01851] Multi&#45;private patch -->
+<!--X-From-R13: =?WEA&#45;2022&#45;XB?P?UlDQDGDRLufbCvOoXSW9G0kOUluQ?= <gbpNlna.ar.wc> -->
+<!--X-Date: Sun, 12 Oct 2003 16:53:04 +0900 -->
+<!--X-Message-Id: ullrqopsv.fsf@TAMA.smtp.freeserve.ne.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01851] Multi-private patch</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01849.html">Date Prev</a>][<a href="msg01851.html">Date Next</a>][<a href="msg01853.html">Thread Prev</a>][<a href="msg01851.html">Thread Next</a>][<a href="maillist.html#01850">Date Index</a>][<a href="threads.html#01850">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01851] Multi-private patch</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01851] Multi-private patch</li>
+<li><em>From</em>: &#x7530;&#x4E2D; &#x4FCA;&#x660E; &lt;<a href="mailto:toc@DOMAIN.HIDDEN">toc@xxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Sun, 12 Oct 2003 16:53:04 +0900</li>
+<li><em>Organization</em>: TSOL &lt;- TOIC &lt;- TOSHIBA</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: T-gnus/6.16.2 (based on Gnus v5.10.2) (revision 02) SEMI/1.14.5 (Awara-Onsen) LIMIT/1.14.7 (Fujiidera) APEL/10.6 Emacs/21.1 (i386-mingw-nt5.0.2195) MULE/5.0 (SAKAKI) Meadow/2.00 Beta2-dev (WOMINAHESHI)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x7530;&#x4E2D;&#x3067;&#x3059;&#x3002;
+
+&#x30AB;&#x30C6;&#x30B4;&#x30EA;&#x304C; &quot;private&quot; &#x306A;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x306F;&#x30B5;&#x30DE;&#x30EA;&#x5185;&#x3067;&#x96A0;&#x3057;&#x3066;&#x8868;&#x793A;&#x3067;
+&#x304D;&#x308B;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;&#x3053;&#x308C;&#x3092;&#x8907;&#x6570;&#x306E;&#x30AB;&#x30C6;&#x30B4;&#x30EA;&#x306B;&#x5BFE;&#x5FDC;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x3066;&#x4F7F;&#x3063;
+&#x3066;&#x3044;&#x307E;&#x3057;&#x305F;&#x3002;&#x3068;&#x3044;&#x3063;&#x3066;&#x3082;&#x3001;&#x3082;&#x3068;&#x3082;&#x3068;mhc-schedule-in-category-p&#x304C;
+list&#x5BFE;&#x5FDC;&#x3057;&#x3066;&#x3044;&#x305F;&#x306E;&#x3067;&#x5927;&#x3057;&#x305F;&#x3053;&#x3068;&#x306F;&#x3084;&#x3063;&#x3066;&#x307E;&#x305B;&#x3093;&#x3002;&#x3088;&#x308D;&#x3057;&#x3051;&#x308C;&#x3070;&#x5E79;
+&#x306B;&#x3068;&#x308A;&#x3053;&#x3093;&#x3067;&#x3084;&#x3063;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;
+
+ &#x672C;&#x65E5;&#x6642;&#x70B9;&#x306E; CVS HEAD &#x306B;&#x5BFE;&#x3059;&#x308B; patch &#x306F;&#x2193;&#x306E;&#x3068;&#x304A;&#x308A;&#x3067;&#x3059;&#x3002;
+&#x3067;&#x306F;&#x3067;&#x306F;&#x3002;
+
+Index: mhc-summary.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc-summary.el,v
+retrieving revision 1.34
+diff -u -r1.34 mhc-summary.el
+--- mhc-summary.el	2002/12/01 03:55:06	1.34
++++ mhc-summary.el	2003/10/12 07:41:26
+@@ -605,7 +605,7 @@
+ 		   (car schedules)
+ 		   (and secret
+ 			(mhc-schedule-in-category-p
+-			 (car schedules) &quot;private&quot;))
++			 (car schedules) mhc-category-as-private))
+ 		   'mhc-summary-line-insert
+ 		   mailer)
+ 		  (setq mhc-tmp-first nil)))
+@@ -664,7 +664,8 @@
+ 		(mhc-summary-insert-contents
+ 		 (car schedules)
+ 		 (and secret
+-		      (mhc-schedule-in-category-p (car schedules) &quot;private&quot;))
++		      (mhc-schedule-in-category-p (car schedules)
++						  mhc-category-as-private))
+ 		 'mhc-todo-line-insert
+ 		 mailer))
+ 	    (setq schedules (cdr schedules)))))))
+@@ -681,7 +682,8 @@
+ 	  (mhc-summary-insert-contents
+ 	   (car schedules)
+ 	   (and secret
+-		(mhc-schedule-in-category-p (car schedules) &quot;private&quot;))
++		(mhc-schedule-in-category-p (car schedules)
++					    mhc-category-as-private))
+ 	   'mhc-memo-line-insert
+ 	   mailer))
+ 	(setq schedules (cdr schedules))))))
+Index: mhc-vars.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc-vars.el,v
+retrieving revision 1.16
+diff -u -r1.16 mhc-vars.el
+--- mhc-vars.el	2003/10/10 12:01:53	1.16
++++ mhc-vars.el	2003/10/12 07:41:26
+@@ -92,6 +92,11 @@
+   :group 'mhc
+   :type 'boolean)
+ 
++(defcustom mhc-category-as-private '(&quot;private&quot;)
++  &quot;*String list of private categories.&quot;
++  :group 'mhc
++  :type '(repeat (string :tag &quot;Category&quot;)))
++
+ (defcustom mhc-default-network-status t
+   &quot;*Flag of the default network status.&quot;
+   :group 'mhc
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01851" href="msg01851.html">[mhc:01852] Re: Multi-private patch</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01849.html">[mhc:01850] xpm &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x5148;&#x306B;&#x3064;&#x3044;&#x3066;</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01851.html">[mhc:01852] Re: Multi-private patch</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01853.html">[mhc:01854] Re: xpm &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x5148;&#x306B;&#x3064;&#x3044;&#x3066;</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01851.html">[mhc:01852] Re: Multi-private patch</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01850"><strong>Date</strong></a></li>
+<li><a href="threads.html#01850"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

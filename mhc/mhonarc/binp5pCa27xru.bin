@@ -1,0 +1,243 @@
+--- mhc.el.orig	Thu Mar  9 13:13:39 2000
++++ mhc.el	Thu Mar  9 13:39:44 2000
+@@ -417,7 +417,7 @@
+ 	      (let ((temp-buffer (get-buffer-create
+ 				  (generate-new-buffer-name " *temp*"))))
+ 		(unwind-protect
+-		    (save-current-buffer
++		    (save-excursion
+ 		      (set-buffer temp-buffer)
+ 		      (gnus-group-make-directory-group dir))
+ 		  (kill-buffer temp-buffer))))
+@@ -520,90 +520,37 @@
+   '((mew-summary-mode . mew-message-mode)
+     (mew-virtual-mode . mew-message-mode)))
+ 
+-
++(defun mhc-mew-set-import-buffer (get-original)
++  (let (mode)
++    (if get-original (mew-summary-display-asis))
++    (setq mode (assq major-mode mhc-summary-message-alist))
++    (if (eq (cdr mode)
++	    (save-window-excursion (other-window 1) major-mode))
++	(other-window 1))))
++
++(defun mhc-gnus-set-import-buffer (get-original)
++  (if get-original
++      (let ((gnus-break-pages nil) (gnus-show-mime nil))
++	(gnus-summary-select-article 'all-headers 'force))
++    (gnus-summary-select-article))
++  (select-window (get-buffer-window gnus-article-buffer)))
++
++(defun mhc-wl-set-import-buffer (get-original)
++  (if get-original
++      (wl-summary-redisplay-no-mime)
++    (let (wl-highlight-x-face-func)
++      (wl-summary-redisplay-all-header)))
++  (wl-summary-jump-to-current-message))
+ 
+ (defun mhc-import (&optional get-original)
+   (interactive "P")
+   (mhc-window-push)
+-  (let (guess ptr ddate dtime mode sch old)
+-    (cond
+-     ((eq mhc-mailer-package 'mew)
+-      (if get-original (mew-summary-display-asis))
+-      (setq mode (assq major-mode mhc-summary-message-alist))
+-      (if (eq (cdr mode)
+-	      (save-window-excursion (other-window 1) major-mode))
+-	  (other-window 1)))
+-     ((eq mhc-mailer-package 'gnus)
+-      (if get-original
+-	  (let ((gnus-break-pages nil) (gnus-show-mime nil))
+-	    (gnus-summary-select-article 'all-headers 'force))
+-	(gnus-summary-select-article))
+-      (select-window (get-buffer-window gnus-article-buffer)))
+-     ((eq mhc-mailer-package 'wl)
+-      (if get-original (wl-summary-redisplay-no-mime))
+-      (wl-summary-jump-to-current-message)))
+-    (delete-other-windows)
+-    (condition-case ()
+-	(if (y-or-n-p "Do you want to import this buffer ? ")
+-	    (progn
+-	      (setq sch (mhc-sch-new))
+-	      (setq old (mhc-sch-new-from-buffer))
+-	      ;; input date
+-	      (mhc-sch-set-day sch
+-			       (mhc-input-day
+-				"Date: "
+-				(mhc-sch-day old)
+-				(gdate-guess-date)))
+-	      ;; input time
+-	      (apply 'mhc-sch-set-time
+-		     sch
+-		     (mhc-input-time
+-		      "Time: "
+-		      (if (mhc-sch-time old) (mhc-sch-time-as-string old))
+-		      (gdate-guess-time
+-		       (mhc-minibuf-candidate-nth-begin)
+-		       )))
+-	      ;; input subject
+-	      (mhc-sch-set-subject sch
+-				   (mhc-input-subject 
+-				    "Subject: "
+-				    (mhc-misc-sub
+-				     (or (mhc-sch-subject old)
+-					 (mhc-misc-hdr-value "Subject:"))
+-				     "^\\(Re:\\)? *\\(\\[[^\]]+\\]\\)? *"
+-				     "")))
+-	      ;; input location
+-	      (mhc-sch-set-location sch
+-				    (mhc-input-location 
+-				     "Location: "
+-				     (mhc-sch-location old)))
+-	      ;; input category
+-	      (mhc-sch-set-category
+-	       sch
+-	       (mhc-input-category 
+-		"Category: "
+-		(mhc-sch-category old)))
+-	      ;; prepare new draft
+-	      (mhc-prepare-draft sch (current-buffer)))
+-	  (mhc-window-pop))
+-      (quit (mhc-window-pop)))))
+-
+-
+-(defun mhc-edit ()
+-  (interactive)
+-  (mhc-window-push)
+-  (let (sch)
+-    (condition-case ()
+-	(progn
+-	  (setq sch (mhc-sch-new))
+-	  (mhc-sch-set-day  sch (mhc-input-day "Date: " (mhc-current-ddate)))
+-	  (apply 'mhc-sch-set-time sch (mhc-input-time "Time: "))
+-	  (mhc-sch-set-subject sch (mhc-input-subject "Subject: "))
+-	  (mhc-sch-set-location sch (mhc-input-location "Location: "))
+-	  (mhc-sch-set-category sch (mhc-input-category "Category: "))
+-	  (mhc-prepare-draft sch))
+-      (quit (mhc-window-pop)))))
+-
++  (funcall (intern (format "mhc-%s-set-import-buffer"
++			   (symbol-name mhc-mailer-package)))
++	   get-original)
++  (if (not (mhc-edit (current-buffer)))
++      ;; failed.
++      (mhc-window-pop))))
+ 
+ (defun mhc-delete ()
+   (interactive)
+@@ -677,22 +624,98 @@
+       (progn (kill-buffer (current-buffer))
+ 	     (mhc-window-pop))))
+ 
+-(defun mhc-prepare-draft (&optional sch import-buffer)
+-  (let  ((unuse-hdr-list mhc-draft-unuse-hdr-list) buf)
+-    (setq buf (generate-new-buffer mhc-draft-buffer-name))
++(defun mhc-edit (&optional import-buffer)
++  "Edit a new schedule.
++If optional argument IMPORT-BUFFER is specified, import its content.
++Returns t if the importation was succeeded."
++  (interactive (if current-prefix-arg
++		   (list (get-buffer (read-buffer
++				      (format 
++				       "Import buffer (%s): "
++				       (buffer-name (current-buffer))))))))
++  (let ((draft-buffer (generate-new-buffer mhc-draft-buffer-name))
++	(succeed t)
++	sch old)
++    (and (interactive-p)
++	 (mhc-window-push))
++    (set-buffer draft-buffer)
+     (if import-buffer
+-	(save-excursion
+-	  (set-buffer import-buffer)
+-	  (copy-to-buffer buf (point-min) (point-max))))
+-    (switch-to-buffer buf t)
+-    (mhc-misc-hdr-delete-list unuse-hdr-list)
+-    (mhc-misc-hdr-delete-list mhc-sch-header-list)
+-    (insert (mhc-sch-dump-header sch))
+-    (if import-buffer
+-	()
+-      (goto-char (point-max))
+-      (insert "----\n"))
+-    (mhc-draft-mode)))
++	(progn
++	  (insert-buffer import-buffer)
++	  (mhc-misc-hdr-delete-list mhc-draft-unuse-hdr-list)))
++    (switch-to-buffer draft-buffer t)
++    (setq sch (mhc-sch-new))
++    (condition-case ()
++	(if import-buffer
++	    (progn
++	      (delete-other-windows)
++	      (if (y-or-n-p "Do you want to import this article? ")
++		  (progn
++		    (setq old (mhc-sch-new-from-buffer))
++		    ;; input date
++		    (mhc-sch-set-day sch (mhc-input-day
++					  "Date: "
++					  (mhc-sch-day old)
++					  (gdate-guess-date)))
++		    ;; input time
++		    (apply 'mhc-sch-set-time
++			   sch
++			   (mhc-input-time
++			    "Time: "
++			    (if (mhc-sch-time old)
++				(mhc-sch-time-as-string old))
++			    (gdate-guess-time
++			     (mhc-minibuf-candidate-nth-begin)
++			     )))
++		    ;; input subject
++		    (mhc-sch-set-subject sch
++					 (mhc-input-subject 
++					  "Subject: "
++					  (mhc-misc-sub
++					   (or (mhc-sch-subject old)
++					       (mhc-misc-hdr-value "Subject:"))
++					   "^\\(Re:\\)? *\\(\\[[^\]]+\\]\\)? *"
++					   "")))
++		    ;; input location
++		    (mhc-sch-set-location sch
++					  (mhc-input-location 
++					   "Location: "
++					   (mhc-sch-location old)))
++		    ;; input category
++		    (mhc-sch-set-category
++		     sch
++		     (mhc-input-category 
++		      "Category: "
++		      (mhc-sch-category old)))
++		    (mhc-misc-hdr-delete-list mhc-sch-header-list))
++		;; Answer was no.
++		(message "") ; flush minibuffer.
++		(and (interactive-p)
++		     (mhc-window-pop))
++		(setq succeed nil)
++		(kill-buffer draft-buffer)))
++	  ;; No import (it succeeds).
++	  (mhc-sch-set-day  sch (mhc-input-day "Date: " (mhc-current-ddate)))
++	  (apply 'mhc-sch-set-time sch (mhc-input-time "Time: "))
++	  (mhc-sch-set-subject sch (mhc-input-subject "Subject: "))
++	  (mhc-sch-set-location sch (mhc-input-location "Location: "))
++	  (mhc-sch-set-category sch (mhc-input-category "Category: ")))
++      ;; Quit.
++      (quit 
++       (and (interactive-p)
++	    (mhc-window-pop))
++       (setq succeed nil)
++       (kill-buffer draft-buffer)))
++    (if succeed
++	(progn
++	  (goto-char (point-min))
++	  (insert (mhc-sch-dump-header sch))
++	  (if import-buffer
++	      ()
++	    (goto-char (point-max))
++	    (insert "----\n"))
++	  (mhc-draft-mode)
++	  succeed))))
+ 
+ (defun mhc-draft-finish (&optional intersect)
+   (interactive "P")

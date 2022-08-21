@@ -1,0 +1,136 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01529] mhc&#45;scan&#45;month&#45;hook -->
+<!--X-From-R13: YAWS Vvqrgnxn (=?vfb&#45;2022&#45;wc?P?UlDQAVS5BwTDFwCoYSW=?=) <uvqrNxbvr.bet> -->
+<!--X-Date: Thu, 31 Jan 2002 02:37:31 +0900 -->
+<!--X-Message-Id: 02Jan31.030833jst.29575@gateway.suri.co.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01529] mhc-scan-month-hook</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01527.html">Date Prev</a>][<a href="msg01529.html">Date Next</a>][<a href="msg01527.html">Thread Prev</a>][<a href="msg01529.html">Thread Next</a>][<a href="maillist.html#01528">Date Index</a>][<a href="threads.html#01528">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01529] mhc-scan-month-hook</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01529] mhc-scan-month-hook</li>
+<li><em>From</em>: KOIE Hidetaka (&#x9BC9;&#x6C5F;&#x82F1;&#x9686;) &lt;<a href="mailto:hide@DOMAIN.HIDDEN">hide@xxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Thu, 31 Jan 2002 02:37:31 +0900</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>mhc-goto-next-month&#x3092;&#x304A;&#x624B;&#x8EFD;&#x306B;&#x3057;&#x305F;&#x3044;&#x306A;&#x3041;&#x3068;&#x304A;&#x3082;&#x3063;&#x305F;&#x306E;&#x3067;
+overlay&#x3092;&#x3064;&#x304B;&#x3063;&#x3066;&#x3084;&#x3063;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002;
+Mew&#x3092;&#x3064;&#x304B;&#x3063;&#x3066;&#x3044;&#x308B;&#x4EBA;&#x5411;&#x3051;&#x3067;&#x3001; &lt; &#x3084; &gt; &#x3092;2&#x9023;&#x6253;&#x3059;&#x308B;&#x3068;&#x6708;&#x3092;&#x79FB;&#x52D5;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+
+&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x3053;&#x3053;&#x304B;&#x3089;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;
+;;.emacs&#x306A;&#x3069;&#x306B;
+(defun mhc-easy-navigation()
+  (save-excursion
+    (let* ((ov-keymap (make-sparse-keymap))
+           (ov (make-overlay (point-min) (1+ (point-min)))))
+      (overlay-put ov 'evaporate t)
+      (set-keymap-parent ov-keymap (current-local-map))
+      (define-key ov-keymap &quot;&lt;&quot; 'mhc-goto-prev-month)
+      (overlay-put ov 'local-map ov-keymap))
+    (let* ((ov-keymap (make-sparse-keymap))
+           (ov (make-overlay (point-max) (1- (point-max)))))
+      (overlay-put ov 'evaporate t)
+      (set-keymap-parent ov-keymap (current-local-map))
+      (define-key ov-keymap &quot;&gt;&quot; 'mhc-goto-next-month)
+      (overlay-put ov 'local-map ov-keymap))))
+(add-hook 'mhc-setup-hook
+          (function
+           (lambda ()
+             (add-hook 'mhc-scan-month-hook 'mhc-easy-navigation))))
+&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x3053;&#x3053;&#x307E;&#x3067;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;
+
+&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x3053;&#x3053;&#x304B;&#x3089;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;
+Index: emacs/mhc.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc.el,v
+retrieving revision 1.65
+diff -u -F^( -r1.65 mhc.el
+--- emacs/mhc.el	2001/12/25 15:40:56	1.65
++++ emacs/mhc.el	2002/01/30 17:32:04
+@@ -435,6 +435,10 @@ (defvar mhc-summary-buffer-current-date-
+   &quot;Indicate summary buffer's month. It is also used by mhc-summary-buffer-p&quot;)
+ (make-variable-buffer-local 'mhc-summary-buffer-current-date-month)
+ 
++(defcustom mhc-scan-month-hook nil
++  &quot;Run hook after mhc-scan-month.&quot;
++  :group 'mhc
++  :type 'hook)
+ 
+ (defun mhc-scan-month (date mailer category-predicate secret)
+   (let ((from  (mhc-date-mm-first date))
+@@ -517,6 +521,7 @@ (defun mhc-scan-month (date mailer categ
+       (setq mhc-summary-buffer-current-date-month
+ 	    (mhc-date-mm-first date))
+       (mhc-goto-today t)
++      (run-hooks 'mhc-scan-month-hook)
+       (message (mhc-date-format date &quot;Scanning %04d/%02d ... done.&quot; yy mm)))))
+ 
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x3053;&#x3053;&#x307E;&#x3067;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;
+
+--
+KOIE Hidetaka &#x9BC9;&#x6C5F;&#x82F1;&#x9686; &lt;hide@xxxxxxxx&gt;
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01529" href="msg01529.html">[mhc:01530] Re: mhc-scan-month-hook</a></strong>
+<ul><li><em>From:</em> Sawada Toyonobu</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01527.html">[mhc:01528] Re: mhc texinfo</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01529.html">[mhc:01530] Re: mhc-scan-month-hook</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01527.html">[mhc:01528] Re: mhc texinfo</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01529.html">[mhc:01530] Re: mhc-scan-month-hook</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01528"><strong>Date</strong></a></li>
+<li><a href="threads.html#01528"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00582] Re: mhc&#45;snap20000509 -->
+<!--X-From-R13: Vvqrlhxv EVWDOW (=?vfb&#45;2022&#45;wc?P?UlDQD3WjLw0bAHCoYSW=?=) <fuvenvNeqzt.ztpf.zrv.pb.wc> -->
+<!--X-Date: Tue, 9 May 2000 17:44:19 +0900 -->
+<!--X-Message-Id: 20000509.174331.74907488.shirai@rdmg.mgcs.mei.co.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 20000509123559I.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00582] Re: mhc-snap20000509</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00580.html">Date Prev</a>][<a href="msg00582.html">Date Next</a>][<a href="msg00580.html">Thread Prev</a>][<a href="msg00582.html">Thread Next</a>][<a href="maillist.html#00581">Date Index</a>][<a href="threads.html#00581">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00582] Re: mhc-snap20000509</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00582] Re: mhc-snap20000509</li>
+<li><em>From</em>: Hideyuki SHIRAI (&#x767D;&#x4E95;&#x79C0;&#x884C;) &lt;<a href="mailto:shirai@DOMAIN.HIDDEN">shirai@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Tue, 9 May 2000 17:44:19 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20000509123559I.nom@DOMAIN.HIDDEN">20000509123559I.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Organization</em>: Matsushita Graphic Communication Systems, Inc.</li>
+<li><em>Posted</em>: Tue, 09 May 2000 17:43:31 +0900 (JST)</li>
+<li><em>References</em>: &lt;<a href="mailto:20000509123559I.nom@DOMAIN.HIDDEN">20000509123559I.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>From: Yoshinari NOMURA &lt;nom@xxxxxxxxxxxxxxxxxxx&gt; &#x3055;&#x3093;&#x66F0;&#x304F;
+Subject: [mhc:00579] mhc-snap20000509
+Message-ID: &lt;20000509123559I.nom@xxxxxxxxxxxxxxxxxxx&gt;
+Date: Tue, 9 May 2000 12:36:02 +0900
+
+&#x4E43;&#x6751;&gt;    + mhc-date.el &#x306E;&#x30D0;&#x30B0;&#x4FEE;&#x6B63;
+
+&#x3082;&#x3046;&#x4E00;&#x4E01;&#x3067;&#x3059;&#x3002;
+
+patch &#x524D;
+(ddate-mm-inc '(2000 1 31)) =&gt; (2000 2 31)
+(ddate-mm-dec '(2000 5 31)) =&gt; (2000 4 31)
+
+patch &#x5F8C;
+(ddate-mm-inc '(2000 1 31)) =&gt; (2000 2 29)
+(ddate-mm-dec '(2000 5 31)) =&gt; (2000 4 30)
+
+&#x3053;&#x3046;&#x306A;&#x308B;&#x306E;&#x3063;&#x3066;&#x3001;&#x65E5;&#x4ED8;&#x304C;&#x30AA;&#x30FC;&#x30D0;&#x3057;&#x305F;&#x3068;&#x304D;&#x3057;&#x304B;&#x7121;&#x3044;&#x3068;&#x306F;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;
+
+-- 
+&#x767D;&#x4E95;&#x79C0;&#x884C; (<a  rel="nofollow" href="mailto:shirai@xxxxxxxxxxxxxxxxxxx">mailto:shirai@xxxxxxxxxxxxxxxxxxx</a>)
+
+--- mhc-date.el.orig	Tue May  9 12:28:08 2000
++++ mhc-date.el	Tue May  9 17:35:39 2000
+@@ -350,7 +350,9 @@
+     (setq xx (+ mm c))
+     (setq pp (if (&lt; 0 xx ) (/ (- xx  1) 12) (/ (- xx 12) 12)))
+     (setq yy (+ yy pp) mm (- xx (* 12 pp)))
+-    (list yy mm (nth 2 ddate))))
++    (if (ddate-parse (list yy mm (nth 2 ddate)))
++	(list yy mm (nth 2 ddate))
++      (list yy mm (ddate-days-of-mm (list yy mm 1))))))
+ 
+ (defun ddate-mm-dec (ddate &amp;optional c)
+   (ddate-mm-inc ddate (if c (- c) -1)))
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00578" href="msg00578.html">[mhc:00579] mhc-snap20000509</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00580.html">[mhc:00581] Re: mhc-snap20000509</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00582.html">[mhc:00583] Re: mhc-snap20000509</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00580.html">[mhc:00581] Re: mhc-snap20000509</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00582.html">[mhc:00583] Re: mhc-snap20000509</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00581"><strong>Date</strong></a></li>
+<li><a href="threads.html#00581"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

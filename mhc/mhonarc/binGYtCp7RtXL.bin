@@ -1,0 +1,14 @@
+--- mhc.el.orig	Fri Dec  3 19:09:21 1999
++++ mhc.el	Fri Dec  3 19:11:13 1999
+@@ -324,7 +324,10 @@
+ 	  (mew-virtual-mode))
+ 	(mew-buffers-setup (buffer-name)))
+        ((equal type 'wl)
+-	(wl-summary-mode (mhc-wl-ddate-to-folder ddate))))
++	(wl-summary-mode)
++	(wl-summary-buffer-set-folder (mhc-wl-ddate-to-folder ddate))
++	(make-local-variable 'wl-summary-highlight)
++	(setq wl-summary-highlight nil)))
+       (mhc-mode 1)
+       (run-hooks 'mhc-mode-hook)
+       (setq inhibit-read-only nil)

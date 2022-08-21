@@ -1,0 +1,130 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01586] Re: uninitialized constant PiLib at Pilot (NameError) -->
+<!--X-From-R13: Kbfuvanev @bzhen <abzNdhvpxunpx.arg> -->
+<!--X-Date: Fri, 21 Jun 2002 14:47:07 +0900 -->
+<!--X-Message-Id: 20020621144707L.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 20020621.124339.108761515.hide@koie.org -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01586] Re: uninitialized constant PiLib at Pilot (NameError)</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01584.html">Date Prev</a>][<a href="msg01586.html">Date Next</a>][<a href="msg01584.html">Thread Prev</a>][<a href="msg01586.html">Thread Next</a>][<a href="maillist.html#01585">Date Index</a>][<a href="threads.html#01585">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01586] Re: uninitialized constant PiLib at Pilot (NameError)</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01586] Re: uninitialized constant PiLib at Pilot (NameError)</li>
+<li><em>From</em>: Yoshinari Nomura &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Fri, 21 Jun 2002 14:47:07 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20020621.124339.108761515.hide@DOMAIN.HIDDEN">20020621.124339.108761515.hide@xxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:20020621.124339.108761515.hide@DOMAIN.HIDDEN">20020621.124339.108761515.hide@xxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Sender</em>: Yoshinari Nomura &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x4E43;&#x6751;&#x3067;&#x3059;&#xFF0E;&#x5FF5;&#x306E;&#x305F;&#x3081;&#xFF0E;pilot-xfer &#x306F;&#x52D5;&#x304D;&#x307E;&#x3059;&#x3088;&#x306D;&#xFF0E;
+
+On Fri, 21 Jun 2002 12:43:39 +0900 (JST),
+	KOIE Hidetaka (&#x9BC9;&#x6C5F;&#x82F1;&#x9686;) &lt;hide@xxxxxxxx&gt; said:
+
+&gt; FreeBSD-3.3&#x306E;&#x74B0;&#x5883;&#x304B;&#x3089;FreeBSD-4.6&#x306B;&#x5F15;&#x8D8A;&#x3057;&#x305F;&#x3068;&#x3053;&#x308D;
+&gt;     /usr/local/lib/ruby/1.6/mhc-palm.rb:26:in `initialize':
+&gt;     uninitialized constant PiLib at Pilot (NameError)
+&gt; &#x3068;&#x3044;&#x3046;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x304C;&#x51FA;&#x3066;palm2mhc,mhc2palm&#x304C;&#x52D5;&#x304B;&#x306A;&#x304F;&#x306A;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;
+&gt; ruby&#x3068;pilot-link&#x306F;&#x305D;&#x308C;&#x305E;&#x308C;ports&#x3067;
+&gt;     pilot-link-0.9.5_3
+&gt;     ruby-1.6.7.2002.05.02p
+&gt; &#x3092;&#x5165;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;&#x904E;&#x53BB;&#x30E1;&#x30A4;&#x30EB;&#x3092;grp freebsd4&#x3067;&#x3055;&#x304C;&#x3057;&#x3066;&#x307F;&#x308B;&#x3068;
+&gt; &#x4F3C;&#x305F;&#x73FE;&#x8C61;&#x304C;&#x3059;&#x3067;&#x306B;&#x5831;&#x544A;&#x3055;&#x308C;&#x3066;&#x3044;&#x3066;&#x3001;&#x5BFE;&#x5FDC;&#x3082;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3088;&#x3046;&#x306B;&#x898B;&#x3048;&#x307E;&#x3057;&#x305F;&#x3002;
+
+&#x4EE5;&#x524D;&#xFF0C;&#x9D5C;&#x98FC;&#x3055;&#x3093;&#x306B; Debian &#x3078;&#x306E;&#x5BFE;&#x5FDC;&#x3067;&#x6559;&#x3048;&#x3066;&#x3044;&#x305F;&#x3060;&#x3044;&#x3066;&#xFF0C;LDFLAGS &#x5468;&#x308A;
+&#x3092;&#x5909;&#x66F4;&#x3057;&#x307E;&#x3057;&#x305F;&#xFF0E;&#x305D;&#x306E;&#x5F8C; FreeBSD &#x3067;&#x304A;&#x304B;&#x3057;&#x3044;&#x3068;&#x3044;&#x3046;&#x53CD;&#x5FDC;&#x304C;&#x306A;&#x304B;&#x3063;&#x305F;&#x306E;&#x3067;&#xFF0C;
+&#x6DF1;&#x304F;&#x8FFD;&#x53CA;&#x3057;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3067;&#x3057;&#x305F;&#xFF0E;
+
+&#x4EE5;&#x4E0B;&#x306E;&#x30D1;&#x30C3;&#x30C1;&#x3067;&#xFF0C;&#x7D50;&#x679C;&#x3068;&#x3057;&#x3066; Makefile &#x306E; LDFLAGS &#x306B; 
+-L/usr/local/lib &#x3068;&#x304B;&#x304C;&#x5165;&#x308B;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#xFF0E;&#x3053;&#x306E;&#x624B;&#x5F53;&#x3066;&#x3067;&#x3069;&#x3046;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#xFF0E;
+
+[mhc:01349] &#x306E;&#x9D5C;&#x98FC;&#x3055;&#x3093;&#x306E;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x4E2D;&#x3067;&#xFF0C;LD_RUN_PATH &#x306F;&#x56F0;&#x308B;&#x304C;&#xFF0C;
+LDFLAGS (&#x3064;&#x307E;&#x308A; -L) &#x306F;&#x3042;&#x3063;&#x3066;&#x3082;&#x69CB;&#x308F;&#x306A;&#x3044;&#x304B;&#x3082;&#x3068;&#x3044;&#x3046;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x3092;
+&#x3044;&#x305F;&#x3060;&#x3044;&#x3066;&#x3044;&#x308B;&#x3093;&#x3067;&#xFF0C;&#x5225;&#x306B;&#x3044;&#x3044;&#x3067;&#x3059;&#x3088;&#x306D;?
+
+Index: extconf.rb.in
+===================================================================
+RCS file: /cvsroot/mhc/ruby-ext/extconf.rb.in,v
+retrieving revision 1.5
+diff -u -r1.5 extconf.rb.in
+--- extconf.rb.in	2001/05/10 14:02:13	1.5
++++ extconf.rb.in	2002/06/21 05:28:47
+@@ -8,7 +8,7 @@
+ 
+ $CFLAGS  = &quot;@@MHC_CFLAGS@@&quot;
+ $CFLAGS += &quot; -DNEW_NAMING &quot; if '@@MHC_RUBY_VERSION@@' &gt;= '010300'
+-# $LDFLAGS = &quot;@@MHC_LDFLAGS@@&quot;
++$LDFLAGS = &quot;@@MHC_LDFLAGS@@&quot;
+ 
+ if '@@MHC_DISABLE_PALM@@' == ''
+ #  CONFIG[&quot;LDSHARED&quot;] = &quot;LD_RUN_PATH=@@MHC_PILOT_LINK_LIB@@ &quot; +
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01586" href="msg01586.html">[mhc:01587] Re: uninitialized constant PiLib at Pilot (NameError)</a></strong>
+<ul><li><em>From:</em> &#x9BC9;&#x6C5F;&#x82F1;&#x9686;</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="01584" href="msg01584.html">[mhc:01585] uninitialized constant PiLib at Pilot (NameError)</a></strong>
+<ul><li><em>From:</em> &#x9BC9;&#x6C5F;&#x82F1;&#x9686;</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01584.html">[mhc:01585] uninitialized constant PiLib at Pilot (NameError)</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01586.html">[mhc:01587] Re: uninitialized constant PiLib at Pilot (NameError)</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01584.html">[mhc:01585] uninitialized constant PiLib at Pilot (NameError)</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01586.html">[mhc:01587] Re: uninitialized constant PiLib at Pilot (NameError)</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01585"><strong>Date</strong></a></li>
+<li><a href="threads.html#01585"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

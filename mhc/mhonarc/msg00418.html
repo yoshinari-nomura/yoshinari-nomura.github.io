@@ -1,0 +1,257 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00419] patch for mhc&#45;schedule.rb -->
+<!--X-From-R13: Vnanqn ABFW[WLSD Knfhabev <lnfhabevNfjyno.pfpr.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Fri, 25 Feb 2000 20:15:33 +0900 -->
+<!--X-Message-Id: 200002251115.UAA19375@ace.csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00419] patch for mhc-schedule.rb</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00417.html">Date Prev</a>][<a href="msg00419.html">Date Next</a>][<a href="msg00417.html">Thread Prev</a>][<a href="msg00419.html">Thread Next</a>][<a href="maillist.html#00418">Date Index</a>][<a href="threads.html#00418">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00419] patch for mhc-schedule.rb</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00419] patch for mhc-schedule.rb</li>
+<li><em>From</em>: Hanada OPTIMIZER Yasunori &lt;<a href="mailto:yasunori@DOMAIN.HIDDEN">yasunori@xxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Fri, 25 Feb 2000 20:15:33 +0900</li>
+<li><em>Posted</em>: Fri, 25 Feb 2000 20:15:31 +0900</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x82B1;&#x7530;&#x3067;&#x3059;&#x3002;
+
+mhc-schedule.rb&#x3092;X-SC-Localtion&#x3068;X-SC-Record-Id&#x306B;&#x5BFE;&#x5FDC;&#x3055;&#x305B;&#x308B;&#x305F;&#x3081;&#x306E;&#x30D1;&#x30C3;&#x30C1;&#x3067;&#x3059;&#x3002;
+&#x3042;&#x3068;&#x3001;1&#x30AB;&#x6240;&#x3060;&#x3051;bug&#x3092;&#x6F70;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;(&#x2193;)&#x3002;
+
+@@ -248,7 +269,7 @@
+   end
+ 
+   def time_as_string
+-    return @time_b .to_s + (@time_b ? '-' : '') + @time_e .to_s
++    return @time_b .to_s + (@time_e ? '-' : '') + @time_e .to_s
+   end
+ 
+   def time_b; return @time_b; end
+
+&#x4ED6;&#x306B;&#x3082;&#x3001;&#x30C7;&#x30D0;&#x30C3;&#x30B0;&#x7528;&#x3089;&#x3057;&#x304D;print&#x6587;&#x306F;&#x3001;
+&#x5168;&#x90E8; if $DEBUG &#x3092;&#x3064;&#x3051;&#x3066;&#x9ED9;&#x3089;&#x305B;&#x3066;&#x304A;&#x304D;&#x307E;&#x3057;&#x305F;&#x3002;
+
+-- 
+yasunori // &#x4E45;&#x3057;&#x632F;&#x308A;&#x306B;Multipart&#x3092;&#x4F7F;&#x3063;&#x305F;&#x306E;&#x3067;&#x3001;&#x5931;&#x6557;&#x3057;&#x3066;&#x305F;&#x3089;&#x5FA1;&#x514D;&#x306A;&#x3055;&#x3044;&#x3002;
+</pre><pre>diff -ur mhc-snap20000204.DIST/ruby-ext/lib/mhc-schedule.rb mhc-snap20000204/ruby-ext/lib/mhc-schedule.rb
+--- mhc-snap20000204.DIST/ruby-ext/lib/mhc-schedule.rb	Fri Feb  4 14:28:09 2000
++++ mhc-snap20000204/ruby-ext/lib/mhc-schedule.rb	Fri Feb 25 20:00:57 2000
+@@ -21,6 +21,10 @@
+ ##      get X-SC-Subject: value or ''
+ ## set_subject(aString)
+ ##	set X-SC-Subject:
++## location
++##      get X-SC-Location: value or ''
++## set_location(aString)
++##	set X-SC-Location:
+ ## day
+ ##	returns active dates exist in X-SC-Day: (means drop !yyyymmdd)
+ ##      The return value is  a array of MhcDate or []
+@@ -68,6 +72,12 @@
+ ## set_alarm(aInteger)
+ ##      set alarm value in second.
+ ##      nil means 'no alarm.'
++##
++## rec_id
++## 	return X-SC-Record-Id: value in string
++##
++## set_rec_id
++## 	set record-id for schedule entry
+ ## 
+ ################################################################
+ ## category 
+@@ -161,7 +171,7 @@
+   WEK_REGEX = MhcDate::W_LABEL .join('|')
+   ORD_REGEX = MhcDate::O_LABEL .join('|')
+ 
+-  HDR_REGEX = '(Subject|Day|Time|Category|Cond|Duration|Alarm)'
++  HDR_REGEX = '(Subject|Location|Day|Time|Category|Cond|Duration|Alarm|Record-Id)'
+ 
+   ALM_UNITS = {'Minute' =&gt; 60, 'Hour' =&gt; 60 * 60, 'Day' =&gt; 60 * 60 * 24}
+   ALM_LABEL = ALM_UNITS .keys
+@@ -195,6 +205,17 @@
+     return self
+   end
+ 
++  ## location
++  def location
++    return @location
++  end
++
++  def set_location(str)
++    @location = str .to_s
++    set_modified(true, 'set_location')
++    return self
++  end
++
+   ## day
+   def day
+     return @day
+@@ -248,7 +269,7 @@
+   end
+ 
+   def time_as_string
+-    return @time_b .to_s + (@time_b ? '-' : '') + @time_e .to_s
++    return @time_b .to_s + (@time_e ? '-' : '') + @time_e .to_s
+   end
+ 
+   def time_b; return @time_b; end
+@@ -398,6 +419,16 @@
+     return self
+   end
+ 
++  ## record-id
++  def rec_id
++    return @rec_id .to_s
++  end
++
++  def set_rec_id(r)
++    @rec_id = r
++    return self
++  end
++
+   ## description
+   def description(all = false)
+     if @description
+@@ -483,12 +514,14 @@
+ 
+   def dump_header
+     return &quot;X-SC-Subject: #{subject}\n&quot;        +
++      &quot;X-SC-Location: #{location}\n&quot;           +
+       &quot;X-SC-Day: #{day_as_string}\n&quot;           +
+       &quot;X-SC-Time: #{time_as_string}\n&quot;         +
+       &quot;X-SC-Category: #{category_as_string}\n&quot; +
+       &quot;X-SC-Cond: #{cond_as_string}\n&quot;         +
+       &quot;X-SC-Duration: #{duration_as_string}\n&quot; +
+-      &quot;X-SC-Alarm: #{alarm_as_string}\n&quot;
++      &quot;X-SC-Alarm: #{alarm_as_string}\n&quot;       +
++      &quot;X-SC-Record-Id: #{rec_id}\n&quot;
+     ## &quot;X-SC-Debug-Path: #{path}\n&quot;
+   end
+ 
+@@ -723,10 +756,10 @@
+     @cond_mon, @cond_ord, @cond_wek, @cond_num = [], [], [], []
+     @day, @exception, @category, @pilot_id     = [], [], [], []
+ 
+-    @subject, @description, @path              = '', nil, nil
++    @subject, @location, @description, @path   = '', nil, nil, nil
+     @time_b, @time_e                           = nil, nil
+     @duration_b, @duration_e                   = nil, nil
+-    @alarm                                     = nil
++    @alarm, @rec_id                            = nil
+ 
+     @modified                                  = false
+     return self
+@@ -768,6 +801,9 @@
+       when 'subject:'
+ 	@subject = val
+ 
++      when 'location:'
++	@location = val
++
+       when 'time:'
+ 	@time_b, @time_e = val .split('-')
+ 	@time_b = MhcTime .new(@time_b) if @time_b
+@@ -799,6 +835,10 @@
+ 	if val =~ /^(\d+)\s*(#{ALM_REGEX})$/i
+ 	  @alarm = ($1 .to_i) * ALM_UNITS[$2 .capitalize]
+ 	end
++
++      when 'record-id:'
++	@rec_id = val
++
+       end ## case ##
+     }
+     return self
+@@ -878,7 +918,7 @@
+     if (old_path = sch .path)
+       trash_path = get_new_path(@basedir + '/trash')
+       File .rename(old_path, trash_path)
+-      print &quot;mv #{old_path} -&gt; #{trash_path}\n&quot;
++      print &quot;mv #{old_path} -&gt; #{trash_path}\n&quot; if $DEBUG
+     end
+     sch .set_path(nil)
+     return self
+@@ -900,7 +940,7 @@
+ 
+       contents = sch .dump
+       (File .open(new_path, &quot;w&quot;) &lt;&lt; contents) .close
+-      print &quot;#{old_path} -&gt; #{new_path}\n&quot;
++      print &quot;#{old_path} -&gt; #{new_path}\n&quot; if $DEBUG
+ 
+       File .utime2(now, now, new_slot)
+       sch .set_path(new_path)
+@@ -909,7 +949,7 @@
+       if old_path &amp;&amp; File .exists?(old_path) &amp;&amp; old_path != new_path
+ 	File .rename(old_path, trash_path)
+ 	File .utime2(now, now, old_slot)
+-	print &quot;#{old_path} -&gt; #{trash_path}\n&quot;
++	print &quot;#{old_path} -&gt; #{trash_path}\n&quot; if $DEBUG
+       end
+     rescue
+       raise(&quot;#{$!}\nWrite/Move #{old_path} -&gt; #{new_path} failed.&quot;)
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00419" href="msg00419.html">[mhc:00420] Re: patch for mhc-schedule.rb</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00417.html">[mhc:00418] Re: (add-hook 'mew-virtual-mode-hook 'mhc-mode)</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00419.html">[mhc:00420] Re: patch for mhc-schedule.rb</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00417.html">[mhc:00418] Re: (add-hook 'mew-virtual-mode-hook 'mhc-mode)</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00419.html">[mhc:00420] Re: patch for mhc-schedule.rb</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00418"><strong>Date</strong></a></li>
+<li><a href="threads.html#00418"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

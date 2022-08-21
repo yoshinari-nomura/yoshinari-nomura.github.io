@@ -1,0 +1,131 @@
+--- mhc.el.orig	Thu Mar 09 00:25:54 2000
++++ mhc.el	Thu Mar 09 00:33:42 2000
+@@ -379,7 +379,7 @@
+ 
+ (defun mhc-scan-month (ddate type cat inv-cat secret)
+   (let ((buffer (get-buffer-create (mhc-ddate-to-buffer ddate)))
+-	(insert-current (not (member type '(mew wl gnus)))))
++	(insert-current (not (memq type '(mew wl gnus)))))
+     (if insert-current
+ 	()
+       (set-buffer buffer)
+@@ -399,7 +399,7 @@
+ 	(setq mew-use-highlight-cursor-line nil))
+        ((eq mhc-mailer-package 'gnus)
+ 	;; initialize gnus groups.
+-	(let* ((dirlist (list (mhc-gnus-ddate-to-folder ddate)
++	(let* ((dirlist (list (concat (mhc-gnus-ddate-to-folder ddate) "/")
+ 			      (concat (mhc-summary-folder-to-path
+ 				       mhc-base-folder) "/intersect/")))
+ 	       (vgroup mhc-base-folder) (pvgroup (concat "nnvirtual:" vgroup))
+@@ -410,22 +410,28 @@
+ 	    (setq pdir (concat "nndir:" dir))
+ 	    (if (gnus-gethash pdir gnus-newsrc-hashtb)
+ 		(save-window-excursion
+-		  (gnus-group-read-group 0 t pdir))
+-	      (unless (file-exists-p dir)
+-		(make-directory dir 'parents))
+-	      (with-temp-buffer
+-		(gnus-group-make-directory-group dir)))
++		  (if (gnus-group-read-group 0 t pdir)
++		      (kill-buffer nil)))
++	      (if (not (file-exists-p dir))
++		  (make-directory dir 'parents))
++	      (let ((temp-buffer (get-buffer-create
++				  (generate-new-buffer-name " *temp*"))))
++		(unwind-protect
++		    (save-current-buffer
++		      (set-buffer temp-buffer)
++		      (gnus-group-make-directory-group dir))
++		  (kill-buffer temp-buffer))))
+ 	    (if methods (setq methods (concat methods "\\|")))
+ 	    (setq methods (concat methods "\\(^" pdir "$\\)"))
+ 	    (setq dirlist (cdr dirlist)))
+ 	  ;; initialize a nnvirtual group.
+-	  (unless (gnus-gethash pvgroup gnus-newsrc-hashtb)
+-	    (gnus-group-make-empty-virtual vgroup))
++	  (if (not (gnus-gethash pvgroup gnus-newsrc-hashtb))
++	      (gnus-group-make-empty-virtual vgroup))
+ 	  (gnus-close-group pvgroup)
+ 	  (setcar (cdr (gnus-info-method (gnus-get-info pvgroup))) methods)
+ 	  (save-window-excursion
+ 	    (if (gnus-group-read-group 0 t pvgroup)
+-		(kill-buffer (current-buffer))))
++		(kill-buffer nil)))
+ 	  (make-local-variable 'gnus-newsgroup-data)))))
+     (message "Scanning %s ..." (ddate-yymm-s1 ddate "/"))
+     (mhc-sch-scan (ddate-mm-first-day ddate)
+@@ -512,9 +518,7 @@
+ 
+ (defvar mhc-summary-message-alist
+   '((mew-summary-mode . mew-message-mode)
+-    (mew-virtual-mode . mew-message-mode)
+-    (wl-summary-mode . mime-view-mode)
+-    (gnus-summary-mode . mime-view-mode)))
++    (mew-virtual-mode . mew-message-mode)))
+ 
+ 
+ 
+@@ -530,7 +534,11 @@
+ 	      (save-window-excursion (other-window 1) major-mode))
+ 	  (other-window 1)))
+      ((eq mhc-mailer-package 'gnus)
+-      (gnus-summary-preview-mime-message))
++      (if get-original
++	  (let ((gnus-break-pages nil) (gnus-show-mime nil))
++	    (gnus-summary-select-article 'all-headers 'force))
++	(gnus-summary-select-article))
++      (select-window (get-buffer-window gnus-article-buffer)))
+      ((eq mhc-mailer-package 'wl)
+       (wl-summary-jump-to-current-message)))
+     (delete-other-windows)
+@@ -891,26 +899,30 @@
+  ((eq mhc-mailer-package 'gnus)
+   (defun mhc-summary-filename ()
+     (let ((num (get-text-property (point) 'gnus-number)) cell dir)
+-      (when num
+-	(setq cell (nnvirtual-map-article num))
+-	(when (string-match "^nndir:\\(.+\\)$" (car cell))
+-	  (setq dir (match-string 1 (car cell)))
+-	  (format "%s%d" dir (cdr cell))))))
++      (if num
++	  (progn
++	    (setq cell (nnvirtual-map-article num))
++	    (if (string-match "^nndir:\\(.+\\)$" (car cell))
++		(progn
++		  (setq dir (match-string 1 (car cell)))
++		  (format "%s%d" dir (cdr cell))))))))
+   ;; modify Gnus original functions for cursor control.
+-  (unless (fboundp 'gnus-summary-goto-subject-original)
+-    (fset 'gnus-summary-goto-subject-original
+-	  (symbol-function 'gnus-summary-goto-subject))
+-    (defun gnus-summary-goto-subject (article &optional force silent)
+-      (unless (and (boundp 'mhc-gnus-skip-cursor-jump)
+-		   mhc-gnus-skip-cursor-jump)
+-	(gnus-summary-goto-subject-original article force silent))))
+-  (unless (fboundp 'gnus-summary-position-point-original)
+-    (fset 'gnus-summary-position-point-original
+-	  (symbol-function 'gnus-summary-position-point))
+-    (defun gnus-summary-position-point ()
+-      (unless (and (boundp 'mhc-gnus-skip-cursor-jump)
+-		   mhc-gnus-skip-cursor-jump)
+-	(gnus-summary-position-point-original))))))
++  (if (not (fboundp 'gnus-summary-goto-subject-original))
++      (progn
++	(fset 'gnus-summary-goto-subject-original
++	      (symbol-function 'gnus-summary-goto-subject))
++	(defun gnus-summary-goto-subject (article &optional force silent)
++	  (if (not (and (boundp 'mhc-gnus-skip-cursor-jump)
++			mhc-gnus-skip-cursor-jump))
++	      (gnus-summary-goto-subject-original article force silent)))))
++  (if (not (fboundp 'gnus-summary-position-point-original))
++      (progn
++	(fset 'gnus-summary-position-point-original
++	      (symbol-function 'gnus-summary-position-point))
++	(defun gnus-summary-position-point ()
++	  (if (not (and (boundp 'mhc-gnus-skip-cursor-jump)
++			mhc-gnus-skip-cursor-jump))
++	      (gnus-summary-position-point-original)))))))
+ 
+ (defun mhc-current-ddate-month ()
+   (let ((buf (buffer-name)) yy mm dd)

@@ -1,0 +1,106 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00416] (add&#45;hook 'mew&#45;virtual&#45;mode&#45;hook 'mhc&#45;mode) -->
+<!--X-From-R13: Vvqrlhxv EVWDOW (=?vfb&#45;2022&#45;wc?P?UlDQD3WjLw0bAHCoYSW=?=) <fuvenvNeqzt.ztpf.zrv.pb.wc> -->
+<!--X-Date: Wed, 23 Feb 2000 20:35:20 +0900 -->
+<!--X-Message-Id: 20000223.203439.74095013.shirai@rdmg.mgcs.mei.co.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00416] (add-hook 'mew-virtual-mode-hook 'mhc-mode)</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00414.html">Date Prev</a>][<a href="msg00416.html">Date Next</a>][<a href="msg00414.html">Thread Prev</a>][<a href="msg00416.html">Thread Next</a>][<a href="maillist.html#00415">Date Index</a>][<a href="threads.html#00415">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00416] (add-hook 'mew-virtual-mode-hook 'mhc-mode)</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00416] (add-hook 'mew-virtual-mode-hook 'mhc-mode)</li>
+<li><em>From</em>: Hideyuki SHIRAI (&#x767D;&#x4E95;&#x79C0;&#x884C;) &lt;<a href="mailto:shirai@DOMAIN.HIDDEN">shirai@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Wed, 23 Feb 2000 20:35:20 +0900</li>
+<li><em>Posted</em>: Wed, 23 Feb 2000 20:34:39 +0900 (JST)</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x767D;&#x4E95;&#x3067;&#x3059;&#x3002;
+
+Subject &#x306E;&#x307E;&#x3093;&#x307E;&#x306A;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;mhc.el &#x306E;&#x4EE5;&#x4E0B;&#x306E;&#x8AAC;&#x660E;&#x3084; 00usage.jis &#x306B;
+
+;; for Mew user:
+;;   (setq mhc-mailer-package 'mew)
+;;   (autoload 'mhc-mode &quot;mhc&quot; nil t)
+;;   (add-hook 'mew-summary-mode-hook 'mhc-mode)
+
+(add-hook 'mew-virtual-mode-hook 'mhc-mode)
+
+&#x3082;&#x4ED8;&#x3051;&#x52A0;&#x3048;&#x308B;&#x3068;&#x826F;&#x3044;&#x3093;&#x3058;&#x3083;&#x306A;&#x3044;&#x304B;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;&#x4EE5;&#x524D;&#x304B;&#x3089; virtual-mode
+&#x3067;&#x3082;&#x4F7F;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3051;&#x3069;&#x3001;&#x5168;&#x7136;&#x554F;&#x984C;&#x306A;&#x304F;&#x4F7F;&#x3048;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+
+
+P.S.
+(setq mhc-mailer-package 'mua) &#x3063;&#x3066;&#x3059;&#x308B;&#x3093;&#x3058;&#x3083;&#x306A;&#x304F;&#x3066;&#x3001;&#x3069;&#x306E; MUA &#x304B;
+&#x3089;&#x547C;&#x3070;&#x308C;&#x305F;&#x304B;&#x3092;&#x5224;&#x65AD;&#x3057;&#x3066;&#x52D5;&#x7684;&#x306B;&#x5207;&#x308A;&#x66FF;&#x3048;&#x308B;&#x3063;&#x3066;&#x51FA;&#x6765;&#x306A;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#x306D;&#x3047;&#xFF1F;
+
+Mew, Wanderlust, Gnus &#x306E;&#x3046;&#x3061; 2&#x3064;&#x3001;&#x3042;&#x308B;&#x3044;&#x306F; 3&#x3064;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x3044;&#x308B;&#x4EBA;&#x3063;&#x3066;
+&#x7D50;&#x69CB;&#x591A;&#x3044;&#x3088;&#x3046;&#x306A;&#x6C17;&#x3082;&#x3059;&#x308B;&#x3093;&#x3067;&#x3059;&#x3002;
+
+# &#x3075;&#x3068;&#x601D;&#x3063;&#x305F;&#x3060;&#x3051;&#x3067;&#x3001;&#x65B9;&#x6CD5;&#x306F;&#x5168;&#x7136;&#x8003;&#x3048;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3051;&#x3069;&#x3002;
+
+-- 
+&#x767D;&#x4E95;&#x79C0;&#x884C; (<a  rel="nofollow" href="mailto:shirai@xxxxxxxxxxxxxxxxxxx">mailto:shirai@xxxxxxxxxxxxxxxxxxx</a>)
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00416" href="msg00416.html">[mhc:00417] Re: (add-hook 'mew-virtual-mode-hook 'mhc-mode)</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00414.html">[mhc:00415] Re: patch for Gnus</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00416.html">[mhc:00417] Re: (add-hook 'mew-virtual-mode-hook 'mhc-mode)</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00414.html">[mhc:00415] Re: patch for Gnus</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00416.html">[mhc:00417] Re: (add-hook 'mew-virtual-mode-hook 'mhc-mode)</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00415"><strong>Date</strong></a></li>
+<li><a href="threads.html#00415"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

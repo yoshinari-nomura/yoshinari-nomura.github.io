@@ -1,0 +1,128 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00845] Re: ruby -->
+<!--X-From-R13: Kbfuvanev @bzhen <abzNpfpr.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Fri, 28 Jul 2000 17:30:37 +0900 -->
+<!--X-Message-Id: 20000728173037P.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: uaef5gl87.fsf@metaxa.hrl.hitachi.co.jp -->
+<!--X-Reference: 20000727191531R.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Reference: uog3jq0k6.fsf@metaxa.hrl.hitachi.co.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00845] Re: ruby</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00843.html">Date Prev</a>][<a href="msg00845.html">Date Next</a>][<a href="msg00845.html">Thread Prev</a>][<a href="msg00846.html">Thread Next</a>][<a href="maillist.html#00844">Date Index</a>][<a href="threads.html#00844">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00845] Re: ruby</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00845] Re: ruby</li>
+<li><em>From</em>: Yoshinari Nomura &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Fri, 28 Jul 2000 17:30:37 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:uog3jq0k6.fsf@DOMAIN.HIDDEN">uog3jq0k6.fsf@xxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:uaef5gl87.fsf@DOMAIN.HIDDEN">uaef5gl87.fsf@xxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20000727191531R.nom@DOMAIN.HIDDEN">20000727191531R.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:uog3jq0k6.fsf@DOMAIN.HIDDEN">uog3jq0k6.fsf@xxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>On 27 Jul 2000 20:23:21 +0900,
+	MIYOSHI Masanori &lt;miyoshi@xxxxxxxxxxxxx&gt; said:
+
+&gt; &#x305D;&#x308C;&#x304B;&#x3089;&#x3001;&#x76F8;&#x5909;&#x308F;&#x3089;&#x305A;&#x3001;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3059;&#x308B;&#x3068; gemcal &#x304C;&#x7570;&#x5E38;
+&gt; &#x7D42;&#x4E86;&#x3059;&#x308B;&#x3088;&#x3046;&#x3067;&#x3059;&#x3002;
+
+&#x524D;&#x306B;&#x3082;&#x66F8;&#x3044;&#x305F;&#x3068;&#x601D;&#x3044;&#x307E;&#x3057;&#x305F;&#x304C;&#x3001;
+
+---------------------------------------------
+#!/usr/local/bin/ruby 
+
+require 'gtk'
+
+w = Gtk::Window .new(Gtk::WINDOW_TOPLEVEL)
+b = Gtk::Combo .new()
+w .add(b) .show_all
+b .entry .set_text(&quot;TEST&quot;)
+
+Gtk .main
+---------------------------------------------
+
+&#x3053;&#x308C;&#x3060;&#x3051;&#x3067;&#x843D;&#x3061;&#x308B;&#x3093;&#x3067;&#x3059;&#x3088;&#x306D;&#x3002;&#x3002;FreeBSD &#x3060;&#x3068;&#x554F;&#x984C;&#x306A;&#x3044;&#x306E;&#x3067;&#x3059;&#x304C;&#x3002;
+&#x3069;&#x3046;&#x3082;&#x3001;entry .set_text(&quot;TEST&quot;) &#x304C;&#x4F7F;&#x3048;&#x306A;&#x3044;&#x307F;&#x305F;&#x3044;&#x3067;&#x3059;&#x3002;
+
+Cygwin &#x3067;&#x30A8;&#x30E9;&#x30FC;&#x3092;&#x30EA;&#x30C0;&#x30A4;&#x30EC;&#x30AF;&#x30C8;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x306A;&#x304B;&#x3063;&#x305F;&#x306E;&#x3067;&#x3001;
+&#x624B;&#x30BF;&#x30A4;&#x30D7;&#x3067;&#x30A8;&#x30E9;&#x30FC;&#x3092;&#x62FE;&#x3046;&#x3068;&#x3001;
+
+Gtk-WARNING **: invalid cast from (NULL) pointer to `GtkOpject'
+
+Gtk-CRITICAL **: file gtkobject.c: line 1089 (gtk_object_set_user_data):
+   assertion `object != NULL' failed.
+
+Gtk-CRITICAL **: file gtksignal.c: line 724 (gtk_signal_connect):
+   assertion `object != NULL' failed.
+
+test.rb:8: in `set_text': destroyed GtkObject (ArgumentError) from tst.rb:8
+
+&#x306E;&#x3088;&#x3046;&#x306B;&#x51FA;&#x307E;&#x3059;&#x3002;Gtk &#x306F; 19990828 &#x3060;&#x3063;&#x305F;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;
+--
+nom
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00820" href="msg00820.html">[mhc:00821] Re: ruby</a></strong>
+<ul><li><em>From:</em> MIYOSHI Masanori</li></ul></li>
+<li><strong><a name="00831" href="msg00831.html">[mhc:00832] Re: ruby</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+<li><strong><a name="00833" href="msg00833.html">[mhc:00834] Re: ruby</a></strong>
+<ul><li><em>From:</em> MIYOSHI Masanori</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00843.html">[mhc:00844] Re: negation format (current)</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00845.html">[mhc:00846] Re: ruby</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00845.html">[mhc:00846] Re: ruby</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00846.html">[mhc:00847] Re: ruby</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00844"><strong>Date</strong></a></li>
+<li><a href="threads.html#00844"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01962] Re: WebMHC2 -->
+<!--X-From-R13: xabxNqnvbarg.te.wc -->
+<!--X-Date: Fri, 24 Sep 2004 12:38:05 +0900 -->
+<!--X-Message-Id: 87pt4cfiaq.wl@knok.daionet.gr.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: d7ey8j5umn1.wl@kencho.tom.sfc.keio.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01962] Re: WebMHC2</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01960.html">Date Prev</a>][<a href="msg01962.html">Date Next</a>][<a href="msg01960.html">Thread Prev</a>][<a href="msg01962.html">Thread Next</a>][<a href="maillist.html#01961">Date Index</a>][<a href="threads.html#01961">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01962] Re: WebMHC2</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01962] Re: WebMHC2</li>
+<li><em>From</em>: <a href="mailto:knok@DOMAIN.HIDDEN">knok@xxxxxxxxxxxxx</a></li>
+<li><em>Date</em>: Fri, 24 Sep 2004 12:38:05 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:d7ey8j5umn1.wl@DOMAIN.HIDDEN">d7ey8j5umn1.wl@xxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:d7ey8j5umn1.wl@DOMAIN.HIDDEN">d7ey8j5umn1.wl@xxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: Wanderlust/2.10.1 (Watching The Wheels) SEMI/1.14.6 (Maruoka) FLIM/1.14.6 (Marutamachi) APEL/10.6 Emacs/21.3 (i386-pc-linux-gnu) MULE/5.0 (SAKAKI)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>  &#x91CE;&#x9996;&#x3067;&#x3059;&#x3002;
+
+At Mon, 20 Sep 2004 21:53:54 +0900,
+Fumihiro Kato wrote:
+&gt; &#x6570;&#x30F5;&#x6708;&#x524D;&#x306B;AirH&quot;&#x3092;&#x624B;&#x306B;&#x5165;&#x308C;&#x305F;&#x305F;&#x3081;&#xFF0C;
+&gt; Web&#x7D4C;&#x7531;&#x3067;MHC&#x3092;&#x5FEB;&#x9069;&#x306B;&#x4F7F;&#x3048;&#x308B;&#x3088;&#x3046;&#x306B;&#xFF0C;
+&gt; CGI&#x3092;&#x66F8;&#x3044;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#xFF0E;
+
+  &#x306A;&#x304B;&#x306A;&#x304B;&#x4FBF;&#x5229;&#x3067;&#x3059;&#x306D;&#x3002;&#x3068;&#x3044;&#x3046;&#x304B;&#x4F3C;&#x305F;&#x3088;&#x3046;&#x306A;&#x3082;&#x306E;&#x3092;&#x4F5C;&#x308D;&#x3046;&#x3068;&#x601D;&#x3063;&#x305F;&#x77E2;&#x5148;&#x306B;&#x516C;&#x958B;
+&#x3055;&#x308C;&#x305F;&#x306E;&#x3067;&#x3001;&#x5B9F;&#x88C5;&#x3057;&#x306A;&#x304F;&#x3066;&#x3059;&#x3093;&#x3067;&#x559C;&#x3093;&#x3067;&#x3044;&#x307E;&#x3059;&#x3002;
+
+  mhccat.cgi&#x3092;&#x3061;&#x3087;&#x3063;&#x3068;&#x3044;&#x3058;&#x3063;&#x3066;URL&#x3063;&#x307D;&#x3044;&#x3082;&#x306E;&#x304C;link&#x306B;&#x306A;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x3066;&#x307F;&#x307E;
+&#x3057;&#x305F;&#x3002;regex&#x306F;&#x307E;&#x3060;&#x3061;&#x3087;&#x3063;&#x3068;&#x7518;&#x3044;&#x304B;&#x3082;&#x3057;&#x308C;&#x307E;&#x305B;&#x3093;&#x3002;
+-- 
+&#x91CE;&#x9996; &#x8CB4;&#x55E3;
+E-mail: knok@xxxxxxxxxxxxx
+	knok@xxxxxxxxxx / knok@xxxxxxxxxx
+
+--- mhccat.cgi	2004/09/24 03:21:02	1.1
++++ mhccat.cgi	2004/09/24 03:28:52
+@@ -19,6 +19,10 @@
+   exit 1
+ end
+ 
++def href(str)
++	str.gsub(/(http:\/\/[0-9a-zA-Z.+&amp;=\?\/-]*)/, '&lt;a href=&quot;\1&quot;&gt;\1&lt;/a&gt;')
++end
++
+ date = $query['date'][0]
+ 
+ type = ($query['type'][0]) ? $query['type'][0] : 'html'
+@@ -61,7 +65,7 @@
+ &lt;pre&gt;
+ EOT
+ 
+-  print Kconv::tojis(CGI::escapeHTML(Kconv::toeuc(data)))
++  print Kconv::tojis(href(CGI::escapeHTML(Kconv::toeuc(data))))
+ 
+   print &lt;&lt;EOT
+ &lt;/pre&gt;
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01962" href="msg01962.html">[mhc:01963] Re: WebMHC2</a></strong>
+<ul><li><em>From:</em> Fumihiro Kato</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="01956" href="msg01956.html">[mhc:01957] WebMHC2</a></strong>
+<ul><li><em>From:</em> Fumihiro Kato</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01960.html">[mhc:01961] Re: WebMHC2</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01962.html">[mhc:01963] Re: WebMHC2</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01960.html">[mhc:01961] Re: WebMHC2</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01962.html">[mhc:01963] Re: WebMHC2</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01961"><strong>Date</strong></a></li>
+<li><a href="threads.html#01961"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

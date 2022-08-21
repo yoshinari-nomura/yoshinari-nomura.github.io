@@ -1,0 +1,125 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01860] mhc2ol on Ruby 1.8 -->
+<!--X-From-R13: VORO Vvfnxnmh <uvfnxnmhNqy.nvfg&#45;anen.np.wc> -->
+<!--X-Date: Tue, 21 Oct 2003 21:38:29 +0900 -->
+<!--X-Message-Id: uy8veojei.wl%hisaka&#45;h@wide.ad.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01860] mhc2ol on Ruby 1.8</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01858.html">Date Prev</a>][<a href="msg01860.html">Date Next</a>][<a href="msg01883.html">Thread Prev</a>][<a href="msg01860.html">Thread Next</a>][<a href="maillist.html#01859">Date Index</a>][<a href="threads.html#01859">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01860] mhc2ol on Ruby 1.8</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01860] mhc2ol on Ruby 1.8</li>
+<li><em>From</em>: HADA Hisakazu &lt;<a href="mailto:hisakazu@DOMAIN.HIDDEN">hisakazu@xxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Tue, 21 Oct 2003 21:38:29 +0900</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: Wanderlust/2.11.18 (Wonderwall) SEMI/1.14.3 (Ushinoya) LIMIT/1.14.7 (Fujiidera) APEL/10.6 Emacs/21.1 (i386-mingw-nt5.1.2600) MULE/5.0 (SAKAKI) Meadow/2.00 Beta2-dev (WOMINAHESHI)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>
+
+CVS&#x306E; &#x6700;&#x65B0;&#x7248;&#x306E; mhc&#x3092; wanderlust&#x3068;&#x4F7F;&#x3063;&#x3066;&#x307E;&#x3059;&#x3002;
+&#x6700;&#x8FD1; outlook&#x3068;&#x4E92;&#x63DB;&#x6027;&#x304C;&#x3042;&#x308B;&#x3068;&#x30B6;&#x30A6;&#x30EB;&#x30B9;&#x3060;&#x3063;&#x305F;&#x308A;CE&#x3060;&#x3063;&#x305F;&#x308A;&#x30B5;&#x30A4;&#x30DC;&#x30A6;&#x30BA;&#x3060;&#x3063;&#x305F;
+&#x308A;&#x3068;&#x76F8;&#x6027;&#x304C;&#x3088;&#x304F;&#x306A;&#x3063;&#x305F;&#x308A;&#x3059;&#x308B;&#x306E;&#x3067;
+&#x4E45;&#x3057;&#x3076;&#x308A;&#x306B; mhc2ol&#x3092;&#x52D5;&#x304B;&#x3057;&#x3066;&#x307F;&#x3088;&#x3046;&#x3068;&#x601D;&#x3063;&#x305F;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;
+mhc-schedule.rb&#x306E; warning&#x306F;&#x3068;&#x3082;&#x304B;&#x304F;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x30A8;&#x30E9;&#x30FC;&#x3067;&#x3068;&#x307E;&#x3063;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3059;&#x3002;
+
+
+&#x74B0;&#x5883;&#x306F;  OS&#x304C; XP 
+        Outlook&#x304C;Outlook2002(OfficeXP)
+        cygwin&#x4E0A;&#x306E;package&#x306E; ruby1.8 &#x306B; w32ole &#x3092; make&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+
+duration &#x304C;&#x3046;&#x307E;&#x304F;&#x3068;&#x308C;&#x306A;&#x3044;&#x3088;&#x3046;&#x3067;&#x3001;&#x305F;&#x3076;&#x3093;&#x6642;&#x9593;&#x6307;&#x5B9A;&#x306E;&#x306A;&#x3044;&#x4E88;&#x5B9A;&#x304C;
+&#x5F15;&#x3063;&#x304B;&#x304B;&#x3063;&#x3066;&#x308B;&#x6C17;&#x306F;&#x3057;&#x307E;&#x3059;&#x304C;&#x3068;&#x308A;&#x3042;&#x3048;&#x305A;&#x305D;&#x3053;&#x3067;&#x8FFD;&#x8DE1;&#x306F;&#x3068;&#x307E;&#x3063;&#x3066;&#x307E;&#x3059;&#x3002;&#x3002;&#x3002;&#x3002;
+
+
+-- &#x306F;&#x3060;&#x3072;&#x3055;&#x304B;&#x305A;
+
+
+
+/usr/lib/ruby/1.8/mhc-schedule.rb:919: warning: string pattern instead of regexp
+; metacharacters no longer effective
+/usr/lib/ruby/1.8/mhc-schedule.rb:919: warning: string pattern instead of regexp
+; metacharacters no longer effective
+/usr/bin/mhc2ol:615: warning: string =~ string will be obsolete; use explicit re
+gexp
+/usr/lib/ruby/1.8/mhc-date.rb:279:in `&lt;=&gt;': undefined method `days' for nil:NilC
+lass (NoMethodError)
+        from /usr/bin/mhc2ol:57:in `=='
+        from /usr/bin/mhc2ol:57:in `get_duration'
+        from /usr/bin/mhc2ol:452:in `setup_ol_appointments'
+        from /usr/bin/mhc2ol:426:in `each'
+        from /usr/bin/mhc2ol:426:in `setup_ol_appointments'
+        from /usr/bin/mhc2ol:604:in `send_to_outlook'
+        from /usr/bin/mhc2ol:626:in `export'
+        from /usr/bin/mhc2ol:614:in `each_sch'
+        from /usr/lib/ruby/1.8/mhc-schedule.rb:1178:in `each'
+        from /usr/lib/ruby/1.8/mhc-schedule.rb:1178:in `each_sch'
+        from /usr/lib/ruby/1.8/mhc-schedule.rb:1177:in `each'
+        from /usr/lib/ruby/1.8/mhc-schedule.rb:1177:in `each_sch'
+        from /usr/bin/mhc2ol:614:in `export'
+        from /usr/bin/mhc2ol:832
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01860" href="msg01860.html">[mhc:01861] Re: mhc2ol on Ruby 1.8</a></strong>
+<ul><li><em>From:</em> miyoshi</li></ul></li>
+<li><strong><a name="01861" href="msg01861.html">[mhc:01862] Re: mhc2ol on Ruby 1.8</a></strong>
+<ul><li><em>From:</em> &#x7530;&#x4E2D; &#x4FCA;&#x660E;</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01858.html">[mhc:01859] warning: parenthesize argument(s) for future version &#x306A;&#x3069;</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01860.html">[mhc:01861] Re: mhc2ol on Ruby 1.8</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01883.html">[mhc:01884] Re: warning: parenthesize argument(s) for future version &#x306A;&#x3069;</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01860.html">[mhc:01861] Re: mhc2ol on Ruby 1.8</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01859"><strong>Date</strong></a></li>
+<li><a href="threads.html#01859"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

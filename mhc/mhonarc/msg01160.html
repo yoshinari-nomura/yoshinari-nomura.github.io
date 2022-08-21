@@ -1,0 +1,98 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01161] filter &#45;> collect -->
+<!--X-From-R13: Ynmhuveb @WEVWKO[O <maNzos.avsgl.pbz> -->
+<!--X-Date: Mon, 18 Dec 2000 07:12:59 +0900 -->
+<!--X-Message-Id: 20001218070704.0E46.ZN@mbf.nifty.com -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01161] filter -&gt; collect</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01159.html">Date Prev</a>][<a href="msg01161.html">Date Next</a>][<a href="msg01159.html">Thread Prev</a>][<a href="msg01161.html">Thread Next</a>][<a href="maillist.html#01160">Date Index</a>][<a href="threads.html#01160">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01161] filter -&gt; collect</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01161] filter -&gt; collect</li>
+<li><em>From</em>: Kazuhiro NISHIYAMA &lt;<a href="mailto:zn@DOMAIN.HIDDEN">zn@xxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Mon, 18 Dec 2000 07:12:59 +0900</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>ruby&#x306E;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x306B;&#x3088;&#x3063;&#x3066;&#x306F;warning&#x304C;&#x3067;&#x308B;&#x3088;&#x3046;&#x306A;&#x306E;&#x3067;&#x30D1;&#x30C3;&#x30C1;&#x3067;&#x3059;&#x3002;
+
+--- mhc-make.rb~	Mon Dec 18 06:53:43 2000
++++ mhc-make.rb	Mon Dec 18 06:54:09 2000
+@@ -247,7 +247,7 @@
+ 
+     ## set useful macros.
+     @macros['@@MHC_RUBY_VERSION@@'] = 
+-      VERSION .split('.') .filter{|i| format(&quot;%02d&quot;, i)} .join('')
++      VERSION .split('.') .collect{|i| format(&quot;%02d&quot;, i)} .join('')
+     @macros['@@MHC_TOPDIR@@'] = Dir .pwd
+   end
+ 
+
+
+-- 
+ZnZ(&#x30BC;&#x30C3;&#x30C8; &#x30A8;&#x30CC; &#x30BC;&#x30C3;&#x30C8;)
+&#x897F;&#x5C71;&#x548C;&#x5E83;(Kazuhiro NISHIYAMA)
+
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01161" href="msg01161.html">[mhc:01162] Re: filter -&gt; collect</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01159.html">[mhc:01160] Re: mhc-calendar-toggle-insert-rectangle</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01161.html">[mhc:01162] Re: filter -&gt; collect</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01159.html">[mhc:01160] Re: mhc-calendar-toggle-insert-rectangle</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01161.html">[mhc:01162] Re: filter -&gt; collect</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01160"><strong>Date</strong></a></li>
+<li><a href="threads.html#01160"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

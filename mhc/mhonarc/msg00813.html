@@ -1,0 +1,106 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00814] Re: mhc&#45;cmail.el -->
+<!--X-From-R13: Kbfuvanev @A[GDO <abzNpfpr.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Mon, 24 Jul 2000 19:14:02 +0900 -->
+<!--X-Message-Id: 20000724191402D.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: E13GeZ3&#45;000750&#45;00@ev.netlab.zetabits.co.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00814] Re: mhc-cmail.el</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00812.html">Date Prev</a>][<a href="msg00814.html">Date Next</a>][<a href="msg00812.html">Thread Prev</a>][<a href="msg00945.html">Thread Next</a>][<a href="maillist.html#00813">Date Index</a>][<a href="threads.html#00813">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00814] Re: mhc-cmail.el</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a>, <a href="mailto:matz@DOMAIN.HIDDEN">matz@xxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00814] Re: mhc-cmail.el</li>
+<li><em>From</em>: Yoshinari NOMURA &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Mon, 24 Jul 2000 19:14:02 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:E13GeZ3-000750-00@DOMAIN.HIDDEN">E13GeZ3-000750-00@xxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:E13GeZ3-000750-00@DOMAIN.HIDDEN">E13GeZ3-000750-00@xxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x4E43;&#x6751;&#x3067;&#x3059;&#x3002;&#x590F;&#x4F11;&#x307F;&#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x95A2;&#x4FC2;&#x3067;&#x53CD;&#x5FDC;&#x304C;&#x920D;&#x304F;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+
+On Mon, 24 Jul 2000 18:30:21 +0900,
+	matz@xxxxxxxxxxxx (Yukihiro Matsumoto) said:
+
+&gt; mhc-cmail.el&#x4E2D;&#x306E;&#x95A2;&#x6570;mhc-cmail-get-import-buffer&#x3067;&#x3059;&#x304C;&#x3001;
+&gt; 
+&gt; (defun mhc-cmail-get-import-buffer (get-original)
+&gt;   ;; (if get-original (cmail-summary-display-asis)) ;; xxx
+&gt;   (save-excursion
+&gt;     (cmail-show-contents (cmail-get-page-number-from-summary))
+&gt;     (set-buffer *cmail-mail-buffer)
+&gt;     (current-buffer)))
+&gt; 
+&gt; &#x3068;&#x3059;&#x308B;&#x3068;&#x30C1;&#x30E3;&#x30F3;&#x3068;&#x52D5;&#x304F;&#x3088;&#x3046;&#x3067;&#x3059;&#x3002;
+
+&#x3069;&#x3046;&#x3082;&#x3042;&#x308A;&#x304C;&#x3068;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;&#x3002;&#x53CD;&#x6620;&#x3057;&#x307E;&#x3059;&#x3002;
+
+&gt; &#x3068;&#x3053;&#x308D;&#x3067;&#x3001;mhc-import&#x3067; 14:00-16:00 &#x306E;&#x3088;&#x3046;&#x306A;&#x7BC4;&#x56F2;&#x3092;guess&#x3059;&#x308B;&#x3053;
+&gt; &#x3068;&#x306F;&#x3067;&#x304D;&#x306A;&#x3044;&#x3082;&#x306E;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#xFF1F;
+
+&#x4ED6;&#x304B;&#x3089;&#x3082;&#x305D;&#x306E;&#x8A71;&#x304C;&#x3042;&#x3063;&#x3066;&#x3001;TODO &#x306B;&#x5165;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;&#x5C11;&#x3005;&#x304A;&#x5F85;&#x3061;&#x4E0B;&#x3055;&#x3044;&#x3002;
+--
+nom
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00812" href="msg00812.html">[mhc:00813] mhc-cmail.el</a></strong>
+<ul><li><em>From:</em> Yukihiro Matsumoto</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00812.html">[mhc:00813] mhc-cmail.el</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00814.html">[mhc:00815] ruby</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00812.html">[mhc:00813] mhc-cmail.el</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00945.html">[mhc:00946] Re: Guess</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00813"><strong>Date</strong></a></li>
+<li><a href="threads.html#00813"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

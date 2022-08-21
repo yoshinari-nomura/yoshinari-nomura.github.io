@@ -1,0 +1,19 @@
+--- gemcal-dist	Thu May 25 14:11:32 2000
++++ gemcal	Mon Jun 19 17:00:16 2000
+@@ -503,6 +503,7 @@
+ class MhcCalendar
+   class Visual < GtkToplevel
+     BUTTONS = [['prev',  'prev month'], ['next',  'next month'],
++               ['prev_year', 'prev year'], ['next_year', 'next year'],
+                ['prev2', 'prev month'], ['next2', 'next month'],
+                ['today', 'this month'],	['close', 'close']]
+     def initialize(date, x = nil, y = nil)
+@@ -533,6 +534,8 @@
+     @vml .signal_connect('destroy')          {destroy_handler}
+     @vml .signal_connect('next-btn-clicked') {move_month(1)}
+     @vml .signal_connect('prev-btn-clicked') {move_month(-1)}
++    @vml .signal_connect('next_year-btn-clicked') {move_month(12)}
++    @vml .signal_connect('prev_year-btn-clicked') {move_month(-12)}
+     @vml .signal_connect('next2-btn-clicked'){move_month2(1)}
+     @vml .signal_connect('prev2-btn-clicked'){move_month2(-1)}
+     @vml .signal_connect('close-btn-clicked'){@vml .destroy}

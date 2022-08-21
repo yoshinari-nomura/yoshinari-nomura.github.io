@@ -1,0 +1,148 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00251] Re: mhc on wl (experimental support) -->
+<!--X-From-R13: Kbfuvanev @A[GDO <abzNpfpr.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Mon, 29 Nov 1999 20:11:20 +0900 -->
+<!--X-Message-Id: 19991129201037H.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 19991129200354B.1000@eccosys.com -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00251] Re: mhc on wl (experimental support)</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00249.html">Date Prev</a>][<a href="msg00251.html">Date Next</a>][<a href="msg00252.html">Thread Prev</a>][<a href="msg00253.html">Thread Next</a>][<a href="maillist.html#00250">Date Index</a>][<a href="threads.html#00250">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00251] Re: mhc on wl (experimental support)</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:sen_ml@DOMAIN.HIDDEN">sen_ml@xxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00251] Re: mhc on wl (experimental support)</li>
+<li><em>From</em>: Yoshinari NOMURA &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Mon, 29 Nov 1999 20:11:20 +0900</li>
+<li><em>Cc</em>: <a href="mailto:wl@DOMAIN.HIDDEN">wl@xxxxxxxxxxxxxx</a>, <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:19991129200354B.1000@DOMAIN.HIDDEN">19991129200354B.1000@xxxxxxxxxxx</a>&gt;</li>
+<li><em>Posted</em>: Mon, 29 Nov 1999 20:10:37 +0900</li>
+<li><em>References</em>: &lt;<a href="mailto:19991129200354B.1000@DOMAIN.HIDDEN">19991129200354B.1000@xxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>On Mon, 29 Nov 1999 20:03:54 +0900,
+	sen_ml@xxxxxxxxxxx said:
+
+&gt; mhc &#x306E;&#x4F5C;&#x8005;&#x306E;&#x4E43;&#x6751;&#x3055;&#x3093;&#x304C; mhc &#x3092; Wanderlust &#x4E0A;&#x3067;&#x3082;&#x52D5;&#x4F5C;&#x3059;&#x308B; [*] &#x69D8;&#x306B;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;
+&gt; (wl &#x306F;&#x5909;&#x66F4;&#x3057;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;)
+&gt; 
+&gt; &#xFF03; &#x65E5;&#x672C;&#x8A9E;&#x3067;&#x3046;&#x307E;&#x304F;&#x8868;&#x73FE;&#x3067;&#x304D;&#x306A;&#x304F;&#x3066;&#x3054;&#x3081;&#x3093;&#x306A;&#x3055;&#x3044;&#x3002; m(__)m
+&gt; 
+&gt; &#x5192;&#x967A; [*] &#x3092;&#x3057;&#x305F;&#x3044;&#x65B9;&#x306F;
+&gt; 
+&gt;   <a  rel="nofollow" href="http://www.swlab.csce.kyushu-u.ac.jp/~nom/prj/mhc/mhc-snap19991129-2.tar.gz">http://www.swlab.csce.kyushu-u.ac.jp/~nom/prj/mhc/mhc-snap19991129-2.tar.gz</a>
+&gt; 
+&gt; &#x304B;&#x3089;&#x5165;&#x624B;&#x3057;&#x3066;&#x4E0B;&#x3055;&#x3044;&#x3002;
+
+&#x5931;&#x793C;&#x3057;&#x307E;&#x3059;&#x3002;&#x65E9;&#x901F;&#x30D1;&#x30C3;&#x30C1;&#x3067;&#x3059;&#x3002;:-)
+--
+nom
+
+Index: emacs/mhc.el
+===================================================================
+RCS file: /u/nom/prj/cvsroot/mhc/emacs/mhc.el,v
+retrieving revision 1.14
+diff -u -r1.14 mhc.el
+--- mhc.el      1999/11/29 09:53:46     1.14
++++ mhc.el      1999/11/29 11:03:42
+@@ -190,6 +190,11 @@
+               from (+ 5 from))))
+ 
+ 
++(set-face-foreground (make-face 'secret) &quot;white&quot;)
++(set-face-background 'secret &quot;gray&quot;)
++(set-face-foreground (make-face 'conf)   &quot;white&quot;)
++(set-face-background 'conf &quot;purple&quot;)
++
+ (defvar mhc-header-string-secret-subject &quot;[SECRET] &quot;)
+ (put-text-property 0 (1- (length mhc-header-string-secret-subject))
+                   'face 'secret mhc-header-string-secret-subject)
+@@ -686,13 +691,14 @@
+       (set-window-configuration (car-safe mhc-window-stack)))
+   (setq mhc-window-stack (cdr-safe mhc-window-stack)))
+ 
+-
+-
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;;
+ ;; (Category . (parent-face fg bg))
+ ;;
+ 
++(set-face-foreground (make-face 'red)    &quot;red&quot;)
++(set-face-foreground (make-face 'blue)   &quot;blue&quot;)
++
+ (defvar mhc-category-face-alist
+   '((&quot;Holiday&quot;  . (nil &quot;Red&quot;    nil))
+     (&quot;Work&quot;     . (nil &quot;Brown&quot;  nil))
+@@ -732,13 +738,6 @@
+       (if fg (set-face-foreground face fg))
+       (if bg (set-face-background face bg))
+       (setq alist (cdr alist)))))
+-
+-(set-face-foreground (make-face 'red)    &quot;red&quot;)
+-(set-face-foreground (make-face 'blue)   &quot;blue&quot;)
+-(set-face-foreground (make-face 'secret) &quot;white&quot;)
+-(set-face-background 'secret &quot;gray&quot;)
+-(set-face-foreground (make-face 'conf)   &quot;white&quot;)
+-(set-face-background 'conf &quot;purple&quot;)
+ 
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;; manupulate data from mhc-summary-buffer.
+
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00249.html">[mhc:00250] Re: mhc-snap19991129</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00251.html">[mhc:00252] Re: mhc-snap19991129</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00252.html">[mhc:00253] Re: [REQ] guess a date repeatedly by C-n or C-p(n or p)</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00253.html">[mhc:00254] Re: mhc on wl (experimental support)</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00250"><strong>Date</strong></a></li>
+<li><a href="threads.html#00250"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

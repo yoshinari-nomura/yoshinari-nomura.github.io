@@ -1,0 +1,117 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00048] Re: rescan after modify patch -->
+<!--X-From-R13: Kbfuvanev @A[GDO <abzNpfpr.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Tue, 25 May 1999 19:19:46 +0900 -->
+<!--X-Message-Id: 19990525191944E.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 199905250804.RAA04366@ace.csce.kyushu&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00048] Re: rescan after modify patch</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00046.html">Date Prev</a>][<a href="msg00048.html">Date Next</a>][<a href="msg00046.html">Thread Prev</a>][<a href="msg00048.html">Thread Next</a>][<a href="maillist.html#00047">Date Index</a>][<a href="threads.html#00047">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00048] Re: rescan after modify patch</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00048] Re: rescan after modify patch</li>
+<li><em>From</em>: Yoshinari NOMURA &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Tue, 25 May 1999 19:19:46 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:199905250804.RAA04366@DOMAIN.HIDDEN">199905250804.RAA04366@xxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Posted</em>: Tue, 25 May 1999 19:19:44 +0900</li>
+<li><em>References</em>: &lt;<a href="mailto:199905250804.RAA04366@DOMAIN.HIDDEN">199905250804.RAA04366@xxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x4E43;&#x6751;&#x3067;&#x3059;&#x3002;
+
+On Tue, 25 May 1999 17:04:11 +0900,
+	Hanada Yasunori &lt;yasunori@xxxxxxxxxxxxxxxxxxxxxxxxx&gt; said:
+
+&gt; C-cm&#x3067;X-SC-Subject&#x3092;modify&#x3057;&#x305F;&#x5F8C;&#x306B;C-cC-c&#x3067;&#x767B;&#x9332;&#x3057;&#x305F;&#x6642;&#x306B;&#x3001;
+&gt; rescan&#x3055;&#x308C;&#x306A;&#x3044;&#x306E;&#x3067;&#x6614;&#x306E;X-SC-Subject&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x305F;&#x307E;&#x307E;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&gt; 
+&gt; &#x52D8;&#x3067;patch&#x3092;&#x4F5C;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;
+&gt; 
+&gt; --- mhc.el.DIST	Mon May 24 18:48:56 1999
+&gt; +++ mhc.el	Tue May 25 16:59:09 1999
+&gt; @@ -221,7 +221,8 @@
+&gt;  	(message &quot;File does not exist (%s).&quot; filename)
+&gt;        (mhc-window-push)
+&gt;        (find-file-other-window filename)
+&gt; -      (mhc-draft-mode))))
+&gt; +      (mhc-draft-mode)))
+&gt; +  (mhc-summary-rescan-month))
+
+&#x3053;&#x308C;&#x3060;&#x3051;&#x3069;&#x3001;&#x3046;&#x307E;&#x304F;&#x6A5F;&#x80FD;&#x3057;&#x3066;&#x307E;&#x3059;&#x304B;?
+
+C-cm ... C-cC-c &#x306E;&#x5F8C;&#x306B; rescan &#x3057;&#x305F;&#x3044;&#x306A;&#x3089;&#x3001;C-cC-c &#x306E;&#x5F8C;&#x306E; 
+mhc-window-pop&#x306E;&#x5F8C;&#x306B; rescan &#x3057;&#x306A;&#x3044;&#x3068;&#x3044;&#x3051;&#x306A;&#x3044;&#x3093;&#x3060;&#x3051;&#x3069;&#x3001;
++scheule/xxx &#x306E;&#x30D0;&#x30C3;&#x30D5;&#x30A1;&#x306B;&#x623B;&#x308B;&#x3068;&#x306F;&#x9650;&#x3089;&#x306A;&#x3044;&#x304B;&#x3089;&#x3001;&#x7121;&#x7406;&#x3057;&#x3066;&#x3084;&#x3089;&#x306A;&#x3044;
+&#x65B9;&#x304C;&#x3044;&#x3044;&#x3068;&#x3044;&#x3046;&#x5224;&#x65AD;&#x306A;&#x3093;&#x3067;&#x3059;&#x3002;buffer &#x306E;&#x540D;&#x524D;&#x3092;&#x5224;&#x5B9A;&#x3057;&#x3066; +schedule/xxx 
+&#x304B;&#x3069;&#x3046;&#x304B;&#x3092;&#x5224;&#x65AD;&#x3057;&#x3066;&#x3084;&#x3063;&#x305F;&#x306E;&#x3061;&#x306B; rescan &#x3059;&#x308B;&#x3068;&#x304B;&#x3059;&#x308C;&#x3070;&#x3044;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x3002;
+-
+nom
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00048" href="msg00048.html">[mhc:00049] Re: rescan after modify patch</a></strong>
+<ul><li><em>From:</em> Hanada Yasunori</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00046" href="msg00046.html">[mhc:00047] rescan after modify patch</a></strong>
+<ul><li><em>From:</em> Hanada Yasunori</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00046.html">[mhc:00047] rescan after modify patch</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00048.html">[mhc:00049] Re: rescan after modify patch</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00046.html">[mhc:00047] rescan after modify patch</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00048.html">[mhc:00049] Re: rescan after modify patch</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00047"><strong>Date</strong></a></li>
+<li><a href="threads.html#00047"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

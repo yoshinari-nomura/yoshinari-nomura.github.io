@@ -1,0 +1,46 @@
+--- mhc.el.orig	Wed Sep 20 20:44:16 2000
++++ mhc.el	Wed Sep 20 21:17:41 2000
+@@ -518,6 +518,22 @@
+   (mhc-draft-finish)
+   (message ""))
+ 
++(defun mhc-todo-add-to-todo ()
++  "Add to TODO list."
++  (interactive)
++  (mhc-modify-file (mhc-summary-filename))
++  (mhc-draft-add-to-todo)
++  (mhc-draft-finish)
++  (message ""))
++
++(defun mhc-todo-remove-from-todo ()
++  "Remove TODO which has been already DONE from TODO list."
++  (interactive)
++  (mhc-modify-file (mhc-summary-filename))
++  (mhc-draft-delete-from-todo)
++  (mhc-draft-finish)
++  (message ""))
++
+ (defcustom mhc-browse-x-url-function 'browse-url
+   "*A function to browse URL."
+   :group 'mhc
+--- mhc-draft.el.orig	Wed Sep 20 20:44:16 2000
++++ mhc-draft.el	Wed Sep 20 21:26:29 2000
+@@ -141,6 +141,18 @@
+   (if (mhc-draft-in-category-p "todo")
+       (mhc-draft-delete-category "done")))
+ 
++(defun mhc-draft-add-to-todo ()
++  "Set current draft as TODO."
++  (interactive)
++  (mhc-draft-append-category "todo"))
++
++(defun mhc-draft-delete-from-todo ()
++  "Set current draft as NOT-TODO."
++  (interactive)
++  (if (and (mhc-draft-in-category-p "todo")
++	   (mhc-draft-in-category-p "done"))
++       (mhc-draft-delete-category "todo")))
++
+ (defun mhc-draft-append-category (category)
+   "Append CATEGORY if it is not contained yet."
+   (mhc-header-narrowing

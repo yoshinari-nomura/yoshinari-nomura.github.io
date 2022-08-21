@@ -1,0 +1,124 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01939] Re: fixes -->
+<!--X-From-R13: YAWS Vvqrgnxn (=?vfb&#45;2022&#45;wc?P?UlDQAVS5BwTDFwCoYSW=?=) <uvqrNxbvr.bet> -->
+<!--X-Date: Thu, 09 Sep 2004 13:14:49 +0900 (JST) -->
+<!--X-Message-Id: 20040909.131449.193730069.hide@koie.org -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 87wtz5unak.fsf@namazu.org -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01939] Re: fixes</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01937.html">Date Prev</a>][<a href="msg01939.html">Date Next</a>][<a href="msg01937.html">Thread Prev</a>][<a href="msg01939.html">Thread Next</a>][<a href="maillist.html#01938">Date Index</a>][<a href="threads.html#01938">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01939] Re: fixes</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01939] Re: fixes</li>
+<li><em>From</em>: KOIE Hidetaka (&#x9BC9;&#x6C5F;&#x82F1;&#x9686;) &lt;<a href="mailto:hide@DOMAIN.HIDDEN">hide@xxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Thu, 09 Sep 2004 13:14:49 +0900 (JST)</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:87wtz5unak.fsf@DOMAIN.HIDDEN">87wtz5unak.fsf@xxxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:87wtz5unak.fsf@DOMAIN.HIDDEN">87wtz5unak.fsf@xxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>  Message-Id: &lt;87wtz5unak.fsf@xxxxxxxxxx&gt;
+  Date:       Wed, 08 Sep 2004 18:23:31 +0900
+  From:       TSUCHIYA Masatoshi &lt;tsuchiya@xxxxxxxxxx&gt;
+  Subject:    [mhc:01938] fixes
+
+  | &#x8907;&#x6570;&#x65E5;&#x306B;&#x767B;&#x9332;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092; mhc-delete &#x3057;&#x3066;&#xFF0C;&#x8907;&#x6570;&#x65E5;&#x306E;&#x4E2D;&#x304B;&#x3089;1
+  | &#x65E5;&#x3060;&#x3051;&#x3092;&#x524A;&#x9664;&#x3057;&#x3088;&#x3046;&#x3068;&#x3059;&#x308B;&#x3068;&#xFF0C;pure Gnus &#x3068; SEMI MUA &#x3067;&#x306F;&#xFF0C;&#x8A18;&#x4E8B;&#x30D0;&#x30C3;&#x30D5;&#x30A1;&#x3092;
+  | &#x4E8C;&#x91CD;&#x306B; decode &#x3057;&#x3088;&#x3046;&#x3068;&#x3057;&#x3066;&#xFF0C;&#x6587;&#x5B57;&#x5316;&#x3051;&#x3057;&#x3066;&#x3057;&#x307E;&#x3063;&#x3066;&#x3044;&#x307E;&#x3057;&#x305F;&#xFF0E;&#x3053;&#x306E;&#x554F;&#x984C;&#x306B;&#x5BFE;
+  | &#x51E6;&#x3059;&#x308B;&#x305F;&#x3081;&#xFF0C;
+  | 
+  | 	* emacs/mhc-db.el (mhc-db-add-exception-rule): Call
+  | 	`mhc-draft-reedit-file' instead of `mhc-draft-reedit-buffer', in
+  | 	order to avoid double-decoding problem in Gnus and SEMI-MUAs.
+  | 
+  | &#x3068;&#x3044;&#x3046;&#x6539;&#x5909;&#x3092;&#x884C;&#x3044;&#x307E;&#x3057;&#x305F;&#x304C;&#xFF0C;&#x79C1;&#x306E;&#x624B;&#x5143;&#x306B;&#x306F; Mew &#x306E;&#x52D5;&#x4F5C;&#x74B0;&#x5883;&#x304C;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x306E;&#x3067;&#xFF0C;
+  | Mew &#x306B;&#x5BFE;&#x3059;&#x308B;&#x52D5;&#x4F5C;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x304C;&#x884C;&#x3048;&#x307E;&#x305B;&#x3093;(&#x76EE;&#x8996;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x306E;&#x307F;)&#xFF0E;&#x3069;&#x306A;&#x305F;&#x304B;&#x30C6;&#x30B9;&#x30C8;
+  | &#x3092;&#x304A;&#x9858;&#x3044;&#x3057;&#x307E;&#x3059;&#xFF0E;
+
+&#x3046;&#x3054;&#x3044;&#x3066;&#x3044;&#x308B;&#x3088;&#x3046;&#x3067;&#x3059;&#x3002;
+&#x4E0B;&#x306F;9/17-19&#x3067;&#x767B;&#x9332;&#x3057;&#x3066;9/18&#x3092;&#x524A;&#x9664;&#x3057;&#x305F;&#x3042;&#x3068;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3067;&#x3059;:
+
+    X-SC-Subject: =?iso-2022-jp?B?GyRCJUYlOSVIGyhC?=
+    X-SC-Location: =?iso-2022-jp?B?GyRCJEkkMyQrGyhC?=
+    X-SC-Day: !20040918 20040917 20040919
+    X-SC-Time: 
+    X-SC-Category: private
+    X-SC-Priority: 
+    X-SC-Cond: 
+    X-SC-Duration: 
+    X-SC-Alarm: 
+    X-SC-Record-Id: &lt;200409091257380119.koie@*****&gt;
+    Mime-Version: 1.0
+    Content-Type: Text/Plain; charset=iso-2022-jp
+    Content-Transfer-Encoding: 7bit
+
+--
+&#x9BC9;&#x6C5F;&#x82F1;&#x9686; &lt;hide@xxxxxxxx&gt;
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01939" href="msg01939.html">[mhc:01940] Re: fixes</a></strong>
+<ul><li><em>From:</em> TSUCHIYA Masatoshi</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="01937" href="msg01937.html">[mhc:01938] fixes</a></strong>
+<ul><li><em>From:</em> TSUCHIYA Masatoshi</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01937.html">[mhc:01938] fixes</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01939.html">[mhc:01940] Re: fixes</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01937.html">[mhc:01938] fixes</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01939.html">[mhc:01940] Re: fixes</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01938"><strong>Date</strong></a></li>
+<li><a href="threads.html#01938"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

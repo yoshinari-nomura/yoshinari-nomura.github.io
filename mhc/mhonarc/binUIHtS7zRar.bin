@@ -1,0 +1,31 @@
+Index: mhc-cvs.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc-cvs.el,v
+retrieving revision 1.13
+diff -u -r1.13 mhc-cvs.el
+--- mhc-cvs.el	2002/11/11 05:27:15	1.13
++++ mhc-cvs.el	2003/05/11 09:08:04
+@@ -452,19 +452,19 @@
+ 	(setq loop t)
+ 	(while loop
+ 	  (message
+-	   (format "[file: %s] ? A)dd CVS repository, R)emove immediately, M)ove to trash"
+-		   file))
++	   "[file: %s] ? A)dd CVS repository, R)emove immediately, M)ove to trash"
++	   file)
+ 	  (condition-case nil
+ 	      (setq char (read-char))
+ 	    (error (setq char ?Z)))	;; dummy set
+ 	  (cond
+ 	   ((memq char '(?a ?A))
+ 	    (setq loop nil)
+-	    (message (format "[file: %s]  Add CVS repository..." file))
++	    (message "[file: %s]  Add CVS repository..." file)
+ 	    (mhc-record/append-log record 'add)
+ 	    (and (= 0 (mhc-cvs/backend (list "add" file)))
+ 		 (mhc-cvs/modify expf))
+-	    (message (format "[file: %s]  Add CVS repository...done" file)))
++	    (message "[file: %s]  Add CVS repository...done" file))
+ 	   ((memq char '(?r ?R))
+ 	    (setq loop nil)
+ 	    (message "")

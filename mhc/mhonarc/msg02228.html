@@ -1,0 +1,119 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:02229] mhc&#45;gnus/encode&#45;string -->
+<!--X-From-R13: WDWS Frgfhln <vevrNg.rznvy.ar.wc> -->
+<!--X-Date: Wed, 06 Dec 2006 12:44:32 +0900 -->
+<!--X-Message-Id: 87slft7l0e.fsf%irie@t.email.ne.jp -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:02229] mhc-gnus/encode-string</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg02227.html">Date Prev</a>][<a href="msg02229.html">Date Next</a>][<a href="msg02227.html">Thread Prev</a>][<a href="msg02229.html">Thread Next</a>][<a href="maillist.html#02228">Date Index</a>][<a href="threads.html#02228">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:02229] mhc-gnus/encode-string</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:02229] mhc-gnus/encode-string</li>
+<li><em>From</em>: IRIE Tetsuya &lt;<a href="mailto:irie@DOMAIN.HIDDEN">irie@xxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Wed, 06 Dec 2006 12:44:32 +0900</li>
+<li><em>Delivered-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>List-help</em>: &lt;<a href="mailto:mhc-ctl@quickhack.net?body=help">mailto:mhc-ctl@quickhack.net?body=help</a>&gt;</li>
+<li><em>List-id</em>: mhc.quickhack.net</li>
+<li><em>List-owner</em>: &lt;<a href="mailto:mhc-admin@quickhack.net">mailto:mhc-admin@quickhack.net</a>&gt;</li>
+<li><em>List-post</em>: &lt;<a href="mailto:mhc@quickhack.net">mailto:mhc@quickhack.net</a>&gt;</li>
+<li><em>List-software</em>: fml [fml 4.0.3 release (20011202/4.0.3)]</li>
+<li><em>List-unsubscribe</em>: &lt;<a href="mailto:mhc-ctl@quickhack.net?body=unsubscribe">mailto:mhc-ctl@quickhack.net?body=unsubscribe</a>&gt;</li>
+<li><em>Mail-followup-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: Gnus/5.110006 (No Gnus v0.6) Emacs/22.0.91 (gnu/linux)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>Gnus &#x4E0A;&#x3067; mhc &#x3092;&#x4F7F;&#x3063;&#x3066;&#x3044;&#x308B;&#x5834;&#x5408; mhc-gnus/encode-string &#x306F;
+rfc2047-encode-string &#x3078;&#x306E; alias &#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x304C;&#x3001;&#x7528;&#x9014;&#x306F; subject &#x306E;&#x30A8;
+&#x30F3;&#x30B3;&#x30FC;&#x30C9;&#x306A;&#x306E;&#x3067; rfc2047-encoding-type &#x3092; 'mime &#x306B;&#x675F;&#x7E1B;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308B;&#x3088;&#x3046;
+&#x306B;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;
+
+;; &quot;&#x307B;&#x3052;(foo bar)&quot; &#x306E;&#x3088;&#x3046;&#x306A; subject &#x3092;&#x767B;&#x9332;&#x3057;&#x3066;&#x8868;&#x793A;&#x3057;&#x3088;&#x3046;&#x3068;&#x3059;&#x308B;&#x3068;
+;; &quot;Invalid data for rfc2047 encoding&quot; &#x3068;&#x30A8;&#x30E9;&#x30FC;&#x3092;&#x5410;&#x304F;
+
+&#x3068;&#x308A;&#x3042;&#x3048;&#x305A;&#x624B;&#x5143;&#x3067;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x5909;&#x66F4;&#x3092;&#x3057;&#x3066;&#x8868;&#x793A;&#x3055;&#x305B;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+
+</pre><pre>Index: emacs/mhc-gnus.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc-gnus.el,v
+retrieving revision 1.27
+diff -u -r1.27 mhc-gnus.el
+--- emacs/mhc-gnus.el	28 Oct 2005 08:15:30 -0000	1.27
++++ emacs/mhc-gnus.el	6 Dec 2006 01:40:18 -0000
+@@ -351,7 +351,9 @@
+ 	(put 'mhc-gnus 'eword-decode-string 'mhc-mime-eword-decode-string)
+ 	(put 'mhc-gnus 'mime-get-raw-buffer 'mhc-gnus-mime-get-raw-buffer)
+ 	(put 'mhc-gnus 'mime-get-mime-structure 'mhc-gnus-mime-get-mime-structure))
+-    (defalias 'mhc-gnus/encode-string 'rfc2047-encode-string)
++    (defun mhc-gnus/encode-string (string)
++      (let ((rfc2047-encoding-type 'mime))
++	(rfc2047-encode-string string)))
+     (put 'mhc-gnus 'draft-setup-new 'mhc-gnus-draft-setup-new)
+     (put 'mhc-gnus 'draft-reedit-buffer 'mhc-gnus-draft-reedit-buffer)
+     (put 'mhc-gnus 'draft-reedit-file 'mhc-gnus-draft-reedit-file)
+</pre><pre>
+-- 
+IRIE Tetsuya
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="02229" href="msg02229.html">[mhc:02230] Re: mhc-gnus/encode-string</a></strong>
+<ul><li><em>From:</em> TSUCHIYA Masatoshi</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg02227.html">[mhc:02228] Re: mhc-sync &#x30C8;&#x30E9;&#x30D6;&#x30EB;</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg02229.html">[mhc:02230] Re: mhc-gnus/encode-string</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg02227.html">[mhc:02228] Re: mhc-sync &#x30C8;&#x30E9;&#x30D6;&#x30EB;</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg02229.html">[mhc:02230] Re: mhc-gnus/encode-string</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#02228"><strong>Date</strong></a></li>
+<li><a href="threads.html#02228"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

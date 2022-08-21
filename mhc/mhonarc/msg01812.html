@@ -1,0 +1,128 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01813] Oort gnus and mhc. -->
+<!--X-From-R13: Kbfuvanev @bzhen <abzNdhvpxunpx.arg> -->
+<!--X-Date: Sat, 17 May 2003 12:58:54 +0900 -->
+<!--X-Message-Id: 20030517125854X.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01813] Oort gnus and mhc.</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01811.html">Date Prev</a>][<a href="msg01813.html">Date Next</a>][<a href="msg01810.html">Thread Prev</a>][<a href="msg01814.html">Thread Next</a>][<a href="maillist.html#01812">Date Index</a>][<a href="threads.html#01812">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01813] Oort gnus and mhc.</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01813] Oort gnus and mhc.</li>
+<li><em>From</em>: Yoshinari Nomura &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Sat, 17 May 2003 12:58:54 +0900</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Sender</em>: Yoshinari Nomura &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x4E43;&#x6751;&#x3067;&#x3059;&#xFF0E;
+
+&#x6700;&#x8FD1;&#xFF0C;&#x6D77;&#x5916;&#x304B;&#x3089;&#xFF0C;Oort gnus &#x3068; mhc &#x3092;&#x4F7F;&#x3063;&#x3066;&#x308B;&#x3093;&#x3060;&#x3051;&#x3069;&#xFF0C;
+&#x3046;&#x307E;&#x304F;&#x52D5;&#x304B;&#x306A;&#x3044;&#x3088;&#x3068;&#x3044;&#x3046;&#x30E1;&#x30FC;&#x30EB;&#x3092;&#x8CB0;&#x3044;&#x307E;&#x3059;&#xFF0E;
+
+&gt; This is Gnu Emacs 21.3.1, Oort gnus v0.20.  
+
+&#x3068;&#x3044;&#x3046;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x3089;&#x3057;&#x3044;&#x306E;&#x3067;&#x3059;&#x304C;&#xFF0C;&#x3069;&#x3046;&#x8FD4;&#x7B54;&#x3057;&#x305F;&#x3082;&#x306E;&#x304B;&#x56F0;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#xFF0E;
+&#x4EE5;&#x524D;&#x304B;&#x3089;&#xFF0C;&#x4F55;&#x304B;&#x72B6;&#x6CC1;&#x306F;&#x5909;&#x308F;&#x3063;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;?
+
+Oort gnus &#x3063;&#x3066;&#x3044;&#x3046;&#x306E;&#x306F;&#xFF0C;&#x65E5;&#x672C;&#x3067;&#x306F;&#x3042;&#x307E;&#x308A;&#x4F7F;&#x308F;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044;&#x3093;&#x3067;&#x3057;&#x305F;&#x3063;&#x3051;&#xFF0E;
+--
+nom
+
+&gt; Hello,
+&gt; 
+&gt; I have been trying out MHC.  It looks very nice.  However, I have a
+&gt; couple of problems.
+&gt; 
+&gt; 1) mhc-modify does not seem to work for me.  When I try and modify an
+&gt;    entry I get a blank window and cannot see the details of the
+&gt;    entry.  Upon hitting C-c C-c I get the following Backtrace:
+&gt; 
+&gt; Debugger entered--Lisp error: (error &quot;Cannot get schedule slot&quot;)
+&gt;   signal(error (&quot;Cannot get schedule slot&quot;))
+&gt;   error(&quot;Cannot get schedule slot&quot;)
+&gt;   (if slot nil (error &quot;Cannot get schedule slot&quot;))
+&gt;   (unless slot (error &quot;Cannot get schedule slot&quot;))
+&gt;   (let* ((slot ...) (directory ...) (old-record)) (unless slot (error &quot;Cannot get schedule slot&quot;)) (if (mhc-record-name record) (if ... ... ... ...) (mhc-record-set-name record ...)) (if (or force-refile ...) (progn ... ... ... ... t)))
+&gt;   mhc-db-add-record-from-buffer((&quot;c:/jklymak/Mail/schedule/2003/05/6&quot; . [&quot;&lt;200305162002410086.jklymak@PENDER&gt;&quot; nil nil]) #&lt;buffer *mhc draft +schedule/2003/05/6*&gt; nil)
+&gt;   (if (mhc-db-add-record-from-buffer record (current-buffer) (not ...)) (progn (kill-buffer ...) (mhc-window-pop) (or ... ...) (run-hooks ...)))
+&gt;   (let ((record ...)) (mhc-calendar-input-exit) (if (mhc-db-add-record-from-buffer record ... ...) (progn ... ... ... ...)))
+&gt;   mhc-draft-finish()
+&gt; * call-interactively(mhc-draft-finish)
+&gt; 
+&gt; 2) I also get a back trace when I attempt mhc-todo-set-as-done:
+&gt; 
+&gt; Debugger entered--Lisp error: (wrong-type-argument stringp nil)
+&gt;   string-match(&quot;[ 	]*todo&quot; nil)
+&gt;   (save-restriction (goto-char (point-min)) (re-search-forward (concat &quot;^&quot; ... &quot;$\\|^$&quot;) nil t) (narrow-to-region (point-min) (match-beginning 0)) (goto-char (point-min)) (string-match (concat &quot;[ 	]*&quot; category) (mhc-header-get-value &quot;x-sc-category&quot;)))
+&gt;   (save-excursion (save-restriction (goto-char ...) (re-search-forward ... nil t) (narrow-to-region ... ...) (goto-char ...) (string-match ... ...)))
+&gt;   (mhc-header-narrowing (string-match (concat &quot;[ 	]*&quot; category) (mhc-header-get-value &quot;x-sc-category&quot;)))
+&gt;   mhc-draft-in-category-p(&quot;todo&quot;)
+&gt;   (if (mhc-draft-in-category-p &quot;todo&quot;) (mhc-draft-append-category &quot;Done&quot;))
+&gt;   mhc-draft-set-as-done()
+&gt;   mhc-todo-set-as-done()
+&gt;   call-interactively(mhc-todo-set-as-done)
+&gt;   execute-extended-command(nil)
+&gt; * call-interactively(execute-extended-command)
+&gt; 
+&gt; This is Gnu Emacs 21.3.1, Oort gnus v0.20.  
+&gt; 
+&gt; Thanks,  Jody
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01811.html">[mhc:01812] Re: C-c d &#x3067;&#x524A;&#x9664;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01813.html">[mhc:01814] Re: Oort gnus and mhc.</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01810.html">[mhc:01811] Re: C-c d &#x3067;&#x524A;&#x9664;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01814.html">[mhc:01815] &#x9694;&#x9031;&#x306E;&#x4E88;&#x5B9A; (was:  &#x6BCE;&#x6708;&#x7B2C; 1,3 &#x6708;&#x66DC;&#x65E5;&#x306E;&#x76F4;&#x524D;&#x306E;&#x91D1;&#x66DC;&#x65E5;&#x306E;&#x6307;&#x5B9A;&#x65B9;&#x6CD5;)</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01812"><strong>Date</strong></a></li>
+<li><a href="threads.html#01812"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

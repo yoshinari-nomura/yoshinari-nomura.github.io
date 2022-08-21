@@ -1,0 +1,21 @@
+Index: wl-message.el
+===================================================================
+RCS file: /cvs/root/wanderlust/wl/wl-message.el,v
+retrieving revision 1.47
+diff -u -r1.47 wl-message.el
+--- wl-message.el	2002/01/31 23:17:50	1.47
++++ wl-message.el	2002/02/06 12:46:05
+@@ -625,10 +625,9 @@
+ 
+ (defun wl-message-buffer-prefetch-next (folder number count
+ 					       &optional summary charset)
+-  (let* ((summary (or summary (get-buffer wl-summary-buffer-name)))
+-	 (next (wl-message-buffer-prefetch-get-next folder number summary)))
+-    (when (and count
+-	       (wl-message-buffer-prefetch-p folder))
++  (when (and count (wl-message-buffer-prefetch-p folder))
++    (let* ((summary (or summary (get-buffer wl-summary-buffer-name)))
++	   (next (wl-message-buffer-prefetch-get-next folder number summary)))
+       (wl-message-buffer-prefetch-clear-timer)
+       (wl-message-buffer-prefetch-set-timer
+        folder next count summary charset))))

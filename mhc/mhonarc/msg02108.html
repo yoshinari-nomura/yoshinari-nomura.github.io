@@ -1,0 +1,260 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:02109] Re: patch (mhc2ol.in, ruby&#45;ext/lib/mhc&#45;schedule.rb) -->
+<!--X-From-R13: @AUGQVW Khfhxr <abthabthNzin.ovtybor.ar.wc> -->
+<!--X-Date: Sun, 24 Apr 2005 19:21:35 +0900 (JST) -->
+<!--X-Message-Id: 20050424.192135.63227809.nogunogu@mva.biglobe.ne.jp -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Reference: 20050423.202945.68549382.nogunogu@mva.biglobe.ne.jp -->
+<!--X-Reference: u4qdx58rc.wl%miyoshi@meadowy.org -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:02109] Re: patch (mhc2ol.in, ruby-ext/lib/mhc-schedule.rb)</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg02107.html">Date Prev</a>][<a href="msg02109.html">Date Next</a>][<a href="msg02105.html">Thread Prev</a>][<a href="msg02113.html">Thread Next</a>][<a href="maillist.html#02108">Date Index</a>][<a href="threads.html#02108">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:02109] Re: patch (mhc2ol.in, ruby-ext/lib/mhc-schedule.rb)</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:02109] Re: patch (mhc2ol.in, ruby-ext/lib/mhc-schedule.rb)</li>
+<li><em>From</em>: NOGUCHI Yusuke &lt;<a href="mailto:nogunogu@DOMAIN.HIDDEN">nogunogu@xxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Sun, 24 Apr 2005 19:21:35 +0900 (JST)</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:u4qdx58rc.wl%25miyoshi@DOMAIN.HIDDEN">u4qdx58rc.wl%miyoshi@xxxxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:20050423.202945.68549382.nogunogu@DOMAIN.HIDDEN">20050423.202945.68549382.nogunogu@xxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:u4qdx58rc.wl%25miyoshi@DOMAIN.HIDDEN">u4qdx58rc.wl%miyoshi@xxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x91CE;&#x53E3;&#x3067;&#x3059;&#x3002;
+
+&gt; &#x53D6;&#x308A;&#x8FBC;&#x307E;&#x305B;&#x3066;&#x3082;&#x3089;&#x3044;&#x307E;&#x3059;&#x306E;&#x3067;&#x3001;ChangeLog &#x306E;&#x4F5C;&#x6210;&#x3092;&#x304A;&#x9858;&#x3044;&#x3057;&#x307E;&#x3059;&#x3002;
+
+&#x4EE5;&#x4E0B;&#x3067;&#x3088;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#x3002;
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Support new option(-H). 
+-H     : Add/Copy mhc articles to Outlook without HEADER part.
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+&gt; &#x305D;&#x308C;&#x304B;&#x3089;&#x3001;mhc-schedule.rb &#x306F;&#x306A;&#x308B;&#x3079;&#x304F;&#x5909;&#x66F4;&#x3057;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x304A;&#x9858;&#x3044;&#x3057;&#x307E;&#x3059;&#x3002;
+&gt; dump_without_header &#x3068;&#x3044;&#x3046;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x62E1;&#x5F35;&#x306F; mhc2ol.rb &#x3067;&#x3082;&#x3067;&#x304D;&#x308B;&#x306F;
+&gt; &#x305A;&#x3067;&#x3059;&#x3002;
+&gt; mhc-schedule.rb &#x3068;&#x3044;&#x3046;&#x5171;&#x901A;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x306E;&#x4FEE;&#x6B63;&#x306B;&#x306F;&#x3001;&#x305D;&#x308C;&#x306A;&#x308A;&#x306E;&#x5408;&#x610F;&#x3092;&#x53D6;
+&gt; &#x308B;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x304C;&#x5FC5;&#x8981;&#x3060;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x306E;&#x3067;&#x3002;
+
+&#x306A;&#x308B;&#x307B;&#x3069;&#x3002;&#x305D;&#x306E;&#x3088;&#x3046;&#x306A;&#x300C;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x62E1;&#x5F35;&#x300D;&#x304C;&#x3067;&#x304D;&#x308B;&#x3053;&#x3068;&#x3092;&#x77E5;&#x308A;&#x307E;&#x305B;&#x3093;&#x3067;&#x3057;&#x305F;&#x3002;
+mhc-schedule.rb &#x306B;&#x624B;&#x3092;&#x5165;&#x308C;&#x306A;&#x3044;&#x5F62;&#x3067;&#x30D1;&#x30C3;&#x30C1;&#x3092;&#x4F5C;&#x308A;&#x306A;&#x304A;&#x3057;&#x3066;&#x898B;&#x307E;&#x3057;&#x305F;&#x304C;&#x3001;&#x3044;&#x304B;
+&#x304C;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;?
+
+-- 
+NOGUCHI Yusuke &lt;nogunogu@xxxxxxxxxxxxxxxxx&gt;
+
+</pre><pre>*** mhc-current-snap20050420/mhc2ol.in	Wed Oct 29 21:48:14 2003
+--- mhc-current-snap20050420-new/mhc2ol.in	Sun Apr 24 13:54:37 2005
+***************
+*** 183,189 ****
+  
+  def usage
+    print '
+! usage: mhc2ol [-a | -i | -d | -N] [-n] [-s] [-m] [-r dir] [-c category] [YYYYMMDD-yyyymmdd]
+  
+    mhc2ol -- Add/Copy mhc articles to Outlook.
+  
+--- 183,189 ----
+  
+  def usage
+    print '
+! usage: mhc2ol [[-a | -i | -d | -N] [-H]] [-n] [-s] [-m] [-r dir] [-c category] [YYYYMMDD-yyyymmdd]
+  
+    mhc2ol -- Add/Copy mhc articles to Outlook.
+  
+***************
+*** 197,202 ****
+--- 197,203 ----
+               will be lost.
+      -N     : Copy only the articles that have been modified since
+               the last execution.
++     -H     : Add/Copy mhc articles to Outlook without HEADER part.
+      -n     : Do nothing effectives. Useful for checking.
+      -s     : Split appointments and tasks.
+      -m     : Append an additional category `MHC-sch\'.
+***************
+*** 324,335 ****
+--- 325,344 ----
+        return dates
+      end
+    end
++ 
++   def dump_without_header
++     desc = description .to_s
++     desc += &quot;\n&quot; if desc != '' and desc !~ /\n\z/n
++     
++     return desc
++   end
+  end
+  
+  class Exporter
+    @@sync_file = File .expand_path(&quot;~/Mail/schedule/.ol_sync&quot;)
+    @@flag_verbose = false
+    @@flag_install = false
++   @@flag_export_part = 'all' # 'all' || 'body_only'
+    @@flag_noharm = false
+    @@flag_timestamp = false
+    @@mhc_category_name = 'MHC-sch'
+***************
+*** 457,464 ****
+  	cat_string = @@mhc_category_name + &quot;,&quot; + cat_string
+        end
+        appoint .Categories = cat_string
+!       appoint .Body = MhcKconv::todisp(sch .dump())
+! 
+        # a reminder is valid for a future schedule.
+        if sch .alarm() != nil then
+  	appoint .ReminderSet = true
+--- 466,477 ----
+  	cat_string = @@mhc_category_name + &quot;,&quot; + cat_string
+        end
+        appoint .Categories = cat_string
+!       case $flag_export_part
+!       when 'all'
+! 	appoint .Body = MhcKconv::todisp(sch .dump())
+!       when 'body_only'
+! 	appoint .Body = MhcKconv::todisp(sch .dump_without_header())	
+!       end
+        # a reminder is valid for a future schedule.
+        if sch .alarm() != nil then
+  	appoint .ReminderSet = true
+***************
+*** 480,486 ****
+  	cat_string = @@mhc_category_name + &quot;,&quot; + cat_string
+        end
+        appoint .Categories = cat_string
+!       appoint .Body = MhcKconv::todisp(sch .dump())
+        appoint .Save() if !$flag_separation  || !todo_p
+  
+        # Copy TODO
+--- 493,504 ----
+  	cat_string = @@mhc_category_name + &quot;,&quot; + cat_string
+        end
+        appoint .Categories = cat_string
+!       case $flag_export_part
+!       when 'all'
+! 	appoint .Body = MhcKconv::todisp(sch .dump())
+!       when 'body_only'
+! 	appoint .Body = MhcKconv::todisp(sch .dump_without_header())	
+!       end
+        appoint .Save() if !$flag_separation  || !todo_p
+  
+        # Copy TODO
+***************
+*** 716,721 ****
+--- 734,743 ----
+    def Exporter.set_flag_discreet(flag)
+      @@flag_discreet = flag
+    end
++   
++   def Exporter.set_flag_export_part(flag)
++     @@flag_export_part = flag
++   end
+  
+    def Exporter.set_flag_noharm(flag)
+      @@flag_noharm = flag
+***************
+*** 744,749 ****
+--- 766,772 ----
+  
+  $flag_verbose = false
+  $flag_noharm, $flag_append, $flag_install = false, false, false
++ $flag_export_part = 'all' # 'all' || 'body_only'
+  $flag_from, $flag_to = nil, nil
+  $flag_timestamp = nil
+  $flag_category_regexp = Regexp .new(&quot;&quot;)
+***************
+*** 762,767 ****
+--- 785,796 ----
+      $flag_install = true
+    when '-d'
+      $flag_discreet = true
++   when '-H' 
++     if ($flag_noharm == true || $flag_append == true || $flag_install == true)
++       $flag_export_part = 'body_only'
++     else
++       usage()
++     end
+    when '-n'
+      $flag_noharm  = true
+    when '-r'
+***************
+*** 819,824 ****
+--- 848,854 ----
+  Exporter .set_sync_filename($flag_dir + &quot;/.ol_sync&quot;)
+  Exporter .set_flag_verbose($flag_verbose)
+  Exporter .set_flag_install($flag_install)
++ Exporter .set_flag_export_part($flag_export_part)
+  Exporter .set_flag_discreet($flag_discreet)
+  Exporter .set_flag_noharm($flag_noharm)
+  Exporter .set_flag_timestamp($flag_timestamp)
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="02113" href="msg02113.html">[mhc:02114] Re: patch (mhc2ol.in, ruby-ext/lib/mhc-schedule.rb)</a></strong>
+<ul><li><em>From:</em> NOGUCHI Yusuke</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="02102" href="msg02102.html">[mhc:02103] patch  (mhc2ol.in, ruby-ext/lib/mhc-schedule.rb)</a></strong>
+<ul><li><em>From:</em> NOGUCHI Yusuke</li></ul></li>
+<li><strong><a name="02105" href="msg02105.html">[mhc:02106] Re: patch  (mhc2ol.in, ruby-ext/lib/mhc-schedule.rb)</a></strong>
+<ul><li><em>From:</em> MIYOSHI Masanori</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg02107.html">[mhc:02108] Re: mhc-draft-unuse-hdr-list &#x3078;&#x306E;&#x8FFD;&#x52A0;&#x30A8;&#x30F3;&#x30C8;&#x30EA;&#x5E0C;&#x671B;</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg02109.html">[mhc:02110] patch (today.in)</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg02105.html">[mhc:02106] Re: patch  (mhc2ol.in, ruby-ext/lib/mhc-schedule.rb)</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg02113.html">[mhc:02114] Re: patch (mhc2ol.in, ruby-ext/lib/mhc-schedule.rb)</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#02108"><strong>Date</strong></a></li>
+<li><a href="threads.html#02108"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

@@ -1,0 +1,284 @@
+*** mhc.el.orig	Wed Feb 09 17:43:14 2000
+--- mhc.el	Fri Feb 18 20:46:28 2000
+***************
+*** 10,16 ****
+  ;;;
+  
+  ;; Mhc is the personal schedule management package cooperating
+! ;;  with Mew or Wanderlust.
+  ;;
+  ;; Minimum setup:
+  ;;
+--- 10,16 ----
+  ;;;
+  
+  ;; Mhc is the personal schedule management package cooperating
+! ;;  with Mew, Wanderlust or Gnus.
+  ;;
+  ;; Minimum setup:
+  ;;
+***************
+*** 24,29 ****
+--- 24,34 ----
+  ;;   (autoload 'mhc-mode "mhc" nil t)
+  ;;   (add-hook 'wl-summary-mode-hook 'mhc-mode)
+  ;;   (add-hook 'wl-folder-mode-hook 'mhc-mode)
++ ;;
++ ;; for Gnus user:
++ ;;   (setq mhc-mailer-package 'gnus)
++ ;;   (autoload 'mhc-mode "mhc" nil t)
++ ;;   (add-hook 'gnus-summary-mode-hook 'mhc-mode)
+  
+  (require 'mhc-misc)
+  (require 'mhc-date)
+***************
+*** 33,39 ****
+  (require 'mhc-face)
+  
+  (defconst mhc-version             "mhc version 0.24")
+! (defvar mhc-mailer-package 'mew) ;; select 'mew or 'wl
+  
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; Menu setup
+--- 38,44 ----
+  (require 'mhc-face)
+  
+  (defconst mhc-version             "mhc version 0.24")
+! (defvar mhc-mailer-package 'mew) ;; select 'mew, 'wl or 'gnus
+  
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; Menu setup
+***************
+*** 256,261 ****
+--- 261,267 ----
+  	  (cond
+  	   ((equal type 'mew)  mhc-header-string-mew)
+  	   ((equal type 'wl)  (concat (mhc-sch-foldermsg-wl sch) " | "))
++ 	   ((equal type 'gnus) " | ")	; dummy for regexp
+  	   (t                  "")))
+      (put-text-property 0 (length head-string) 'invisible t head-string)
+      (setq date-string
+***************
+*** 294,299 ****
+--- 300,306 ----
+  	  (cond
+  	   ((equal type 'mew) (concat "\r " (mhc-sch-foldermsg sch)))
+  	   ((equal type 'wl)   "")
++ 	   ((equal type 'gnus) "")
+  	   (t                  "")))
+      (setq insert (concat
+  		  head-string
+***************
+*** 307,312 ****
+--- 314,332 ----
+  		  "\n"))
+      (if (and week-color mhc-face-week-color-paint-thick)
+  	(mhc-face-put insert week-color))
++     (cond
++      ((equal type 'gnus)
++       (let ((num (mhc-sch-foldermsg-gnus sch)) header)
++ 	(if num
++ 	    (progn
++ 	      (put-text-property 0 (length insert) 'gnus-number num insert)
++ 	      (require 'eword-encode)
++ 	      (setq header
++ 		    (make-full-mail-header 0 (eword-encode-string
++ 					      (mhc-sch-subject sch))))
++ 	      (push (gnus-data-make num 0 nil header 0) gnus-newsgroup-data))
++ 	  (remove-text-properties 0 (length insert)
++ 				  '(gnus-number nil) insert)))))
+      (insert insert)
+      (set-buffer-modified-p nil)))
+  
+***************
+*** 358,364 ****
+  
+  (defun mhc-scan-month (ddate type cat inv-cat secret)
+    (let ((buffer (get-buffer-create (mhc-ddate-to-buffer ddate)))
+! 	(insert-current (not (or (equal type 'mew) (equal type 'wl)))))
+      (if insert-current
+  	()
+        (set-buffer buffer)
+--- 378,384 ----
+  
+  (defun mhc-scan-month (ddate type cat inv-cat secret)
+    (let ((buffer (get-buffer-create (mhc-ddate-to-buffer ddate)))
+! 	(insert-current (not (member type '(mew wl gnus)))))
+      (if insert-current
+  	()
+        (set-buffer buffer)
+***************
+*** 370,380 ****
+        (setq selective-display t)
+        (setq selective-display-ellipses nil)
+        (setq indent-tabs-mode nil)
+!       (if (equal mhc-mailer-package 'mew)
+! 	  (progn (make-local-variable 'mew-use-cursor-mark)
+! 		 (make-local-variable 'mew-use-highlight-cursor-line)
+! 		 (setq mew-use-cursor-mark nil)
+! 		 (setq mew-use-highlight-cursor-line nil))))
+      (message "Scanning %s ..." (ddate-yymm-s1 ddate "/"))
+      (mhc-sch-scan (ddate-mm-first-day ddate)
+  		  (ddate-mm-last-day  ddate)
+--- 390,445 ----
+        (setq selective-display t)
+        (setq selective-display-ellipses nil)
+        (setq indent-tabs-mode nil)
+!       (cond
+!        ((equal mhc-mailer-package 'mew)
+! 	(make-local-variable 'mew-use-cursor-mark)
+! 	(make-local-variable 'mew-use-highlight-cursor-line)
+! 	(setq mew-use-cursor-mark nil)
+! 	(setq mew-use-highlight-cursor-line nil))
+!        ((equal mhc-mailer-package 'gnus)
+! 	;; modify original functions for cursor control.
+! 	(unless (fboundp 'gnus-summary-goto-subject-original)
+! 	  (fset 'gnus-summary-goto-subject-original
+! 		(symbol-function 'gnus-summary-goto-subject))
+! 	  (defun gnus-summary-goto-subject (article &optional force silent)
+! 	    (unless (and (boundp 'mhc-gnus-skip-cursor-jump)
+! 			 mhc-gnus-skip-cursor-jump)
+! 	      (gnus-summary-goto-subject-original article force silent))))
+! 	(unless (fboundp 'gnus-summary-position-point-original)
+! 	  (fset 'gnus-summary-position-point-original
+! 		(symbol-function 'gnus-summary-position-point))
+! 	  (defun gnus-summary-position-point ()
+! 	    (unless (and (boundp 'mhc-gnus-skip-cursor-jump)
+! 			 mhc-gnus-skip-cursor-jump)
+! 	      (gnus-summary-position-point-original))))
+! 	;; initialize gnus groups.
+! 	(let* ((dirlist (list (mhc-gnus-ddate-to-folder ddate)
+! 			      (concat mhc-mail-path "/schedule/intersect/")))
+! 	       (vgroup "schedule") (pvgroup (concat "nnvirtual:" vgroup))
+! 	       dir pdir methods)
+! 	  ;; initialize nndir groups.
+! 	  (while dirlist
+! 	    (setq dir (car dirlist))
+! 	    (setq pdir (concat "nndir:" dir))
+! 	    (if (gnus-gethash pdir gnus-newsrc-hashtb)
+! 		(save-window-excursion
+! 		  (gnus-group-read-group 0 t pdir))
+! 	      (unless (file-exists-p dir)
+! 		(make-directory-internal dir))
+! 	      (with-temp-buffer
+! 		(gnus-group-make-directory-group dir)))
+! 	    (if methods (setq methods (concat methods "\\|")))
+! 	    (setq methods (concat methods "\\(^" pdir "$\\)"))
+! 	    (setq dirlist (cdr dirlist)))
+! 	  ;; initialize a nnvirtual group.
+! 	  (unless (gnus-gethash pvgroup gnus-newsrc-hashtb)
+! 	    (gnus-group-make-empty-virtual vgroup))
+! 	  (gnus-close-group pvgroup)
+! 	  (setcar (cdr (gnus-info-method (gnus-get-info pvgroup))) methods)
+! 	  (save-window-excursion
+! 	    (gnus-group-read-group 0 t pvgroup)
+! 	    (kill-buffer (current-buffer)))
+! 	  (make-local-variable 'gnus-newsgroup-data)))))
+      (message "Scanning %s ..." (ddate-yymm-s1 ddate "/"))
+      (mhc-sch-scan (ddate-mm-first-day ddate)
+  		  (ddate-mm-last-day  ddate)
+***************
+*** 396,402 ****
+  	(wl-summary-mode)
+  	(wl-summary-buffer-set-folder (mhc-wl-ddate-to-folder ddate))
+  	(make-local-variable 'wl-summary-highlight)
+! 	(setq wl-summary-highlight nil)))
+        (mhc-mode 1)
+        (run-hooks 'mhc-mode-hook)
+        (setq inhibit-read-only nil)
+--- 461,474 ----
+  	(wl-summary-mode)
+  	(wl-summary-buffer-set-folder (mhc-wl-ddate-to-folder ddate))
+  	(make-local-variable 'wl-summary-highlight)
+! 	(setq wl-summary-highlight nil))
+!        ((equal type 'gnus)
+! 	(let (gnus-newsgroup-data)
+! 	  (gnus-summary-mode "nnvirtual:schedule"))
+! 	(make-local-variable 'mhc-gnus-skip-cursor-jump)
+! 	(setq mhc-gnus-skip-cursor-jump t)
+! 	(make-local-variable 'gnus-visual)
+! 	(setq gnus-visual nil)))
+        (mhc-mode 1)
+        (run-hooks 'mhc-mode-hook)
+        (setq inhibit-read-only nil)
+***************
+*** 436,448 ****
+  	  ","
+  	  mhc-base-folder "/" (ddate-yymm-s1 ddate "/")))
+  
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; import, edit, delete, modify
+  
+  (defvar mhc-summary-message-alist
+    '((mew-summary-mode . mew-message-mode)
+      (mew-virtual-mode . mew-message-mode)
+!     (wl-summary-mode . mime-view-mode)))
+  
+  
+  
+--- 508,541 ----
+  	  ","
+  	  mhc-base-folder "/" (ddate-yymm-s1 ddate "/")))
+  
++ (defun mhc-sch-foldermsg-gnus (sch)
++   (let ((path (mhc-sch-path sch)) num group)
++     (cond
++      ((not path)
++       nil)
++      ((string-match "/intersect/" path)
++       (setq group (concat "nndir:" mhc-mail-path "/schedule/intersect/"))
++       (setq num (string-to-int (file-name-nondirectory path))))
++      (t 
++       (setq group (concat "nndir:" (mhc-gnus-ddate-to-folder ddate)))
++       (setq num (string-to-int (file-name-nondirectory path)))))
++     (if group
++ 	(nnvirtual-reverse-map-article group num)
++       nil)))
++ 
++ (defun mhc-gnus-ddate-to-folder (ddate)
++   (concat mhc-mail-path "/schedule/"
++ 	  (car ddate) "/"
++ 	  (format "%02d/" (car (cdr ddate)))))
++ 
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; import, edit, delete, modify
+  
+  (defvar mhc-summary-message-alist
+    '((mew-summary-mode . mew-message-mode)
+      (mew-virtual-mode . mew-message-mode)
+!     (wl-summary-mode . mime-view-mode)
+!     (gnus-summary-mode . mime-view-mode)))
+  
+  
+  
+***************
+*** 810,816 ****
+        (expand-file-name
+         (int-to-string num)
+         (elmo-localdir-get-folder-directory
+! 	(elmo-folder-get-spec fld)))))))
+  
+  (defun mhc-current-ddate-month ()
+    (let ((buf (buffer-name)) yy mm dd)
+--- 903,923 ----
+        (expand-file-name
+         (int-to-string num)
+         (elmo-localdir-get-folder-directory
+! 	(elmo-folder-get-spec fld))))))
+!  ;; for gnus-summary-mode
+!  ((equal mhc-mailer-package 'gnus)
+!   (defun mhc-summary-filename ()
+!     (let (num cell dir)
+!       (setq num (get-text-property (point) 'gnus-number))
+!       (if num
+! 	  (progn
+! 	    (setq cell (nnvirtual-map-article num))
+! 	    (if (string-match "^nndir:\\(.+\\)$" (car cell))
+! 		(progn
+! 		  (setq dir (match-string 1 (car cell)))
+! 		  (format "%s%d" dir (cdr cell)))
+! 	      nil))
+! 	nil)))))
+  
+  (defun mhc-current-ddate-month ()
+    (let ((buf (buffer-name)) yy mm dd)

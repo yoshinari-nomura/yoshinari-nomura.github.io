@@ -1,0 +1,98 @@
+(defconst ical-alpha "A-Za-z")
+(defconst ical-digit "0-9")
+
+(defsubst ical-forward ()
+  (or (eobp) (forward-char)))
+
+(defsubst ical-skip-whitespaces ()
+  (skip-chars-forward " \t\n"))
+
+;;     contentline        = name *(";" param ) ":" value CRLF
+;;     ; This ABNF is just a general definition for an initial parsing
+;;     ; of the content line into its property name, parameter list,
+;;     ; and value string
+(defun ical-parse-contentline ()
+  (let (name params value)
+    (setq name (ical-parse-name))
+    (ical-skip-whitespaces)
+    (while (eq (char-after) ?\;)
+      (ical-forward)
+      (setq params (cons (ical-parse-param) params)))
+    (ical-skip-whitespaces)
+    (if (eq (char-after) ?\:)
+	(progn
+	  (ical-forward)
+	  (setq value (ical-parse-value))
+	  (list name (nreverse params) value))
+      (error (concat "Parse error around `" name "'")))))
+
+(defun ical-parse-name ()
+  (or (ical-parse-x-name)
+      (ical-parse-iana-token)))
+
+;;   x-name             = "X-" [vendorid "-"] 1*(ALPHA / DIGIT / "-")
+;;   ; Reservered for experimental use. Not intended for use in
+;;   ; released products.
+;;   vendorid   = 3*(ALPHA / DIGIT)     ;Vendor identification
+(defun ical-parse-x-name ()
+  (when (looking-at
+	 (concat "X-" (concat "[" ical-alpha ical-digit "]+")
+		 "-" (concat "[" ical-alpha ical-digit "-" "]+")))
+    (goto-char (match-end 0))
+    (match-string 0)))
+
+(defun ical-parse-iana-token ()
+  (when (looking-at (concat "[" ical-alpha ical-digit "-" "]+"))
+    (goto-char (match-end 0))
+    (match-string 0)))
+
+;;   param              = param-name "=" param-value
+;;                        *("," param-value)
+;;   ; Each property defines the specific ABNF for the parameters
+;;   ; allowed on the property. Refer to specific properties for
+;;   ; precise parameter ABNF.
+;;
+;;   param-name = iana-token / x-token
+
+(defun ical-parse-param ()
+  (let (name values)
+    (setq name (ical-parse-param-name))
+    (when (eq (char-after) ?=)
+      (ical-forward)
+      (setq values (list (ical-parse-param-value))))
+    (ical-skip-whitespaces)
+    (while (eq (char-after) ?,)
+      (ical-forward)
+      (setq values (cons (ical-parse-param-value) values)))
+    (cons name values)))
+
+(defun ical-parse-param-name ()
+  (or (ical-parse-x-name)
+      (ical-parse-iana-token)))
+
+(defun ical-parse-param-value ()
+  (or (ical-parse-iana-token)
+      (ical-parse-quoted-string)))
+
+(defun ical-parse-quoted-string ()
+  (if (eq (char-after) ?\")
+      (read (current-buffer))))
+
+(defun ical-parse-value ()
+  ;; folding
+  (let (value) 
+    (setq value (buffer-substring (point) (point-at-eol)))
+    (forward-line)
+    (while (and (not (eobp))
+		(looking-at "[ \t]"))
+      (setq value (concat value
+			  (buffer-substring (match-end 0) (point-at-eol))))
+      (forward-line))
+    value))
+
+(defun ical-parse-lines ()
+  (let (lines)
+    (while (not (eobp))
+      (setq lines (cons (ical-parse-contentline) lines)))
+    (nreverse lines)))
+

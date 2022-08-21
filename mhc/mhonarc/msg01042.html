@@ -1,0 +1,118 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01043] mhc&#45;delete work? -->
+<!--X-From-R13: Fnxnnxv [ADWKO[O <gnxnNnveyno.pf.evgfhzrv.np.wc> -->
+<!--X-Date: Fri, 29 Sep 2000 16:07:54 +0900 -->
+<!--X-Message-Id: x7rbsx7llpx.wl@pisces.airlab.cs.ritsumei.ac.jp -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01043] mhc-delete work?</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01041.html">Date Prev</a>][<a href="msg01043.html">Date Next</a>][<a href="msg01044.html">Thread Prev</a>][<a href="msg01046.html">Thread Next</a>][<a href="maillist.html#01042">Date Index</a>][<a href="threads.html#01042">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01043] mhc-delete work?</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01043] mhc-delete work?</li>
+<li><em>From</em>: Takaaki MORIYAMA &lt;<a href="mailto:taka@DOMAIN.HIDDEN">taka@xxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Fri, 29 Sep 2000 16:07:54 +0900</li>
+<li><em>Organization</em>: Ritsumeikan Univ., Kyoto/Shiga, JAPAN</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: Wanderlust/2.3.0 (Roam) EMY/1.13.8 (Tastes differ) SLIM/1.14.3 (&#x7BE0;&#x539F;&#x3068;&#x3082;&#x3048;) APEL/10.2 MULE XEmacs/21.2 (beta35) (Nike) (i386-unknown-freebsd4.1)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x68EE;&#x5C71;&#x3068;&#x7533;&#x3057;&#x307E;&#x3059;. 
+
+&#x6700;&#x8FD1;, mhc &#x3092;&#x4F7F;&#x308F;&#x305B;&#x3066;&#x3082;&#x3089;&#x3046;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3057;&#x305F;. 
+&#x91CD;&#x5B9D;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;. 
+
+User-Agent &#x306E;&#x74B0;&#x5883;&#x3068; CVS &#x306E;&#x5148;&#x7AEF;&#x306E; mhc &#x3067; mhc-delete (\C-cd) &#x3092;
+&#x4F7F;&#x3063;&#x3066;*&#x3072;&#x3068;&#x3064;*&#x3060;&#x3051;&#x30A8;&#x30F3;&#x30C8;&#x30EA;&#x3092;&#x6D88;&#x305D;&#x3046;&#x3068;&#x3059;&#x308B;&#x3068;, 
+search-failed &quot;
+--text follows this line--
+&quot;
+&#x3068;&#x8A00;&#x308F;&#x308C;&#x308B;&#x306E;&#x3067;&#x3059;&#x304C;, &#x540C;&#x69D8;&#x306E;&#x75C7;&#x72B6;&#x306E;&#x65B9;&#x306F;&#x304A;&#x3089;&#x308C;&#x307E;&#x305B;&#x3093;&#x304B;? 
+
+&#x4E00;&#x5FDC;, &#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x4FEE;&#x6B63;&#x3059;&#x308B;&#x3068;&#x52D5;&#x3044;&#x3066;&#x3044;&#x308B;&#x307F;&#x305F;&#x3044;&#x3067;&#x3059;&#x304C;, 
+&#x9069;&#x5F53;&#x306B;&#x3057;&#x304B;&#x8AAD;&#x3093;&#x3067;&#x306A;&#x3044;&#x306E;&#x3067;&#x3053;&#x308C;&#x3067;&#x3044;&#x3044;&#x306E;&#x304B;&#x3069;&#x3046;&#x304B;&#x5206;&#x304B;&#x308A;&#x307E;&#x305B;&#x3093;. 
+
+-----
+  &#x68EE;&#x5C71; &#x9AD8;&#x660E; (^^)/&#x25CB;&#x301C;&#x25CB;
+  mailto: taka@xxxxxxxxxxxxxxxxxxxxxxxx
+</pre><pre>Index: mhc-db.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc-db.el,v
+retrieving revision 1.11
+diff -c -r1.11 mhc-db.el
+*** mhc-db.el	2000/08/02 10:53:21	1.11
+--- mhc-db.el	2000/09/26 07:47:27
+***************
+*** 216,221 ****
+--- 216,222 ----
+        (delete-region (point-min) (point-max))
+        (mhc-insert-file-contents-as-coding-system mhc-default-coding-system
+  						 (mhc-record-name original-record))
++       (mhc-draft-reedit-buffer buffer buffer)
+        (let (record dayinfo schedule)
+  	(while (setq record (mhc-parse-buffer)
+  		     dayinfo (mhc-logic-eval-for-date (list (mhc-record-sexp record)) except-day)
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01046" href="msg01046.html">[mhc:01047] Re: mhc-delete work?</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+<li><strong><a name="01070" href="msg01070.html">[mhc:01071] Re: mhc-delete work?</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01041.html">[mhc:01042] Re: &#x8907;&#x6570;&#x306E;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x304C;&#x5165;&#x3063;&#x305F;&#x30E1;&#x30A4;&#x30EB;&#x306E;&#x30A4;&#x30F3;&#x30DD;&#x30FC;&#x30C8;</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01043.html">[mhc:01044] Re: delete from TODO list</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01044.html">[mhc:01045] Re: &#x8907;&#x6570;&#x306E;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x304C;&#x5165;&#x3063;&#x305F;&#x30E1;&#x30A4;&#x30EB;&#x306E;&#x30A4;&#x30F3;&#x30DD;&#x30FC;&#x30C8;</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01046.html">[mhc:01047] Re: mhc-delete work?</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01042"><strong>Date</strong></a></li>
+<li><a href="threads.html#01042"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

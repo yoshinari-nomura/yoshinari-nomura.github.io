@@ -1,0 +1,588 @@
+\input texinfo.tex
+@setfilename mhc-ja.info
+@settitle{MHC 0.25 説明書}
+
+@direntry
+* MHC-ja: (mhc-ja).        Message Harmonized Calendaring system
+@end direntry
+
+@titlepage
+@title MHC 0.25 説明書
+@author Yoshinari Nomura
+@subtitle 1999/04/07
+@end titlepage
+
+@ifinfo
+@node Top, Introduction, (dir), (dir)
+@top MHC 0.25 説明書
+
+メールからスケジュール登録を行う MHC について説明します。
+@end ifinfo
+
+@menu
+* Introduction::                はじめに
+* Installation::                インストール
+* How-to-Use::                  使い方
+* Scheduling::                  日付入力の方法
+* Saving::                      スケジュール情報の保存場所
+* Deleting::                    スケジュールの消去
+* X-SC-Category::               X-SC-Category
+* X-SC-Alarm::                  X-SC-Alarm
+* Customization::               その他のカスタマイズ可能な変数など
+* Addition::                    おまけ
+* Addition2::                   おまけその 2
+* Others::                      その他
+* Index::                       索引
+
+@detailmenu
+ --- The Detailed Node Listing ---
+
+索引
+
+* Key Index::                   キーバインド索引
+
+@end detailmenu
+@end menu
+
+@node Introduction, Installation, Top, Top
+@chapter はじめに
+@cindex{Introduction}
+
+mhc は、仕事や、遊びの予定がメールで入ってくる人のための、「メールから直
+にスケジュール登録ができないか ?」 という要求を満たすためのものです。
+
+mhc は、Mew や Wanderlust, Gnus に寄生するマイナーモードです。
+
+@node Installation, How-to-Use, Introduction, Top
+@chapter インストール
+@cindex{Installation}
+
+# perl script の mscan は ver 0.23 から必要なくなりました。
+
+@enumerate
+@item
+@file{*.el} を @code{load-path} の通ったところに置きます。
+@item
+スケジュールを入れるフォルダを作成します。
+
+例えば
+
+@example
+mkdir -p ~/Mail/schedule
+@end example
+
+@noindent
+としたとします。
+
+Mew 等からはこの場所が @samp{+schedule} というフォルダに見えるとします。
+
+@item
+@samp{.emacs} に以下のように記述します。
+
+  Mew (1.94以降) のユーザ:
+@lisp
+  (setq mhc-mailer-package 'mew)
+  (autoload 'mhc-mode "mhc" nil t)
+  (add-hook 'mew-summary-mode-hook 'mhc-mode)
+  (add-hook 'mew-virtual-mode-hook 'mhc-mode)
+  (add-hook 'mew-message-hook      'mhc-misc-hdr-decode)
+@end lisp
+
+  Wanderlust (2.2.10以降) のユーザ:
+@lisp
+   (setq mhc-mailer-package 'wl)
+   (autoload 'mhc-mode "mhc" nil t)
+   (add-hook 'wl-summary-mode-hook 'mhc-mode)
+   (add-hook 'wl-folder-mode-hook 'mhc-mode)
+@end lisp
+
+  Gnus のユーザ:
+@lisp
+   (setq mhc-mailer-package 'gnus)
+   (autoload 'mhc-mode "mhc" nil t)
+   (add-hook 'gnus-summary-mode-hook 'mhc-mode)
+@end lisp
+
+  を加えます。また、ディレクトリ構成に設定に応じて、必要であれば、
+
+@lisp
+  (setq mhc-base-folder "+schedule")
+  (setq mhc-mail-path   (expand-file-name "/home/hoge/Mail"))
+@end lisp
+
+のように、ベースとなるフォルダとメールディレクトリを設定します。
+mhc は mhc-base-folder 以下をスケジュールの保存に使います。
+
+@item
+必要なら sample として付属している、日本の祭日を記述した
+   @file{DOT.schedule.sample} をコピーします。
+
+@example
+   cp somewhere/DOT.schedule.sample ~/.schedule
+@end example
+
+@item
+念のために emacs を立ち上げなおします。
+@end enumerate
+
+bytecompile するとだいぶ速くなります。試してみましょう。
+コンパイルのしかたは、@file{emacs/Makefile} を参照。
+
+@node How-to-Use, Scheduling, Installation, Top
+@chapter 使い方
+@cindex{How-to-Use}
+
+mew から、メールを読みながら、以下のような記事に遭遇したとします。行こう
+と思っているので、忘れないようにスケジュールにつけたいとします。
+
+@example
+    -----------------------------------------------------------------------
+                        WIDE-July'94 研究会プログラム
+                        ----------------------------
+ 
+     1. 日時：          1994年 7月 9日(土)      10:00 - 17:00
+     2. 場所：          早稲田大学 大久保キャンパス 55号館N棟 1F 大会議室
+     3. プログラム：
+ 
+        10:00 - 10:40   トンネリングを含んだネットワークにおける
+                                経路制御について (30)
+        :
+    -----------------------------------------------------------------------
+@end example
+
+@kbd{C-c |} を入力してみてください。この記事でいいかどうか聞かれた後、日
+付を推測してくれます。その際、本文の日付部分が反転します。間違っていたら 
+@kbd{C-n} か @kbd{C-p} で反転部分を移動します。minibuffer には対応する日
+付けが入力された状態になります。
+
+そのまま minibuffer に日付を入力することもできます。日付の入力の仕方は、
+「@xref{Scheduling}3. 日付入力の方法」 を参照してください。
+
+最後に、見出しを入力した所でドラフトが用意されます。ドラフトでそのまま 
+@kbd{C-cC-c} で登録されます。
+
+今月の予定を見てみましょう。@kbd{C-c .} を入力してください。さっき入力し
+たスケジュールが入っているはずです。そこまでポイントをもっていって、
+@kbd{.} や @kbd{SPC} を押すと詳しい内容が表示されるでしょう。
+
+この状態から、
+
+@table @kbd
+@item @key{C-c .} @kindex{C-c .}
+今月の予定を見る
+
+@item @key{C-c n} @kindex{C-c n}
+次の月の予定を見る  
+
+@item @key{C-c p} @kindex{C-c p}
+前の月の予定を見る
+
+@item @key{C-c g} @kindex{C-c g}
+好きな月にジャンプ
+
+@item @key{C-c s} @kindex{C-c s}
+その月をスキャンしなおす
+@end table
+
+で、各種移動を行うことができます。
+
+当然、メールからではなく、直にスケジュールを入力したいこともあるでしょう。
+今月の 15日に歯医者に行くのを入力するときは、
+
+@kbd{C-c .} で今月の予定表フォルダに行って、15日のところにポインタをあわ
+せます。
+
+@kbd{C-c e} を入力します。時間を入力します。@code{X-SC-Subject} に見出し
+を付けて、あとは、好きなことを書いてください。
+
+@kbd{C-c C-c} で登録されました。
+
+一度入力したものに対して、修正を加えたい場合があります。その時は、
+@kbd{C-c e} のかわりに、@kbd{C-c m} を入力してください。あとは、@kbd{C-c
+C-c} で修正されます。
+
+キー操作をまとめると、以下のようになります
+
+@table @kbd
+@item @key{C-c .} @kindex{C-c .}
+今月の予定を見る
+
+@item @key{C-c n} @kindex{C-c n}
+次の月の予定を見る  
+
+@item @key{C-c p} @kindex{C-c p}
+前の月の予定を見る
+
+@item @key{C-c g} @kindex{C-c g}
+好きな月にジャンプ
+
+@item @key{C-c s} @kindex{C-c s}
+その月をスキャンしなおす
+
+@item @key{C-c f} @kindex{C-c f}
+今日にカーソルを合わせる (今月の予定を表示中のみに有効)
+
+@item @key{C-c |} @kindex{C-c |}
+表示中のメールをスケジュールに登録
+
+@item @key{C-c d} @kindex{C-c d}
+カーソル行のスケジュールを消去する
+
+@item @key{C-c m} @kindex{C-c m}
+カーソル行のスケジュールに変更を加える
+
+@item @key{C-c e} @kindex{C-c e}
+スケジュールの新規入力
+
+@item @key{C-c c} @kindex{C-c c}
+カテゴリーの指定 (後述)
+
+@item @key{C-t t} @kindex{C-t t}
+3ヶ月カレンダーの表示をトグルする
+@end table
+
+@kbd{C-cp} @kbd{C-cn} は prefix arg で、何ヶ月進む/戻るを指定できます。
+@kbd{C-cs} は prefix arg で、@samp{Private} カテゴリのサブジェクトを別な
+文字列に変えることができます。
+
+@node Scheduling, Saving, How-to-Use, Top
+@chapter 日付入力の方法
+@cindex{Scheduling}
+
+@section{draft-buffer}
+draft-buffer から @code{X-SC-*} を直に編集:
+
+@itemize
+@item
+X-SC-Day:
+@item
+X-SC-Time:
+@item
+X-SC-Duration:
+@item
+X-SC-Cond:
+@item
+X-SC-Alarm:
+@end itemize
+
+@code{X-SC-Day:} には、@samp{19990409} のように、日付をスペースで区切って、
+複数入力することができるようになっています。
+
+@example
+	X-SC-Day: 19990409 19990413   …  1999年4月9日と 13日
+@end example
+
+@code{X-SC-Time:} には @samp{12:00-13:00} や @samp{19:00} のように時間を
+入力します。祭日のように時間が指定できないイベントは、空白にしておくこと
+もできます。
+
+@code{X-SC-Duration:} には、@samp{19990409-19990430} のように、期間を入
+力できるようになっています。終わりか始めのどちらかを省略してもかまいませ
+ん。(例: @samp{19991121-}) ただしこれで指定した期間は、@code{X-SC-Day:}
+@code{X-SC-Cond:} で指定した条件をより限定するために使われるので、
+@code{X-SC-Duration:} だけではイベントを記述できません。空白にしておくと
+特に Duration では制限を設けないことを意味します。
+
+@code{X-SC-Cond:} は、以下のキーワードを記述することができます。
+ 
+@table 
+@item @samp{00-31}
+月の内の日を表す数字
+
+@item @samp{1st 2nd 3rd 4th 5th Last}
+週を表す序数
+
+@item @samp{Sun Mon ... Sat}
+曜日を表す
+
+@item @samp{Jan Feb ... Dec}
+月を表す
+
+@item @samp{X-SC-Cond: Tue Fri}
+毎週火曜と金曜
+
+@item @samp{X-SC-Cond: 31 Aug}
+毎年 8月 31日
+
+@item @samp{X-SC-Cond: 1st 3rd Fri}
+第1,3 金曜日
+
+@item @samp{X-SC-Cond: Fri}@samp{X-SC-Day:  !19990409}
+毎週金曜日。ただし 4/9 は除く
+
+@item @samp{X-SC-Cond: Fri 13}
+13日の金曜日ではなくて、毎月13日と毎週金曜日
+@end table
+
+@section{minibuffer}
+minibuffer から: 
+
+@code{Date: (yyyy/mm/dd):} の場所では、@samp{1999/4/5} のように入力でき
+ます。スペースで区切って、複数を入力することができます。yyyy や mm を省
+略した場合は、先頭の日付に関しては、現在の 年と月が仮定されます。2番目以
+降は、1つ前の日付の年と月が仮定されます。`-' で区切って連続する何日かを
+指定することも可能です。
+
+minibuffer からは、繰り返しの条件等を入力できません。とりあえず開始時間
+を適当に入れて、draft-buffer で編集して下さい。
+
+@section{.schedule}
+@file{.schedule} に記述
+
+祭日や記念日のように、おそらく変更がないようなイベントは、
+@file{~/.schedule} に入力しておくこともできます。
+
+@example
+   X-SC-Cond: Sep 19
+   X-SC-Subject: 結婚記念日
+@end example
+
+sample として、@file{DOT.schedule.sample} を付けています。
+
+
+@node Saving, Deleting, Scheduling, Top
+@chapter スケジュール情報の保存場所
+@cindex{Saving}
+
+通常のスケジュールの情報は、@file{+schedule/yyyy/mm} に保存されるように
+なっています。(例えば @file{+schedule/1999/04})
+
+しかし、月にまたがるような繰り返しのスケジュールを 
+@file{+schedule/yyyy/mm} に入れてしまうと、他の月をスキャンしたときに見
+えなくなってしまうので、月をまたがるようなスケジュールは、
+@file{+schedule/intersect} というフォルダに全部入れることになっています。
+したがって、yyyy年 mm月のスケジュールは、
+
+@table 
+  ~/.schedule
+  +schedule/yyyy/mm
+  +schedule/intersect
+@end table
+
+の 3箇所から検索します。
+
+@file{+schedule/yyyy/mm} と @file{+schedule/intersect} のどっちに入れる
+かは、@kbd{C-cC-c} したときに @code{X-SC-Date:} や @code{X-SC-Cond:} を
+パーズして決定してやるようになっています。
+
+@node Deleting, X-SC-Category, Saving, Top
+@chapter スケジュールの消去
+@cindex{Deleting}
+
+@kbd{C-c d} でスケジュールの消去をすると、現在のところ、
+@file{+schedule/trash} に移動するようになっています。繰り返しのスケジュー
+ルの場合、@kbd{y} @kbd{y} と答えると、全部がいっぺんに見えなくなってしま
+うので、気を付けてください。1回分だけ消したい場合は、@kbd{y} @kbd{n} と
+答えましょう。@kbd{C-c m} して、@code{X-SC-Day:} に外したい日に該当する
+@samp{!yyyymmdd} を追加した状態になります。
+
+@node X-SC-Category, X-SC-Alarm, Deleting, Top
+@chapter X-SC-Category
+@cindex{X-SC-Category}
+
+@code{X-SC-Category:} には、空白で区切ったキーワードを入力することができ
+ます。ユーザが自由に設定できます。大文字小文字の区別はありません。
+
+現在は、@file{DOT.schedule.sample} の中で @samp{Holiday} というカテゴリ
+名を使っています。
+
+@kbd{C-cc} で、mhc が表示する項目をカテゴリによって限定することができま
+す。
+
+@samp{Private} や @samp{Leisure} というカテゴリを設定している人は、
+
+@lisp
+(setq mhc-default-category "!private leasure")
+@end lisp
+
+と書いておくと、普段は private と leasure についての表示を Summary に出
+しません。仕事に生きる人は、
+
+@lisp
+(setq mhc-default-category "work")
+@end lisp
+
+としておくとよいでしょう。:-)
+
+@samp{Private} というカテゴリは @kbd{C-uC-cs} のときに特別な意味を発揮し
+ます。@samp{Private} というカテゴリのスケジュールがあるバッファで
+@kbd{C-uC-cs} してみましょう。他人に見せたくないサブジェクトが違う文字列
+に変わったはずです。
+
+@node X-SC-Alarm, Customization, X-SC-Category, Top
+@chapter X-SC-Alarm
+@cindex{X-SC-Alarm}
+
+@file{mhc.el} 自体は Alarm によって何かを知らせてくれたりは (まだ) しま
+せんが、付属の gemcal という GUI が画面にメッセージを表示してくれます。
+@code{X-SC-Alarm:} は現在はそのために役に立っています。また mhc2palm で 
+Palm に転送する際にはこの情報が重要になることもあるでしょう。
+
+@code{X-SC-Alarm:} は 1-99 までの数 + minute, hour, day で指定することが
+できます。
+
+@table 
+@item @samp{X-SC-Alarm: 10 minute}
+10分前
+
+@item @samp{X-SC-Alarm: 3  hour}
+3時間前
+
+@item @samp{X-SC-Alarm: 3  day}
+3日前
+@end table
+
+@node Customization, Addition, X-SC-Alarm, Top
+@chapter その他のカスタマイズ可能な変数など
+@cindex{Customization}
+
+@var{mhc-default-category}
+
+サマリバッファに表示するスケジュールのカテゴリを文字列で指定します。デフォ
+ルトは nil で全てのカテゴリのスケジュールをを表示します。スペースで区切っ
+て複数を指定するとができます。先頭に ! を付けると、指定した物以外になり
+ます。書式は @xref{X-SC-Category}@code{X-SC-Category:} を参照。
+
+@var{mhc-use-week-separator}
+
+サマリバッファで、集の区切りに '------------------' を入れるかどうかです。
+nil で入れません。0..6 で日..土 の後に入ります。デフォルトは 6
+
+@var{mhc-schedule-file}
+祭日等を記述した @file{~/Mail/.schedule} を変更します。
+
+@var{mhc-insert-calendar}
+サマリバッファに縦に入る3ヶ月カレンダを表示するかどうかです。nil 以
+外で表示。@kbd{C-ct} でトグルできます。
+     
+@var{mhc-mode-hook}
+@var{mhc-draft-mode-hook}
+それぞれのモードの hook です。
+
+@var{mhc-summary-string-conflict}
+スケジュールが競合したときにサマリのサブジェクトの前に表示する [C] とい
+う文字を変更します。
+
+@var{mhc-summary-string-secret}
+@kbd{C-uC-cs} で Private なスケジュールを隠したときに代りに表示する文字
+列を指定します。デフォルトは [SECRET]
+
+@var{mhc-symbol-face-alist}
+mhc をロードしたときにセットアップされるサマリバッファ上の face (色やフォ
+ント) を指定する連想リストです。連想リストの各要素は、
+
+@lisp
+(FACE-SYMBOL . (PARENT FG BG UNDERLINED FONT STIPPLE))
+@end lisp
+
+のような形をしています。FACE-SYMBOL には以下の種類があります。それぞれの
+デフォルト値と共に示します。
+
+@lisp
+(mhc-calendar-face-saturday . (nil "blue"        nil))
+(mhc-calendar-face-sunday   . (nil "red"         nil))
+(mhc-summary-face-saturday  . (nil "blue"        nil))
+(mhc-summary-face-sunday    . (nil "red"         nil))
+(mhc-summary-face-today     . (nil "black"       "chocolate"))
+(mhc-summary-face-separator . (nil "gray"        nil))
+(mhc-summary-face-time      . (nil "yellowgreen" nil))
+(mhc-summary-face-location  . (nil "black"       "paleturquoise"))
+(mhc-summary-face-conflict  . (nil "white"       "purple"))
+(mhc-summary-face-secret    . (nil "gray"        nil))
+(mhc-minibuf-face-candidate . (nil nil           "yellow"))
+(mhc-category-face-holiday  . (nil "red"         nil))))
+@end lisp
+
+mhc-symbol-face-alist で全てのシンボルを定義する必要はありません。
+定義がないシンボルについては、mhc-symbol-face-alist-internal 
+によって安全に定義されます。
+
+@var{mhc-category-face-alist}
+サマリバッファ上のサブジェクトを @code{X-SC-Category:} の値によって色を
+変えるための連想リストです。連想リストの各要素は、
+
+@lisp
+    (CATEGORY-STRING . (PARENT FG BG UNDERLINED FONT STIPPLE))
+@end lisp
+
+@noindent
+のような形をしています。ちなみに、僕の mhc-category-face-alist は以下の
+ようになっています。
+
+@lisp
+     (setq mhc-category-face-alist
+      '(
+        ("Work"      . (bold "black"  nil))      ;; お仕事一般
+        ("Lecture"   . (nil  "black"  "gray"))   ;; 講議
+        ("Seminar"   . (nil  "black"  "orange")) ;; ゼミ
+        ("Party"     . (nil  "brown"  "pink"))   ;; 宴会
+        ("Private"   . (nil  "tan"    nil))))    ;; プライベート
+@end lisp
+
+まだあるかもしれません。みつけた方は御一報を。
+
+@node Addition, Addition2, Customization, Top
+@chapter おまけ
+@cindex{Addition}
+
+gemcal という GUI といっしょに使うとアラームを出してくれたりして、更に便
+利になります。ruby/gtk で書かれています。
+
+gemcal でもスケジュールの入力、閲覧ができますが、入力は mhc からの方が便
+利かもしれません。日程の変更等は gemcal の方が便利かもしれません。
+
+全画面表示に広げると少し嬉しいようになっています。あとは想像して下さい。
+
+ruby の 1.4.2 + FreeBSD 3.3 / Solaris 2.6 では正常に動くことを確認してい
+ます。ruby-gtk は 0.21 以降で使って下さい。
+
+@node Addition2, Others, Addition
+@chapter おまけその 2
+@cindex{Addition2}
+
+MHC と Palm/WorkPad の間のスケジュールデータ転送コマンド、palm2mhc,
+mhc2palm を用意しました。詳しくはコマンドラインヘルプを見て下さい。
+pilot-link の libpisock を必要とします。
+
+mhc-sync というプログラムは ssh を使って、PC 間のMHC の内容を同期するコ
+マンドです。@samp{mhc-sync} と叩くとusage が出ます。
+
+@node Others, Index, Addition2
+@chapter その他
+@cindex{Others}
+
+mhcに関するお話をするメイリングリストを上げました。
+@t{mhc-ctl@@quickhack.net} に
+
+@example
+        subscribe Your Name (例: subscribe Yoshinari Nomura)
+@end example
+
+と書いたメールを送ることによって、入会の確認メールが来ます。
+
+質問・レポート等は @t{mhc@@quickhack.net} 宛てか @t{nom@@quickhack.net} 
+に下さい。
+
+iij の大原さんが、mhc の CGI インターフェースとを作成されています。合せ
+て御覧下さい。
+
+        web-mhc 置場   @uref{http://mhc.hauN.org/web-mhc/}
+
+@node Index,  , Others, Top
+@unnumbered 索引
+
+@menu
+* Key Index::                   キーバインド索引
+@end menu
+
+@node Key Index,  , Index, Index
+@unnumberedsec キーバインド索引
+@printindex ky
+
+@summarycontents
+@contents
+@bye
+
+@c Local Variables: 
+@c fill-column: 72
+@c End:

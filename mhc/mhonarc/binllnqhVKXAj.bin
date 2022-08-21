@@ -1,0 +1,48 @@
+echo off
+rem MAKE.BAT for MHC.
+rem Copyright (C) 2000 Yuh Ohmura, mailto:yutopia@t3.rim.or.jp
+rem
+rem Author: Yuh Ohmura, mailto:yutopia@t3.rim.or.jp
+rem Version: $Id: $
+rem Created: August 4, 2000
+rem Last Modified: $Date: $
+
+rem ********************************************************************
+rem *                                                                  *
+rem * Please modify following five lines according to your environment *
+rem *   If you use Meadow and Windows NT, use meadowNT.exe insted      *
+rem *  of meadow95.exe                                                 *
+rem *                                                                  *
+rem ********************************************************************
+set EMACS=d:\usr\meadow\1.10\bin\meadow95.exe
+set PREFIX=d:\usr\meadow\1.10
+set INSTOPTS=--with-lispdir=d:\usr\meadow\site-lisp
+set MEWOPTS=
+set WLOPTS=
+set GNUSOPTS=
+set CMAILOPTS=
+set OPTS=%INSTOPTS% %MEWOPTS% %WLOPTS% %GNUSOPTS% %CMAILOPTS%
+rem ********************************************************************
+
+set arg1=%1
+
+if "%arg1%"=="install" goto install
+rem if "%arg1%"=="what-where" goto listing
+if "%arg1%"=="clean" goto clean
+
+:install
+%EMACS% -batch -q -no-site-file -l MHC-MK -f make-mhc-install %OPTS%
+goto end
+
+rem for future reserve.
+:listing
+%EMACS% -batch -q -no-site-file -l MHC-MK -f make-mhc-what-where %OPTS%
+goto end
+
+:clean
+del *.elc 
+del auto-autoload.el
+del custom-load.el
+
+:end
+

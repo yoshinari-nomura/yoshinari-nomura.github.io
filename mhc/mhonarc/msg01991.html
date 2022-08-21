@@ -1,0 +1,112 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01992] mhc2palm/palm2mhc =?ISO&#45;2022&#45;JP?B?GyRCJEclUSU5JW8hPCVJJHIwNyQmGyhC?= -->
+<!--X-From-R13: YAWS Vvqrgnxn (=?vfb&#45;2022&#45;wc?P?UlDQAVS5BwTDFwCoYSW=?=) <uvqrNxbvr.bet> -->
+<!--X-Date: Fri, 12 Nov 2004 14:42:30 +0900 (JST) -->
+<!--X-Message-Id: 20041112.144230.112624295.koie@sakura.suri.co.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01992] mhc2palm/palm2mhc &#x3067;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x3092;&#x6271;&#x3046;</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01990.html">Date Prev</a>][<a href="msg01992.html">Date Next</a>][<a href="msg01989.html">Thread Prev</a>][<a href="msg01992.html">Thread Next</a>][<a href="maillist.html#01991">Date Index</a>][<a href="threads.html#01991">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01992] mhc2palm/palm2mhc &#x3067;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x3092;&#x6271;&#x3046;</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01992] mhc2palm/palm2mhc &#x3067;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x3092;&#x6271;&#x3046;</li>
+<li><em>From</em>: KOIE Hidetaka (&#x9BC9;&#x6C5F;&#x82F1;&#x9686;) &lt;<a href="mailto:hide@DOMAIN.HIDDEN">hide@xxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Fri, 12 Nov 2004 14:42:30 +0900 (JST)</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>Palm&#x306B;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x4FDD;&#x8B77;&#x3092;&#x8A2D;&#x5B9A;&#x3059;&#x308B;&#x3068;
+palm2mhc/mhc2palm&#x304C;&#x4F7F;&#x3048;&#x306A;&#x304F;&#x306A;&#x308B;&#x554F;&#x984C;&#x304C;&#x3042;&#x308A;&#x307E;&#x3057;&#x305F;&#x304C;
+Jpilot&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x307F;&#x305F;&#x3089;2&#x884C;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x3060;&#x3051;&#x3067;
+sync&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x3063;&#x305F;&#x306E;&#x3067;&#x30D1;&#x30C3;&#x30C1;&#x3067;&#x3059;&#x3002;
+(&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x3082;Jpilot&#x306E;&#x3082;&#x306E;&#x3067;&#x3059;)
+
+Index: ruby-ext/mhc_pilib.c
+===================================================================
+RCS file: /cvsroot/mhc/ruby-ext/mhc_pilib.c,v
+retrieving revision 1.4
+diff -p -u -r1.4 mhc_pilib.c
+--- ruby-ext/mhc_pilib.c	21 Nov 2002 00:04:17 -0000	1.4
++++ ruby-ext/mhc_pilib.c	12 Nov 2004 05:35:45 -0000
+@@ -139,10 +139,16 @@ static VALUE rpi_sock_open(VALUE obj, VA
+ static VALUE rpi_sock_listen(VALUE obj, VALUE rb_sd)
+ {
+   int sd = FIX2INT(rb_sd);
++  struct SysInfo     sys_info;
+   struct PilotUser   user;
+ 
+   if (pi_listen(sd, 1) &lt; 0)              return Qnil;
+   if ((sd = pi_accept(sd, 0, 0)) &lt; 0)    return Qnil;
++
++  /* We must do this to take care of the password being required to sync
++   * on Palm OS 4.x */
++  if (dlp_ReadSysInfo(sd, &amp;sys_info) &lt; 0)return Qnil;
++
+   if (dlp_ReadUserInfo(sd, &amp;user) &lt; 0)   return Qnil;
+   if (dlp_OpenConduit(sd) &lt; 0)           return Qnil;
+ 
+
+--
+&#x9BC9;&#x6C5F;&#x82F1;&#x9686; &lt;hide@xxxxxxxx&gt;
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01992" href="msg01992.html">[mhc:01993] Re: mhc2palm/palm2mhc &#x3067;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x3092;&#x6271;&#x3046;</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01990.html">[mhc:01991] Re: FYI: mhc2palm with LANSync</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01992.html">[mhc:01993] Re: mhc2palm/palm2mhc &#x3067;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x3092;&#x6271;&#x3046;</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01989.html">[mhc:01990] Re: another patch for mhc-guess.el</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01992.html">[mhc:01993] Re: mhc2palm/palm2mhc &#x3067;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x3092;&#x6271;&#x3046;</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01991"><strong>Date</strong></a></li>
+<li><a href="threads.html#01991"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

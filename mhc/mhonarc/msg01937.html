@@ -1,0 +1,110 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01938] fixes -->
+<!--X-From-R13: FEGQVWKO [nfngbfuv <gfhpuvlnNanznmh.bet> -->
+<!--X-Date: Wed, 08 Sep 2004 18:23:31 +0900 -->
+<!--X-Message-Id: 87wtz5unak.fsf@namazu.org -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01938] fixes</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01936.html">Date Prev</a>][<a href="msg01938.html">Date Next</a>][<a href="msg01936.html">Thread Prev</a>][<a href="msg01938.html">Thread Next</a>][<a href="maillist.html#01937">Date Index</a>][<a href="threads.html#01937">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01938] fixes</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01938] fixes</li>
+<li><em>From</em>: TSUCHIYA Masatoshi &lt;<a href="mailto:tsuchiya@DOMAIN.HIDDEN">tsuchiya@xxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Wed, 08 Sep 2004 18:23:31 +0900</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Sender</em>: TSUCHIYA Masatoshi &lt;<a href="mailto:tsuchiya@DOMAIN.HIDDEN">tsuchiya@xxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>User-agent</em>: Gnus/5.110003 (No Gnus v0.3) Emacs/21.3 (gnu/linux)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x8907;&#x6570;&#x65E5;&#x306B;&#x767B;&#x9332;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092; mhc-delete &#x3057;&#x3066;&#xFF0C;&#x8907;&#x6570;&#x65E5;&#x306E;&#x4E2D;&#x304B;&#x3089;1
+&#x65E5;&#x3060;&#x3051;&#x3092;&#x524A;&#x9664;&#x3057;&#x3088;&#x3046;&#x3068;&#x3059;&#x308B;&#x3068;&#xFF0C;pure Gnus &#x3068; SEMI MUA &#x3067;&#x306F;&#xFF0C;&#x8A18;&#x4E8B;&#x30D0;&#x30C3;&#x30D5;&#x30A1;&#x3092;
+&#x4E8C;&#x91CD;&#x306B; decode &#x3057;&#x3088;&#x3046;&#x3068;&#x3057;&#x3066;&#xFF0C;&#x6587;&#x5B57;&#x5316;&#x3051;&#x3057;&#x3066;&#x3057;&#x307E;&#x3063;&#x3066;&#x3044;&#x307E;&#x3057;&#x305F;&#xFF0E;&#x3053;&#x306E;&#x554F;&#x984C;&#x306B;&#x5BFE;
+&#x51E6;&#x3059;&#x308B;&#x305F;&#x3081;&#xFF0C;
+
+	* emacs/mhc-db.el (mhc-db-add-exception-rule): Call
+	`mhc-draft-reedit-file' instead of `mhc-draft-reedit-buffer', in
+	order to avoid double-decoding problem in Gnus and SEMI-MUAs.
+
+&#x3068;&#x3044;&#x3046;&#x6539;&#x5909;&#x3092;&#x884C;&#x3044;&#x307E;&#x3057;&#x305F;&#x304C;&#xFF0C;&#x79C1;&#x306E;&#x624B;&#x5143;&#x306B;&#x306F; Mew &#x306E;&#x52D5;&#x4F5C;&#x74B0;&#x5883;&#x304C;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x306E;&#x3067;&#xFF0C;
+Mew &#x306B;&#x5BFE;&#x3059;&#x308B;&#x52D5;&#x4F5C;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x304C;&#x884C;&#x3048;&#x307E;&#x305B;&#x3093;(&#x76EE;&#x8996;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x306E;&#x307F;)&#xFF0E;&#x3069;&#x306A;&#x305F;&#x304B;&#x30C6;&#x30B9;&#x30C8;
+&#x3092;&#x304A;&#x9858;&#x3044;&#x3057;&#x307E;&#x3059;&#xFF0E;
+
+&#x65E2;&#x306B;&#xFF0C;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3068;&#x3057;&#x3066;&#x767B;&#x9332;&#x6E08;&#x307F;&#x306E;&#x30E1;&#x30FC;&#x30EB;&#x3092; C-u M-x mhc-import RET &#x3059;&#x308B;
+&#x3068;&#xFF0C;X-SC-* &#x306A;&#x3078;&#x30C3;&#x30C0;&#x304C;&#x4E8C;&#x91CD;&#x306B;&#x73FE;&#x308C;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x3063;&#x3066;&#x3057;&#x307E;&#x3063;&#x3066;&#x3044;&#x307E;&#x3057;&#x305F;&#x306E;&#x3067;&#xFF0C;&#x4EE5;
+&#x4E0B;&#x306E;&#x6539;&#x5909;&#x3092;&#x884C;&#x3044;&#x307E;&#x3057;&#x305F;&#xFF0E;
+
+	* emacs/mhc.el (mhc-edit): Remove schedule headers just before
+	inserting new schedule headers.
+
+&#x307E;&#x305F;&#xFF0C;X-SC-Location &#x3078;&#x30C3;&#x30C0;&#x306E;&#x5165;&#x529B;&#x6642;&#x306B;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5024;&#x304C;&#x6709;&#x52B9;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x306A;&#x304B;&#x3063;
+&#x305F;&#x306E;&#x3067;&#xFF0C;&#x4EE5;&#x4E0B;&#x306E;&#x6539;&#x5909;&#x3092;&#x884C;&#x3044;&#x307E;&#x3057;&#x305F;&#xFF0E;
+
+	* emacs/mhc-minibuf.el (mhc-input-location): Use default value.
+
+-- 
+&#x571F;&#x5C4B; &#x96C5;&#x7A14; ( TSUCHIYA Masatoshi )
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01938" href="msg01938.html">[mhc:01939] Re: fixes</a></strong>
+<ul><li><em>From:</em> &#x9BC9;&#x6C5F;&#x82F1;&#x9686;</li></ul></li>
+<li><strong><a name="01952" href="msg01952.html">[mhc:01953] Re: fixes</a></strong>
+<ul><li><em>From:</em> TSUCHIYA Masatoshi</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01936.html">[mhc:01937] MHC vs mew-pickable</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01938.html">[mhc:01939] Re: fixes</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01936.html">[mhc:01937] MHC vs mew-pickable</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01938.html">[mhc:01939] Re: fixes</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01937"><strong>Date</strong></a></li>
+<li><a href="threads.html#01937"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

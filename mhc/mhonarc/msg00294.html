@@ -1,0 +1,102 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00295] [REQ] "none" as default value in mhc&#45;input&#45;time -->
+<!--X-From-R13: Ynmhabev @WEVW <xnmhabevNfjyno.pfpr.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Thu, 23 Dec 1999 01:27:11 +0900 -->
+<!--X-Message-Id: 19991223012709D.kazunori@swlab.csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00295] [REQ] &quot;none&quot; as default value in mhc-input-time</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00293.html">Date Prev</a>][<a href="msg00295.html">Date Next</a>][<a href="msg00307.html">Thread Prev</a>][<a href="msg00295.html">Thread Next</a>][<a href="maillist.html#00294">Date Index</a>][<a href="threads.html#00294">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00295] [REQ] &quot;none&quot; as default value in mhc-input-time</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00295] [REQ] &quot;none&quot; as default value in mhc-input-time</li>
+<li><em>From</em>: Kazunori NISHI &lt;<a href="mailto:kazunori@DOMAIN.HIDDEN">kazunori@xxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Thu, 23 Dec 1999 01:27:11 +0900</li>
+<li><em>Posted</em>: Thu, 23 Dec 1999 01:27:09 +0900</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x304B;&#x305A;&#x306E;&#x308A;&#xFF20;&#x4E5D;&#x5927;&#x3067;&#x3059;&#x3002;
+&#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+
+ * mhc-input-time &#x306E;&#x5165;&#x529B;&#x3067;&#x3001;&quot;none&quot; &#x3092;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x306B;&#x5E0C;&#x671B;&#x3002;
+  (&#x3068;&#x308A;&#x3042;&#x3048;&#x305A; draft-buffer &#x306B;&#x884C;&#x304D;&#x305F;&#x3044;&#x4EBA;&#x306B;&#x3068;&#x3063;&#x3066;&#x3001;&#x6253;&#x3064;&#x306E;&#x304C;&#x76F8;&#x5F53;&#x9762;&#x5012;)
+
+ * X-SC-Duration: &#x306B;&#x300C;!&#x300D;&#x3092;&#x66F8;&#x304D;&#x305F;&#x3044;&#x3002;
+  (Fri &#x3060;&#x304C;&#x3001;1999/12/20&#x301C;2000/01/12 &#x306E;&#x9593;&#x3060;&#x3051;&#x72AC;&#x4E38;&#x304C;&#x306A;&#x3044;&#x3002;&#x307F;&#x305F;&#x3044;&#x306A;&#x6642;&#x306B;&#x3001;
+   &#x671F;&#x9593;&#x4E2D;&#x306E;&#x5168;&#x8A72;&#x5F53;&#x65E5;&#x3092;&#x8ABF;&#x3079;&#x3066;&#x3001;X-SC-DAY &#x306B;&#x300C;!&#x300D;&#x3067;&#x7F85;&#x5217;&#x3057;&#x3066;&#x3044;&#x304F;&#x306E;&#x306F;&#x8F9B;&#x3044;)
+
+ * &#x795D;&#x65E5;&#x306E;&#x7BA1;&#x7406;&#x3092; ruby &#x30EC;&#x30D9;&#x30EB;&#x3067;&#x3084;&#x3063;&#x3066;&#x6B32;&#x3057;&#x3044;&#x3002;
+  (&#x5358;&#x306B; MhcDate#holiday? &#x304C;&#x6B32;&#x3057;&#x304B;&#x3063;&#x305F;&#x3060;&#x3051;&#x3067;&#x3059;&#x3002;
+   &#x21D2; &#x3066;&#x3044;&#x3046;&#x304B;&#x3001;&#x591A;&#x5206;&#x3001;perl,el &#x3068;&#x306E;&#x7D61;&#x307F;&#x304C;&#x3042;&#x308B;&#x306E;&#x3067;&#x7121;&#x7406;&#x3002;
+   &#x21D2; low-level &#x3067;&#x4E00;&#x5143;&#x7BA1;&#x7406;&#x3067;&#x304D;&#x3066;&#x308B;&#x73FE;&#x72B6;&#x304C;&#x826F;&#x3044;&#x3002;
+   &#x21D2; MhcItem#in_category?('Holiday') &#x3092;&#x63A2;&#x3057;&#x307E;&#x304F;&#x3063;&#x3066;&#x304F;&#x308C;&#x308B; method &#x3067;&#x3082;
+      &#x3044;&#x3044;&#x3067;&#x3059;&#xFF1E;MhcDate#holiday?&#x3002;(Web &#x3067;&#x8272;&#x4ED8;&#x3051;&#x3057;&#x305F;&#x3044;&#x3089;&#x3057;&#x3044;)
+   )
+
+------------------------------------------------------------------
+&#x4E5D;&#x5DDE;&#x5927;&#x5B66;&#x5927;&#x5B66;&#x9662;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x60C5;&#x5831;&#x79D1;&#x5B66;&#x7814;&#x7A76;&#x79D1; &#x60C5;&#x5831;&#x5DE5;&#x5B66;&#x5C02;&#x653B; &#x535A;&#x58EB;&#x5F8C;&#x671F;&#x8AB2;&#x7A0B;&#x4E09;&#x5E74;
+      &#x897F; &#x548C;&#x5247;   ( e-mail: kazunori@xxxxxxxxxxxxxxxxxxxxxxxxx )
+------------------------------------------------------------------
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00295" href="msg00295.html">[mhc:00296] Re: [REQ] &quot;none&quot; as default value in mhc-input-time</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00293.html">[mhc:00294] mhc-0.24 Released</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00295.html">[mhc:00296] Re: [REQ] &quot;none&quot; as default value in mhc-input-time</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00307.html">[mhc:00308] Re: mhc-0.24 Released</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00295.html">[mhc:00296] Re: [REQ] &quot;none&quot; as default value in mhc-input-time</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00294"><strong>Date</strong></a></li>
+<li><a href="threads.html#00294"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01988] Re: another patch for mhc&#45;guess.el -->
+<!--X-From-R13: fnxhenNgraabqnv.pbz -->
+<!--X-Date: Mon, 01 Nov 2004 16:56:11 +0900 (JST) -->
+<!--X-Message-Id: 20041101.165611.123113351.sakura@tennodai.com -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 20041101.162156.68544500.nogunogu@mva.biglobe.ne.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01988] Re: another patch for mhc-guess.el</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01986.html">Date Prev</a>][<a href="msg01988.html">Date Next</a>][<a href="msg01986.html">Thread Prev</a>][<a href="msg01988.html">Thread Next</a>][<a href="maillist.html#01987">Date Index</a>][<a href="threads.html#01987">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01988] Re: another patch for mhc-guess.el</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a>, <a href="mailto:nogunogu@DOMAIN.HIDDEN">nogunogu@xxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01988] Re: another patch for mhc-guess.el</li>
+<li><em>From</em>: <a href="mailto:sakura@DOMAIN.HIDDEN">sakura@xxxxxxxxxxxx</a></li>
+<li><em>Date</em>: Mon, 01 Nov 2004 16:56:11 +0900 (JST)</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20041101.162156.68544500.nogunogu@DOMAIN.HIDDEN">20041101.162156.68544500.nogunogu@xxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:20041101.162156.68544500.nogunogu@DOMAIN.HIDDEN">20041101.162156.68544500.nogunogu@xxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x304D;&#x3086;&#x304D;&#x3067;&#x3059;&#x3002;
+
+&gt; &#x3068;&#x308A;&#x3042;&#x3048;&#x305A;&#x3001;&#x624B;&#x5143;&#x3067;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x5909;&#x66F4;&#x3092;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x671B;&#x307F;&#x901A;&#x308A;&#x306E;&#x52D5;&#x4F5C;&#x3092;&#x3057;&#x3066;&#x304A;&#x308A;&#x307E;&#x3059;&#x3002;
+&gt; &#x554F;&#x984C;&#x304C;&#x306A;&#x3044;&#x3088;&#x3046;&#x3067;&#x3057;&#x305F;&#x3089;&#x3001;&#x53D6;&#x308A;&#x3053;&#x3093;&#x3067;&#x3044;&#x305F;&#x3060;&#x3051;&#x308C;&#x3070;&#x3068;&#x601D;&#x3063;&#x3066;&#x304A;&#x308A;&#x307E;&#x3059;&#x3002;
+&gt; (&#x6B63;&#x898F;&#x8868;&#x73FE;&#x306B;&#x3064;&#x3044;&#x3066;&#x306F;&#x3001;&#x3088;&#x304F;&#x308F;&#x304B;&#x3063;&#x3066;&#x3044;&#x306A;&#x3044;&#x305F;&#x3081;&#x7121;&#x99C4;&#x306A;&#x3053;&#x3068;&#x3092;&#x3057;&#x3066;&#x500B;&#x6240;&#x304C;&#x591A;&#x3005;
+&gt; &#x3042;&#x308B;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;...)
+
+&gt; ! (defvar mhc-guess-location-list '()
+&gt;     &quot;*List of the regexps of the location, like this
+&gt;     '(\&quot;&#x7B2C;?[0-9&#xFF10;-&#xFF19;&#x3007;-&#x4E5D;]+&#x5FDC;&#x63A5;&#x5BA4;?\&quot;
+&gt;       \&quot;&#x7B2C;?[0-9&#xFF10;-&#xFF19;&#x3007;-&#x4E5D;]+&#x4F1A;&#x8B70;&#x5BA4;[0-9&#xFF10;-&#xFF19;&#x3007;-&#x4E5D;]?\&quot;))&quot;)
+&gt;        mhc-guess/make-time-from-hhmm 1 2 5 7 6)
+&gt;       ))
+&gt;   
+&gt; ! (defvar mhc-guess-location-list   
+&gt; !   '(&quot;[&#x7B2C;]*[a-zA-Z0-9&#xFF10;-&#xFF19;&#x3007;-&#x4E5D;]*[&#x5FDC;&#x63A5;]*[&#x4F1A;&#x8B70;]*[&#x5B9F;&#x9A13;]*&#x5BA4;[a-zA-Z0-9&#xFF10;-&#xFF19;&#x3007;-&#x4E5D;]*&quot;)
+&gt;     &quot;*List of the regexps of the location, like this
+&gt;     '(\&quot;&#x7B2C;?[0-9&#xFF10;-&#xFF19;&#x3007;-&#x4E5D;]+&#x5FDC;&#x63A5;&#x5BA4;?\&quot;
+&gt;       \&quot;&#x7B2C;?[0-9&#xFF10;-&#xFF19;&#x3007;-&#x4E5D;]+&#x4F1A;&#x8B70;&#x5BA4;[0-9&#xFF10;-&#xFF19;&#x3007;-&#x4E5D;]?\&quot;))&quot;)
+
+&#x5404;&#x81EA;&#x304C; ~/.emacs &#x306B;
+
+(setq mhc-guess-location-list 
+      '(&quot;[&#x7B2C;]*[a-zA-Z0-9&#xFF10;-&#xFF19;&#x3007;-&#x4E5D;]*[&#x5FDC;&#x63A5;]*[&#x4F1A;&#x8B70;]*[&#x5B9F;&#x9A13;]*&#x5BA4;[a-zA-Z0-9&#xFF10;-&#xFF19;&#x3007;-&#x4E5D;]*&quot;))
+
+&#x3068;&#x66F8;&#x3051;&#x3070;&#x5341;&#x5206;&#x3058;&#x3083;&#x306A;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#x3002;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x3053;&#x3053;&#x307E;&#x3067;&#x30DE;&#x30C3;&#x30C1;&#x3055;&#x308C;&#x308B;&#x3068;
+&#x3084;&#x308A;&#x3059;&#x304E;&#x306E;&#x3088;&#x3046;&#x306A;&#x6C17;&#x304C;&#x3057;&#x307E;&#x3059;&#x3002;
+-- 
+sakura@xxxxxxxxxxxx
+<a  rel="nofollow" href="http://www.tennodai.com/~sakura/">http://www.tennodai.com/~sakura/</a>
+
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01988" href="msg01988.html">[mhc:01989] Re: another patch for mhc-guess.el</a></strong>
+<ul><li><em>From:</em> NOGUCHI Yusuke</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="01986" href="msg01986.html">[mhc:01987] another patch for mhc-guess.el (Re:  Re: patch for mhc-guess.el)</a></strong>
+<ul><li><em>From:</em> NOGUCHI Yusuke</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01986.html">[mhc:01987] another patch for mhc-guess.el (Re:  Re: patch for mhc-guess.el)</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01988.html">[mhc:01989] Re: another patch for mhc-guess.el</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01986.html">[mhc:01987] another patch for mhc-guess.el (Re:  Re: patch for mhc-guess.el)</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01988.html">[mhc:01989] Re: another patch for mhc-guess.el</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01987"><strong>Date</strong></a></li>
+<li><a href="threads.html#01987"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

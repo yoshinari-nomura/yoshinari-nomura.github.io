@@ -1,0 +1,62 @@
+--- mhc.el.orig	Fri May 26 17:44:54 2000
++++ mhc.el	Fri May 26 17:48:22 2000
+@@ -39,6 +39,9 @@
+ (require 'mhc-schedule)
+ (require 'mhc-minibuf)
+ (require 'mhc-face)
++(if (featurep 'xemacs)
++    (require 'mhc-xmas)
++  (defmacro mhc-use-icon-p ()))
+ (provide 'mhc)
+ 
+ (defconst mhc-version "mhc version 0.25pre3")
+@@ -264,7 +267,8 @@
+ 	(category (car (mhc-sch-category sch)))
+ 	date-color week-color insert 
+ 	head-string date-string week-string time-string
+-	conf-string subj-string foot-string location-string)
++	conf-string subj-string foot-string location-string
++	pos len icon space)
+     (setq week-color
+ 	  (cond
+ 	   ((mhc-sch-in-category-p sch "Holiday") 'mhc-category-face-holiday)
+@@ -324,7 +328,20 @@
+ 		  head-string
+ 		  date-string " "
+ 		  week-string " "
+-		  time-string " "
++		  time-string " "))
++    (if (mhc-use-icon-p)
++	(progn
++	  ;; XX icon must have 2 character width.
++	  (if (and category
++		   (setq icon (mhc-get-icon category)))
++	      (progn
++		(setq space "  ")
++		(put-text-property 0 2 'invisible t space))
++	    (setq space "  "))
++	  (setq insert (concat insert space))))
++    (setq len (length insert))
++    (setq insert (concat
++		  insert
+ 		  conf-string (if conf-string " ")
+ 		  subj-string " "
+ 		  location-string
+@@ -345,7 +362,9 @@
+ 	      (push (gnus-data-make num 0 0 header 0) gnus-newsgroup-data))
+ 	  (remove-text-properties 0 (length insert)
+ 				  '(gnus-number nil) insert)))))
++    (setq pos (point))
+     (insert insert)
++    (and icon (mhc-put-icon icon (+ pos len)))    
+     (set-buffer-modified-p nil)))
+ 
+ (defun mhc-sch-scan-date (date type &optional cat inv-cat secret update)
+@@ -430,6 +449,7 @@
+     (kill-region (point-min) (point-max))))
+ 
+ (defun mhc-scan-month (ddate type cat inv-cat secret)
++  (and (mhc-use-icon-p) (mhc-icon-setup))  
+   (let ((buffer) (insert-current (not (memq type '(mew wl gnus)))))
+     (or insert-current
+ 	(if (eq mhc-mailer-package 'gnus)

@@ -1,0 +1,124 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01291] Re: mhc =?ISO&#45;2022&#45;JP?B?GyRCJVAlMCVsJV0hPCVIGyhC?= -->
+<!--X-From-R13: Kbfuvanev @bzhen <abzNpfpr.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Tue, 13 Mar 2001 14:59:06 +0900 -->
+<!--X-Message-Id: 20010313145906F.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 010313142044.M0142714@mistral.imasy.or.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01291] Re: mhc &#x30D0;&#x30B0;&#x30EC;&#x30DD;&#x30FC;&#x30C8;</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01289.html">Date Prev</a>][<a href="msg01291.html">Date Next</a>][<a href="msg01289.html">Thread Prev</a>][<a href="msg01292.html">Thread Next</a>][<a href="maillist.html#01290">Date Index</a>][<a href="threads.html#01290">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01291] Re: mhc &#x30D0;&#x30B0;&#x30EC;&#x30DD;&#x30FC;&#x30C8;</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01291] Re: mhc &#x30D0;&#x30B0;&#x30EC;&#x30DD;&#x30FC;&#x30C8;</li>
+<li><em>From</em>: Yoshinari Nomura &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Tue, 13 Mar 2001 14:59:06 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:010313142044.M0142714@DOMAIN.HIDDEN">010313142044.M0142714@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:010313142044.M0142714@DOMAIN.HIDDEN">010313142044.M0142714@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x4E43;&#x6751;&#x3067;&#x3059;&#x3002;
+
+On Tue, 13 Mar 2001 14:20:44 +0900,
+	mistral@xxxxxxxxxxx (Yoshihiko SARUMARU) said:
+
+&gt; ./gemcal &#x3067;&#x8D77;&#x52D5;&#x3057;&#x3066;&#x3001;
+&gt; &#x5DE6;&#x304B;&#x3089;6&#x756A;&#x76EE;&#x306E;&#x30DC;&#x30BF;&#x30F3;&#x3092;&#x62BC;&#x3057;&#x3066;(&#x7FCC;&#x6708;&#x306E;)&#x65B0;&#x3057;&#x3044;&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x3092;&#x51FA;&#x3059;&#x3002;
+&gt;   &#x307E;&#x305F;&#x306F; DayBook &#x304B;&#x3089;&#x30AB;&#x30EC;&#x30F3;&#x30C0;&#x30FC;&#x3092;&#x958B;&#x304F;&#x3002;
+&gt; CLOSE &#x3092;&#x62BC;&#x3059;&#x3068;&#x307E;&#x308B;&#x3054;&#x3068;&#x843D;&#x3061;&#x308B;&#x3002;
+
+&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;&#x898B;&#x4E8B;&#x306B;&#x843D;&#x3061;&#x307E;&#x3059;&#x306D;&#x3002;
+Ruby 1.4.5 &#x3060;&#x3068;&#x5927;&#x4E08;&#x592B;&#x307F;&#x305F;&#x3044;&#x3067;&#x3059;&#x3002;
+&#x666E;&#x6BB5; 1.4 &#x7CFB;&#x3067;&#x4F7F;&#x3063;&#x3066;&#x3044;&#x305F;&#x306E;&#x3067;&#x6C17;&#x4ED8;&#x304D;&#x307E;&#x305B;&#x3093;&#x3067;&#x3057;&#x305F;&#x3002;
+Hash &#x306E;&#x6271;&#x3044;&#x304C;&#x5909;&#x308F;&#x3063;&#x3066;&#x3044;&#x308B;&#x3088;&#x3046;&#x3067;&#x3001;
+
+  h = Hash .new
+  h['X'] = nil
+  h .keys .each{|key| p h[key] }
+
+&#x3053;&#x306E;&#x52D5;&#x4F5C;&#x304C; 1.4 &#x7CFB;&#x3068; 1.6&#x7CFB;&#x3067;&#x9055;&#x3046;&#x306E;&#x304C;&#x539F;&#x56E0;&#x307F;&#x305F;&#x3044;&#x3067;&#x3059;&#x3002;
+mhc-signal.rb &#x306E;
+
+  def signal_disconnect(sd)
+    @proc_table .each_key{|sig|
+      @proc_table[sig][sd] = nil
+    }
+  end
+
+&#x306E;&#x90E8;&#x5206;&#x3092;
+
+  def signal_disconnect(sd)
+    @proc_table .each_key{|sig|
+      @proc_table[sig] .delete(sd)
+    }
+  end
+
+&#x3068;&#x3059;&#x308B;&#x3068;&#x3046;&#x307E;&#x304F;&#x52D5;&#x304F;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;
+
+# gemcal &#x3063;&#x3066;&#x3001;&#x6700;&#x5927;&#x5316;&#x3059;&#x308B;&#x3068;&#x3001;&#x4E88;&#x5B9A;&#x304C;&#x5168;&#x90E8;&#x898B;&#x3089;&#x308C;&#x308B;&#x306E;&#x3092;&#x306F;&#x3058;&#x3081;&#x3066;&#x77E5;&#x3063;
+# &#x305F;&#x3068;&#x3044;&#x3046;&#x8A18;&#x8FF0;&#x304C;&#x3069;&#x3053;&#x304B;&#x306B;&#x3042;&#x3063;&#x3066;&#x82E6;&#x7B11;&#x3002;
+--
+nom
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="01289" href="msg01289.html">[mhc:01290] mhc &#x30D0;&#x30B0;&#x30EC;&#x30DD;&#x30FC;&#x30C8;</a></strong>
+<ul><li><em>From:</em> Yoshihiko SARUMARU</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01289.html">[mhc:01290] mhc &#x30D0;&#x30B0;&#x30EC;&#x30DD;&#x30FC;&#x30C8;</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01291.html">[mhc:01292] mhc installer</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01289.html">[mhc:01290] mhc &#x30D0;&#x30B0;&#x30EC;&#x30DD;&#x30FC;&#x30C8;</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01292.html">[mhc:01293] Re: mhc installer</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01290"><strong>Date</strong></a></li>
+<li><a href="threads.html#01290"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

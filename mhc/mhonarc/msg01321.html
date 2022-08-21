@@ -1,0 +1,115 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01322] Re: conflict detection -->
+<!--X-From-R13: YAWS Vvqrgnxn (=?vfb&#45;2022&#45;wc?P?UlDQAVS5BwTDFwCoYSW=?=) <uvqrNxbvr.bet> -->
+<!--X-Date: Wed, 4 Apr 2001 19:00:34 +0900 -->
+<!--X-Message-Id: 01Apr4.192908jst.29571@gateway.suri.co.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 01Apr3.165159jst.29570@gateway.suri.co.jp -->
+<!--X-Reference: 20010403200117P.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Reference: 01Apr4.154133jst.29573@gateway.suri.co.jp -->
+<!--X-Reference: 20010404184255R.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01322] Re: conflict detection</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01320.html">Date Prev</a>][<a href="msg01322.html">Date Next</a>][<a href="msg01320.html">Thread Prev</a>][<a href="msg01319.html">Thread Next</a>][<a href="maillist.html#01321">Date Index</a>][<a href="threads.html#01321">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01322] Re: conflict detection</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01322] Re: conflict detection</li>
+<li><em>From</em>: KOIE Hidetaka (&#x9BC9;&#x6C5F;&#x82F1;&#x9686;) &lt;<a href="mailto:hide@DOMAIN.HIDDEN">hide@xxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Wed, 4 Apr 2001 19:00:34 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20010404184255R.nom@DOMAIN.HIDDEN">20010404184255R.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:01Apr3.165159jst.29570@DOMAIN.HIDDEN">01Apr3.165159jst.29570@xxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20010403200117P.nom@DOMAIN.HIDDEN">20010403200117P.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:01Apr4.154133jst.29573@DOMAIN.HIDDEN">01Apr4.154133jst.29573@xxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20010404184255R.nom@DOMAIN.HIDDEN">20010404184255R.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>  From:       Yoshinari Nomura &lt;nom@xxxxxxxxxxxxxxxxxxx&gt;
+  Subject:    [mhc:01321] Re: conflict detection
+  Date:       Wed, 4 Apr 2001 18:42:55 +0900
+  Message-Id: &lt;20010404184255R.nom@xxxxxxxxxxxxxxxxxxx&gt;
+
+  | &gt; n&#x500B;&#x306E;&#x533A;&#x9593;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x84C4;&#x7A4D;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3068;&#x304D;&#x306B;&#x3001;&#x533A;&#x9593;&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x305D;&#x308C;&#x304C;
+  | &gt; &#x84C4;&#x7A4D;&#x30C7;&#x30FC;&#x30BF;&#x3068;&#x885D;&#x7A81;&#x3057;&#x3066;&#x3044;&#x308B;&#x304B;&#x3069;&#x3046;&#x304B;&#x306E;&#x5224;&#x5B9A;&#x304C;O(n log n)&#x3068;&#x3044;&#x3046;&#x3053;&#x3068;&#x3067;&#x3059;&#x3002;
+  | 
+  | &#x3042;&#x3089;&#x3002;&#x3053;&#x3053; (interval search) &#x306F;&#x3001;O(log n) &#x3060;&#x3068;&#x601D;&#x3063;&#x3066;&#x307E;&#x3057;&#x305F;&#x3002;
+  | &#x305D;&#x308C;&#x3067;&#x3001;&#x4ECA;&#x56DE;&#x306E;&#x30B1;&#x30FC;&#x30B9;&#x3067;&#x306F;&#x3001;&#x84C4;&#x7A4D;&#x3057;&#x3066;&#x3044;&#x308B;&#x30C7;&#x30FC;&#x30BF; n &#x500B;&#x306B;&#x3064;&#x3044;&#x3066;
+  | &#x3055;&#x3089;&#x306B;&#x8ABF;&#x3079;&#x308B;&#x304B;&#x3089; O(n log n) &#x306A;&#x3093;&#x3060;&#x3068;&#x7406;&#x89E3;&#x3057;&#x3066;&#x3044;&#x307E;&#x3057;&#x305F;&#x3002;
+
+&#x6307;&#x304C;&#x3059;&#x3079;&#x3063;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3057;&#x305F;&#x3002;&#x4E43;&#x6751;&#x3055;&#x3093;&#x306E;&#x304A;&#x3063;&#x3057;&#x3083;&#x308B;&#x3068;&#x304A;&#x308A;&#x3067;&#x3059;&#x3002;
+
+&#x3042;&#x3068;&#x3001;&#x5B9F;&#x88C5;&#x306F;&#x4E8C;&#x5206;&#x6728;&#x3060;&#x3068;&#x66F8;&#x304D;&#x307E;&#x3057;&#x305F;&#x304C;&#x3001;
+&#x3042;&#x308C;&#x306F;&#x4E8C;&#x5206;&#x63A2;&#x7D22;&#x6728;&#x3068;&#x547C;&#x3076;&#x306E;&#x304C;&#x6B63;&#x3057;&#x3044;&#x3067;&#x3059;&#x3002;
+&#x672C;&#x3092;&#x8AAD;&#x307F;&#x306A;&#x304A;&#x3057;&#x3066;&#x6C17;&#x3065;&#x304D;&#x307E;&#x3057;&#x305F;&#x3002;
+
+&#x3067;&#x3082;&#x3063;&#x3066;&#x3001;&#x3078;&#x307C;&#x3044;&#x3042;&#x305F;&#x307E;&#x3067;&#x3044;&#x308D;&#x3044;&#x308D;&#x5984;&#x60F3;&#x3057;&#x305F;&#x3051;&#x3063;&#x304B;
+&#x540C;&#x3058;begin&#x306A;&#x3089;end&#x3092;&#x6301;&#x305F;&#x306A;&#x3044;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x306E;&#x65B9;&#x304C;&#x5148;(&#x307E;&#x305F;&#x306F;&#x5F8C;)&#x306B;&#x306A;&#x308B;&#x3088;&#x3046;
+&#x30BD;&#x30FC;&#x30C8;&#x3059;&#x308B;&#x3057;&#x304B;&#x89E3;&#x6C7A;&#x65B9;&#x6CD5;&#x306F;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x601D;&#x3048;&#x307E;&#x3057;&#x305F;&#x3002;
+
+--
+KOIE Hidetaka &#x9BC9;&#x6C5F;&#x82F1;&#x9686; &lt;hide@xxxxxxxx&gt;
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="01316" href="msg01316.html">[mhc:01317] Re: conflict detection</a></strong>
+<ul><li><em>From:</em> &#x9BC9;&#x6C5F;&#x82F1;&#x9686;</li></ul></li>
+<li><strong><a name="01317" href="msg01317.html">[mhc:01318] Re: conflict detection</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+<li><strong><a name="01318" href="msg01318.html">[mhc:01319] Re: conflict detection</a></strong>
+<ul><li><em>From:</em> &#x9BC9;&#x6C5F;&#x82F1;&#x9686;</li></ul></li>
+<li><strong><a name="01320" href="msg01320.html">[mhc:01321] Re: conflict detection</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01320.html">[mhc:01321] Re: conflict detection</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01322.html">[mhc:01323] mhc-palm.rb Error</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01320.html">[mhc:01321] Re: conflict detection</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01319.html">[mhc:01320] RE: conflict detection</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01321"><strong>Date</strong></a></li>
+<li><a href="threads.html#01321"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

@@ -1,0 +1,22 @@
+--- mhc.el.orig	Thu Apr 27 12:33:08 2000
++++ mhc.el	Fri Apr 28 08:32:14 2000
+@@ -124,8 +124,8 @@
+    Key assinment on mhc-mode.
+ 
+    C-c .  Review the schedule of this month
+-   C-c >  Review the schedule of next month
+-   C-c <  Review the schedule of previous month
++   C-c n  Review the schedule of next month
++   C-c p  Review the schedule of previous month
+    C-c g  Jump to your prefer month
+    C-c s  Rescan the buffer of the month
+    C-c f  Move cursor to today (Only available reviewing this month)
+@@ -419,7 +419,7 @@
+     ;; initialize ephemeral nnvirtual group.
+     (gnus-group-read-ephemeral-group
+      vgroup `(nnvirtual ,vgroup (nnvirtual-component-groups ,groups))
+-     t (cons (current-buffer) (current-window-configuration)) t)
++     t nil t)
+     (gnus-group-read-group 0 t vgroup)
+     (gnus-summary-make-local-variables)
+     (setq inhibit-read-only t)

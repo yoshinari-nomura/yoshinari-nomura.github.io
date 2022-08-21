@@ -1,0 +1,117 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01158] Re: Emacs 21 (All renewal mhc&#45;calendar.el) -->
+<!--X-From-R13: Vvqrlhxv EVWDOW (=?vfb&#45;2022&#45;wc?P?UlDQD3WjLw0bAHCoYSW=?=) <fuvenvNdhvpxunpx.arg> -->
+<!--X-Date: Fri, 15 Dec 2000 12:05:14 +0900 (JST) -->
+<!--X-Message-Id: 20001215.120514.65676112.shirai@rdmg.mgcs.mei.co.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 20001214.193702.01437162.shirai@rdmg.mgcs.mei.co.jp -->
+<!--X-Reference: fzae9ycsrh.wl@elmo.dq.isl.ntt.co.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01158] Re: Emacs 21 (All renewal mhc-calendar.el)</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01156.html">Date Prev</a>][<a href="msg01158.html">Date Next</a>][<a href="msg01156.html">Thread Prev</a>][<a href="msg01158.html">Thread Next</a>][<a href="maillist.html#01157">Date Index</a>][<a href="threads.html#01157">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01158] Re: Emacs 21 (All renewal mhc-calendar.el)</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01158] Re: Emacs 21 (All renewal mhc-calendar.el)</li>
+<li><em>From</em>: Hideyuki SHIRAI (&#x767D;&#x4E95;&#x79C0;&#x884C;) &lt;<a href="mailto:shirai@DOMAIN.HIDDEN">shirai@xxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Fri, 15 Dec 2000 12:05:14 +0900 (JST)</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:fzae9ycsrh.wl@DOMAIN.HIDDEN">fzae9ycsrh.wl@xxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Organization</em>: QuickHackers, Tokyo, JAPAN</li>
+<li><em>References</em>: &lt;<a href="mailto:20001214.193702.01437162.shirai@DOMAIN.HIDDEN">20001214.193702.01437162.shirai@xxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:fzae9ycsrh.wl@DOMAIN.HIDDEN">fzae9ycsrh.wl@xxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>From:  Yuuichi Teranishi &lt;teranisi@xxxxxxxxxxxxx&gt; &#x3055;&#x3093;&#x66F0;&#x304F;
+Subject: [mhc:01157] Re: Emacs 21 (All renewal mhc-calendar.el)
+Message-ID: &lt;fzae9ycsrh.wl@xxxxxxxxxxxxxxxxxxxxx&gt;
+Date: Fri, 15 Dec 2000 11:39:30 +0900
+
+&#x767D;&#x4E95;&gt; Emacs21 &#x5BFE;&#x5FDC;&#x306E; file &#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x3057;&#x307E;&#x305B;&#x3093;&#x304B;&#xFF1F; &gt; &#x5BFA;&#x897F;&#x3055;&#x3093;
+
+&#x5BFA;&gt; &#x2026;&#x3068;&#x3044;&#x3046;&#x308F;&#x3051;&#x3067;&#x3001;Emacs21 &#x3067;&#x3082;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x8868;&#x793A;&#x3059;&#x308B;&#x5909;&#x66F4;&#x3092; commit &#x3057;&#x307E;&#x3057;&#x305F;&#x3002;
+
+# &#x6025;&#x304B;&#x3057;&#x3066;&#x3057;&#x307E;&#x3063;&#x305F;&#x3088;&#x3046;&#x3067;&#x3001;&#x3054;&#x3081;&#x3093;&#x306A;&#x3055;&#x3044;&#x3002;
+
+&#x5BFA;&gt; Emacs21 &#x5411;&#x3051;&#x306E;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x306F;&#x5909;&#x6570; mhc-e21-icon-alist &#x3067;&#x5B9A;&#x7FA9;&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x5BFA;&gt; &#x5F62;&#x5F0F;&#x306F; mhc-xmas-icon-alist &#x3068;&#x4E00;&#x7DD2;&#x3067;&#x3059;&#x3002;
+
+&#x3061;&#x306A;&#x307F;&#x306B;&#x3001;Emacs21 &#x306E; pretest &#x7248;&#x3067; Mew + MHC &#x3092;&#x4F7F;&#x3046;&#x4EBA;&#x306F;&#x3001;
+
+(add-hook 
+ 'mhc-setup-hook
+ (lambda ()
+   (when (and (not (featurep 'xemacs)) (&gt;= emacs-major-version 21))
+     (when (boundp 'mhc-mew/header-string)
+       (setq mhc-mew/header-string
+	     (concat &quot; &quot; mhc-mew/header-string)))
+     (when (boundp 'mhc-mew/header-string-review)
+       (setq mhc-mew/header-string-review
+	     (concat &quot; &quot; mhc-mew/header-string-review))))))
+
+&#x3068;&#x3067;&#x3082;&#x3057;&#x3068;&#x304B;&#x306A;&#x3044;&#x3068;&#x30DC;&#x30ED;&#x30DC;&#x30ED;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;;_;
+
+-- 
+&#x767D;&#x4E95;&#x79C0;&#x884C; (<a  rel="nofollow" href="mailto:shirai@xxxxxxxxxxxxx">mailto:shirai@xxxxxxxxxxxxx</a>)
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="01155" href="msg01155.html">[mhc:01156] All renewal mhc-calendar.el</a></strong>
+<ul><li><em>From:</em> &#x767D;&#x4E95;&#x79C0;&#x884C;</li></ul></li>
+<li><strong><a name="01156" href="msg01156.html">[mhc:01157] Re: Emacs 21 (All renewal mhc-calendar.el)</a></strong>
+<ul><li><em>From:</em> Yuuichi Teranishi</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01156.html">[mhc:01157] Re: Emacs 21 (All renewal mhc-calendar.el)</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01158.html">[mhc:01159] mhc-calendar-toggle-insert-rectangle</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01156.html">[mhc:01157] Re: Emacs 21 (All renewal mhc-calendar.el)</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01158.html">[mhc:01159] mhc-calendar-toggle-insert-rectangle</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01157"><strong>Date</strong></a></li>
+<li><a href="threads.html#01157"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

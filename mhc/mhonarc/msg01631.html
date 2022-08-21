@@ -1,0 +1,120 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01632] Re: =?ISO&#45;2022&#45;JP?B?GyRCJSslbCVzJUAkTiVVJSkhPCVeJUMlSBsoQg==?= -->
+<!--X-From-R13: Kbfuvanev @bzhen <abzNdhvpxunpx.arg> -->
+<!--X-Date: Thu, 19 Sep 2002 13:57:55 +0900 -->
+<!--X-Message-Id: 20020919135755I.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 200209182319.g8INJJN07164@elflock.isuzu.co.jp -->
+<!--X-Reference: 20020919.123907.20481649.shirai@rdmg.mgcs.mei.co.jp -->
+<!--X-Reference: 20020919133917D.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01632] Re: &#x30AB;&#x30EC;&#x30F3;&#x30C0;&#x306E;&#x30D5;&#x30A9;&#x30FC;&#x30DE;&#x30C3;&#x30C8;</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01630.html">Date Prev</a>][<a href="msg01632.html">Date Next</a>][<a href="msg01630.html">Thread Prev</a>][<a href="msg01643.html">Thread Next</a>][<a href="maillist.html#01631">Date Index</a>][<a href="threads.html#01631">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01632] Re: &#x30AB;&#x30EC;&#x30F3;&#x30C0;&#x306E;&#x30D5;&#x30A9;&#x30FC;&#x30DE;&#x30C3;&#x30C8;</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01632] Re: &#x30AB;&#x30EC;&#x30F3;&#x30C0;&#x306E;&#x30D5;&#x30A9;&#x30FC;&#x30DE;&#x30C3;&#x30C8;</li>
+<li><em>From</em>: Yoshinari Nomura &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Thu, 19 Sep 2002 13:57:55 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20020919133917D.nom@DOMAIN.HIDDEN">20020919133917D.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:200209182319.g8INJJN07164@DOMAIN.HIDDEN">200209182319.g8INJJN07164@xxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20020919.123907.20481649.shirai@DOMAIN.HIDDEN">20020919.123907.20481649.shirai@xxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20020919133917D.nom@DOMAIN.HIDDEN">20020919133917D.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Sender</em>: Yoshinari Nomura &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x3057;&#x307E;&#x3063;&#x305F;&#xFF0E;
+
+On Thu, 19 Sep 2002 13:39:17 +0900,
+	Yoshinari Nomura &lt;nom@xxxxxxxxxxxxx&gt; said:
+
+&gt;   %U is the week number starting on Sunday, %W starting on Monday,
+&gt;   %V according to ISO 8601.
+&gt; 
+&gt; &#x3053;&#x308C;&#x3092;&#x305D;&#x306E;&#x307E;&#x307E;&#x4F7F;&#x3063;&#x3066;&#xFF0C;
+&gt; 
+&gt; ;;; XXX: It has the Y2038 problem.
+&gt; (defsubst mhc-date-cw (date)
+&gt;   (cond 
+&gt;    ((= mhc-calendar-start-day-of-week 1)
+&gt;     (string-to-number (format-time-string &quot;%W&quot; (mhc-date-to-second date))))
+&gt;    (t
+&gt;     (string-to-number (format-time-string &quot;%V&quot; (mhc-date-to-second date))))))
+
+&#x3059;&#x3093;&#x307E;&#x305B;&#x3093;&#xFF0E;%V &#x306F;&#x6708;&#x66DC;&#x59CB;&#x307E;&#x308A;&#x3060;&#x3063;&#x305F;&#xFF0E;
+
+;;; XXX: It has the Y2038 problem.
+(defsubst mhc-date-cw (date)
+  (cond 
+   ((= mhc-calendar-start-day-of-week 1)
+    (string-to-number (format-time-string &quot;%V&quot; (mhc-date-to-second date))))
+   (t
+    (string-to-number (format-time-string &quot;%U&quot; (mhc-date-to-second date))))))
+
+&#x3053;&#x3046;&#x304B;&#x3057;&#x3089;&#xFF0E;
+--
+nom
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="01625" href="msg01625.html">[mhc:01626] &#x30AB;&#x30EC;&#x30F3;&#x30C0;&#x306E;&#x30D5;&#x30A9;&#x30FC;&#x30DE;&#x30C3;&#x30C8;</a></strong>
+<ul><li><em>From:</em> Takashi Hiromatsu</li></ul></li>
+<li><strong><a name="01626" href="msg01626.html">[mhc:01627] Re: &#x30AB;&#x30EC;&#x30F3;&#x30C0;&#x306E;&#x30D5;&#x30A9;&#x30FC;&#x30DE;&#x30C3;&#x30C8;</a></strong>
+<ul><li><em>From:</em> &#x767D;&#x4E95;&#x79C0;&#x884C;</li></ul></li>
+<li><strong><a name="01630" href="msg01630.html">[mhc:01631] Re: &#x30AB;&#x30EC;&#x30F3;&#x30C0;&#x306E;&#x30D5;&#x30A9;&#x30FC;&#x30DE;&#x30C3;&#x30C8;</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01630.html">[mhc:01631] Re: &#x30AB;&#x30EC;&#x30F3;&#x30C0;&#x306E;&#x30D5;&#x30A9;&#x30FC;&#x30DE;&#x30C3;&#x30C8;</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01632.html">[mhc:01633] Re: &#x30AB;&#x30EC;&#x30F3;&#x30C0;&#x306E;&#x30D5;&#x30A9;&#x30FC;&#x30DE;&#x30C3;&#x30C8;</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01630.html">[mhc:01631] Re: &#x30AB;&#x30EC;&#x30F3;&#x30C0;&#x306E;&#x30D5;&#x30A9;&#x30FC;&#x30DE;&#x30C3;&#x30C8;</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01643.html">[mhc:01644] p &#x3067;&#x6765;&#x6708;&#x306B;</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01631"><strong>Date</strong></a></li>
+<li><a href="threads.html#01631"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

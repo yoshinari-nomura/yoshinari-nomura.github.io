@@ -1,0 +1,183 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:02273] Re: NoMethod Error -->
+<!--X-From-R13: Kbfuvanev @bzhen <abzNdhvpxunpx.arg> -->
+<!--X-Date: Tue, 09 Oct 2007 12:59:08 +0900 (JST) -->
+<!--X-Message-Id: 20071009.125908.226776489.nom@quickhack.net -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 20070618.131643.03516258.hide@koie.org -->
+<!--X-Reference: 20071009.114514.124011242.hatono@kobe&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:02273] Re: NoMethod Error</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg02271.html">Date Prev</a>][<a href="msg02273.html">Date Next</a>][<a href="msg02271.html">Thread Prev</a>][<a href="msg02273.html">Thread Next</a>][<a href="maillist.html#02272">Date Index</a>][<a href="threads.html#02272">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:02273] Re: NoMethod Error</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a>, <a href="mailto:hatono@DOMAIN.HIDDEN">hatono@xxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:02273] Re: NoMethod Error</li>
+<li><em>From</em>: Yoshinari Nomura &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Tue, 09 Oct 2007 12:59:08 +0900 (JST)</li>
+<li><em>Delivered-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20071009.114514.124011242.hatono@DOMAIN.HIDDEN">20071009.114514.124011242.hatono@xxxxxxxxxxxx</a>&gt;</li>
+<li><em>List-help</em>: &lt;<a href="mailto:mhc-ctl@quickhack.net?body=help">mailto:mhc-ctl@quickhack.net?body=help</a>&gt;</li>
+<li><em>List-id</em>: mhc.quickhack.net</li>
+<li><em>List-owner</em>: &lt;<a href="mailto:mhc-admin@quickhack.net">mailto:mhc-admin@quickhack.net</a>&gt;</li>
+<li><em>List-post</em>: &lt;<a href="mailto:mhc@quickhack.net">mailto:mhc@quickhack.net</a>&gt;</li>
+<li><em>List-software</em>: fml [fml 4.0.3 release (20011202/4.0.3)]</li>
+<li><em>List-unsubscribe</em>: &lt;<a href="mailto:mhc-ctl@quickhack.net?body=unsubscribe">mailto:mhc-ctl@quickhack.net?body=unsubscribe</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:20070618.131643.03516258.hide@DOMAIN.HIDDEN">20070618.131643.03516258.hide@xxxxxxxx</a>&gt;	&lt;<a href="mailto:20071009.114514.124011242.hatono@DOMAIN.HIDDEN">20071009.114514.124011242.hatono@xxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x9CE9;&#x91CE;&#x3055;&#x3093;&#xFF0C;&#x4E43;&#x6751;&#x3067;&#x3059;&#xFF0E;
+
+&#x304A;&#x624B;&#x5143;&#x306E;script&#x306E; 382&#x884C;&#x3068;&#x3044;&#x3046;&#x306E;&#x306F;&#xFF0C;
+&#x4E0B;&#x8A18;&#x306E;&#x8FBA;&#x308A;&#x306E;&#x884C;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#xFF0E;
+&#x624B;&#x5143;&#x306E; CVS &#x5148;&#x7AEF;&#x3068;&#x306F;&#xFF0C;&#x5C11;&#x3057;&#x305A;&#x308C;&#x3066;&#x3044;&#x308B;&#x3088;&#x3046;&#x3067;&#x3059;&#xFF0E;
+
+      if !$flag_noharm
+        db .modify_sch(l_sch)
+      else
+&#x2192;      STDERR .print &quot;C:modifiying #{l_sch .info}\n&quot;
+        STDERR .print &quot;*&quot; * 70, &quot;\n&quot;
+        STDERR .print l_sch .dump
+        STDERR .print &quot;*&quot; * 70, &quot;\n&quot;
+      end
+
+&#x3060;&#x3068;&#x3068;&#x3059;&#x308B;&#x3068;&#xFF0C;&#x3053;&#x308C;&#x3088;&#x308A;&#x5C11;&#x3057;&#x524D;&#x3067;&#x547C;&#x3093;&#x3067;&#x3044;&#x308B; get_record_by_id() &#x304C;
+nil &#x3092;&#x8FD4;&#x3057;&#x3066;&#x3044;&#x308B;&#x3068;&#x601D;&#x308F;&#x308C;&#x307E;&#x3059;&#xFF0E;&#x3064;&#x307E;&#x308A;&#xFF0C;remote &#x3067;&#x5B58;&#x5728;&#x3059;&#x308B;
+X-SC-Record-Id: hoge &#x306B;&#x5BFE;&#x5FDC;&#x3059;&#x308B;
+&#x30A2;&#x30FC;&#x30C6;&#x30A3;&#x30AF;&#x30EB;&#x304C; local &#x306B;&#x306F;&#xFF0C;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3044;&#x306E;&#x3067;&#x306F;&#x306A;&#x3044;&#x304B;&#x3068;&#xFF0E;
+
+88&#x884C;&#x76EE;&#x4ED8;&#x8FD1;&#x306E; get_record_by_id() &#x306B;&#x624B;&#x3092;&#x5165;&#x308C;&#x3066;&#xFF0C;
+
+  def get_record_by_id(record_id)
+    if @record_id_to_path_hash[record_id]
+      return MhcScheduleItem .new(@record_id_to_path_hash[record_id])
+    else
+&#x2192;    STDERR.print(&quot;not found in local: #{record_id}\n&quot;
+      return nil
+    end
+  end
+
+&#x3068;&#x3057;&#x3066;&#x307F;&#x3066;&#xFF0C;&#x554F;&#x984C;&#x306E; record_id &#x304C;&#x4F55;&#x3067;&#x3042;&#x308B;&#x304B;&#x5206;&#x304B;&#x308A;&#x307E;&#x305B;&#x3093;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#xFF0E;
+&#x5206;&#x304B;&#x3063;&#x305F;&#x3089;&#xFF0C;remote, local &#x306E; Mail/schedule &#x4EE5;&#x4E0B;&#x304B;&#x3089; grep &#x3057;&#x3066;&#x307F;&#x308B;&#x3068;&#xFF0C;
+&#x4F55;&#x304B;&#x5206;&#x304B;&#x308B;&#x304B;&#x3082;&#x3057;&#x308C;&#x307E;&#x305B;&#x3093;&#xFF0E;
+
+&#x66F4;&#x306B;&#xFF0C;remote, local &#x4E21;&#x8005;&#x3067; Mail/schedule/.mhc-db-log &#x3092;&#x898B;&#x3066;&#xFF0C;
+&#x554F;&#x984C;&#x306E; record_id &#x306B;&#x5BFE;&#x3059;&#x308B;&#x64CD;&#x4F5C;&#x306E;&#x8FFD;&#x8DE1;&#x3092;&#x3057;&#x3066;&#x307F;&#x308B;&#x3068;&#x64CD;&#x4F5C;&#x5C65;&#x6B74;&#x304C;&#x5206;&#x304B;&#x308A;&#x307E;&#x3059;&#xFF0E;
+
+&#x672C;&#x30A8;&#x30E9;&#x30FC;&#x306F;&#xFF0C;&#x3061;&#x306A;&#x307F;&#x306B;&#xFF0C;ruby &#x306E;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x306B;&#x95A2;&#x4FC2;&#x306A;&#x304F;&#xFF0C;
+&#x4EE5;&#x4E0B;&#x306E;&#x64CD;&#x4F5C;&#x3067;&#x3082;&#x518D;&#x73FE;&#x3067;&#x304D;&#x308B;&#x30A8;&#x30E9;&#x30FC;&#x3060;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#xFF0E;
+
+  (1) remote: &#x3042;&#x308B; X-SC-Id: hoge &#x306E;&#x8A18;&#x4E8B;&#x3092;&#x5909;&#x66F4;&#x3059;&#x308B; (mhc &#x6B63;&#x898F;&#x306E;&#x65B9;&#x6CD5;)
+  (2) local:  X-SC-Id: hoge &#x306E;&#x540C;&#x3058;&#x8A18;&#x4E8B;&#x3092;&#x5909;&#x66F4;&#x3059;&#x308B;  (mhc &#x6B63;&#x898F;&#x306E;&#x65B9;&#x6CD5;)
+  (3) local : X-SC-Id: hoge &#x306E;&#x540C;&#x3058;&#x8A18;&#x4E8B;&#x3092;&#x524A;&#x9664;&#x3059;&#x308B; (mhc &#x3092;&#x4F7F;&#x308F;&#x306A;&#x3044; rm &#x7B49;&#x3067;)
+
+&#x304A;&#x5FC3;&#x8FBA;&#x308A;&#x306F;&#x306A;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#xFF0E;
+--
+nom
+
+On Tue, 09 Oct 2007 11:45:14 +0900 (JST),
+	hatono@xxxxxxxxxxxx (Itsuo HATONO) said:
+
+&gt; &#x9CE9;&#x91CE;&#x3068;&#x7533;&#x3057;&#x307E;&#x3059;&#xFF0E;
+&gt; 
+&gt; mhc&#x3092;&#x4FBF;&#x5229;&#x306B;&#x5229;&#x7528;&#x3055;&#x305B;&#x3066;&#x9802;&#x3044;&#x3066;&#x304A;&#x308A;&#x307E;&#x3059;&#xFF0E;
+&gt; 
+&gt; &#x3042;&#x308B;&#x6642;&#x304B;&#x3089;&#xFF0C;(&#x3042;&#x308B;ruby&#x306E;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x304B;&#x3089;?)
+&gt; 
+&gt; 
+&gt; Initalizing remote (exchange_id=tebaldi) ... done.
+&gt; ---------------------------------------------------
+&gt; /usr/local/bin/mhc-sync:382: undefined method `info' for nil:NilClass (NoMethodError)
+&gt;         from /usr/local/bin/mhc-sync:329:in `each'
+&gt;         from /usr/local/bin/mhc-sync:329
+&gt; 
+&gt; &#x306E;&#x3088;&#x3046;&#x306A;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x51FA;&#x3066;&#xFF0C;mhc-sync &#x304C;&#x52D5;&#x4F5C;&#x3057;&#x306A;&#x304F;&#x306A;&#x3063;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3057;&#x305F;&#xFF0E;
+&gt; 
+&gt; ruby&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x5C11;&#x3057;&#x8FFD;&#x3044;&#x304B;&#x3051;&#x3066;&#x307F;&#x305F;&#x306E;&#x3067;&#x3059;&#x304C;&#xFF0C;&#x7406;&#x7531;&#x306F;&#x4E0D;&#x660E;&#x3067;&#x3059;&#xFF0E;
+&gt; 
+&gt; ruby&#x306F;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30DF;&#x30F3;&#x30B0;&#x3057;&#x305F;&#x3053;&#x3068;&#x304C;&#x306A;&#x3044;&#x306E;&#x3067;&#x3088;&#x304F;&#x308F;&#x304B;&#x3089;&#x306A;&#x3044;&#x306E;&#x3067;&#x3059;&#x304C;&#xFF0C;
+&gt; mhc-sync&#x306E;&#x6700;&#x521D;&#x306E;&#x65B9;&#x306B;&#xFF0C;
+&gt; 
+&gt; class MhcScheduleItem
+&gt;   def info
+&gt;     ret = format(&quot;%s (first occurred %s)&quot;, subject, occur_min .to_s1('-'))
+&gt;     return Kconv::kconv(ret, $KANJI_CODE, true)
+&gt;   end
+&gt; end
+&gt; 
+&gt; &#x3068; MhcScheduleItem &#x306E;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x4E0A;&#x66F8;&#x304D;(&#x305F;&#x3076;&#x3093;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x306B;&#x3042;&#x308B;&#x65B9;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x306F;
+&gt; &#x7D99;&#x627F;&#x3055;&#x308C;&#x308B;&#xFF1F;&#xFF09;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x304C;&#xFF0C;ruby&#x306E;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x3067;&#x3053;&#x306E;&#x3042;&#x305F;&#x308A;&#x306E;&#x52D5;&#x4F5C;&#x304C;&#x5909;&#x308F;&#x3063;
+&gt; &#x305F;&#x306E;&#x304B;&#x306A;&#x3068;&#x3082;&#x601D;&#x3044;&#x307E;&#x3059;&#xFF0E;
+&gt; 
+&gt; mhc-sync &#x306E;&#x6700;&#x521D;&#x306E;&#x3053;&#x306E;&#x5B9A;&#x7FA9;&#x3092; mhc-schedule.rb &#x306B;&#x79FB;&#x3057;&#x3066;&#x3082;&#x52D5;&#x4F5C;&#x306F;&#x540C;&#x3058;&#x3067;&#x3057;&#x305F;&#xFF0E;
+&gt; 
+&gt; ruby 1.8.5/1.8.6 &#x306E;&#x3069;&#x3061;&#x3089;&#x3067;&#x767A;&#x751F;&#x3057;&#x307E;&#x3059;&#xFF0E;
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="02273" href="msg02273.html">[mhc:02274] Re: NoMethod Error</a></strong>
+<ul><li><em>From:</em> Itsuo HATONO</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="02270" href="msg02270.html">[mhc:02271] phpicalendar-2.24&#x3067;mhc2ical&#x306E;&#x6587;&#x5B57;&#x5316;&#x3051;&#x3092;&#x56DE;&#x907F;&#x3059;&#x308B;&#x65B9;&#x6CD5;</a></strong>
+<ul><li><em>From:</em> &#x9BC9;&#x6C5F;&#x82F1;&#x9686;</li></ul></li>
+<li><strong><a name="02271" href="msg02271.html">[mhc:02272] NoMethod Error</a></strong>
+<ul><li><em>From:</em> Itsuo HATONO</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg02271.html">[mhc:02272] NoMethod Error</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg02273.html">[mhc:02274] Re: NoMethod Error</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg02271.html">[mhc:02272] NoMethod Error</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg02273.html">[mhc:02274] Re: NoMethod Error</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#02272"><strong>Date</strong></a></li>
+<li><a href="threads.html#02272"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

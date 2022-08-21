@@ -1,0 +1,16 @@
+Index: mhc-wl.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc-wl.el,v
+retrieving revision 1.28
+diff -u -r1.28 mhc-wl.el
+--- mhc-wl.el	27 Jan 2005 13:26:51 -0000	1.28
++++ mhc-wl.el	14 May 2005 03:36:01 -0000
+@@ -36,7 +36,7 @@
+     (defun mhc-wl-summary-filename ()
+       "Return FILENAME on current line ."
+       (let ((number (wl-summary-message-number)))
+-	(if number 
++	(if (and number (not (eq number 100000)))
+ 	    (elmo-message-file-name wl-summary-buffer-elmo-folder number)
+ 	  (error "No schedule data"))))
+   (defun mhc-wl-summary-filename ()

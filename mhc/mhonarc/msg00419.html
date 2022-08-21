@@ -1,0 +1,112 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00420] Re: patch for mhc&#45;schedule.rb -->
+<!--X-From-R13: Kbfuvanev @A[GDO <abzNpfpr.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Sun, 27 Feb 2000 16:45:51 +0900 -->
+<!--X-Message-Id: 20000227164546W.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 200002251115.UAA19375@ace.csce.kyushu&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00420] Re: patch for mhc-schedule.rb</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00418.html">Date Prev</a>][<a href="msg00420.html">Date Next</a>][<a href="msg00418.html">Thread Prev</a>][<a href="msg00420.html">Thread Next</a>][<a href="maillist.html#00419">Date Index</a>][<a href="threads.html#00419">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00420] Re: patch for mhc-schedule.rb</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00420] Re: patch for mhc-schedule.rb</li>
+<li><em>From</em>: Yoshinari NOMURA &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Sun, 27 Feb 2000 16:45:51 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:200002251115.UAA19375@DOMAIN.HIDDEN">200002251115.UAA19375@xxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Posted</em>: Sun, 27 Feb 2000 16:45:46 +0900</li>
+<li><em>References</em>: &lt;<a href="mailto:200002251115.UAA19375@DOMAIN.HIDDEN">200002251115.UAA19375@xxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x4E43;&#x6751;&#x3067;&#x3059;&#x3002;
+
+On Fri, 25 Feb 2000 20:15:33 +0900,
+	Hanada OPTIMIZER Yasunori &lt;yasunori@xxxxxxxxxxxxxxxxxxxxxxxxx&gt; said:
+
+&gt; mhc-schedule.rb&#x3092;X-SC-Localtion&#x3068;X-SC-Record-Id&#x306B;&#x5BFE;&#x5FDC;&#x3055;&#x305B;&#x308B;&#x305F;
+&gt; &#x3081;&#x306E;&#x30D1;&#x30C3;&#x30C1;&#x3067;&#x3059;&#x3002;&#x3042;&#x3068;&#x3001;1&#x30AB;&#x6240;&#x3060;&#x3051;bug&#x3092;&#x6F70;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;(&#x2193;)&#x3002;
+
+&#x3069;&#x3082;&#x3002;&#x65B0;&#x898F;&#x767B;&#x9332;&#x3057;&#x305F;&#x3068;&#x304D;&#x306B; Record-Id: &#x3092;&#x751F;&#x6210;&#x3057;&#x306A;&#x3044;&#x3068;&#x3044;&#x3051;&#x306A;&#x3044;&#x3093;&#x3067;&#x3001;
+&#x305D;&#x306E;&#x90E8;&#x5206;&#x3092;&#x5165;&#x308C;&#x305F;&#x3044;&#x3067;&#x3059;&#x306D;&#x3002;
+
+&#x307E;&#x3060;&#x304F;&#x3063;&#x3064;&#x3051;&#x3066;&#x306A;&#x3044;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x306E;&#x304C;&#x3042;&#x308B;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;&#x4FEE;&#x8AD6;&#x7D42;&#x308F;&#x3063;&#x3066;&#x6687;&#x306B;
+&#x306A;&#x3063;&#x305F;&#x3089;&#x3001;&#x3053;&#x308C;&#x3082;&#x304F;&#x3063;&#x3064;&#x3051;&#x3066;&#x304F;&#x308C;&#x308B;&#x3068;&#x5B09;&#x3057;&#x3044;&#x3067;&#x3059;&#x3002;domain &#x306F;&#x3069;&#x3046;&#x3084;&#x3063;
+&#x3066;&#x53D6;&#x308C;&#x3070;&#x3044;&#x3044;&#x306E;&#x304B;&#x3057;&#x3089;&#x3002;
+--
+nom
+
+
+def create_record_id(domain)
+  time = Time .now .strftime(&quot;%Y%m%d%H%M%S&quot;)
+  user = Process .uid .to_s
+  pid  = $$ .to_s
+  rand = (time == $last_rid_time ? $last_rid_rand .succ : 'AAAA')
+
+  $last_rid_rand = rand
+  $last_rid_time = time
+
+  return '&lt;' + time + rand + '-' + pid + '.' + user + '@' + domain + '&gt;'
+end
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00418" href="msg00418.html">[mhc:00419] patch for mhc-schedule.rb</a></strong>
+<ul><li><em>From:</em> Hanada OPTIMIZER Yasunori</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00418.html">[mhc:00419] patch for mhc-schedule.rb</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00420.html">[mhc:00421] mhc-snap20000229</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00418.html">[mhc:00419] patch for mhc-schedule.rb</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00420.html">[mhc:00421] mhc-snap20000229</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00419"><strong>Date</strong></a></li>
+<li><a href="threads.html#00419"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

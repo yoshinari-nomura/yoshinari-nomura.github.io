@@ -1,0 +1,54 @@
+Index: mhc-calendar.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc-calendar.el,v
+retrieving revision 1.32
+diff -u -r1.32 mhc-calendar.el
+--- mhc-calendar.el	2002/09/23 04:08:58	1.32
++++ mhc-calendar.el	2002/09/24 09:03:19
+@@ -199,7 +199,7 @@
+   :group 'mhc
+   :type 'integer)
+ 
+-(defvar mhc-calendar-width
++(defun mhc-calendar-width ()
+   (if (mhc-calendar/cw-week) 28 24))
+ 
+ (defmacro mhc-calendar/cw-string (cw)
+Index: mhc-summary.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc-summary.el,v
+retrieving revision 1.31
+diff -u -r1.31 mhc-summary.el
+--- mhc-summary.el	2002/09/24 07:07:39	1.31
++++ mhc-summary.el	2002/09/24 09:03:19
+@@ -553,12 +553,12 @@
+ 		hr2)
+ 	    (mhc-face-put hr1 'mhc-summary-face-separator)
+ 	    (mhc-face-put str 'mhc-summary-face-cw)
+-	    (setq hr2 (mhc-summary/make-string (- (frame-width) mhc-calendar-width
++	    (setq hr2 (mhc-summary/make-string (- (frame-width) (mhc-calendar-width)
+ 						  (length hr1) (length str))
+ 					       mhc-summary-separator))
+ 	    (mhc-face-put hr2 'mhc-summary-face-separator)
+ 	    (setq hr (concat hr1 str hr2)))
+-	(setq hr (mhc-summary/make-string (- (frame-width) mhc-calendar-width)
++	(setq hr (mhc-summary/make-string (- (frame-width) (mhc-calendar-width))
+ 					  mhc-summary-separator))
+ 	(mhc-face-put hr 'mhc-summary-face-separator)))
+     (insert hr "\n")))
+Index: mhc.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc.el,v
+retrieving revision 1.71
+diff -u -r1.71 mhc.el
+--- mhc.el	2002/09/24 07:07:39	1.71
++++ mhc.el	2002/09/24 09:03:20
+@@ -503,7 +503,7 @@
+       (when mhc-insert-calendar
+ 	(mhc-calendar-insert-rectangle-at
+ 	 date
+-	 (max (- (frame-width) mhc-calendar-width) 24) ;; xxxxx 24?
++	 (max (- (frame-width) (mhc-calendar-width)) 24) ;; xxxxx 24?
+ 	 mhc-vertical-calendar-length))
+       (mhc-summary-mode-setup date mailer)
+       (mhc-mode 1)

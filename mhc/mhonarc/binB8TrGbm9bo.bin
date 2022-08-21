@@ -1,0 +1,15 @@
+Index: mhc.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc.el,v
+retrieving revision 1.94
+diff -u -r1.94 mhc.el
+--- mhc.el	4 Jul 2008 06:01:20 -0000	1.94
++++ mhc.el	31 May 2009 08:13:54 -0000
+@@ -55,6 +55,7 @@
+ 			       ;; Meadow2 or NTEmacs21.3(and the later
+ 			       ;; version) supports the image feature.
+ 			       (or (featurep 'meadow)
++				   (>= emacs-major-version 22)
+ 				   (>= emacs-minor-version 3))
+ 			     t)))
+   (require 'mhc-e21))

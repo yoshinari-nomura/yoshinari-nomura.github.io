@@ -1,0 +1,126 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:02140] palm2mhc should fsync before clear dirty flag. -->
+<!--X-From-R13: YAWS Vvqrgnxn (=?vfb&#45;2022&#45;wc?P?UlDQAVS5BwTDFwCoYSW=?=) <uvqrNxbvr.bet> -->
+<!--X-Date: Mon, 04 Jul 2005 14:21:16 +0900 (JST) -->
+<!--X-Message-Id: 20050704.142116.226802908.hide@koie.org -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:02140] palm2mhc should fsync before clear dirty flag.</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg02138.html">Date Prev</a>][<a href="msg02140.html">Date Next</a>][<a href="msg02138.html">Thread Prev</a>][<a href="msg02141.html">Thread Next</a>][<a href="maillist.html#02139">Date Index</a>][<a href="threads.html#02139">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:02140] palm2mhc should fsync before clear dirty flag.</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:02140] palm2mhc should fsync before clear dirty flag.</li>
+<li><em>From</em>: KOIE Hidetaka (&#x9BC9;&#x6C5F;&#x82F1;&#x9686;) &lt;<a href="mailto:hide@DOMAIN.HIDDEN">hide@xxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Mon, 04 Jul 2005 14:21:16 +0900 (JST)</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>Palm&#x306E;&#x6BCD;&#x8266;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;FreeBSD&#x304C;&#x4E0D;&#x5B89;&#x5B9A;&#x3067;
+palm2mhc&#x76F4;&#x5F8C;&#x306B;panic&#x3057;&#x3066;&#x3057;&#x307E;&#x3063;&#x305F;&#x306E;&#x3067;&#x3059;&#x304C;
+palm&#x306E;dirty bit&#x306F;&#x30AF;&#x30EA;&#x30A2;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x306E;&#x306B;
+mhc&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x6B8B;&#x3063;&#x3066;&#x3044;&#x306A;&#x3044;&#x3068;&#x3044;&#x3046;&#x72B6;&#x614B;&#x306B;&#x306A;&#x3063;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3057;&#x305F;&#x3002;
+
+class MhcScheduleDB&#x306E;method add_sch&#x3067;
+fsync&#x3057;&#x3066;&#x3044;&#x306A;&#x3044;&#x306E;&#x304C;&#x554F;&#x984C;&#x306A;&#x306E;&#x3060;&#x3068;&#x304A;&#x3082;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x305F;&#x3076;&#x3093; log &#x3092;&#x8FFD;&#x8A18;&#x3059;&#x308B;&#x3068;&#x3053;&#x308D;&#x3082; fsync &#x304C;&#x5FC5;&#x8981;&#x3060;&#x3068;&#x304A;&#x3082;&#x3044;&#x307E;&#x3059;&#x3002;
+
+&#x3067;&#x3059;&#x304C;fsync&#x306F;Ruby18&#x4EE5;&#x964D;&#x306B;&#x3057;&#x304B;&#x306A;&#x3044;&#x306E;&#x3067;
+palm2mhc&#x306E;&#x7D42;&#x4E86;&#x76F4;&#x524D;&#x306B; sync x 3&#x3059;&#x308B;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x5165;&#x308C;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002;
+sync&#x3060;&#x3068;&#x66F8;&#x304D;&#x8FBC;&#x307F;&#x304C;&#x6210;&#x529F;&#x3059;&#x308B;&#x306E;&#x3092;&#x5F85;&#x305F;&#x306A;&#x3044;&#x306E;&#x3067;&#x6C17;&#x4F11;&#x3081;&#x3067;&#x3057;&#x304B;&#x306A;&#x3044;&#x306E;&#x3067;&#x3059;&#x304C;&#x3002;
+
+Index: palm2mhc.in
+===================================================================
+RCS file: /cvsroot/mhc/palm2mhc.in,v
+retrieving revision 1.4
+diff -p -u -r1.4 palm2mhc.in
+--- palm2mhc.in	9 Feb 2001 09:37:06 -0000	1.4
++++ palm2mhc.in	4 Jul 2005 05:18:08 -0000
+@@ -75,7 +75,7 @@ while ARGV .length &gt; 0
+   ARGV .shift
+ end
+ 
+-if !File .exist?($flag_device)
++if $flag_device != &quot;net:&quot; &amp;&amp; !File .exist?($flag_device)
+   STDERR .print &quot;Can not open #{$flag_device}.\n&quot;
+   exit 1
+ end
+@@ -132,6 +132,14 @@ if $flag_noharm
+   ## do nothing
+ else
+   if !$flag_interactive or yes_no(&quot;Do you clear dirty flag of the palm &quot;)
++    # commit
++    system(&quot;sync&quot;)
++    sleep 1
++    system(&quot;sync&quot;)
++    sleep 1
++    system(&quot;sync&quot;)
++    sleep 1
++    # done.
+     pdb .reset_sync_flags  ## remove all dirty flag in palm.
+     print &quot;Dirty flag cleared.\n&quot;
+   else
+
+--
+KOIE Hidetaka &lt;hide@xxxxxxxx&gt;
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="02141" href="msg02141.html">[mhc:02142] Re: palm2mhc should fsync before clear dirty flag.</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg02138.html">[mhc:02139] Re: www.quickhack.net/mhc &#x3067;&#x306E;&#x516C;&#x958B; tar.gz &#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x306B;&#x3064;&#x3044;&#x3066;</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg02140.html">[mhc:02141] Re: www.quickhack.net/mhc &#x3067;&#x306E;&#x516C;&#x958B; tar.gz &#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x306B;&#x3064;&#x3044;&#x3066;</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg02138.html">[mhc:02139] Re: www.quickhack.net/mhc &#x3067;&#x306E;&#x516C;&#x958B; tar.gz &#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x306B;&#x3064;&#x3044;&#x3066;</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg02141.html">[mhc:02142] Re: palm2mhc should fsync before clear dirty flag.</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#02139"><strong>Date</strong></a></li>
+<li><a href="threads.html#02139"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

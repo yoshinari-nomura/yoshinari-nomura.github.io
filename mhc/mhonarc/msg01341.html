@@ -1,0 +1,159 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01342] wishlist for mhc deb package -->
+<!--X-From-R13: Thzvgbfuv GYOW <hxnvNqrovna.be.wc> -->
+<!--X-Date: Thu, 10 May 2001 04:26:35 +0900 -->
+<!--X-Message-Id: 87vgna728k.wl@mistral.ukai.org -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01342] wishlist for mhc deb package</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01340.html">Date Prev</a>][<a href="msg01342.html">Date Next</a>][<a href="msg01340.html">Thread Prev</a>][<a href="msg01342.html">Thread Next</a>][<a href="maillist.html#01341">Date Index</a>][<a href="threads.html#01341">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01342] wishlist for mhc deb package</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01342] wishlist for mhc deb package</li>
+<li><em>From</em>: Fumitoshi UKAI &lt;<a href="mailto:ukai@DOMAIN.HIDDEN">ukai@xxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Thu, 10 May 2001 04:26:35 +0900</li>
+<li><em>Organization</em>: Debian JP Project</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: Wanderlust/2.4.1 (Stand By Me) SEMI/1.14.3 (Ushinoya) FLIM/1.14.2 (Yagi-Nishiguchi) APEL/10.3 Emacs/20.7 (i386-debian-linux-gnu) MULE/4.0 (HANANOEN)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>Debian Maintainer&#x306E;&#x9D5C;&#x98FC;&#x3067;&#x3059;&#x3002;
+mhc&#x306E;deb&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3092;&#x30E1;&#x30F3;&#x30C6;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+
+mhc 0.25 base&#x306E;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x306F;&#x3059;&#x3067;&#x306B; woody(testing)/sid(unstable)&#x306B;
+&#x3042;&#x308B;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;CVS&#x7248;&#x306E;&#x304C;&#x6B32;&#x3057;&#x3044;&#x3068;&#x3044;&#x3046;&#x610F;&#x898B;&#x3092;&#x304D;&#x3044;&#x305F;&#x306E;&#x3067;&#x3061;&#x3087;&#x3063;&#x3068;
+&#x4F5C;&#x3063;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002;&#x3044;&#x304F;&#x3064;&#x304B;&#x4FEE;&#x6B63;&#x304C;&#x5FC5;&#x8981;&#x3060;&#x3063;&#x305F;&#x306E;&#x3067; merge &#x3057;&#x3066;&#x3082;&#x3089;&#x3048;&#x307E;&#x305B;&#x3093;&#x304B;?
+# LD_RUN_PATH &#x306E;&#x65B9;&#x306F;&#x306A;&#x3093;&#x304B;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3067;&#x5909;&#x66F4;&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x305F;&#x65B9;&#x304C;&#x3044;&#x3044;&#x304B;&#x3082;&#x3002;
+
+* (configure.rb) 
+  MHC_XPM_PATH &#x3092; configure.rb &#x3067; config &#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;
+  - Debian &#x3067;&#x306F; xpm &#x3068;&#x304B; /usr/X11R6/include/X11/pixmaps/ &#x4EE5;&#x4E0B;&#x306B;
+    &#x304A;&#x304F;&#x3053;&#x3068;&#x304C;&#x591A;&#x3044;&#x306E;&#x3067;&#x305D;&#x3053;&#x306B;&#x7F6E;&#x304F;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x305F;&#x3081;&#x3067;&#x3059;&#x3002;
+
+  pisock &#x306E; include file, library &#x3092;&#x898B;&#x308B;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306E;&#x8FFD;&#x52A0;
+  - Debian &#x306E; libpisock-dev &#x3067;&#x306F; /usr/lib &#x306B; libpisock.so* &#x304C;
+    /usr/include/libpisock/ &#x306B; include&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+
+* (ruby-ext/extconf.rb.in)
+  LD_RUN_PATH &#x3092; binary &#x306B;&#x3046;&#x3081;&#x3053;&#x307E;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x3057;&#x305F;&#x3044;&#x306E;&#x3067;&#x306F;&#x305A;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;
+  - Debian &#x3067;&#x306F; rpath &#x3092; binary &#x306B;&#x3046;&#x3081;&#x3053;&#x3080;&#x306E;&#x306F; policy&#x306B;&#x53CD;&#x3059;&#x308B;&#x306E;&#x3067;&#x3002;
+
+--- mhc-0.25+20010510.orig/configure.rb
++++ mhc-0.25+20010510/configure.rb
+@@ -43,12 +43,19 @@
+ 
+   ['--with-cmail', '@@MHC_WITH_CMAIL@@', GetoptLong::NO_ARGUMENT,
+     &quot;use mhc with cmail.&quot;,
++    ''],
++
++  ['--with-icondir', '@@MHC_XPM_PATH@@', GetoptLong::REQUIRED_ARGUMENT,
++    &quot;=DIR  mhc icon directory.&quot;,
+     '']
+ ]
+ 
+ conf = MhcConfigure .new(local_config_table) .parse_argv
+ 
+-conf['@@MHC_XPM_PATH@@'] = conf['@@MHC_LIBDIR@@'] + '/xpm'
++# XXX: ukai
++if conf['@@MHC_XPM_PATH@@'] == ''
++  conf['@@MHC_XPM_PATH@@'] = conf['@@MHC_LIBDIR@@'] + '/xpm'
++end
+ 
+ ################################################################
+ ## command check
+@@ -62,8 +69,9 @@
+ ################################################################
+ ## lib check
+ 
+-lib_search_path = ['/usr/local/lib', '/usr/local/pilot/lib']
+-inc_search_path = ['/usr/local/include', '/usr/local/pilot/include']
++lib_search_path = ['/usr/local/lib', '/usr/local/pilot/lib', '/usr/lib']
++inc_search_path = ['/usr/local/include', '/usr/local/pilot/include', 
++		   '/usr/include/libpisock', '/usr/include']
+ 
+ if conf['@@MHC_DISABLE_PALM@@'] == ''
+   conf .search_library(lib_search_path, 
+--- mhc-0.25+20010510.orig/ruby-ext/extconf.rb.in
++++ mhc-0.25+20010510/ruby-ext/extconf.rb.in
+@@ -8,11 +8,11 @@
+ 
+ $CFLAGS  = &quot;@@MHC_CFLAGS@@&quot;
+ $CFLAGS += &quot; -DNEW_NAMING &quot; if '@@MHC_RUBY_VERSION@@' &gt;= '010300'
+-$LDFLAGS = &quot;@@MHC_LDFLAGS@@&quot;
++# $LDFLAGS = &quot;@@MHC_LDFLAGS@@&quot;
+ 
+ if '@@MHC_DISABLE_PALM@@' == ''
+-  CONFIG[&quot;LDSHARED&quot;] = &quot;LD_RUN_PATH=@@MHC_PILOT_LINK_LIB@@ &quot; +
+-    CONFIG[&quot;LDSHARED&quot;]
++#  CONFIG[&quot;LDSHARED&quot;] = &quot;LD_RUN_PATH=@@MHC_PILOT_LINK_LIB@@ &quot; +
++#    CONFIG[&quot;LDSHARED&quot;]
+ 
+   have_library('socket')
+   have_library('pisock')
+
+-- 
+&#x9D5C;&#x98FC;&#x6587;&#x654F;
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01342" href="msg01342.html">[mhc:01343] Re: wishlist for mhc deb package</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+<li><strong><a name="01347" href="msg01347.html">[mhc:01348] Re: wishlist for mhc deb package</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01340.html">[mhc:01341] Re: mhc-mode-hook</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01342.html">[mhc:01343] Re: wishlist for mhc deb package</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01340.html">[mhc:01341] Re: mhc-mode-hook</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01342.html">[mhc:01343] Re: wishlist for mhc deb package</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01341"><strong>Date</strong></a></li>
+<li><a href="threads.html#01341"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

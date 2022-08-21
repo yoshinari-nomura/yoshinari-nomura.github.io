@@ -1,0 +1,112 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01789] mew4:mew&#45;summary&#45;next&#45;line -->
+<!--X-From-R13: YAWS Vvqrgnxn (=?vfb&#45;2022&#45;wc?P?UlDQAVS5BwTDFwCoYSW=?=) <uvqrNxbvr.bet> -->
+<!--X-Date: Tue, 15 Apr 2003 18:12:41 +0900 (JST) -->
+<!--X-Message-Id: 20030415.181241.104030017.hide@koie.org -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01789] mew4:mew-summary-next-line</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01787.html">Date Prev</a>][<a href="msg01789.html">Date Next</a>][<a href="msg01797.html">Thread Prev</a>][<a href="msg01789.html">Thread Next</a>][<a href="maillist.html#01788">Date Index</a>][<a href="threads.html#01788">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01789] mew4:mew-summary-next-line</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01789] mew4:mew-summary-next-line</li>
+<li><em>From</em>: KOIE Hidetaka (&#x9BC9;&#x6C5F;&#x82F1;&#x9686;) &lt;<a href="mailto:hide@DOMAIN.HIDDEN">hide@xxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Tue, 15 Apr 2003 18:12:41 +0900 (JST)</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x65B0;&#x3057;&#x3044;Mew4&#x3060;&#x3068;mhc&#x306E;C-n/C-p&#x304C;&#x6A5F;&#x80FD;&#x3057;&#x306A;&#x304F;&#x306A;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;
+
+2003-04-10 12:37  kazu
+
+	* mew-func.el (1.118), mew-key.el (1.57), mew-scan.el (1.176),
+	mew-summary2.el (1.19), mew-vars2.el (1.102), mew.el (1.188): C-n
+	and C-p in Summary.
+
+&#x3068;&#x3044;&#x3046;&#x4FEE;&#x6B63;&#x3067;
+
+(defun mew-summary-next-line ()
+  (interactive)
+  (beginning-of-line)
+  (forward-line)
+  (while (or (looking-at mew-regex-thread-separator)
+	     (eq (get-text-property (point) 'invisible) t))
+    (forward-line))
+  (if (and (mew-thread-p) mew-use-thread-cursor)
+      (mew-summary-thread-move-cursor)))
+
+&#x306A;&#x3069;&#x304C;&#x8FFD;&#x52A0;&#x3055;&#x308C;&#x3066;&#x3001;&#x3053;&#x308C;&#x304C;C-n&#x306B;&#x30D0;&#x30A4;&#x30F3;&#x30C9;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+mhc &#x306F; &#x5404;&#x884C;&#x306E;&#x5148;&#x982D;&#x306B;invisible &#x3092;&#x4ED8;&#x3051;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;
+&#x3053;&#x308C;&#x3092;&#x62FE;&#x3063;&#x3066;&#x3057;&#x307E;&#x3063;&#x3066; C-n/C-p &#x4F7F;&#x3044;&#x3082;&#x306E;&#x306B;&#x306A;&#x3089;&#x306A;&#x304F;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x3088;&#x3046;&#x3067;&#x3059;&#x3002;
+
+&#x89E3;&#x6C7A;&#x65B9;&#x6CD5;&#x306F;... &#x3069;&#x3046;&#x3059;&#x308C;&#x3070;&#x3044;&#x3044;&#x3093;&#x3067;&#x3057;&#x3087;&#x3046;&#x3002;
+1.  C-n/C-p&#x306B;&#x30D0;&#x30A4;&#x30F3;&#x30C9;&#x3059;&#x308B;&#x306E;&#x3092;&#x3084;&#x3081;&#x308B;
+2. invisible&#x5C5E;&#x6027;&#x306E;&#x307B;&#x304B;&#x306B;mew/mhc&#x5C5E;&#x6027;&#x3082;&#x3064;&#x3051;&#x533A;&#x5225;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;
+3. &#x3069;&#x3061;&#x3089;&#x304B;&#x304C;overlay&#x3092;&#x3064;&#x304B;&#x3046;&#x3088;&#x3046;&#x5909;&#x3048;&#x308B;
+   evaporate&#x5C5E;&#x6027;&#x3092;&#x3064;&#x304B;&#x3048;&#x3070;&#x89E3;&#x653E;&#x51E6;&#x7406;&#x3092;&#x66F8;&#x304B;&#x306A;&#x304F;&#x3066;&#x3082;&#x3044;&#x3044;&#x3068;&#x601D;&#x3046;
+4. mhc&#x306F;invisible&#x3092;&#x3064;&#x304B;&#x308F;&#x306A;&#x3044;&#x3067;mhc&#x5C5E;&#x6027;&#x3092;&#x3064;&#x304B;&#x3046;&#x3088;&#x3046;&#x306B;&#x5909;&#x3048;&#x308B;
+   
+--
+&#x9BC9;&#x6C5F;&#x82F1;&#x9686; &lt;hide@xxxxxxxx&gt;
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01789" href="msg01789.html">[mhc:01790] Re: mew4:mew-summary-next-line</a></strong>
+<ul><li><em>From:</em> &#x767D;&#x4E95;&#x79C0;&#x884C;</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01787.html">[mhc:01788] Re: mhc on LinuxZaurus</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01789.html">[mhc:01790] Re: mew4:mew-summary-next-line</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01797.html">[mhc:01798] Re: mhc on LinuxZaurus</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01789.html">[mhc:01790] Re: mew4:mew-summary-next-line</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01788"><strong>Date</strong></a></li>
+<li><a href="threads.html#01788"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

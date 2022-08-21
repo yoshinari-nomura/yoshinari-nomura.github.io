@@ -1,0 +1,107 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01980] patch for mhc&#45;guess.el -->
+<!--X-From-R13: @AUGQVW Khfhxr <abthabthNzin.ovtybor.ar.wc> -->
+<!--X-Date: Mon, 25 Oct 2004 18:15:46 +0900 (JST) -->
+<!--X-Message-Id: 20041025.181546.68542937.nogunogu@mva.biglobe.ne.jp -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01980] patch for mhc-guess.el</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01978.html">Date Prev</a>][<a href="msg01980.html">Date Next</a>][<a href="msg01978.html">Thread Prev</a>][<a href="msg01980.html">Thread Next</a>][<a href="maillist.html#01979">Date Index</a>][<a href="threads.html#01979">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01980] patch for mhc-guess.el</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01980] patch for mhc-guess.el</li>
+<li><em>From</em>: NOGUCHI Yusuke &lt;<a href="mailto:nogunogu@DOMAIN.HIDDEN">nogunogu@xxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Mon, 25 Oct 2004 18:15:46 +0900 (JST)</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x91CE;&#x53E3;&#x3068;&#x7533;&#x3057;&#x307E;&#x3059;&#x3002;
+
+location &#x306E; guess &#x3067;&#x5F15;&#x3063;&#x304B;&#x3051;&#x3066;&#x3082;&#x3089;&#x3048;&#x306A;&#x3044;&#x30D1;&#x30BF;&#x30FC;&#x30F3;&#x304C;&#x3042;&#x308A;&#x307E;&#x3057;&#x305F;&#x306E;&#x3067;&#x3001;&#x30D1;&#x30C3;
+&#x30C1;&#x3092;&#x4F5C;&#x3063;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002;
+
+mhc 0.25 + snap (mhc-current-snap20041020)
+&#x3078;&#x306E;&#x30D1;&#x30C3;&#x30C1;&#x306B;&#x306A;&#x3063;&#x3066;&#x304A;&#x308A;&#x307E;&#x3059;&#x3002;
+-- 
+NOGUCHI Yusuke &lt;nogunogu@xxxxxxxxxxxxxxxxx&gt;
+</pre><pre>*** mhc-guess.el.org	Thu Apr  1 14:51:42 2004
+--- mhc-guess.el	Mon Oct 25 18:03:20 2004
+***************
+*** 180,186 ****
+  
+  (defvar mhc-guess-location-regexp-list
+    `(
+!     (,(concat &quot;&#x5834;&#x6240;[ &#x3000;]*[&#xFF1A;:]*[\n &#x3000;]*\\([^\n &#x3000;]+\\)&quot;)
+       mhc-guess/make-location-from-string 1)
+      (,(concat &quot;&#x65BC;[ &#x3000;]*\\([^\n &#x3000;]+\\)&quot;)
+       mhc-guess/make-location-from-string 1)
+--- 180,186 ----
+  
+  (defvar mhc-guess-location-regexp-list
+    `(
+!     (,(concat &quot;&#x5834;[ &#x3000;]*&#x6240;[ &#x3000;]*[&#xFF1A;:]*[\n &#x3000;]*\\([^\n &#x3000;]+\\)&quot;)
+       mhc-guess/make-location-from-string 1)
+      (,(concat &quot;&#x65BC;[ &#x3000;]*\\([^\n &#x3000;]+\\)&quot;)
+       mhc-guess/make-location-from-string 1)
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01980" href="msg01980.html">[mhc:01981] Re: patch for mhc-guess.el</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01978.html">[mhc:01979] Re: &#x6708;&#x3068;&#x66DC;&#x65E5;&#x306E;&#x8868;&#x8A18;</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01980.html">[mhc:01981] Re: patch for mhc-guess.el</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01978.html">[mhc:01979] Re: &#x6708;&#x3068;&#x66DC;&#x65E5;&#x306E;&#x8868;&#x8A18;</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01980.html">[mhc:01981] Re: patch for mhc-guess.el</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01979"><strong>Date</strong></a></li>
+<li><a href="threads.html#01979"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

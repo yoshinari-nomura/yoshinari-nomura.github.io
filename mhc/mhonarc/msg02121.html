@@ -1,0 +1,110 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:02122] Re: diff of mhc.el (mhc&#45;delete() =?ISO&#45;2022&#45;JP?B?GyRCPEI5VDhlJE4bKEI=?= hook  =?ISO&#45;2022&#45;JP?B?GyRCREkyQxsoQg==?=) -->
+<!--X-From-R13: [WKAEVW [nfnabev <zvlbfuvNzrnqbjl.bet> -->
+<!--X-Date: Fri, 13 May 2005 23:33:02 +0900 -->
+<!--X-Message-Id: uwtq3yz4x.wl%miyoshi@meadowy.org -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 20050513.140702.68558642.nogunogu@mva.biglobe.ne.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:02122] Re: diff of mhc.el (mhc-delete() &#x5B9F;&#x884C;&#x5F8C;&#x306E; hook  &#x8FFD;&#x52A0;)</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg02120.html">Date Prev</a>][<a href="msg02122.html">Date Next</a>][<a href="msg02120.html">Thread Prev</a>][<a href="msg02122.html">Thread Next</a>][<a href="maillist.html#02121">Date Index</a>][<a href="threads.html#02121">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:02122] Re: diff of mhc.el (mhc-delete() &#x5B9F;&#x884C;&#x5F8C;&#x306E; hook  &#x8FFD;&#x52A0;)</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:02122] Re: diff of mhc.el (mhc-delete() &#x5B9F;&#x884C;&#x5F8C;&#x306E; hook  &#x8FFD;&#x52A0;)</li>
+<li><em>From</em>: MIYOSHI Masanori &lt;<a href="mailto:miyoshi@DOMAIN.HIDDEN">miyoshi@xxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Fri, 13 May 2005 23:33:02 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20050513.140702.68558642.nogunogu@DOMAIN.HIDDEN">20050513.140702.68558642.nogunogu@xxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:20050513.140702.68558642.nogunogu@DOMAIN.HIDDEN">20050513.140702.68558642.nogunogu@xxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: Wanderlust/2.15.1 (Almost Unreal) EMIKO/1.14.1 (Choanoflagellata) LIMIT/1.14.8 (Hajinosato) APEL/10.6 Emacs/22.0.50 (i386-msvc-nt5.1.2600) MULE/5.0 (SAKAKI) Meadow/3.00-dev (KIKU)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&gt;&gt;&gt;&gt;&gt; In [mhc : No.02121] 
+&gt;&gt;&gt;&gt;&gt;	NOGUCHI Yusuke &lt;nogunogu@xxxxxxxxxxxxxxxxx&gt; wrote:
+&#x91CE;&#x53E3;&gt; &#x3053;&#x308C;&#x3067;&#x3001;&#x767B;&#x9332;&#x30FB;&#x7DE8;&#x96C6;&#x6642;&#x306F;&#x81EA;&#x52D5;&#x7684;&#x306B; export &#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x3063;&#x305F;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;&#x9006;&#x306E;
+&#x91CE;&#x53E3;&gt; &#x300C;&#x30AD;&#x30E3;&#x30F3;&#x30BB;&#x30EB;&#x3068;&#x306A;&#x3063;&#x305F;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x300D;&#x3092;&#x524A;&#x9664;&#x3059;&#x308B;&#x969B;(C-c . d) &#x306E;&#x5834;&#x5408;&#x3082;&#x540C;&#x69D8;&#x306B;
+&#x91CE;&#x53E3;&gt; export &#x3055;&#x305B;&#x305F;&#x3044;&#x3068;&#x601D;&#x3046;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;
+
+&#x91CE;&#x53E3;&gt; &#x305D;&#x3053;&#x3067;&#x3001;&#x6DFB;&#x4ED8;&#x306E;&#x3088;&#x3046;&#x306A;&#x4FEE;&#x6B63;&#x3067;&#x3001;mhc-delete() &#x5B9F;&#x65BD;&#x5F8C;&#x306B; hook &#x3092;&#x3057;&#x304B;&#x3051;&#x3089;&#x308C;&#x308B;
+&#x91CE;&#x53E3;&gt; &#x3088;&#x3046;&#x306B;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002;
+
+&#x3053;&#x306E;&#x3088;&#x3046;&#x306B; hook &#x304C;&#x6B32;&#x3057;&#x3044;&#x3051;&#x3069;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3044;&#x5834;&#x5408;&#x306B;&#x306F;&#x3001;defadvice &#x3092;&#x4F7F;&#x3044;&#x307E;
+&#x3059;&#x3002;
+
+defadvice &#x306B;&#x3064;&#x3044;&#x3066;&#x306F;&#x4E0B;&#x8A18;&#x3092;&#x53C2;&#x7167;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;
+<a  rel="nofollow" href="http://lc.linux.or.jp/lc2002/papers/komatsu0920h.pdf">http://lc.linux.or.jp/lc2002/papers/komatsu0920h.pdf</a>
+
+
+&#x3082;&#x3061;&#x308D;&#x3093;&#x3001;mhc-delete() &#x306B; hook &#x3092;&#x65B0;&#x8A2D;&#x3059;&#x308B;&#x3068;&#x3044;&#x3046;&#x9078;&#x629E;&#x80A2;&#x3082;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x305F;&#x3060;&#x3057;&#x3001;&#x305D;&#x308C;&#x3092;&#x6B63;&#x5F53;&#x5316;&#x3059;&#x308B;&#x3060;&#x3051;&#x306E;&#x7406;&#x7531;&#x304C;&#x5FC5;&#x8981;&#x3067;&#x3059;&#x3002;
+;; &#x4ECA;&#x56DE;&#x306E;&#x5834;&#x5408;&#x306F;&#x5FAE;&#x5999;&#x304B;&#x306A;...
+
+--
+&#x4E09;&#x597D; &#x96C5;&#x5247; <a  rel="nofollow" href="http://www.boreas.dti.ne.jp/~miyoshi/">http://www.boreas.dti.ne.jp/~miyoshi/</a>
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="02122" href="msg02122.html">[mhc:02123] Re: diff of mhc.el (mhc-delete() &#x5B9F;&#x884C;&#x5F8C;&#x306E; hook   &#x8FFD;&#x52A0;)</a></strong>
+<ul><li><em>From:</em> Yoichi NAKAYAMA</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="02120" href="msg02120.html">[mhc:02121] diff of mhc.el (mhc-delete() &#x5B9F;&#x884C;&#x5F8C;&#x306E; hook &#x8FFD;&#x52A0;)</a></strong>
+<ul><li><em>From:</em> NOGUCHI Yusuke</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg02120.html">[mhc:02121] diff of mhc.el (mhc-delete() &#x5B9F;&#x884C;&#x5F8C;&#x306E; hook &#x8FFD;&#x52A0;)</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg02122.html">[mhc:02123] Re: diff of mhc.el (mhc-delete() &#x5B9F;&#x884C;&#x5F8C;&#x306E; hook   &#x8FFD;&#x52A0;)</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg02120.html">[mhc:02121] diff of mhc.el (mhc-delete() &#x5B9F;&#x884C;&#x5F8C;&#x306E; hook &#x8FFD;&#x52A0;)</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg02122.html">[mhc:02123] Re: diff of mhc.el (mhc-delete() &#x5B9F;&#x884C;&#x5F8C;&#x306E; hook   &#x8FFD;&#x52A0;)</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#02121"><strong>Date</strong></a></li>
+<li><a href="threads.html#02121"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

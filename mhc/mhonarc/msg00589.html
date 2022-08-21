@@ -1,0 +1,95 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00590] [Gnus] mhc&#45;goto&#45;today fix. -->
+<!--X-From-R13: FEGQVWKO [nfngbfuv <gfhpuvlnNcvar.xhrr.xlbgb&#45;h.np.wc> -->
+<!--X-Date: Fri, 12 May 2000 09:50:57 +0900 -->
+<!--X-Message-Id: mpaem788uc1.fsf@olive.kuee.kyoto&#45;u.ac.jp -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00590] [Gnus] mhc-goto-today fix.</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00588.html">Date Prev</a>][<a href="msg00590.html">Date Next</a>][<a href="msg00586.html">Thread Prev</a>][<a href="msg00590.html">Thread Next</a>][<a href="maillist.html#00589">Date Index</a>][<a href="threads.html#00589">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00590] [Gnus] mhc-goto-today fix.</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00590] [Gnus] mhc-goto-today fix.</li>
+<li><em>From</em>: TSUCHIYA Masatoshi &lt;<a href="mailto:tsuchiya@DOMAIN.HIDDEN">tsuchiya@xxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Fri, 12 May 2000 09:50:57 +0900</li>
+<li><em>Posted</em>: 12 May 2000 09:50:54 +0900</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Sender</em>: <a href="mailto:tsuchiya@DOMAIN.HIDDEN">tsuchiya@xxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: T-gnus/6.14.2 (based on Gnus v5.8.4) SEMI/1.13.7 (Awazu) FLIM/1.13.2 (Kasanui) Emacs/20.6 (sparc-sun-solaris2.6) MULE/4.0 (HANANOEN)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x571F;&#x5C4B;&#x3067;&#x3059;&#x3002;
+
+Gnus &#x74B0;&#x5883;&#x3067; (mhc-goto-today) &#x304C;&#x52D5;&#x4F5C;&#x3057;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3067;&#x3057;&#x305F;&#x3002;&#x4EE5;&#x4E0B;&#x3001;&#x30D1;&#x30C3;&#x30C1;&#x3002;
+
+</pre><pre>--- mhc.el	2000/05/10 08:30:36
++++ mhc.el	2000/05/12 00:49:04
+@@ -219,7 +219,7 @@
+     (if (and (= (ddate-yy now) (ddate-yy buf-date))
+ 	     (= (ddate-mm now) (ddate-mm buf-date))
+ 	     (re-search-forward
+-	      (format &quot;^[0-9]+ | %s&quot; (ddate-mmdd-s1 (ddate-now) &quot;/&quot;)) nil t))
++	      (format &quot;^\\([0-9]+\\)? | %s&quot; (ddate-mmdd-s1 (ddate-now) &quot;/&quot;)) nil t))
+ 	(progn 
+ 	  (beginning-of-line)
+ 	  (if (not (pos-visible-in-window-p (point)))
+</pre><pre>-- 
+&#x571F;&#x5C4B; &#x96C5;&#x7A14;  ( TSUCHIYA Masatoshi )
+    <a  rel="nofollow" href="http://www-nagao.kuee.kyoto-u.ac.jp/member/tsuchiya/">http://www-nagao.kuee.kyoto-u.ac.jp/member/tsuchiya/</a>
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00588.html">[mhc:00589] Re: mhc-calendar.el</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00590.html">[mhc:00591] mhc &lt;-&gt; Windows CE</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00586.html">[mhc:00587] mhc-snap20000509-2 (Re:  mhc-snap20000509)</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00590.html">[mhc:00591] mhc &lt;-&gt; Windows CE</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00589"><strong>Date</strong></a></li>
+<li><a href="threads.html#00589"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:02293] mhc_pilib.c for pilot&#45;link 0.12 -->
+<!--X-From-R13: Ynmhuveb Wgb <xmueNq1.qvba.ar.wc> -->
+<!--X-Date: Thu, 10 Jul 2008 13:36:46 +0900 -->
+<!--X-Message-Id: uhcay73tt.wl%kzhr@d1.dion.ne.jp -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Derived: bin05LdsdqTU8.bin -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:02293] mhc_pilib.c for pilot-link 0.12</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg02291.html">Date Prev</a>][<a href="msg02293.html">Date Next</a>][<a href="msg02291.html">Thread Prev</a>][<a href="msg02293.html">Thread Next</a>][<a href="maillist.html#02292">Date Index</a>][<a href="threads.html#02292">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:02293] mhc_pilib.c for pilot-link 0.12</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:02293] mhc_pilib.c for pilot-link 0.12</li>
+<li><em>From</em>: Kazuhiro Ito &lt;<a href="mailto:kzhr@DOMAIN.HIDDEN">kzhr@xxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Thu, 10 Jul 2008 13:36:46 +0900</li>
+<li><em>Delivered-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>List-help</em>: &lt;<a href="mailto:mhc-ctl@quickhack.net?body=help">mailto:mhc-ctl@quickhack.net?body=help</a>&gt;</li>
+<li><em>List-id</em>: mhc.quickhack.net</li>
+<li><em>List-owner</em>: &lt;<a href="mailto:mhc-admin@quickhack.net">mailto:mhc-admin@quickhack.net</a>&gt;</li>
+<li><em>List-post</em>: &lt;<a href="mailto:mhc@quickhack.net">mailto:mhc@quickhack.net</a>&gt;</li>
+<li><em>List-software</em>: fml [fml 4.0.3 release (20011202/4.0.3)]</li>
+<li><em>List-unsubscribe</em>: &lt;<a href="mailto:mhc-ctl@quickhack.net?body=unsubscribe">mailto:mhc-ctl@quickhack.net?body=unsubscribe</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: Wanderlust/2.15.6 (Almost Unreal) SEMI/1.14.6 (Maruoka) FLIM/1.14.8 (Shij&#x14D;) APEL/10.7 Emacs/22.2 (i386-mingw-nt5.1.2600) MULE/5.0 (SAKAKI) Meadow/3.01-dev (TSUBO-SUMIRE)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x521D;&#x3081;&#x307E;&#x3057;&#x3066;&#x3001;&#x4F0A;&#x85E4;&#x3068;&#x7533;&#x3057;&#x307E;&#x3059;&#x3002;
+
+ruby-ext/mhc_pilib.c &#x3092;&#x66F8;&#x304D;&#x63DB;&#x3048;&#x3066; mhc2palm &#x3092; pilot-link 0.12 &#x4EE5;&#x964D;&#x3067;
+&#x52D5;&#x304F;&#x3088;&#x3046;&#x306B;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002;
+&#x5F53;&#x65B9;&#x306E;&#x74B0;&#x5883; (Cygwin, ruby 1.8.6, pilot-link 0.12.3) &#x3067;&#x306F;&#x52D5;&#x4F5C;&#x3057;&#x3066;&#x3044;&#x308B;
+&#x3088;&#x3046;&#x306B;&#x898B;&#x3048;&#x307E;&#x3059;&#x304C;&#x3001;mhc2palm &#x3057;&#x304B;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;
+
+&#x5C1A;&#x3001;&#x6DFB;&#x4ED8;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306F;&#x5909;&#x66F4;&#x5F8C;&#x306E; mhc_pilib.c &#x3067;&#x3059;&#x304C;&#x3001;
+&#x53D6;&#x308A;&#x6562;&#x3048;&#x305A;&#x52D5;&#x304B;&#x3059;&#x305F;&#x3081;&#x306B;&#x3044;&#x3058;&#x3063;&#x305F;&#x307E;&#x307E;&#x306A;&#x306E;&#x3067; pilot-link 0.11 &#x4EE5;&#x524D;&#x3068;&#x306E;
+&#x4E92;&#x63DB;&#x6027;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;
+
+-- 
+&#x4F0A;&#x85E4; &#x548C;&#x535A;(Kazuhiro Ito)
+</pre><p><strong>Attachment:
+<a href="bin05LdsdqTU8.bin" ><tt>mhc_pilib.c.gz</tt></a></strong><br>
+<em>Description:</em> Binary data</p>
+
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="02293" href="msg02293.html">[mhc:02294] Re: mhc_pilib.c for pilot-link 0.12</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+<li><strong><a name="02301" href="msg02301.html">[mhc:02302] Re: mhc_pilib.c for pilot-link 0.12</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg02291.html">[mhc:02292] Re: import with attachements and wanderlust</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg02293.html">[mhc:02294] Re: mhc_pilib.c for pilot-link 0.12</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg02291.html">[mhc:02292] Re: import with attachements and wanderlust</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg02293.html">[mhc:02294] Re: mhc_pilib.c for pilot-link 0.12</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#02292"><strong>Date</strong></a></li>
+<li><a href="threads.html#02292"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

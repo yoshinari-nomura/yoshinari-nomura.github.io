@@ -1,0 +1,120 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:02309] Re: mhc_pilib.c for pilot&#45;link 0.12 -->
+<!--X-From-R13: Kbfuvanev @bzhen <abzNdhvpxunpx.arg> -->
+<!--X-Date: Wed, 24 Dec 2008 10:01:36 +0900 (JST) -->
+<!--X-Message-Id: 20081224.100136.76172611.nom@quickhack.net -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: uskr8wkre.wl%kzhr@d1.dion.ne.jp -->
+<!--X-Reference: 20081008.091752.215106266.nom@quickhack.net -->
+<!--X-Reference: 20081215.182308.226875184430889020.hide@koie.org -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:02309] Re: mhc_pilib.c for pilot-link 0.12</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg02307.html">Date Prev</a>][<a href="msg02309.html">Date Next</a>][<a href="msg02307.html">Thread Prev</a>][<a href="msg02296.html">Thread Next</a>][<a href="maillist.html#02308">Date Index</a>][<a href="threads.html#02308">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:02309] Re: mhc_pilib.c for pilot-link 0.12</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:02309] Re: mhc_pilib.c for pilot-link 0.12</li>
+<li><em>From</em>: Yoshinari Nomura &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Wed, 24 Dec 2008 10:01:36 +0900 (JST)</li>
+<li><em>Delivered-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20081215.182308.226875184430889020.hide@DOMAIN.HIDDEN">20081215.182308.226875184430889020.hide@xxxxxxxx</a>&gt;</li>
+<li><em>List-help</em>: &lt;<a href="mailto:mhc-ctl@quickhack.net?body=help">mailto:mhc-ctl@quickhack.net?body=help</a>&gt;</li>
+<li><em>List-id</em>: mhc.quickhack.net</li>
+<li><em>List-owner</em>: &lt;<a href="mailto:mhc-admin@quickhack.net">mailto:mhc-admin@quickhack.net</a>&gt;</li>
+<li><em>List-post</em>: &lt;<a href="mailto:mhc@quickhack.net">mailto:mhc@quickhack.net</a>&gt;</li>
+<li><em>List-software</em>: fml [fml 4.0.3 release (20011202/4.0.3)]</li>
+<li><em>List-unsubscribe</em>: &lt;<a href="mailto:mhc-ctl@quickhack.net?body=unsubscribe">mailto:mhc-ctl@quickhack.net?body=unsubscribe</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:uskr8wkre.wl%25kzhr@DOMAIN.HIDDEN">uskr8wkre.wl%kzhr@xxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20081008.091752.215106266.nom@DOMAIN.HIDDEN">20081008.091752.215106266.nom@xxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20081215.182308.226875184430889020.hide@DOMAIN.HIDDEN">20081215.182308.226875184430889020.hide@xxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x9BC9;&#x6C5F;&#x3055;&#x3093;&#xFF0C;&#x4E43;&#x6751;&#x3067;&#x3059;&#xFF0E;
+
+&#x3042;&#x308A;&#x304C;&#x3068;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;&#xFF0E;
+&#x305D;&#x3046;&#x3067;&#x3059;&#x306D;&#xFF0E;&#x4F55;&#x304B;&#x60DA;&#x3051;&#x3066;&#x307E;&#x3059;&#x306D;&#xFF0E;&#x76F4;&#x3057;&#x3066;&#x304A;&#x304D;&#x307E;&#x3059;&#xFF0E;
+
+On Mon, 15 Dec 2008 18:23:08 +0900 (JST),
+	KOIE Hidetaka (&#x9BC9;&#x6C5F;&#x82F1;&#x9686;) &lt;hide@xxxxxxxx&gt; said:
+
+&gt;&gt; -    part1 .split(&quot;\n&quot;) .each{|line|
+&gt;&gt; +    part1 .to_s .split(&quot;\n&quot;) .each{|line|
+&gt; 
+&gt; &#x3053;&#x3053;&#x306A;&#x3093;&#x3067;&#x3059;&#x304C;&#x3001;&#x5B9F;&#x306F;&#x2193;&#x3058;&#x3083;&#x306A;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;(&#x6587;&#x8108;&#x7684;&#x306B;)&#x3002;
+&gt; 
+&gt; @@ -669,7 +728,7 @@ class PilotApptRecord &lt; PilotRecord
+&gt;      end
+&gt; 
+&gt;      part1 .to_s .split(&quot;\n&quot;) .each{|line|
+&gt; -      if !(string =~ /^[ \t]+/ or string =~ /^[A-Za-z0-9_-]+:/)
+&gt; +      if !(line =~ /^[ \t]+/ or line =~ /^[A-Za-z0-9_-]+:/)
+&gt;         part1_is_header = false
+&gt;        end
+&gt;      }
+&gt; 
+&gt; --
+&gt; KOIE Hidetaka &lt;hide@xxxxxxxx&gt;
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="02302" href="msg02302.html">[mhc:02303] Re: mhc_pilib.c for pilot-link 0.12</a></strong>
+<ul><li><em>From:</em> Kazuhiro Ito</li></ul></li>
+<li><strong><a name="02303" href="msg02303.html">[mhc:02304] Re: mhc_pilib.c for pilot-link 0.12</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+<li><strong><a name="02307" href="msg02307.html">[mhc:02308] Re: mhc_pilib.c for pilot-link 0.12</a></strong>
+<ul><li><em>From:</em> &#x9BC9;&#x6C5F;&#x82F1;&#x9686;</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg02307.html">[mhc:02308] Re: mhc_pilib.c for pilot-link 0.12</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg02309.html">[mhc:02310] &#x505C;&#x96FB;&#x5F8C;&#x306E;HDD&#x969C;&#x5BB3;&#x304B;&#x3089;&#x306E;&#x5FA9;&#x65E7;</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg02307.html">[mhc:02308] Re: mhc_pilib.c for pilot-link 0.12</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg02296.html">[mhc:02297] mhc&#x306E;&#x52D5;&#x4F5C;&#x78BA;&#x8A8D;</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#02308"><strong>Date</strong></a></li>
+<li><a href="threads.html#02308"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rails with Relative URL Root</title>
+  <meta name="description" content="はじめに Rails アプリケーションは，通常 / を URL root として動作します． この記事は，これを /myapp に変更したときの顛末です． Rails のバージョンは 3.2.6 です． 結論となる対処法は簡単なのですが， 事情は思ったより複雑のようです．Rails は， 正しい作法がすぐ変わるの...">
+
+  <link rel="icon" href="/nom/favicon.png">
+  <link rel="stylesheet" href="/nom/assets/main.css">
+  <link rel="canonical" href="http://quickhack.net/nom/blog/2012-09-19-rails-with-relative-url-root.html">
+  <link rel="alternate" type="application/rss+xml" title="Quickhack Diary" href="/nom/feed.xml">
+
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/nom/">Quickhack Diary</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Rails with Relative URL Root</h1>
+    <p class="post-meta"><time datetime="2012-09-19T00:00:00+09:00" itemprop="datePublished">Sep 19, 2012</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <div id="outline-container-org06dfec4" class="outline-2">
+<h2 id="org06dfec4">はじめに</h2>
+<div class="outline-text-2" id="text-org06dfec4">
+<p>
+Rails アプリケーションは，通常 <code>/</code> を URL root として動作します．
+この記事は，これを <code>/myapp</code> に変更したときの顛末です．
+Rails のバージョンは 3.2.6 です．
+結論となる対処法は簡単なのですが，
+事情は思ったより複雑のようです．Rails は，
+正しい作法がすぐ変わるので混乱しますね．
+結論だけ知りたい人は，
+<a href="#org4c81a31">結局おすすめは</a> の節だけ読めばいいです．
+</p>
+
+<p>
+<!-- more -->
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc9689ea" class="outline-2">
+<h2 id="orgc9689ea">まずは公式のガイドから</h2>
+<div class="outline-text-2" id="text-orgc9689ea">
+<p>
+<a href="http://guides.rubyonrails.org/configuring.html">Ruby on Rails Guides: Configuring Rails Applications</a> によると，以下の2つが目的に関係しそうです．
+</p>
+<ul class="org-ul">
+<li><code>Rails.application.config.relative_url_root</code></li>
+<li><code>Rails.application.config.assets.prefix</code></li>
+</ul>
+
+<p>
+<code>relative_url_root</code> は，環境変数 <code>RAILS_RELATIVE_URL_ROOT</code> によってデフォルト値が設定されるので，
+</p>
+<div class="org-src-container">
+<pre class="src src-shell-script">% <span class="org-variable-name">RAILS_RELATIVE_URL_ROOT</span>=<span class="org-string">'/myapp'</span> rails server -p 3000
+</pre>
+</div>
+<p>
+などとすると，反映されるように思えます．しかし，rake で確認してみると，
+</p>
+<div class="org-src-container">
+<pre class="src src-shell-script">% <span class="org-variable-name">RAILS_RELATIVE_URL_ROOT</span>=<span class="org-string">'/myapp'</span> rake routes
+
+    new_user_session GET    /users/sign_in(.:format)         devise/sessions#new
+        user_session POST   /users/sign_in(.:format)         devise/sessions#create
+destroy_user_session DELETE /users/sign_out(.:format)        devise/sessions#destroy
+    content_material GET    /materials/:id/content(.:format) materials#content
+           materials GET    /materials(.:format)             materials#index
+                     POST   /materials(.:format)             materials#create
+        new_material GET    /materials/new(.:format)         materials#new
+       edit_material GET    /materials/:id/edit(.:format)    materials#edit
+            material GET    /materials/:id(.:format)         materials#show
+                     PUT    /materials/:id(.:format)         materials#update
+                     DELETE /materials/:id(.:format)         materials#destroy
+                root        /                                materials#index
+</pre>
+</div>
+<p>
+何だかうまくいってない．
+ググってみると，最近の Rails では，  <code>Rails.application.config.relative_url_root</code>
+を陽に参照するように <code>config/routes.rb</code> を書換えないとダメみたいです．
+そこで， <code>config/application.rb</code> に scope の記述を追加:
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby"><span class="org-type">Myapp</span>::<span class="org-type">Application</span>.routes.draw <span class="org-keyword">do</span>
+  scope (<span class="org-type">Rails</span>.application.config.relative_url_root || <span class="org-string">'/'</span>) <span class="org-keyword">do</span>
+    <span class="org-comment-delimiter"># </span><span class="org-comment">...</span>
+  <span class="org-keyword">end</span>
+<span class="org-keyword">end</span>
+</pre>
+</div>
+<p>
+これで，
+</p>
+<div class="org-src-container">
+<pre class="src src-shell-script">% <span class="org-variable-name">RAILS_RELATIVE_URL_ROOT</span>=<span class="org-string">'/myapp'</span> rake routes
+
+    new_user_session GET    /myapp/users/sign_in(.:format)         devise/sessions#new
+        user_session POST   /myapp/users/sign_in(.:format)         devise/sessions#create
+destroy_user_session DELETE /myapp/users/sign_out(.:format)        devise/sessions#destroy
+    content_material GET    /myapp/materials/:id/content(.:format) materials#content
+           materials GET    /myapp/materials(.:format)             materials#index
+                     POST   /myapp/materials(.:format)             materials#create
+        new_material GET    /myapp/materials/new(.:format)         materials#new
+       edit_material GET    /myapp/materials/:id/edit(.:format)    materials#edit
+            material GET    /myapp/materials/:id(.:format)         materials#show
+                     PUT    /myapp/materials/:id(.:format)         materials#update
+                     DELETE /myapp/materials/:id(.:format)         materials#destroy
+                root        /myapp(.:format)                       materials#index
+</pre>
+</div>
+<p>
+おお，うまくいった!! と思いきや． <code>Rails.application.config.assets.prefix</code> は連動しない様子．
+assets 関係は，別のサーバに置いたりするからでしょうか．サーバを1つで済ませたいので，
+<code>config/application.rb</code> に assets の場所を記述します．
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">config.assets.prefix = <span class="org-type">File</span>.join((config.relative_url_root || <span class="org-string">'/'</span>), <span class="org-string">'assets'</span>)
+</pre>
+</div>
+<p>
+今度こそうまくいった!!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org64dffcf" class="outline-2">
+<h2 id="org64dffcf">Devise がおかしい</h2>
+<div class="outline-text-2" id="text-org64dffcf">
+<p>
+でも，認証用の <a href="https://github.com/plataformatec/devise">Devise</a> プラグインがうまくいかないです．具体的には，未認証時の redirect 先である
+<code>new_user_session_path</code> がおかしい． 先の <code>rake routes</code> の結果からすると
+<code>/myapp/users/sign_in</code> に redirect されそうなのに，実際には，
+<code>/myapp/myapp/users/sign_in</code> に飛ばされてしまって 404 が出ます．
+ただ，URL 直叩きで <code>/myapp/users/sign_in</code> にアクセスすれば OK です．つまり，redirect
+先の決定部分だけがおかしい．
+</p>
+
+<p>
+Rack の 認証フレームワーク <a href="https://github.com/hassox/warden">Warden</a> からたどることしばし．認証失敗時の
+redirect 先を決めているのは， <code>lib/devise/failure_app.rb</code> の <code>scope_path</code> だと分かりました．
+以下抜粋．
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby"><span class="linenr"> 1: </span><span class="org-keyword">def</span> <span class="org-function-name">scope_path</span>
+<span class="linenr"> 2: </span>  opts  = {}
+<span class="linenr"> 3: </span>  route = :<span class="org-string">"new_</span><span class="org-variable-name">#{scope}</span><span class="org-string">_session_path"</span>
+<span class="linenr"> 4: </span>  opts[<span class="org-constant">:format</span>] = request_format <span class="org-keyword">unless</span> skip_format?
+<span class="linenr"> 5: </span>
+<span class="linenr"> 6: </span>  config = <span class="org-type">Rails</span>.application.config
+<span class="linenr"> 7: </span>  opts[<span class="org-constant">:script_name</span>] = (config.relative_url_root <span class="org-keyword">if</span> config.respond_to?(<span class="org-constant">:relative_url_root</span>))
+<span class="linenr"> 8: </span>
+<span class="linenr"> 9: </span>  context = send(<span class="org-type">Devise</span>.available_router_name)
+<span class="linenr">10: </span>
+<span class="linenr">11: </span>  <span class="org-keyword">if</span> context.respond_to?(route)
+<span class="linenr">12: </span>    context.send(route, opts)
+<span class="linenr">13: </span>  <span class="org-keyword">elsif</span> respond_to?(<span class="org-constant">:root_path</span>)
+<span class="linenr">14: </span>    root_path(opts)
+<span class="linenr">15: </span>  <span class="org-keyword">else</span>
+<span class="linenr">16: </span>    <span class="org-string">"/"</span>
+<span class="linenr">17: </span>  <span class="org-keyword">end</span>
+<span class="linenr">18: </span><span class="org-keyword">end</span>
+</pre>
+</div>
+<p>
+7行目で <code>config.relative_url_root</code> を <code>SCRIPT_NAME</code> に突込んでるのが原因のようです．
+ここをコメントアウトすると動きます．これで問題解決としてもよかったのですが，
+何かよく意味が分からないので，もう少し調べてみました．
+</p>
+
+<p>
+7行目の動作って，大きなお世話じゃないの??… と思ったけど．調べると結構面倒な問題みたいで，
+Devise に関係なく，Rails 本家の github でもいくつか議論があった様子です．
+以下が事情をよく説明しているように思えます．
+</p>
+
+<p>
+<a href="https://github.com/rails/rails/issues/4308#issuecomment-6768281">config.action_controller.relative_url_root doesn't work in Rails 3.1 · Issue #4308 · rails/rails</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb2c3de4" class="outline-2">
+<h2 id="orgb2c3de4"><code>SCRIPT_NAME</code> vs <code>RAILS_RELATIVE_URL_ROOT</code></h2>
+<div class="outline-text-2" id="text-orgb2c3de4">
+<p>
+僕の理解では，こういう問題があるようです．
+</p>
+<ol class="org-ol">
+<li>Rack の枠組では， <code>SCRIPT_NAME</code> が Rails でいうところの <code>relative_url_root</code> と同じ意味を持つ．
+しかし，両者は，連携しているようでしていない．</li>
+<li>Rack サーバの WebRick は，両者の関係を意識しないが， thin とかは， <code>--prefix /myapp</code> によって
+<code>relative_url_root</code> を設定する他，リクエスト毎の <code>SCRIPT_NAME</code> や <code>PATH_INFO</code> を設定する(ような気がする)．</li>
+<li>assets 関係は，登場後日が浅い上にアプリケーションのルーティング (<code>config/routes.rb</code>) の外にあるので，
+更に半端な連携状態になっている．</li>
+</ol>
+
+<p>
+URL(リンク)の生成時と，対応するリソースの配信時(サーブ)で異なる情報を使っていることが問題のようです．
+</p>
+
+<p>
+Devise は，そのへんの微妙な関係を修復するために世話を焼いていたようです．
+本来なら Rack アプリケーションとしての Rails は， <code>SCRIPT_NAME</code> を信じて動けば問題ない筈で，
+<code>RAILS_RELATIVE_URL_ROOT</code> はなくてもいいように思うのですが，
+過去の経緯からなのか，半端な状態になっているんだと思います．
+</p>
+</div>
+</div>
+
+<div id="outline-container-org76715b3" class="outline-2">
+<h2 id="org76715b3">Rack に正しく <code>SCRIPT_NAME</code> を付けさせるには，</h2>
+<div class="outline-text-2" id="text-org76715b3">
+<p>
+Rack に対応したアプリケーションを起動する際に <code>map</code> で囲めばいいようです．
+単純な Rack アプリケーションで確認してみましょう <code>hello-rack.rb</code>:
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby"><span class="org-builtin">require</span> <span class="org-string">'pp'</span>
+
+<span class="org-keyword">class</span> <span class="org-type">HelloRack</span>
+  <span class="org-keyword">def</span> <span class="org-function-name">call</span>(env)
+    pp env
+    [
+      200,
+      { <span class="org-string">'Content-Type'</span> =&gt; <span class="org-string">'text/plain'</span> },
+      [<span class="org-string">'Hello Rack'</span>]
+    ]
+  <span class="org-keyword">end</span>
+<span class="org-keyword">end</span>
+</pre>
+</div>
+<p>
+<code>config.ru</code>:
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby"><span class="org-builtin">require</span> ::<span class="org-type">File</span>.expand_path(<span class="org-string">'.'</span>,  <span class="org-string">'hello-rack.rb'</span>)
+map <span class="org-string">"/myapp"</span> <span class="org-keyword">do</span>
+  run <span class="org-type">HelloRack</span>.new
+<span class="org-keyword">end</span>
+</pre>
+</div>
+<p>
+実行して
+</p>
+<div class="org-src-container">
+<pre class="src src-shell-script">% rackup
+</pre>
+</div>
+<p>
+<code>localhost:9292</code> にアクセスすると，
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">{
+ <span class="org-string">"SCRIPT_NAME"</span>=&gt;<span class="org-string">"/myapp"</span>,  <span class="org-comment-delimiter"># </span><span class="org-comment">diff</span>
+ <span class="org-string">"PATH_INFO"</span>=&gt;<span class="org-string">"/hello"</span>,  <span class="org-comment-delimiter"># </span><span class="org-comment">diff</span>
+ <span class="org-string">"QUERY_STRING"</span>=&gt;<span class="org-string">""</span>,
+ <span class="org-string">"REQUEST_URI"</span>=&gt;<span class="org-string">"http://localhost:9292/myapp/hello"</span>,
+ <span class="org-string">"SERVER_NAME"</span>=&gt;<span class="org-string">"localhost"</span>,
+ <span class="org-string">"SERVER_PORT"</span>=&gt;<span class="org-string">"9292"</span>,
+ <span class="org-string">"SERVER_SOFTWARE"</span>=&gt;<span class="org-string">"WEBrick/1.3.1 (Ruby/1.9.3/2012-02-16)"</span>,
+ <span class="org-string">"HTTP_HOST"</span>=&gt;<span class="org-string">"localhost:9292"</span>,
+ <span class="org-string">"REQUEST_PATH"</span>=&gt;<span class="org-string">"/myapp/hello"</span>
+}
+</pre>
+</div>
+<p>
+一方， <code>config.ru</code> に <code>map</code> がない場合は，
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">{
+ <span class="org-string">"SCRIPT_NAME"</span>=&gt;<span class="org-string">""</span>,  <span class="org-comment-delimiter"># </span><span class="org-comment">diff</span>
+ <span class="org-string">"PATH_INFO"</span>=&gt;<span class="org-string">"/myapp/hello"</span>,  <span class="org-comment-delimiter"># </span><span class="org-comment">diff</span>
+ <span class="org-string">"QUERY_STRING"</span>=&gt;<span class="org-string">""</span>,
+ <span class="org-string">"REQUEST_URI"</span>=&gt;<span class="org-string">"http://localhost:9292/myapp/hello"</span>,
+ <span class="org-string">"SERVER_NAME"</span>=&gt;<span class="org-string">"localhost"</span>,
+ <span class="org-string">"SERVER_PORT"</span>=&gt;<span class="org-string">"9292"</span>,
+ <span class="org-string">"SERVER_SOFTWARE"</span>=&gt;<span class="org-string">"WEBrick/1.3.1 (Ruby/1.9.3/2012-02-16)"</span>,
+ <span class="org-string">"HTTP_HOST"</span>=&gt;<span class="org-string">"localhost:9292"</span>,
+ <span class="org-string">"HTTP_VERSION"</span>=&gt;<span class="org-string">"HTTP/1.1"</span>,
+ <span class="org-string">"REQUEST_PATH"</span>=&gt;<span class="org-string">"/myapp/hello"</span>
+}
+</pre>
+</div>
+<p>
+<code>SCRIPT_NAME</code> と <code>PATH_INFO</code> の関係が <code>map</code> によって変化しています．
+Rack アプリケーションは， <code>SCRIPT_NAME</code> を加味して URL を生成しつつ，
+<code>PATH_INFO</code> を見てルーティングすればいいようです．
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4c81a31" class="outline-2">
+<h2 id="org4c81a31">結局おすすめは</h2>
+<div class="outline-text-2" id="text-org4c81a31">
+<p>
+で，結局 Stack Overflow に頼るのが一番です．
+<a href="http://stackoverflow.com/questions/3181746/what-is-the-replacement-for-actioncontrollerbase-relative-url-root/5457484#5457484">ruby on rails - What is the replacement for ActionController::Base.relative_url_root? - Stack Overflow</a>
+つまり，以下の2つを両方実行すればいいです．
+</p>
+
+<ol class="org-ol">
+<li><p>
+config.ru の run を map で包む
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">map <span class="org-type">ActionController</span>::<span class="org-type">Base</span>.config.relative_url_root || <span class="org-string">"/"</span> <span class="org-keyword">do</span>
+  run <span class="org-type">Myapp</span>::<span class="org-type">Application</span>
+<span class="org-keyword">end</span>
+</pre>
+</div>
+<p>
+これによって，毎回のリクエストに  <code>SCRIPT_NAME</code> が設定され，
+これを利用してアプリケーションのルーティング (routes) 関連がうまく振舞えるようになります．
+</p></li>
+<li><p>
+環境変数 <code>RAILS_RELATIVE_URL_ROOT</code> を設定してサーバを起動する
+</p>
+<div class="org-src-container">
+<pre class="src src-shell-script">% <span class="org-variable-name">RAILS_RELATIVE_URL_ROOT</span>=<span class="org-string">'/myapp'</span> rails server -p 3000
+</pre>
+</div>
+<p>
+これによって，Devise が <code>SCRIPT_NAME</code> を <code>RAILS_RELATIVE_URL_ROOT</code> で上書きしても値が同じになるので，
+未認証時の redirect がうまく動作します．
+</p></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org07b40a2" class="outline-2">
+<h2 id="org07b40a2">おまけ</h2>
+<div class="outline-text-2" id="text-org07b40a2">
+<p>
+この2つを実行すると，おまけで assets 関連もうまくサーブされるようになります．
+つまり， <code>config.assets.prefix</code> の設定は不要です．
+上記2つの一方だけでは，assets は，うまくサーブされません．どうも，現状は，こうなっているようです:
+</p>
+
+<ol class="org-ol">
+<li><code>RAILS_RELATIVE_URL_ROOT</code> をセットすると，asset 関連のURL生成部が <code>/myapp</code> を prefix として付けるようになる．
+しかし，この設定は，サーブ側には働かない．</li>
+<li>サーブ側を動作させるためには， <code>config.assets.prefix</code> で陽に指定するか，
+Rack 側の設定で <code>map</code> を書いて， <code>SCRIPT_NAME</code> と <code>PATH_INFO</code> を正しく与えるようにする．</li>
+</ol>
+
+<p>
+この問題は，おそらく，次期バージョンで解決しそうです．
+<a href="https://github.com/rails/rails/commit/9beb0b6afc5559ff75c3134db3a8a7884de90e2e">Merge pull request #5296 from dlitz/relative_url_root_from_script_name · 9beb0b6 · rails/rails</a>
+つまり，assets のために  <code>RAILS_RELATIVE_URL_ROOT</code> を設定する必要がなくなりそうです．
+</p>
+
+<p>
+一方， routes に関してはどうでしょうか．routes は， <code>RAILS_RELATIVE_URL_ROOT</code> を URL生成時に使わないようです．
+これは，assets とちぐはぐに見えますね．
+<code>/myapp</code> をURL生成時に付けさせるためには，以下2つのいずれかが必要です．
+</p>
+<ol class="org-ol">
+<li><code>config/routes.rb</code> 中に <code>scope hoge...</code> の記述をする．</li>
+<li>Rack 側の設定で <code>map</code> を書いて， <code>SCRIPT_NAME</code> と <code>PATH_INFO</code> を正しく与えるようにする．</li>
+</ol>
+<p>
+後者でURL生成がうまくいく理由がよく分かりませんが，おそらくURL生成にも <code>SCRIPT_NAME</code> を見てるんでしょうね．
+</p>
+
+<p>
+両者は，若干意味が違います．
+前者は，routes が <code>/myapp</code> まで意識してルーティングしているのに対して，
+後者は，Rack が <code>/myapp</code> を意識していて， routes は <code>PATH_INFO</code> を見て <code>/</code> をトップとしてルーティングしています．
+なので，上記2つともやると，routes が <code>GET /</code> は知らんといって怒ります．
+</p>
+
+<p>
+ルーティング関連は，よく分からないことだらですね．Rails バージョンアップの際には，またハマると思います．
+その時にこの経験が役に立つかもしれません．
+</p>
+</div>
+</div>
+
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Quickhack Diary</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Yoshinari Nomura
+            
+            </li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/yoshinari-nomura"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">yoshinari-nomura</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/nom4476"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">nom4476</span></a>
+
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>lifehack through quick hack
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

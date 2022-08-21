@@ -1,0 +1,116 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00275] mhc&#45;misc&#45;sub -->
+<!--X-From-R13: Oxvuveb [AFAYW <zbxxhaNvanzr.pbz> -->
+<!--X-Date: Mon, 6 Dec 1999 20:26:22 +0900 -->
+<!--X-Message-Id: 86so1gb99h.wl@ptls12.ptl.abk.nec.co.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00275] mhc-misc-sub</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00273.html">Date Prev</a>][<a href="msg00275.html">Date Next</a>][<a href="msg00263.html">Thread Prev</a>][<a href="msg00276.html">Thread Next</a>][<a href="maillist.html#00274">Date Index</a>][<a href="threads.html#00274">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00275] mhc-misc-sub</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00275] mhc-misc-sub</li>
+<li><em>From</em>: Akihiro MOTOKI &lt;<a href="mailto:mokkun@DOMAIN.HIDDEN">mokkun@xxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Mon, 6 Dec 1999 20:26:22 +0900</li>
+<li><em>Posted</em>: Mon, 06 Dec 1999 20:26:18 +0900</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x5143;&#x6728;&#x3067;&#x3059;&#x3002;
+
+Subject &#x304C;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3044;&#x30E1;&#x30FC;&#x30EB;&#x3092;&#x4E88;&#x5B9A;&#x306B;&#x767B;&#x9332;&#x3057;&#x3088;&#x3046;&#x3068;&#x3059;&#x308B;&#x3068;&#x3001;
+mhc-misc-sub &#x306E;&#x5F15;&#x6570; str &#x306B; nil &#x304C;&#x6E21;&#x308B;&#x306E;&#x3067;&#x3001;&#x5931;&#x6557;&#x3057;&#x307E;&#x3059;&#x3002;
+
+mhc-misc-sub &#x3067; string check &#x3092;&#x884C;&#x3063;&#x305F;&#x65B9;&#x304C;&#x3088;&#x3044;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;
+
+(defun mhc-misc-sub (str regex replace)
+  (if (and (stringp str) (string-match regex str))
+      (concat (substring str 0 (match-beginning 0))
+	      replace
+	      (substring str (match-end 0)))
+    str))
+
+&gt;&gt;&gt;&gt;&gt; In [mhc : No.00268] 
+&gt;&gt;&gt;&gt;&gt; Yoshinari NOMURA &lt;nom@xxxxxxxxxxxxxxxxxxx&gt; wrote:
+
+&gt; &#x3053;&#x3053;&#x307E;&#x3067;&#x3084;&#x3063;&#x305F;&#x3089;&#x3001;wl &#x6B63;&#x5F0F;&#x5BFE;&#x5FDC; 0.24 &#x306E;&#x3064;&#x3082;&#x308A;&#x3067;&#x3059;&#x3002;
+
+&#x3059;&#x3067;&#x306B;&#x5FA1;&#x5B58;&#x77E5;&#x304B;&#x3082;&#x3057;&#x308C;&#x307E;&#x305B;&#x3093;&#x304C;&#x3001;
+wl-2.2.10 &#x3067; wl-summary-mode &#x304C;&#x5F15;&#x6570;&#x3092;&#x3068;&#x3089;&#x306A;&#x304F;&#x306A;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;
+mhc-scan-month &#x5185;&#x306E;&#x3001;
+       (wl-summary-mode (mhc-wl-ddate-to-folder ddate))))
+&#x3092;
+       (wl-summary-mode)
+       (wl-summary-buffer-set-folder (mhc-wl-ddate-to-folder ddate))))
+&#x306B;&#x5909;&#x66F4;&#x3059;&#x308C;&#x3070;&#x3001;&#x3044;&#x3044;&#x307F;&#x305F;&#x3044;&#x3067;&#x3059;&#x3002;
+
+&gt; Free on Free &#x307E;&#x3067;&#x306B;&#x306F;&#x4F55;&#x3068;&#x304B;&#x3002; :-)
+
+## &#x51FA;&#x5F35;&#x3067;&#x884C;&#x3051;&#x306A;&#x3044;&#x306A;&#x3041;&#x3002;&#x6B8B;&#x5FF5;&#x3002;
+
+&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2026;&#x2026;&#x2026;&#x2025;&#x30FB;&#x30FB; &#x30FB; &#x3000;&#x30FB;&#x3000;&#xFF0E;
+  &#x5143;&#x6728; &#x9855;&#x5F18; / Akihiro Motoki                &#x3000;&#x3000;&#x30FB;      &#x2606;
+&#x3000;E-mail: mokkun@xxxxxxxxx, mokkun@xxxxxxxxxxx  &#x3000;&#x30FB;&#x3000;  .
+          motoki@xxxxxxxxxxxxxxxxx                  &#x30FB;&#x30FB;
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00276" href="msg00276.html">[mhc:00277] Re: mhc-misc-sub</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00273.html">[mhc:00274] Re: completion for category input?</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00275.html">[mhc:00276] &#x7B2C;&#x4E00;&#x30FB;&#x7B2C;&#x4E09;&#x706B;&#x66DC;</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00263.html">[mhc:00264] completion for category input?</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00276.html">[mhc:00277] Re: mhc-misc-sub</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00274"><strong>Date</strong></a></li>
+<li><a href="threads.html#00274"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

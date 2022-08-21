@@ -1,0 +1,170 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00339] Re: ruby/gtk on win32 -->
+<!--X-From-R13: Vvqrlhxv EVWDOW (=?vfb&#45;2022&#45;wc?P?UlDQD3WjLw0bAHCoYSW=?=) <fuvenvNeqzt.ztpf.zrv.pb.wc> -->
+<!--X-Date: Wed, 12 Jan 2000 19:32:15 +0900 -->
+<!--X-Message-Id: 20000112.193124.46110434.shirai@rdmg.mgcs.mei.co.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 20000104234020S.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Reference: 20000107.124044.74105033.shirai@rdmg.mgcs.mei.co.jp -->
+<!--X-Reference: 20000107132726L.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Reference: 20000111.210555.85412886.kurisu@swlab.csce.kyushu&#45;u.ac.jp -->
+<!--X-Reference: 20000112.153412.06996918.shirai@rdmg.mgcs.mei.co.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00339] Re: ruby/gtk on win32</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00337.html">Date Prev</a>][<a href="msg00339.html">Date Next</a>][<a href="msg00331.html">Thread Prev</a>][<a href="msg00571.html">Thread Next</a>][<a href="maillist.html#00338">Date Index</a>][<a href="threads.html#00338">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00339] Re: ruby/gtk on win32</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00339] Re: ruby/gtk on win32</li>
+<li><em>From</em>: Hideyuki SHIRAI (&#x767D;&#x4E95;&#x79C0;&#x884C;) &lt;<a href="mailto:shirai@DOMAIN.HIDDEN">shirai@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Wed, 12 Jan 2000 19:32:15 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20000112.153412.06996918.shirai@DOMAIN.HIDDEN">20000112.153412.06996918.shirai@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Posted</em>: Wed, 12 Jan 2000 19:31:24 +0900 (JST)</li>
+<li><em>References</em>: &lt;<a href="mailto:20000104234020S.nom@DOMAIN.HIDDEN">20000104234020S.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20000107.124044.74105033.shirai@DOMAIN.HIDDEN">20000107.124044.74105033.shirai@xxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20000107132726L.nom@DOMAIN.HIDDEN">20000107132726L.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20000111.210555.85412886.kurisu@DOMAIN.HIDDEN">20000111.210555.85412886.kurisu@xxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20000112.153412.06996918.shirai@DOMAIN.HIDDEN">20000112.153412.06996918.shirai@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>From: Hideyuki SHIRAI (&#x767D;&#x4E95;&#x79C0;&#x884C;) &lt;shirai@xxxxxxxxxxxxxxxxxxx&gt; &#x66F0;&#x304F;
+Subject: [mhc:00328] Re: ruby/gtk on win32
+Message-ID: &lt;20000112.153412.06996918.shirai@xxxxxxxxxxxxxxxxxxx&gt;
+Date: Wed, 12 Jan 2000 15:35:09 +0900
+
+&#x767D;&#x4E95;&gt; &#x3057;&#x304B;&#x3057;&#x3001;gemcal &#x4EE5;&#x5916;&#x306F;&#x3001;today(mail &#x3082;&#x9001;&#x308C;&#x305F;)&#x3001;gp2mhc&#x3001;mhc-alarm
+&#x767D;&#x4E95;&gt; &#x3068;&#x307F;&#x3093;&#x306A;&#x52D5;&#x304D;&#x307E;&#x3057;&#x305F;&#x3002;&#x3042;&#x308A;&#x304C;&#x3068;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;&#x3002;&#x82E5;&#x5E72;&#x4E0D;&#x5177;&#x5408;&#x304C;&#x3042;&#x308B;&#x306E;&#x3067;&#x3001;
+&#x767D;&#x4E95;&gt; &#x305D;&#x308C;&#x306F;&#x307E;&#x305F;&#x5225;&#x4FBF;&#x3067;&#x3002;
+
+&#x305D;&#x306E; 1. &#x5B9F;&#x9A13;&#x4E2D;&#x306E; mhc-alarm &#x306B;&#x95A2;&#x3057;&#x3066;
+
+(defvar mhc-cs-alarm
+  (if (&gt;= emacs-major-version 20) 'undecided *autoconv*))
+
+(defun mhc-alarm-startup ()
+   &lt;&lt;snip&gt;&gt;
+      (set-process-coding-system mhc-alarm-process mhc-cs-alarm mhc-cs-alarm)
+
+&#x3067;(&#x624B;&#x6301;&#x3061;&#x306E;)&#x3069;&#x3093;&#x306A; Emacs &#x3067;&#x3082;&#x52D5;&#x304D;&#x307E;&#x3057;&#x305F;&#x3002;&#x305F;&#x3060;&#x3057;&#x3001;Windows&#x7CFB;(Mule
+for Win32, Meadow &#x3068;&#x3082;)&#x3067;&#x306F;&#x4E43;&#x6751;&#x3055;&#x3093;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3060;&#x3068;&#x4E00;&#x304B;&#x6240;&#x4E0D;&#x5177;&#x5408;&#x304C;&#x3042;&#x3063;
+&#x3066;&#x3001;
+
+	 (make-frame `(
+		       (visibility             . nil)
+		       )))
+   &lt;&lt;snip&gt;&gt;
+    (modify-frame-parameters frame '((visibility . t)))
+
+&#x3068;&#x3084;&#x308B;&#x3068;&#x3001;&#x4F5C;&#x3063;&#x305F; frame &#x304C;&#x4E00;&#x77AC;&#x3067;&#x6D88;&#x3048;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3059;&#x3002;Meadow &#x306E; frame
+&#x5468;&#x308A;&#x306F;&#x3001;&#x69CB;&#x9020;&#x4E0A;&#x3001;UNIX &#x3068;&#x82E5;&#x5E72;&#x9055;&#x3046;&#x305D;&#x3046;&#x306A;&#x306E;&#x3067;&#x3001;&#x3053;&#x308C;&#x306F;&#x3053;&#x3046;&#x3044;&#x3046;&#x3082;&#x306E;&#x3068;
+&#x601D;&#x3063;&#x305F;&#x65B9;&#x304C;&#x826F;&#x3044;&#x307F;&#x305F;&#x3044;&#x3067;&#x3059;&#x3002;make-frame &#x3059;&#x308B;&#x3068;&#x304D;&#x306B; visibility &#x3092;&#x4F7F;
+&#x308F;&#x306A;&#x3044;&#x65B9;&#x304C;&#x826F;&#x3044;&#x3067;&#x3059;&#x3002;
+
+    (modify-frame-parameters 
+     frame
+     `((left  . ,(/ (- (x-display-pixel-width)
+		       (frame-pixel-width  frame)) 2))
+       (top   . ,(/ (- (x-display-pixel-height)
+		       (frame-pixel-height frame)) 2))))
+
+Meadow &#x3067;&#x306F;&#x52D5;&#x304D;&#x307E;&#x3057;&#x305F;&#x304C;&#x3001;&#x7D50;&#x5C40; visibility =&gt; nil &#x3067;&#x306F;&#x3060;&#x3081;&#x306A;&#x306E;&#x3067;&#x3001;
+&#x6700;&#x521D;&#x304B;&#x3089;&#x771F;&#x4E2D;&#x306B;&#x4F5C;&#x3063;&#x3066;&#x3057;&#x307E;&#x3063;&#x305F;&#x65B9;&#x304C;&#x826F;&#x3044;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;
+
+&#x518D;&#x5EA6;&#x3001;&#x5B9F;&#x9A13;&#x3057;&#x3066;&#x307F;&#x3066;&#x767A;&#x898B;&#x3057;&#x305F;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;WinNT &#x3067; 'LANG=ja' &#x3092;&#x5165;&#x308C;
+&#x305F;&#x3089;&#x3001;&#x65E5;&#x4ED8;&#x306F; SJIS&#x3001;&#x672C;&#x6587;&#x306F; EUC &#x3067;&#x6DF7;&#x3058;&#x3063;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3057;&#x305F;&#x3002;&#x3042;&#x3041;&#x3001;&#x306A;&#x3093;
+&#x3066;&#x3081;&#x3093;&#x3069;&#x304F;&#x3055;&#x3044;&#x3093;&#x3060;&#x3041;&#x3002;
+
+
+&#x305D;&#x306E; 2. &#x6BCE;&#x5EA6;&#x304A;&#x306A;&#x3058;&#x307F; FAT &#x306E; directory &#x66F4;&#x65B0;&#x6642;&#x9593;&#x554F;&#x984C;
+
+gp2mhc &#x306E;&#x5B9F;&#x9A13;&#x3092;&#x3057;&#x3066;&#x306F;&#x3058;&#x3081;&#x3066;&#x6C17;&#x4ED8;&#x3044;&#x305F;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;mhc &#x3082; Mew &#x3068;&#x540C;&#x69D8;&#x306B;
+(nth 5 (file-attributes slot)) &#x3067;&#x65B0;&#x3057;&#x3055;&#x3092;&#x5224;&#x5B9A;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x304C;&#x3001;FAT
+&#x3060;&#x3068;&#x666E;&#x901A;&#x306F; directory &#x306E;&#x6642;&#x9593;&#x304C;&#x66F4;&#x65B0;&#x3067;&#x304D;&#x306A;&#x3044;&#x305F;&#x3081;&#x3001;
+
+&#x30FB;C-cd &#x3067;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x6D88;&#x3057;&#x3066;&#x3082; summary &#x304C;&#x66F4;&#x65B0;&#x3055;&#x308C;&#x306A;&#x3044;&#x3002;
+  =&gt; &#x3053;&#x308C;&#x306F; elisp &#x3067;&#x3069;&#x3046;&#x3068;&#x3067;&#x3082;&#x306A;&#x308B;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x304C;&#x3002;
+&#x30FB;gp2mhc &#x3067;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x5165;&#x308C;&#x3066;&#x3082; summary &#x304C;&#x66F4;&#x65B0;&#x3055;&#x308C;&#x306A;&#x3044;&#x3002;
+&#x30FB;(&#x304A;&#x305D;&#x3089;&#x304F;) gemcal &#x3067;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x3044;&#x3058;&#x3063;&#x3066;&#x3082; summary &#x304C;&#x66F4;&#x65B0;&#x3055;&#x308C;&#x306A;&#x3044;&#x3002;
+  =&gt; elisp &#x304B;&#x3089;&#x306F;&#x3069;&#x3046;&#x3057;&#x3088;&#x3046;&#x3082;&#x306A;&#x3044;&#x3002;
+
+&#x3068;&#x3044;&#x3046;&#x3088;&#x3046;&#x306A;&#x5BC2;&#x3057;&#x3044;&#x3053;&#x3068;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;&#x5317;&#x53E3;&#x3055;&#x3093;&#x306E; utime.exe &#x3092;&#x4F7F;&#x3063;&#x3066;
+&#x3082;&#x3044;&#x3044;&#x3093;&#x3067;&#x3059;&#x304C;&#x3001;Win98 &#x3068;&#x304B; Win2000 &#x3067;&#x306F;&#x52D5;&#x4F5C;&#x304C;&#x3068;&#x3063;&#x3066;&#x3082;&#x4E0D;&#x5B89;&#x5B9A;&#x3089;&#x3057;
+&#x3044;&#x3093;&#x3067;&#x3059;&#x3002;&#x3055;&#x3066;&#x3055;&#x3066;&#x3001;&#x3069;&#x3046;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x304B;&#x306D;&#x3047;&#x3002;
+
+P.S. &#x4ECA;&#x3001;&#x6C17;&#x4ED8;&#x3044;&#x305F; 
+
+(defun mhc-input-location (&amp;optional prompt default)
+  (interactive)
+  (read-from-minibuffer  (or prompt &quot;Location: &quot;)
+			 (or default &quot;&quot;)
+			 nil nil 'mhc-location))
+                                  ~~~~~~~~~~~~ mhc-location-hist
+
+-- 
+&#x767D;&#x4E95;&#x79C0;&#x884C; (<a  rel="nofollow" href="mailto:shirai@xxxxxxxxxxxxxxxxxxx">mailto:shirai@xxxxxxxxxxxxxxxxxxx</a>)
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00308" href="msg00308.html">[mhc:00309] mhc-snap20000104</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+<li><strong><a name="00309" href="msg00309.html">[mhc:00310] Re: mhc-snap20000104</a></strong>
+<ul><li><em>From:</em> &#x767D;&#x4E95;&#x79C0;&#x884C;</li></ul></li>
+<li><strong><a name="00310" href="msg00310.html">[mhc:00311] Re: mhc-snap20000104</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+<li><strong><a name="00323" href="msg00323.html">[mhc:00324] ruby/gtk on win32</a></strong>
+<ul><li><em>From:</em> &#x30AF;&#x30EA;&#x30B9;</li></ul></li>
+<li><strong><a name="00327" href="msg00327.html">[mhc:00328] Re: ruby/gtk on win32</a></strong>
+<ul><li><em>From:</em> &#x767D;&#x4E95;&#x79C0;&#x884C;</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00337.html">[mhc:00338] Re: ruby for Windows.</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00339.html">[mhc:00340] Re: ruby/gtk on win32</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00331.html">[mhc:00332] Re: today highlight problem</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00571.html">[mhc:00572] Re: mhc-snap20000427.tar.gz</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00338"><strong>Date</strong></a></li>
+<li><a href="threads.html#00338"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

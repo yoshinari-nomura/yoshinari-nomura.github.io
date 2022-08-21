@@ -1,0 +1,144 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01149] Re: emacs/mhc&#45;mime.el and... -->
+<!--X-From-R13: Yrvvpuv Ehmhxv <xrvvpuvNananc.bet> -->
+<!--X-Date: 13 Dec 2000 11:49:52 +0900 -->
+<!--X-Message-Id: ug0jtdohb.fsf@kei.nanap.org -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: uy9xnz618.fsf@kei.nanap.org -->
+<!--X-Reference: fzk8964eev.wl@elmo.dq.isl.ntt.co.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01149] Re: emacs/mhc-mime.el and...</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01147.html">Date Prev</a>][<a href="msg01149.html">Date Next</a>][<a href="msg01147.html">Thread Prev</a>][<a href="msg01150.html">Thread Next</a>][<a href="maillist.html#01148">Date Index</a>][<a href="threads.html#01148">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01149] Re: emacs/mhc-mime.el and...</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01149] Re: emacs/mhc-mime.el and...</li>
+<li><em>From</em>: Keiichi Suzuki &lt;<a href="mailto:keiichi@DOMAIN.HIDDEN">keiichi@xxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: 13 Dec 2000 11:49:52 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:fzk8964eev.wl@DOMAIN.HIDDEN">fzk8964eev.wl@xxxxxxxxxxxxxxxxxxxxx</a>&gt; (Yuuichi Teranishi's message of &quot;Tue, 12 Dec 2000 10:27:36 +0900&quot;)</li>
+<li><em>Organization</em>: Nanap</li>
+<li><em>References</em>: &lt;<a href="mailto:uy9xnz618.fsf@DOMAIN.HIDDEN">uy9xnz618.fsf@xxxxxxxxxxxxx</a>&gt; &lt;<a href="mailto:fzk8964eev.wl@DOMAIN.HIDDEN">fzk8964eev.wl@xxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Sender</em>: <a href="mailto:keiichi@DOMAIN.HIDDEN">keiichi@xxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: Nana-gnus/7.1.0.24 EMY/1.13.9 (Art is long, life is short) FLIM/1.14.0 (Ninokuchi) APEL/10.2 Emacs/20.7 (i386-*-nt5.0.2195) MULE/4.1 (AOI) Meadow/1.13-Beta1++ (TANAHASHI:61)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&gt;&gt;&gt;&gt;&gt; mhc &#x306E; No. 01148
+&gt;&gt;&gt;&gt;&gt; Message-Id: &lt;fzk8964eev.wl@xxxxxxxxxxxxxxxxxxxxx&gt; &#x3067;&#x3001;
+&gt;&gt;&gt;&gt;&gt; &quot;&#x5BFA;&quot; == Yuuichi Teranishi &lt;teranisi@xxxxxxxxxxxxx&gt;&#x3055;&#x307E;&#x66F0;&#x304F;...
+
+&#x5BFA;&gt; &#x4F55;&#x304C;&#x554F;&#x984C;&#x306A;&#x306E;&#x304B;&#x3088;&#x304F;&#x308F;&#x304B;&#x3063;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x304C;&#x3001;
+&#x5BFA;&gt; Nana7 &#x306B;&#x306F; `mhc-mime-get-raw-buffer' &#x306B;&#x76F8;&#x5F53;&#x3059;&#x308B;&#x6A5F;&#x80FD;&#x304C;&#x306A;&#x3044;
+&#x5BFA;&gt; &#x3068;&#x3044;&#x3046;&#x3053;&#x3068;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#xFF1F;
+
+&#x3044;&#x3048;&#x3001; raw buffer &#x81EA;&#x4F53;&#x306F;&#x3042;&#x308B;&#x306E;&#x3067;&#x3059;&#x304C;...
+
+Nana7 &#x3067;&#x306F;&#x5B9F;&#x9A13;&#x7684;&#x306B; raw data &#x306E; parse &#x3092;&#x81EA;&#x524D;&#x3067;&#x3084;&#x3063;&#x3066;&#x3001;&#x72EC;&#x81EA;&#x306E; 
+message structure &#x3092;&#x4F5C;&#x308B;&#x3068;&#x3044;&#x3046;&#x3053;&#x3068;&#x3092;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+
+&#x305D;&#x306E;&#x305F;&#x3081; raw-buffer &#x3092; SEMI/FLIM &#x304C;&#x76F4;&#x63A5;&#x53C2;&#x7167;&#x3059;&#x308B;&#x3053;&#x3068;&#x306F;&#x60F3;&#x5B9A;&#x3057;&#x3066;&#x304A;
+&#x3089;&#x305A;&#x3001; mime-raw-representation-type-alist &#x306B;
+gnus-original-article-mode &#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3001;&#x3053;&#x306E;&#x72B6;&#x614B;&#x3067;
+mime-view-buffer &#x3092;&#x547C;&#x3073;&#x51FA;&#x3059;&#x3068;&#x3001;default &#x306E; representation type &#x3067;
+&#x3042;&#x308B;&#x3001; cooked &#x304C;&#x9078;&#x629E;&#x3055;&#x308C;&#x3066;&#x3057;&#x307E;&#x3044;&#x3001;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306E;&#x5185;&#x5BB9;&#x304C; decode &#x3055;&#x308C;
+&#x305A;&#x306B;&#x8868;&#x793A;&#x3055;&#x308C;&#x3066;&#x3057;&#x307E;&#x3046;&#x3068;&#x3044;&#x3046;&#x3053;&#x3068;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;
+
+;; &#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306E;&#x8868;&#x793A;&#x306B; Gnus &#x30AA;&#x30EA;&#x30B8;&#x30CA;&#x30EB;&#x306E;&#x3082;&#x306E;&#x3082;&#x306A;&#x308B;&#x3079;&#x304F; Gnus &#x306E;&#x5909;
+;; &#x66F4;&#x90E8;&#x5206;&#x3092;&#x6E1B;&#x3089;&#x3057;&#x3066;&#x4F7F;&#x7528;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x305F;&#x304B;&#x3063;&#x305F;&#x305F;&#x3081;&#x3001;&#x305D;&#x306E;&#x3088;&#x3046;&#x306B;&#x3057;
+;; &#x3066;&#x3044;&#x307E;&#x3059;&#x3002;&#x304C;&#x3001;&#x5B9F;&#x88C5;&#x304C;&#x4E2D;&#x9014;&#x534A;&#x7AEF;&#x3067;&#x3001;&#x306A;&#x306B;&#x304B;&#x3068;&#x8ABF;&#x5B50;&#x304C;&#x60AA;&#x3044;&#x90E8;&#x5206;&#x304C;&#x3042;&#x308A;
+;; &#x307E;&#x3059;&#x306E;&#x3067;&#x3001;&#x4ECA;&#x3068;&#x306A;&#x3063;&#x3066;&#x306F;&#x3042;&#x307E;&#x308A;&#x3088;&#x308D;&#x3057;&#x304F;&#x306A;&#x3044;&#x304B;&#x3063;&#x305F;&#x3068;&#x601D;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002; 
+
+&#x89E3;&#x6C7A;&#x65B9;&#x6CD5;&#x3068;&#x3057;&#x3066;&#x306F;&#x3001; Nana7 &#x306E;&#x65B9;&#x3067;
+mime-raw-representation-type-alist &#x3092;&#x8A2D;&#x5B9A;&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x306E;&#x304C;&#x7C21;&#x5358;
+&#x3060;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3057;&#x3001; SEMI/FLIM &#x7684;&#x306B;&#x306F;&#x8A2D;&#x5B9A;&#x3057;&#x3066;&#x7F6E;&#x3044;&#x305F;&#x65B9;&#x304C;&#x4FBF;&#x5229;&#x304B;&#x3082;&#x3057;&#x308C;
+&#x306A;&#x3044;&#x3068;&#x306F;&#x601D;&#x3046;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001; mhc-mime.el &#x306B;&#x95A2;&#x3057;&#x3066;&#x3001;&#x3061;&#x3087;&#x3063;&#x3068;&#x7591;&#x554F;&#x304C;&#x3042;&#x308A;
+&#x307E;&#x3059;&#x3002;
+
+1. &#x5C11;&#x306A;&#x304F;&#x3068;&#x3082; gnus &#x3067;&#x306F; mhc-gnus-mime-get-raw-buffer &#x304C;&#x5B8C;&#x4E86;&#x3057;&#x305F;
+   &#x6642;&#x70B9;&#x3067;&#x3001;&#x3059;&#x3067;&#x306B; message structure &#x304C;&#x751F;&#x6210;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x306F;&#x305A;&#x3067;&#x3059;&#x306E;&#x3067;&#x3001; 
+   message structure &#x3092;&#x518D;&#x751F;&#x6210;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x306F;&#x306A;&#x3044;&#x306E;&#x3067;&#x306F;&#x306A;&#x3044;&#x304B;&#x3068;&#x601D;&#x3044;&#x307E;
+   &#x3059;&#x3002;(mime-view-buffer &#x3063;&#x3066;&#x5FC5;&#x305A; message structure &#x3092;&#x751F;&#x6210;&#x3059;&#x308B;&#x3088;
+   &#x3046;&#x306B;&#x898B;&#x3048;&#x307E;&#x3059;&#x3002;)
+
+2. mhc-mime/draft-reedit &#x3092;&#x898B;&#x305F;&#x3068;&#x3053;&#x308D;&#x3001; mhc-mime-get-raw-buffer 
+   &#x3067;&#x5F97;&#x3089;&#x308C;&#x308B; buffer &#x306E;&#x5185;&#x5BB9;&#x306F;&#x3001;mime-view-buffer &#x7684;&#x306B; cooked &#x3067;&#x306F;
+   &#x306A;&#x304F;&#x3066; binary &#x306E;&#x3082;&#x306E;&#x304C;&#x5F97;&#x3089;&#x308C;&#x308B;&#x3053;&#x3068;&#x3092;&#x4EEE;&#x5B9A;&#x3057;&#x3066;&#x3044;&#x308B;&#x3088;&#x3046;&#x306B;&#x898B;&#x3048;&#x308B;
+   &#x306E;&#x3067;&#x3059;&#x304C;&#x3001;&#x305D;&#x3046;&#x3067;&#x3042;&#x308C;&#x3070;&#x3001; mime-view-buffer &#x306E;&#x547C;&#x3073;&#x51FA;&#x3057;&#x6642;&#x306B;
+   representation-type &#x3092; binary &#x306B;&#x6307;&#x5B9A;&#x3057;&#x3066;&#x547C;&#x3073;&#x51FA;&#x3059;&#x65B9;&#x304C;&#x826F;&#x3044;&#x306E;&#x3067;
+   &#x306F;&#x306A;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;?
+
+;; &#x3059;&#x307F;&#x307E;&#x305B;&#x3093;&#x3002;&#x524D;&#x56DE;&#x306E;&#x30E1;&#x30A4;&#x30EB;&#x3067;&#x9001;&#x3063;&#x305F; patch &#x306B;&#x306F;&#x30D0;&#x30B0;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3001;&#x3082;
+;; &#x3057;&#x3001;&#x3053;&#x306E;&#x6848;&#x3092;&#x63A1;&#x7528;&#x3057;&#x3066;&#x3044;&#x305F;&#x3060;&#x3051;&#x308B;&#x3088;&#x3046;&#x3067;&#x3042;&#x308C;&#x3070;&#x3001;&#x4FEE;&#x6B63;&#x3057;&#x305F;&#x3082;&#x306E;&#x3092;&#x518D;
+;; &#x5EA6;&#x9001;&#x308A;&#x307E;&#x3059;&#x3002;
+-- 
+&#x9234;&#x6728;&#x572D;&#x4E00; / keiichi@xxxxxxxxx
+PGP finger print (DH/DSS)
+0B32 B37E 6DE9 3BC1 68A4  4089 7AAF 2B03 ECBD 614B
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01150" href="msg01150.html">[mhc:01151] Re: emacs/mhc-mime.el and...</a></strong>
+<ul><li><em>From:</em> Yuuichi Teranishi</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="01146" href="msg01146.html">[mhc:01147] emacs/mhc-mime.el and...</a></strong>
+<ul><li><em>From:</em> Keiichi Suzuki</li></ul></li>
+<li><strong><a name="01147" href="msg01147.html">[mhc:01148] Re: emacs/mhc-mime.el and...</a></strong>
+<ul><li><em>From:</em> Yuuichi Teranishi</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01147.html">[mhc:01148] Re: emacs/mhc-mime.el and...</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01149.html">[mhc:01150] Re: emacs/mhc-mime.el and...</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01147.html">[mhc:01148] Re: emacs/mhc-mime.el and...</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01150.html">[mhc:01151] Re: emacs/mhc-mime.el and...</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01148"><strong>Date</strong></a></li>
+<li><a href="threads.html#01148"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

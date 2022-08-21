@@ -1,0 +1,126 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00115] patch for tkcalender.rb -->
+<!--X-From-R13: Khfhxr @AUGQVW <abthpuvNpfpr.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Fri, 25 Jun 1999 09:38:34 +0900 -->
+<!--X-Message-Id: 19990625093832H.noguchi@csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00115] patch for tkcalender.rb</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00113.html">Date Prev</a>][<a href="msg00115.html">Date Next</a>][<a href="msg00118.html">Thread Prev</a>][<a href="msg00115.html">Thread Next</a>][<a href="maillist.html#00114">Date Index</a>][<a href="threads.html#00114">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00115] patch for tkcalender.rb</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00115] patch for tkcalender.rb</li>
+<li><em>From</em>: Yusuke NOGUCHI &lt;<a href="mailto:noguchi@DOMAIN.HIDDEN">noguchi@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Fri, 25 Jun 1999 09:38:34 +0900</li>
+<li><em>Posted</em>: Fri, 25 Jun 1999 09:38:32 +0900</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x306E;&#x3050;&#x3061;@&#x4E5D;&#x5927; &#x3067;&#x3059;&#x3002;
+
+tkcalender.rb &#x3092; icon &#x5316;&#x3057;&#x305F;&#x3070;&#x3042;&#x3044;&#x3001;&#x30BF;&#x30A4;&#x30C8;&#x30EB;&#x30D0;&#x30FC;&#x306E;&#x3068;&#x3053;&#x308D;&#x304C;&#x7A7A;&#x3067;&#x5C11;&#x3057;&#x5BC2;&#x3057;
+&#x3044;&#x3067;&#x3059;&#x3002;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x3057;&#x3066;&#x3044;&#x305F;&#x3060;&#x3051;&#x7121;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#x3002;
+
+&#x5143;&#x306E;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x306F;&#x3001;
+## $Id: tkcalendar.rb,v 1.14 1999/06/22 10:16:28 nom Exp $
+##
+## Version: Tkcalendar 0.10
+##
+## Created: May  1, 1999
+## Revised: May 13, 1999
+&#x3067;&#x3059;&#x3002;
+
+</pre><pre>*** tkcalendar.rb.old	Tue Jun 22 20:08:08 1999
+--- tkcalendar.rb	Fri Jun 25 01:21:14 1999
+***************
+*** 165,170 ****
+--- 165,171 ----
+    def scan(yyyy, mm)
+      w = day_of_week(yyyy, mm, 1)
+      @parent .title(&quot;#{yyyy}&#x5E74; #{mm}&#x6708;&quot;)
++     @parent .iconname(&quot;#{yyyy}&#x5E74; #{mm}&#x6708;&quot;)
+      mFrame = TkFrame .new(self){pack('fill' =&gt; 'both', 'expand' =&gt; 'y')}
+      dListbox = []
+  
+***************
+*** 845,850 ****
+--- 846,852 ----
+  def mkText(path)
+    TkToplevel.new {|t|
+      title &quot;Schedule: #{path}&quot;
++     iconname &quot;Schedule: #{path}&quot;
+  
+      TkFrame.new(t){|f|
+        pack('fill' =&gt; 'both', 'expand' =&gt; 'yes')
+***************
+*** 869,874 ****
+--- 871,877 ----
+  ##
+  root = Tk .root
+  root .title 'TkCalendar'
++ root .iconname 'TkCalendar'
+  root .geometry(&quot;100x125+0+0&quot;)
+  
+  m = MonthList .new(p1 = TkToplevel .new)
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00115" href="msg00115.html">[mhc:00116] Re: patch for tkcalender.rb</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00113.html">[mhc:00114] Re: &#x30BD;&#x30FC;&#x30C8;&#x3059;&#x308B;&#x3068;&#x30E1;&#x30FC;&#x30EB;&#x304C;&#x6D88;&#x3048;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3059; </a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00115.html">[mhc:00116] Re: patch for tkcalender.rb</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00118.html">[mhc:00119] Re: repeated entry</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00115.html">[mhc:00116] Re: patch for tkcalender.rb</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00114"><strong>Date</strong></a></li>
+<li><a href="threads.html#00114"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

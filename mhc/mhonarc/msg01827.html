@@ -1,0 +1,129 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01828] bug(?) report -->
+<!--X-From-R13: @AUGQVW Khfhxr <abthabthNzin.ovtybor.ar.wc> -->
+<!--X-Date: Fri, 06 Jun 2003 12:01:14 +0900 (JST) -->
+<!--X-Message-Id: 20030606.120114.56002152.y&#45;noguchi@da.jp.nec.com -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01828] bug(?) report</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01826.html">Date Prev</a>][<a href="msg01828.html">Date Next</a>][<a href="msg01825.html">Thread Prev</a>][<a href="msg01828.html">Thread Next</a>][<a href="maillist.html#01827">Date Index</a>][<a href="threads.html#01827">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01828] bug(?) report</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01828] bug(?) report</li>
+<li><em>From</em>: NOGUCHI Yusuke &lt;<a href="mailto:nogunogu@DOMAIN.HIDDEN">nogunogu@xxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Fri, 06 Jun 2003 12:01:14 +0900 (JST)</li>
+<li><em>Organization</em>: Network Services Platform Tech. Gr., Networking Research Lab., NEC Co.</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x91CE;&#x53E3;&#x3067;&#x3059;&#x3002;
+&#x6BCE;&#x5EA6;&#x306E;&#x4E8B;&#x306A;&#x304C;&#x3089;&#x3001;&#x73FE;&#x8C61;&#x5831;&#x544A;&#x3060;&#x3051;&#x3067;&#x7533;&#x3057;&#x8A33;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;
+
+X-Mailer: Mew version 3.3rc1 on Emacs 21.1 / Mule 5.0 (&#x8CE2;&#x6728;)(Meadow1.99b) 
+mhc &#x306E;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x306F;...&#x5FD8;&#x308C;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3057;&#x305F;&#x3002;ChangeLog &#x306E;&#x5148;&#x982D;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x3068;&#x304A;
+&#x308A;&#x3067;&#x3059;&#x3002;cvs &#x3067;&#x3068;&#x3063;&#x3066;&#x3053;&#x308C;&#x308B;&#x74B0;&#x5883;&#x306B;&#x7121;&#x3044;&#x305F;&#x3081;&#x3001;&#x6700;&#x65B0;&#x3067;&#x306F;&#x89E3;&#x6C7A;&#x3057;&#x3066;&#x3044;&#x308B;&#x554F;&#x984C;&#x304B;&#x3082;
+&#x3057;&#x308C;&#x307E;&#x305B;&#x3093;&#x3002;
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+2003-05-12  Hideyuki SHIRAI  &lt;shirai@xxxxxxxxxxxxx&gt;
+
+	* emacs/mhc.el (mhc-scan-month): Use format-string. Thanks to
+	Yoichi NAKAYAMA &lt;yoichi@xxxxxxxxx&gt; for his suggestion.
+	
+	* emacs/mhc-cvs.el (mhc-cvs/unknown-file): Correct the wrong use
+	of `message'.  Thanks to Yoichi NAKAYAMA &lt;yoichi@xxxxxxxxx&gt; for
+	his suggestion.
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A; From: &#x306E;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x3092; import &#x3057;&#x3088;&#x3046;&#x3068;&#x3059;&#x308B;&#x3068;&#x3001;
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+From: &quot;&#x65E5;&#x672C;&#x592A;&#x90CE;&quot; &lt;nihon@xxxxxxx&gt;
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+mhc &#x304B;&#x3089;&quot;Draft buffer has some illegal headers. Please fix it.&quot;&#x3068;&#x3044;&#x308F;
+&#x308C;&#x3001;import &#x306B;&#x5931;&#x6557;&#x3057;&#x307E;&#x3059;&#x3002;
+
+&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x3001;&#x624B;&#x3067;&#x4FEE;&#x6B63;&#x3059;&#x308B;&#x3068;&#x6B63;&#x5E38;&#x306B; import &#x3067;&#x304D;&#x307E;&#x3057;&#x305F;&#x3002;
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+From: &#x65E5;&#x672C;&#x592A;&#x90CE; &lt;nihon@xxxxxxx&gt;
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+&#x691C;&#x8A3C;&#x3057;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x304C;&#x3001;To: &#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x30C9;&#x3067;&#x3082;&#x540C;&#x69D8;&#x306E;&#x554F;&#x984C;&#x304C;&#x767A;&#x751F;&#x3059;&#x308B;&#x306E;&#x3067;&#x306F;&#x306A;&#x3044;&#x3067;
+&#x3057;&#x3087;&#x3046;&#x304B;?
+
+P.S.
+warning &#x3067;&#x300C;&#x3069;&#x306E;&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x30C9;&#x304C;&#x60AA;&#x3044;&#x306E;&#x304B;&#x300D;&#x3092;&#x660E;&#x793A;&#x3057;&#x3066;&#x304F;&#x308C;&#x308B;&#x3068;&#x3001;&#x539F;&#x56E0;&#x7A76;&#x660E;&#x304C;&#x3057;
+&#x6613;&#x3044;&#x3068;&#x601D;&#x3044;&#x307E;&#x3057;&#x305F;&#x3002;&#x4ECA;&#x56DE;&#x306F;&#x3001;&#x5404;&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x30C9;&#x3092;&#x3072;&#x3068;&#x3064;&#x305A;&#x3064;&#x6D88;&#x3057;&#x3066;&#x3001;From: &#x306B;&#x884C;&#x304D;
+&#x7740;&#x304D;&#x307E;&#x3057;&#x305F;
+
+P.P.S.
+&#x6BCE;&#x5EA6;&#x306E;&#x3053;&#x3068;&#x306A;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;&#x5831;&#x544A;&#x3059;&#x308B;&#x3068;&#x304D;&#x306B;&#x4F55;&#x3092;&#x6301;&#x3063;&#x3066; mhc &#x306E;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x3092;&#x78BA;&#x8A8D;
+&#x3059;&#x308C;&#x3070;&#x826F;&#x3044;&#x304B;&#x826F;&#x304F;&#x308F;&#x304B;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;
+mhc-version &#x306E;&#x5024;&#x306F;&#x305A;&#x3063;&#x3068; &quot;mhc version unknown&quot; &#x3068;&#x306A;&#x3063;&#x3066;&#x304A;&#x308A;&#x307E;&#x3059;&#x304C;&#x3001;
+tarball &#x3068;&#x3057;&#x3066;&#x516C;&#x958B;&#x3057;&#x3066;&#x3042;&#x308B;&#x5206;&#x306B;&#x3064;&#x3044;&#x3066;&#x306F;&#x3001;&#x4F55;&#x304B;&#x4E00;&#x610F;&#x306B;&#x540C;&#x5B9A;&#x3067;&#x304D;&#x308B;&#x5024;&#x3092;&#x5165;&#x308C;&#x3066;
+&#x3044;&#x305F;&#x3060;&#x304F;&#x3088;&#x3046;&#x306B;&#x306F;&#x3067;&#x304D;&#x306A;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#x3002;
+
+-- 
+nogunogu@xxxxxxxxxxxxxxxxx
+
+
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01828" href="msg01828.html">[mhc:01829] Re: bug(?) report</a></strong>
+<ul><li><em>From:</em> &#x767D;&#x4E95;&#x79C0;&#x884C;</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01826.html">[mhc:01827] Re: mhc-0.25.1 on T-gnus ?</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01828.html">[mhc:01829] Re: bug(?) report</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01825.html">[mhc:01826] Re: Postscript &#x306E;&#x751F;&#x6210;</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01828.html">[mhc:01829] Re: bug(?) report</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01827"><strong>Date</strong></a></li>
+<li><a href="threads.html#01827"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

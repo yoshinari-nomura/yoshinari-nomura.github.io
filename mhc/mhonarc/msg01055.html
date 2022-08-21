@@ -1,0 +1,128 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01056] Re: clicking menu bar (with mhc&#45;cvs) -->
+<!--X-From-R13: FEGQVWKO [nfngbfuv <gfhpuvlnNcvar.xhrr.xlbgb&#45;h.np.wc> -->
+<!--X-Date: 06 Oct 2000 14:02:19 +0900 -->
+<!--X-Message-Id: mpaem1u8sv8.fsf@azalea.kuee.kyoto&#45;u.ac.jp -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Reference: 86snqavbnx.wl@e&#45;ppp3.eken.phys.nagoya&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01056] Re: clicking menu bar (with mhc-cvs)</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01054.html">Date Prev</a>][<a href="msg01056.html">Date Next</a>][<a href="msg01054.html">Thread Prev</a>][<a href="msg01056.html">Thread Next</a>][<a href="maillist.html#01055">Date Index</a>][<a href="threads.html#01055">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01056] Re: clicking menu bar (with mhc-cvs)</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01056] Re: clicking menu bar (with mhc-cvs)</li>
+<li><em>From</em>: TSUCHIYA Masatoshi &lt;<a href="mailto:tsuchiya@DOMAIN.HIDDEN">tsuchiya@xxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: 06 Oct 2000 14:02:19 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:86snqavbnx.wl@DOMAIN.HIDDEN">86snqavbnx.wl@xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt; (Yoichi NAKAYAMA's message of &quot;Fri, 06 Oct 2000 13:25:22 +0900&quot;)</li>
+<li><em>References</em>: &lt;<a href="mailto:86snqavbnx.wl@DOMAIN.HIDDEN">86snqavbnx.wl@xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Sender</em>: <a href="mailto:tsuchiya@DOMAIN.HIDDEN">tsuchiya@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: T-gnus/6.14.5 (based on Gnus v5.8.7) (revision 04) REMI/1.14.3 (Matsudai) Chao/1.14.1 (Rokujiz&#x14D;) APEL/10.2 Emacs/20.7 (sparc-sun-solaris2.6) MULE/4.0 (HANANOEN)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&gt;&gt; On Fri, 06 Oct 2000 13:25:22 +0900
+&gt;&gt; yoichi@xxxxxxxxxxxxxxxxxxxxxxxx (Yoichi NAKAYAMA) said as follows:
+
+&gt;User-Agent &#x306A;&#x74B0;&#x5883;&#x3067;&#xFF0C;(setq mhc-file-method 'mhc-cvs)
+&gt;&#x3057;&#x3066;&#x3064;&#x304B;&#x3063;&#x3066;&#x3044;&#x308B;&#x3068;&#xFF0C;&#x30E1;&#x30CB;&#x30E5;&#x30FC;&#x30D0;&#x30FC;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3059;&#x308B;&#x3068;&#xFF0C;
+
+&#x304A;&#x3084;&#x307E;&#x3042;&#x3001;mhc-cvs.el &#x306E;&#x5229;&#x7528;&#x8005;&#x304C;&#x79C1;&#x306E;&#x4ED6;&#x306B;&#x3082;&#x3044;&#x305F;&#x3093;&#x3067;&#x3059;&#x306D;&#x2026;&#x3002;
+
+&gt;Signaling: (void-variable mhc-sync-remote)
+&gt; (stringp mhc-sync-remote)
+&gt; (and (not mhc-file/offline) (stringp mhc-sync-remote) (stringp mhc-sync-id))
+&gt;&#x3068;&#x3044;&#x308F;&#x308C;&#x307E;&#x3059;&#xFF0E;
+
+&#x591A;&#x5206;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x30D1;&#x30C3;&#x30C1;&#x3067;&#x76F4;&#x308B;&#x3067;&#x3057;&#x3087;&#x3046;&#x3002;
+
+# &#x672C;&#x696D;&#x304C;&#x5FD9;&#x3057;&#x3059;&#x304E;&#x3066;&#x3001;&#x672A;&#x3060;&#x306B; CVS &#x306E;&#x5148;&#x7AEF;&#x306B;&#x306F;&#x8FFD;&#x3044;&#x4ED8;&#x3044;&#x3066;&#x3044;&#x306A;&#x3044;&#x306E;&#x3067;&#x3001;&#x78BA;&#x8A8D;&#x3067;
+# &#x304D;&#x307E;&#x305B;&#x3093;&#x304C;&#x3002;
+
+</pre><pre>diff -u -u -r1.55 mhc.el
+--- mhc.el	2000/10/04 01:16:36	1.55
++++ mhc.el	2000/10/06 05:01:47
+@@ -79,9 +79,7 @@
+ 	(&quot;Network&quot;
+ 	 [&quot;Online&quot; mhc-file-toggle-offline mhc-file/offline]
+ 	 [&quot;Offline&quot; mhc-file-toggle-offline (not mhc-file/offline)]
+-	 [&quot;Sync&quot; mhc-file-sync (and (not mhc-file/offline)
+-				    (stringp mhc-sync-remote)
+-				    (stringp mhc-sync-id))])
++	 [&quot;Sync&quot; mhc-file-sync (not mhc-file/offline)])
+ 	&quot;----&quot;
+ 	(&quot;PostScript&quot;
+ 	 [&quot;Preview&quot; mhc-ps-preview t]
+</pre><pre>
+&#x305F;&#x3060;&#x3057;&#x3001;&#x3053;&#x306E;&#x4FEE;&#x6B63;&#x306F; mhc-sync.el &#x3092;&#x5229;&#x7528;&#x3057;&#x3066;&#x3044;&#x308B;&#x4EBA;&#x306B;&#x3068;&#x3063;&#x3066;&#x306F;&#x3001;&#x3061;&#x3087;&#x3063;&#x3068;&#x4E0D;
+&#x5E78;&#x305B;&#x306A;&#x4FEE;&#x6B63;&#x304B;&#x3082;&#x77E5;&#x308C;&#x306A;&#x3044;&#x306E;&#x3067;&#x3001;&#x307E;&#x3060; commit &#x306F;&#x3057;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;
+
+-- 
+&#x571F;&#x5C4B; &#x96C5;&#x7A14;  ( TSUCHIYA Masatoshi )
+    <a  rel="nofollow" href="http://www-nagao.kuee.kyoto-u.ac.jp/member/tsuchiya/">http://www-nagao.kuee.kyoto-u.ac.jp/member/tsuchiya/</a>
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01056" href="msg01056.html">[mhc:01057] Re: clicking menu bar (with mhc-cvs)</a></strong>
+<ul><li><em>From:</em> &#x767D;&#x4E95;&#x79C0;&#x884C;</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="01054" href="msg01054.html">[mhc:01055] clicking menu bar (with mhc-cvs)</a></strong>
+<ul><li><em>From:</em> Yoichi NAKAYAMA</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01054.html">[mhc:01055] clicking menu bar (with mhc-cvs)</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01056.html">[mhc:01057] Re: clicking menu bar (with mhc-cvs)</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01054.html">[mhc:01055] clicking menu bar (with mhc-cvs)</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01056.html">[mhc:01057] Re: clicking menu bar (with mhc-cvs)</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01055"><strong>Date</strong></a></li>
+<li><a href="threads.html#01055"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

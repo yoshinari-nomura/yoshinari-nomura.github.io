@@ -1,0 +1,11 @@
+--- mhc.el.orig	Tue May 09 17:57:34 2000
++++ mhc.el	Tue May 09 17:57:38 2000
+@@ -342,7 +342,7 @@
+ 	      (setq header
+ 		    (make-full-mail-header 0 (eword-encode-string
+ 					      (mhc-sch-subject sch))))
+-	      (push (gnus-data-make num 0 nil header 0) gnus-newsgroup-data))
++	      (push (gnus-data-make num 0 0 header 0) gnus-newsgroup-data))
+ 	  (remove-text-properties 0 (length insert)
+ 				  '(gnus-number nil) insert)))))
+     (insert insert)

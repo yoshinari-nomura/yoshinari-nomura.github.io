@@ -1,0 +1,164 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00199] Re: 0.23&#45;appha -->
+<!--X-From-R13: Kbfuvanev @A[GDO <abzNpfpr.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Fri, 29 Oct 1999 16:06:35 +0900 -->
+<!--X-Message-Id: 19991029160632R.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 19991028180202V.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Reference: 19991029150350W.inoue@soum.co.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00199] Re: 0.23-appha</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00197.html">Date Prev</a>][<a href="msg00199.html">Date Next</a>][<a href="msg00197.html">Thread Prev</a>][<a href="msg00199.html">Thread Next</a>][<a href="maillist.html#00198">Date Index</a>][<a href="threads.html#00198">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00199] Re: 0.23-appha</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00199] Re: 0.23-appha</li>
+<li><em>From</em>: Yoshinari NOMURA &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Fri, 29 Oct 1999 16:06:35 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:19991029150350W.inoue@DOMAIN.HIDDEN">19991029150350W.inoue@xxxxxxxxxx</a>&gt;</li>
+<li><em>Posted</em>: Fri, 29 Oct 1999 16:06:32 +0900</li>
+<li><em>References</em>: &lt;<a href="mailto:19991028180202V.nom@DOMAIN.HIDDEN">19991028180202V.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:19991029150350W.inoue@DOMAIN.HIDDEN">19991029150350W.inoue@xxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>On Fri, 29 Oct 1999 15:04:08 +0900,
+	&#x4E95;&#x4E0A;&#x3000;&#x6F54;(Kiyoshi Inoue) &lt;inoue@xxxxxxxxxx&gt; said:
+
+&gt;   Symbol's function definition is void: facep
+&gt; 
+&gt; &#x3068;&#x306A;&#x3063;&#x3066;&#x3057;&#x307E;&#x3046;&#x3088;&#x3046;&#x3067;&#x3059;&#x3002;(&#x6CE3;)
+
+&#x3054;&#x3081;&#x3093;&#x306A;&#x3055;&#x3044;&#x3002;&#x52AA;&#x529B;&#x3057;&#x307E;&#x3059;&#x3002;&#x4EE5;&#x4E0B;&#x3067;&#x3069;&#x3046;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#x3002;
+
+apel &#x3068;&#x3044;&#x3046;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x304C;&#x3042;&#x308B;&#x3089;&#x3057;&#x3044;&#x3067;&#x3059;&#x304C;&#x3001;&#x305D;&#x308C;&#x3092;&#x4F7F;&#x3046;&#x3068;&#x3053;&#x306E;&#x624B;&#x306E;&#x554F;
+&#x984C;&#x3092;&#x89E3;&#x6C7A;&#x3057;&#x3066;&#x304F;&#x308C;&#x308B;&#x306E;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#x3002;
+
+Index: mhc.el
+===================================================================
+RCS file: /u/nom/prj/cvsroot/mhc/emacs/mhc.el,v
+retrieving revision 1.3
+retrieving revision 1.4
+diff -u -r1.3 -r1.4
+--- mhc.el	1999/10/28 08:44:19	1.3
++++ mhc.el	1999/10/29 06:52:41	1.4
+@@ -3,7 +3,7 @@
+ ;; Author:  Yoshinari Nomura &lt;nom@xxxxxxx&gt;
+ ;;
+ ;; Created: 1994/07/04
+-;; Revised: $Date: 1999/10/28 08:44:19 $
++;; Revised: $Date: 1999/10/29 06:52:41 $
+ 
+ ;;;
+ ;;; Commentay:
+@@ -624,17 +624,16 @@
+     (&quot;Private&quot;  . (nil &quot;Green&quot;  nil))))
+ 
+ (defun mhc-category-string-to-face (category)
+-  (let ((face (intern (format &quot;mhc-category-face-%s&quot; (downcase category))))
+-	face-cel)
+-    (if (facep face)
+-	face
+-      (if (setq face-cel (assoc category mhc-category-face-alist))
+-	  (mhc-make-face
+-	   face
+-	   (nth 0 (cdr face-cel))
+-	   (nth 1 (cdr face-cel))
+-	   (nth 2 (cdr face-cel)))
+-	nil))))
++  (let ((face-name (format &quot;mhc-category-face-%s&quot; (downcase category)))
++	face-attr)
++    (or (intern-soft face-name)
++	(if (setq face-attr (assoc category mhc-category-face-alist))
++	    (mhc-make-face
++	     (intern face-name)
++	     (nth 0 (cdr face-attr))
++	     (nth 1 (cdr face-attr))
++	     (nth 2 (cdr face-attr)))
++	  'default))))
+ 
+ (defun mhc-make-face (face-sym parent-face fg bg)
+   (if parent-face
+
+
+&#x3067;&#x3001;&#x77E5;&#x3063;&#x3066;&#x308B;&#x65B9;&#x304C;&#x304A;&#x3089;&#x308C;&#x305F;&#x3089;&#x6559;&#x3048;&#x3066;&#x4E0B;&#x3055;&#x3044;&#x3002;emacs 19.28 &#x306A; mule
+&#x3092;&#x4E00;&#x756A;&#x697D;&#x306B;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3059;&#x308B;&#x306B;&#x306F;&#x3069;&#x3046;&#x3057;&#x305F;&#x3089;&#x3044;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#x3002;&#x3082;&#x306F;&#x3084; 
+FreeBSD &#x306B;&#x306F;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x304C;&#x306A;&#x3044;&#x306E;&#x3067;&#x3059;&#x3002;
+
+&#x30D7;&#x30E9;&#x30C3;&#x30C8;&#x30DB;&#x30FC;&#x30E0;&#x306F;&#x3001;FreeBSD 3.3R, Debian 2.2, Windows98 &#x306E;&#x3069;&#x308C;&#x304B;&#x3002;
+&#x3067;&#x304D;&#x308C;&#x3070; Windows &#x306F;&#x907F;&#x3051;&#x305F;&#x3044;&#x3067;&#x3059;&#x3002;
+
+# note &#x306F; 20.4, &#x30C7;&#x30B9;&#x30AF;&#x30C8;&#x30C3;&#x30D7;&#x306F; 19.34 &#x306A;&#x50D5;&#x3002;
+--
+nom
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00199" href="msg00199.html">[mhc:00200] Re: 0.23-appha</a></strong>
+<ul><li><em>From:</em> Hanada Yasunori</li></ul></li>
+<li><strong><a name="00200" href="msg00200.html">[mhc:00201] Re: 0.23-appha</a></strong>
+<ul><li><em>From:</em> Kiyoshi Inoue</li></ul></li>
+<li><strong><a name="00201" href="msg00201.html">[mhc:00202] Re: 0.23-appha</a></strong>
+<ul><li><em>From:</em> &#x767D;&#x4E95;&#x79C0;&#x884C;</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00196" href="msg00196.html">[mhc:00197] 0.23-appha</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+<li><strong><a name="00197" href="msg00197.html">[mhc:00198] Re: 0.23-appha</a></strong>
+<ul><li><em>From:</em> Kiyoshi Inoue</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00197.html">[mhc:00198] Re: 0.23-appha</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00199.html">[mhc:00200] Re: 0.23-appha</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00197.html">[mhc:00198] Re: 0.23-appha</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00199.html">[mhc:00200] Re: 0.23-appha</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00198"><strong>Date</strong></a></li>
+<li><a href="threads.html#00198"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:02187] Re: ruby&#45;ext/extconf.rb failed with ruby&#45;1.8.4 -->
+<!--X-From-R13: Kbvpuv @OYOKO[O <lbvpuvNtrvva.bet> -->
+<!--X-Date: Tue, 14 Feb 2006 07:24:06 +0900 -->
+<!--X-Message-Id: 86hd72yk1l.wl%yoichi@geiin.org -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 86irrkya9c.wl%yoichi@geiin.org -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:02187] Re: ruby-ext/extconf.rb failed with ruby-1.8.4</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg02185.html">Date Prev</a>][<a href="msg02187.html">Date Next</a>][<a href="msg02185.html">Thread Prev</a>][<a href="msg02187.html">Thread Next</a>][<a href="maillist.html#02186">Date Index</a>][<a href="threads.html#02186">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:02187] Re: ruby-ext/extconf.rb failed with ruby-1.8.4</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:02187] Re: ruby-ext/extconf.rb failed with ruby-1.8.4</li>
+<li><em>From</em>: Yoichi NAKAYAMA &lt;<a href="mailto:yoichi@DOMAIN.HIDDEN">yoichi@xxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Tue, 14 Feb 2006 07:24:06 +0900</li>
+<li><em>Delivered-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:86irrkya9c.wl%25yoichi@DOMAIN.HIDDEN">86irrkya9c.wl%yoichi@xxxxxxxxx</a>&gt;</li>
+<li><em>List-help</em>: &lt;<a href="mailto:mhc-ctl@quickhack.net?body=help">mailto:mhc-ctl@quickhack.net?body=help</a>&gt;</li>
+<li><em>List-id</em>: mhc.quickhack.net</li>
+<li><em>List-owner</em>: &lt;<a href="mailto:mhc-admin@quickhack.net">mailto:mhc-admin@quickhack.net</a>&gt;</li>
+<li><em>List-post</em>: &lt;<a href="mailto:mhc@quickhack.net">mailto:mhc@quickhack.net</a>&gt;</li>
+<li><em>List-software</em>: fml [fml 4.0.3 release (20011202/4.0.3)]</li>
+<li><em>List-unsubscribe</em>: &lt;<a href="mailto:mhc-ctl@quickhack.net?body=unsubscribe">mailto:mhc-ctl@quickhack.net?body=unsubscribe</a>&gt;</li>
+<li><em>Organization</em>: Geiin.org</li>
+<li><em>References</em>: &lt;<a href="mailto:86irrkya9c.wl%25yoichi@DOMAIN.HIDDEN">86irrkya9c.wl%yoichi@xxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: Wanderlust/2.15.2 (Almost Unreal) SEMI/1.14.6 (Maruoka) FLIM/1.14.7 (Sanj&#x14D;) APEL/10.6 Emacs/21.3 (i386--freebsd) MULE/5.0 (SAKAKI)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>At Sun, 12 Feb 2006 22:30:55 +0900,
+Yoichi NAKAYAMA wrote:
+&gt; ruby-1.8.4 &#x3067;
+&gt; ruby configure.rb --disable-palm
+&gt; &#x3059;&#x308B;&#x3068; ruby-ext/make.rb &#x3067;&#x3053;&#x3051;&#x307E;&#x3059;&#x3002;
+
+&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x3068;&#x901A;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;
+
+Index: ruby-ext/extconf.rb.in
+===================================================================
+RCS file: /cvsroot/mhc/ruby-ext/extconf.rb.in,v
+retrieving revision 1.6
+diff -u -r1.6 extconf.rb.in
+--- ruby-ext/extconf.rb.in	21 Nov 2002 00:04:16 -0000	1.6
++++ ruby-ext/extconf.rb.in	13 Feb 2006 22:18:38 -0000
+@@ -1,7 +1,9 @@
+ #!@@MHC_RUBY_PATH@@ -Ke
+ # -*- ruby -*-
+ 
++if '@@MHC_DISABLE_PALM@@' == ''
+ require 'mkmf'
++end
+ 
+ ################################################################
+ # crate make file.
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="02185" href="msg02185.html">[mhc:02186] ruby-ext/extconf.rb failed with ruby-1.8.4</a></strong>
+<ul><li><em>From:</em> Yoichi NAKAYAMA</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg02185.html">[mhc:02186] ruby-ext/extconf.rb failed with ruby-1.8.4</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg02187.html">[mhc:02188] &#x4E88;&#x5B9A;&#x3092;namazu&#x3067;&#x691C;&#x7D22;</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg02185.html">[mhc:02186] ruby-ext/extconf.rb failed with ruby-1.8.4</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg02187.html">[mhc:02188] &#x4E88;&#x5B9A;&#x3092;namazu&#x3067;&#x691C;&#x7D22;</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#02186"><strong>Date</strong></a></li>
+<li><a href="threads.html#02186"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

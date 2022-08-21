@@ -1,0 +1,134 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01684] Re: Category =?ISO&#45;2022&#45;JP?B?GyRCSmQ0MBsoQg==?= -->
+<!--X-From-R13: Vvqrlhxv EVWDOW (=?vfb&#45;2022&#45;wc?P?UlDQD3WjLw0bAHCoYSW=?=) <fuvenvNdhvpxunpx.arg> -->
+<!--X-Date: Tue, 15 Oct 2002 18:29:09 +0900 (JST) -->
+<!--X-Message-Id: 20021015.182909.07059307.shirai@rdmg.mgcs.mei.co.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 20021015.141729.91275664.mura050418@dt.sanyo.co.jp -->
+<!--X-Reference: 20021015.181033.60854992.mura050418@dt.sanyo.co.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01684] Re: Category &#x88DC;&#x5B8C;</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01682.html">Date Prev</a>][<a href="msg01684.html">Date Next</a>][<a href="msg01682.html">Thread Prev</a>][<a href="msg01684.html">Thread Next</a>][<a href="maillist.html#01683">Date Index</a>][<a href="threads.html#01683">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01684] Re: Category &#x88DC;&#x5B8C;</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01684] Re: Category &#x88DC;&#x5B8C;</li>
+<li><em>From</em>: Hideyuki SHIRAI (&#x767D;&#x4E95;&#x79C0;&#x884C;) &lt;<a href="mailto:shirai@DOMAIN.HIDDEN">shirai@xxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Tue, 15 Oct 2002 18:29:09 +0900 (JST)</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20021015.181033.60854992.mura050418@DOMAIN.HIDDEN">20021015.181033.60854992.mura050418@xxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Organization</em>: QuickHackers, Tokyo, JAPAN</li>
+<li><em>References</em>: &lt;<a href="mailto:20021015.141729.91275664.mura050418@DOMAIN.HIDDEN">20021015.141729.91275664.mura050418@xxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20021015.181033.60854992.mura050418@DOMAIN.HIDDEN">20021015.181033.60854992.mura050418@xxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>From:  MURAOKA Koji &lt;mura050418@xxxxxxxxxxxxxx&gt; &#x3055;&#x3093;&#x66F0;&#x304F;
+Subject: [mhc:01683] Re: Category &#x88DC;&#x5B8C;
+Message-ID: &lt;20021015.181033.60854992.mura050418@xxxxxxxxxxxxxx&gt;
+Date: Tue, 15 Oct 2002 18:10:33 +0900 (JST)
+
+&gt; Category &#x306E;&#x88DC;&#x5B8C;&#x306B;&#x3064;&#x3044;&#x3066;&#x3067;&#x3059;&#x304C;&#xFF0C;&#x3044;&#x308D;&#x3044;&#x308D;&#x8A66;&#x3057;&#x3066;&#x307F;&#x308B;&#x3068; Edebug &#x3092;
+&gt; &#x4F7F;&#x3063;&#x3066; mhc-input-category &#x3067;&#x3044;&#x3063;&#x305F;&#x3093;&#x505C;&#x6B62;&#x3057;&#xFF0C;'G' &#x3067;&#x3042;&#x3089;&#x305F;&#x3081;&#x3066;&#x6700;
+&gt; &#x5F8C;&#x307E;&#x3067;&#x8A55;&#x4FA1;&#x3059;&#x308B;&#x3068;&#x6B63;&#x5E38;&#x306B;&#x88DC;&#x5B8C;&#x304C;&#x884C;&#x308F;&#x308C;&#x308B;&#x3053;&#x3068;&#x304C;&#x308F;&#x304B;&#x308A;&#x307E;&#x3057;&#x305F;&#xFF0E;
+
+mhc.el &#x306E;&#x3053;&#x306E;&#x3078;&#x3093;&#x2193;
+
+(cond
+ ((eval-when-compile (and (not (featurep 'xemacs))
+			  (not (eq system-type 'windows-nt))
+			  (&gt;= emacs-major-version 21)))
+  (require 'mhc-e21))
+ ((eval-when-compile
+    (condition-case nil
+	(require 'bitmap)
+      (error nil)))
+  (require 'mhc-bm))
+ ((eval-when-compile (featurep 'xemacs))
+  (require 'mhc-xmas))
+ (t (defun mhc-use-icon-p ())))
+
+&#x3092;&#x898B;&#x308B;&#x3068;&#x3001;(eq system-type 'windows-nt) =&gt; t &#x306E;&#x3068;&#x304D;&#x306F;&#x3001;mhc-e21 &#x3092;
+&#x8AAD;&#x307F;&#x8FBC;&#x307E;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x306D;&#x3002;&#x305D;&#x306E;&#x305F;&#x3081;&#x3001;mhc.el &#x306E;
+mhc-input-category() &#x3092;&#x4F7F;&#x3063;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x6700;&#x521D;&#x306F;&#x88DC;&#x5B8C;&#x304C;&#x51FA;&#x6765;&#x306A;&#x3044;&#x3002;
+
+&#x3057;&#x304B;&#x3057;&#x3001;
+
+&gt; mhc-e21.elc &#x3092;&#x524A;&#x9664;&#x3057;&#xFF0C;mhc-e21.el &#x306E;&#x95A2;&#x6570; mhc-input-category
+&gt; &#x3067; Edebug &#x3092;&#x5B9F;&#x884C;&#xFF08;M-x edebug-defun&#xFF09;.
+
+edebug-defun &#x3092;&#x3059;&#x308B;&#x3068;&#x3001;&#x5BFE;&#x8C61;&#x306E;&#x95A2;&#x6570;&#x3092; eval &#x3059;&#x308B;&#x306E;&#x3067;&#x3001;&#x305D;&#x306E;&#x3068;&#x304D;&#x306F;&#x3001;
+mhc-e21.el &#x306E; mhc-input-category() &#x304C;&#x6709;&#x52B9;&#x306B;&#x306A;&#x308B;&#x3001;&#x3068;&#x3044;&#x3046;&#x3068;&#x3053;&#x308D;&#x3067;
+&#x3057;&#x3087;&#x3046;&#x3002;
+
+# &#x3051;&#x3069;&#x3001;NTEmacs &#x306F;&#x4F7F;&#x3063;&#x3066;&#x3044;&#x306A;&#x3044;&#x306E;&#x3067;&#x3001;&#x3069;&#x3046;&#x3059;&#x308B;&#x306E;&#x304C;&#x826F;&#x3044;&#x306E;&#x304B;&#x306F;&#x308F;&#x304B;&#x3089;
+# &#x306A;&#x3044;&#x3067;&#x3059;&#x3002;
+
+-- 
+&#x767D;&#x4E95;&#x79C0;&#x884C; (<a  rel="nofollow" href="mailto:shirai@xxxxxxxxxxxxx">mailto:shirai@xxxxxxxxxxxxx</a>)
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01684" href="msg01684.html">[mhc:01685] Re: Category &#x88DC;&#x5B8C;</a></strong>
+<ul><li><em>From:</em> Yoichi NAKAYAMA</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="01679" href="msg01679.html">[mhc:01680] Category &#x88DC;&#x5B8C;</a></strong>
+<ul><li><em>From:</em> MURAOKA Koji</li></ul></li>
+<li><strong><a name="01682" href="msg01682.html">[mhc:01683] Re: Category &#x88DC;&#x5B8C;</a></strong>
+<ul><li><em>From:</em> MURAOKA Koji</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01682.html">[mhc:01683] Re: Category &#x88DC;&#x5B8C;</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01684.html">[mhc:01685] Re: Category &#x88DC;&#x5B8C;</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01682.html">[mhc:01683] Re: Category &#x88DC;&#x5B8C;</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01684.html">[mhc:01685] Re: Category &#x88DC;&#x5B8C;</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01683"><strong>Date</strong></a></li>
+<li><a href="threads.html#01683"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

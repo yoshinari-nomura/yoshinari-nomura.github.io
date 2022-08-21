@@ -1,0 +1,143 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00993] Re: mhc&#45;cvs.el -->
+<!--X-From-R13: FEGQVWKO [nfngbfuv <gfhpuvlnNcvar.xhrr.xlbgb&#45;h.np.wc> -->
+<!--X-Date: 21 Aug 2000 18:07:00 +0900 -->
+<!--X-Message-Id: mpalmxrvv7v.fsf@olive.kuee.kyoto&#45;u.ac.jp -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Reference: mpahfd06m2s.fsf@olive.kuee.kyoto&#45;u.ac.jp -->
+<!--X-Reference: 20000418.171523.46119797.shirai@rdmg.mgcs.mei.co.jp -->
+<!--X-Reference: 00Aug13.001101jst.29570@gateway.suri.co.jp -->
+<!--X-Reference: 20000821170808U.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00993] Re: mhc-cvs.el</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00991.html">Date Prev</a>][<a href="msg00993.html">Date Next</a>][<a href="msg00990.html">Thread Prev</a>][<a href="msg00993.html">Thread Next</a>][<a href="maillist.html#00992">Date Index</a>][<a href="threads.html#00992">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00993] Re: mhc-cvs.el</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00993] Re: mhc-cvs.el</li>
+<li><em>From</em>: TSUCHIYA Masatoshi &lt;<a href="mailto:tsuchiya@DOMAIN.HIDDEN">tsuchiya@xxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: 21 Aug 2000 18:07:00 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20000821170808U.nom@DOMAIN.HIDDEN">20000821170808U.nom@xxxxxxxxxxxxxxxxxxx</a>&gt; (Yoshinari Nomura's message of &quot;Mon, 21 Aug 2000 17:08:08 +0900&quot;)</li>
+<li><em>References</em>: &lt;<a href="mailto:mpahfd06m2s.fsf@DOMAIN.HIDDEN">mpahfd06m2s.fsf@xxxxxxxxxxxxxxxxxxxxxxxx</a>&gt; &lt;<a href="mailto:20000418.171523.46119797.shirai@DOMAIN.HIDDEN">20000418.171523.46119797.shirai@xxxxxxxxxxxxxxxxxxx</a>&gt; &lt;<a href="mailto:00Aug13.001101jst.29570@DOMAIN.HIDDEN">00Aug13.001101jst.29570@xxxxxxxxxxxxxxxxxx</a>&gt; &lt;<a href="mailto:20000821170808U.nom@DOMAIN.HIDDEN">20000821170808U.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Sender</em>: <a href="mailto:tsuchiya@DOMAIN.HIDDEN">tsuchiya@xxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: T-gnus/6.14.4 (based on Gnus v5.8.6) (revision 02) SEMI/1.13.7 (Awazu) FLIM/1.13.2 (Kasanui) Emacs/20.7 (sparc-sun-solaris2.6) MULE/4.0 (HANANOEN)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&gt;&gt; On Mon, 21 Aug 2000 17:08:08 +0900
+&gt;&gt; &quot;nom&quot; == nom@xxxxxxxxxxxxxxxxxxx (Yoshinari Nomura) said as follows:
+
+nom&gt; &#x500B;&#x4EBA;&#x7684;&#x306B;&#x306F;&#x3001;&#x597D;&#x304D;&#x3067;&#x3059;&#x3002;&#x7279;&#x306B;&#x53CD;&#x5BFE;&#x304C;&#x306A;&#x3044;&#x3088;&#x3046;&#x306A;&#x3089;&#x3001;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x3057;&#x305F;&#x3044;&#x3067;&#x3059;&#x3002;
+
+&#x500B;&#x4EBA;&#x7684;&#x306B;&#x306F;&#x3001;&#x9577;&#x3044;&#x65B9;&#x304C;&#x597D;&#x304D;&#x3067;&#x3059;&#x3002;&#x3067;&#x3059;&#x304B;&#x3089;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B; customizable &#x306B;&#x3059;
+&#x308B;&#x306E;&#x306F;&#x3069;&#x3046;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;?
+
+</pre><pre>Index: mhc-file.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc-file.el,v
+retrieving revision 1.4
+diff -u -u -r1.4 mhc-file.el
+--- mhc-file.el	2000/08/04 07:40:52	1.4
++++ mhc-file.el	2000/08/21 09:05:02
+@@ -120,11 +120,23 @@
+ (defmacro mhc-file-remove (file)
+   `(mhc-file/remove ,file mhc-file/offline))
+ 
++(defcustom mhc-file-line-status-strings
++  '(&quot; mhc[offline]&quot; . &quot; mhc[ONLINE]&quot;)
++  &quot;Strings to describe MHC network status.&quot;
++  :group 'mhc
++  :type '(choice
++	  (const :tag &quot;Long format&quot; (&quot; mhc[offline]&quot; . &quot; mhc[ONLINE]&quot;))
++	  (const :tag &quot;Short format&quot; (&quot; Mhc&quot; . &quot; MHC&quot;))
++	  (cons :tag &quot;User definition&quot;
++		(string :tag &quot;String for offline&quot;)
++		(string :tag &quot;String for online&quot;))))
++
+ (defun mhc-file-line-status ()
+   &quot;Return status string for mode line.&quot;
+-  (format &quot; mhc%s&quot;
+-	  (if mhc-show-network-status
+-	      (if mhc-file/offline &quot;[offline]&quot; &quot;[ONLINE]&quot;) &quot;&quot;)))
++  (if mhc-show-network-status
++      (if mhc-file/offline
++	  (car mhc-file-line-status-strings)
++	(cdr mhc-file-line-status-strings))))
+ 
+ (defun mhc-file-toggle-offline ()
+   &quot;*Toggle line status of file manipulation backend.&quot;
+</pre><pre>-- 
+&#x571F;&#x5C4B; &#x96C5;&#x7A14;  ( TSUCHIYA Masatoshi )
+    <a  rel="nofollow" href="http://www-nagao.kuee.kyoto-u.ac.jp/member/tsuchiya/">http://www-nagao.kuee.kyoto-u.ac.jp/member/tsuchiya/</a>
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00993" href="msg00993.html">[mhc:00994] Re: mhc-cvs.el</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00500" href="msg00500.html">[mhc:00501] Re: mhc-cvs.el</a></strong>
+<ul><li><em>From:</em> TSUCHIYA Masatoshi</li></ul></li>
+<li><strong><a name="00501" href="msg00501.html">[mhc:00502] Re: mhc-cvs.el</a></strong>
+<ul><li><em>From:</em> &#x767D;&#x4E95;&#x79C0;&#x884C;</li></ul></li>
+<li><strong><a name="00983" href="msg00983.html">[mhc:00984] Re: mhc-cvs.el</a></strong>
+<ul><li><em>From:</em> &#x9BC9;&#x6C5F;&#x82F1;&#x9686;</li></ul></li>
+<li><strong><a name="00990" href="msg00990.html">[mhc:00991] Re: mhc-cvs.el</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00991.html">[mhc:00992] Re: palm2mhc/mhc2palm on Solaris7</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00993.html">[mhc:00994] Re: mhc-cvs.el</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00990.html">[mhc:00991] Re: mhc-cvs.el</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00993.html">[mhc:00994] Re: mhc-cvs.el</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00992"><strong>Date</strong></a></li>
+<li><a href="threads.html#00992"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

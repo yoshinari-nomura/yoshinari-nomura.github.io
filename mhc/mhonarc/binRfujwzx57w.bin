@@ -1,0 +1,11 @@
+--- Makefile.orig	Wed Jul 12 17:33:41 2000
++++ Makefile	Wed Jul 12 17:36:46 2000
+@@ -10,7 +10,7 @@
+ 
+ CFLAGS   = -fPIC -I$(hdrdir) -O2 -m486 -pipe -fstrength-reduce -fPIC -I/usr/local/pilot/include -DNEW_NAMING -I/usr/local/include -DHAVE_PI_DLP_H
+ CXXFLAGS = $(CFLAGS)
+-DLDFLAGS = -Wl,-soname,$(.TARGET) -L/usr/local/pilot/lib
++DLDFLAGS = -Wl,-soname,$(.TARGET),--rpath,/usr/local/pilot/lib -L/usr/local/pilot/lib
+ LDSHARED = cc -shared 
+ 
+ RUBY_INSTALL_NAME = ruby

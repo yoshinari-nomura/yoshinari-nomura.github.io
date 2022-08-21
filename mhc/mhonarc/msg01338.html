@@ -1,0 +1,126 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01339] mhc&#45;mode&#45;hook -->
+<!--X-From-R13: Vveblhxv Ybzngfh <xbzngfhNgnvlnxv.bet> -->
+<!--X-Date: Wed, 09 May 2001 08:14:46 +0900 -->
+<!--X-Message-Id: 87eltza0wp.wl@localhost.taiyaki.org -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01339] mhc-mode-hook</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01337.html">Date Prev</a>][<a href="msg01339.html">Date Next</a>][<a href="msg01337.html">Thread Prev</a>][<a href="msg01339.html">Thread Next</a>][<a href="maillist.html#01338">Date Index</a>][<a href="threads.html#01338">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01339] mhc-mode-hook</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01339] mhc-mode-hook</li>
+<li><em>From</em>: Hiroyuki Komatsu &lt;<a href="mailto:komatsu@DOMAIN.HIDDEN">komatsu@xxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Wed, 09 May 2001 08:14:46 +0900</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: Wanderlust/2.5.8 (Smooth) SEMI/1.14.3 (Ushinoya) FLIM/1.14.2 (Yagi-Nishiguchi) APEL/10.3 MULE XEmacs/21.1 (patch 14) (Cuyahoga Valley) (i386-debian-linux)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x5C0F;&#x677E;@&#x6771;&#x5DE5;&#x5927;&#x3067;&#x3059;.
+# &#x307F;&#x306A;&#x3055;&#x307E;&#x306F;&#x3058;&#x3081;&#x307E;&#x3057;&#x3066;.
+MHC &#x3092;&#x975E;&#x5E38;&#x306B;&#x4FBF;&#x5229;&#x306B;&#x5229;&#x7528;&#x3055;&#x305B;&#x3066;&#x3044;&#x305F;&#x3060;&#x3044;&#x3066;&#x3044;&#x307E;&#x3059;.
+
+MHC &#x306E;&#x30AD;&#x30FC;&#x30D0;&#x30A4;&#x30F3;&#x30C9;&#x3092;&#x500B;&#x4EBA;&#x7684;&#x306B;&#x5909;&#x66F4;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B; mhc-mode-hook &#x3092;
+&#x4F7F;&#x3063;&#x3066;&#x3084;&#x308D;&#x3046;&#x3068;&#x3057;&#x305F;&#x306E;&#x3067;&#x3059;&#x304C;, mhc-mode-hook &#x306F; mhc-scan-month &#x304B;&#x3089;
+&#x547C;&#x3070;&#x308C;&#x3066;&#x3044;&#x308B;&#x3088;&#x3046;&#x306A;&#x306E;&#x3067;&#x4E0A;&#x624B;&#x304F;&#x3044;&#x304D;&#x307E;&#x305B;&#x3093;&#x3067;&#x3057;&#x305F;.
+
+&#x305D;&#x3053;&#x3067;&#x63D0;&#x6848;&#x306A;&#x306E;&#x3067;&#x3059;&#x304C;, mhc-mode-hook &#x3092; mhc-mode &#x304B;&#x3089;&#x547C;&#x3076;&#x3088;&#x3046;&#x306B;
+&#x3057;&#x3066;&#x3044;&#x305F;&#x3060;&#x3051;&#x306A;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;. &#x81EA;&#x524D;&#x3067;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x5909;&#x66F4;&#x3057;&#x305F;&#x3082;&#x306E;&#x3092;&#x6DFB;&#x4ED8;&#x3055;&#x305B;&#x3066;
+&#x3044;&#x305F;&#x3060;&#x304D;&#x307E;&#x3057;&#x305F;. &#x3088;&#x308D;&#x3057;&#x304F;&#x304A;&#x9858;&#x3044;&#x3057;&#x307E;&#x3059;.
+
+--
+                                                            &#x5C0F;&#x677E;&#x5F18;&#x5E78;
+                                                -----------------------
+                                                   komatsu@xxxxxxxxxxx
+
+
+
+
+--- mhc.el.orig Wed May  9 07:51:23 2001
++++ mhc.el      Wed May  9 07:56:01 2001
+@@ -160,7 +160,9 @@
+                     (not mhc-mode)
+                   (&gt; (prefix-numeric-value arg) 0)))
+   (if (featurep 'xemacs) (easy-menu-add mhc-mode-menu))
+-  (force-mode-line-update))
++  (force-mode-line-update)
++  (and mhc-mode
++       (run-hooks 'mhc-mode-hook)))
+ 
+ 
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@@ -515,7 +517,6 @@
+        (make-local-variable 'gnus-visual)
+        (setq gnus-visual nil)))
+       (mhc-mode 1)
+-      (run-hooks 'mhc-mode-hook)
+       (setq inhibit-read-only nil)
+       (setq buffer-read-only t))
+     (message &quot;Scanning %s ... done.&quot; (ddate-yymm-s1 ddate &quot;/&quot;))))
+
+
+
+
+
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01339" href="msg01339.html">[mhc:01340] Re: mhc-mode-hook</a></strong>
+<ul><li><em>From:</em> &#x767D;&#x4E95;&#x79C0;&#x884C;</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01337.html">[mhc:01338] Re: X-SC-Next in today/gemcal/mhc2palm</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01339.html">[mhc:01340] Re: mhc-mode-hook</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01337.html">[mhc:01338] Re: X-SC-Next in today/gemcal/mhc2palm</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01339.html">[mhc:01340] Re: mhc-mode-hook</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01338"><strong>Date</strong></a></li>
+<li><a href="threads.html#01338"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

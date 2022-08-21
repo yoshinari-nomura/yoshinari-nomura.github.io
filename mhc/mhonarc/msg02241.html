@@ -1,0 +1,120 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:02242] MHC&#45;MK: gnus&#45;path&#45;file: ~/.lpath.el configuable? -->
+<!--X-From-R13: Fngfhln Yvabfuvgn <gngfNirtn.bpa.ar.wc> -->
+<!--X-Date: Mon, 18 Dec 2006 23:25:34 +0900 (JST) -->
+<!--X-Message-Id: 20061218.232534.35601965.tats%nobody@tats.iris.ne.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:02242] MHC-MK: gnus-path-file: ~/.lpath.el configuable?</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg02240.html">Date Prev</a>][<a href="msg02242.html">Date Next</a>][<a href="msg02230.html">Thread Prev</a>][<a href="msg02244.html">Thread Next</a>][<a href="maillist.html#02241">Date Index</a>][<a href="threads.html#02241">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:02242] MHC-MK: gnus-path-file: ~/.lpath.el configuable?</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:02242] MHC-MK: gnus-path-file: ~/.lpath.el configuable?</li>
+<li><em>From</em>: Tatsuya Kinoshita &lt;<a href="mailto:tats@DOMAIN.HIDDEN">tats@xxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Mon, 18 Dec 2006 23:25:34 +0900 (JST)</li>
+<li><em>Delivered-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>List-help</em>: &lt;<a href="mailto:mhc-ctl@quickhack.net?body=help">mailto:mhc-ctl@quickhack.net?body=help</a>&gt;</li>
+<li><em>List-id</em>: mhc.quickhack.net</li>
+<li><em>List-owner</em>: &lt;<a href="mailto:mhc-admin@quickhack.net">mailto:mhc-admin@quickhack.net</a>&gt;</li>
+<li><em>List-post</em>: &lt;<a href="mailto:mhc@quickhack.net">mailto:mhc@quickhack.net</a>&gt;</li>
+<li><em>List-software</em>: fml [fml 4.0.3 release (20011202/4.0.3)]</li>
+<li><em>List-unsubscribe</em>: &lt;<a href="mailto:mhc-ctl@quickhack.net?body=unsubscribe">mailto:mhc-ctl@quickhack.net?body=unsubscribe</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>mhc/emacs/MHC-MK&#x306B;&#x3064;&#x3044;&#x3066;&#x3001;&#x73FE;&#x5728;&#x3001;Debian&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x306B;&#x306F;&#x4E0B;&#x8A18;&#x306E;&#x3088;&#x3046;&#x306A;&#x30D1;&#x30C3;&#x30C1;
+&#x304C;&#x5F53;&#x305F;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+
+----
+--- mhc-current-snap20050120/emacs/MHC-MK
++++ mhc-0.25.1+20050120-2/emacs/MHC-MK
+@@ -172,10 +172,10 @@
+ 			      (setq load-path (cons dir load-path)))))
+ 		    (make-mhc/split-string (substring str (match-end 0)) &quot;:&quot;)))
+ 	   (t (error &quot;Illegal option&quot;))))
+-	(let ((gnus-path-file (expand-file-name &quot;~/.lpath.el&quot;)))
+-	  (and make-mhc/with-gnus
+-	       (file-exists-p gnus-path-file)
+-	       (load-file (expand-file-name gnus-path-file))))
++;	(let ((gnus-path-file (expand-file-name &quot;~/.lpath.el&quot;)))
++;	  (and make-mhc/with-gnus
++;	       (file-exists-p gnus-path-file)
++;	       (load-file (expand-file-name gnus-path-file))))
+ 	(setq load-path (cons make-mhc/source-directory load-path))
+ 	(or make-mhc/debug
+ 	    (setq make-mhc/debug
+----
+
+&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x6642;&#x306E;~/.lpath.el&#x306B;&#x3088;&#x308B;&#x5F71;&#x97FF;&#x3092;&#x53D7;&#x3051;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x3057;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;
+&#x3067;&#x304D;&#x308C;&#x3070;&#x30D1;&#x30C3;&#x30C1;&#x3067;&#x306F;&#x306A;&#x304F;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x7B49;&#x3067;&#x6307;&#x5B9A;&#x3057;&#x305F;&#x3044;&#x3068;&#x601D;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x306E;&#x3088;&#x3046;&#x306A;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x691C;&#x8A0E;&#x3057;&#x3066;&#x3044;&#x305F;&#x3060;&#x3051;&#x306A;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#x3002;
+
+&#x307E;&#x305F;&#x3001;~/.lpath.el&#x306E;&#x30ED;&#x30FC;&#x30C9;&#x81EA;&#x4F53;&#x304C;&#x5FC5;&#x8981;&#x306A;&#x306E;&#x304B;&#x3069;&#x3046;&#x304B;&#x7591;&#x554F;&#x306B;&#x601D;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+--with-addpath&#x3067;&#x306F;&#x4E0D;&#x8DB3;&#x306A;&#x306E;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#x3002;
+
+-- 
+&#x6728;&#x4E0B;&#x9054;&#x4E5F;
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="02244" href="msg02244.html">[mhc:02245] Re: MHC-MK: gnus-path-file: ~/.lpath.el configuable?</a></strong>
+<ul><li><em>From:</em> nom</li></ul></li>
+<li><strong><a name="02247" href="msg02247.html">[mhc:02248] Re: MHC-MK: gnus-path-file: ~/.lpath.el configuable?</a></strong>
+<ul><li><em>From:</em> nom</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg02240.html">[mhc:02241] Re: gemcal on gtk2</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg02242.html">[mhc:02243] &#x662D;&#x548C;&#x306E;&#x65E5;</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg02230.html">[mhc:02231] mhc/configure.rb: --with-ruby for extconf.rb</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg02244.html">[mhc:02245] Re: MHC-MK: gnus-path-file: ~/.lpath.el configuable?</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#02241"><strong>Date</strong></a></li>
+<li><a href="threads.html#02241"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

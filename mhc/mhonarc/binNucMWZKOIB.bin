@@ -1,0 +1,13 @@
+diff -urN mhc-current-snap20050120/ruby-ext/lib/mhc-kconv.rb mhc-0.25.1+20050120-2/ruby-ext/lib/mhc-kconv.rb
+--- mhc-current-snap20050120/ruby-ext/lib/mhc-kconv.rb	2001-10-28 10:20:36.000000000 +0900
++++ mhc-0.25.1+20050120-2/ruby-ext/lib/mhc-kconv.rb	2006-07-09 13:55:58.000000000 +0900
+@@ -9,8 +9,7 @@
+ require 'kconv'
+ 
+ module MhcKconv
+-  DISP_CODE = if /cygwin|mingw32|mswin32|os2_emx|sharp-human/ =~ RUBY_PLATFORM
+-		Kconv::SJIS else Kconv::EUC end
++  DISP_CODE = Kconv::UTF8
+ 
+   def todisp(string)
+     Kconv::kconv(string, DISP_CODE, Kconv::AUTO)

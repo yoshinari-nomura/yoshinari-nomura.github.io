@@ -1,0 +1,128 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00390] Re: mhc&#45;snap20000209 -->
+<!--X-From-R13: Kbfuvnxv Ynfnunen <xnfnunenNap.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Sun, 13 Feb 2000 16:44:17 +0900 -->
+<!--X-Message-Id: 20000213164412N.kasahara@nc.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 20000209183454M.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00390] Re: mhc-snap20000209</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00388.html">Date Prev</a>][<a href="msg00390.html">Date Next</a>][<a href="msg00385.html">Thread Prev</a>][<a href="msg00390.html">Thread Next</a>][<a href="maillist.html#00389">Date Index</a>][<a href="threads.html#00389">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00390] Re: mhc-snap20000209</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00390] Re: mhc-snap20000209</li>
+<li><em>From</em>: Yoshiaki Kasahara &lt;<a href="mailto:kasahara@DOMAIN.HIDDEN">kasahara@xxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Sun, 13 Feb 2000 16:44:17 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20000209183454M.nom@DOMAIN.HIDDEN">20000209183454M.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Posted</em>: Sun, 13 Feb 2000 16:44:12 +0900</li>
+<li><em>References</em>: &lt;<a href="mailto:20000209183454M.nom@DOMAIN.HIDDEN">20000209183454M.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x7B20;&#x539F;&#xFF20;&#x4E5D;&#x5927;&#x3067;&#x3059;&#x3002;
+
+On Wed, 9 Feb 2000 18:34:57 +0900,
+	Yoshinari NOMURA &lt;nom@xxxxxxxxxxxxxxxxxxx&gt; said:
+
+&gt;     + mhc-face.el &#x306E;&#x8FFD;&#x52A0;&#x3002;&#x5404;&#x7A2E; face &#x306E;&#x8A2D;&#x5B9A;&#x7528;&#x5909;&#x6570;&#x306E;&#x8FFD;&#x52A0;&#x3002;
+&gt; 	mhc-category-face-alist, mhc-symbol-face-alist
+
+&#x3053;&#x308C;&#x3067;&#x3059;&#x304C;&#x3001;
+
+*Alist to rule the catgegory-to-face conversion.
+Each element should have the form
+  (CATEGORY-STRING . (PARENT FG BG FONT BOLD UNDERLINED STIPPLE))
+mhc will define mhc-summary-category-face-(downcase CATEGORY-STRING)
+in setup time.
+
+&#x3068;&#x66F8;&#x3044;&#x3066;&#x3042;&#x308B;&#x3093;&#x3060;&#x3051;&#x3069; FONT &#x3063;&#x3066;&#x3044;&#x3046;&#x5F15;&#x6570;&#x306F;&#x5B9F;&#x969B;&#x306B;&#x306F;&#x7121;&#x3044;&#x3067;&#x3059;&#x3088;&#x306D;&#x3002;
+
+(defun mhc-face-make-face-from-symbol (symbol prop)
+  (let ((parent  (nth 0 prop))
+        (fg      (nth 1 prop))
+        (bg      (nth 2 prop))
+        (bold    (nth 3 prop))
+        (uline   (nth 4 prop))
+        (stipple (nth 5 prop))
+        (face    nil))
+    (setq face (if parent (copy-face parent symbol) (make-face symbol)))
+    (if fg      (set-face-foreground  face fg))
+    (if bg      (set-face-background  face bg))
+    (if bold    (set-face-bold-p      face bold))
+    (if uline   (set-face-underline-p face uline))
+    (if stipple (set-face-stipple     face stipple))
+    face))
+
+&#x306B;&#x306A;&#x3063;&#x3066;&#x307E;&#x3059;&#x3093;&#x3067;&#x3002;
+
+&#x3042;&#x3068;&#x3001;&#x5C11;&#x306A;&#x304F;&#x3068;&#x3082; xemacs-21.2 &#x306B;&#x306F; set-face-bold-p &#x3068;&#x3044;&#x3046;&#x95A2;&#x6570;&#x306F;&#x306A;&#x3044;&#x306E;&#x3067;&#x3001;
+bold &#x306B;&#x3057;&#x3088;&#x3046;&#x3068;&#x3059;&#x308B;&#x3068;&#x6012;&#x3089;&#x308C;&#x307E;&#x3057;&#x305F;&#x3002;make-face-bold ?
+
+&#x304B;&#x3055;&#x306F;&#x3089;
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00390" href="msg00390.html">[mhc:00391] Re: mhc-snap20000209</a></strong>
+<ul><li><em>From:</em> Yoshiaki Kasahara</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00377" href="msg00377.html">[mhc:00378] mhc-snap20000209</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00388.html">[mhc:00389] Re: mhc2palm on Windows</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00390.html">[mhc:00391] Re: mhc-snap20000209</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00385.html">[mhc:00386] Re: defmacro in 19.28 (Re:  Re: mhc-snap20000209)</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00390.html">[mhc:00391] Re: mhc-snap20000209</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00389"><strong>Date</strong></a></li>
+<li><a href="threads.html#00389"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

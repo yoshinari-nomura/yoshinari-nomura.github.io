@@ -1,0 +1,139 @@
+*** configure.orig	Mon Feb 21 20:10:28 2000
+--- configure	Mon Feb 21 19:28:16 2000
+***************
+*** 980,986 ****
+  else
+    echo "$ac_t""no" 1>&6
+  fi
+! test -z "$LD" && { echo "configure: error: no acceptable ld found in \$PATH" 1>&2; exit 1; }
+  
+  echo $ac_n "checking if the linker ($LD) is GNU ld""... $ac_c" 1>&6
+  echo "configure:987: checking if the linker ($LD) is GNU ld" >&5
+--- 980,986 ----
+  else
+    echo "$ac_t""no" 1>&6
+  fi
+! #test -z "$LD" && { echo "configure: error: no acceptable ld found in \$PATH" 1>&2; exit 1; }
+  
+  echo $ac_n "checking if the linker ($LD) is GNU ld""... $ac_c" 1>&6
+  echo "configure:987: checking if the linker ($LD) is GNU ld" >&5
+*** dlpsh.c.orig	Sun May 03 12:11:26 1998
+--- dlpsh.c	Mon Feb 21 19:59:16 2000
+***************
+*** 7,12 ****
+--- 7,13 ----
+  #include "pi-padp.h"
+  #include "pi-dlp.h"
+  #include "pi-serial.h"
++ #include "getopt.h"
+  
+  #define TICKLE_INTERVAL 7
+  
+*** getrom.c.orig	Sun May 03 12:11:28 1998
+--- getrom.c	Mon Feb 21 20:00:08 2000
+***************
+*** 11,16 ****
+--- 11,17 ----
+  #include <stdlib.h>
+  #include "pi-source.h"
+  #include "pi-serial.h"
++ #include "getopt.h"
+  
+  #include <termios.h>
+  
+*** hinotes.c.orig	Sun Sep 20 07:54:44 1998
+--- hinotes.c	Mon Feb 21 20:02:00 2000
+***************
+*** 16,21 ****
+--- 16,22 ----
+  #include "pi-socket.h"
+  #include "pi-hinote.h"
+  #include "pi-dlp.h"
++ #include "getopt.h"
+  
+  /*
+   * SHOULD INCLUDE HEADERS FOR mkdir()
+*** install-memo.c.orig	Sun Sep 20 09:12:28 1998
+--- install-memo.c	Mon Feb 21 19:58:26 2000
+***************
+*** 10,15 ****
+--- 10,16 ----
+  #include "pi-socket.h"
+  #include "pi-dlp.h"
+  #include "pi-memo.h"
++ #include "getopt.h"
+  
+  extern char* optarg;
+  extern int optind;
+*** pi-csd.c.orig	Tue Dec 08 14:18:22 1998
+--- pi-csd.c	Mon Feb 21 20:01:42 2000
+***************
+*** 15,20 ****
+--- 15,21 ----
+  #include "pi-dlp.h"
+  #include "pi-serial.h"
+  #include "pi-slp.h"
++ #include "getopt.h"
+  #include <signal.h>
+  
+  #include <sys/types.h>
+*** pi-getram.c.orig	Mon Aug 24 14:37:00 1998
+--- pi-getram.c	Mon Feb 21 20:00:46 2000
+***************
+*** 13,18 ****
+--- 13,19 ----
+  #include "pi-source.h"
+  #include "pi-syspkt.h"
+  #include "pi-dlp.h"
++ #include "getopt.h"
+  
+  #include <termios.h>
+  
+*** pi-getrom.c.orig	Tue Sep 08 02:25:18 1998
+--- pi-getrom.c	Mon Feb 21 20:00:26 2000
+***************
+*** 13,18 ****
+--- 13,19 ----
+  #include "pi-source.h"
+  #include "pi-syspkt.h"
+  #include "pi-dlp.h"
++ #include "getopt.h"
+  
+  #include <termios.h>
+  
+*** pi-port.c.orig	Fri May 08 10:29:34 1998
+--- pi-port.c	Mon Feb 21 20:01:16 2000
+***************
+*** 15,20 ****
+--- 15,21 ----
+  #include "pi-dlp.h"
+  #include "pi-serial.h"
+  #include "pi-slp.h"
++ #include "getopt.h"
+  #include <signal.h>
+  
+  #include <sys/types.h>
+*** pilot-file.c.orig	Sun May 03 12:11:28 1998
+--- pilot-file.c	Mon Feb 21 19:53:22 2000
+***************
+*** 16,21 ****
+--- 16,22 ----
+  #include "pi-socket.h"
+  #include "pi-dlp.h"
+  #include "pi-file.h"
++ #include "getopt.h"
+  
+  #ifdef sun
+    extern char* optarg;
+*** pilot-schlep.c.orig	Sun May 03 12:11:28 1998
+--- pilot-schlep.c	Mon Feb 21 19:56:44 2000
+***************
+*** 14,19 ****
+--- 14,20 ----
+  #include "pi-socket.h"
+  #include "pi-file.h"
+  #include "pi-dlp.h"
++ #include "getopt.h"
+  
+  #define pi_mktag(c1,c2,c3,c4) (((c1)<<24)|((c2)<<16)|((c3)<<8)|(c4))
+  

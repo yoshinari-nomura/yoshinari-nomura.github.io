@@ -1,0 +1,124 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00043] Re: mhc on windows(Meadow&#45;1.01) -->
+<!--X-From-R13: Kbfuvanev @A[GDO <abzNpfpr.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Tue, 25 May 1999 12:52:02 +0900 -->
+<!--X-Message-Id: 19990525125200J.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 19990524132053R.ito@temac.toyota&#45;shokki.co.jp -->
+<!--X-Reference: 19990524191431O.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Reference: 19990525102954R.ito@temac.toyota&#45;shokki.co.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00043] Re: mhc on windows(Meadow-1.01)</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00041.html">Date Prev</a>][<a href="msg00043.html">Date Next</a>][<a href="msg00041.html">Thread Prev</a>][<a href="msg00043.html">Thread Next</a>][<a href="maillist.html#00042">Date Index</a>][<a href="threads.html#00042">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00043] Re: mhc on windows(Meadow-1.01)</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00043] Re: mhc on windows(Meadow-1.01)</li>
+<li><em>From</em>: Yoshinari NOMURA &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Tue, 25 May 1999 12:52:02 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:19990525102954R.ito@DOMAIN.HIDDEN">19990525102954R.ito@xxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Posted</em>: Tue, 25 May 1999 12:52:00 +0900</li>
+<li><em>References</em>: &lt;<a href="mailto:19990524132053R.ito@DOMAIN.HIDDEN">19990524132053R.ito@xxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:19990524191431O.nom@DOMAIN.HIDDEN">19990524191431O.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:19990525102954R.ito@DOMAIN.HIDDEN">19990525102954R.ito@xxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>On Tue, 25 May 1999 10:23:07 +0900,
+	Toru Ito &lt;ito@xxxxxxxxxxxxxxxxxxxxxxxxx&gt; said:
+
+&gt; 8:20# perl mscan2 --src=+inbox
+&gt; syntax error at mscan2 line 50, near &quot;$ =~&quot;
+&gt; Execution of mscan2 aborted due to compilation errors.
+
+&#x3054;&#x3081;&#x3093;&#x306A;&#x3055;&#x3044;&#x3002;&#x3002;cvs &#x306E;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;&#x306B;&#x3064;&#x3063;&#x3053;&#x3080;&#x3068;&#x304D;&#x306B; ^O &#x304C;&#x6D88;&#x3048;&#x3066;&#x307E;&#x3057;
+&#x305F;&#x3002;50&#x884C;&#x76EE;&#x4ED8;&#x8FD1;&#x306E;&#x5B9F;&#x969B;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x306F;&#x3001;
+
+if ($^O =~ /win/i){
+    ## for WIN95.
+    @SCAN  = (&quot;$PERL&quot;, &quot;-S&quot;, $SCAN);
+} else {
+:
+
+&#x304C;&#x6B63;&#x89E3;&#x3067;&#x3001;^O &#x304C;&#x6D88;&#x3048;&#x3066;&#x3044;&#x308B;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;&#x4E0A;&#x8A18;&#x306E;&#x3088;&#x3046;&#x306B; ^O (2&#x6587;&#x5B57;) &#x3092;
+&#x52A0;&#x3048;&#x3066;&#x4E0B;&#x3055;&#x3044;&#x3002;
+
+&#x4ECA;&#x77E5;&#x3063;&#x305F;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;^O &#x306F; '^' &#x3068; 'O' &#x306E; 2&#x6587;&#x5B57;&#x3067;&#x3044;&#x3044;&#x3093;&#x3067;&#x3059;&#x306D;&#x3002;&#x5143;&#x306E; 
+&#x30B3;&#x30FC;&#x30C9;&#x306F;&#x3001;^O &#x4E00;&#x6587;&#x5B57;&#x3060;&#x3063;&#x305F;&#x3093;&#x3067;&#x3059;&#x3088;&#x3002;&#x4F55;&#x6545; CVS &#x304C;&#x6D88;&#x3057;&#x3066;&#x304F;&#x308C;&#x305F;&#x306E;&#x304B;&#x306F;
+&#x7591;&#x554F;&#x3067;&#x3059;&#x304C;&#x3002;&#x3002;
+
+mhc-0.17.tar.gz &#x3092;&#x3053;&#x3063;&#x305D;&#x308A;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3057;&#x306A;&#x304A;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;
+
+  <a  rel="nofollow" href="http://www.swlab.csce.kyushu-u.ac.jp/~nom/prj/mhc/mhc-0.17.tar.gz">http://www.swlab.csce.kyushu-u.ac.jp/~nom/prj/mhc/mhc-0.17.tar.gz</a>
+
+&#x304B;&#x3089;&#x3069;&#x3046;&#x305E;&#x3002;&#x4E0A;&#x306E; 1&#x6587;&#x5B57;&#x3092;&#x5909;&#x66F4;&#x3057;&#x305F;&#x3060;&#x3051;&#x3067;&#x3059;&#x3002;
+--
+nom
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00043" href="msg00043.html">[mhc:00044] Re: mhc on windows(Meadow-1.01)</a></strong>
+<ul><li><em>From:</em> Toru Ito</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00038" href="msg00038.html">[mhc:00039] Re: mhc on windows(Meadow-1.01)</a></strong>
+<ul><li><em>From:</em> Toru Ito</li></ul></li>
+<li><strong><a name="00039" href="msg00039.html">[mhc:00040] Re: mhc on windows(Meadow-1.01)</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+<li><strong><a name="00041" href="msg00041.html">[mhc:00042] Re: mhc on windows(Meadow-1.01)</a></strong>
+<ul><li><em>From:</em> Toru Ito</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00041.html">[mhc:00042] Re: mhc on windows(Meadow-1.01)</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00043.html">[mhc:00044] Re: mhc on windows(Meadow-1.01)</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00041.html">[mhc:00042] Re: mhc on windows(Meadow-1.01)</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00043.html">[mhc:00044] Re: mhc on windows(Meadow-1.01)</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00042"><strong>Date</strong></a></li>
+<li><a href="threads.html#00042"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

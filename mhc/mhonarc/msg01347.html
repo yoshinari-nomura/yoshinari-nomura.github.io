@@ -1,0 +1,118 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01348] Re: wishlist for mhc deb package -->
+<!--X-From-R13: Kbfuvanev @bzhen <abzNpfpr.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Thu, 10 May 2001 23:03:32 +0900 -->
+<!--X-Message-Id: 20010510230332U.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 87vgna728k.wl@mistral.ukai.org -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01348] Re: wishlist for mhc deb package</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01346.html">Date Prev</a>][<a href="msg01348.html">Date Next</a>][<a href="msg01346.html">Thread Prev</a>][<a href="msg01348.html">Thread Next</a>][<a href="maillist.html#01347">Date Index</a>][<a href="threads.html#01347">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01348] Re: wishlist for mhc deb package</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01348] Re: wishlist for mhc deb package</li>
+<li><em>From</em>: Yoshinari Nomura &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Thu, 10 May 2001 23:03:32 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:87vgna728k.wl@DOMAIN.HIDDEN">87vgna728k.wl@xxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:87vgna728k.wl@DOMAIN.HIDDEN">87vgna728k.wl@xxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x4E43;&#x6751;&#x3067;&#x3059;&#x3002;
+
+&#x9D5C;&#x98FC;&#x3055;&#x3093;&#x306E;&#x30D1;&#x30C3;&#x30C1;&#x3092;&#x305D;&#x306E;&#x307E;&#x307E;&#x5F53;&#x3066;&#x305F;&#x3082;&#x306E;&#x3092;&#x3001;
+
+  <a  rel="nofollow" href="http://www.quickhack.net/mhc/arc/mhc-current-snap20010510.tar.gz">http://www.quickhack.net/mhc/arc/mhc-current-snap20010510.tar.gz</a>
+
+&#x306B;&#x7F6E;&#x304D;&#x307E;&#x3057;&#x305F;&#x3002;distfile &#x3068;&#x3057;&#x3066;&#x5DEE;&#x3057;&#x3066;&#x4E0B;&#x3055;&#x3063;&#x3066; OK &#x3067;&#x3059;&#x3002;
+&#x3053;&#x306E;&#x30B9;&#x30CA;&#x30C3;&#x30D7;&#x3092;&#x4F7F;&#x3046;&#x3068;&#x3001;Palm &#x95A2;&#x4FC2;&#x304C;&#x52D5;&#x304B;&#x306A;&#x304F;&#x306A;&#x308B;&#x4EBA;&#x3082;
+&#x3044;&#x308B;&#x304B;&#x3082;&#x3057;&#x308C;&#x307E;&#x305B;&#x3093;&#x3002;cvs update &#x306B;&#x3082;&#x6C17;&#x3092;&#x3064;&#x3051;&#x3066;&#x4E0B;&#x3055;&#x3044;&#x3002;
+
+On Thu, 10 May 2001 04:26:35 +0900,
+	Fumitoshi UKAI &lt;ukai@xxxxxxxxxxxx&gt; said:
+
+&gt; * (ruby-ext/extconf.rb.in)
+&gt;   LD_RUN_PATH &#x3092; binary &#x306B;&#x3046;&#x3081;&#x3053;&#x307E;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x3057;&#x305F;&#x3044;&#x306E;&#x3067;&#x306F;&#x305A;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;
+&gt;   - Debian &#x3067;&#x306F; rpath &#x3092; binary &#x306B;&#x3046;&#x3081;&#x3053;&#x3080;&#x306E;&#x306F; policy&#x306B;&#x53CD;&#x3059;&#x308B;&#x306E;&#x3067;&#x3002;
+
+&#x4E00;&#x3064;&#x6559;&#x3048;&#x3066;&#x4E0B;&#x3055;&#x3044;&#x3002;
+
+&gt; -$LDFLAGS = &quot;@@MHC_LDFLAGS@@&quot;
+&gt; +# $LDFLAGS = &quot;@@MHC_LDFLAGS@@&quot;
+
+FreeBSD &#x306B;&#x4E0A;&#x8A18;&#x3092;&#x9069;&#x5FDC;&#x3057;&#x3066;&#x3001;mhc2palm -i &#x3059;&#x308B;&#x3068;&#x52D5;&#x304D;&#x307E;&#x305B;&#x3093;&#x3067;&#x3057;&#x305F;&#x3002;
+
+LD_RUN_PATH &#x3092;&#x5916;&#x3059;&#x65B9;&#x306F;&#x3044;&#x3044;&#x3068;&#x3057;&#x3066;&#x3082;&#x3001;LD_FLAGS &#x90E8;&#x5206;&#x3092;&#x5909;&#x66F4;&#x3059;&#x308B;&#x3068;&#x3001;
+Debian &#x3067;&#x3082; libpisock &#x304C;&#x898B;&#x3048;&#x306A;&#x304F;&#x306F;&#x306A;&#x3089;&#x306A;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;?
+
+# Debian &#x5165;&#x308C;&#x305F; ThinkPad 240 &#x3092;&#x4FEE;&#x7406;&#x306B;&#x51FA;&#x3057;&#x3066;&#x3044;&#x3066;&#x3001;
+# &#x81EA;&#x5206;&#x3067;&#x306F;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x3067;&#x304D;&#x306A;&#x3044;&#x3002;&#x3002;&#x6DB2;&#x6676;&#x304C;&#x771F;&#x3063;&#x767D;&#x3002;
+--
+nom
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01348" href="msg01348.html">[mhc:01349] Re: wishlist for mhc deb package</a></strong>
+<ul><li><em>From:</em> Fumitoshi UKAI</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="01341" href="msg01341.html">[mhc:01342] wishlist for mhc deb package</a></strong>
+<ul><li><em>From:</em> Fumitoshi UKAI</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01346.html">[mhc:01347] Re: wishlist for mhc deb package</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01348.html">[mhc:01349] Re: wishlist for mhc deb package</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01346.html">[mhc:01347] Re: wishlist for mhc deb package</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01348.html">[mhc:01349] Re: wishlist for mhc deb package</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01347"><strong>Date</strong></a></li>
+<li><a href="threads.html#01347"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

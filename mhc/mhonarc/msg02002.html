@@ -1,0 +1,167 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:02003] net: =?ISO&#45;2022&#45;JP?B?GyRCJVElQyVBGyhC?= + private =?ISO&#45;2022&#45;JP?B?GyRCJVElQyVBGyhC?= for palm2mhc/mhc2palm -->
+<!--X-From-R13: YAWS Vvqrgnxn (=?vfb&#45;2022&#45;wc?P?UlDQAVS5BwTDFwCoYSW=?=) <uvqrNxbvr.bet> -->
+<!--X-Date: Wed, 05 Jan 2005 14:58:18 +0900 (JST) -->
+<!--X-Message-Id: 20050105.145818.226746470.hide@koie.org -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:02003] net: &#x30D1;&#x30C3;&#x30C1; + private &#x30D1;&#x30C3;&#x30C1; for palm2mhc/mhc2palm</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg02001.html">Date Prev</a>][<a href="msg02003.html">Date Next</a>][<a href="msg02000.html">Thread Prev</a>][<a href="msg02003.html">Thread Next</a>][<a href="maillist.html#02002">Date Index</a>][<a href="threads.html#02002">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:02003] net: &#x30D1;&#x30C3;&#x30C1; + private &#x30D1;&#x30C3;&#x30C1; for palm2mhc/mhc2palm</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:02003] net: &#x30D1;&#x30C3;&#x30C1; + private &#x30D1;&#x30C3;&#x30C1; for palm2mhc/mhc2palm</li>
+<li><em>From</em>: KOIE Hidetaka (&#x9BC9;&#x6C5F;&#x82F1;&#x9686;) &lt;<a href="mailto:hide@DOMAIN.HIDDEN">hide@xxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Wed, 05 Jan 2005 14:58:18 +0900 (JST)</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x30D1;&#x30C3;&#x30C1;2&#x3064;&#x3092;&#x9001;&#x308A;&#x307E;&#x3059;&#x3002;
+
+(1) mhc2palm -d net: &#x3067;&#x30CD;&#x30C3;&#x30C8;&#x30EF;&#x30FC;&#x30AF;&#x30B7;&#x30F3;&#x30AF;&#x3057;&#x3088;&#x3046;&#x3068;&#x3059;&#x308B;&#x3068;
+    net:&#x304C;&#x306A;&#x3044;&#x3068;&#x3044;&#x308F;&#x308C;&#x3066;&#x3057;&#x307E;&#x3046;&#x306E;&#x3092;&#x56DE;&#x907F;&#x3059;&#x308B;&#x30D1;&#x30C3;&#x30C1;&#x3067;&#x3059;&#x3002;
+    #&#x3053;&#x306E;&#x30D1;&#x30C3;&#x30C1;&#x304C;&#x306A;&#x304F;&#x3066;&#x3082;&#x30AB;&#x30EC;&#x30F3;&#x30C8;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306B;
+    #&quot;net:&quot;&#x3068;&#x3044;&#x3046;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7F6E;&#x3044;&#x3066;&#x304A;&#x3051;&#x3070;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x3092;&#x56DE;&#x907F;&#x3059;&#x308B;&#x3053;&#x3068;&#x306F;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+
+Index: mhc2palm.in
+===================================================================
+RCS file: /cvsroot/mhc/mhc2palm.in,v
+retrieving revision 1.6
+diff -p -u -r1.6 mhc2palm.in
+--- mhc2palm.in	13 Sep 2001 05:15:17 -0000	1.6
++++ mhc2palm.in	5 Jan 2005 05:46:51 -0000
+@@ -105,7 +115,7 @@ usage() if !($flag_append || $flag_insta
+ ##
+ 
+ if !$flag_noharm
+-  if !File .exist?($flag_device)
++  if $flag_device != &quot;net:&quot; &amp;&amp; !File .exist?($flag_device)
+     STDERR .print &quot;Can not open #{$flag_device}.\n&quot;
+     exit 1
+   end
+Index: palm2mhc.in
+===================================================================
+RCS file: /cvsroot/mhc/palm2mhc.in,v
+retrieving revision 1.4
+diff -p -u -r1.4 palm2mhc.in
+--- palm2mhc.in	9 Feb 2001 09:37:06 -0000	1.4
++++ palm2mhc.in	5 Jan 2005 05:46:51 -0000
+@@ -75,7 +75,7 @@ while ARGV .length &gt; 0
+   ARGV .shift
+ end
+ 
+-if !File .exist?($flag_device)
++if $flag_device != &quot;net:&quot; &amp;&amp; !File .exist?($flag_device)
+   STDERR .print &quot;Can not open #{$flag_device}.\n&quot;
+   exit 1
+ end
+
+
+
+(2) mhc2palm&#x3067;X-SC-Category&#x306B;Private&#x304C;&#x542B;&#x307E;&#x308C;&#x3066;&#x3044;&#x308B;&#x3068;
+    Palm&#x306B;&#x3082;&#x30D7;&#x30E9;&#x30A4;&#x30D9;&#x30FC;&#x30C8;&#x60C5;&#x5831;&#x304C;&#x4F1D;&#x308F;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x306E;&#x3068;
+    palm2mhc&#x3067;&#x30D7;&#x30E9;&#x30A4;&#x30D9;&#x30FC;&#x30C8;&#x306B;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x304C;&#x5165;&#x3063;&#x3066;&#x3044;&#x308B;&#x4E88;&#x5B9A;&#x3092;
+    X-SC-Category: Private &#x306B;&#x3059;&#x308B;&#x30D1;&#x30C3;&#x30C1;&#x3067;&#x3059;&#x3002;
+
+Index: ruby-ext/lib/mhc-palm.rb
+===================================================================
+RCS file: /cvsroot/mhc/ruby-ext/lib/mhc-palm.rb,v
+retrieving revision 1.11
+diff -p -u -r1.11 mhc-palm.rb
+--- ruby-ext/lib/mhc-palm.rb	22 Jun 2004 10:09:15 -0000	1.11
++++ ruby-ext/lib/mhc-palm.rb	5 Jan 2005 05:46:51 -0000
+@@ -598,6 +598,16 @@ class PilotApptRecord &lt; PilotRecord
+       end
+     end
+ 
++    if attribute_secret?
++      if xsc[&quot;Category&quot;]
++        if xsc[&quot;Category&quot;] !~ /private/i
++          xsc[&quot;Category&quot;] += 'Private'
++        end
++      else
++        xsc[&quot;Category&quot;] = 'Private'
++      end
++    end
++
+     if repeat?
+       if @repeatFrequency &gt; 1
+ 	STDERR .print &quot;#{@beg} : #{Kconv::tojis(@description)} &quot;
+Index: ruby-ext/lib/mhc-schedule.rb
+===================================================================
+RCS file: /cvsroot/mhc/ruby-ext/lib/mhc-schedule.rb,v
+retrieving revision 1.21
+diff -p -u -r1.21 mhc-schedule.rb
+--- ruby-ext/lib/mhc-schedule.rb	25 Oct 2004 02:28:57 -0000	1.21
++++ ruby-ext/lib/mhc-schedule.rb	5 Jan 2005 05:51:40 -0000
+@@ -840,6 +840,11 @@ class MhcScheduleItem
+       # STDERR .print &quot;#{occur_min .to_js} : #{subject} unsupported. ignored..\n&quot;
+       return nil
+     else
++      if category_as_string =~ /private/i
++        ret .each{|r|
++          r .set_attribute_secret
++        }
++      end
+       return ret
+     end
+   end
+
+--
+&#x9BC9;&#x6C5F;&#x82F1;&#x9686; &lt;hide@xxxxxxxx&gt;
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg02001.html">[mhc:02002] Re: mhc-input-time() &#x306E;&#x52D5;&#x4F5C;&#x306B;&#x3064;&#x3044;&#x3066;&#x8981;&#x671B;</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg02003.html">[mhc:02004] Re: Welcome to our (mhc ML)         You are added automatically</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg02000.html">[mhc:02001] Re: guess error</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg02003.html">[mhc:02004] Re: Welcome to our (mhc ML)         You are added automatically</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#02002"><strong>Date</strong></a></li>
+<li><a href="threads.html#02002"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

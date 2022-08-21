@@ -1,0 +1,47 @@
+diff -ur web-mhc-0.1.0/sample/web-mhc-conf.rb web-mhc-0.1.0.new/sample/web-mhc-conf.rb
+--- web-mhc-0.1.0/sample/web-mhc-conf.rb	2004-09-20 18:20:44.000000000 +0900
++++ web-mhc-0.1.0.new/sample/web-mhc-conf.rb	2004-09-29 11:10:41.000000000 +0900
+@@ -16,3 +16,6 @@
+ #BASE_URL = 'https://www.example.com/mhc/'
+ CSS_URL = 'css/mhc.css'
+ CSS_MOBILE_URL = 'css/mhc-mobile.css'
++
++CONF = {}
++CONF['noedit'] = nil
+diff -ur web-mhc-0.1.0/web-mhc.rb web-mhc-0.1.0.new/web-mhc.rb
+--- web-mhc-0.1.0/web-mhc.rb	2004-09-26 18:58:17.000000000 +0900
++++ web-mhc-0.1.0.new/web-mhc.rb	2004-09-29 11:09:49.000000000 +0900
+@@ -146,14 +146,19 @@
+ 
+     def output_menu
+       print "<div class=\"menu\">\n"
+-      print "<h2>Menu</h2>\n"
+-      print "<ul>\n"
+-      print "<li><a href=\"?view=#{NewSchedule::VIEW}\">新規入力</a></li>\n"
+-      print "</ul>\n</div>\n"
++      if CONF['noedit'] == nil
++        print "<h2>Menu</h2>\n"
++        print "<ul>\n"
++        print "<li><a href=\"?view=#{NewSchedule::VIEW}\">新規入力</a></li>\n"
++        print "</ul>\n"
++      end
++      print "</div>\n"
+     end
+ 
+     def output_menu_mobile
+-      print "<a href=\"?view=#{NewSchedule::VIEW}\">新規入力</a>"
++      if CONF['noedit'] == nil
++        print "<a href=\"?view=#{NewSchedule::VIEW}\">新規入力</a>"
++      end
+       output_change_month_by_arrow
+     end
+ 
+@@ -937,7 +942,7 @@
+       
+       if(view == ScheduleWriter::VIEW)
+         return ScheduleWriter.new(cgi)    
+-      elsif(view == NewSchedule::VIEW)
++      elsif(view == NewSchedule::VIEW && CONF['noedit'] == nil)
+         return NewSchedule.new(cgi)
+       elsif(view == SearchResult::VIEW)
+         return SearchResult.new(cgi)

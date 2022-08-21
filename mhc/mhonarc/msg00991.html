@@ -1,0 +1,125 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00992] Re: palm2mhc/mhc2palm on Solaris7 -->
+<!--X-From-R13: Kbfuvanev @bzhen <abzNpfpr.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Mon, 21 Aug 2000 17:41:37 +0900 -->
+<!--X-Message-Id: 20000821174137B.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: rf6bsywqxec.wl@swan.kuis.kyoto&#45;u.ac.jp -->
+<!--X-Reference: 200008140509.OAA01509@eban.ase.sony.co.jp -->
+<!--X-Reference: rf67l9kqspy.wl@swan.kuis.kyoto&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00992] Re: palm2mhc/mhc2palm on Solaris7</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00990.html">Date Prev</a>][<a href="msg00992.html">Date Next</a>][<a href="msg00988.html">Thread Prev</a>][<a href="msg00998.html">Thread Next</a>][<a href="maillist.html#00991">Date Index</a>][<a href="threads.html#00991">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00992] Re: palm2mhc/mhc2palm on Solaris7</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00992] Re: palm2mhc/mhc2palm on Solaris7</li>
+<li><em>From</em>: Yoshinari Nomura &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Mon, 21 Aug 2000 17:41:37 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:rf67l9kqspy.wl@DOMAIN.HIDDEN">rf67l9kqspy.wl@xxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:rf6bsywqxec.wl@DOMAIN.HIDDEN">rf6bsywqxec.wl@xxxxxxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:200008140509.OAA01509@DOMAIN.HIDDEN">200008140509.OAA01509@xxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:rf67l9kqspy.wl@DOMAIN.HIDDEN">rf67l9kqspy.wl@xxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x4E43;&#x6751;&#x3067;&#x3059;&#x3002;
+
+On Mon, 14 Aug 2000 15:09:29 +0900,
+	Hirofumi Yamaki &lt;yamaki@xxxxxxxxxxxxxxx&gt; said:
+
+&gt; LD_RUN_PATH &#x3067;&#x3082;&#x3044;&#x3044;&#x3051;&#x3069;&#x3053;&#x308C;&#x307E;&#x305F;&#x6BCE;&#x56DE;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x306E;&#x3082;&#x306A;&#x3041;, &#x3068;&#x3044;&#x3046;
+&gt; &#x6C17;&#x6301;&#x3082;&#x3042;&#x308A;&#x307E;&#x3057;&#x305F;&#x304C;, &#x958B;&#x767A;&#x7248;&#x306E;&#x65B9;&#x3067;&#x306F;&#x89E3;&#x6C7A;&#x3057;&#x3066;&#x3044;&#x308B;&#x3088;&#x3046;&#x3067;&#x3059;&#x306D;. 
+
+&#x3048;&#x3048;&#x3001;&#x3069;&#x3046;&#x3084;&#x3089; LD_RUN_PATH &#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x306E;&#x304C;&#x3001;&#x4E00;&#x756A;&#x4E00;&#x822C;&#x6027;&#x304C;&#x9AD8;&#x3044;&#x3088;&#x3046;
+&#x306A;&#x306E;&#x3067;&#x3001;&#x305D;&#x3046;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;
+
+&gt; &#x305D;&#x306E;&#x307E;&#x307E;&#x3067;&#x306F;&#x3084;&#x306F;&#x308A; pi_socket &#x3067;&#x30B3;&#x30B1;&#x3066;&#x3057;&#x307E;&#x3046;&#x3088;&#x3046;&#x3067;, mhc-make.rb &#x3068;
+&gt; ruby-ext/extconf.rb.in &#x3067; have_library &#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;. 
+
+&#x3042;&#x308A;&#x304C;&#x3068;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;&#x3002;&#x53D6;&#x308A;&#x8FBC;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002;
+
+&gt; --- mhc.old/mhc-make.rb	Mon Aug 14 14:55:31 2000
+&gt; +++ mhc/mhc-make.rb	Mon Aug 14 15:06:00 2000
+&gt; @@ -353,6 +353,7 @@
+&gt;      search_path .each{|lib_path|
+&gt;        print &quot;In #{lib_path} .. &quot;
+&gt;        $LDFLAGS = &quot;-L#{lib_path}&quot;
+&gt; +      have_library (&quot;socket&quot;)
+&gt;        if have_library(&quot;pisock&quot;, &quot;pi_socket&quot;)
+
+&#x3042;&#x3089;&#x3002;&#x50D5;&#x306E;&#x30DF;&#x30B9;&#x3067;&#x3059;&#x3002;&#x4F55;&#x304B;&#x5999;&#x306A;&#x6240;&#x306B; picock &#x3068;&#x304B;&#x3044;&#x3046;&#x6587;&#x5B57;&#x5217;&#x304C;&#x3002;&#x3002;
+# &#x3053;&#x306E;&#x3078;&#x3093;&#x3082;&#x540C;&#x6642;&#x306B;&#x76F4;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;
+
+&#x4F59;&#x8AC7;&#x3067;&#x3059;&#x304C;&#x3001;&#x958B;&#x767A;&#x7248;&#x306E; configure &#x56DE;&#x308A;&#x306F;&#x3001;&#x307E;&#x3060;&#x3061;&#x3083;&#x3093;&#x3068;&#x6574;&#x7406;&#x3055;&#x308C;&#x3066;&#x3044;
+&#x306A;&#x3044;&#x306E;&#x3067;&#x3001;&#x3053;&#x308C;&#x304B;&#x3089;&#x6574;&#x7406;&#x3057;&#x3066;&#x3044;&#x304D;&#x305F;&#x3044;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;
+--
+nom
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00998" href="msg00998.html">[mhc:00999] Re: palm2mhc/mhc2palm on Solaris7</a></strong>
+<ul><li><em>From:</em> Hirofumi Yamaki</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00985" href="msg00985.html">[mhc:00986] Re: palm2mhc/mhc2palm on Solaris7</a></strong>
+<ul><li><em>From:</em> Hirofumi Yamaki</li></ul></li>
+<li><strong><a name="00986" href="msg00986.html">[mhc:00987] Re: palm2mhc/mhc2palm on Solaris7</a></strong>
+<ul><li><em>From:</em> WATANABE Hirofumi</li></ul></li>
+<li><strong><a name="00988" href="msg00988.html">[mhc:00989] Re: palm2mhc/mhc2palm on Solaris7</a></strong>
+<ul><li><em>From:</em> Hirofumi Yamaki</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00990.html">[mhc:00991] Re: mhc-cvs.el</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00992.html">[mhc:00993] Re: mhc-cvs.el</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00988.html">[mhc:00989] Re: palm2mhc/mhc2palm on Solaris7</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00998.html">[mhc:00999] Re: palm2mhc/mhc2palm on Solaris7</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00991"><strong>Date</strong></a></li>
+<li><a href="threads.html#00991"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

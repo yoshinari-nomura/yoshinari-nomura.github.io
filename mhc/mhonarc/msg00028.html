@@ -1,0 +1,661 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00029] Re: 1.94b23 -->
+<!--X-From-R13: Kbfuvanev @A[GDO <abzNpfpr.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Tue, 18 May 1999 16:42:43 +0900 -->
+<!--X-Message-Id: 19990518164240T.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 19990518013922F.kazunori@swlab.csce.kyushu&#45;u.ac.jp -->
+<!--X-Reference: 19990518093927A.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Reference: 19990518145919E.os@iij.ad.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00029] Re: 1.94b23</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00027.html">Date Prev</a>][<a href="msg00029.html">Date Next</a>][<a href="msg00027.html">Thread Prev</a>][<a href="msg00005.html">Thread Next</a>][<a href="maillist.html#00028">Date Index</a>][<a href="threads.html#00028">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00029] Re: 1.94b23</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00029] Re: 1.94b23</li>
+<li><em>From</em>: Yoshinari NOMURA &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Tue, 18 May 1999 16:42:43 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:19990518145919E.os@DOMAIN.HIDDEN">19990518145919E.os@xxxxxxxxx</a>&gt;</li>
+<li><em>Posted</em>: Tue, 18 May 1999 16:42:40 +0900</li>
+<li><em>References</em>: &lt;<a href="mailto:19990518013922F.kazunori@DOMAIN.HIDDEN">19990518013922F.kazunori@xxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:19990518093927A.nom@DOMAIN.HIDDEN">19990518093927A.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:19990518145919E.os@DOMAIN.HIDDEN">19990518145919E.os@xxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>On Tue, 18 May 1999 14:59:29 +0900,
+	OHARA Shigeki &lt;os@xxxxxxxxx&gt; said:
+
+&gt; &gt; &gt; &#xFF03;--date=(&quot;today&quot;|&quot;tomorrow&quot;|yy/mm/dd)
+&gt; &gt; &#x306A;&#x308B;&#x307B;&#x3069;&#x3002;&#x60C5;&#x5831;&#x5DE5;&#x5B66;&#x6F14;&#x7FD2;&#x3067;&#x3082;&#x805E;&#x304D;&#x306A;&#x304C;&#x3089;&#x3067;&#x3082;&#x3084;&#x3063;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;
+
+&#x3053;&#x308C;&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;--date=(today|tomorrow|yyyymmdd)
+&#x306E;&#x5F15;&#x6570;&#x3092;&#x53D6;&#x308A;&#x307E;&#x3059;&#x3002;--today=yes &#x3082;&#x4E00;&#x5FDC;&#x6B8B;&#x3057;&#x3066;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+
+&gt; &#x307E;&#x3060;&#x4ED5;&#x69D8;&#x3082;&#x6C7A;&#x307E;&#x3063;&#x3066;&#x306A;&#x3044;&#x3067;&#x3059;&#x304C;&#x3001;
+&gt; &#x52DD;&#x624B;&#x306B;&#x3053;&#x308C;&#x306B;&#x5408;&#x308F;&#x305B;&#x3066; today &#x3092;&#x3044;&#x3058;&#x3063;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002;
+
+&#x3069;&#x3082;&#x3002;&#x3070;&#x3063;&#x3061;&#x308A;&#x52D5;&#x3044;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;:-)
+--
+nom
+
+
+#!/usr/local/bin/perl
+
+##
+## $Id: mscan2,v 1.9 1999/05/18 06:02:32 nom Exp $
+##
+## X-SC-* Header Spec:
+## 
+## {Month}   : (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)
+## {Order}   : (1st|2nd|3rd|4th|Last)
+## {Week}    : (Sun|Mon|Tue|Wed|Thu|Fri|Sat)
+## {DayNo}   : 1-31
+## {Date}    : !?yyyymmdd
+## {Duration}: yyyymmdd-yyyymmdd
+## {Time}    : (none|HH:MM-HH:MM|HH:MM)
+## {Keyword} : \S+
+##
+## X-SC-Subject:  English Exam      #         {String}
+## X-SC-Category: Todo Holiday      # list of {Keyword}
+## X-SC-Location: S114              #         {Keyword}
+## X-SC-Day: 19960508 !19960509     # list of {Date}
+## X-SC-Time: 11:00-12:00           #         {Time}
+## X-SC-Cond: 2nd Wed               # list of {Month}|{Order}|{Week}|{DayNo}
+## X-SC-Duration: 19960501-19970331 #         {Duration}
+##
+## X-SC-Date: 5 Apr 99 18:00        # for backward compatibility.
+##
+##
+##
+
+################################################################
+### Global variables.
+###
+
+$NKF          = &quot;nkf&quot;;
+$SCAN         = &quot;imls&quot;;
+$USER         = $ENV{'USERNAME'} || $ENV{'USER'} || $ENV{'LOGNAME'};
+$HOME         = $ENV{'HOME'};
+
+$MailDir      = &quot;$HOME/Mail&quot;;
+$rootFolder   = &quot;schedule&quot;;
+$ScheduleDir  = &quot;$MailDir/$rootFolder&quot;;
+$dot_schedule = &quot;$HOME/.schedule&quot;;
+$intersect    = &quot;intersect&quot;;
+$dot_schedule = &quot;$HOME/.schedule&quot;;
+
+################################################################
+### set options.
+###
+
+## --src=+              (+inbox)
+## --squeeze=on/off         (off)
+## --today=on/off           (off)
+## --nonum=on/off           (off)
+## --virtual=on/off         (on)
+## --schedule=on/off        (off)
+
+$virtualFLG = 1;
+
+foreach (@ARGV){
+    if (/^--squeeze=(.*)$/){
+	$squeezeFLG = on_off($1);
+	$scheduleFLG = 1;
+
+    }elsif (/^--today=(.*)$/){
+	$dateFLG     = on_off($1);
+	$dateString  = get_date_string('today');
+	$scheduleFLG = 1;
+
+    }elsif (/^--date=(today|tomorrow|\d{8})$/){
+	$dateFLG     = 1;
+	$dateString  = get_date_string($1);
+	$scheduleFLG = 1;
+
+    }elsif (/^--nonum=(.*)$/){
+	$nonumFLG = on_off($1);
+	$scheduleFLG = 1;
+
+    }elsif (/^\+$rootFolder\/\d\d\d\d\/\d\d/){
+	$scFolder = $_;
+	$scheduleFLG = 1;
+
+    }elsif (/^--src=(\+$rootFolder\/\d\d\d\d\/\d\d)$/){
+	$scFolder = $1;
+	$scheduleFLG = 1;
+
+    }else {
+    }
+}
+
+$squeezeFLG =  ($squeezeFLG | $dateFLG);
+$nonumFLG   =  ($nonumFLG | $squeezeFLG | $dateFLG);
+$virtualFLG = !$nonumFLG;
+
+##
+## convert a datekeyword to corresponding 'yyyy/mm/dd'
+## datekeyword: today, tomorrow, yyyymmdd
+##
+sub get_date_string
+{
+    my $str = shift;
+    my ($sec, $min, $hour, $day, $mon, $year) = localtime(time);
+    $mon++; $year += 1900;
+
+    if ($str eq 'today'){
+	
+    } elsif ($str eq 'tomorrow'){
+	($sec, $min, $hour, $day, $mon, $year) = localtime(time + 60*60*24);
+	$mon++; $year += 1900;
+    } elsif ($str =~ /^(\d\d\d\d)(\d\d)(\d\d)$/){
+	($year, $mon, $day) = ($1||$year, $2||$mon, $3);
+    } else {
+	return undef;
+    }
+    return sprintf(&quot;%04d/%02d/%02d&quot;, $year, $mon, $day);
+}
+
+sub on_off
+{
+    my $p = shift;
+    return $p =~ /^(on|yes)$/i ? 1 : 0;
+}
+
+################################################################
+### main
+###
+if (!$scFolder &amp;&amp; !$dateString){
+    ($sec, $min, $hour, $day, $mon, $year) = localtime(time);
+    $mon++; $year += 1900;
+    $scFolder = sprintf(&quot;+$rootFolder/%04d/%02d&quot;, $year, $mon);
+} elsif (!$scFolder &amp;&amp; $dateString){
+    $scFolder = &quot;+$rootFolder/&quot; . substr($dateString, 0, -3);
+
+} elsif ($scFolder &amp;&amp; !$dateString){
+    ## nothing is done
+
+} elsif ($scFolder &amp;&amp; $dateString){
+    if (substr($scFolder, -7) ne substr($dateString, 0, -3)){
+	die(&quot;--src=+xxx and --date=yyyymmdd is incompatible.\n&quot;);
+    }
+}
+
+# make source dir -- strip first '+' char from $scFolder, and
+# concatinate with $MailDir.
+$scDir = sprintf(&quot;%s/%s&quot;, $MailDir, substr($scFolder, 1));
+($year, $mon) = ($scDir =~ m!/(\d\d\d\d)/(\d\d)$!);
+
+## if argument doesn't have '+schddule/...' nor '-month', scan normally.
+if (!$scheduleFLG){
+    exec (&quot;$SCAN&quot;, @ARGV) || die &quot;Can't exec $SCAN.\n&quot;;
+}
+
+open(STDOUT, &quot;| $NKF -j&quot;);
+new();
+
+@nth = ('1st', '2nd', '3rd', '4th', 'Last');
+@week = ('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
+@week2 = ('(Sun)', ' Mon ', ' Tue ', ' Wed ', ' Thu ', ' Fri ', ' Sat ');
+@month = ('Jan', 'Feb', 'Mar', 'Apr', 
+	  'May', 'Jun', 'Jul', 'Aug',
+	  'Sep', 'Oct', 'Nov', 'Dec',
+	 );
+
+scanMonth($mon, $year);
+close(STDOUT);
+
+exit 0;
+
+################################################################
+### Scan function
+###
+sub scanMonth # ($mon, $year)
+{
+    my ($mon, $year) = @_;
+
+    my $dDate = $year * 10000 + $mon * 100 + 1;
+    my $daysOfMonth = daysOfMonth($mon, $year);
+    my $week = dayOfWeek($mon, 1, $year);
+    my $M = $month[$mon - 1];
+
+    for ($day = 1; $day &lt;= $daysOfMonth; $day++, $dDate++, $week++){
+	my $W  = $week[$week % 7];
+	my @TMP = ScheduleItem::search($dDate, $M, $daysOfMonth, $W, $day);
+
+	next if ($dateFLG &amp;&amp; $day != substr($dateString, -2));
+
+	$number = 0;
+
+	if (@TMP){
+	    $first = 1;
+
+	    foreach (sort { $a-&gt;{'startTime'} cmp $b-&gt;{'startTime'};} @TMP) {
+		if ($nonumFLG){
+		    $number = &quot;&quot;;
+		} else {
+		    $number = sprintf(&quot;%4d | &quot;, $_-&gt;{'fileno'});
+		}
+
+		if ($first){
+		    printf($number . &quot;%02d/%02d %4s &quot;, $mon, 
+			   $day, $week2[$week % 7]);
+		} else {
+		    printf($number . &quot;            &quot;);
+		}
+		printf(&quot;%5s &quot;, $_-&gt;{'startTime'});
+		if ($virtualFLG) {
+		    $n = $_-&gt;{'fileno'} || 0;
+		    print &quot;$_-&gt;{'subject'} \r $_-&gt;{'folder'} $n\n&quot;;
+		} else {
+		    print &quot;$_-&gt;{'subject'}\n&quot;;
+		}
+		$first = 0;
+	    }
+	} elsif (! $squeezeFLG){
+	    if ($nonumFLG){
+		$number = &quot;&quot;;
+	    } else {
+		$number = sprintf(&quot;%4d | &quot;, 0);
+	    }
+	    printf($number . &quot;%02d/%02d %4s \r $scFolder 0\n&quot;, 
+		   $mon, $day, $week2[$week % 7]) if $virtualFLG;
+	    printf($number . &quot;%02d/%02d %4s\n&quot;, 
+		   $mon, $day, $week2[$week % 7]) if !$virtualFLG;
+	}
+    }
+}
+
+################################################################
+### Read all schedule files, Create schedule item objects.
+###
+sub new
+{
+    my %header;
+    my $folder;
+    my $tag;
+    my $no = 0;
+    my @Schedule;
+
+    open(SCHEDULE, &quot;$dot_schedule&quot;);
+    while (&lt;SCHEDULE&gt;) {
+  	if (/^$/) {
+  	    $Schedule[$no++] = ScheduleItem-&gt;new(%header);
+  	    undef %header;
+  	} elsif (/^x-sc-([^:]+):\s*(\S.*)/i) {
+  	    $tag = $1;
+  	    $tag =~ tr [A-Z] [a-z];
+  	    $header{$tag} = $2;
+  	} elsif (/^\s+(.*)/){
+  	    $header{$tag} .= &quot; $1&quot;;
+  	}
+    }
+    close(SCHEDULE);
+
+    foreach (&lt;$scDir/[0-9]*&gt;, &lt;$ScheduleDir/$intersect/[0-9]*&gt;){
+	last if (! -f $_);
+	open(FILE, $_) || die;
+	($filename) = m|([^/]+)$|;
+        ($folder)   = m|^$MailDir/(.*)/\d+$|;
+	$folder = '+' . $folder;
+	# print &quot;OPEN $_ ($folder $filename)\n&quot;;
+	while (&lt;FILE&gt;){
+	    if (/^$/) {
+		correct_header(\%header);
+		$header{'fileno'} = $filename;
+		$header{'folder'} = $folder;
+		$Schedule[$no++] = ScheduleItem-&gt;new(%header);
+		undef %header;
+		close(FILE);
+		next;
+	    } elsif (/^x-sc-([^:]+):\s*(\S.*)/i) {
+		$tag = $1;
+		$tag =~ tr [A-Z] [a-z];
+		$header{$tag} = $2;
+	    }
+	}
+    }
+    if (defined %header){
+	$Schedule[$no++] = ScheduleItem-&gt;new(%header);
+    }
+    return bless \@Schedule;
+}
+
+##
+## For backward compatibility.
+##
+sub correct_header
+{
+    my $header = shift;
+    my ($day, $mon, $year, $time);
+
+    if (
+	#!defined $header-&gt;{'day'} &amp;&amp;
+	$header-&gt;{'date'} =~ /(\d+)\s+([A-Z][a-z][a-z])\s+(\d+)\s(\d\d:\d\d)/
+       ){
+
+	($day, $mon, $year, $time) = ($1, $2, $3, $4);
+	$mon = index(&quot;JanFebMarAprMayJunJulAugSepOctNovDec&quot;, $mon) / 3 + 1;
+	$year += 1900 if ($year &lt; 100);
+
+#	print &quot;X-SC-Date: $header-&gt;{'date'}\n&quot;;
+	$header-&gt;{'day'}  = sprintf(&quot;%04d%02d%02d&quot;, $year, $mon, $day);
+	$header-&gt;{'startTime'} = $time if ($time ne &quot;00:00&quot;);
+#	print &quot;X-SC-Day: $header-&gt;{'day'}\n&quot;;
+#	print &quot;X-SC-Time: $header-&gt;{'time'}\n&quot;;
+    }
+}
+
+######################################
+package ScheduleItem;
+######################################
+
+################################################################
+### Schedule Item Object Mangement.
+###
+
+## &#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x60C5;&#x5831;&#x3092;&#x683C;&#x7D0D;&#x3057;&#x3066;&#x3044;&#x308B; hash tree &#x306E;&#x69CB;&#x9020;
+## 
+## ROOT -&gt; YYYYMMDD                  -&gt; PointerToEventList
+## ROOT -&gt; Month   -&gt; DayNo          -&gt; PointerToEventList
+## ROOT -&gt; Month   -&gt; Order  -&gt; Week -&gt; PointerToEventList
+## ROOT -&gt; !YYYYMMDD                 -&gt; PointerToEventList
+##
+
+$TREE = {};
+
+sub new
+{
+    shift;
+    my %headers = @_;
+    my (@cond, @month, @order, @week, @dayno);
+    my (       $month, $order, $week, $dayno);
+    my $DEBUG = 0;
+    my $fourthFlag;
+    my $lastFlag;
+
+    if ($headers{'time'}){
+	($headers{'startTime'}, $headers{'endTime'}) 
+	    = split(/-/, $headers{'time'});
+    }
+
+    if  ($headers{'day'}) {
+	@date = split(/\s+/,  $headers{'day'});
+	foreach (@date) {
+	    push(@{$TREE-&gt;{$_}}, \%headers);
+	    print &quot;$_ is $headers{'subject'}\n&quot; if $DEBUG;
+	}
+    }
+
+    if  ($headers{'cond'}) {
+	@cond = split(/\s+/, $headers{'cond'});
+
+	foreach (@cond) {
+	    if (/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)/) {
+		push(@month, $1);
+	    } elsif (/(Sun|Mon|Tue|Wed|Thu|Fri|Sat)/) {
+		push(@week, $1);
+	    } elsif (/(1st|2nd|3rd)/){
+		push(@order, $1);
+	    } elsif (/4th/) {
+		$fourthFlag = 1;
+	    } elsif (/Last/) {
+		$lastFlag = 1;
+	    } elsif (/(\d+)/) {
+		push(@dayno, $1);
+	    }
+	}
+	if ($fourthFlag &amp;&amp; $lastFlag){
+	    push(@order, '4thLast');
+	} elsif ($fourthFlag) {
+	    push(@order, '4th');
+	} elsif ($lastFlag) {
+	    push(@order, 'Last');
+	}
+	@month = ('All') if (!@month);
+	@order = ('All') if (!@order);
+
+	foreach $month (@month) {
+	    foreach $order (@order) {
+		foreach $week (@week) {
+		    push(@{$TREE-&gt;{$month}-&gt;{$order}-&gt;{$week}}, \%headers);
+		    print &quot;$month $order $week is $headers{'subject'}\n&quot;
+			if $DEBUG;
+		}
+	    }
+	    foreach $dayno (@dayno) {
+		push(@{$TREE-&gt;{$month}-&gt;{$dayno}}, \%headers);
+		print &quot;$month $dayno is $headers{'subject'}\n&quot;
+		    if $DEBUG;
+	    }
+	}
+    }
+
+    if ($headers{'duration'}){
+	($headers{'startDate'}, $headers{'endDate'}) 
+	    = split(/-/, $headers{'duration'});
+    }
+}
+
+sub search # (yyyymmdd, mon, daysOfMonth, week, dayno)
+{
+    my @nth = ('1st', '2nd', '3rd', '4th', 'Last');
+    my ($yymmdd, $month, $daysOfMonth, $week, $dayno) = @_;
+    my @ret;
+    my $x;
+    my $order = $nth[($dayno - 1) / 7];
+    my @items;
+
+    if ($dayno + 7 &gt; $daysOfMonth &amp;&amp; $dayno &lt; 29) {
+	# &#x3053;&#x306E;&#x65E5;&#x306F;&#x3001;4th &#x304B;&#x3064;&#x3001;Last
+	@items = 
+	    (
+	     @{$TREE-&gt;{$yymmdd}},
+	     @{$TREE-&gt;{$month}-&gt;{$order}-&gt;{$week}},
+	     @{$TREE-&gt;{$month}-&gt;{'Last'}-&gt;{$week}},
+	     @{$TREE-&gt;{$month}-&gt;{'All' }-&gt;{$week}},
+	     @{$TREE-&gt;{'All' }-&gt;{$order}-&gt;{$week}},
+	     @{$TREE-&gt;{'All' }-&gt;{'Last'}-&gt;{$week}},
+	     @{$TREE-&gt;{'All' }-&gt;{'All'}-&gt;{$week}},
+	     @{$TREE-&gt;{$month}-&gt;{$dayno}},
+	     @{$TREE-&gt;{'All' }-&gt;{$dayno}},
+	    );
+    } else {
+	@items = 
+	    (
+	     @{$TREE-&gt;{$yymmdd}},
+	     @{$TREE-&gt;{$month}-&gt;{$order}-&gt;{$week}},
+	     @{$TREE-&gt;{$month}-&gt;{'All'}-&gt;{$week}},
+	     @{$TREE-&gt;{'All'}-&gt;{$order}-&gt;{$week}},
+	     @{$TREE-&gt;{'All'}-&gt;{'All'}-&gt;{$week}},
+	     @{$TREE-&gt;{$month}-&gt;{$dayno}},
+	     @{$TREE-&gt;{'All'}-&gt;{$dayno}},
+	    );
+    }
+
+    foreach $x (@items){
+	push(@ret, $x) if ((!defined $TREE-&gt;{&quot;!$yymmdd&quot;} ||
+			    !grep($x eq $_, @{$TREE-&gt;{&quot;!$yymmdd&quot;}}))
+			   &amp;&amp;
+			   (!defined($x-&gt;{'duration'}) ||
+			    ($yymmdd &gt;= $x-&gt;{'startDate'} &amp;&amp;
+			     $yymmdd &lt;= $x-&gt;{'endDate'})));
+    }
+    return @ret;
+}
+
+
+################################################################
+### Date calculation routines.
+###
+
+######################################
+package main;
+######################################
+
+# isLeapYear(int year) -- check if leap year
+#
+# year:
+#    ex. 1994
+# return: 
+#    1 ... leap year
+#    0 ... not leap year
+#
+sub isLeapYear
+{
+    my ($year) = @_;
+
+    return 1 if ($year % 4 == 0 &amp;&amp; $year % 100 != 0) || $year % 400 == 0;
+    return 0;
+}
+
+# dayOfYear(int mon, int day, int year) -- Nth day of the year.
+#
+# mon, day, year:
+#    ex. 7, 1, 1994
+# return:
+#    182 ... 7, 1, 1994 is the 182nd day of the year.
+#
+sub dayOfYear
+{
+    my ($mon, $day, $year) = @_;
+    my $a;
+
+    if (&amp;isLeapYear($year) &amp;&amp; $mon &gt; 2) {
+	$a = 1;
+    } else {
+	$a = 0;
+    }
+
+    ($day + ($mon - 1) * 31
+     - (0, 0, 3, 3, 4, 4, 5, 5, 5, 6, 6, 7)[$mon - 1]
+     + $a);
+}
+
+# int daysOfMonth(int mon, int year) -- days of the month.
+#
+# mon, year:
+#    ex. 2, 1992
+# return:
+#    29 ... 1992 is leap year.
+sub daysOfMonth
+{
+    my ($mon, $year) = @_;
+
+    (31, 28 + &amp;isLeapYear($year), 31, 30, 31, 30,
+     31, 31, 30, 31, 30, 31)[$mon - 1];
+}
+
+# int dayOfWeek(int mon, int day, int year) -- day of week as a number.
+#
+# mon, day, year:
+#    ex. 7, 1, 1994
+# return:
+#    5 (Fri) ... 7, 1, 1994 is Friday (0:Sun, 1:Mon, ... , 6:Sat)
+#
+sub dayOfWeek
+{
+    my ($mon, $day, $year) = @_;
+
+    (&amp;dayOfYear($mon, $day, $year) + ($year -1) * 365 
+     + int(($year - 1) / 4)
+     - int(($year - 1) / 100)
+     + int(($year - 1) / 400)) % 7;
+}
+
+### Copyright Notice:
+
+## Copyright (C) 1999 Yoshinari Nomura.
+## All rights reserved.
+
+## Redistribution and use in source and binary forms, with or without
+## modification, are permitted provided that the following conditions
+## are met:
+## 
+## 1. Redistributions of source code must retain the above copyright
+##    notice, this list of conditions and the following disclaimer.
+## 2. Redistributions in binary form must reproduce the above copyright
+##    notice, this list of conditions and the following disclaimer in the
+##    documentation and/or other materials provided with the distribution.
+## 3. Neither the name of the team nor the names of its contributors
+##    may be used to endorse or promote products derived from this software
+##    without specific prior written permission.
+## 
+## THIS SOFTWARE IS PROVIDED BY Yoshinari Nomura AND CONTRIBUTORS ``AS IS''
+## AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+## FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL
+## Yoshinari Nomura OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+## INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+## (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+## SERVICES# LOSS OF USE, DATA, OR PROFITS# OR BUSINESS INTERRUPTION)
+## HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+## STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+## ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+## OF THE POSSIBILITY OF SUCH DAMAGE.
+
+### mscan2 ends here
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00025" href="msg00025.html">[mhc:00026] Re: 1.94b23</a></strong>
+<ul><li><em>From:</em> Kazunori NISHI</li></ul></li>
+<li><strong><a name="00026" href="msg00026.html">[mhc:00027] Re: 1.94b23</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+<li><strong><a name="00027" href="msg00027.html">[mhc:00028] Re: 1.94b23</a></strong>
+<ul><li><em>From:</em> OHARA Shigeki</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00027.html">[mhc:00028] Re: 1.94b23</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00029.html">[mhc:00030] Re: 1.94b23</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00027.html">[mhc:00028] Re: 1.94b23</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00005.html">[mhc:00006] 1.94b23</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00028"><strong>Date</strong></a></li>
+<li><a href="threads.html#00028"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

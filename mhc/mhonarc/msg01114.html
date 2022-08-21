@@ -1,0 +1,135 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01115] Re: mhc&#45;sync w/ Ruby&#45;1.6 -->
+<!--X-From-R13: IOFO@OPS Vvebshzv <ronaNbf.evz.be.wc> -->
+<!--X-Date: Tue, 31 Oct 2000 00:05:07 +0900 -->
+<!--X-Message-Id: 4518&#45;Tue31Oct2000000507+0900&#45;eban@os.rim.or.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: uklitqbkqnt.wl@waverider.csce.kyushu&#45;u.ac.jp -->
+<!--X-Reference: 20001030114749I.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Reference: 200010300410.NAA08597@eban.ase.sony.co.jp -->
+<!--X-Reference: 20001030143048W.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01115] Re: mhc-sync w/ Ruby-1.6</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01113.html">Date Prev</a>][<a href="msg01115.html">Date Next</a>][<a href="msg01113.html">Thread Prev</a>][<a href="msg01115.html">Thread Next</a>][<a href="maillist.html#01114">Date Index</a>][<a href="threads.html#01114">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01115] Re: mhc-sync w/ Ruby-1.6</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01115] Re: mhc-sync w/ Ruby-1.6</li>
+<li><em>From</em>: WATANABE Hirofumi &lt;<a href="mailto:eban@DOMAIN.HIDDEN">eban@xxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Tue, 31 Oct 2000 00:05:07 +0900</li>
+<li><em>In-reply-to</em>: Yoshinari Nomura's message of &quot;Mon, 30 Oct 2000 14:30:48 +0900&quot;	&lt;<a href="mailto:20001030143048W.nom@DOMAIN.HIDDEN">20001030143048W.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:uklitqbkqnt.wl@DOMAIN.HIDDEN">uklitqbkqnt.wl@xxxxxxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20001030114749I.nom@DOMAIN.HIDDEN">20001030114749I.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:200010300410.NAA08597@DOMAIN.HIDDEN">200010300410.NAA08597@xxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20001030143048W.nom@DOMAIN.HIDDEN">20001030143048W.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: SEMI/1.13.7 (Awazu) LIMIT/1.13.4 (Harinakano) Emacs/20.7 (i586-pc-linux-gnu) MULE/4.0 (HANANOEN)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x308F;&#x305F;&#x306A;&#x3079;&#x3067;&#x3059;.
+
+Yoshinari Nomura &lt;nom@xxxxxxxxxxxxxxxxxxx&gt; writes:
+
+:&gt;   if header =~ /^X-SC-Record-Id:\s*(\S+)/i
+:&gt; &#x3067;&#x3044;&#x3044;&#x6C17;&#x304C;&#x3057;&#x307E;&#x3059;&#x304C;, &#x306A;&#x305C; ^$ &#x306E;&#x6319;&#x52D5;&#x3092;&#x5909;&#x3048;&#x305F;&#x3044;&#x3093;&#x3067;&#x3057;&#x3087;&#x3046;?
+:
+:&#x3046;&#x3001;&#x3044;&#x308F;&#x308C;&#x3066;&#x307F;&#x308C;&#x3070;&#x3001;&#x7D20;&#x76F4;&#x306B; ^ &#x3067;&#x3044;&#x3044;&#x306E;&#x304B;&#x3002;&#x3002;
+
+&#x3053;&#x3053;&#x304C; Perl &#x3068;&#x306E;&#x5927;&#x304D;&#x306A;&#x9055;&#x3044;&#x3060;&#x3063;&#x305F;&#x308A;&#x3057;&#x307E;&#x3059;.
+% perl -e 'print &quot;a\nb&quot; =~ /^b/, &quot;\n&quot;'
+
+% ruby -e 'print &quot;a\nb&quot; =~ /^b/, &quot;\n&quot;'
+2
+
+://i &#x3060;&#x3051;&#x306E;&#x7269;&#x3092; commit &#x3057;&#x307E;&#x3059;&#x3002;
+
+() &#x304C;&#x306A;&#x304F;&#x306A;&#x3063;&#x305F;&#x306E;&#x3067;&#x3072;&#x3068;&#x3064;&#x305A;&#x308C;&#x307E;&#x3059;.
+&#x3064;&#x3044;&#x3067;&#x306B; ... if $DEBUG &#x306F; if ... end &#x306E;&#x4E2D;&#x306B;&#x5165;&#x308C;&#x305F;&#x307B;&#x3046;&#x304C;&#x3044;&#x3044;
+&#x3067;&#x3057;&#x3087;&#x3046;&#x306D;.
+
+-- 
+&#x308F;&#x305F;&#x306A;&#x3079;&#x3072;&#x308D;&#x3075;&#x307F;
+
+--- mhc-sync.in.orig	Mon Oct 30 21:49:26 2000
++++ mhc-sync.in	Tue Oct 31 00:01:29 2000
+@@ -77,9 +77,9 @@
+       header = file .gets(&quot;\n\n&quot;)
+       file .close
+       if header =~ /^X-SC-Record-Id:\s*(\S+)/i
+-	@record_id_to_path_hash[$2] = filename
++	@record_id_to_path_hash[$1] = filename
++	STDERR .print &quot;#{filename} -&gt; #{$1}\n&quot; if $DEBUG
+       end
+-      STDERR .print &quot;#{filename} -&gt; #{$2}\n&quot; if $DEBUG
+ 
+     }
+     return self
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01115" href="msg01115.html">[mhc:01116] Re: mhc-sync w/ Ruby-1.6</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="01108" href="msg01108.html">[mhc:01109] mhc-sync w/ Ruby-1.6</a></strong>
+<ul><li><em>From:</em> Toshihiko SHIMOKAWA / &#x4E0B;&#x5DDD;&#x4FCA;&#x5F66;</li></ul></li>
+<li><strong><a name="01109" href="msg01109.html">[mhc:01110] Re: mhc-sync w/ Ruby-1.6</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+<li><strong><a name="01111" href="msg01111.html">[mhc:01112] Re: mhc-sync w/ Ruby-1.6</a></strong>
+<ul><li><em>From:</em> WATANABE Hirofumi</li></ul></li>
+<li><strong><a name="01113" href="msg01113.html">[mhc:01114] Re: mhc-sync w/ Ruby-1.6</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01113.html">[mhc:01114] Re: mhc-sync w/ Ruby-1.6</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01115.html">[mhc:01116] Re: mhc-sync w/ Ruby-1.6</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01113.html">[mhc:01114] Re: mhc-sync w/ Ruby-1.6</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01115.html">[mhc:01116] Re: mhc-sync w/ Ruby-1.6</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01114"><strong>Date</strong></a></li>
+<li><a href="threads.html#01114"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

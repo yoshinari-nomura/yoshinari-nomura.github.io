@@ -1,0 +1,136 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:02070] Re: iCalendar &#45;> MHC? -->
+<!--X-From-R13: "Tryvk S. Yyrr" <sryvk.xyrrNvaxn.qr> -->
+<!--X-Date: Tue, 22 Mar 2005 14:39:07 +0100 -->
+<!--X-Message-Id: 87k6nzkdfo.wl%felix.klee@inka.de -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 87sm2uno5m.wl%felix.klee@inka.de -->
+<!--X-Reference: 20050318105944X.nom@vintage.swlab.it.okayama&#45;u.ac.jp -->
+<!--X-Reference: 873bupnf9v.wl%felix.klee@inka.de -->
+<!--X-Reference: 20050322144541P.nom@vintage.swlab.it.okayama&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:02070] Re: iCalendar -&gt; MHC?</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg02068.html">Date Prev</a>][<a href="msg02070.html">Date Next</a>][<a href="msg02064.html">Thread Prev</a>][<a href="msg02072.html">Thread Next</a>][<a href="maillist.html#02069">Date Index</a>][<a href="threads.html#02069">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:02070] Re: iCalendar -&gt; MHC?</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:02070] Re: iCalendar -&gt; MHC?</li>
+<li><em>From</em>: &quot;Felix E. Klee&quot; &lt;<a href="mailto:felix.klee@DOMAIN.HIDDEN">felix.klee@xxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Tue, 22 Mar 2005 14:39:07 +0100</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20050322144541P.nom@DOMAIN.HIDDEN">20050322144541P.nom@xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:87sm2uno5m.wl%25felix.klee@DOMAIN.HIDDEN">87sm2uno5m.wl%felix.klee@xxxxxxx</a>&gt;	&lt;<a href="mailto:20050318105944X.nom@DOMAIN.HIDDEN">20050318105944X.nom@xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:873bupnf9v.wl%25felix.klee@DOMAIN.HIDDEN">873bupnf9v.wl%felix.klee@xxxxxxx</a>&gt;	&lt;<a href="mailto:20050322144541P.nom@DOMAIN.HIDDEN">20050322144541P.nom@xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: Wanderlust/2.12.2 (99 Luftballons) SEMI/1.14.6 (Maruoka) FLIM/1.14.7 (Sanj&#x14D;) APEL/10.6 Emacs/21.3 (i486-slackware-linux-gnu) MULE/5.0 (SAKAKI)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>At Tue, 22 Mar 2005 14:45:41 +0900,
+Yoshinari Nomura wrote:
+&gt; I have something to reply you, 
+&gt; but, I'm curryenty on travel and far from my home base.
+
+That's no problem - I'm not in a hurry.
+
+&gt; One short answer about alarm:
+&gt;   How about using gemcal?
+
+I tried it, but it fails when I click on an appointment:
+
+~&gt; gemcal 
+/usr/lib/ruby/site_ruby/1.8/mhc-gtk.rb:44: warning: string =~ string will be obsolete; use explicit regexp
+/usr/bin/gemcal:259:in `initialize': undefined method `signal_connect' for 3:Fixnum (NoMethodError)
+        from /usr/bin/gemcal:496:in `new'
+        from /usr/bin/gemcal:496:in `open_sch_edit'
+        from /usr/bin/gemcal:472:in `initialize'
+        from /usr/bin/gemcal:468:in `call'
+        from /usr/lib/ruby/site_ruby/1.8/mhc-gtk.rb:516:in `signal_connect'
+        from /usr/lib/ruby/site_ruby/1.8/mhc-gtk.rb:516:in `call'
+        from /usr/bin/gemcal:689:in `main'
+        from /usr/bin/gemcal:689
+
+I'm using Ruby 1.8 with Ruby-GTK 0.34, and I do have MHC's ruby-ext
+installed:
+
+~&gt; ls /usr/lib/ruby/site_ruby/1.8/
+i686-linux/  mhc-gtk.rb    mhc-palm.rb      mhc-signal.rb
+mhc-date.rb  mhc-kconv.rb  mhc-schedule.rb
+
+&gt;   I also posted a simple alarm client written in Ruby.
+
+You mean the program &quot;today&quot;?  It seems to work fine for showing events,
+and one could parse its output via cron.  However, &quot;today&quot; doesn't
+investigate the &quot;X-SC-Alarm&quot; header field.
+
+-- 
+Felix E. Klee
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="02072" href="msg02072.html">[mhc:02073] Re: iCalendar -&gt; MHC?</a></strong>
+<ul><li><em>From:</em> Yoshiaki Kasahara</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="02053" href="msg02053.html">[mhc:02054] iCalendar -&gt; MHC?</a></strong>
+<ul><li><em>From:</em> Felix E. Klee</li></ul></li>
+<li><strong><a name="02054" href="msg02054.html">[mhc:02055] Re: iCalendar -&gt; MHC?</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+<li><strong><a name="02057" href="msg02057.html">[mhc:02058] Re: iCalendar -&gt; MHC?</a></strong>
+<ul><li><em>From:</em> Felix E. Klee</li></ul></li>
+<li><strong><a name="02064" href="msg02064.html">[mhc:02065] Re: iCalendar -&gt; MHC?</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg02068.html">[mhc:02069] Re: [snap20050320] Many Icons are Left Unused</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg02070.html">[mhc:02071] Re: [snap20050320] Many Icons are Left Unused</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg02064.html">[mhc:02065] Re: iCalendar -&gt; MHC?</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg02072.html">[mhc:02073] Re: iCalendar -&gt; MHC?</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#02069"><strong>Date</strong></a></li>
+<li><a href="threads.html#02069"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

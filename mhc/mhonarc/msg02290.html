@@ -1,0 +1,116 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:02291] import with attachements and wanderlust -->
+<!--X-From-R13: Rnivq Perzare <oerzareNhao.pn> -->
+<!--X-Date: Sat, 05 Jul 2008 22:39:37 +0200 -->
+<!--X-Message-Id: 0t3amokquu.wl%bremner@pivot.cs.unb.ca -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:02291] import with attachements and wanderlust</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg02289.html">Date Prev</a>][<a href="msg02291.html">Date Next</a>][<a href="msg02289.html">Thread Prev</a>][<a href="msg02291.html">Thread Next</a>][<a href="maillist.html#02290">Date Index</a>][<a href="threads.html#02290">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:02291] import with attachements and wanderlust</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: mhc &lt;<a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Subject</em>: [mhc:02291] import with attachements and wanderlust</li>
+<li><em>From</em>: David Bremner &lt;<a href="mailto:bremner@DOMAIN.HIDDEN">bremner@xxxxxx</a>&gt;</li>
+<li><em>Date</em>: Sat, 05 Jul 2008 22:39:37 +0200</li>
+<li><em>Delivered-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>List-help</em>: &lt;<a href="mailto:mhc-ctl@quickhack.net?body=help">mailto:mhc-ctl@quickhack.net?body=help</a>&gt;</li>
+<li><em>List-id</em>: mhc.quickhack.net</li>
+<li><em>List-owner</em>: &lt;<a href="mailto:mhc-admin@quickhack.net">mailto:mhc-admin@quickhack.net</a>&gt;</li>
+<li><em>List-post</em>: &lt;<a href="mailto:mhc@quickhack.net">mailto:mhc@quickhack.net</a>&gt;</li>
+<li><em>List-software</em>: fml [fml 4.0.3 release (20011202/4.0.3)]</li>
+<li><em>List-unsubscribe</em>: &lt;<a href="mailto:mhc-ctl@quickhack.net?body=unsubscribe">mailto:mhc-ctl@quickhack.net?body=unsubscribe</a>&gt;</li>
+<li><em>Reply-to</em>: David Bremner &lt;<a href="mailto:bremner@DOMAIN.HIDDEN">bremner@xxxxxx</a>&gt;</li>
+<li><em>User-agent</em>: EMIKO/1.14.1 (Choanoflagellata) FLIM/1.14.9 (Goj&#x14D;) APEL/10.7 EasyPG/0.0.15 Emacs/22.2	(i486-pc-linux-gnu) MULE/5.0 (SAKAKI)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>
+[ Thanks to Nomura-san for committing my last suggestion.]
+
+Does anyone have success with wanderlust (I use wl 2.15.6) and import
+with attachments (C-U C-C . |). 
+
+For me, the message in 
+
+    <a  rel="nofollow" href="http://www.cs.unb.ca/~bremner/18209.eml">http://www.cs.unb.ca/~bremner/18209.eml</a>
+
+fails with following partial backtrace
+
+Debugger entered--Lisp error: (wrong-type-argument arrayp nil)
+  wl-summary-set-message-buffer-or-redisplay()
+  wl-summary-get-original-buffer()
+  mhc-wl-mime-get-raw-buffer()
+  funcall(mhc-wl-mime-get-raw-buffer)
+  mhc-mime-get-raw-buffer()
+  (progn (mhc-mime-get-raw-buffer))
+  (if (or get-original (not structure)) (progn (mhc-mime-get-raw-buffer)))
+  (when (or get-original (not structure)) (mhc-mime-get-raw-buffer))
+  (let* ((structure ...) (raw-buffer ...) mime-view-ignored-field-list) (with-current-buffer (get-buffer-create mhc-mime-import-buffer) (if structure ... ...) (let ... ...) (if get-original ... ...)))
+  mhc-mime-get-import-buffer((4))
+  mhc-import((4))
+
+
+
+
+
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="02291" href="msg02291.html">[mhc:02292] Re: import with attachements and wanderlust</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg02289.html">[mhc:02290] Re: toggle todos</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg02291.html">[mhc:02292] Re: import with attachements and wanderlust</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg02289.html">[mhc:02290] Re: toggle todos</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg02291.html">[mhc:02292] Re: import with attachements and wanderlust</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#02290"><strong>Date</strong></a></li>
+<li><a href="threads.html#02290"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

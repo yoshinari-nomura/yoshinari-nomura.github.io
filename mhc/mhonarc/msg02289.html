@@ -1,0 +1,123 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:02290] Re: toggle todos -->
+<!--X-From-R13: Kbfuvanev @bzhen <abzNdhvpxunpx.arg> -->
+<!--X-Date: Fri, 04 Jul 2008 16:01:52 +0900 (JST) -->
+<!--X-Message-Id: 20080704.160152.268135409.nom@quickhack.net -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 0t63rryq7m.wl%bremner@pivot.cs.unb.ca -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:02290] Re: toggle todos</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg02288.html">Date Prev</a>][<a href="msg02290.html">Date Next</a>][<a href="msg02288.html">Thread Prev</a>][<a href="msg02290.html">Thread Next</a>][<a href="maillist.html#02289">Date Index</a>][<a href="threads.html#02289">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:02290] Re: toggle todos</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:bremner-dated-1216044285.4bcbbc@DOMAIN.HIDDEN">bremner-dated-1216044285.4bcbbc@xxxxxxxxxxxxxxx</a>, <a href="mailto:bremner@DOMAIN.HIDDEN">bremner@xxxxxx</a></li>
+<li><em>Subject</em>: [mhc:02290] Re: toggle todos</li>
+<li><em>From</em>: Yoshinari Nomura &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Fri, 04 Jul 2008 16:01:52 +0900 (JST)</li>
+<li><em>Cc</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Delivered-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:0t63rryq7m.wl%25bremner@DOMAIN.HIDDEN">0t63rryq7m.wl%bremner@xxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>List-help</em>: &lt;<a href="mailto:mhc-ctl@quickhack.net?body=help">mailto:mhc-ctl@quickhack.net?body=help</a>&gt;</li>
+<li><em>List-id</em>: mhc.quickhack.net</li>
+<li><em>List-owner</em>: &lt;<a href="mailto:mhc-admin@quickhack.net">mailto:mhc-admin@quickhack.net</a>&gt;</li>
+<li><em>List-post</em>: &lt;<a href="mailto:mhc@quickhack.net">mailto:mhc@quickhack.net</a>&gt;</li>
+<li><em>List-software</em>: fml [fml 4.0.3 release (20011202/4.0.3)]</li>
+<li><em>List-unsubscribe</em>: &lt;<a href="mailto:mhc-ctl@quickhack.net?body=unsubscribe">mailto:mhc-ctl@quickhack.net?body=unsubscribe</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:0t63rryq7m.wl%25bremner@DOMAIN.HIDDEN">0t63rryq7m.wl%bremner@xxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>commited:
+
+2008-07-04  David Bremner / Yoshinari Nomura &lt;nom@xxxxxxxxxxxxx&gt;
+
+        * emacs/mhc-draft.el, emacs/mhc.el:
+        (mhc-draft-toggle-done), (mhc-todo-toggle-done): new functions.
+
+On Mon, 30 Jun 2008 16:03:57 +0200,
+	David Bremner &lt;bremner@xxxxxx&gt; said:
+
+&gt; [ I hope it is OK to write to this list in English. My Nihongo pretty
+&gt; much starts and stops at sumimasen and o-kudasai. ]
+&gt; 
+&gt; I just started to use mhc, and I like it very much so far.
+&gt; 
+&gt; Here is a simple addition to allow toggling todo's with &quot;ctrl-C . @&quot;.
+&gt; 
+&gt; (define-key mhc-prefix-map &quot;@&quot; 'mhc-todo-toggle-done)
+&gt; (defun mhc-todo-toggle-done ()
+&gt;   &quot;Toggle between done and not for todo&quot;
+&gt;   (interactive)
+&gt;   (mhc-modify-file (mhc-summary-filename))
+&gt;   (mhc-draft-toggle-done)
+&gt;   (mhc-draft-finish)
+&gt;   (message &quot;&quot;))
+&gt; 
+&gt; (defun mhc-draft-toggle-done ()
+&gt;   &quot;Set current draft as DONE if not; remove done if there.&quot;
+&gt;   (interactive)
+&gt;   (if  (mhc-draft-in-category-p &quot;todo&quot;)
+&gt;       (if (mhc-draft-in-category-p &quot;done&quot;)
+&gt; 	  (mhc-draft-delete-category &quot;done&quot;)
+&gt; 	(mhc-draft-append-category &quot;Done&quot;))))
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="02286" href="msg02286.html">[mhc:02287] toggle todos</a></strong>
+<ul><li><em>From:</em> David Bremner</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg02288.html">[mhc:02289] Re: toggle todos</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg02290.html">[mhc:02291] import with attachements and wanderlust</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg02288.html">[mhc:02289] Re: toggle todos</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg02290.html">[mhc:02291] import with attachements and wanderlust</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#02289"><strong>Date</strong></a></li>
+<li><a href="threads.html#02289"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

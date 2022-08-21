@@ -1,0 +1,201 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00530] Re: =?ISO&#45;2022&#45;JP?B?GyRCJTklVCE8JUk2OCRYJE5GOxsoQg==?= -->
+<!--X-From-R13: FEGQVWKO [nfngbfuv <gfhpuvlnNcvar.xhrr.xlbgb&#45;h.np.wc> -->
+<!--X-Date: Sat, 22 Apr 2000 00:48:16 +0900 -->
+<!--X-Message-Id: mpak8hro3pi.fsf@olive.kuee.kyoto&#45;u.ac.jp -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Reference: mpawvlroc6h.fsf@olive.kuee.kyoto&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00530] Re: &#x30B9;&#x30D4;&#x30FC;&#x30C9;&#x72C2;&#x3078;&#x306E;&#x9053;</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00528.html">Date Prev</a>][<a href="msg00530.html">Date Next</a>][<a href="msg00527.html">Thread Prev</a>][<a href="msg00530.html">Thread Next</a>][<a href="maillist.html#00529">Date Index</a>][<a href="threads.html#00529">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00530] Re: &#x30B9;&#x30D4;&#x30FC;&#x30C9;&#x72C2;&#x3078;&#x306E;&#x9053;</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00530] Re: &#x30B9;&#x30D4;&#x30FC;&#x30C9;&#x72C2;&#x3078;&#x306E;&#x9053;</li>
+<li><em>From</em>: TSUCHIYA Masatoshi &lt;<a href="mailto:tsuchiya@DOMAIN.HIDDEN">tsuchiya@xxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Sat, 22 Apr 2000 00:48:16 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:mpawvlroc6h.fsf@DOMAIN.HIDDEN">mpawvlroc6h.fsf@xxxxxxxxxxxxxxxxxxxxxxxx</a>&gt; (TSUCHIYA Masatoshi's message of &quot;Fri, 21 Apr 2000 21:45:13 +0900&quot;)</li>
+<li><em>Posted</em>: 22 Apr 2000 00:48:09 +0900</li>
+<li><em>References</em>: &lt;<a href="mailto:mpawvlroc6h.fsf@DOMAIN.HIDDEN">mpawvlroc6h.fsf@xxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Sender</em>: <a href="mailto:tsuchiya@DOMAIN.HIDDEN">tsuchiya@xxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: T-gnus/6.14.2 (based on Gnus v5.8.4) SEMI/1.13.7 (Awazu) FLIM/1.13.2 (Kasanui) Emacs/20.6 (sparc-sun-solaris2.6) MULE/4.0 (HANANOEN)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&gt;&gt; On Fri, 21 Apr 2000 21:45:13 +0900
+&gt;&gt; &#x300C;&#x571F;&#x300D;== tsuchiya@xxxxxxxxxxxxxxxxxxxxxxx (TSUCHIYA Masatoshi) said as follows:
+
+&#x571F;&gt; mhc &#x3092;&#x9AD8;&#x901F;&#x5316;&#x3059;&#x308B;&#x3079;&#x304F;&#x5C0F;&#x7D30;&#x5DE5;&#x3092;&#x59CB;&#x3081;&#x307E;&#x3057;&#x305F;&#x3002;
+
+&#x5C0F;&#x7D30;&#x5DE5;&#x305D;&#x306E;2&#x3002;(ddate-days) &#x3084; (ddate-ww) &#x304C;&#x6642;&#x9593;&#x3092;&#x98DF;&#x3063;&#x3066;&#x3044;&#x305D;&#x3046;&#x3060;&#x306A;&#x3041;&#x3001;&#x3068;
+&#x601D;&#x3063;&#x305F;&#x306E;&#x3067;&#x3001;&#x8A08;&#x7B97;&#x7D50;&#x679C;&#x3092; cache &#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002;
+
+</pre><pre>Index: mhc-date.el
+===================================================================
+RCS file: /home/tsuchiya/CVS/projects/mhc/mhc-date.el,v
+retrieving revision 1.1.1.1
+diff -u -u -r1.1.1.1 mhc-date.el
+--- mhc-date.el	2000/04/18 00:16:25	1.1.1.1
++++ mhc-date.el	2000/04/21 14:04:49
+@@ -15,7 +15,7 @@
+ ;;
+ ;; 1999-04-30 corresponds to  (1999 4 30)
+ ;;
+-;; ddate is also simple. It expresses a time by a list of integer.
++;; dtime is also simple. It expresses a time by a list of integer.
+ ;; for example:
+ ;;
+ ;; 12:30 (12 30)
+@@ -111,6 +111,8 @@
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;;; ddate
+ 
++(defvar ddate-cache-obarray (make-vector 1023 0))
++
+ ;;
+ ;; create new object, access method to each element.
+ ;;
+@@ -199,15 +201,19 @@
+ (defun ddate-yy (ddate) (nth 0 ddate))
+ (defun ddate-mm (ddate) (nth 1 ddate))
+ (defun ddate-dd (ddate) (nth 2 ddate))
++
+ (defun ddate-ww (ddate)
+-  ;;  (0:Sun, 2:Mon, ... , 6:Sat)
+-  (let ((xx (1- (ddate-yy ddate))))
+-    (% (+ (ddate-day-of-yy ddate)
+-	  (* xx  365)
+-	  (/ xx    4)
+-	  (/ xx -100)
+-	  (/ xx  400))
+-       7)))
++  (let ((symbol (intern (ddate-to-s ddate) ddate-cache-obarray)))
++    (or (get symbol 'ddate-ww)
++	(put symbol 'ddate-ww
++	     ;;  (0:Sun, 2:Mon, ... , 6:Sat)
++	     (let ((xx (1- (ddate-yy ddate))))
++	       (% (+ (ddate-day-of-yy ddate)
++		     (* xx  365)
++		     (/ xx    4)
++		     (/ xx -100)
++		     (/ xx  400))
++		  7))))))
+ 
+ (defun ddate-oo (ddate)
+   (/ (1- (ddate-dd ddate)) 7))
+@@ -414,24 +420,30 @@
+ ;;      ; 1994-7-1 is the 182nd day of the year.
+ ;;
+ (defun ddate-day-of-yy (ddate)
+-  (let (yy mm dd xx)
+-    (setq yy (ddate-yy ddate) mm (ddate-mm ddate) dd (ddate-dd ddate)
+-	  xx (if (and (ddate-leap-year-p yy) (&gt; mm 2)) 1 0))
+-    (- (+ dd (* (1- mm) 31) xx)
+-       (nth (1- mm) '(0 0 3 3 4 4 5 5 5 6 6 7)))))
++  (let ((symbol (intern (ddate-to-s ddate) ddate-cache-obarray)))
++    (or (get symbol 'ddate-day-of-yy)
++	(put symbol 'ddate-day-of-yy
++	     (let (yy mm dd xx)
++	       (setq yy (ddate-yy ddate) mm (ddate-mm ddate) dd (ddate-dd ddate)
++		     xx (if (and (ddate-leap-year-p yy) (&gt; mm 2)) 1 0))
++	       (- (+ dd (* (1- mm) 31) xx)
++		  (nth (1- mm) '(0 0 3 3 4 4 5 5 5 6 6 7))))))))
+ 
+ 
+ ;;
+ ;; days from 1970-01-01
+ ;;
+ (defun ddate-days (ddate)
+-  (let ((xx (1- (ddate-yy ddate))))
+-    (- (+ (ddate-day-of-yy ddate)
+-	  (* xx  365)
+-	  (/ xx    4)
+-	  (/ xx -100)
+-	  (/ xx  400))
+-       719163)))
++  (let ((symbol (intern (ddate-to-s ddate) ddate-cache-obarray)))
++    (or (get symbol 'ddate-days)
++	(put symbol 'ddate-days
++	     (let ((xx (1- (ddate-yy ddate))))
++	       (- (+ (ddate-day-of-yy ddate)
++		     (* xx  365)
++		     (/ xx    4)
++		     (/ xx -100)
++		     (/ xx  400))
++		  719163))))))
+ 
+ ;;
+ ;; check if date is the last week of the month.
+</pre><pre>
+&#x3068;&#x8A00;&#x3063;&#x3066;&#x3082;&#x3001;4&#x30F6;&#x6708;&#x304F;&#x3089;&#x3044;&#x306E;&#x4E88;&#x5B9A;&#x3092;&#x898B;&#x305F;&#x3068;&#x304D;&#x306B;&#x3001;0.5 &#x79D2;&#x304F;&#x3089;&#x3044;&#x5909;&#x308F;&#x308B;&#x3060;&#x3051;&#x306A;&#x3093;
+&#x3067;&#x3059;&#x3051;&#x3069;&#x3002;
+
+-- 
+&#x571F;&#x5C4B; &#x96C5;&#x7A14;  ( TSUCHIYA Masatoshi )
+    <a  rel="nofollow" href="http://www-nagao.kuee.kyoto-u.ac.jp/member/tsuchiya/">http://www-nagao.kuee.kyoto-u.ac.jp/member/tsuchiya/</a>
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00530" href="msg00530.html">[mhc:00531] Re: &#x30B9;&#x30D4;&#x30FC;&#x30C9;&#x72C2;&#x3078;&#x306E;&#x9053;</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00527" href="msg00527.html">[mhc:00528] &#x30B9;&#x30D4;&#x30FC;&#x30C9;&#x72C2;&#x3078;&#x306E;&#x9053;</a></strong>
+<ul><li><em>From:</em> TSUCHIYA Masatoshi</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00528.html">[mhc:00529] Re: mhc-cvs.el and Gnus support</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00530.html">[mhc:00531] Re: &#x30B9;&#x30D4;&#x30FC;&#x30C9;&#x72C2;&#x3078;&#x306E;&#x9053;</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00527.html">[mhc:00528] &#x30B9;&#x30D4;&#x30FC;&#x30C9;&#x72C2;&#x3078;&#x306E;&#x9053;</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00530.html">[mhc:00531] Re: &#x30B9;&#x30D4;&#x30FC;&#x30C9;&#x72C2;&#x3078;&#x306E;&#x9053;</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00529"><strong>Date</strong></a></li>
+<li><a href="threads.html#00529"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

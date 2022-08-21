@@ -1,0 +1,140 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00533] Re: T&#45;gnus support -->
+<!--X-From-R13: FEGQVWKO [nfngbfuv <gfhpuvlnNcvar.xhrr.xlbgb&#45;h.np.wc> -->
+<!--X-Date: Mon, 24 Apr 2000 10:20:23 +0900 -->
+<!--X-Message-Id: mpa4s8sqoql.fsf_&#45;_@olive.kuee.kyoto&#45;u.ac.jp -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Reference: 20000301182205S.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Reference: 200004161441.XAA17560@crest.csce.kyushu&#45;u.ac.jp -->
+<!--X-Reference: wk4s92829k.fsf@miyoshi.ask.ne.jp -->
+<!--X-Reference: mpa1z45v9ol.fsf_&#45;_@olive.kuee.kyoto&#45;u.ac.jp -->
+<!--X-Reference: wkr9c54hlp.fsf@metaxa.hrl.hitachi.co.jp -->
+<!--X-Reference: mpavh1dyukq.fsf@olive.kuee.kyoto&#45;u.ac.jp -->
+<!--X-Reference: wkr9c0vlcp.fsf@miyoshi.ask.ne.jp -->
+<!--X-Reference: 200004221417.XAA15888@crest.csce.kyushu&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00533] Re: T-gnus support</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00531.html">Date Prev</a>][<a href="msg00533.html">Date Next</a>][<a href="msg00531.html">Thread Prev</a>][<a href="msg00428.html">Thread Next</a>][<a href="maillist.html#00532">Date Index</a>][<a href="threads.html#00532">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00533] Re: T-gnus support</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00533] Re: T-gnus support</li>
+<li><em>From</em>: TSUCHIYA Masatoshi &lt;<a href="mailto:tsuchiya@DOMAIN.HIDDEN">tsuchiya@xxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Mon, 24 Apr 2000 10:20:23 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:200004221417.XAA15888@DOMAIN.HIDDEN">200004221417.XAA15888@xxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt; (TSUCHIYA Masatoshi's message of &quot;Sat, 22 Apr 2000 23:17:30 +0900&quot;)</li>
+<li><em>Posted</em>: 24 Apr 2000 10:20:02 +0900</li>
+<li><em>References</em>: &lt;<a href="mailto:20000301182205S.nom@DOMAIN.HIDDEN">20000301182205S.nom@xxxxxxxxxxxxxxxxxxx</a>&gt; &lt;<a href="mailto:200004161441.XAA17560@DOMAIN.HIDDEN">200004161441.XAA17560@xxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt; &lt;<a href="mailto:wk4s92829k.fsf@DOMAIN.HIDDEN">wk4s92829k.fsf@xxxxxxxxxxxxxxxxx</a>&gt; &lt;<a href="mailto:mpa1z45v9ol.fsf_-_@DOMAIN.HIDDEN">mpa1z45v9ol.fsf_-_@xxxxxxxxxxxxxxxxxxxxxxxx</a>&gt; &lt;<a href="mailto:wkr9c54hlp.fsf@DOMAIN.HIDDEN">wkr9c54hlp.fsf@xxxxxxxxxxxxxxxxxxxxxxxx</a>&gt; &lt;<a href="mailto:mpavh1dyukq.fsf@DOMAIN.HIDDEN">mpavh1dyukq.fsf@xxxxxxxxxxxxxxxxxxxxxxxx</a>&gt; &lt;<a href="mailto:wkr9c0vlcp.fsf@DOMAIN.HIDDEN">wkr9c0vlcp.fsf@xxxxxxxxxxxxxxxxx</a>&gt; &lt;<a href="mailto:200004221417.XAA15888@DOMAIN.HIDDEN">200004221417.XAA15888@xxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Sender</em>: <a href="mailto:tsuchiya@DOMAIN.HIDDEN">tsuchiya@xxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: T-gnus/6.14.2 (based on Gnus v5.8.4) SEMI/1.13.7 (Awazu) FLIM/1.13.2 (Kasanui) Emacs/20.6 (sparc-sun-solaris2.6) MULE/4.0 (HANANOEN)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x305D;&#x308C;&#x304B;&#x3089;&#x3001;Gnus &#x4F7F;&#x3044;&#x306E;&#x4EBA;&#x306F;&#x3068;&#x308A;&#x3042;&#x3048;&#x305A;&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x5165;&#x308C;&#x3066;&#x304A;&#x304F;&#x3068;&#x3001;&#x3061;&#x3087;&#x3063;
+&#x3068;&#x5E78;&#x305B;&#x306B;&#x306A;&#x308C;&#x308B;&#x304B;&#x3082;&#x77E5;&#x308C;&#x307E;&#x305B;&#x3093;&#x3002;
+
+</pre><pre>(defun mhc-gnus-next-schedule (n)
+  (interactive &quot;p&quot;)
+  (let ((p (point)))
+    (catch 'found
+      (while (not (eobp))
+	(forward-line 1)
+	(and (get-text-property (point) 'gnus-number)
+	     (&lt;= (setq n (1- n)) 0)
+	     (throw 'found t)))
+      (goto-char p)
+      (message &quot;Can't find next schedule&quot;))))
+
+(defun mhc-gnus-previous-schedule (n)
+  (interactive &quot;p&quot;)
+  (let ((p (point)))
+    (catch 'found
+      (while (not (bobp))
+	(forward-line -1)
+	(and (get-text-property (point) 'gnus-number)
+	     (&lt;= (setq n (1- n)) 0)
+	     (throw 'found t)))
+      (goto-char p)
+      (message &quot;Can't find previous schedule&quot;))))
+
+(add-hook 'gnus-summary-mode-hook
+	  (lambda ()
+	    (define-key gnus-summary-mode-map &quot;\t&quot; 'mhc-gnus-next-schedule)
+	    (define-key gnus-summary-mode-map &quot;\M-\t&quot; 'mhc-gnus-previous-schedule)))
+</pre><pre>-- 
+&#x571F;&#x5C4B; &#x96C5;&#x7A14;  ( TSUCHIYA Masatoshi )
+    <a  rel="nofollow" href="http://www-nagao.kuee.kyoto-u.ac.jp/member/tsuchiya/">http://www-nagao.kuee.kyoto-u.ac.jp/member/tsuchiya/</a>
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00427" href="msg00427.html">[mhc:00428] mhc-snap20000301</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+<li><strong><a name="00481" href="msg00481.html">[mhc:00482] Variable binding depth exceeds max-specpdl-size</a></strong>
+<ul><li><em>From:</em> TSUCHIYA Masatoshi</li></ul></li>
+<li><strong><a name="00484" href="msg00484.html">[mhc:00485] Re: Variable binding depth exceeds max-specpdl-size</a></strong>
+<ul><li><em>From:</em> MIYOSHI Masanori</li></ul></li>
+<li><strong><a name="00487" href="msg00487.html">[mhc:00488] About T-gnus support ( Re: Variable binding depth exceeds max-specpdl-size )</a></strong>
+<ul><li><em>From:</em> TSUCHIYA Masatoshi</li></ul></li>
+<li><strong><a name="00489" href="msg00489.html">[mhc:00490] Re: About T-gnus support ( Re: Variable binding depth exceeds max-specpdl-size )</a></strong>
+<ul><li><em>From:</em> MIYOSHI Masanori</li></ul></li>
+<li><strong><a name="00525" href="msg00525.html">[mhc:00526] Re: About T-gnus support ( Re: Variable binding depth exceeds max-specpdl-size )</a></strong>
+<ul><li><em>From:</em> TSUCHIYA Masatoshi</li></ul></li>
+<li><strong><a name="00526" href="msg00526.html">[mhc:00527] Re: About T-gnus support ( Re: Variable binding depth exceeds max-specpdl-size )</a></strong>
+<ul><li><em>From:</em> MIYOSHI Masanori</li></ul></li>
+<li><strong><a name="00531" href="msg00531.html">[mhc:00532] Re: T-gnus support</a></strong>
+<ul><li><em>From:</em> TSUCHIYA Masatoshi</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00531.html">[mhc:00532] Re: T-gnus support</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00533.html">[mhc:00534] Re: mhc-cvs.el</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00531.html">[mhc:00532] Re: T-gnus support</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00428.html">[mhc:00429] 2/29 &#x306E;&#x63A8;&#x6E2C;</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00532"><strong>Date</strong></a></li>
+<li><a href="threads.html#00532"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

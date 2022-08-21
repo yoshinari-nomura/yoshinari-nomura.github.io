@@ -1,0 +1,119 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00809] Re: cmail support. -->
+<!--X-From-R13: Kbfuvanev @bzhen <abzNpfpr.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Wed, 19 Jul 2000 13:29:53 +0900 -->
+<!--X-Message-Id: 20000719132953X.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 20000718190724D.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00809] Re: cmail support.</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00807.html">Date Prev</a>][<a href="msg00809.html">Date Next</a>][<a href="msg00803.html">Thread Prev</a>][<a href="msg00811.html">Thread Next</a>][<a href="maillist.html#00808">Date Index</a>][<a href="threads.html#00808">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00809] Re: cmail support.</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00809] Re: cmail support.</li>
+<li><em>From</em>: Yoshinari Nomura &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Wed, 19 Jul 2000 13:29:53 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20000718190724D.nom@DOMAIN.HIDDEN">20000718190724D.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:20000718190724D.nom@DOMAIN.HIDDEN">20000718190724D.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x4E43;&#x6751;&#x3067;&#x3059;&#x3002;cmail &#x95A2;&#x4FC2;&#x304C;&#x3082;&#x3046;&#x3061;&#x3087;&#x3063;&#x3068;&#x3060;&#x3051;&#x9032;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002;
+
+emacs/00usage.jis &#x306E; &#x300C;3. .emacs &#x306B;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x8A18;&#x8FF0;&#x3057;&#x307E;&#x3059;&#x3002;&#x300D;
+&#x306E;&#x90E8;&#x5206;&#x3092;
+
+  (autoload 'mhc-cmail-setup &quot;mhc-cmail&quot;)
+  (add-hook 'cmail-startup-hook 'mhc-cmail-setup)
+
+&#x306E;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;C-c| &#x3084; C-c{n,p} SPC &#x306F;&#x52B9;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x5B9F;&#x9A13;&#x306A;&#x306E;&#x3067;&#x3001;mhc-cmail.el &#x306E;&#x4E2D;&#x3067;&#x3001;cmail &#x306E;&#x95A2;&#x6570;&#x3092;&#x4E0A;&#x66F8;&#x304D;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+load &#x306E;&#x9806;&#x756A;&#x306B;&#x6CE8;&#x610F;&#x3057;&#x3066;&#x4E0B;&#x3055;&#x3044;&#x3002;
+
+&#x65E2;&#x77E5;&#x306E;&#x554F;&#x984C;&#x70B9;:
+
+  cmail &#x306E;&#x30D5;&#x30A9;&#x30EB;&#x30C0;&#x3068;&#x306F;&#x7121;&#x95A2;&#x4FC2;&#x306B; ~/Mail &#x3092;&#x6398;&#x308A;&#x307E;&#x3059;&#x3002;
+  &#x91CD;&#x306A;&#x308B;&#x5834;&#x5408;&#x306F; mhc &#x5074;&#x3092;&#x30AB;&#x30B9;&#x30BF;&#x30DE;&#x30A4;&#x30BA;&#x3057;&#x3066;&#x9664;&#x3051;&#x3066;&#x4E0B;&#x3055;&#x3044;&#x3002;
+
+  ~/Mail/ &#x306E; mode &#x3092;&#x3061;&#x3083;&#x3093;&#x3068;&#x6307;&#x5B9A;&#x3057;&#x3066;&#x3044;&#x306A;&#x3044;&#x306E;&#x3067;&#x3001;700 &#x306B;&#x3059;&#x308B;&#x306A;&#x308A;&#x3057;&#x3066;&#x4E0B;&#x3055;&#x3044;&#x3002;
+
+  &#x52D8;&#x3067;&#x4F5C;&#x3063;&#x305F;&#x306E;&#x3067;&#x3001;cmail &#x306E; folder &#x306E;&#x5185;&#x5BB9;&#x3082;&#x58CA;&#x3059;&#x53EF;&#x80FD;&#x6027;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+  &#x30D0;&#x30C3;&#x30AF;&#x30A2;&#x30C3;&#x30D7;&#x3092;&#x5FD8;&#x308C;&#x305A;&#x306B;&#x3002; 
+
+  cmail &#x306B;&#x306F; folder-mode-hook &#x304C;&#x306A;&#x3044;&#x3002;
+
+  &#x8272;&#x3005;&#x306A;&#x5834;&#x9762;&#x3067;&#x3001;folder &#x3092;&#x4F5C;&#x308A;&#x307E;&#x3059;&#x304B;? &#x3068;&#x805E;&#x304B;&#x308C;&#x308B;&#x3002;
+    yes &#x3068;&#x7B54;&#x3048;&#x3066;&#x306F;&#x3044;&#x3051;&#x307E;&#x305B;&#x3093;&#x3002;
+    (&#x305D;&#x306E; operation &#x306F; mhc &#x304B;&#x3089;&#x306F;&#x307E;&#x3060;&#x4F7F;&#x3048;&#x306A;&#x3044;&#x3068;&#x3044;&#x3046;&#x3053;&#x3068;&#x3067;&#x3059;&#x3002;)
+
+  r &#x3084; f &#x304C;&#x52B9;&#x304B;&#x306A;&#x3044;&#x3002;(gnus-cmail &#x3092;&#x53C2;&#x8003;&#x306B;&#x4F5C;&#x308B;&#x306E;&#x304C;&#x3044;&#x3044;?)
+
+  C-cf &#x304C; mhc &#x306B;&#x3088;&#x3063;&#x3066;&#x596A;&#x308F;&#x308C;&#x308B;&#x3002;
+    minor mode &#x306B;&#x8B72;&#x3063;&#x3066;&#x6B32;&#x3057;&#x3044;&#x306A;&#x3002;
+
+  &#x5168; folder &#x3067; **cmail-summary** &#x3092;&#x5171;&#x6709;&#x3059;&#x308B;&#x306E;&#x3067;&#x3001;
+    v &#x3057;&#x305F;&#x3068;&#x304D;&#x306B;&#x3001;mhc &#x304C;&#x4F5C;&#x3063;&#x305F; buffer-local &#x306A;&#x5909;&#x6570;&#x3092;&#x6D88;&#x305B;&#x306A;&#x3044;&#x3002;
+--
+nom # &#x3053;&#x308A;&#x3083; mhc &#x306E; major-mode &#x3092;&#x4F5C;&#x3063;&#x305F;&#x65B9;&#x304C;&#x697D;&#x304B;&#x3082;&#x3002;
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00803" href="msg00803.html">[mhc:00804] cmail support.</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00807.html">[mhc:00808] Re: faces of calender</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00809.html">[mhc:00810] Re: faces of calender</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00803.html">[mhc:00804] cmail support.</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00811.html">[mhc:00812] 3 &#x30F6;&#x6708; calendar &#x306E;&#x6539;&#x9020;</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00808"><strong>Date</strong></a></li>
+<li><a href="threads.html#00808"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

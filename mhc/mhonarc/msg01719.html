@@ -1,0 +1,117 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01720] Re: guess -->
+<!--X-From-R13: Kbfuvanev @A[GDO <abzNdhvpxunpx.arg> -->
+<!--X-Date: Thu, 21 Nov 2002 11:13:16 +0900 -->
+<!--X-Message-Id: 20021121111316I.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 20021120.105545.132850900.nogunogu@ccm.cl.nec.co.jp -->
+<!--X-Reference: 20021120121620F.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Reference: 20021120.184552.60853161.nogunogu@ccm.cl.nec.co.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01720] Re: guess</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01718.html">Date Prev</a>][<a href="msg01720.html">Date Next</a>][<a href="msg01718.html">Thread Prev</a>][<a href="msg01716.html">Thread Next</a>][<a href="maillist.html#01719">Date Index</a>][<a href="threads.html#01719">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01720] Re: guess</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01720] Re: guess</li>
+<li><em>From</em>: Yoshinari NOMURA &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Thu, 21 Nov 2002 11:13:16 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20021120.184552.60853161.nogunogu@DOMAIN.HIDDEN">20021120.184552.60853161.nogunogu@xxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:20021120.105545.132850900.nogunogu@DOMAIN.HIDDEN">20021120.105545.132850900.nogunogu@xxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20021120121620F.nom@DOMAIN.HIDDEN">20021120121620F.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20021120.184552.60853161.nogunogu@DOMAIN.HIDDEN">20021120.184552.60853161.nogunogu@xxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Sender</em>: Yoshinari Nomura &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>
+
+On Wed, 20 Nov 2002 18:45:52 +0900 (JST),
+	NOGUCHI Yusuke &lt;nogunogu@xxxxxxxxxxxxxxxx&gt; said:
+
+&gt; &#x4EF6;&#x306E;&#x554F;&#x984C;&#x3068;&#x306F;&#x307E;&#x305F;&#x5225;&#x4EF6;&#x3067;&#x3059;&#x304C;&#x3001;NetBSD &#x7528;&#x306B;&#x4EE5;&#x4E0B;&#x3092;&#x63A1;&#x7528;&#x3057;&#x3066;&#x3044;&#x305F;&#x3060;&#x3051;&#x306A;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#x3002;
+&gt; # NetBSD &#x306B;&#x306F;&#x3001;&#x307E;&#x3060; mhc &#x306E; pkgsrc &#x304C;&#x7121;&#x3044;
+&gt; 
+&gt; +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+&gt; --- ./configure.rb.dist Wed Nov 20 17:30:30 2002
+&gt; +++ ./configure.rb      Wed Nov 20 17:35:25 2002
+&gt; @@ -73,6 +73,11 @@
+&gt;  inc_search_path = ['/usr/local/include', '/usr/local/pilot/include', 
+&gt;                    '/usr/include/libpisock', '/usr/include']
+&gt;  
+&gt; +if /netbsd/ =~ RUBY_PLATFORM
+&gt; +  lib_search_path &lt;&lt; '/usr/pkg/lib'
+&gt; +  inc_search_path &lt;&lt; '/usr/pkg/include'
+&gt; +end
+&gt; +
+&gt;  if conf['@@MHC_DISABLE_PALM@@'] == ''
+&gt;    conf .search_library(lib_search_path, 
+&gt;                        'pisock', 
+&gt; +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+
+if /netbsd/ &#x306F;&#x898B;&#x306A;&#x3044;&#x3067;&#xFF0C;&#x666E;&#x901A;&#x306B; path &#x306B;&#x52A0;&#x3048;&#x3066;&#x304A;&#x304D;&#x307E;&#x3057;&#x305F;&#xFF0E;
+--
+nom
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="01710" href="msg01710.html">[mhc:01711] guess</a></strong>
+<ul><li><em>From:</em> NOGUCHI Yusuke</li></ul></li>
+<li><strong><a name="01711" href="msg01711.html">[mhc:01712] Re: guess</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+<li><strong><a name="01718" href="msg01718.html">[mhc:01719] Re: guess</a></strong>
+<ul><li><em>From:</em> NOGUCHI Yusuke</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01718.html">[mhc:01719] Re: guess</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01720.html">[mhc:01721] FSF Emacs21 + WL + X-Face &#x3067; mhc-import &#x3067;&#x304D;&#x306A;&#x3044;</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01718.html">[mhc:01719] Re: guess</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01716.html">[mhc:01717] Debugger entered--Lisp error: (wrong-type-argument listp &quot;acosis.com&quot;)</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01719"><strong>Date</strong></a></li>
+<li><a href="threads.html#01719"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

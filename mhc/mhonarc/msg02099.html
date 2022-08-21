@@ -1,0 +1,105 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:02100] screen saver -->
+<!--X-From-R13: YAWS Vvqrgnxn (=?vfb&#45;2022&#45;wc?P?UlDQAVS5BwTDFwCoYSW=?=) <uvqrNxbvr.bet> -->
+<!--X-Date: Fri, 22 Apr 2005 13:16:50 +0900 (JST) -->
+<!--X-Message-Id: 20050422.131650.172789768.hide@koie.org -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:02100] screen saver</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg02098.html">Date Prev</a>][<a href="msg02100.html">Date Next</a>][<a href="msg02119.html">Thread Prev</a>][<a href="msg02102.html">Thread Next</a>][<a href="maillist.html#02099">Date Index</a>][<a href="threads.html#02099">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:02100] screen saver</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:02100] screen saver</li>
+<li><em>From</em>: KOIE Hidetaka (&#x9BC9;&#x6C5F;&#x82F1;&#x9686;) &lt;<a href="mailto:hide@DOMAIN.HIDDEN">hide@xxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Fri, 22 Apr 2005 13:16:50 +0900 (JST)</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x304A;&#x3082;&#x3044;&#x3064;&#x304D;&#x3067;emacs&#x306E;&#x30B9;&#x30AF;&#x30EA;&#x30FC;&#x30F3;&#x30BB;&#x30FC;&#x30D0;&#x3092;&#x3064;&#x304F;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;
+5&#x5206;&#x305F;&#x3064;&#x3068;mhc&#x6708;&#x9593;&#x4E88;&#x5B9A;&#x8868;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;
+&#x30D7;&#x30E9;&#x30A4;&#x30D9;&#x30FC;&#x30C8;&#x306E;&#x4E88;&#x5B9A;&#x306F;&#x30DE;&#x30B9;&#x30AF;&#x3059;&#x308B;&#x8A2D;&#x5B9A;&#x306B;&#x3057;&#x3066;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+
+(defvar my-screen-saver-timeout (* 5 60))
+(defvar my-screen-saver-function 'mhc-goto-this-month)
+(defvar my-screen-saver-function-args '(hide-private))
+(defvar my-screen-saver-message &quot; In idleness..&quot;)
+(defconst my-screen-saver-forever (* 60 60 24 365))
+(defvar my-screen-saver-timer nil)
+(defun my-screen-saver ()
+  (save-excursion
+    (save-window-excursion
+      (apply my-screen-saver-function my-screen-saver-function-args)
+      (delete-other-windows)
+      (message my-screen-saver-message)
+      (sit-for my-screen-saver-forever))))
+(defun my-screen-saver-start ()
+  (interactive)
+  (setq my-screen-saver-timer
+        (run-with-idle-timer my-screen-saver-timeout
+                             my-screen-saver-timeout
+                             'my-screen-saver)))
+(defun my-screen-saver-stop ()
+  (interactive)
+  (cancel-timer my-screen-saver-timer)
+  (setq my-screen-saver-timer nil)
+  (cancel-function-timers 'my-screen-saver))
+
+--
+KOIE Hidetaka &lt;hide@xxxxxxxx&gt;
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg02098.html">[mhc:02099] guess date</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg02100.html">[mhc:02101] Re: guess date</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg02119.html">[mhc:02120] Re: guess date</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg02102.html">[mhc:02103] patch  (mhc2ol.in, ruby-ext/lib/mhc-schedule.rb)</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#02099"><strong>Date</strong></a></li>
+<li><a href="threads.html#02099"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

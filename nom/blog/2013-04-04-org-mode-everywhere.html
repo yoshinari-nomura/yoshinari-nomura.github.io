@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Org-mode everywhere using mmm-mode</title>
+  <meta name="description" content="Org-mode is complicated どこでも Org-mode を mmm-mode で実現するための tips です．">
+
+  <link rel="icon" href="/nom/favicon.png">
+  <link rel="stylesheet" href="/nom/assets/main.css">
+  <link rel="canonical" href="http://quickhack.net/nom/blog/2013-04-04-org-mode-everywhere.html">
+  <link rel="alternate" type="application/rss+xml" title="Quickhack Diary" href="/nom/feed.xml">
+
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/nom/">Quickhack Diary</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Org-mode everywhere using mmm-mode</h1>
+    <p class="post-meta"><time datetime="2013-04-04T00:00:00+09:00" itemprop="datePublished">Apr 4, 2013</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <div id="outline-container-orgbd9e1da" class="outline-2">
+<h2 id="orgbd9e1da">Org-mode is complicated</h2>
+<div class="outline-text-2" id="text-orgbd9e1da">
+<p>
+どこでも Org-mode を mmm-mode で実現するための tips です．
+</p>
+
+<p>
+<a href="https://github.com/purcell/mmm-mode">MMM Mode</a> is a fantastic minor mode for Emacs that allows Multiple Major Modes
+to coexist in one buffer. However, due to the complication of Org-mode,
+there needs some tips to enable Org-mode as submode.
+</p>
+
+<p>
+<!-- more -->
+</p>
+
+<p>
+Here is the secret in my .emacs:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;;</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">mmm mode settings</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">cf. http://lists.gnu.org/archive/html/emacs-orgmode/2010-03/msg00043.html</span>
+<span class="org-comment-delimiter">;;     </span><span class="org-comment">http://wiki.livedoor.jp/kou1okada/d/emacs%20-%20mmm-mode</span>
+<span class="org-comment-delimiter">;;</span>
+
+(<span class="org-keyword">if</span> (fboundp 'add-private-load-path)
+    (add-private-load-path <span class="org-string">"mmm-mode"</span>))
+
+(<span class="org-keyword">require</span> '<span class="org-constant">mmm-mode</span>) <span class="org-comment-delimiter">;; </span><span class="org-comment">or (require 'mmm-auto)</span>
+
+(<span class="org-keyword">setq</span> mmm-global-mode 'maybe)
+(<span class="org-keyword">setq</span> mmm-submode-decoration-level 2)
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">buffer-local-variables-in-mode</span> (mode)
+  (<span class="org-keyword">with-temp-buffer</span>
+    (funcall mode)
+    (buffer-local-variables)))
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">buffer-local-variable-symbols-in-mode</span> (mode)
+  (<span class="org-keyword">let*</span> ((base-assoc (buffer-local-variables-in-mode 'fundamental-mode))
+         (mode-assoc (buffer-local-variables-in-mode mode))
+         (mode-vars  (mapcar 'car mode-assoc)))
+    (delq nil (mapcar
+               (<span class="org-keyword">lambda</span> (var)
+                 (<span class="org-keyword">unless</span> (<span class="org-keyword">or</span> (memq var '(mode-name major-mode))
+                             (equal (assoc var base-assoc)
+                                    (assoc var mode-assoc)))
+                   var))
+               mode-vars))))
+
+(<span class="org-keyword">defun</span> <span class="org-function-name">mmm-save-local-variables-in-mode</span> (mode)
+  (<span class="org-keyword">dolist</span> (v (buffer-local-variable-symbols-in-mode mode))
+    (add-to-list 'mmm-save-local-variables `(,v buffer (,mode)))))
+
+(mmm-save-local-variables-in-mode 'org-mode)
+
+(<span class="org-keyword">defadvice</span> <span class="org-function-name">recenter</span> (after mmm-parse-buffer-after-recenter activate compile)
+  (<span class="org-keyword">if</span> (<span class="org-keyword">and</span> (fboundp 'mmm-parse-buffer)
+           (fboundp 'mmm-get-all-classes)
+           (mmm-get-all-classes nil))
+      (<span class="org-keyword">save-excursion</span>
+        (mmm-parse-buffer))))
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">C-cC-c on an org-table invokes ``</span><span class="org-comment"><span class="org-constant">org-table-recalculate-buffer-tables</span></span><span class="org-comment">'' or</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">``</span><span class="org-comment"><span class="org-constant">org-table-iterate-buffer-tables</span></span><span class="org-comment">''.</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">These functions search all org-tables in the current buffer.</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">If the buffer has some text with read-only property,</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">these functions seem to be stalled on that.</span>
+<span class="org-comment-delimiter">;;</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">This problem is exposed when</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">a mew-draft-mode buffer encloses an org-table with the help of mmm-mode,</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">because the mew-draft has some text with read-only</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">property like a ``</span><span class="org-comment"><span class="org-constant">----</span></span><span class="org-comment">''.</span>
+<span class="org-comment-delimiter">;;</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">To avoid this problem, ``</span><span class="org-comment"><span class="org-constant">org-table-recalculate</span></span><span class="org-comment">'' should be called with</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">inhibit-read-only is t.</span>
+<span class="org-comment-delimiter">;;</span>
+(<span class="org-keyword">defadvice</span> <span class="org-function-name">org-table-recalculate</span>
+  (around org-table-recalculate-advice)
+  <span class="org-doc">"org-tagle-recalculate with read-only text property"</span>
+  (<span class="org-keyword">let</span> ((inhibit-read-only t))
+    ad-do-it))
+
+(ad-activate 'org-table-recalculate)
+
+(<span class="org-keyword">defadvice</span> <span class="org-function-name">mmm-ify-by-class</span> (after refontify-after-mmm activate compile)
+  (font-lock-fontify-buffer))
+
+(mmm-add-mode-ext-class 'mew-draft-mode  nil  'org-in-draft)
+(mmm-add-mode-ext-class 'mhc-draft-mode  nil  'org-in-draft)
+(mmm-add-mode-ext-class 'text-mode       nil  'org-in-draft)
+(mmm-add-mode-ext-class 'ruby-mode       nil  'org-in-here-document)
+(mmm-add-mode-ext-class 'emacs-lisp-mode nil  'org-in-here-document)
+(mmm-add-mode-ext-class nil       <span class="org-string">"^[0-9]+$"</span>  'org-in-draft)
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">Org-mode starts with * on the beginning-of-line</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">ends with non-header character on the beginning-of-line</span>
+(mmm-add-group 'org-in-draft
+               '(
+                 (org-in-draft-1
+                  <span class="org-builtin">:submode</span> org-mode
+                  <span class="org-builtin">:face</span> mmm-default-submode-face
+                  <span class="org-builtin">:front</span> <span class="org-string">"^\\*+ "</span>
+                  <span class="org-comment-delimiter">;; </span><span class="org-comment">:back  "^[</span><span class="org-comment"><span class="org-negation-char">^</span></span><span class="org-comment">*# \n]"</span>
+                  <span class="org-builtin">:back</span> <span class="org-string">"^[</span><span class="org-string"><span class="org-negation-char">^</span></span><span class="org-string">*# \n]</span><span class="org-string"><span class="org-regexp-grouping-backslash">\\</span></span><span class="org-string"><span class="org-regexp-grouping-construct">|</span></span><span class="org-string">\\'"</span>
+                  <span class="org-builtin">:include-front</span> t
+                  <span class="org-builtin">:end-not-begin</span> t
+                  )))
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">Org-mode in here documents</span>
+(mmm-add-group 'org-in-here-document
+               '(
+                 <span class="org-comment-delimiter">;; </span><span class="org-comment">&lt;&lt;EOS</span>
+                 <span class="org-comment-delimiter">;; </span><span class="org-comment">org-mode...</span>
+                 <span class="org-comment-delimiter">;; </span><span class="org-comment">EOS</span>
+                 (org-in-here-document-1
+                  <span class="org-builtin">:submode</span> org-mode
+                  <span class="org-builtin">:face</span> mmm-default-submode-face
+                  <span class="org-builtin">:front</span> <span class="org-string">"&lt;&lt;[a-zA-Z_][a-zA-Z0-9_]*\n"</span>
+                  <span class="org-builtin">:back</span> <span class="org-string">"^[a-zA-Z_][a-zA-Z0-9_]*"</span>
+                  <span class="org-builtin">:include-front</span> nil
+                  <span class="org-builtin">:end-not-begin</span> t
+                  )
+                 <span class="org-comment-delimiter">;; </span><span class="org-comment">"""</span>
+                 <span class="org-comment-delimiter">;; </span><span class="org-comment">org-mode...</span>
+                 <span class="org-comment-delimiter">;; </span><span class="org-comment">"""</span>
+                 (org-in-here-document-2
+                  <span class="org-builtin">:submode</span> org-mode
+                  <span class="org-builtin">:face</span> mmm-default-submode-face
+                  <span class="org-builtin">:front</span> <span class="org-string">"^\"\"\"\n"</span>
+                  <span class="org-builtin">:back</span>  <span class="org-string">"^\"\"\"\n"</span>
+                  <span class="org-builtin">:include-front</span> nil
+                  <span class="org-builtin">:end-not-begin</span> t
+                  )
+                 ))
+</pre>
+</div>
+</div>
+</div>
+
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Quickhack Diary</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Yoshinari Nomura
+            
+            </li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/yoshinari-nomura"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">yoshinari-nomura</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/nom4476"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">nom4476</span></a>
+
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>lifehack through quick hack
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

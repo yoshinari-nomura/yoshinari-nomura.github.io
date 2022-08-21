@@ -1,0 +1,127 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00164] Re: snap&#45;19990901 Re:  0.22 is out. -->
+<!--X-From-R13: Kbfuvanev @A[GDO <abzNpfpr.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Thu, 2 Sep 1999 13:38:35 +0900 -->
+<!--X-Message-Id: 19990902133832E.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 19990823195925R.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Reference: 19990901183314T.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00164] Re: snap-19990901 Re:  0.22 is out.</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00162.html">Date Prev</a>][<a href="msg00164.html">Date Next</a>][<a href="msg00162.html">Thread Prev</a>][<a href="msg00167.html">Thread Next</a>][<a href="maillist.html#00163">Date Index</a>][<a href="threads.html#00163">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00164] Re: snap-19990901 Re:  0.22 is out.</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00164] Re: snap-19990901 Re:  0.22 is out.</li>
+<li><em>From</em>: Yoshinari NOMURA &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Thu, 2 Sep 1999 13:38:35 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:19990901183314T.nom@DOMAIN.HIDDEN">19990901183314T.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Posted</em>: Thu, 02 Sep 1999 13:38:32 +0900</li>
+<li><em>References</em>: &lt;<a href="mailto:19990823195925R.nom@DOMAIN.HIDDEN">19990823195925R.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:19990901183314T.nom@DOMAIN.HIDDEN">19990901183314T.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>On Wed, 1 Sep 1999 18:33:17 +0900,
+	Yoshinari NOMURA &lt;nom@xxxxxxxxxxxxxxxxxxx&gt; said:
+
+&gt; 4. gemcal (&#x65E7; gtkcalendar) &#x306F;&#x305D;&#x308D;&#x305D;&#x308D;&#x4F7F;&#x3048;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x3063;&#x3066;&#x304D;&#x307E;&#x3057;&#x305F;&#x3002;
+
+&#x3068;&#x66F8;&#x3044;&#x3068;&#x3044;&#x3066;&#x3001;&#x6700;&#x5F8C;&#x306E; 1&#x79D2;&#x3067;&#x5165;&#x308C;&#x305F;&#x30B3;&#x30FC;&#x30C9;&#x304C;&#x60AA;&#x3055;&#x3057;&#x3066;&#x307E;&#x3057;&#x305F;&#x3002;&#x3002;
+--
+nom
+
+Index: elisp/mhc.el
+===================================================================
+RCS file: /u/nom/prj/cvsroot/mhc2/elisp/mhc.el,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 mhc.el
+--- mhc.el	1999/09/01 08:28:00	1.1.1.1
++++ mhc.el	1999/09/02 04:37:36
+@@ -72,7 +72,7 @@
+   '(&quot;Return-Path:&quot; &quot;Received:&quot; &quot;X-Dispatcher:&quot;
+     &quot;Lines:&quot; &quot;X-Filter:&quot; &quot;Replied:&quot; &quot;X-Mailer:&quot;))
+ (defvar mhc-draft-sc-hdr-list 
+-  '(&quot;X-SC-Category:&quot; &quot;X-SC-Cond:&quot; &quot;X-SC-Duration:&quot;))
++  '(&quot;X-SC-Category:&quot; &quot;X-SC-Cond:&quot; &quot;X-SC-Duration:&quot; &quot;X-SC-Alarm:&quot;))
+ 
+ (defvar mhc-default-category nil)
+ 
+Index: ruby-lib/mhc-schedule.rb
+===================================================================
+RCS file: /u/nom/prj/cvsroot/mhc2/ruby-lib/mhc-schedule.rb,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 mhc-schedule.rb
+--- mhc-schedule.rb	1999/09/01 08:28:00	1.1.1.1
++++ mhc-schedule.rb	1999/09/02 04:23:25
+@@ -224,7 +224,7 @@
+     &quot;X-SC-Category: #{@cat .join(' ')}\n&quot;        +
+     &quot;X-SC-Cond: #{cond}\n&quot;                       +
+     &quot;X-SC-Duration: #{dur}\n&quot;                    +
+-    &quot;X-SC-Pilot-Id: #{@pilot_id .join(' ')}\n&quot;   +
++    #&quot;X-SC-Pilot-Id: #{@pilot_id .join(' ')}\n&quot;   +
+     &quot;X-SC-DEBUG-Path: #{@path .inspect}\n&quot;       +
+     &quot;X-SC-DEBUG-Error: #{error_message}\n&quot;       +
+     &quot;X-SC-DEBUG-Slot: #{int}\n&quot;                  +
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00158" href="msg00158.html">[mhc:00159] 0.22 is out.</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+<li><strong><a name="00162" href="msg00162.html">[mhc:00163] snap-19990901 Re:  0.22 is out.</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00162.html">[mhc:00163] snap-19990901 Re:  0.22 is out.</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00164.html">[mhc:00165] TV GUIDE</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00162.html">[mhc:00163] snap-19990901 Re:  0.22 is out.</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00167.html">[mhc:00168] Re: snap-19990901 Re:  0.22 is out.</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00163"><strong>Date</strong></a></li>
+<li><a href="threads.html#00163"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

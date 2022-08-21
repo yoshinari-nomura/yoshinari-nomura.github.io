@@ -1,0 +1,180 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:02177] generate a howm file by today -->
+<!--X-From-R13: YAWS Vvqrgnxn (=?vfb&#45;2022&#45;wc?P?UlDQAVS5BwTDFwCoYSW=?=) <uvqrNxbvr.bet> -->
+<!--X-Date: Fri, 25 Nov 2005 20:32:42 +0900 (JST) -->
+<!--X-Message-Id: 20051125.203242.142805597.hide@koie.org -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:02177] generate a howm file by today</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg02175.html">Date Prev</a>][<a href="msg02177.html">Date Next</a>][<a href="msg02175.html">Thread Prev</a>][<a href="msg02177.html">Thread Next</a>][<a href="maillist.html#02176">Date Index</a>][<a href="threads.html#02176">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:02177] generate a howm file by today</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:02177] generate a howm file by today</li>
+<li><em>From</em>: KOIE Hidetaka (&#x9BC9;&#x6C5F;&#x82F1;&#x9686;) &lt;<a href="mailto:hide@DOMAIN.HIDDEN">hide@xxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Fri, 25 Nov 2005 20:32:42 +0900 (JST)</li>
+<li><em>Delivered-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>List-help</em>: &lt;<a href="mailto:mhc-ctl@quickhack.net?body=help">mailto:mhc-ctl@quickhack.net?body=help</a>&gt;</li>
+<li><em>List-id</em>: mhc.quickhack.net</li>
+<li><em>List-owner</em>: &lt;<a href="mailto:mhc-admin@quickhack.net">mailto:mhc-admin@quickhack.net</a>&gt;</li>
+<li><em>List-post</em>: &lt;<a href="mailto:mhc@quickhack.net">mailto:mhc@quickhack.net</a>&gt;</li>
+<li><em>List-software</em>: fml [fml 4.0.3 release (20011202/4.0.3)]</li>
+<li><em>List-unsubscribe</em>: &lt;<a href="mailto:mhc-ctl@quickhack.net?body=unsubscribe">mailto:mhc-ctl@quickhack.net?body=unsubscribe</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x6628;&#x65E5;&#x304B;&#x3089;howm&#x3092;&#x3064;&#x304B;&#x3044;&#x59CB;&#x3081;&#x307E;&#x3057;&#x305F;&#x3002;
+&#x3068;&#x308A;&#x3042;&#x3048;&#x3059;mhc&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x3092;howm&#x5F62;&#x5F0F;&#x306B;&#x5909;&#x63DB;&#x3059;&#x308B;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x3092;
+today&#x30D9;&#x30FC;&#x30B9;&#x3067;&#x4F5C;&#x6210;&#x3057;&#x307E;&#x3057;&#x305F;&#x306E;&#x3067;&#x30D1;&#x30C3;&#x30C1;&#x3092;&#x6DFB;&#x4ED8;&#x3057;&#x307E;&#x3059;&#x3002;
+--format=howm&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x3068;howm&#x5F62;&#x5F0F;&#x3067;&#x51FA;&#x529B;&#x3057;&#x307E;&#x3059;&#x3002;
+
+&#x4F7F;&#x7528;&#x4F8B;:
+  ./today --format=howm --date=today+7 &gt;~/howm/mhc.howm
+
+--
+KOIE Hidetaka &lt;hide@xxxxxxxx&gt;
+</pre><pre>--- today.in	Thu Feb  5 12:18:29 2004
++++ today2	Fri Nov 25 20:23:39 2005
+@@ -1,4 +1,4 @@
+-#!@@MHC_RUBY_PATH@@ -Ke
++#!/usr/local/bin/ruby16 -Ke
+ # -*- ruby -*-
+ 
+ ## today
+@@ -50,7 +50,7 @@ def usage(do_exit = true)
+   STDERR .print &quot;usage: today [options]
+   Show your today's schedules.
+   --help               show this message.
+-  --format=FORMAT      change output format to one of: ps, html
++  --format=FORMAT      change output format to one of: ps, html, howm
+   --category=CATEGORY  pick only in CATEGORY. 
+                        '!' and space separated multiple values are allowed.
+   --date=strig[+n]     set a period of date.
+@@ -167,6 +167,36 @@ def get_schedule(db, from, to, category,
+   MhcKconv::tohtml(buffer)
+ }
+ 
++formatter_howm = Proc .new{|date, items|
++  ret = ''
++
++  items .each{|sch|
++    sw = &quot;@&quot;
++    ret += &quot;[&quot;
++    ret += format(&quot;%04d-%02d-%02d&quot;, date .y, date .m, date .d)
++    if (sch .time_b)
++      ret += &quot; &quot; + sch .time_b .to_s
++    else
++      ret += &quot;      &quot;
++    end
++    ret += &quot;]&quot;
++    sw=&quot; &quot;
++    case sch .category_as_string .downcase
++    when /done/
++      sw=&quot;.&quot;
++    when /todo/
++      sw=&quot;+&quot;
++    else
++      sw=&quot;@&quot;
++    end
++    ret += sw + &quot; &quot; + sch .subject + &quot;\n&quot;
++    if sch .description
++      ret += sch .description .gsub(/^/, &quot; &quot;)
++    end
++  }
++  MhcKconv::todisp(ret)
++}
++
+ ################################################################
+ ## hook
+ 
+@@ -227,6 +257,8 @@ def get_schedule(db, from, to, category,
+       hook_proc = hook_ps
+       date_from = date_from .m_first_day
+       date_to   = date_from .m_last_day
++    when 'howm'
++      formatter = formatter_howm
+     else
+       formatter = formatter_normal
+     end
+@@ -256,8 +288,11 @@ def get_schedule(db, from, to, category,
+   header   += &quot;Subject: Today's schedule (#{date_from .to_s})\n&quot;
+   header   += &quot;\n&quot;
+   header   += &quot;#{user_name}'s schedule: \n\n&quot;
+-  contents  = 
++  contents = 
+     get_schedule(db, date_from, date_to, category, formatter, hook_proc)
++  if formatter == formatter_howm
++    contents = format(&quot;= mhc %s--%s\n&quot;, date_from .to_s, date_to .to_s) + contents
++  end
+ 
+   if contents &amp;&amp; contents != ''
+     message = MhcKconv::tomail(header + contents)
+@@ -266,6 +301,7 @@ def get_schedule(db, from, to, category,
+     }
+   end
+ else
++  print format(&quot;= mhc %s--%s\n&quot;, date_from .to_s, date_to .to_s) if formatter == formatter_howm
+   print get_schedule(db, date_from, date_to, category, formatter, hook_proc)
+ end
+ 
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="02177" href="msg02177.html">[mhc:02178] Re: generate a howm file by today</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg02175.html">[mhc:02176] Re: bugfix mhc-cvs/modify</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg02177.html">[mhc:02178] Re: generate a howm file by today</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg02175.html">[mhc:02176] Re: bugfix mhc-cvs/modify</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg02177.html">[mhc:02178] Re: generate a howm file by today</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#02176"><strong>Date</strong></a></li>
+<li><a href="threads.html#02176"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

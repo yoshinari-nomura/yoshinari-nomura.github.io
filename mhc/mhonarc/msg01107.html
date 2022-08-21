@@ -1,0 +1,105 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01108] =?ISO&#45;2022&#45;JP?B?GyRCJTslUSVsITwlPyRORnM9RUk9PCgbKEI=?= -->
+<!--X-From-R13: YAWS Vvqrgnxn (=?vfb&#45;2022&#45;wc?P?UlDQAVS5BwTDFwCoYSW=?=) <uvqrNxbvr.bet> -->
+<!--X-Date: Sat, 28 Oct 2000 14:18:41 +0900 -->
+<!--X-Message-Id: 00Oct28.141841jst.29572@gateway.suri.co.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01108] &#x30BB;&#x30D1;&#x30EC;&#x30FC;&#x30BF;&#x306E;&#x4E8C;&#x91CD;&#x8868;&#x793A;</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01106.html">Date Prev</a>][<a href="msg01108.html">Date Next</a>][<a href="msg01106.html">Thread Prev</a>][<a href="msg01112.html">Thread Next</a>][<a href="maillist.html#01107">Date Index</a>][<a href="threads.html#01107">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01108] &#x30BB;&#x30D1;&#x30EC;&#x30FC;&#x30BF;&#x306E;&#x4E8C;&#x91CD;&#x8868;&#x793A;</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01108] &#x30BB;&#x30D1;&#x30EC;&#x30FC;&#x30BF;&#x306E;&#x4E8C;&#x91CD;&#x8868;&#x793A;</li>
+<li><em>From</em>: KOIE Hidetaka (&#x9BC9;&#x6C5F;&#x82F1;&#x9686;) &lt;<a href="mailto:hide@DOMAIN.HIDDEN">hide@xxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Sat, 28 Oct 2000 14:18:41 +0900</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>mhc-use-week-separator=6&#x306A;&#x3089;2001&#x5E74;3&#x6708;31&#x65E5;(&#x571F;&#x66DC;&#x65E5;)&#x306E;&#x4E0B;&#x306B;&#x3001;
+mhc-use-week-separator=0&#x306A;&#x3089;2000&#x5E74;12&#x6708;31&#x65E5;(&#x65E5;&#x66DC;&#x65E5;)&#x306E;&#x4E0B;&#x306B;
+&#x30BB;&#x30D1;&#x30EC;&#x30FC;&#x30BF;&#x304C;&#x4E8C;&#x91CD;&#x306B;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;
+
+example:
+    0 | 12/31 Sun              
+    --------------------------------------------------------
+    --------------------------------------------------------
+
+Index: mhc-summary.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc-summary.el,v
+retrieving revision 1.22
+diff -p -u -b -B -F^( -r1.22 mhc-summary.el
+--- mhc-summary.el	2000/10/04 03:40:40	1.22
++++ mhc-summary.el	2000/10/28 05:23:50
+@@ -492,6 +492,7 @@ (defun mhc-summary-make-contents
+        (or category-predicate mhc-default-category-predicate-sexp)
+        secret)
+       (and (eq (mhc-day-day-of-week (car dayinfo-list)) mhc-use-week-separator)
++           (&gt; (length dayinfo-list) 1)
+ 	   (mhc-summary/insert-separator))
+       (setq dayinfo-list (cdr dayinfo-list)))))
+ 
+--
+KOIE Hidetaka &#x9BC9;&#x6C5F;&#x82F1;&#x9686; &lt;hide@xxxxxxxx&gt;
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01112" href="msg01112.html">[mhc:01113] Re: &#x30BB;&#x30D1;&#x30EC;&#x30FC;&#x30BF;&#x306E;&#x4E8C;&#x91CD;&#x8868;&#x793A;</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01106.html">[mhc:01107] Re: XHisho + libmhc</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01108.html">[mhc:01109] mhc-sync w/ Ruby-1.6</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01106.html">[mhc:01107] Re: XHisho + libmhc</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01112.html">[mhc:01113] Re: &#x30BB;&#x30D1;&#x30EC;&#x30FC;&#x30BF;&#x306E;&#x4E8C;&#x91CD;&#x8868;&#x793A;</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01107"><strong>Date</strong></a></li>
+<li><a href="threads.html#01107"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

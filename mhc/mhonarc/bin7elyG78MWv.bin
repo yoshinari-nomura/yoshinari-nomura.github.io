@@ -1,0 +1,17 @@
+Index: mhc-wl.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc-wl.el,v
+retrieving revision 1.27
+diff -u -r1.27 mhc-wl.el
+--- mhc-wl.el	14 Oct 2003 03:43:39 -0000	1.27
++++ mhc-wl.el	25 Jan 2005 16:00:49 -0000
+@@ -160,7 +160,8 @@
+ (defun mhc-wl-summary-mode-setup (date)
+   (let ((original mhc-wl-exit-buffer)
+ 	wl-summary-lazy-highlight
+-	wl-summary-lazy-update-mark)
++	wl-summary-lazy-update-mark
++	(elmo-localdir-folder-path mhc-mail-path))
+     (wl-summary-mode) ; buffer local variables are killed.
+     (setq mhc-wl-exit-buffer original)
+     (wl-summary-buffer-set-folder (mhc-wl/date-to-folder date))

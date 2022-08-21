@@ -1,0 +1,10 @@
+--- mhc.el~	Wed Mar  8 02:01:43 2000
++++ mhc.el	Wed Mar  8 15:53:33 2000
+@@ -532,6 +532,7 @@
+      ((eq mhc-mailer-package 'gnus)
+       (gnus-summary-preview-mime-message))
+      ((eq mhc-mailer-package 'wl)
++      (if get-original (wl-summary-redisplay-no-mime))
+       (wl-summary-jump-to-current-message)))
+     (delete-other-windows)
+     (condition-case ()

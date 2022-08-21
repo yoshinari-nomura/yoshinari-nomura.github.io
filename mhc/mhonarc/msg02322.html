@@ -1,0 +1,225 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:02323] mhc_pilib.c =?ISO&#45;2022&#45;JP?B?GyRCJEclKCVpGyhC?=	=?ISO&#45;2022&#45;JP?B?GyRCITwbKEI=?= -->
+<!--X-From-R13: Fblbaboh Enjnqn <abaNafxarg.be.wc> -->
+<!--X-Date: Tue, 15 Sep 2009 20:07:01 +0900 (JST) -->
+<!--X-Message-Id: 20090915.200701.205722192.non@nsknet.or.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:02323] mhc_pilib.c &#x3067;&#x30A8;&#x30E9;&#x30FC;</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg02321.html">Date Prev</a>][<a href="msg02323.html">Date Next</a>][<a href="msg02321.html">Thread Prev</a>][<a href="msg02323.html">Thread Next</a>][<a href="maillist.html#02322">Date Index</a>][<a href="threads.html#02322">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:02323] mhc_pilib.c &#x3067;&#x30A8;&#x30E9;&#x30FC;</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:02323] mhc_pilib.c &#x3067;&#x30A8;&#x30E9;&#x30FC;</li>
+<li><em>From</em>: Toyonobu Sawada &lt;<a href="mailto:non@DOMAIN.HIDDEN">non@xxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Tue, 15 Sep 2009 20:07:01 +0900 (JST)</li>
+<li><em>Delivered-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>List-help</em>: &lt;<a href="mailto:mhc-ctl@quickhack.net?body=help">mailto:mhc-ctl@quickhack.net?body=help</a>&gt;</li>
+<li><em>List-id</em>: mhc.quickhack.net</li>
+<li><em>List-owner</em>: &lt;<a href="mailto:mhc-admin@quickhack.net">mailto:mhc-admin@quickhack.net</a>&gt;</li>
+<li><em>List-post</em>: &lt;<a href="mailto:mhc@quickhack.net">mailto:mhc@quickhack.net</a>&gt;</li>
+<li><em>List-software</em>: fml [fml 4.0.3 release (20011202/4.0.3)]</li>
+<li><em>List-unsubscribe</em>: &lt;<a href="mailto:mhc-ctl@quickhack.net?body=unsubscribe">mailto:mhc-ctl@quickhack.net?body=unsubscribe</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>7&#x5E74;&#x3076;&#x308A;&#x306B;&#x6295;&#x7A3F;&#x3059;&#x308B;&#x6FA4;&#x7530;&#x3067;&#x3059;&#x3002;
+
+&#x6700;&#x8FD1;&#x4F7F;&#x3063;&#x3066;&#x3044;&#x306A;&#x304B;&#x3063;&#x305F; mhc2ol &#x3092;&#x518D;&#x3073;&#x4F7F;&#x304A;&#x3046;&#x3068;&#x3057;&#x305F;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;
+&#x4E0A;&#x624B;&#x304F;&#x3044;&#x304D;&#x307E;&#x305B;&#x3093;&#x3002;
+
+Meadow-3.00-dev (KIKU)
+mhc 0.25 + snap (CHECKOUT-FROM-CVS)
+ruby 1.8.7 (2008-08-11 patchlevel 72) [i386-cygwin]
+cygwin 1.5.25-15
+
+Win32OLE&#x306F;&#x3001;Ruby1.8&#x3088;&#x308A;&#x6A19;&#x6E96;&#x6DFB;&#x4ED8;&#x3060;&#x305D;&#x3046;&#x306A;&#x306E;&#x3067;&#x3068;&#x304F;&#x306B;&#x5165;&#x308C;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;
+
+&#x6614;&#x306E;&#x8A18;&#x61B6;&#x304B;&#x3089;&#x3001;
+ruby ./configure.rb --kcode=SJIS --bindir=/usr/local/bin --libdir=/lib/ruby/1.8 --with-emacs=meadow --with-lispdir=/usr/home/non/elisp/mhc-current --with-mew --with-icondir=/usr/home/non/elisp/mhc-icons --disable-palm
+
+&#x3068;&#x3057;&#x305F;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;&#x30A8;&#x30E9;&#x30FC;&#x3067;&#x6B62;&#x307E;&#x3063;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3057;&#x305F;&#xFF08;2&#x30DA;&#x30FC;&#x30B8;&#xFF09;&#x3002;
+&#x8272;&#x3005;&#x3084;&#x3063;&#x3066;
+--with-emacs=meadow
+&#x3092;&#x4ED8;&#x3051;&#x308B;&#x3068;&#x30A8;&#x30E9;&#x30FC;&#x306B;&#x306A;&#x308B;&#x4E8B;&#x306F;&#x5206;&#x304B;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;
+&#x3053;&#x306E;&#x3042;&#x3068;&#x3069;&#x3046;&#x3059;&#x308C;&#x3070;&#x826F;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#x3002;
+
+;; &#x6614;&#x306F;&#x3069;&#x3046;&#x3084;&#x3063;&#x3066;&#x4F7F;&#x3063;&#x3066;&#x3044;&#x305F;&#x3093;&#x3060;&#x308D;&#x3046;&#x3002;
+
+ruby ./configure.rb
+
+&#x3060;&#x3051;&#x306B;&#x3059;&#x308B;&#x3068;&#x30A8;&#x30E9;&#x30FC;&#x306F;&#x51FA;&#x306A;&#x3044;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;
+mhc/ruby-ext &#x4EE5;&#x4E0B;&#x306E;
+ mhc-date.rb
+ mhc-gtk.rb
+ mhc-kconv.rb
+ mhc-palm.rb
+ mhc-schedule.rb
+ mhc-signal.rb
+&#x3092;&#x30B3;&#x30D4;&#x30FC;&#x3057;&#x3066;&#x304F;&#x308C;&#x306A;&#x304B;&#x3063;&#x305F;&#x306E;&#x3067;&#x3001;/lib/ruby/1.8 &#x306B;&#x624B;&#x52D5;install&#x3057;&#x305F;&#x3068;&#x3053;&#x308D;&#x3001;
+3&#x30DA;&#x30FC;&#x30B8;&#x306E;&#x30A8;&#x30E9;&#x30FC;&#x306B;&#x306A;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;
+
+&#x3054;&#x6559;&#x793A;&#x3044;&#x305F;&#x3060;&#x3051;&#x308C;&#x3070;&#x5E78;&#x3044;&#x3067;&#x3059;&#x3002;
+
+
+
+mhc$ ruby ./configure.rb --kcode=SJIS --bindir=/usr/local/bin --libdir=/lib/ruby/1.8 --with-emacs=meadow --with-lispdir=/usr/home/non/elisp/mhc-current --with-mew --with-icondir=/usr/home/non/elisp/mhc-icons --disable-palm
+Warn: keyword @@MHC_XEMACS_PATH@@ was remiained in emacs/make.rb.
+ruby is .. /usr/bin/ruby
+creating mhc-sync ...done.
+creating mhc2palm ...done.
+creating palm2mhc ...done.
+creating adb2mhc ...done.
+creating gemcal ...done.
+creating make.rb ...done.
+creating today ...done.
+creating emacs/make.rb ...done.
+creating ruby-ext/lib/mhc-gtk.rb ...done.
+creating ruby-ext/extconf.rb ...done.
+creating mhc2ol ...done.
+In ruby-ext/
+/usr/bin/ruby extconf.rb
+creating make.rb
+mhc$ ./make.rb
+Making  in /usr/home/non/archives/src/mhc/emacs
+ruby make.rb
+meadow -batch -q -no-site-file -l MHC-MK -f make-mhc-compile  --with-lispdir=/usr/home/non/elisp/mhc-current --with-mew
+Loading subst-ksc...
+Loading subst-gb2312...
+Loading subst-big5...
+Loading subst-jis...
+Making  in /usr/home/non/archives/src/mhc/ruby-ext
+ruby make.rb
+make
+gcc -I. -I. -I/usr/lib/ruby/1.8/i386-cygwin -I.  -g -O2    -I/usr/local/include  -DNEW_NAMING   -c ext-helper.c
+ext-helper.c: In function `IS_CLASS_OF':
+ext-helper.c:30: warning: initialization discards qualifiers from pointer target type
+gcc -I. -I. -I/usr/lib/ruby/1.8/i386-cygwin -I.  -g -O2    -I/usr/local/include  -DNEW_NAMING   -c mhc_pilib.c
+mhc_pilib.c: In function `rpi_sock_open':
+mhc_pilib.c:41: warning: passing arg 2 of `pi_bind' from incompatible pointer type
+mhc_pilib.c:41: error: too few arguments to function `pi_bind'
+mhc_pilib.c: In function `rdlp_ReadAppBlock':
+mhc_pilib.c:173: error: `pi_buffer_t' undeclared (first use in this function)
+mhc_pilib.c:173: error: (Each undeclared identifier is reported only once
+mhc_pilib.c:173: error: for each function it appears in.)
+mhc_pilib.c:173: error: `buffer' undeclared (first use in this function)
+mhc_pilib.c:179: warning: passing arg 4 of `dlp_ReadAppBlock' makes pointer from integer without a cast
+mhc_pilib.c: In function `rdlp_ReadRecordByIndex':
+mhc_pilib.c:206: error: `pi_buffer_t' undeclared (first use in this function)
+mhc_pilib.c:206: error: `buffer' undeclared (first use in this function)
+mhc_pilib.c:213: error: too few arguments to function `dlp_ReadRecordByIndex'
+mhc_pilib.c: In function `rdlp_ReadRecordById':
+mhc_pilib.c:240: error: `pi_buffer_t' undeclared (first use in this function)
+mhc_pilib.c:240: error: `buffer' undeclared (first use in this function)
+mhc_pilib.c:248: error: too few arguments to function `dlp_ReadRecordById'
+mhc_pilib.c: In function `rdlp_WriteRecord':
+mhc_pilib.c:277: error: `pi_buffer_t' undeclared (first use in this function)
+mhc_pilib.c:277: error: `buffer' undeclared (first use in this function)
+mhc_pilib.c:296: error: `datebook_v1' undeclared (first use in this function)
+mhc_pilib.c: In function `rpack_Appointment':
+mhc_pilib.c:368: error: `pi_buffer_t' undeclared (first use in this function)
+mhc_pilib.c:368: error: `buffer' undeclared (first use in this function)
+mhc_pilib.c:392: error: `datebook_v1' undeclared (first use in this function)
+mhc_pilib.c: In function `runpack_Appointment':
+mhc_pilib.c:406: error: `pi_buffer_t' undeclared (first use in this function)
+mhc_pilib.c:406: error: `buffer' undeclared (first use in this function)
+mhc_pilib.c:417: error: `datebook_v1' undeclared (first use in this function)
+mhc_pilib.c: In function `rpack_Address':
+mhc_pilib.c:456: error: `pi_buffer_t' undeclared (first use in this function)
+mhc_pilib.c:456: error: `buffer' undeclared (first use in this function)
+mhc_pilib.c:468: error: `address_v1' undeclared (first use in this function)
+mhc_pilib.c: In function `runpack_Address':
+mhc_pilib.c:481: error: `pi_buffer_t' undeclared (first use in this function)
+mhc_pilib.c:481: error: `buffer' undeclared (first use in this function)
+mhc_pilib.c:491: error: `address_v1' undeclared (first use in this function)
+make: *** [mhc_pilib.o] Error 1
+mhc$ 
+
+
+
+mhc$ which mhc2ol
+/usr/local/bin/mhc2ol
+mhc$ mhc2ol -i
+deleting appointments in Outlook........ done.
+deleting tasks in Outlook... done.
+...../usr/local/bin/mhc2ol:162:in `handle_recurrence': undefined method `+' for nil:NilClass (NoMethodError)
+	from /usr/local/bin/mhc2ol:507:in `setup_ol_appointments'
+	from /usr/local/bin/mhc2ol:453:in `each'
+	from /usr/local/bin/mhc2ol:453:in `setup_ol_appointments'
+	from /usr/local/bin/mhc2ol:642:in `send_to_outlook'
+	from /usr/local/bin/mhc2ol:664:in `export'
+	from /usr/lib/ruby/1.8/mhc-schedule.rb:1213:in `each_sch'
+	from /usr/lib/ruby/1.8/mhc-schedule.rb:1211:in `each'
+	from /usr/lib/ruby/1.8/mhc-schedule.rb:1211:in `each_sch'
+	from /usr/lib/ruby/1.8/mhc-schedule.rb:1210:in `each'
+	from /usr/lib/ruby/1.8/mhc-schedule.rb:1210:in `each_sch'
+	from /usr/local/bin/mhc2ol:652:in `export'
+	from /usr/local/bin/mhc2ol:886
+mhc$ 
+
+
+
+--
+  &#x306E;&#xFF20;&#x4F1A;&#x793E;		non@xxxxxxxxxxxx
+
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="02323" href="msg02323.html">[mhc:02324] Re: mhc_pilib.c &#x3067;&#x30A8;&#x30E9;&#x30FC;</a></strong>
+<ul><li><em>From:</em> &#x9BC9;&#x6C5F;&#x82F1;&#x9686;</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg02321.html">[mhc:02322] Re: palm&#x306E;&#x30DE;&#x30B7;&#x30F3;&#x304C;&#x7121;&#x3044;&#x6642;</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg02323.html">[mhc:02324] Re: mhc_pilib.c &#x3067;&#x30A8;&#x30E9;&#x30FC;</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg02321.html">[mhc:02322] Re: palm&#x306E;&#x30DE;&#x30B7;&#x30F3;&#x304C;&#x7121;&#x3044;&#x6642;</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg02323.html">[mhc:02324] Re: mhc_pilib.c &#x3067;&#x30A8;&#x30E9;&#x30FC;</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#02322"><strong>Date</strong></a></li>
+<li><a href="threads.html#02322"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

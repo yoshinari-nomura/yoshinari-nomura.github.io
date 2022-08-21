@@ -1,0 +1,117 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01995] patch (mhc&#45;guess.el) -->
+<!--X-From-R13: @AUGQVW Khfhxr <abthabthNzin.ovtybor.ar.wc> -->
+<!--X-Date: Mon, 22 Nov 2004 19:50:09 +0900 (JST) -->
+<!--X-Message-Id: 20041122.195009.68546643.nogunogu@mva.biglobe.ne.jp -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01995] patch (mhc-guess.el)</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01993.html">Date Prev</a>][<a href="msg01995.html">Date Next</a>][<a href="msg01993.html">Thread Prev</a>][<a href="msg01995.html">Thread Next</a>][<a href="maillist.html#01994">Date Index</a>][<a href="threads.html#01994">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01995] patch (mhc-guess.el)</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01995] patch (mhc-guess.el)</li>
+<li><em>From</em>: NOGUCHI Yusuke &lt;<a href="mailto:nogunogu@DOMAIN.HIDDEN">nogunogu@xxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Mon, 22 Nov 2004 19:50:09 +0900 (JST)</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x91CE;&#x53E3;&#x3068;&#x7533;&#x3057;&#x307E;&#x3059;&#x3002;
+
+location guess &#x306E;&#x30D1;&#x30C3;&#x30C1;&#x3067;&#x3059;&#x3002;mhc-current-snap20041120&#x3078;&#x306E;&#x30D1;&#x30C3;&#x30C1;&#x3068;&#x306A;&#x3063;
+&#x3066;&#x304A;&#x308A;&#x307E;&#x3059;&#x3002;
+
+--------------------------------------
+&#x4F1A;&#x5834;&#x3000;&#x307B;&#x3052;&#x307B;&#x3052;
+&#x4F1A;&#x5834;: &#x307B;&#x3052;&#x307B;&#x3052;
+&#x4F1A;&#x5834;&#xFF1A;&#x307B;&#x3052;&#x307B;&#x3052;
+--------------------------------------
+&#x7B49;&#x3092;&#x5F15;&#x3063;&#x639B;&#x3051;&#x3066;&#x3082;&#x3089;&#x3044;&#x305F;&#x3081;&#x306E;&#x3082;&#x306E;&#x3067;&#x3059;&#x3002;
+
+&#x3042;&#x3068;&#x3001;&#x6642;&#x7BC0;&#x67C4;:-)&#x4EE5;&#x4E0B;&#x3082;&#x3042;&#x308B;&#x3068;&#x3046;&#x308C;&#x3057;&#x304B;&#x3063;&#x305F;&#x308A;&#x3057;&#x307E;&#x3059;...(&#x30D1;&#x30C3;&#x30C1;&#x306B;&#x306F;&#x542B;&#x3081;&#x3066;&#x3044;
+&#x307E;&#x305B;&#x3093;)
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    (,(concat &quot;&#x5E97;[ &#x3000;]*&#x540D;[ &#x3000;]*[&#xFF1A;:]*[\n &#x3000;]*\\([^\n &#x3000;]+\\)&quot;)
+     mhc-guess/make-location-from-string 1)
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+&#x4EE5;&#x4E0A;&#x3001;&#x3054;&#x691C;&#x8A0E;&#x3044;&#x305F;&#x3060;&#x3051;&#x308C;&#x3070;&#x5E78;&#x3044;&#x3067;&#x3059;&#x3002;
+-- 
+noguchi
+</pre><pre>*** mhc-guess.el.org	Mon Nov 22 19:28:46 2004
+--- mhc-guess.el	Mon Nov 22 19:30:08 2004
+***************
+*** 180,186 ****
+  
+  (defvar mhc-guess-location-regexp-list
+    `(
+!     (,(concat &quot;&#x5834;[ &#x3000;]*&#x6240;[ &#x3000;]*[&#xFF1A;:]*[\n &#x3000;]*\\([^\n &#x3000;]+\\)&quot;)
+       mhc-guess/make-location-from-string 1)
+      (,(concat &quot;&#x65BC;[ &#x3000;]*\\([^\n &#x3000;]+\\)&quot;)
+       mhc-guess/make-location-from-string 1)
+--- 180,186 ----
+  
+  (defvar mhc-guess-location-regexp-list
+    `(
+!     (,(concat &quot;[&#x4F1A; &#x3000;]*&#x5834;[ &#x3000;]*[&#x6240; &#x3000;]*[&#xFF1A;:]*[\n &#x3000;]*\\([^\n &#x3000;]+\\)&quot;)
+       mhc-guess/make-location-from-string 1)
+      (,(concat &quot;&#x65BC;[ &#x3000;]*\\([^\n &#x3000;]+\\)&quot;)
+       mhc-guess/make-location-from-string 1)
+
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01993.html">[mhc:01994] Re: mhc2palm/palm2mhc &#x3067;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x3092;&#x6271;&#x3046;</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01995.html">[mhc:01996] mhc-cvs error</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01993.html">[mhc:01994] Re: mhc2palm/palm2mhc &#x3067;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x3092;&#x6271;&#x3046;</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01995.html">[mhc:01996] mhc-cvs error</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01994"><strong>Date</strong></a></li>
+<li><a href="threads.html#01994"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

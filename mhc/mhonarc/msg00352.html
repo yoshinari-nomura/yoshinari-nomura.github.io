@@ -1,0 +1,199 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00353] mhc&#45;db&#45;base&#45;folder customize -->
+<!--X-From-R13: Oxvuveb [AFAYW <zbgbxvNcgy.nox.arp.pb.wc> -->
+<!--X-Date: Tue, 25 Jan 2000 22:01:33 +0900 -->
+<!--X-Message-Id: 86n1pue253.wl@ptls12.ptl.abk.nec.co.jp -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00353] mhc-db-base-folder customize</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00351.html">Date Prev</a>][<a href="msg00353.html">Date Next</a>][<a href="msg00350.html">Thread Prev</a>][<a href="msg00353.html">Thread Next</a>][<a href="maillist.html#00352">Date Index</a>][<a href="threads.html#00352">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00353] mhc-db-base-folder customize</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00353] mhc-db-base-folder customize</li>
+<li><em>From</em>: Akihiro MOTOKI &lt;<a href="mailto:motoki@DOMAIN.HIDDEN">motoki@xxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Tue, 25 Jan 2000 22:01:33 +0900</li>
+<li><em>Posted</em>: Tue, 25 Jan 2000 22:01:28 +0900</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x5143;&#x6728;&#x3067;&#x3059;&#x3002;
+
+mhc &#x306E;&#x30C7;&#x30FC;&#x30BF;&#x7F6E;&#x5834;&#x304C; +schedule &#x306E;&#x4E0B;&#x3067;&#x306A;&#x304F;&#x3066;&#x3082;&#x5927;&#x4E08;&#x592B;&#x306B;&#x3057;&#x3066;
+&#x307F;&#x307E;&#x3057;&#x305F;(&#x305D;&#x306E;&#x3064;&#x3082;&#x308A;&#x3067;&#x3059;)&#x3002;
+
+mhc-db-base-mail-dir &#x3068; mhc-db-base-folder &#x304B;&#x3089; mhc-db-base-dir &#x3092;&#x751F;&#x6210;&#x3057;&#x3001;
+&#x4ED6;&#x306F; &quot;+schedule&quot; &#x3068;hard coding &#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3068;&#x3053;&#x308D;&#x3092;&#x5909;&#x66F4;&#x3057;&#x305F;&#x3060;&#x3051;&#x306A;&#x306E;&#x3067;&#x3001;
+&#x629C;&#x3051;&#x304C;&#x3042;&#x308B;&#x304B;&#x3082;&#x3057;&#x308C;&#x307E;&#x305B;&#x3093;&#x3002;
+&#x305D;&#x308C;&#x306B;&#x4F34;&#x3044;&#x3001;defconst -&gt; defvar &#x306B;&#x5909;&#x66F4;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x5834;&#x6240;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+
+&#x3042;&#x3068;&#x3001;&#x4E88;&#x5B9A;&#x3092;&#x5909;&#x66F4;&#x3057;&#x3066; refile &#x3059;&#x308B;&#x3068;&#x304D;&#x306E;&#x78BA;&#x8A8D;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x304C;
+absolute path &#x3067;&#x8868;&#x793A;&#x3055;&#x308C;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;&#x53F3;&#x7AEF;&#x304C;&#x5207;&#x308C;&#x3066;&#x3057;&#x307E;&#x3046;&#x306E;&#x3067;&#x3001;
++schedule/2000/01 &#x306E;&#x3088;&#x3046;&#x306A;&#x8868;&#x793A;&#x306B;&#x5909;&#x66F4;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002;
+
+&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2501;&#x2026;&#x2026;&#x2026;&#x2025;&#x30FB;&#x30FB; &#x30FB; &#x3000;&#x30FB;&#x3000;&#xFF0E;
+  &#x5143;&#x6728; &#x9855;&#x5F18; / Akihiro Motoki                &#x3000;&#x3000;&#x30FB;      &#x2606;
+&#x3000;E-mail: mokkun@xxxxxxxxx, mokkun@xxxxxxxxxxx  &#x3000;&#x30FB;&#x3000;  .
+          motoki@xxxxxxxxxxxxxxxxx                  &#x30FB;&#x30FB;
+</pre><pre>diff -urN mhc-20000112.orig/mhc-schedule.el mhc/mhc-schedule.el
+--- mhc-20000112.orig/mhc-schedule.el	Fri Jan  7 13:38:38 2000
++++ mhc/mhc-schedule.el	Tue Jan 25 21:45:54 2000
+@@ -616,10 +616,12 @@
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;; schedule DB 
+ 
+-(defconst mhc-db-base-mail-dir (expand-file-name &quot;~/Mail&quot;))
+-(defconst mhc-db-base-dir    (expand-file-name &quot;~/Mail/schedule&quot;))
+-(defconst mhc-db-base-folder &quot;+schedule&quot;)
+-(defconst mhc-db-rc-file     (expand-file-name &quot;~/.schedule&quot;))
++(defvar mhc-db-base-mail-dir (expand-file-name &quot;~/Mail&quot;))
++(defvar mhc-db-base-folder &quot;+schedule&quot;)
++(defvar mhc-db-base-dir (if (eq (string-to-char mhc-db-base-folder) ?+)
++			    (expand-file-name (substring mhc-db-base-folder 1)
++					      mhc-db-base-mail-dir)))
++(defvar mhc-db-rc-file     (expand-file-name &quot;~/.schedule&quot;))
+ (defvar mhc-db-alist ())
+ 
+ (defun mhc-db-date-to-slot (date)
+@@ -768,12 +770,16 @@
+   (let ((old-slot (mhc-sch-old-slot sch))
+ 	(old-path (mhc-sch-path sch))
+ 	(new-slot (mhc-sch-new-slot sch))
++	(maildir (concat mhc-db-base-mail-dir &quot;/&quot;))
+ 	new-path)
+     (if (and old-slot (equal old-slot new-slot))
+ 	(setq new-path old-path)
+       (setq new-path (mhc-misc-get-new-path new-slot)))
+     ;; save buffer contents to the new-path
+-    (if (not (y-or-n-p (format &quot;Refile %s to %s &quot; (or old-slot &quot;&quot;) new-slot)))
++    (if (not (y-or-n-p
++	      (format &quot;Refile %s to %s &quot;
++		      (mhc-misc-sub (or old-slot &quot;&quot;) maildir &quot;+&quot;)
++		      (mhc-misc-sub new-slot maildir &quot;+&quot;))))
+ 	nil ;; return value
+       (if buffer (mhc-misc-copy-buffer-to-file buffer new-path))
+       (mhc-db-scan-slot new-slot)
+diff -urN mhc-20000112.orig/mhc.el mhc/mhc.el
+--- mhc-20000112.orig/mhc.el	Wed Jan 12 17:50:22 2000
++++ mhc/mhc.el	Tue Jan 25 21:45:12 2000
+@@ -384,7 +384,7 @@
+ 	()
+       ;;; xxx experimental
+       (if mhc-insert-calendar
+-	  (mhc-cal-insert-rectangle-at ddate (- (window-width) 26)))
++	  (mhc-cal-insert-rectangle-at ddate (- (window-width) 24)))
+       (mhc-goto-today)
+       (cond
+        ((equal type 'mew)
+@@ -444,7 +444,7 @@
+ 		     (regexp-quote
+ 		      (file-name-as-directory mhc-db-base-mail-dir))) path))
+ 	      (concat &quot;+&quot; (substring path (match-end 0)))
+-	    &quot;+schedule/1970/01/0&quot;))
++	    (format &quot;%s/%s&quot; mhc-db-base-folder &quot;1970/01/0&quot;)))
+     (concat
+      (directory-file-name (file-name-directory fld-msg)) &quot; &quot;
+      (file-name-nondirectory fld-msg))))
+@@ -460,10 +460,9 @@
+       (format &quot;2%05d&quot; (string-to-int (file-name-nondirectory path)))))))
+ 
+ (defun mhc-wl-ddate-to-folder (ddate)
+-  (concat &quot;*&quot; 
+-	  &quot;+schedule/intersect&quot;
+-	  &quot;,&quot;
+-	  &quot;+schedule/&quot; (ddate-yymm-s1 ddate &quot;/&quot;)))
++  (format &quot;*%s/intersect,%s/%s&quot;
++	  mhc-db-base-folder mhc-db-base-folder
++	  (ddate-yymm-s1 ddate &quot;/&quot;)))
+ 
+ ;; (setq debug-on-error t)
+ ;; (mhc-sch-scan-month (ddate-now) 'wl nil nil nil)
+@@ -694,7 +693,7 @@
+   (interactive)
+   (read-from-minibuffer  (or prompt &quot;Location: &quot;)
+ 			 (or default &quot;&quot;)
+-			 nil nil 'mhc-location))
++			 nil nil 'mhc-location-hist))
+ 
+ (defvar mhc-category-hist nil)
+ 
+@@ -807,7 +806,8 @@
+ ;; manupulate data from mhc-summary-buffer.
+ 
+ (defconst mhc-summary-day-regex  &quot;^[^|]+| +[0-9]+/\\([0-9]+\\)&quot;)
+-(defconst mhc-summary-buf-regex   &quot;+schedule/\\([0-9]+\\)/\\([0-9]+\\)&quot;) ;; xxx
++(defvar mhc-summary-buf-regex
++  (concat mhc-db-base-folder &quot;/\\([0-9]+\\)/\\([0-9]+\\)&quot;)) ;; xxx
+ (defconst mhc-summary-filename-regex 
+   &quot;.*\r *\\+\\([^ \t]+\\)[ \t]+\\([^ \t\n]+\\)&quot;)
+ 
+@@ -876,7 +876,7 @@
+ 		 1))))
+ 
+ (defun mhc-ddate-to-buffer (ddate)
+-  (concat &quot;+schedule/&quot; (ddate-yymm-s1 ddate &quot;/&quot;)))
++  (format &quot;%s/%s&quot; mhc-db-base-folder (ddate-yymm-s1 ddate &quot;/&quot;)))
+ 
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;; make rectangle like calendar.el
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00353" href="msg00353.html">[mhc:00354] Re: mhc-db-base-folder customize</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00351.html">[mhc:00352] Re: mhc snap20000112 impression</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00353.html">[mhc:00354] Re: mhc-db-base-folder customize</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00350.html">[mhc:00351] Re: mhc-snap20000112 &#x52D5;&#x4F5C;&#x4E0D;&#x826F;&#xFF1F;</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00353.html">[mhc:00354] Re: mhc-db-base-folder customize</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00352"><strong>Date</strong></a></li>
+<li><a href="threads.html#00352"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

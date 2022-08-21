@@ -1,0 +1,100 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00813] mhc&#45;cmail.el -->
+<!--X-From-R13: zngmNargyno.pb.wc (Khxvuveb [ngfhzbgb) -->
+<!--X-Date: Mon, 24 Jul 2000 18:30:21 +0900 -->
+<!--X-Message-Id: E13GeZ3&#45;000750&#45;00@ev.netlab.zetabits.co.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00813] mhc-cmail.el</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00811.html">Date Prev</a>][<a href="msg00813.html">Date Next</a>][<a href="msg00811.html">Thread Prev</a>][<a href="msg00813.html">Thread Next</a>][<a href="maillist.html#00812">Date Index</a>][<a href="threads.html#00812">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00813] mhc-cmail.el</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00813] mhc-cmail.el</li>
+<li><em>From</em>: <a href="mailto:matz@DOMAIN.HIDDEN">matz@xxxxxxxxxxxx</a> (Yukihiro Matsumoto)</li>
+<li><em>Date</em>: Mon, 24 Jul 2000 18:30:21 +0900</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Sender</em>: Yukihiro Matsumoto &lt;<a href="mailto:matz@DOMAIN.HIDDEN">matz@xxxxxxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>User-agent</em>: SEMI/1.12.1 ([JR] Nonoichi) FLIM/1.12.7 (Y&#x16B;zaki) Emacs/20.7 (i386-debian-linux-gnu) MULE/4.1 (AOI)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x307E;&#x3064;&#x3082;&#x3068; &#x3086;&#x304D;&#x3072;&#x308D;&#x3067;&#x3059;
+
+mhc-cmail.el&#x4E2D;&#x306E;&#x95A2;&#x6570;mhc-cmail-get-import-buffer&#x3067;&#x3059;&#x304C;&#x3001;
+
+(defun mhc-cmail-get-import-buffer (get-original)
+  ;; (if get-original (cmail-summary-display-asis)) ;; xxx
+  (save-excursion
+    (cmail-show-contents (cmail-get-page-number-from-summary))
+    (set-buffer *cmail-mail-buffer)
+    (current-buffer)))
+
+&#x3068;&#x3059;&#x308B;&#x3068;&#x30C1;&#x30E3;&#x30F3;&#x3068;&#x52D5;&#x304F;&#x3088;&#x3046;&#x3067;&#x3059;&#x3002;
+
+&#x3068;&#x3053;&#x308D;&#x3067;&#x3001;mhc-import&#x3067; 14:00-16:00 &#x306E;&#x3088;&#x3046;&#x306A;&#x7BC4;&#x56F2;&#x3092;guess&#x3059;&#x308B;&#x3053;
+&#x3068;&#x306F;&#x3067;&#x304D;&#x306A;&#x3044;&#x3082;&#x306E;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#xFF1F;
+
+                                &#x307E;&#x3064;&#x3082;&#x3068; &#x3086;&#x304D;&#x3072;&#x308D; /:|)
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00813" href="msg00813.html">[mhc:00814] Re: mhc-cmail.el</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+<li><strong><a name="00945" href="msg00945.html">[mhc:00946] Re: Guess</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00811.html">[mhc:00812] 3 &#x30F6;&#x6708; calendar &#x306E;&#x6539;&#x9020;</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00813.html">[mhc:00814] Re: mhc-cmail.el</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00811.html">[mhc:00812] 3 &#x30F6;&#x6708; calendar &#x306E;&#x6539;&#x9020;</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00813.html">[mhc:00814] Re: mhc-cmail.el</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00812"><strong>Date</strong></a></li>
+<li><a href="threads.html#00812"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

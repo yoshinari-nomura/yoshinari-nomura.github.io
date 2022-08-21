@@ -1,0 +1,11 @@
+--- mhc.el.orig	Wed Mar 08 17:44:34 2000
++++ mhc.el	Wed Mar 08 17:44:40 2000
+@@ -399,7 +399,7 @@
+ 	(setq mew-use-highlight-cursor-line nil))
+        ((eq mhc-mailer-package 'gnus)
+ 	;; initialize gnus groups.
+-	(let* ((dirlist (list (mhc-gnus-ddate-to-folder ddate)
++	(let* ((dirlist (list (concat (mhc-gnus-ddate-to-folder ddate) "/")
+ 			      (concat (mhc-summary-folder-to-path
+ 				       mhc-base-folder) "/intersect/")))
+ 	       (vgroup mhc-base-folder) (pvgroup (concat "nnvirtual:" vgroup))

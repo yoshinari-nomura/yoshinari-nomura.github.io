@@ -1,0 +1,120 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01505] Re: snap20010625 on Meadow -->
+<!--X-From-R13: Vvqrlhxv EVWDOW (=?vfb&#45;2022&#45;wc?P?UlDQD3WjLw0bAHCoYSW=?=) <fuvenvNdhvpxunpx.arg> -->
+<!--X-Date: Wed, 12 Dec 2001 15:15:37 +0900 (JST) -->
+<!--X-Message-Id: 20011212.151537.60042760.shirai@rdmg.mgcs.mei.co.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: un10pm147.wl@ASKLEPIOS.sdl.hitachi.co.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01505] Re: snap20010625 on Meadow</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01503.html">Date Prev</a>][<a href="msg01505.html">Date Next</a>][<a href="msg01503.html">Thread Prev</a>][<a href="msg01505.html">Thread Next</a>][<a href="maillist.html#01504">Date Index</a>][<a href="threads.html#01504">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01505] Re: snap20010625 on Meadow</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01505] Re: snap20010625 on Meadow</li>
+<li><em>From</em>: Hideyuki SHIRAI (&#x767D;&#x4E95;&#x79C0;&#x884C;) &lt;<a href="mailto:shirai@DOMAIN.HIDDEN">shirai@xxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Wed, 12 Dec 2001 15:15:37 +0900 (JST)</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:un10pm147.wl@DOMAIN.HIDDEN">un10pm147.wl@xxxxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Organization</em>: QuickHackers, Tokyo, JAPAN</li>
+<li><em>References</em>: &lt;<a href="mailto:un10pm147.wl@DOMAIN.HIDDEN">un10pm147.wl@xxxxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>From: OGAWA Hideto &lt;h-ogawa@xxxxxxxxxxxxxxxxx&gt; &#x3055;&#x3093;&#x66F0;&#x304F;
+Subject: [mhc:01504] snap20010625 on Meadow
+Message-ID: &lt;un10pm147.wl@xxxxxxxxxxxxxxxxxxxxxxxxxxx&gt;
+Date: Wed, 12 Dec 2001 14:57:44 +0900
+
+&gt; emacs&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x5185;&#x306E;Makefile&#x3092;&#x66F8;&#x304D;&#x63DB;&#x3048;&#x3066;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3092;&#x3057;&#x305F;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;
+&gt; &#x3044;&#x3056;Wanderlust&#x3092;&#x8D77;&#x52D5;&#x3057;&#x3066;&quot;C-c .&quot;&#x3092;&#x3057;&#x3066;&#x3082;&#x3046;&#x3093;&#x3068;&#x3082;&#x3059;&#x3093;&#x3068;&#x3082;&#x8A00;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;
+&gt; 
+&gt; MHC0.25&#x306B;&#x623B;&#x3059;&#x3068;&#x3001;&#x5143;&#x306B;&#x623B;&#x308A;&#x307E;&#x3059;&#x3002;
+
+mhc-0.25 &#x3060;&#x3068;&#x30AD;&#x30FC;&#x30D0;&#x30A4;&#x30F3;&#x30C9;&#x304C; &quot;C-c .&quot; &#x3084; &quot;C-c n&quot; &#x306A;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;&#x6700;&#x8FD1;
+&#x306E;&#x3082;&#x306E;&#x306F;
+
+(defvar mhc-prefix-key &quot;\C-c.&quot;
+  &quot;*Prefix key to call MHC functions.&quot;)
+
+  (define-key mhc-prefix-map &quot;.&quot; 'mhc-goto-this-month)
+  (define-key mhc-prefix-map &quot;n&quot; 'mhc-goto-next-month)
+  ....
+  (define-key mhc-mode-map mhc-prefix-key mhc-prefix-map)
+
+&#x3068;&#x5909;&#x66F4;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;&#x305D;&#x306E;&#x305F;&#x3081; default &#x8A2D;&#x5B9A;&#x3067;&#x306F;&#x3001;
+
+&quot;C-c .&quot; =&gt; &quot;C-c . .&quot;
+&quot;C-c n&quot; =&gt; &quot;C-c . n&quot;
+            ~~~~~ &lt;= &#x3053;&#x3053;&#x304C; mhc-prefix-key &#x3067;&#x8A2D;&#x5B9A;&#x3055;&#x308C;&#x308B;&#x90E8;&#x5206;
+
+&#x3068;&#x3044;&#x3046;&#x611F;&#x3058;&#x3067;&#x30AD;&#x30FC;&#x30D0;&#x30A4;&#x30F3;&#x30C9;&#x304C;&#x5909;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;&#x307E;&#x305F;&#x3001;
+
+(setq mhc-prefix-key &quot;\C-c&quot;)
+
+&#x3068;&#x3059;&#x308C;&#x3070;&#x4EE5;&#x524D;&#x3068;&#x304A;&#x306A;&#x3058;&#x52D5;&#x4F5C;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;
+
+## &#x3046;&#x301C;&#x301C;&#x3093;&#x3001;&#x3057;&#x304B;&#x3057;&#x3001;MHC &#x306F;&#x5BBF;&#x984C;&#x304C;&#x305F;&#x304F;&#x3055;&#x3093;&#x3042;&#x308B;&#x3002;&#x3002;&#x3002;
+
+-- 
+&#x767D;&#x4E95;&#x79C0;&#x884C; (<a  rel="nofollow" href="mailto:shirai@xxxxxxxxxxxxx">mailto:shirai@xxxxxxxxxxxxx</a>)
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="01503" href="msg01503.html">[mhc:01504] snap20010625 on Meadow</a></strong>
+<ul><li><em>From:</em> OGAWA Hideto</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01503.html">[mhc:01504] snap20010625 on Meadow</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01505.html">[mhc:01506] Re: snap20010625 on Meadow</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01503.html">[mhc:01504] snap20010625 on Meadow</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01505.html">[mhc:01506] Re: snap20010625 on Meadow</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01504"><strong>Date</strong></a></li>
+<li><a href="threads.html#01504"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

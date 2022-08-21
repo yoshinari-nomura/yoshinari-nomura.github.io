@@ -1,0 +1,36 @@
+;
+;  This change is tested on
+;          emacs-20.7 emacs-21.1.105 mule2.3 xemacs-21.1.14
+;
+(defvar mhc-category-alist
+  '(("Holiday") ("Private") ("Work") ("Todo") ("Leisure") ("Done") ("Birthday")))
+(defun mhc-set-default-category ()
+  (interactive)
+  (let ((completion-ignore-case t))	
+    (setq mhc-default-category 
+	  (completing-read "Default Category: " ;PROMPT
+			   mhc-category-alist   ;TABLE
+			   nil                  ;PREDICATE
+			   nil                  ;REQUIRE-MATCH
+			   (or mhc-default-category)    ; INITIAL-INPUT
+			   'mhc-default-category-hist)))   ; HIST
+  (setq mhc-default-category-predicate-sexp
+	(mhc-expr-compile mhc-default-category))
+  (if (mhc-summary-buffer-p)
+      (mhc-rescan-month)))
+;
+;  This change is valid for emacs-21.x which posess crm.el
+;                    (also tested on emacs-20.7 with crm.el)
+;
+(require 'crm)
+(defun mhc-input-category (&optional prompt default)
+  (interactive)
+  (let ((crm-separator ",")
+	(completion-ignore-case t))
+    (completing-read-multiple (or prompt "Category: ")  ;PROMPT
+			      mhc-category-alist  ;TABLE
+			      nil                 ;PREDICATE
+			      nil                 ;REQUIRE-MATCH
+			      default             ;INITIAL-INPUT
+			      'mhc-category-hist  ;HIST
+			      )))

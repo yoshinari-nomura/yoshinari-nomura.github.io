@@ -1,0 +1,149 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01317] Re: conflict detection -->
+<!--X-From-R13: YAWS Vvqrgnxn (=?vfb&#45;2022&#45;wc?P?UlDQAVS5BwTDFwCoYSW=?=) <uvqrNxbvr.bet> -->
+<!--X-Date: Tue, 3 Apr 2001 16:22:59 +0900 -->
+<!--X-Message-Id: 01Apr3.165159jst.29570@gateway.suri.co.jp -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Reference: 01Mar28.195924jst.29575@gateway.suri.co.jp -->
+<!--X-Reference: 20010330105505J.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01317] Re: conflict detection</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01315.html">Date Prev</a>][<a href="msg01317.html">Date Next</a>][<a href="msg01314.html">Thread Prev</a>][<a href="msg01317.html">Thread Next</a>][<a href="maillist.html#01316">Date Index</a>][<a href="threads.html#01316">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01317] Re: conflict detection</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01317] Re: conflict detection</li>
+<li><em>From</em>: KOIE Hidetaka (&#x9BC9;&#x6C5F;&#x82F1;&#x9686;) &lt;<a href="mailto:hide@DOMAIN.HIDDEN">hide@xxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Tue, 3 Apr 2001 16:22:59 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20010330105505J.nom@DOMAIN.HIDDEN">20010330105505J.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:01Mar28.195924jst.29575@DOMAIN.HIDDEN">01Mar28.195924jst.29575@xxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20010330105505J.nom@DOMAIN.HIDDEN">20010330105505J.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>  From:       Yoshinari Nomura &lt;nom@xxxxxxxxxxxxxxxxxxx&gt;
+  Subject:    [mhc:01315] Re: conflict detection
+  Date:       Fri, 30 Mar 2001 10:55:05 +0900
+  Message-Id: &lt;20010330105505J.nom@xxxxxxxxxxxxxxxxxxx&gt;
+
+  | foo4 &#x304C; conflict &#x3059;&#x308B;&#x306E;&#x306B;&#x3001;foo &#x304C;&#x3057;&#x306A;&#x3044;&#x306E;&#x306F;&#x3001;&#x3084;&#x3063;&#x3071;&#x308A;&#x5909;&#x3067;&#x3059;&#x306D;&#x3002;
+  | &#x8D70;&#x67FB;&#x3092;&#x7C21;&#x5358;&#x306B;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;&#x4ECA;&#x306E;&#x30ED;&#x30B8;&#x30C3;&#x30AF;&#x306F;&#x3001;
+  | 
+  |   foo (a&#x6642; &#x301C; b&#x6642;), bar (c&#x6642; &#x301C; d&#x6642;) &#x306E;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x304C;&#x3042;&#x3063;&#x305F;&#x3068;&#x304D;&#x306B;&#x3001;
+  |   foo &#x306B; conflict &#x304C;&#x4ED8;&#x304F;&#x6761;&#x4EF6;&#x306F;&#x3001;
+  | 
+  |     b, c &#x304C;&#x8A2D;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x3044;&#x3066;&#x3001;&#x304B;&#x3064; b &lt; c   &#x3067;&#x3042;&#x308B; (1)  &#x307E;&#x305F;&#x306F;&#x3001;
+  |     b    &#x304C;&#x8A2D;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x3044;&#x3066;&#x3001;&#x304B;&#x3064; b &lt; max &#x3067;&#x3042;&#x308B; (2)
+  | 
+  |   max &#x306F;&#x3001;foo &#x3088;&#x308A;&#x524D;&#x306B;&#x73FE;&#x308C;&#x305F;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x306B;&#x304A;&#x3051;&#x308B;&#x7D42;&#x4E86;&#x6642;&#x9593;&#x306E;&#x6700;&#x5927;&#x5024;&#x3002;
+  | 
+  | &#x3068;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+  | 
+  | &#x3055;&#x3066;&#x3001;&#x52B9;&#x7387;&#x3092;&#x843D;&#x3068;&#x3055;&#x306A;&#x3044;&#x3067;&#x9BC9;&#x6C5F;&#x3055;&#x3093;&#x306E;&#x8981;&#x6C42;&#x3092;&#x6E80;&#x305F;&#x3059;&#x306B;&#x306F;&#x3001;
+  | &#x3069;&#x3046;&#x3044;&#x3058;&#x308C;&#x3070;&#x3044;&#x3044;&#x304B;&#x306A;&#x3002;&#x3002;
+
+&#x5358;&#x7D14;&#x306B;&#x3001;&#x30BD;&#x30FC;&#x30C8;&#x3059;&#x308B;&#x3068;&#x304D;&#x306E;&#x30AD;&#x30FC;&#x3092;a&#x3068;b&#x306E;2&#x3064;&#x306B;&#x3059;&#x308B;&#x3068;&#x3044;&#x3046;&#x306E;&#x3067;&#x306F;&#x3060;&#x3081;?
+
+                *                *                *
+
+&#x533A;&#x9593;&#x6728;&#x3068;&#x3044;&#x3046;&#x30C7;&#x30FC;&#x30BF;&#x69CB;&#x9020;&#x3092;&#x3064;&#x304B;&#x3046;&#x3068;
+&#x5168;conflict&#x3092;&#x691C;&#x51FA;&#x3067;&#x304D;&#x307E;&#x3059;&#x304C;&#x30B3;&#x30B9;&#x30C8;&#x306F;O(n log n)&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;
+
+&#x306A;&#x3093;&#x306B;&#x3082;&#x3057;&#x306A;&#x3044;&#x306E;&#x306F;&#x3042;&#x308C;&#x306A;&#x306E;&#x3067;
+&#x6559;&#x79D1;&#x66F8;&#x3092;&#x898B;&#x306A;&#x304C;&#x3089;C&#x3067;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x66F8;&#x304D;&#x307E;&#x3057;&#x305F;&#x3002;
+&#x305F;&#x3060;&#x3057;&#x6559;&#x79D1;&#x66F8;&#x3067;&#x306F;&#x4E8C;&#x8272;&#x6728;&#x3060;&#x3063;&#x305F;&#x3068;&#x3053;&#x308D;&#x3092;&#x5358;&#x306A;&#x308B;&#x4E8C;&#x5206;&#x6728;&#x306B;&#x7701;&#x7565;&#x3057;&#x307E;&#x3057;&#x305F;&#x304C;
+1 conflict&#x306E;&#x691C;&#x51FA;&#x30B3;&#x30B9;&#x30C8;&#x306F;&#x6728;&#x306E;&#x9AD8;&#x3055;&#x306B;&#x4F9D;&#x5B58;&#x3059;&#x308B;&#x306E;&#x3067;
+&#x6728;&#x304C;&#x30D0;&#x30E9;&#x30F3;&#x30B9;&#x3057;&#x3066;&#x3044;&#x306A;&#x3044;&#x3068;O(log n)&#x306B;&#x306A;&#x308B;&#x306F;&#x305A;&#x304C;O(n)&#x306B;&#x60AA;&#x5316;&#x3057;&#x307E;&#x3059;&#x3002;
+
+emacs/mhc&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x3071;&#x3063;&#x3068;&#x8AAD;&#x3093;&#x3060;&#x3068;&#x3053;&#x308D;
+confclict&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x3092;&#x3059;&#x308B;&#x524D;&#x306B;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x958B;&#x59CB;&#x6642;&#x523B;&#x3067;&#x30BD;&#x30FC;&#x30C8;&#x3057;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;
+&#x4E8C;&#x5206;&#x6728;&#x3067;&#x3082;insert&#x3059;&#x308B;&#x9806;&#x5E8F;&#x3092;&#x304B;&#x3057;&#x3053;&#x304F;&#x3059;&#x308C;&#x3070;&#x30D0;&#x30E9;&#x30F3;&#x30B9;&#x3055;&#x305B;&#x3089;&#x308C;&#x307E;&#x3059;&#x306D;&#x3002;
+
+--
+KOIE Hidetaka &#x9BC9;&#x6C5F;&#x82F1;&#x9686; &lt;hide@xxxxxxxx&gt;
+</pre><pre>H4sIAAAAAAAAA2xTUWvCMBB+F/ofDgVJR+cP0M7h3gZuTxsMxhhRTw3URNLoBup/312atN
+WuD/bu6919X+6LA6WXxWGFkCtTOotyN9pOk96ghglUekMQgStcK43wMvsQswyeUhBilsIU
+BIWPwPGY45SLqe+wdPCsHdqjLJLeKekBPUo7KJ20btLkqFchi+WiLstiBQ/3iPC/acag8B
+9OcEl6lwnThkMMKdqjlc7YPBcRBAoyWBpdNsKGoNJanEV3sJrLIM+h/9nnlxp5Qo9kASFa
+n3/1ifXCxAtj6JCq/DZHtIXc73ElIgfIrOaDRUOn1iBkNQsWgeV8prCCZAWlVXFL31oWJY
+aNIYWdAto9RmHBiDeLWBNzcgcFrqMLFWDVZutunOD1+6Dl107++mXHTtEpbmkeex7x+j6f
+k2eeIiaq5XbVlvHsOuU9tCa1bPZ6ad26RLoQQb0xLuvqTm9OrfHH0CV+4KBSX1dOGlt4WK
+A+NQril/tpLTHcDbgGWqq9Lb6H90C8QXSDNYuICrrGNlP8Bm/HePD/OVUBrZV6+J97rf8P
+AAD//6xVyw6CQAy8m/gPlQORyMEzRvkUYmQTSHhsUNTE+O/uoyztihgTOUHplunMtGiKY/
+4Zeo0HDPiUdGJrJrCdOe6jTumTKxANcJ++pR+8DSuaUo/no+l1xmD6a1vmy0Xe1zIrm7bL
+RYcmubQyBr4P7IYD2antdufDqbJts0RPVtQlxLaWLQIbCBKVGgyN4ULBt+rOnBs0MJtkHb
+i4pkWHIhNSAlU7D5LhDzG940EzfALkEcSmhzIzUsE+4RJjCEhBN5G2p+wsjt2p+G00pRIY
+VdTBW1FWAtYSwhBWwFcroY/YfnpiUSJdRlLvHvbzU6vh4IHZucQ8uj25MyVn3XEkmr7WPy
+nxF5qmm/9C2wsAAP//pJZNCoMwEIWvMrQbxbTElhbbgssuewHJQvyBLKpS60q8exOjyRhS
+oVTQxcgkL5OPN4PLNj9Z3SlcnYiuAfpPxfulCEeRmlWf+35jw++XN97WM+WVZxd/8iHZwV
+BHzNN3mrDkwMQvdJAeTgQiGAgOUQJHKxQRuFihM4GQWrFdSMQ7n2fQPbisXzBOTFxsT29K
+DWcJZbLiIsCDAE8R6giogRjoPJNL9Doh0xY9OoZKkZj4WsM4sImZbAllxiuIY2jlpzCAbg
+Uk1AiasLYg8howuMx+YqltSeH7Nr8Lu2qUUGFW97qr8qsxZTcPM/ybhyhSKVP2mPLtMsNB
+qUsh2lGvby1b5bzE+H0AAAD//wMAWL/tc5kLAAA=
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01317" href="msg01317.html">[mhc:01318] Re: conflict detection</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="01313" href="msg01313.html">[mhc:01314] conflict detection</a></strong>
+<ul><li><em>From:</em> &#x9BC9;&#x6C5F;&#x82F1;&#x9686;</li></ul></li>
+<li><strong><a name="01314" href="msg01314.html">[mhc:01315] Re: conflict detection</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01315.html">[mhc:01316] Re: mhc-snap20000427.tar.gz</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01317.html">[mhc:01318] Re: conflict detection</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01314.html">[mhc:01315] Re: conflict detection</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01317.html">[mhc:01318] Re: conflict detection</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01316"><strong>Date</strong></a></li>
+<li><a href="threads.html#01316"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

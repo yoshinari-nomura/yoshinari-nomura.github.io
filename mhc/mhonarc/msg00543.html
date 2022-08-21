@@ -1,0 +1,164 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00544] Re: mhc&#45;cvs.el -->
+<!--X-From-R13: Vvqrlhxv EVWDOW (=?vfb&#45;2022&#45;wc?P?UlDQD3WjLw0bAHCoYSW=?=) <fuvenvNeqzt.ztpf.zrv.pb.wc> -->
+<!--X-Date: Wed, 26 Apr 2000 16:22:20 +0900 -->
+<!--X-Message-Id: 20000426.162128.46106401.shirai@rdmg.mgcs.mei.co.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 20000420124834Q.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Reference: 200004241453.XAA27481@crest.csce.kyushu&#45;u.ac.jp -->
+<!--X-Reference: 20000425.181029.74115976.shirai@rdmg.mgcs.mei.co.jp -->
+<!--X-Reference: 200004260037.JAA09355@crest.csce.kyushu&#45;u.ac.jp -->
+<!--X-Reference: 20000426.130434.46106223.shirai@rdmg.mgcs.mei.co.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00544] Re: mhc-cvs.el</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00542.html">Date Prev</a>][<a href="msg00544.html">Date Next</a>][<a href="msg00539.html">Thread Prev</a>][<a href="msg00545.html">Thread Next</a>][<a href="maillist.html#00543">Date Index</a>][<a href="threads.html#00543">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00544] Re: mhc-cvs.el</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00544] Re: mhc-cvs.el</li>
+<li><em>From</em>: Hideyuki SHIRAI (&#x767D;&#x4E95;&#x79C0;&#x884C;) &lt;<a href="mailto:shirai@DOMAIN.HIDDEN">shirai@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Wed, 26 Apr 2000 16:22:20 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20000426.130434.46106223.shirai@DOMAIN.HIDDEN">20000426.130434.46106223.shirai@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Organization</em>: Matsushita Graphic Communication Systems, Inc.</li>
+<li><em>Posted</em>: Wed, 26 Apr 2000 16:21:28 +0900 (JST)</li>
+<li><em>References</em>: &lt;<a href="mailto:20000420124834Q.nom@DOMAIN.HIDDEN">20000420124834Q.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:200004241453.XAA27481@DOMAIN.HIDDEN">200004241453.XAA27481@xxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20000425.181029.74115976.shirai@DOMAIN.HIDDEN">20000425.181029.74115976.shirai@xxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:200004260037.JAA09355@DOMAIN.HIDDEN">200004260037.JAA09355@xxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20000426.130434.46106223.shirai@DOMAIN.HIDDEN">20000426.130434.46106223.shirai@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x767D;&#x4E95;&#x3067;&#x3059;&#x3002;
+
+# mhc-file.el &#x306E;&#x8A71;&#x306A;&#x306E;&#x3067;&#x3053;&#x3061;&#x3089;&#x306B;&#x7E4B;&#x3052;&#x307E;&#x3059;&#x3002;
+
+&#x4E43;&#x6751;&#x3055;&#x3093;&#x304B;&#x3089; &quot;19.28&quot; &#x3067;&#x52D5;&#x304F;&#x304B;&#x3069;&#x3046;&#x304B;&#xFF1F;
+&#x3068;&#x3044;&#x3046;&#x8A71;&#x304C;&#x3042;&#x3063;&#x305F;&#x306E;&#x3067;&#x3001;mhc-cvs &#x3092; 19.28 &#x3067;&#x52D5;&#x304B;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002;
+
+mhc-file-write-buffer() &#x306E;
+
+	      ((featurep 'mule)
+	       (write-region (point-min) (point-max) filename
+			     nil 'silence nil *iso-2022-jp*))
+
+&#x306A;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;19.28 &#x306E; write-region &#x3060;&#x3068;
+
+(write-region START END FILENAME &amp;optional APPEND VISIT CODING-SYSTEM)
+
+&#x306A;&#x306E;&#x3067;&#x3001;CONFIRM &#x5206;&#x306E; nil &#x304C;&#x4E00;&#x500B;&#x591A;&#x3044;&#x3067;&#x3059;&#x3002;&#x3042;&#x3068;&#x306F;&#x3060;&#x3044;&#x305F;&#x3044;&#x52D5;&#x3044;&#x305F;&#x307F;&#x305F;&#x3044;&#x3067;&#x3059;&#x3002;
+&#x5143;&#x306E;&#x4E43;&#x6751;&#x3055;&#x3093;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3060;&#x3068;
+
+    (cond
+     ((string&lt; &quot;20.3&quot; emacs-version) ;; emacs 20.3.x or higher
+      (let ((coding-system-for-write 'iso-2022-jp))
+	(write-region (point-min) (point-max) file nil
+		      'silence nil nil)))
+     ((string&lt; &quot;20&quot; emacs-version) ;; emacs 20.x
+      (let ((coding-system-for-write 'iso-2022-jp))
+	(write-region (point-min) (point-max) file nil
+		      'silence nil )))
+     ((string&lt; &quot;19.3&quot; emacs-version) ;; emacs 19.34
+      (write-region (point-min) (point-max) file nil 
+		    'silence nil *iso-2022-jp*))
+     (t ;; 19.28
+      (write-region (point-min) (point-max) file nil 
+		    'silence *iso-2022-jp*)))
+
+&#x3068;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x306D;&#x3002;(string&lt; &quot;20.3&quot; ...) &#x306F;&#x5FC5;&#x8981;&#x7121;&#x3044;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;
+
+&#x3082;&#x3046;&#x4E00;&#x70B9;&#x3001;
+
+(defun mhc-cvs/remove (filename &amp;optional offline)
+  &quot;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x524A;&#x9664;&#x3059;&#x308B;&#x95A2;&#x6570;&quot;
+  (let ((added (mhc-cvs/get-added-flag-file-name filename))
+	(removed (mhc-cvs/get-removed-file-name filename)))
+    (if offline
+	(if (not (file-exists-p added))
+	    (not (rename-file filename removed t))
+	  (delete-file added)
+	  (not (delete-file filename)))
+      (if (file-exists-p added) (delete-file added))
+      (if (file-exists-p removed) (delete-file removed))
+      (if (file-exists-p filename) (delete-file filename))
+      (and (= 0 (mhc-cvs/backend &quot;remove&quot; filename))
+	   (mhc-cvs/modify filename)))))
+
+&#x306E;&#x65B9;&#x304C;&#x3044;&#x3044;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;&#x305D;&#x306E;&#x5FC3;&#x306F;&#x300E;offline &#x4E2D;&#x306B; add &#x3057;&#x3066; remove &#x3057;
+&#x305F;&#x3089;&#x3001;&#x306A;&#x306B;&#x3082;&#x3057;&#x306A;&#x3044;&#x306E;&#x3068;&#x4E00;&#x7DD2;&#x300F;&#x3067;&#x3059;&#x3002;
+
+# &#x3068;&#x3044;&#x3046;&#x30E1;&#x30FC;&#x30EB;&#x3092;&#x4ED5;&#x4E8B;&#x306E;&#x5408;&#x9593;&#x306B;&#x606F;&#x629C;&#x304D;&#x3067;&#x66F8;&#x3044;&#x3066;&#x3044;&#x305F;&#x3089;&#x3001;&#x571F;&#x5C4B;&#x3055;&#x3093;&#x306E;&#x30D1;&#x30C3;
+# &#x30C1;&#x304C;&#x51FA;&#x3066;&#x3057;&#x307E;&#x3063;&#x305F;&#x3002;^^;
+
+-- 
+&#x767D;&#x4E95;&#x79C0;&#x884C; (<a  rel="nofollow" href="mailto:shirai@xxxxxxxxxxxxxxxxxxx">mailto:shirai@xxxxxxxxxxxxxxxxxxx</a>)
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00545" href="msg00545.html">[mhc:00546] Re: mhc-cvs.el</a></strong>
+<ul><li><em>From:</em> TSUCHIYA Masatoshi</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00517" href="msg00517.html">[mhc:00518] Re: mhc-cvs.el and Gnus support</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+<li><strong><a name="00533" href="msg00533.html">[mhc:00534] Re: mhc-cvs.el</a></strong>
+<ul><li><em>From:</em> TSUCHIYA Masatoshi</li></ul></li>
+<li><strong><a name="00534" href="msg00534.html">[mhc:00535] Re: mhc-cvs.el</a></strong>
+<ul><li><em>From:</em> &#x767D;&#x4E95;&#x79C0;&#x884C;</li></ul></li>
+<li><strong><a name="00536" href="msg00536.html">[mhc:00537] Re: mhc-cvs.el</a></strong>
+<ul><li><em>From:</em> TSUCHIYA Masatoshi</li></ul></li>
+<li><strong><a name="00539" href="msg00539.html">[mhc:00540] Re: mhc-cvs.el</a></strong>
+<ul><li><em>From:</em> &#x767D;&#x4E95;&#x79C0;&#x884C;</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00542.html">[mhc:00543] Re: prepareing 0.25</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00544.html">[mhc:00545] Re: prepareing 0.25</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00539.html">[mhc:00540] Re: mhc-cvs.el</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00545.html">[mhc:00546] Re: mhc-cvs.el</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00543"><strong>Date</strong></a></li>
+<li><a href="threads.html#00543"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

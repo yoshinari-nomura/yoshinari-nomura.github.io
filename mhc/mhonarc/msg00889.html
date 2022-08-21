@@ -1,0 +1,112 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00890] Re: ruby -->
+<!--X-From-R13: zngmNargyno.pb.wc (Khxvuveb [ngfhzbgb) -->
+<!--X-Date: Wed, 02 Aug 2000 13:47:33 +0900 -->
+<!--X-Message-Id: E13JqRJ&#45;0005z5&#45;00@ev.netlab.zetabits.co.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 20000729.132639.78211004.ohtaki@fril.wig.nu -->
+<!--X-Reference: wku2d8eph5.fsf@miyoshi.ask.ne.jp -->
+<!--X-Reference: 200007310547.OAA24204@eban.ase.sony.co.jp -->
+<!--X-Reference: 20000802125105E.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00890] Re: ruby</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00888.html">Date Prev</a>][<a href="msg00890.html">Date Next</a>][<a href="msg00883.html">Thread Prev</a>][<a href="msg00914.html">Thread Next</a>][<a href="maillist.html#00889">Date Index</a>][<a href="threads.html#00889">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00890] Re: ruby</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00890] Re: ruby</li>
+<li><em>From</em>: <a href="mailto:matz@DOMAIN.HIDDEN">matz@xxxxxxxxxxxx</a> (Yukihiro Matsumoto)</li>
+<li><em>Date</em>: Wed, 02 Aug 2000 13:47:33 +0900</li>
+<li><em>In-reply-to</em>: Yoshinari Nomura's message of &quot;Wed, 02 Aug 2000 12:51:05 +0900&quot;  	&lt;<a href="mailto:20000802125105E.nom@DOMAIN.HIDDEN">20000802125105E.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:20000729.132639.78211004.ohtaki@DOMAIN.HIDDEN">20000729.132639.78211004.ohtaki@xxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:wku2d8eph5.fsf@DOMAIN.HIDDEN">wku2d8eph5.fsf@xxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:200007310547.OAA24204@DOMAIN.HIDDEN">200007310547.OAA24204@xxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20000802125105E.nom@DOMAIN.HIDDEN">20000802125105E.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Sender</em>: Yukihiro Matsumoto &lt;<a href="mailto:matz@DOMAIN.HIDDEN">matz@xxxxxxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>User-agent</em>: SEMI/1.12.1 ([JR] Nonoichi) FLIM/1.12.7 (Y&#x16B;zaki) Emacs/20.7 (i386-debian-linux-gnu) MULE/4.1 (AOI)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>
+In message &quot;[mhc:00884] Re: ruby&quot;
+    on 00/08/02, Yoshinari Nomura &lt;nom@xxxxxxxxxxxxxxxxxxx&gt; writes:
+
+|rescue LoadError &#x3068;&#x3059;&#x308B;&#x3068;&#x3001;LoadError &#x3060;&#x3051;&#x3092; rescue &#x3067;&#x304D;&#x308B;&#x3068;&#x3044;&#x3046;
+|&#x89E3;&#x91C8;&#x3067;&#x3044;&#x3044;&#x3067;&#x3059;&#x304B;?
+
+&#x306F;&#x3044;&#x3002;
+
+|# &#x5168;&#x3066;&#x306E;&#x3092;&#x6551;&#x3046;&#x5834;&#x5408;&#x306F;&#x3001;&#x3069;&#x3046;&#x66F8;&#x304F;&#x3093;&#x3060;&#x308D;&#x3046;&#x3002;
+
+rescue Exception &#x3068;&#x3059;&#x308B;&#x3068;&#x307B;&#x3068;&#x3093;&#x3069;&#x306E;&#x3082;&#x306E;&#x304C;&#x6355;&#x307E;&#x3048;&#x3089;&#x308C;&#x307E;&#x3059;&#x3002;&#x539F;
+&#x7406;&#x7684;&#x306B;&#x6355;&#x307E;&#x3048;&#x3089;&#x308C;&#x306A;&#x3044;&#x3082;&#x306E;(Fatal)&#x3082;&#x3042;&#x308A;&#x307E;&#x3059;&#x304C;&#x3002;
+
+|# &#x3053;&#x306E;&#x3078;&#x3093;&#x306E;&#x89E3;&#x8AAC;&#x306F;&#x3001;1.5 &#x306E;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x3092;&#x8AAD;&#x3081;&#x3070;&#x66F8;&#x3044;&#x3066;&#x3042;&#x308B;&#x306E;&#x304B;&#x306A;&#x3002;
+
+1.4&#x3067;&#x3082;&#x66F8;&#x3044;&#x3066;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;&#x3068;&#x3044;&#x3046;&#x304B;&#x3001;1.5&#x306E;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x3063;&#x3066;&#x5B58;&#x5728;&#x3057;
+&#x306A;&#x3044;&#x3093;&#x3067;&#x3059;&#x3088;&#x306D;&#x3002;
+                                &#x307E;&#x3064;&#x3082;&#x3068; &#x3086;&#x304D;&#x3072;&#x308D; /:|)
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00851" href="msg00851.html">[mhc:00852] Re: ruby</a></strong>
+<ul><li><em>From:</em> OHTAKI Naoto</li></ul></li>
+<li><strong><a name="00853" href="msg00853.html">[mhc:00854] Re: ruby</a></strong>
+<ul><li><em>From:</em> MIYOSHI Masanori</li></ul></li>
+<li><strong><a name="00862" href="msg00862.html">[mhc:00863] Re: ruby</a></strong>
+<ul><li><em>From:</em> WATANABE Hirofumi</li></ul></li>
+<li><strong><a name="00883" href="msg00883.html">[mhc:00884] Re: ruby</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00888.html">[mhc:00889] Re: ruby</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00890.html">[mhc:00891] Re: cmail</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00883.html">[mhc:00884] Re: ruby</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00914.html">[mhc:00915] Re: ruby</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00889"><strong>Date</strong></a></li>
+<li><a href="threads.html#00889"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

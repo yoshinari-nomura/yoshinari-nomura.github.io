@@ -1,0 +1,137 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01503] Problem building mhc cvs and snap20010625 -->
+<!--X-From-R13: fra_zyNrppbflf.pbz -->
+<!--X-Date: Wed, 12 Dec 2001 14:46:49 +0900 (JST) -->
+<!--X-Message-Id: 20011212.144649.68545905@message&#45;id.org -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01503] Problem building mhc cvs and snap20010625</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01501.html">Date Prev</a>][<a href="msg01503.html">Date Next</a>][<a href="msg01525.html">Thread Prev</a>][<a href="msg01506.html">Thread Next</a>][<a href="maillist.html#01502">Date Index</a>][<a href="threads.html#01502">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01503] Problem building mhc cvs and snap20010625</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01503] Problem building mhc cvs and snap20010625</li>
+<li><em>From</em>: <a href="mailto:sen_ml@DOMAIN.HIDDEN">sen_ml@xxxxxxxxxxx</a></li>
+<li><em>Date</em>: Wed, 12 Dec 2001 14:46:49 +0900 (JST)</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>Hi,
+
+Sorry this is in English.
+
+I'm trying to make a package for mhc for NetBSD, but I'm having
+problems with the configuration step.
+
+When I do:
+
+  ruby configure.rb --pilot-link-lib=/usr/pkg/lib --pilot-link-inc=/usr/pkg/include
+
+I get:
+
+ruby is .. /usr/pkg/bin/ruby
+emacs is .. /usr/pkg/bin/emacs
+emacs is .. /usr/pkg/bin/emacs
+xemacs is .. /usr/pkg/bin/xemacs
+make is .. /usr/bin/make
+In /usr/pkg/lib .. checking for pi_socket() in -lpisock... no
+######################################################
+Fatal: could not find pisock .. aborting.
+Fatal: option --pilot-link-lib or --help may help you.
+######################################################
+
+But:
+
+% ls /usr/pkg/lib/libpisock.*
+/usr/pkg/lib/libpisock.a                /usr/pkg/lib/libpisock.so.4@
+/usr/pkg/lib/libpisock.la               /usr/pkg/lib/libpisock.so.4.0
+/usr/pkg/lib/libpisock.so@
+
+% ls /usr/pkg/include/pi-*
+/usr/pkg/include/pi-address.h           /usr/pkg/include/pi-inetserial.h
+/usr/pkg/include/pi-address.hxx         /usr/pkg/include/pi-macros.h
+/usr/pkg/include/pi-appinfo.h           /usr/pkg/include/pi-mail.h
+/usr/pkg/include/pi-appinfo.hxx         /usr/pkg/include/pi-memo.h
+/usr/pkg/include/pi-args.h              /usr/pkg/include/pi-memo.hxx
+/usr/pkg/include/pi-cmp.h               /usr/pkg/include/pi-money.h
+/usr/pkg/include/pi-config-win32.h      /usr/pkg/include/pi-padp.h
+/usr/pkg/include/pi-config.h            /usr/pkg/include/pi-serial.h
+/usr/pkg/include/pi-datebook.h          /usr/pkg/include/pi-slp.h
+/usr/pkg/include/pi-datebook.hxx        /usr/pkg/include/pi-sockaddr-win32.h
+/usr/pkg/include/pi-dlp.h               /usr/pkg/include/pi-sockaddr.h
+/usr/pkg/include/pi-dlp.hxx             /usr/pkg/include/pi-socket.h
+/usr/pkg/include/pi-expense.h           /usr/pkg/include/pi-source.h
+/usr/pkg/include/pi-file.h              /usr/pkg/include/pi-sync.h
+/usr/pkg/include/pi-header.h            /usr/pkg/include/pi-syspkt.h
+/usr/pkg/include/pi-hinote.h            /usr/pkg/include/pi-todo.h
+/usr/pkg/include/pi-iambicExpense.h     /usr/pkg/include/pi-todo.hxx
+/usr/pkg/include/pi-iambicExpense.hxx   /usr/pkg/include/pi-util.h
+/usr/pkg/include/pi-inet.h              /usr/pkg/include/pi-version.h
+
+I'm using:
+  NetBSD 1.5.2
+  ruby-1.6.4
+  pilot-link-libs-0.9.5nb1
+
+Please help.
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01506" href="msg01506.html">[mhc:01507] Re: Problem building mhc cvs and snap20010625</a></strong>
+<ul><li><em>From:</em> NOGUCHI Yusuke</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01501.html">[mhc:01502] Re: X-SC-Next</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01503.html">[mhc:01504] snap20010625 on Meadow</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01525.html">[mhc:01526] Re: Linux Japan</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01506.html">[mhc:01507] Re: Problem building mhc cvs and snap20010625</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01502"><strong>Date</strong></a></li>
+<li><a href="threads.html#01502"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

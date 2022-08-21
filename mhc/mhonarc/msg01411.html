@@ -1,0 +1,139 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01412] cmail support -->
+<!--X-From-R13: IOFO@OPS Vvebshzv <ronaNbf.evz.be.wc> -->
+<!--X-Date: Fri,  3 Aug 2001 15:41:31 +0900 -->
+<!--X-Message-Id: 1191&#45;Fri03Aug2001154131+0900&#45;eban@os.rim.or.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01412] cmail support</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01410.html">Date Prev</a>][<a href="msg01412.html">Date Next</a>][<a href="msg01412.html">Thread Prev</a>][<a href="msg01413.html">Thread Next</a>][<a href="maillist.html#01411">Date Index</a>][<a href="threads.html#01411">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01412] cmail support</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01412] cmail support</li>
+<li><em>From</em>: WATANABE Hirofumi &lt;<a href="mailto:eban@DOMAIN.HIDDEN">eban@xxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Fri,  3 Aug 2001 15:41:31 +0900</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: SEMI/1.13.7 (Awazu) LIMIT/1.13.4 (Harinakano) Emacs/21.0.102 (i686-pc-linux-gnu) MULE/5.0 (SAKAKI)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x308F;&#x305F;&#x306A;&#x3079;&#x3067;&#x3059;&#x3002;
+
+--with-cmail&#x304C;&#x3069;&#x3046;&#x3082;&#x3046;&#x307E;&#x304F;&#x3044;&#x3063;&#x3066;&#x306A;&#x3044;&#x3088;&#x3046;&#x3060;&#x3063;&#x305F;&#x306E;&#x3067;&#x305D;&#x306E;&#x30D1;&#x30C3;&#x30C1;&#x3067;&#x3059;&#x3002;
+&#xFF03;&#x3068;&#x308A;&#x3042;&#x3048;&#x305A;OPT&#x306B;&#x95A2;&#x3059;&#x308B;warning&#x306F;&#x7121;&#x8996;&#x3002;
+
+Index: emacs/MHC-MK
+===================================================================
+RCS file: /cvsroot/mhc/emacs/MHC-MK,v
+retrieving revision 1.10
+diff -u -1 -r1.10 MHC-MK
+--- emacs/MHC-MK	2000/12/15 02:30:59	1.10
++++ emacs/MHC-MK	2001/08/03 03:29:55
+@@ -43,2 +43,5 @@
+ ;;        use MHC with Gnus.
++;;
++;;    --with-cmail
++;;        use MHC with Cmail.
+ 
+@@ -81,2 +84,3 @@
+     (&quot;mhc-gnus&quot;     . (and (locate-library &quot;gnus&quot;) make-mhc/with-gnus))
++    (&quot;mhc-cmail&quot;    . (and (locate-library &quot;cmail&quot;) make-mhc/with-cmail))
+     (&quot;mhc-mime&quot;     . (or (and (locate-library &quot;gnus&quot;) make-mhc/with-gnus)
+@@ -133,2 +137,3 @@
+ (defvar make-mhc/with-gnus nil)
++(defvar make-mhc/with-cmail nil)
+ (defvar make-mhc/debug nil)
+@@ -167,2 +172,4 @@
+ 	    (setq make-mhc/with-gnus t))
++	   ((string-equal &quot;--with-cmail&quot; str)
++	    (setq make-mhc/with-cmail t))
+ 	   ((string-match &quot;^--with-addpath=&quot; str)
+Index: emacs/make.rb.in
+===================================================================
+RCS file: /cvsroot/mhc/emacs/make.rb.in,v
+retrieving revision 1.1
+diff -u -1 -r1.1 make.rb.in
+--- emacs/make.rb.in	2000/08/05 19:45:15	1.1
++++ emacs/make.rb.in	2001/08/03 03:29:55
+@@ -9,6 +9,6 @@
+ OPT += '--with-addpath=@@MHC_EMACS_ADD_PATH@@' if '@@MHC_EMACS_ADD_PATH@@' != ''
+-OPT += '--with-mew=@@MHC_WITH_MEW@@' if '@@MHC_WITH_MEW@@' != ''
+-OPT += '--with-wl=@@MHC_WITH_WL@@' if '@@MHC_WITH_WL@@' != ''
+-OPT += '--with-gnus=@@MHC_WITH_GNUS@@' if '@@MHC_WITH_GNUS@@' != ''
+-OPT += '--with-gnus=@@MHC_WITH_CMAIL@@' if '@@MHC_WITH_CMAIL@@' != ''
++OPT += '--with-mew' if '@@MHC_WITH_MEW@@' != ''
++OPT += '--with-wl' if '@@MHC_WITH_WL@@' != ''
++OPT += '--with-gnus' if '@@MHC_WITH_GNUS@@' != ''
++OPT += '--with-cmail' if '@@MHC_WITH_CMAIL@@' != ''
+ 
+@@ -22,3 +22,3 @@
+ def default
+-  make_system(&quot;#{EMACS} #{OPTION} -f make-mhc-compile&quot;)
++  make_system(&quot;#{EMACS} #{OPTION} -f make-mhc-compile #{OPT}&quot;)
+ end
+@@ -26,3 +26,3 @@
+ def package
+-  make_system(&quot;#{XEMACS} #{OPTION} -f make-mhc-compile-package&quot;)
++  make_system(&quot;#{XEMACS} #{OPTION} -f make-mhc-compile-package #{OPT}&quot;)
+ end
+@@ -37,3 +37,3 @@
+ def install
+-  make_system(&quot;#{EMACS} #{OPTION} -f make-mhc-install&quot;)
++  make_system(&quot;#{EMACS} #{OPTION} -f make-mhc-install #{OPT}&quot;)
+ end
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01410.html">[mhc:01411] Re: mhc2palm doesn't work on Mac OS X</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01412.html">[mhc:01413] Re: mhc2palm doesn't work on Mac OS X</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01412.html">[mhc:01413] Re: mhc2palm doesn't work on Mac OS X</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01413.html">[mhc:01414] mew-2.0 &#x3067;&#x753B;&#x9762;&#x304C;&#x30D5;&#x30E9;&#x30C3;&#x30B7;&#x30E5;&#x3059;&#x308B;</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01411"><strong>Date</strong></a></li>
+<li><a href="threads.html#01411"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

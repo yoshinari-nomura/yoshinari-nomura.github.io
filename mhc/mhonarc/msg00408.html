@@ -1,0 +1,116 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00409] patch for Gnus -->
+<!--X-From-R13: [WKAEVW [nfnabev <zvlbfuvNnfx.ar.wc> -->
+<!--X-Date: Fri, 18 Feb 2000 21:10:01 +0900 -->
+<!--X-Message-Id: wkemaapval.fsf@miyoshi.ask.ne.jp -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Derived: bin9GWNfYsnUQ.bin -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00409] patch for Gnus</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00407.html">Date Prev</a>][<a href="msg00409.html">Date Next</a>][<a href="msg00402.html">Thread Prev</a>][<a href="msg00409.html">Thread Next</a>][<a href="maillist.html#00408">Date Index</a>][<a href="threads.html#00408">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00409] patch for Gnus</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00409] patch for Gnus</li>
+<li><em>From</em>: MIYOSHI Masanori &lt;<a href="mailto:miyoshi@DOMAIN.HIDDEN">miyoshi@xxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Fri, 18 Feb 2000 21:10:01 +0900</li>
+<li><em>Posted</em>: 18 Feb 2000 21:08:50 +0900</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x4E09;&#x597D;&#x3067;&#x3059;&#x3002;
+
+Gnus &#x7528;&#x3067; mhc &#x3092;&#x5229;&#x7528;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x30D1;&#x30C3;&#x30C1;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;
+mhc-snap20000209 &#x306E; mhc.el &#x306B;&#x5BFE;&#x3059;&#x308B;&#x30D1;&#x30C3;&#x30C1;&#x3067;&#x3059;&#x3002;&#x3088;&#x308D;&#x3057;&#x3051;&#x308C;&#x3070;&#x3001;mhc 
+&#x306B;&#x53D6;&#x308A;&#x8FBC;&#x3093;&#x3067;&#x9802;&#x3051;&#x306A;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;?
+
+Gnus &#x306E;&#x3053;&#x3068;&#x3092;&#x3088;&#x304F;&#x5206;&#x304B;&#x3089;&#x306A;&#x3044;&#x307E;&#x307E;&#x3001;&#x529B;&#x6280;&#x3067;&#x3084;&#x3063;&#x3066;&#x3057;&#x307E;&#x3063;&#x305F;&#x306E;&#x3067;&#x3001;&#x5909;&#x306A;&#x3053;&#x3068;&#x3092;
+&#x3057;&#x3066;&#x3044;&#x308B;&#x304B;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x304C;&#x3001;&#x3068;&#x308A;&#x3042;&#x3048;&#x305A;&#x306F;&#x52D5;&#x3044;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+
+Nana-gnus 6.13.9 (based on Gnus 5.6.45) &#x3067;&#x52D5;&#x4F5C;&#x78BA;&#x8A8D;&#x6E08;&#x307F;&#x3067;&#x3059;&#x3002;T-gnus &#x7B49;
+&#x306E; Gnus &#x6D3E;&#x751F;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x3067;&#x3082;&#x5927;&#x4E08;&#x592B;&#x3060;&#x3068;&#x601D;&#x3046;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;&#x78BA;&#x8A8D;&#x306F;&#x3057;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;
+
+&#x8A2D;&#x5B9A;&#x65B9;&#x6CD5;&#x306F;&#x3001;&#x6B21;&#x306E;&#x3068;&#x304A;&#x308A;&#x3067;&#x3059;&#x3002;.emacs &#x306B;&#x4E0B;&#x8A18;&#x306E;&#x8A2D;&#x5B9A;&#x3092;&#x52A0;&#x3048;&#x307E;&#x3059;&#x3002;
+(setq mhc-mailer-package 'gnus)
+(autoload 'mhc-mode &quot;mhc&quot; nil t)
+(add-hook 'gnus-summary-mode-hook 'mhc-mode)
+
+Gnus + mhc + palm &#x306E;&#x9023;&#x643A;&#x304C;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x3063;&#x3066;&#x3001;&#x3068;&#x3063;&#x3066;&#x3082;&#x4FBF;&#x5229;&#x306B;&#x306A;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;
+&#x5927;&#x5909;&#x3059;&#x3070;&#x3089;&#x3057;&#x3044;&#x3082;&#x306E;&#x3092;&#x958B;&#x767A;&#x9802;&#x304D;&#x3069;&#x3046;&#x3082;&#x3042;&#x308A;&#x304C;&#x3068;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x307E;&#x305F;&#x3001;mhc &#x3092;&#x7D39;&#x4ECB;&#x3057;&#x3066;&#x9802;&#x304D;&#x3069;&#x3046;&#x3082;&#x3042;&#x308A;&#x304C;&#x3068;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3057;&#x305F;&#x3002; &gt; &#x767D;&#x4E95;&#x3055;&#x3093;
+
+;; Windows98 + Cywin20.1B &#x3067;&#x3001;mhc2palm, palm2mhc &#x304C;&#x52D5;&#x4F5C;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x78BA;&#x8A8D;
+;; &#x3057;&#x307E;&#x3057;&#x305F;&#x3002;&#x305F;&#x3060;&#x3001;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x306E;&#x6642;&#x523B;&#x304C;9&#x6642;&#x9593;&#x305A;&#x308C;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3059;&#x3002;&#x30BF;&#x30A4;&#x30E0;&#x30BE;&#x30FC;
+;; &#x30F3;&#x306E;&#x554F;&#x984C;&#x3068;&#x601D;&#x3046;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;&#x539F;&#x56E0;&#x306F;&#x8ABF;&#x67FB;&#x4E2D;&#x3067;&#x3059;&#x3002;gemcal &#x3082;&#x52D5;&#x304D;&#x307E;&#x3057;&#x305F;&#x3002;
+
+</pre><p><strong>Attachment:
+<a href="bin9GWNfYsnUQ.bin" ><tt>mhc.el.patch</tt></a></strong><br>
+<em>Description:</em> Binary data</p>
+<pre>
+--
+&#x4E09;&#x597D; &#x96C5;&#x5247; <a  rel="nofollow" href="mailto:miyoshi@xxxxxxxxx">mailto:miyoshi@xxxxxxxxx</a>
+          <a  rel="nofollow" href="http://www.ask.ne.jp/~miyoshi/">http://www.ask.ne.jp/~miyoshi/</a> (Meadow &#x306E;&#x30DA;&#x30FC;&#x30B8;&#x4F5C;&#x6210;&#x4E2D;)</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00409" href="msg00409.html">[mhc:00410] Re: patch for Gnus</a></strong>
+<ul><li><em>From:</em> OHARA Shigeki</li></ul></li>
+<li><strong><a name="00410" href="msg00410.html">[mhc:00411] Re: patch for Gnus</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+<li><strong><a name="00413" href="msg00413.html">[mhc:00414] Re: patch for Gnus</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00407.html">[mhc:00408] TODO (Re:  mhc-snap20000209)</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00409.html">[mhc:00410] Re: patch for Gnus</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00402.html">[mhc:00403] Re: mhc2palm on Windows</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00409.html">[mhc:00410] Re: patch for Gnus</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00408"><strong>Date</strong></a></li>
+<li><a href="threads.html#00408"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

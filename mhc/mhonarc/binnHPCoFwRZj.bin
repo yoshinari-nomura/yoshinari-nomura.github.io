@@ -1,0 +1,138 @@
+? .cvsignore
+? ruby-ext/.cvsignore
+? ruby-ext/lib/.cvsignore
+Index: 00readme.jis
+===================================================================
+RCS file: /cvsroot/mhc/00readme.jis,v
+retrieving revision 1.6
+diff -u -p -u -1 -r1.6 00readme.jis
+--- 00readme.jis	2000/09/25 02:19:32	1.6
++++ 00readme.jis	2003/05/16 17:12:13
+@@ -25,3 +25,3 @@ Revised: $Date: 2000/09/25 02:19:32 $
+     + X-SC-Duration: に間違った範囲を指定する
+-   等、一度もスケジュールに現れないような場合に、迷子になります。
++   等、一度もスケジュールに現れないような場合には、MEMO(s)になります。
+ 
+Index: 00todo.jis
+===================================================================
+RCS file: /cvsroot/mhc/00todo.jis,v
+retrieving revision 1.6
+diff -u -p -u -1 -r1.6 00todo.jis
+--- 00todo.jis	2000/06/26 04:03:36	1.6
++++ 00todo.jis	2003/05/16 17:12:13
+@@ -22,3 +22,3 @@ Revised: $Date: 2000/06/26 04:03:36 $
+ ** 各種便利なオペレーション
+-      + とにかく対応するファイルを開く (今の C-c m)
++      + とにかく対応するファイルを開く (今の C-c.m)
+       + 日付けと時間だけを *変更*
+@@ -70,5 +70,5 @@ Revised: $Date: 2000/06/26 04:03:36 $
+ 
+-** C-c| でアラームを聞く。デフォルト時間を指定しておきたい。
++** C-c.| でアラームを聞く。デフォルト時間を指定しておきたい。
+ 
+-** C-cc で Category指定 -> そのまま rescan。
++** C-c.c で Category指定 -> そのまま rescan。
+ 
+@@ -83,5 +83,5 @@ Revised: $Date: 2000/06/26 04:03:36 $
+    toggle するキーを作った方がいいかも
+-   (C-ch とか)
+-   C-ch で Private だけを対象にしてトグルするのと、
+-   C-cc と同じインターフェイスにして任意の Category を
++   (C-c.h とか)
++   C-c.h で Private だけを対象にしてトグルするのと、
++   C-c.c と同じインターフェイスにして任意の Category を
+    Secret にするのはどちらがいいでしょう?
+Index: NEWS.jis
+===================================================================
+RCS file: /cvsroot/mhc/NEWS.jis,v
+retrieving revision 1.1
+diff -u -p -u -1 -r1.1 NEWS.jis
+--- NEWS.jis	2000/05/29 09:54:01	1.1
++++ NEWS.jis	2003/05/16 17:12:13
+@@ -50,3 +50,3 @@ MHC NEWS -- User-visible changes in MHC.
+ 
+-*** mhc-inport の Date: 入力が簡便になりました。
++*** mhc-import の Date: 入力が簡便になりました。
+     「2000年5月15日 〜 17日までの国際会議」 のような場合、
+Index: emacs/.cvsignore
+===================================================================
+RCS file: /cvsroot/mhc/emacs/.cvsignore,v
+retrieving revision 1.1
+diff -u -p -u -1 -r1.1 .cvsignore
+--- emacs/.cvsignore	2000/06/16 01:31:42	1.1
++++ emacs/.cvsignore	2003/05/16 17:12:13
+@@ -1,2 +1,4 @@
+-custom-load.el
+ auto-autoloads.el
++custom-load.el
++make.rb
++mkmf.log
+Index: emacs/00usage.jis
+===================================================================
+RCS file: /cvsroot/mhc/emacs/00usage.jis,v
+retrieving revision 1.10
+diff -u -p -u -1 -r1.10 00usage.jis
+--- emacs/00usage.jis	2002/12/01 03:55:06	1.10
++++ emacs/00usage.jis	2003/05/16 17:12:13
+@@ -50,4 +50,3 @@ mhc の使いかた
+ 
+-4. 必要なら sample として付属している、日本の祝日を記述した
+-
++    4. 必要なら sample として付属している、日本の祝日を記述した
+        DOT.schedule.sample をコピーします。
+@@ -80,6 +79,6 @@ mhc の使いかた
+     間違っていたら C-n か C-p で反転部分を移動します。
+-    minibuffer には対応する日付けが入力された状態になります。
++    minibuffer には対応する日付が入力された状態になります。
+ 
+-    そのまま minibuffer に日付けを入力することもできます。
+-    日付けの入力の仕方は、「3. 日付入力の方法」 を参照してください。
++    そのまま minibuffer に日付を入力することもできます。
++    日付の入力の仕方は、「3. 日付入力の方法」 を参照してください。
+ 
+@@ -95,3 +94,3 @@ mhc の使いかた
+     C-c. .  今月の予定を見る
+-    C-c. n  次の月の予定を見る  
++    C-c. n  次の月の予定を見る
+     C-c. p  前の月の予定を見る
+@@ -246,3 +245,3 @@ mhc の使いかた
+         +schedule/yyyy/mm と +schedule/intersect のどっちに入れ
+-        るかは、C-cC-c したときに X-SC-Date: や X-SC-Cond: をパー
++        るかは、C-c.C-c したときに X-SC-Date: や X-SC-Cond: をパー
+         ズして決定してやるようになっています。
+@@ -335,3 +334,3 @@ mhc の使いかた
+     mhc-schedule-file
+-        祝日等を記述した ~/.schedle を変更します。
++        祝日等を記述した ~/.schedule を変更します。
+ 
+Index: emacs/mhc-summary.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc-summary.el,v
+retrieving revision 1.34
+diff -u -p -u -1 -r1.34 mhc-summary.el
+--- emacs/mhc-summary.el	2002/12/01 03:55:06	1.34
++++ emacs/mhc-summary.el	2003/05/16 17:12:14
+@@ -192,4 +192,4 @@ which are replaced by the given informat
+ 		(const :tag "Top" 'top))
+-;;		(const :tag "Above of vertical calender" 'above)
+-;;		(const :tag "Below of vertical calender" 'below))
++;;		(const :tag "Above of vertical calendar" 'above)
++;;		(const :tag "Below of vertical calendar" 'below))
+   )
+Index: emacs/mhc-vars.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc-vars.el,v
+retrieving revision 1.14
+diff -u -p -u -1 -r1.14 mhc-vars.el
+--- emacs/mhc-vars.el	2002/10/29 02:59:46	1.14
++++ emacs/mhc-vars.el	2003/05/16 17:12:14
+@@ -23,3 +23,3 @@
+ (defgroup mhc nil
+-  "Various sorts of MH Calender."
++  "Various sorts of MH Calendar."
+   :group 'mail)
+@@ -62,3 +62,3 @@
+ (defcustom mhc-insert-calendar t
+-  "*If non nil value, display vertical calender."
++  "*If non nil value, display vertical calendar."
+   :group 'mhc

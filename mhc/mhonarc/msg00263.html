@@ -1,0 +1,90 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00264] completion for category input? -->
+<!--X-From-R13: fra_zyNrppbflf.pbz -->
+<!--X-Date: Fri, 3 Dec 1999 19:09:44 +0900 -->
+<!--X-Message-Id: 19991203190938A.1000@eccosys.com -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00264] completion for category input?</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00262.html">Date Prev</a>][<a href="msg00264.html">Date Next</a>][<a href="msg00270.html">Thread Prev</a>][<a href="msg00274.html">Thread Next</a>][<a href="maillist.html#00263">Date Index</a>][<a href="threads.html#00263">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00264] completion for category input?</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00264] completion for category input?</li>
+<li><em>From</em>: <a href="mailto:sen_ml@DOMAIN.HIDDEN">sen_ml@xxxxxxxxxxx</a></li>
+<li><em>Date</em>: Fri, 3 Dec 1999 19:09:44 +0900</li>
+<li><em>Posted</em>: Fri, 03 Dec 1999 19:09:38 +0900</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>Category &#x3092;&#x5165;&#x529B;&#x3059;&#x308B;&#x6642;&#x306B;&#x88DC;&#x5B8C;&#x6A5F;&#x80FD;&#x304C;&#x4F7F;&#x7528;&#x3067;&#x304D;&#x308B;&#x69D8;&#x306B;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;
+mhc-input-category &#x3092;&#x4EE5;&#x4E0B;&#x306E;&#x69D8;&#x306B;&#x5909;&#x66F4;&#x3092;&#x3059;&#x308B;&#x306E;&#x306F;&#x3044;&#x304B;&#x304C;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#xFF1F;
+
+(defun mhc-input-category (&amp;optional prompt default)
+  (interactive)
+  (let (in)
+    (if (and default (listp default))
+        (setq default (mhc-misc-join default &quot; &quot;)))
+    (if (string= &quot;&quot; (setq in (completing-read (or prompt &quot;Category: &quot;)
+                                              mhc-category-face-alist
+                                              nil
+                                              nil
+                                              (or default &quot;&quot;))))
+        nil
+      (mhc-misc-split in))))
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00262.html">[mhc:00263] Re: mhc on wl (experimental support)</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00264.html">[mhc:00265] Re: mhc on wl (experimental support)</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00270.html">[mhc:00271] Re: completion for category input?</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00274.html">[mhc:00275] mhc-misc-sub</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00263"><strong>Date</strong></a></li>
+<li><a href="threads.html#00263"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Octopress の記事を org-mode で</title>
+  <meta name="description" content="はじめに Octopress の記事を Org-mode 書く方法は，いくつか紹介されています． ここでは，Org-mode 8.0 の New exporter framework を利用して Jekyll 専用の Exporter 経由で利用する方法を紹介します． Emacs Lisp のコードは， org-...">
+
+  <link rel="icon" href="/nom/favicon.png">
+  <link rel="stylesheet" href="/nom/assets/main.css">
+  <link rel="canonical" href="http://quickhack.net/nom/blog/2013-05-01-org-octopress.html">
+  <link rel="alternate" type="application/rss+xml" title="Quickhack Diary" href="/nom/feed.xml">
+
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/nom/">Quickhack Diary</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Octopress の記事を org-mode で</h1>
+    <p class="post-meta"><time datetime="2013-05-01T00:00:00+09:00" itemprop="datePublished">May 1, 2013</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <div id="outline-container-orgf29c80f" class="outline-2">
+<h2 id="orgf29c80f">はじめに</h2>
+<div class="outline-text-2" id="text-orgf29c80f">
+<p>
+Octopress の記事を Org-mode 書く方法は，いくつか紹介されています．
+ここでは，Org-mode 8.0 の New exporter framework を利用して
+Jekyll 専用の Exporter 経由で利用する方法を紹介します．
+Emacs Lisp のコードは，
+<a href="https://github.com/yoshinari-nomura/org-octopress">org-octopress</a> で公開しています．
+</p>
+
+<p>
+<!-- more -->
+</p>
+</div>
+</div>
+
+<div id="outline-container-org428c875" class="outline-2">
+<h2 id="org428c875">スクリーンショット</h2>
+<div class="outline-text-2" id="text-org428c875">
+<p>
+まず，使っているイメージから．
+</p>
+
+
+<figure>
+<img src="dat/img/screencapture-20130501T220708.png" alt="screencapture-20130501T220708.png">
+
+<figcaption><span class="figure-number">Figure 1: </span>記事を書いている様子</figcaption>
+</figure>
+
+
+<figure>
+<img src="dat/img/screencapture-20130501T220405.png" alt="screencapture-20130501T220405.png">
+
+<figcaption><span class="figure-number">Figure 2: </span>記事を選択している様子</figcaption>
+</figure>
+
+
+<figure>
+<img src="dat/img/screencapture-20130501T140420.png" alt="screencapture-20130501T140420.png">
+
+<figcaption><span class="figure-number">Figure 3: </span>プレビューの様子 (#+JEKYLL_PUBLISHED: false の場合は，赤いPREVIEWマークが付きます)</figcaption>
+</figure>
+</div>
+</div>
+
+<div id="outline-container-orgaa03d52" class="outline-2">
+<h2 id="orgaa03d52">Octopress の準備</h2>
+<div class="outline-text-2" id="text-orgaa03d52">
+<p>
+これは，普通の Octopress 設定方法です．既にインストールしてある人は飛ばしてOKです．
+本家の解説は，こちら: <a href="http://octopress.org/docs/setup/">Octopress Setup - Octopress</a>
+</p>
+
+<p>
+git, rvm (rvenv), ruby 1.9.3 が入っていることが前提です．
+</p>
+<div class="org-src-container">
+<pre class="src src-shell-script">% rvm install 1.9.3
+% rvm use 1.9.3
+% rvm gemset create octopress
+% rvm gemset use octopress
+% git clone git://github.com/imathis/octopress.git octopress
+% echo <span class="org-string">'rvm use 1.9.3@octopress'</span> &gt; octopress/.rvmrc
+% cd octopress <span class="org-comment-delimiter"># </span><span class="org-comment">If you use RVM, You'll be asked if you trust the .rvmrc file (say yes).</span>
+% gem install bundler
+% mkdir -p vendor/bundle
+% bundle install --path vendor/bundle
+</pre>
+</div>
+
+<p>
+blog ブランチを切って，チェックアウトします．
+</p>
+<div class="org-src-container">
+<pre class="src src-shell-script">% git checkout -b blog
+% git add .rvmrc
+% git commit -m <span class="org-string">'rvm to use octopress gemset'</span>
+</pre>
+</div>
+
+<p>
+テーマファイルをコピーします．
+</p>
+<div class="org-src-container">
+<pre class="src src-shell-script">% rake install
+</pre>
+</div>
+
+<p>
+手でコピーするとこんな感じ:
+</p>
+<pre class="example">
+## Copying classic theme into ./source and ./sass
+mkdir -p source
+cp -r .themes/classic/source/. source
+mkdir -p sass
+cp -r .themes/classic/sass/. sass
+mkdir -p source/_posts
+</pre>
+
+<p>
+git にコミットしておきましょう．
+</p>
+<div class="org-src-container">
+<pre class="src src-shell-script">% git add sass source
+% git commit -m <span class="org-string">'rake install'</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb27f0ca" class="outline-2">
+<h2 id="orgb27f0ca">ディレクトリ構成</h2>
+<div class="outline-text-2" id="text-orgb27f0ca">
+<p>
+octopress をトップとして，以下の構成を想定しています．
+</p>
+<pre class="example">
++ octopress
+  + source
+    + blog   &lt;- (1) YYYY-MM-DD-title.org  として記事を書く
+    + _posts &lt;- (2) YYYY-MM-DD-title.html (C-cC-eでpublishした結果)
+  + public
+    + blog   &lt;- (3) YYYY-MM-DD-title.html (rake generate した結果)
+</pre>
+
+<p>
+(2) の html には，いわゆる YAML front matter が付いている状態です．
+(参考: <a href="https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter">YAML Front Matter · mojombo/jekyll Wiki</a>)
+</p>
+
+<p>
+一方，(3) の html は，Jekyll がマクロ展開をして YAML front matter を外した，いわゆる完成形の状態です．
+</p>
+
+<p>
+画像を置きたい場合は，blog/dat/img 等のディレクトリを作って置くとよいでしょう．
+org ファイルからも html からも相対位置が同じになるので扱いやすいです．
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3881f05" class="outline-2">
+<h2 id="org3881f05">Octopress の調整</h2>
+<div class="outline-text-2" id="text-org3881f05">
+</div>
+<div id="outline-container-orgf5a4241" class="outline-4">
+<h4 id="orgf5a4241">permalink の設定</h4>
+<div class="outline-text-4" id="text-orgf5a4241">
+<p>
+org-octopress では，記事のファイル名が yyyy-mm-dd-title.org の形をしていることを前提としています．
+そこで，octopress/_config.yml の permalink 設定を
+</p>
+<pre class="example">
+permalink: /blog/:year/:month/:day/:title/
+</pre>
+<p>
+から変更して，以下のように
+</p>
+<pre class="example">
+permalink: /blog/:year-:month-:day-:title.html
+</pre>
+<p>
+としておく必要があります．
+</p>
+</div>
+</div>
+
+<div id="outline-container-org83ba1a6" class="outline-4">
+<h4 id="org83ba1a6">rsync-exclude の設定</h4>
+<div class="outline-text-4" id="text-org83ba1a6">
+<p>
+上記ディレクトリ構成を見ると分かるのですが， <code>public/blog</code> 以下にも
+<code>*.org</code> ファイルが紛れ込んでしまうので，rsync で deploy してしまわないように
+<code>octopress/rsync-exclude</code> ファイルを書きます:
+</p>
+<pre class="example">
+[0-9]*-[0-9]*-[0-9]*-*.org
+</pre>
+<p>
+git push で deploy している人は， <code>.gitignore</code>
+に同様の工夫をするといいでしょう．
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org105525f" class="outline-2">
+<h2 id="org105525f">Emacs の設定</h2>
+<div class="outline-text-2" id="text-org105525f">
+<p>
+まず， <b>org-mode は 8.0 以降を使ってください．</b>
+加えて，以下のパッケージが必要です:
+</p>
+<ul class="org-ul">
+<li><a href="https://github.com/yoshinari-nomura/org-octopress">org-octopress</a></li>
+<li><a href="https://github.com/yoshinari-nomura/orglue">orglue</a></li>
+<li><a href="https://github.com/kiwanami/emacs-ctable">emacs-ctable</a></li>
+</ul>
+
+<p>
+ちなみに，Evernote と連携したい Mac ユーザは，<a href="https://github.com/yoshinari-nomura/epic">epic</a> もあると便利かもしれません．
+</p>
+
+<p>
+最低限の設定は，以下の通りです．
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">require</span> '<span class="org-constant">org-octopress</span>)
+(<span class="org-keyword">setq</span> org-octopress-directory-top       <span class="org-string">"~/octopress/source"</span>)
+(<span class="org-keyword">setq</span> org-octopress-directory-posts     <span class="org-string">"~/octopress/source/_posts"</span>)
+(<span class="org-keyword">setq</span> org-octopress-directory-org-top   <span class="org-string">"~/octopress/source"</span>)
+(<span class="org-keyword">setq</span> org-octopress-directory-org-posts <span class="org-string">"~/octopress/source/blog"</span>)
+(<span class="org-keyword">setq</span> org-octopress-setup-file          <span class="org-string">"~/org-sty/setupfile.org"</span>)
+</pre>
+</div>
+
+<p>
+<code>~/org-sty/setupfile.org</code> は，各記事から
+</p>
+<div class="org-src-container">
+<pre class="src src-org"><span class="org-org-meta-line">#+SETUPFILE: ~/sys/lib/org-sty/octopress.org</span>
+</pre>
+</div>
+<p>
+として読まれるファイルです．以下，僕の設定例です．
+</p>
+<pre class="example">
+#+OPTIONS: H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:nil -:t f:nil *:t &lt;:t
+#+OPTIONS: TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: author:nil
+#+OPTIONS: email:nil
+#+OPTIONS: creator:nil
+#+OPTIONS: timestamp:nil
+#+MACRO: more @@html:&lt;!-- more --&gt;@@
+#+MACRO: twitter [[http://twitter.com/$1][@$1]]
+#+MACRO: github [[https://github.com/$1/$2][$2]]
+#+PROPERTY: cache yes
+#+STARTUP: odd
+#+STARTUP: content
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orge059e8c" class="outline-2">
+<h2 id="orge059e8c">記事の書き方</h2>
+<div class="outline-text-2" id="text-orge059e8c">
+<ol class="org-ol">
+<li>M-x org-octopress として記事一覧を表示します．</li>
+<li>w キーで新規記事の執筆を開始します．
+日付やタイトルを聞いてきます．既存の記事の上で RET を押すことで，記事を修正できます．</li>
+<li>記事を書きます．
+ここが一番難しいところです．</li>
+<li>org-mode の publish コマンドで記事を一括して export します．
+<ul class="org-ul">
+<li>C-cC-e (org-export-dispatch) RET</li>
+<li>"P" "x" "octopress" RET</li>
+</ul></li>
+<li><p>
+プレビューで確認します．コマンドラインで
+</p>
+<pre class="example">
+rake preview
+</pre>
+
+<p>
+としておくと，publish のたびに <code>localhost:4000</code> に結果が反映されます．
+</p></li>
+<li><p>
+public に完成を反映させます．コマンドラインで
+</p>
+<pre class="example">
+rake generate
+</pre>
+
+<p>
+として，site に delploy 可能な状態にします．
+</p></li>
+<li>site に deploy します．
+github に push したり rsync で本番サイトに deploy します．</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org211f2ee" class="outline-2">
+<h2 id="org211f2ee">その他おすすめの設定など</h2>
+<div class="outline-text-2" id="text-org211f2ee">
+<p>
+その他，CSS や日付のフォーマットなど，自分好みに若干変更したカ所を付けておきます．
+参考になれば嬉しいです．
+</p>
+
+<div class="org-src-container">
+<pre class="src src-diff"><span class="org-diff-context">diff --git a/_config.yml b/_config.yml</span>
+<span class="org-diff-context">index fb29684..60b4b11 100644</span>
+<span class="org-diff-header">--- </span><span class="org-diff-header"><span class="org-diff-file-header">a/_config.yml</span></span>
+<span class="org-diff-header">+++ </span><span class="org-diff-header"><span class="org-diff-file-header">b/_config.yml</span></span>
+<span class="org-diff-hunk-header">@@ -13,10 +13,10 @@</span><span class="org-diff-function"> description:</span>
+<span class="org-diff-context"> # You can customize the format as defined in</span>
+<span class="org-diff-context"> # http://www.ruby-doc.org/core-1.9.2/Time.html#method-i-strftime</span>
+<span class="org-diff-context"> # Additionally, %o will give you the ordinal representation of the day</span>
+<span class="org-diff-indicator-removed">-</span><span class="org-diff-removed">date_format: "ordinal"</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">date_format: "%Y-%m-%d (%a)"</span>
+
+<span class="org-diff-context">diff --git a/sass/custom/_colors.scss b/sass/custom/_colors.scss</span>
+<span class="org-diff-context">index 740266a..bb2f141 100644</span>
+<span class="org-diff-header">--- </span><span class="org-diff-header"><span class="org-diff-file-header">a/sass/custom/_colors.scss</span></span>
+<span class="org-diff-header">+++ </span><span class="org-diff-header"><span class="org-diff-file-header">b/sass/custom/_colors.scss</span></span>
+<span class="org-diff-hunk-header">@@ -41,3 +41,18 @@</span>
+<span class="org-diff-context"> //$pre-bg: $base03;</span>
+<span class="org-diff-context"> //$pre-border: darken($base02, 5);</span>
+<span class="org-diff-context"> //$pre-color: $base1;</span>
+<span class="org-diff-indicator-added">+</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">$emacs-bg: white;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">$emacs-color: black;</span>
+<span class="org-diff-indicator-added">+</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">$src-bg: $emacs-bg;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">$src-color: $emacs-color;</span>
+<span class="org-diff-indicator-added">+</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">$example-bg: lighten(#eee8d5, 8);</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">$example-color: black;</span>
+<span class="org-diff-indicator-added">+</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">$main-bg: $emacs-bg;</span>
+<span class="org-diff-indicator-added">+</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">$pre-bg: $example-bg;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">$pre-border: darken($example-bg, 25);</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">$pre-color: $example-color;</span>
+<span class="org-diff-context">diff --git a/sass/custom/_layout.scss b/sass/custom/_layout.scss</span>
+<span class="org-diff-context">index 74c7de9..011f482 100644</span>
+<span class="org-diff-header">--- </span><span class="org-diff-header"><span class="org-diff-file-header">a/sass/custom/_layout.scss</span></span>
+<span class="org-diff-header">+++ </span><span class="org-diff-header"><span class="org-diff-file-header">b/sass/custom/_layout.scss</span></span>
+<span class="org-diff-hunk-header">@@ -6,7 +6,7 @@</span>
+<span class="org-diff-context"> //$header-padding-bottom: 1.5em;</span>
+
+<span class="org-diff-context"> //$max-width: 1350px;</span>
+<span class="org-diff-indicator-removed">-</span><span class="org-diff-removed">//$indented-lists: true;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">$indented-lists: true;</span>
+
+<span class="org-diff-context"> // Padding used for layout margins</span>
+<span class="org-diff-context"> //$pad-min: 18px;</span>
+<span class="org-diff-context">diff --git a/sass/custom/_styles.scss b/sass/custom/_styles.scss</span>
+<span class="org-diff-context">index 91ffccc..c4ced09 100644</span>
+<span class="org-diff-header">--- </span><span class="org-diff-header"><span class="org-diff-file-header">a/sass/custom/_styles.scss</span></span>
+<span class="org-diff-header">+++ </span><span class="org-diff-header"><span class="org-diff-file-header">b/sass/custom/_styles.scss</span></span>
+<span class="org-diff-hunk-header">@@ -1,2 +1,67 @@</span>
+<span class="org-diff-context"> // This File is imported last, and will override other styles in the cascade</span>
+<span class="org-diff-context"> // Add styles here to make changes without digging in too much</span>
+<span class="org-diff-indicator-added">+</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">p, li {</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  code {</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">    border: none;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">    background: $main-bg;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  }</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">}</span>
+<span class="org-diff-indicator-added">+</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">table {</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  border-spacing: 0px;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  empty-cells: show;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  margin-bottom: 6px;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">//  border-top: 0px;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">}</span>
+<span class="org-diff-indicator-added">+</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">th, tr, td {</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  vertical-align: top;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  padding: 5px;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  border: 1px black solid;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  border-collapse: collapse;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">}</span>
+<span class="org-diff-indicator-added">+</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">th {</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  background-color: darken($example-bg, 8);</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  white-space: nowrap;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  font-weight: bold;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">}</span>
+<span class="org-diff-indicator-added">+</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">tr, td {</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  background-color: $example-bg;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">}</span>
+<span class="org-diff-indicator-added">+</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">.figure {</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  text-align: center;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  margin-bottom: 3em;</span>
+<span class="org-diff-indicator-added">+</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  p {</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">    margin: 0px;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">    font-size: 80%;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  }</span>
+<span class="org-diff-indicator-added">+</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  img {</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">    box-shadow: none;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  }</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">}</span>
+<span class="org-diff-indicator-added">+</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">pre.src {</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  color: $emacs-color;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  background-color: $emacs-bg;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  .linenr {</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">    color: lighten($emacs-color, 75);</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  }</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">}</span>
+<span class="org-diff-indicator-added">+</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">dl {</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  padding-bottom: 2em;</span>
+<span class="org-diff-indicator-added">+</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  dt {</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">    font-weight: bold;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  }</span>
+<span class="org-diff-indicator-added">+</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  dd {</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">    padding-left: 2em;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">  }</span>
++}
+</pre>
+</div>
+</div>
+</div>
+
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Quickhack Diary</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Yoshinari Nomura
+            
+            </li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/yoshinari-nomura"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">yoshinari-nomura</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/nom4476"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">nom4476</span></a>
+
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>lifehack through quick hack
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

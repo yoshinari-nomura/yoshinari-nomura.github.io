@@ -1,0 +1,16 @@
+Index: mhc2ol.in
+===================================================================
+RCS file: /cvsroot/mhc/mhc2ol.in,v
+retrieving revision 1.13
+diff -u -r1.13 mhc2ol.in
+--- mhc2ol.in	27 Oct 2006 00:53:10 -0000	1.13
++++ mhc2ol.in	16 Sep 2009 09:09:39 -0000
+@@ -274,7 +274,7 @@
+       ## monthly by day
+       cond_ord .each{|ord_str|
+ 	cond_wek .each{|wek_str|
+-	  ord = MhcDate::O_LABEL .index(ord_str .downcase())
++	  ord = MhcDate::O_LABEL .index(ord_str .capitalize())
+ 	  wek = MhcDate::W_LABEL .index(wek_str)
+ 	  sch2 = MhcScheduleItem .new .add_cond(ord_str) .add_cond(wek_str)
+ 	  beg2 = beg .dup

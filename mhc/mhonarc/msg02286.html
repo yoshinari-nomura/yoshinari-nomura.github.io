@@ -1,0 +1,115 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:02287] toggle todos -->
+<!--X-From-R13: Rnivq Perzare <oerzareNhao.pn> -->
+<!--X-Date: Mon, 30 Jun 2008 16:03:57 +0200 -->
+<!--X-Message-Id: 0t63rryq7m.wl%bremner@pivot.cs.unb.ca -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:02287] toggle todos</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg02285.html">Date Prev</a>][<a href="msg02287.html">Date Next</a>][<a href="msg02285.html">Thread Prev</a>][<a href="msg02287.html">Thread Next</a>][<a href="maillist.html#02286">Date Index</a>][<a href="threads.html#02286">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:02287] toggle todos</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: mhc &lt;<a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Subject</em>: [mhc:02287] toggle todos</li>
+<li><em>From</em>: David Bremner &lt;<a href="mailto:bremner@DOMAIN.HIDDEN">bremner@xxxxxx</a>&gt;</li>
+<li><em>Date</em>: Mon, 30 Jun 2008 16:03:57 +0200</li>
+<li><em>Delivered-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>List-help</em>: &lt;<a href="mailto:mhc-ctl@quickhack.net?body=help">mailto:mhc-ctl@quickhack.net?body=help</a>&gt;</li>
+<li><em>List-id</em>: mhc.quickhack.net</li>
+<li><em>List-owner</em>: &lt;<a href="mailto:mhc-admin@quickhack.net">mailto:mhc-admin@quickhack.net</a>&gt;</li>
+<li><em>List-post</em>: &lt;<a href="mailto:mhc@quickhack.net">mailto:mhc@quickhack.net</a>&gt;</li>
+<li><em>List-software</em>: fml [fml 4.0.3 release (20011202/4.0.3)]</li>
+<li><em>List-unsubscribe</em>: &lt;<a href="mailto:mhc-ctl@quickhack.net?body=unsubscribe">mailto:mhc-ctl@quickhack.net?body=unsubscribe</a>&gt;</li>
+<li><em>Reply-to</em>: David Bremner &lt;<a href="mailto:bremner-dated-1216044285.4bcbbc@DOMAIN.HIDDEN">bremner-dated-1216044285.4bcbbc@xxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>User-agent</em>: EMIKO/1.14.1 (Choanoflagellata) FLIM/1.14.9 (Goj&#x14D;) APEL/10.7 EasyPG/0.0.15 Emacs/22.2	(i486-pc-linux-gnu) MULE/5.0 (SAKAKI)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>
+[ I hope it is OK to write to this list in English. My Nihongo pretty
+much starts and stops at sumimasen and o-kudasai. ]
+
+I just started to use mhc, and I like it very much so far.
+
+Here is a simple addition to allow toggling todo's with &quot;ctrl-C . @&quot;.
+
+(define-key mhc-prefix-map &quot;@&quot; 'mhc-todo-toggle-done)
+(defun mhc-todo-toggle-done ()
+  &quot;Toggle between done and not for todo&quot;
+  (interactive)
+  (mhc-modify-file (mhc-summary-filename))
+  (mhc-draft-toggle-done)
+  (mhc-draft-finish)
+  (message &quot;&quot;))
+
+(defun mhc-draft-toggle-done ()
+  &quot;Set current draft as DONE if not; remove done if there.&quot;
+  (interactive)
+  (if  (mhc-draft-in-category-p &quot;todo&quot;)
+      (if (mhc-draft-in-category-p &quot;done&quot;)
+	  (mhc-draft-delete-category &quot;done&quot;)
+	(mhc-draft-append-category &quot;Done&quot;))))
+
+
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="02287" href="msg02287.html">[mhc:02288] Re: toggle todos</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+<li><strong><a name="02289" href="msg02289.html">[mhc:02290] Re: toggle todos</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg02285.html">[mhc:02286] X-SC-Time: 25:00 &#x3068;&#x3057;&#x305F;&#x5834;&#x5408;&#x306B; mhc2ol 	&#x3067;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x767A;&#x751F;</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg02287.html">[mhc:02288] Re: toggle todos</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg02285.html">[mhc:02286] X-SC-Time: 25:00 &#x3068;&#x3057;&#x305F;&#x5834;&#x5408;&#x306B; mhc2ol 	&#x3067;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x767A;&#x751F;</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg02287.html">[mhc:02288] Re: toggle todos</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#02286"><strong>Date</strong></a></li>
+<li><a href="threads.html#02286"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00341] calendar&#45;other&#45;window -->
+<!--X-From-R13: Vvqrlhxv EVWDOW (=?vfb&#45;2022&#45;wc?P?UlDQD3WjLw0bAHCoYSW=?=) <fuvenvNeqzt.ztpf.zrv.pb.wc> -->
+<!--X-Date: Fri, 14 Jan 2000 16:11:49 +0900 -->
+<!--X-Message-Id: 20000114.161057.46105942.shirai@rdmg.mgcs.mei.co.jp -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Reference: 20000104234020S.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00341] calendar-other-window</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00339.html">Date Prev</a>][<a href="msg00341.html">Date Next</a>][<a href="msg00574.html">Thread Prev</a>][<a href="msg00312.html">Thread Next</a>][<a href="maillist.html#00340">Date Index</a>][<a href="threads.html#00340">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00341] calendar-other-window</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00341] calendar-other-window</li>
+<li><em>From</em>: Hideyuki SHIRAI (&#x767D;&#x4E95;&#x79C0;&#x884C;) &lt;<a href="mailto:shirai@DOMAIN.HIDDEN">shirai@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Fri, 14 Jan 2000 16:11:49 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20000104234020S.nom@DOMAIN.HIDDEN">20000104234020S.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Posted</em>: Fri, 14 Jan 2000 16:10:57 +0900 (JST)</li>
+<li><em>References</em>: &lt;<a href="mailto:20000104234020S.nom@DOMAIN.HIDDEN">20000104234020S.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>From: Yoshinari NOMURA &lt;nom@xxxxxxxxxxxxxxxxxxx&gt; &#x3055;&#x3093;&#x66F0;&#x304F;
+Subject: [mhc:00309] mhc-snap20000104
+Message-ID: &lt;20000104234020S.nom@xxxxxxxxxxxxxxxxxxx&gt;
+Date: Tue, 4 Jan 2000 23:40:24 +0900
+
+nom&gt; &#x5F53;&#x9762;&#x306E; TODO &#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x611F;&#x3058;&#x3067;&#x3059;&#x3002;&#x4F55;&#x304B;&#x5FD8;&#x308C;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x306A;&#x3044;&#x3067;&#x3059;&#x304B;?
+nom&gt; 
+nom&gt;         &#x5225;&#x30D0;&#x30C3;&#x30D5;&#x30A1;&#x3067;&#x30AB;&#x30EC;&#x30F3;&#x30C0;&#x30FC;&#x8868;&#x793A;
+
+&#x3053;&#x308C;&#x3092;&#x3084;&#x3063;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002;
+
+<a  rel="nofollow" href="http://www.swlab.csce.kyushu-u.ac.jp/~nom/prj/mhc/mhc-snap20000112.tar.gz">http://www.swlab.csce.kyushu-u.ac.jp/~nom/prj/mhc/mhc-snap20000112.tar.gz</a>
+&#x3078;&#x306E; patch &#x3067;&#x3059;&#x3002;
+
+-- 
+&#x767D;&#x4E95;&#x79C0;&#x884C; (<a  rel="nofollow" href="mailto:shirai@xxxxxxxxxxxxxxxxxxx">mailto:shirai@xxxxxxxxxxxxxxxxxxx</a>)
+</pre><pre>--- mhc.el.orig	Fri Jan 14 15:36:41 2000
++++ mhc.el	Fri Jan 14 15:49:40 2000
+@@ -403,35 +403,101 @@
+     (message &quot;Scanning %s ... done.&quot; (ddate-yymm-s1 ddate &quot;/&quot;))))
+ 
+ (defvar mhc-insert-calendar t)
++(defvar mhc-insert-calendar-other-window nil)
++(defvar mhc-calendar-buffer &quot;*mhc-cal*&quot;)
++(defvar mhc-calendar-window-width (if (featurep 'xemacs) 24 22))
++(defvar mhc-calendar-date nil)
+ 
+-(defun mhc-cal-toggle-insert-rectangle ()
+-  (interactive)
+-  (setq mhc-insert-calendar (not mhc-insert-calendar))
++(defun mhc-cal-toggle-insert-rectangle (&amp;optional arg)
++  (interactive &quot;P&quot;)
++  (if arg
++      (setq mhc-insert-calendar-other-window (not mhc-insert-calendar-other-window))
++    (setq mhc-insert-calendar (not mhc-insert-calendar)))
++  (if (and mhc-insert-calendar mhc-insert-calendar-other-window)
++      ()
++    (and (memq 'mhc-calendar-post-command post-command-hook)
++	 (remove-hook 'post-command-hook 'mhc-calendar-post-command))
++    (mhc-calendar-delete-window))
+   (mhc-rescan-month))
+ 
++(defun mhc-calendar-delete-window ()
++  (let (win)
++    (if (not (and (boundp 'mhc-calendar-buffer)
++	     (setq win (get-buffer-window mhc-calendar-buffer))
++	     (window-live-p win)))
++	()
++      (delete-window win)
++      (bury-buffer mhc-calendar-buffer))))
++
+ (defun mhc-cal-insert-rectangle-at (ddate col)
++  (if mhc-insert-calendar-other-window
++      (mhc-calendar-other-window ddate col)
++    (mhc-cal-insert-rectangle-at-own ddate col &quot;| &quot;)))
++
++(defun mhc-calendar-other-window (ddate col)
++  (make-variable-buffer-local 'mhc-calendar-date)
++  (setq mhc-calendar-date ddate)
++  (mhc-calendar-delete-window)
++  (let ((win (selected-window)))
++    (if (get-buffer mhc-calendar-buffer)
++	(and (window-live-p (get-buffer-window mhc-calendar-buffer))
++	     (not (one-window-p))
++	     (delete-window (get-buffer-window mhc-calendar-buffer))))
++    (select-window (split-window-horizontally
++		    (- (window-width) mhc-calendar-window-width)))
++    (switch-to-buffer (set-buffer (get-buffer-create mhc-calendar-buffer)))
++    (setq buffer-read-only t)
++    (let ((buffer-read-only nil))
++      (buffer-disable-undo)
++      (erase-buffer)
++      (mhc-cal-insert-rectangle-at-own ddate 0 &quot;&quot;)
++      (set-buffer-modified-p nil))
++    (select-window win)
++    (and (not (memq 'mhc-calendar-post-command post-command-hook))
++	 (add-hook 'post-command-hook 'mhc-calendar-post-command))))
++
++(defun mhc-calendar-post-command ()
++  (interactive)
++  (if (and mhc-calendar-date
++	   (get-buffer mhc-calendar-buffer))
++      (let ((win (selected-window))
++	    (pwin (get-buffer-window mhc-calendar-buffer)))
++	(if (and (window-live-p pwin)
++		 (= mhc-calendar-window-width (window-width pwin))
++		 (= (window-height) (window-height pwin)))
++	    ()
++	  (if (&lt; (window-height) (/ (frame-height) 3)) ;; xxx for Mew
++	      (mhc-calendar-delete-window)
++	    (and (window-live-p pwin) (not (one-window-p)) (delete-window pwin))
++	    (select-window (split-window-horizontally
++			    (- (window-width) mhc-calendar-window-width)))
++	    (switch-to-buffer (set-buffer (get-buffer mhc-calendar-buffer)))
++	    (select-window win))))
++    (mhc-calendar-delete-window)))
++
++(defun mhc-cal-insert-rectangle-at-own (ddate col prefix)
+   (save-excursion
+     (put-text-property (point-min) (point-max) 'rear-nonsticky t)
+     (goto-char (point-min))
+ 
+     (mhc-cal-move-to-column-force col)
+-    (mhc-cal-insert-rectangle (ddate-mm-dec ddate))
+-    (forward-line 1)
++    (mhc-cal-insert-rectangle (ddate-mm-dec ddate) prefix)
++    (and (= (forward-line 1) 1)	(insert &quot;\n&quot;))
+ 
+     (mhc-cal-move-to-column-force col)
+-    (insert &quot;| &quot;)
+-    (forward-line 1)
++    (insert prefix)
++    (and (= (forward-line 1) 1)	(insert &quot;\n&quot;))
+ 
+     (mhc-cal-move-to-column-force col)
+-    (mhc-cal-insert-rectangle ddate)
+-    (forward-line 1)
++    (mhc-cal-insert-rectangle ddate prefix)
++    (and (= (forward-line 1) 1)	(insert &quot;\n&quot;))
+ 
+     (mhc-cal-move-to-column-force col)
+-    (insert &quot;| &quot;)
+-    (forward-line 1)
++    (insert prefix)
++    (and (= (forward-line 1) 1)	(insert &quot;\n&quot;))
+ 
+     (mhc-cal-move-to-column-force col)
+-    (mhc-cal-insert-rectangle (ddate-mm-inc ddate))))
++    (mhc-cal-insert-rectangle (ddate-mm-inc ddate) prefix)))
+ 
+ 
+ (defun mhc-sch-foldermsg (sch)
+@@ -885,13 +951,14 @@
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;; make rectangle like calendar.el
+ 
+-(defconst mhc-cal-week-header &quot;| Su Mo Tu We Th Fr Sa&quot;)
+-(put-text-property 2 4 'face 'red  mhc-cal-week-header)
+-(put-text-property 20 22 'face 'blue mhc-cal-week-header)
++(defconst mhc-cal-week-header &quot;Su Mo Tu We Th Fr Sa&quot;)
++(put-text-property 0 2 'face 'red  mhc-cal-week-header)
++(put-text-property 18 20 'face 'blue mhc-cal-week-header)
+ 
+-(defun mhc-cal-insert-rectangle (&amp;optional ddate)
++(defun mhc-cal-insert-rectangle (&amp;optional ddate prefix)
+   (interactive)	
+-  (insert-rectangle (mhc-cal-make-rectangle (or ddate (ddate-now)))))
++  (insert-rectangle
++   (mhc-cal-make-rectangle (or ddate (ddate-now)) (or prefix &quot;&quot;))))
+ 
+ ;; This function is stolen from rect.el of emacs 20.4
+ ;; 
+@@ -909,30 +976,41 @@
+           (goto-char pos)))
+     column))
+ 
+-(defun mhc-cal-make-rectangle (&amp;optional ddate)
++(defun mhc-cal-make-rectangle (&amp;optional ddate prefix)
+   (interactive)
+-  (let (last dd ww month sch dstr (i 0) (week &quot;| &quot;))
++  (let ((week prefix)
++	last dd ww month sch dstr color
++	(td 0)
++	(i 0))
+     (setq last (ddate-mm-last-day  (or ddate (ddate-now)))
+ 	  dd   (ddate-mm-first-day (or ddate (ddate-now)))
+ 	  ww   (ddate-ww dd)
+ 	  month (list
+-		 mhc-cal-week-header
+-		 (format &quot;|    %s&quot; (ddate-yymm-sj dd))))
++		 (concat prefix mhc-cal-week-header)
++		 (format &quot;%s   %s&quot; week (ddate-yymm-sj dd))))
++    (if (or (null ddate)
++	    (and (= (ddate-yy ddate) (ddate-yy (ddate-now)))
++		 (= (ddate-mm ddate) (ddate-mm (ddate-now)))))
++	(setq td (ddate-dd (ddate-now))))
++
+     (while (&lt; i ww) (setq week (concat week &quot;   &quot;)
+ 			  i    (1+ i)))
+     (while (ddate&lt;= dd last)
+       (setq color
+ 	    (cond
++	     ((= (ddate-dd dd) td)
++	      'conf)
+ 	     ((equal (ddate-ww dd) 0)
+-	      'red )
++	      'red)
+ 	     ((mhc-db-holiday-p dd)
+ 	      (mhc-category-string-to-face &quot;Holiday&quot;))
+-	     ((equal (ddate-ww dd) 6) 'blue)
++	     ((equal (ddate-ww dd) 6)
++	      'blue)
+ 	     (t
+ 	      nil )))
+-      (if (and (not (string= week &quot;| &quot;)) (= (ddate-ww dd) 0))
++      (if (and (not (string= week prefix)) (= (ddate-ww dd) 0))
+ 	  (setq month (cons week month)
+-		week  &quot;| &quot;))
++		week prefix))
+       (setq dstr (format &quot;%2d &quot; (ddate-dd dd)))
+       (if color
+ 	  (put-text-property 0 (1- (length dstr))
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00308" href="msg00308.html">[mhc:00309] mhc-snap20000104</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00339.html">[mhc:00340] Re: ruby/gtk on win32</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00341.html">[mhc:00342] mhc on XEmacs</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00574.html">[mhc:00575] Re: mhc-snap20000427.tar.gz</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00312.html">[mhc:00313] mhc-snap20000107</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00340"><strong>Date</strong></a></li>
+<li><a href="threads.html#00340"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

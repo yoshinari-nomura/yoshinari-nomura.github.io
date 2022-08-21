@@ -1,0 +1,1451 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja"><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://quickhack.net/nom/feed.xml" rel="self" type="application/atom+xml" /><link href="http://quickhack.net/nom/" rel="alternate" type="text/html" hreflang="ja" /><updated>2019-10-23T20:52:22+09:00</updated><id>http://quickhack.net/nom/</id><title type="html">Quickhack Diary</title><subtitle>lifehack through quick hack
+</subtitle><author><name>Yoshinari Nomura</name></author><entry><title type="html">パスワード別送添付メールの話が論文誌に載りました</title><link href="http://quickhack.net/nom/blog/2019-09-21-article-on-ezip-mail-is-published.html" rel="alternate" type="text/html" title="パスワード別送添付メールの話が論文誌に載りました" /><published>2019-09-21T00:00:00+09:00</published><updated>2019-09-21T00:00:00+09:00</updated><id>http://quickhack.net/nom/blog/article-on-ezip-mail-is-published</id><content type="html" xml:base="http://quickhack.net/nom/blog/2019-09-21-article-on-ezip-mail-is-published.html">&lt;div id=&quot;outline-container-orgad97bac&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;orgad97bac&quot;&gt;もう随分前の話ですが&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-orgad97bac&quot;&gt;
+&lt;p&gt;
+以前この blog に書いた，パスワード別送添付メールの話が論文になりました．
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;!-- more --&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+以前，&lt;a href=&quot;2017-11-06-password-is-in-another-mail.html&quot;&gt;「パスワードは別途お送りします」をなんとかしたい&lt;/a&gt; で glima について書きました．
+その話を情報処理学会で発表したら，&lt;a href=&quot;https://www.ipsj.or.jp/award/yamashita2018.html&quot;&gt;山下記念研究賞&lt;/a&gt;をいただきました．
+&lt;/p&gt;
+
+&lt;p&gt;
+パスワード別送添付メールの問題は，今日では広く認知されていると感じます．
+問題解消の動きの一助になったとしたら，嬉しいです．
+&lt;/p&gt;
+
+&lt;p&gt;
+発表後，論文誌にも推薦していただき，無事掲載．何と&lt;a href=&quot;https://www.ipsj.or.jp/award/ssp_award.html#anc1&quot;&gt;特選論文&lt;/a&gt;にも選ばれました．
+論文の PDF と関連するリンクをまとめておきます．
+&lt;a href=&quot;https://github.com/yoshinari-nomura/glima&quot;&gt;GitHub&lt;/a&gt; のスターも論文同様，嬉しいものです．
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-org7ef814c&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org7ef814c&quot;&gt;関連リンク&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org7ef814c&quot;&gt;
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;Blog: &lt;a href=&quot;http://quickhack.net/nom/blog/2017-11-06-password-is-in-another-mail.html&quot;&gt;「パスワードは別途お送りします」をなんとかしたい&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/yoshinari-nomura/glima&quot;&gt;yoshinari-nomura/glima: Gmail CLI client&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Slideshare: &lt;a href=&quot;https://www.slideshare.net/nomlab/ss-85329306&quot;&gt;そのメール，ホントに暗号化が必要ですか?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;論文PDF: &lt;a href=&quot;dat/doc/glima-paper.pdf&quot;&gt;パスワード別送添付メールの問題点と受信側での対策について&lt;/a&gt; (著作権は情報処理学会に帰属します．取り扱いについては，&lt;a href=&quot;http://www.ipsj.or.jp/copyright/ronbun/copyright.html#chui&quot;&gt;こちら&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content><author><name>Yoshinari Nomura</name></author><summary type="html">もう随分前の話ですが 以前この blog に書いた，パスワード別送添付メールの話が論文になりました．</summary></entry><entry><title type="html">Build Rust environment for ESP32</title><link href="http://quickhack.net/nom/blog/2019-05-14-build-rust-environment-for-esp32.html" rel="alternate" type="text/html" title="Build Rust environment for ESP32" /><published>2019-05-14T00:00:00+09:00</published><updated>2019-05-14T00:00:00+09:00</updated><id>http://quickhack.net/nom/blog/build-rust-environment-for-esp32</id><content type="html" xml:base="http://quickhack.net/nom/blog/2019-05-14-build-rust-environment-for-esp32.html">&lt;div id=&quot;outline-container-org097e70d&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org097e70d&quot;&gt;What is it?&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org097e70d&quot;&gt;
+&lt;p&gt;
+Recently I heard that LLVM for xtensa is working, so I tried to build Rust for ESP32.
+&lt;/p&gt;
+
+&lt;p&gt;
+(2019-05-16 Translated into English)
+&lt;!-- more --&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Source information is, &lt;a href=&quot;https://gist.github.com/MabezDev/26e175790f84f2f2b0f9bca4e63275d1&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;https://esp32.com/viewtopic.php?t=9226&quot;&gt;here&lt;/a&gt;.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-org0fa653a&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org0fa653a&quot;&gt;Environment&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org0fa653a&quot;&gt;
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;Ubuntu 18.04 LTS&lt;/li&gt;
+&lt;li&gt;esp-idf commit_id 5c88c5996dbde6208e3bec05abc21ff6cd822d26&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-orge8bce51&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;orge8bce51&quot;&gt;Build LLVM&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-orge8bce51&quot;&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-shell-script&quot;&gt;sudo apt-get install ninja-build
+
+&lt;span class=&quot;org-builtin&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;org-variable-name&quot;&gt;MY_BUILD_ROOT&lt;/span&gt;=&lt;span class=&quot;org-string&quot;&gt;&quot;$HOME/.xtensa&quot;&lt;/span&gt;
+mkdir -p &lt;span class=&quot;org-string&quot;&gt;&quot;$MY_BUILD_ROOT&quot;&lt;/span&gt;
+&lt;span class=&quot;org-builtin&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;org-string&quot;&gt;&quot;$MY_BUILD_ROOT&quot;&lt;/span&gt;
+
+git clone https://github.com/espressif/llvm-xtensa.git
+git clone https://github.com/espressif/clang-xtensa.git llvm-xtensa/tools/clang
+
+mkdir llvm_build
+&lt;span class=&quot;org-builtin&quot;&gt;cd&lt;/span&gt; llvm_build
+
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;from https://gist.github.com/MabezDev/26e175790f84f2f2b0f9bca4e63275d1&lt;/span&gt;
+cmake ../llvm-xtensa -DLLVM_TARGETS_TO_BUILD=&lt;span class=&quot;org-string&quot;&gt;&quot;Xtensa;X86&quot;&lt;/span&gt; -DCMAKE_BUILD_TYPE=Release -G &lt;span class=&quot;org-string&quot;&gt;&quot;Ninja&quot;&lt;/span&gt;
+
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;Take a while&lt;/span&gt;
+cmake --build .
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-orgcedd54f&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;orgcedd54f&quot;&gt;Check clang is working&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-orgcedd54f&quot;&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-shell-script&quot;&gt; &lt;span class=&quot;org-builtin&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;org-string&quot;&gt;&quot;$MY_BUILD_ROOT&quot;&lt;/span&gt;
+
+ cat &amp;lt;&amp;lt;EOF &amp;gt; test.c
+&lt;span class=&quot;org-sh-heredoc&quot;&gt; int main() {&lt;/span&gt;
+&lt;span class=&quot;org-sh-heredoc&quot;&gt;   printf(&quot;Hello world\n&quot;);&lt;/span&gt;
+&lt;span class=&quot;org-sh-heredoc&quot;&gt; }&lt;/span&gt;
+&lt;span class=&quot;org-sh-heredoc&quot;&gt; EOF&lt;/span&gt;
+
+./llvm_build/bin/clang -target xtensa -fomit-frame-pointer -S  test.c -o test.S
+xtensa-esp32-elf-as test.S
+
+file a.out
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;&amp;#8594; a.out: ELF 32-bit LSB relocatable, Tensilica Xtensa, version 1 (SYSV), not stripped&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-orgbd83a73&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;orgbd83a73&quot;&gt;Bulid rustc&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-orgbd83a73&quot;&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-shell-script&quot;&gt;&lt;span class=&quot;org-builtin&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;org-string&quot;&gt;&quot;$MY_BUILD_ROOT&quot;&lt;/span&gt;
+
+git clone git@github.com:MabezDev/rust-xtensa.git
+&lt;span class=&quot;org-builtin&quot;&gt;cd&lt;/span&gt; rust-xtensa
+
+mkdir &lt;span class=&quot;org-string&quot;&gt;&quot;$MY_BUILD_ROOT/rust_build&quot;&lt;/span&gt;
+./configure --llvm-root=&lt;span class=&quot;org-string&quot;&gt;&quot;$MY_BUILD_ROOT/llvm_build&quot;&lt;/span&gt; --prefix=&lt;span class=&quot;org-string&quot;&gt;&quot;$MY_BUILD_ROOT/rust_build&quot;&lt;/span&gt;
+
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;python 2 is required.&lt;/span&gt;
+
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;seems to clone something. before help is invoked.&lt;/span&gt;
+python ./x.py --help
+
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;Take a while&lt;/span&gt;
+python ./x.py build
+python ./x.py install
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-org3f5cf37&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org3f5cf37&quot;&gt;Check rustc is working&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org3f5cf37&quot;&gt;
+&lt;p&gt;
+Does rustc support xtensa?
+&lt;/p&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-shell-script&quot;&gt;&lt;span class=&quot;org-string&quot;&gt;&quot;$MY_BUILD_ROOT/rust_build/bin/rustc&quot;&lt;/span&gt; --print target-list | grep xtensa
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;&amp;#8594; xtensa-none-elf&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+Register own xtensa rustc to rustup
+&lt;/p&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-shell-script&quot;&gt;rustup toolchain link xtensa &lt;span class=&quot;org-string&quot;&gt;&quot;$MY_BUILD_ROOT/rust_build&quot;&lt;/span&gt;
+rustup run xtensa rustc --print target-list | grep xtensa
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;&amp;#8594; xtensa-none-elf&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-orgb5685ec&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;orgb5685ec&quot;&gt;Build a sample project&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-orgb5685ec&quot;&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-shell-script&quot;&gt;git clone git@github.com:lexxvir/esp32-hello.git  
+&lt;span class=&quot;org-builtin&quot;&gt;cd&lt;/span&gt; esp32-hello
+rmdir esp-idf
+ln -s $&lt;span class=&quot;org-variable-name&quot;&gt;IDF_PATH&lt;/span&gt; esp-idf
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+Manipulate .carg/config to work with your esp-idf environment.
+&lt;/p&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-diff&quot;&gt;&lt;span class=&quot;org-diff-context&quot;&gt;diff --git a/.cargo/config b/.cargo/config&lt;/span&gt;
+&lt;span class=&quot;org-diff-context&quot;&gt;index f7c9d09..04a57ef 100644&lt;/span&gt;
+&lt;span class=&quot;org-diff-header&quot;&gt;--- &lt;/span&gt;&lt;span class=&quot;org-diff-header&quot;&gt;&lt;span class=&quot;org-diff-file-header&quot;&gt;a/.cargo/config&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;org-diff-header&quot;&gt;+++ &lt;/span&gt;&lt;span class=&quot;org-diff-header&quot;&gt;&lt;span class=&quot;org-diff-file-header&quot;&gt;b/.cargo/config&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;org-diff-hunk-header&quot;&gt;@@ -3,6 +3,7 @@&lt;/span&gt;&lt;span class=&quot;org-diff-function&quot;&gt; target = &quot;xtensa-none-elf&quot;&lt;/span&gt;
+
+&lt;span class=&quot;org-diff-context&quot;&gt; [target.xtensa-none-elf]&lt;/span&gt;
+&lt;span class=&quot;org-diff-context&quot;&gt; rustflags = [&lt;/span&gt;
+&lt;span class=&quot;org-diff-indicator-added&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;org-diff-added&quot;&gt;  &quot;-C&quot;, &quot;target-cpu=esp32&quot;,&lt;/span&gt;
+&lt;span class=&quot;org-diff-context&quot;&gt;   &quot;-C&quot;, &quot;save-temps&quot;,&lt;/span&gt;
+&lt;span class=&quot;org-diff-context&quot;&gt;   &quot;-C&quot;, &quot;link-arg=-nostdlib&quot;,&lt;/span&gt;
+
+&lt;span class=&quot;org-diff-hunk-header&quot;&gt;@@ -25,7 +26,7 @@&lt;/span&gt;&lt;span class=&quot;org-diff-function&quot;&gt; rustflags = [&lt;/span&gt;
+
+&lt;span class=&quot;org-diff-context&quot;&gt;   &quot;-C&quot;, &quot;link-arg=-Lesp-idf/components/esp32/ld&quot;,&lt;/span&gt;
+&lt;span class=&quot;org-diff-context&quot;&gt;   &quot;-C&quot;, &quot;link-arg=-Tesp32_out.ld&quot;,&lt;/span&gt;
+&lt;span class=&quot;org-diff-indicator-removed&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;org-diff-removed&quot;&gt;  &quot;-C&quot;, &quot;link-arg=-Tbuild/esp32/esp32.project.ld&quot;,&lt;/span&gt;
+&lt;span class=&quot;org-diff-indicator-added&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;org-diff-added&quot;&gt;  &quot;-C&quot;, &quot;link-arg=-Tbuild/esp32/esp32.common.ld&quot;,&lt;/span&gt;
+&lt;span class=&quot;org-diff-context&quot;&gt;   &quot;-C&quot;, &quot;link-arg=-Tesp32.rom.ld&quot;,&lt;/span&gt;
+&lt;span class=&quot;org-diff-context&quot;&gt;   &quot;-C&quot;, &quot;link-arg=-Tesp32.peripherals.ld&quot;,&lt;/span&gt;
+   &quot;-C&quot;, &quot;link-arg=-Tesp32.rom.libgcc.ld&quot;,
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+add XARGO_RUST_SRC to setenv.sh
+&lt;/p&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-shell-script&quot;&gt;&lt;span class=&quot;org-builtin&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;org-string&quot;&gt;&quot;export XARGO_RUST_SRC='$MY_BUILD_ROOT/rust-xtensa/src'&quot;&lt;/span&gt; &amp;gt;&amp;gt; setenv.sh
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+Modify build.sh to use &lt;code&gt;rustup run xtensa xargo&lt;/code&gt;
+&lt;/p&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-diff&quot;&gt;&lt;span class=&quot;org-diff-context&quot;&gt;diff --git a/build.sh b/build.sh&lt;/span&gt;
+&lt;span class=&quot;org-diff-context&quot;&gt;index e7bcb40..70be266 100755&lt;/span&gt;
+&lt;span class=&quot;org-diff-header&quot;&gt;--- &lt;/span&gt;&lt;span class=&quot;org-diff-header&quot;&gt;&lt;span class=&quot;org-diff-file-header&quot;&gt;a/build.sh&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;org-diff-header&quot;&gt;+++ &lt;/span&gt;&lt;span class=&quot;org-diff-header&quot;&gt;&lt;span class=&quot;org-diff-file-header&quot;&gt;b/build.sh&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;org-diff-hunk-header&quot;&gt;@@ -5,7 +5,7 @@&lt;/span&gt;&lt;span class=&quot;org-diff-function&quot;&gt; source setenv.sh&lt;/span&gt;
+&lt;span class=&quot;org-diff-context&quot;&gt; # export V=1&lt;/span&gt;
+&lt;span class=&quot;org-diff-context&quot;&gt; make -j6 app&lt;/span&gt;
+
+&lt;span class=&quot;org-diff-indicator-removed&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;org-diff-removed&quot;&gt;cargo build --release #--verbose&lt;/span&gt;
+&lt;span class=&quot;org-diff-indicator-added&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;org-diff-added&quot;&gt;rustup run xtensa xargo build --release #--verbose&lt;/span&gt;
+
+&lt;span class=&quot;org-diff-context&quot;&gt; $IDF_PATH/components/esptool_py/esptool/esptool.py \&lt;/span&gt;
+        --chip esp32 \
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+Build the sample. &lt;code&gt;target/xtensa-none-elf/release/esp32-hello.bin&lt;/code&gt; will appear if successfull.
+&lt;/p&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-shell-script&quot;&gt;./build.sh
+ls target/xtensa-none-elf/release/esp32-hello.bin
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;&amp;#8594; target/xtensa-none-elf/release/esp32-hello.bin&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+Flash it.
+&lt;/p&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-shell-script&quot;&gt;python $&lt;span class=&quot;org-variable-name&quot;&gt;IDF_PATH&lt;/span&gt;/components/esptool_py/esptool/esptool.py &lt;span class=&quot;org-sh-escaped-newline&quot;&gt;\&lt;/span&gt;
+ --chip esp32 --port /dev/ttyUSB0 --baud 115200 &lt;span class=&quot;org-sh-escaped-newline&quot;&gt;\&lt;/span&gt;
+ --before default_reset --after hard_reset write_flash -z --flash_mode dio &lt;span class=&quot;org-sh-escaped-newline&quot;&gt;\&lt;/span&gt;
+ --flash_freq 40m --flash_size detect 0x1000 build/bootloader/bootloader.bin 0x10000 &lt;span class=&quot;org-sh-escaped-newline&quot;&gt;\&lt;/span&gt;
+ target/xtensa-none-elf/release/esp32-hello.bin &lt;span class=&quot;org-sh-escaped-newline&quot;&gt;\&lt;/span&gt;
+ 0x8000 build/partitions_singleapp.bin
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+Connect a LED to GPIO2, you will see  the LED is blinking.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content><author><name>Yoshinari Nomura</name></author><summary type="html">What is it? Recently I heard that LLVM for xtensa is working, so I tried to build Rust for ESP32.</summary></entry><entry><title type="html">第二種電気工事士の免許を取るには</title><link href="http://quickhack.net/nom/blog/2019-03-17-how-to-get-electric-work-specialist-license.html" rel="alternate" type="text/html" title="第二種電気工事士の免許を取るには" /><published>2019-03-17T00:00:00+09:00</published><updated>2019-03-17T00:00:00+09:00</updated><id>http://quickhack.net/nom/blog/how-to-get-electric-work-specialist-license</id><content type="html" xml:base="http://quickhack.net/nom/blog/2019-03-17-how-to-get-electric-work-specialist-license.html">&lt;div id=&quot;outline-container-orgc384d58&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;orgc384d58&quot;&gt;はじめに&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-orgc384d58&quot;&gt;
+&lt;p&gt;
+もう去年の夏のことになってしまいましたが，第二種電気工事士の免許取得についてメモを残しておこうと思います．
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;!-- more --&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-orgd2aa1a8&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;orgd2aa1a8&quot;&gt;第二種電気工事士って?&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-orgd2aa1a8&quot;&gt;
+&lt;p&gt;
+この免許を取ると何ができるのかというのは，以下のページに概要が書いてあります．
+&lt;/p&gt;
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.shiken.or.jp/construction.html&quot;&gt;電気工事士って何だろう？ | ECEE 一般財団法人電気技術者試験センター&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+僕の場合，家の壁のコンセントを自分で取り換えたり，埋め込み式の電灯を増設したいというのが主な動機でした．
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-org93131f8&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org93131f8&quot;&gt;試験について&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org93131f8&quot;&gt;
+&lt;p&gt;
+第二種は，年2回試験があって，上期は6月初旬，下期は10月初旬に筆記試験があります．
+筆記に合格すると，2ヶ月程先に技能試験があります．
+&lt;/p&gt;
+
+&lt;p&gt;
+受験申込はネットからできますが，締切が早いので気をつけましょう．
+平成31年度の申込は，&lt;a href=&quot;https://uketsuke.shiken.or.jp/mohshi/FIC1010.do&quot;&gt;もうはじまって&lt;/a&gt;ますね． 
+&lt;/p&gt;
+
+&lt;p&gt;
+筆記試験は，マークシート式で，60点が合格ラインといわれています．
+「オームの法則って何?」 という人は，少々勉強が必要ですが，
+ある程度電気の素養がある人は，それほど苦労なくパスできるでしょう．
+僕 (電子工学科卒業) の場合，週末を潰して丸 2日ぐらいの勉強で 80点ぐらい取れました．
+&lt;/p&gt;
+
+&lt;p&gt;
+技能試験は，割と真面目に練習しないと受からないと思います．あらかじめ配線図が公開された候補問題(13問)があって，
+当日その内の1問が出るので，40分をかけて完成させるという問題です．13問のなかに基本の配線技術が含まれていて，
+一通りできるようになっていないと受かりません．工事士免許という性格を反映してる，よくできた試験だと思いました．
+僕の場合，2週間弱，夜帰宅後に1時間程度練習したと思います．
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-orgf981742&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;orgf981742&quot;&gt;参考書や買ったもの&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-orgf981742&quot;&gt;
+&lt;p&gt;
+学科は，これ1冊で大丈夫でした．電気技術者試験センターのサイトにも過去問があります．
+&lt;/p&gt;
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.amazon.co.jp/dp/4297101637&quot;&gt;2019年版 第二種電気工事士試験 完全攻略 筆記試験編&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+技能試験では，以下の本の他に DVD や Youtube の動画が参考になりました．
+&lt;/p&gt;
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;&lt;p&gt;
+&lt;a href=&quot;https://www.amazon.co.jp/dp/4297104520&quot;&gt;2019年版 第二種電気工事士試験 完全攻略 技能試験編&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+カラーで一問づつ丁寧に解説しているのでよかったです．
+技能試験では，一発アウトになる，「やってはいけない事」があり，それの一覧がまとめられていて，よい確認になりました．
+また，技能試験の配線の寸法取りには，独特のルールみたいなものがあるらしく，その感覚が参考になりました．
+&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+技能試験用に工具と部材も揃えました．
+&lt;/p&gt;
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;&lt;p&gt;
+&lt;a href=&quot;https://www.amazon.co.jp/dp/B079ZWGTJY&quot;&gt;電気工事士技能試験工具セット 基本工具+P-958VVFストリッパー DK-28 特典ハンドブック付&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+おそらく，これは年度代わっても同じ物でOKだと思います．P-958 VVFストリッパーが便利です．
+DK-18 (基本工具 + P-958 VVFストリッパー付き) がいいと思いますが，
+何故か受験対策用の DVD が付いた DK-28 のほうが安くなっていますね．
+&lt;/p&gt;
+
+&lt;p&gt;
+技能試験は，電動工具以外の工具なら大体何でも持ち込んでいいので，
+ちょっと高いですが，便利な工具を一式揃えるのがおすすめです．
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;
+&lt;a href=&quot;https://www.amazon.co.jp/dp/B079JG1MD1&quot;&gt;平成31年 第二種電気工事士技能試験 練習用部材 DK-51 1回セット 特典ハンドブック・DVD付&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+これに付いてる DVD で基本操作を覚えました．部材は，1回分とありますが，
+候補問題の13問を1回づつこなせるという意味です．かなり余裕があるので，これ1つで十分だと思います．
+これを使い切る頃には，ホームセンターで不足部材だけを安くを買えるような知識が身に付いていると思います．
+&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-org784efe7&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org784efe7&quot;&gt;技能試験に関するメモ&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org784efe7&quot;&gt;
+&lt;p&gt;
+技能試験勉強の過程と受験後の感想をメモとして残しておきたいと思います．
+&lt;/p&gt;
+
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;複線図を書かないで，その場でクリップ等で縛りながら配線するのが効率的．
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;複線図を書ける能力は，必要だが，本番で実際に書く必要はない．&lt;/li&gt;
+&lt;li&gt;なぜなら，複線図を書いても，それと実体の配線の対応を取る手間がかえって面倒．&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;全部の線をバンバン切ってから配線するのではなく，切りつつ小物毎に作っていく．
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;線の長さを切り間違いにくいし，間違いに気付いても修正しやすい．&lt;/li&gt;
+&lt;li&gt;線を切って並べておくと，何がどの線だったか分からなくなって混乱する．&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;
+寸法取りの基本 (HOZAN P-958 を使うことが前提．普通のペンチだと加工のために長く取る必要があるかも)
+&lt;/p&gt;
+&lt;table&gt;
+
+
+&lt;colgroup&gt;
+&lt;col  class=&quot;org-left&quot;&gt;
+
+&lt;col  class=&quot;org-left&quot;&gt;
+
+&lt;col  class=&quot;org-left&quot;&gt;
+
+&lt;col  class=&quot;org-left&quot;&gt;
+
+&lt;col  class=&quot;org-left&quot;&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th scope=&quot;col&quot; class=&quot;org-left&quot;&gt;取付用具&lt;/th&gt;
+&lt;th scope=&quot;col&quot; class=&quot;org-left&quot;&gt;寸法取&lt;/th&gt;
+&lt;th scope=&quot;col&quot; class=&quot;org-left&quot;&gt;外被覆剥&lt;/th&gt;
+&lt;th scope=&quot;col&quot; class=&quot;org-left&quot;&gt;内被覆剥&lt;/th&gt;
+&lt;th scope=&quot;col&quot; class=&quot;org-left&quot;&gt;備考&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;org-left&quot;&gt;VFFボックス&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;+10cm&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;10cm&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;2cm or 1.2cm&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;内被覆剥はリングスリーブ or ボックスコネクタに依存&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;org-left&quot;&gt;埋込用器具&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;+5cm&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;&lt;b&gt;10cm&lt;/b&gt;&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;1cm or 1.2cm&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;間違いやすい．内被覆剥は器具のゲージによる．&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;org-left&quot;&gt;ランプ(R)&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;+5cm&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;4.5cm&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;2.5cm&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;内被覆を 2cm残す&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;org-left&quot;&gt;露出コンセント&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;+5cm&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;3.5cm&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;2.5cm&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;内被覆を 1cm残す&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;org-left&quot;&gt;引掛シーリング&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;+2cm&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;ゲージ&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;ゲージ&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;寸法取りのとき注意&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;org-left&quot;&gt;ブレーカ/端子台&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;+0cm&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;5cm&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;1.2cm&lt;/td&gt;
+&lt;td class=&quot;org-left&quot;&gt;内被覆剥は，逐次合わせるのが無難．端子台もこれ．&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/li&gt;
+
+&lt;li&gt;圧着で束ねる線の太さと本数 vs 使用するリングスリーブの大きの関係
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;1.6mm x 2本 に限り「極小」&lt;/li&gt;
+&lt;li&gt;1.6mm x 4本までは「小」それを越えると「中」&lt;/li&gt;
+&lt;li&gt;2.0mm は，1.6mm x 2本に換算しれ上のルールを適用する&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;試験開始後の図面の確認で重要なこと
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;図面には，まず，切断寸法と，リングスリーブ/ボックスコネクタのどちらを使うかを記入しておく
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;線を剥くときに，ボックスとリングのどちらかによって 2cm or 1.2cm を変えると効率的だから．&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;スイッチと器具の関係をよく確認する．&lt;/li&gt;
+&lt;li&gt;線の種類 (1.6mm or 2.0mm, 2芯 or 3芯 等) をよく確認する．VVF でない線がある場合は，特に注意．&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-orge629fba&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;orge629fba&quot;&gt;感想&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-orge629fba&quot;&gt;
+&lt;p&gt;
+受験を終えて思ったことは，
+&lt;/p&gt;
+
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;電気工事士の試験は，よくできていると思う．特に実技．やるべきことをやらないと受からないようになっている．
+実施する側は大変だろうなとも思った．&lt;/li&gt;
+
+&lt;li&gt;実技に一度落ちた．自分ではできたつもりだったが，なぜ落ちたかのフィードバックがないので困惑した．&lt;/li&gt;
+
+&lt;li&gt;ホームセンターで VVF線やコネクタを買い足してみたが，終わってみれば必要はなかったかも．&lt;/li&gt;
+
+&lt;li&gt;ホーザンの実技1回分セットと工具セット，付属の教習ビデオがすごく役立った．&lt;/li&gt;
+
+&lt;li&gt;参考書は学科と実技で1種類買えば十分だと思った．&lt;/li&gt;
+
+&lt;li&gt;平日の夜，仕事終わってからリビングのテーブルで練習するのは，辛い．家族の理解が必要．&lt;/li&gt;
+
+&lt;li&gt;今になって思えば，基本操作を磨くのが重要．
+&lt;a href=&quot;https://www.hozan.co.jp/denko/tool/product/P-958.html&quot;&gt;製品詳細【VVFストリッパー P-958】 | 第二種電工試験の虎&lt;/a&gt; を見て練習するだけでもタメになった．&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;
+技能試験では，複線図を書かなかった．このやり方は，以下の Youtube を参考にした．
+&lt;/p&gt;
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=xzYdunMdhP0&quot;&gt;2015第二種電気工事士技能試験 実体複線図 電気工事士奪取プロジェクト6 - YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+自分でも複線図を一々書くのは面倒だと薄々思っていたけど，
+参考書には必ず複線図を書くように書いてあったので，最初真面目に書いていたが，この動画に救われた．
+また，実体複線図の話がすごく参考になった．インシュロックを使う方法，
+マジックで印を付けておいたほうがいいかというのも参考になる．
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;Youtube で実際のものを見られるようになったのは，いい時代だ．
+でも，そばに同士がいないのは辛いし，先生がいてフィードバックがあれば，
+もっと効率がよかっただろう．学校ってそういうところだなと思った．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content><author><name>Yoshinari Nomura</name></author><summary type="html">はじめに もう去年の夏のことになってしまいましたが，第二種電気工事士の免許取得についてメモを残しておこうと思います．</summary></entry><entry><title type="html">My USB Type-C Equipment</title><link href="http://quickhack.net/nom/blog/2018-04-15-my-usb-type-c-equipment.html" rel="alternate" type="text/html" title="My USB Type-C Equipment" /><published>2018-04-15T00:00:00+09:00</published><updated>2018-04-15T00:00:00+09:00</updated><id>http://quickhack.net/nom/blog/my-usb-type-c-equipment</id><content type="html" xml:base="http://quickhack.net/nom/blog/2018-04-15-my-usb-type-c-equipment.html">&lt;div id=&quot;outline-container-orgac094aa&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;orgac094aa&quot;&gt;USB Type-C はじめました&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-orgac094aa&quot;&gt;
+&lt;p&gt;
+少し前から MacBook Pro 13&quot; (2017) を使用中です．15&quot; より機動力は上がったのですが，
+キーボードで指が痛くなるのが玉に瑕です．もう1つ大きな変化は，USB Type-C になったことです．
+おすすめの USB Type-C 製品を聞かれて「そのうちブログにでも書くよと」いって放置していたので，
+反省して紹介しておきたいと思います．
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;!-- more --&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-orgf8d4033&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;orgf8d4033&quot;&gt;おすすめの USB Type-C 製品&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-orgf8d4033&quot;&gt;
+&lt;p&gt;
+Type-C は，結論として，すこぶる快適です．ケーブルの向きを間違えてイライラしないで済みますし，
+出張時の荷物を減らすことに血道を上げている僕としては，
+装備がコンパクトになるのが大変嬉しいです．
+&lt;/p&gt;
+
+&lt;p&gt;
+特に充電器は，アップル純正以外の物が豊富，軽量で安価なのがいいですね．
+僕も純正品は，デスクに置いて，軽い充電器を持ち歩いています．
+&lt;/p&gt;
+
+&lt;p&gt;
+以下，自分で使ってみたおすすめです．購入から少し時間が経っているので，
+もっと良い物が出ているかもしれません．
+また， &lt;b&gt;信じて購入されて，不具合などがあったとしても，責任は取れませんので，あしからず&lt;/b&gt;．
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-org303a25b&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;org303a25b&quot;&gt;充電器とケーブル&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-org303a25b&quot;&gt;
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;&lt;p&gt;
+&lt;a href=&quot;https://www.amazon.co.jp/dp/B071R6ZF41/&quot;&gt;Anker PowerPort Speed 1 PD30 (30W USB-C急速充電器)&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+安心の Anker．30W なので，充電が遅いのでは? と心配しましたが，僕は不満ありません．
+なにしろ軽くてコンパクト．いつも鞄に入れています．スマホと共用できるのもいいです．
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;
+&lt;a href=&quot;https://www.amazon.co.jp/dp/B071XYBPMN/&quot;&gt;Anker PowerLine+ USB-C &amp;amp; USB-C 2.0 ケーブル (0.9m)&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+細くて柔軟で丈夫，見ためもいいので気に入っています．主に出先での充電用途．
+転送スピードが欲しい人は注意．
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;
+&lt;a href=&quot;https://www.amazon.co.jp/gp/product/B01MG9JIIF/&quot;&gt;AUKEY カーチャージャー 36W USB Type-C&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+滅多に使わないですが，車に 1個置いておくと，安心．
+&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-org4cf3d64&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;org4cf3d64&quot;&gt;USB ハブ / 変換アダプタ&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-org4cf3d64&quot;&gt;
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;&lt;p&gt;
+&lt;a href=&quot;https://www.amazon.co.jp/dp/B075P3CR6V/&quot;&gt;USB Type-C Hub HDMI/2*USB 3.0/SDカード/MicroSDカードリーダ&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+安価でコンパクト，スッキリとしたデザインで気に入っています．これ1つ鞄に入れておけば，
+大抵，用が足ります．
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;
+&lt;a href=&quot;https://www.amazon.co.jp/dp/B01N0O7NAT/&quot;&gt;Anker USB-C &amp;amp; HDMI 変換アダプター&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+HDMI に出力するだけなら，こちらのほうがコンパクト．主にオフィスではこちらを使っています．
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;
+&lt;a href=&quot;https://www.amazon.co.jp/dp/B01GNXN2VQ/&quot;&gt;IDEAPRO HDMI to VGA変換アダプター&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+HDMI だけで生活できればいいのですが，たまに VGA が必要になることも．
+上記 2つの HDMI ポートにこれを繋ぐことで VGA に変換できています．
+オーディオジャックは使ったことがありません．
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;
+&lt;a href=&quot;https://www.amazon.co.jp/dp/B01EL4PVFE/&quot;&gt;Rankie USB C 変換アダプター&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+2個セットで安いので買ってみました．問題なく使えています．意外とよく使うので，もう1セット欲しいかも．
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;
+&lt;a href=&quot;https://www.amazon.co.jp/dp/B001MQBRJE/&quot;&gt;iBUFFALO カードリーダー/ライター microSD対応 超コンパクト&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Type-C 製品ではないですが，これと Rankie USB C 変換アダプターをつないだ状態で持ち歩くと，
+Type-C の USB メモリとして使えるので便利です．Type-C USB メモリを買うより便利だと思います．
+&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-org9edb1da&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;org9edb1da&quot;&gt;持ってないけど良さそう&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-org9edb1da&quot;&gt;
+&lt;p&gt;
+以下は，自分では試したことがありません．
+&lt;/p&gt;
+
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;&lt;p&gt;
+&lt;a href=&quot;https://www.amazon.co.jp/dp/B01007BR2W/&quot;&gt;Anker USB-C &amp;amp; イーサネットアダプタ&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+今後，有線が欲しい場合もあるので1つは持っておきたいところ．
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;
+&lt;a href=&quot;https://www.amazon.co.jp/dp/B072KBL74F/&quot;&gt;Anker 5-in-1 プレミアム USB-Cハブ (3*USB3.0 / HDMI / 1Gbpsイーサ)&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+少し高価だけど，有線と HDMI が使えるので，これを持ち歩くのもアリかも．
+&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content><author><name>Yoshinari Nomura</name></author><summary type="html">USB Type-C はじめました 少し前から MacBook Pro 13&quot; (2017) を使用中です．15&quot; より機動力は上がったのですが， キーボードで指が痛くなるのが玉に瑕です．もう1つ大きな変化は，USB Type-C になったことです． おすすめの USB Type-C 製品を聞かれて「そのうちブログにでも書くよと」いって放置していたので， 反省して紹介しておきたいと思います．</summary></entry><entry><title type="html">Enable TCP keepalive of macOS and Linux in Ruby</title><link href="http://quickhack.net/nom/blog/2018-01-19-enable-tcp-keepalive-of-macos-and-linux-in-ruby.html" rel="alternate" type="text/html" title="Enable TCP keepalive of macOS and Linux in Ruby" /><published>2018-01-19T00:00:00+09:00</published><updated>2018-01-19T00:00:00+09:00</updated><id>http://quickhack.net/nom/blog/enable-tcp-keepalive-of-macos-and-linux-in-ruby</id><content type="html" xml:base="http://quickhack.net/nom/blog/2018-01-19-enable-tcp-keepalive-of-macos-and-linux-in-ruby.html">&lt;div id=&quot;outline-container-org437e8c4&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org437e8c4&quot;&gt;はじめに&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org437e8c4&quot;&gt;
+&lt;p&gt;
+TCP keepalive を使ったプログラムを Ruby で書こうとしてはまったので，メモです．
+&lt;!-- more --&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-org3abb048&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org3abb048&quot;&gt;TCP keepalive とは&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org3abb048&quot;&gt;
+&lt;p&gt;
+TCP (ソケット) を使って pub/sub 形式のサービスに接続して，サーバからのイベントを待っていたとします．
+その際，サーバからのデータがしばらく届かない状態が続くと，単にイベントがないだけなのか，
+セッションが切れてしまっているのかを知ることができません．
+そこで，何の用事がなくても一定時間毎に空パケットを相手に送って返信を貰うことで，
+セッションの維持を確認するのが TCP keepalive です．
+&lt;/p&gt;
+
+&lt;p&gt;
+ちなみに，Websocket にも，ping/pong という仕組みがあり，
+同様の事をより上のレイヤで実現しようとしている例です．
+Slack や IRC もアプリケーションのレイヤで ping/pong の仕組みを持っています．
+&lt;/p&gt;
+
+&lt;p&gt;
+また，HTTP にも keepalive と呼ばれる仕組みがありますが，上記の類とは別物で目的も違います．
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-org79dec2f&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org79dec2f&quot;&gt;TCP keepalive を設定するには&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org79dec2f&quot;&gt;
+&lt;p&gt;
+TCP keepalive がデフォルト有効かどうかは OS 次第のようですが，
+有効であっても，タイムアウトが 2時間といった状態なので，
+目的に応じてセッション (ソケット) 毎に時間を設定したほうがいいでしょう．
+&lt;/p&gt;
+
+&lt;p&gt;
+C言語だと，こんな感じです．Linux の &lt;code&gt;TCP_KEEPIDLE&lt;/code&gt; に相当するものは，
+macOS (Darwin) では， &lt;code&gt;TCP_KEEPALIVE&lt;/code&gt; となっているので注意が必要です．これではまりました．
+&lt;/p&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-c&quot;&gt;&lt;span class=&quot;org-preprocessor&quot;&gt;#include&lt;/span&gt; &lt;span class=&quot;org-string&quot;&gt;&amp;lt;sys/socket.h&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;org-preprocessor&quot;&gt;#include&lt;/span&gt; &lt;span class=&quot;org-string&quot;&gt;&amp;lt;netinet/in.h&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;org-preprocessor&quot;&gt;#include&lt;/span&gt; &lt;span class=&quot;org-string&quot;&gt;&amp;lt;netinet/tcp.h&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;/* &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;macOS (Darwin) uses TCP_KEEPALIVE, while Linux uses TCP_KEEPIDLE &lt;/span&gt;&lt;span class=&quot;org-comment-delimiter&quot;&gt;*/&lt;/span&gt;
+&lt;span class=&quot;org-preprocessor&quot;&gt;#if&lt;/span&gt; &lt;span class=&quot;org-preprocessor&quot;&gt;defined&lt;/span&gt;(__APPLE__) &amp;amp;&amp;amp; &lt;span class=&quot;org-preprocessor&quot;&gt;defined&lt;/span&gt;(__MACH__)
+&lt;span class=&quot;org-preprocessor&quot;&gt;#  define&lt;/span&gt; &lt;span class=&quot;org-variable-name&quot;&gt;TCP_KEEPIDLE&lt;/span&gt; TCP_KEEPALIVE
+&lt;span class=&quot;org-preprocessor&quot;&gt;#endif&lt;/span&gt;
+
+&lt;span class=&quot;org-type&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;org-function-name&quot;&gt;setsockopt_test&lt;/span&gt;(&lt;span class=&quot;org-type&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;org-variable-name&quot;&gt;socket&lt;/span&gt;)
+{
+  &lt;span class=&quot;org-comment-delimiter&quot;&gt;/* &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;After 40-sec silence, send 2 keepalives with 10-sec interval &lt;/span&gt;&lt;span class=&quot;org-comment-delimiter&quot;&gt;*/&lt;/span&gt;
+
+  &lt;span class=&quot;org-type&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;org-variable-name&quot;&gt;enable&lt;/span&gt;  =  1; &lt;span class=&quot;org-comment-delimiter&quot;&gt;/* &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;set keepalive on/off &lt;/span&gt;&lt;span class=&quot;org-comment-delimiter&quot;&gt;*/&lt;/span&gt;
+  &lt;span class=&quot;org-type&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;org-variable-name&quot;&gt;idle&lt;/span&gt;    = 40; &lt;span class=&quot;org-comment-delimiter&quot;&gt;/* &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;idle time used when SO_KEEPALIVE is enabled &lt;/span&gt;&lt;span class=&quot;org-comment-delimiter&quot;&gt;*/&lt;/span&gt;
+  &lt;span class=&quot;org-type&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;org-variable-name&quot;&gt;intvl&lt;/span&gt;   = 10; &lt;span class=&quot;org-comment-delimiter&quot;&gt;/* &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;interval between keepalives &lt;/span&gt;&lt;span class=&quot;org-comment-delimiter&quot;&gt;*/&lt;/span&gt;
+  &lt;span class=&quot;org-type&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;org-variable-name&quot;&gt;keepcnt&lt;/span&gt; =  2; &lt;span class=&quot;org-comment-delimiter&quot;&gt;/* &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;number of keepalives before close &lt;/span&gt;&lt;span class=&quot;org-comment-delimiter&quot;&gt;*/&lt;/span&gt;
+
+  setsockopt(socket, SOL_SOCKET,  SO_KEEPALIVE,  &amp;amp;enable,  &lt;span class=&quot;org-keyword&quot;&gt;sizeof&lt;/span&gt;(enable));
+  setsockopt(socket, IPPROTO_TCP, TCP_KEEPIDLE,  &amp;amp;idle,    &lt;span class=&quot;org-keyword&quot;&gt;sizeof&lt;/span&gt;(idle));
+  setsockopt(socket, IPPROTO_TCP, TCP_KEEPINTVL, &amp;amp;intvl,   &lt;span class=&quot;org-keyword&quot;&gt;sizeof&lt;/span&gt;(intvl));
+  setsockopt(socket, IPPROTO_TCP, TCP_KEEPCNT,   &amp;amp;keepcnt, &lt;span class=&quot;org-keyword&quot;&gt;sizeof&lt;/span&gt;(keepcnt));
+}
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+Ruby だと:
+&lt;/p&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-ruby&quot;&gt;&lt;span class=&quot;org-builtin&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;org-string&quot;&gt;'socket'&lt;/span&gt;
+
+&lt;span class=&quot;org-type&quot;&gt;MY_TCP_KEEPIDLE&lt;/span&gt; = &lt;span class=&quot;org-keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;org-type&quot;&gt;RUBY_PLATFORM&lt;/span&gt; =~ &lt;span class=&quot;org-string&quot;&gt;/darwin/&lt;/span&gt; &lt;span class=&quot;org-keyword&quot;&gt;then&lt;/span&gt; 0x10 &lt;span class=&quot;org-keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;org-constant&quot;&gt;:TCP_KEEPIDLE&lt;/span&gt; &lt;span class=&quot;org-keyword&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;org-keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;org-function-name&quot;&gt;set_tcp_keepalive&lt;/span&gt;(sock)
+  &lt;span class=&quot;org-comment-delimiter&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;After 40-sec silence, send 2 keepalives with 10-sec interval&lt;/span&gt;
+
+  enable  = &lt;span class=&quot;org-constant&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;org-comment-delimiter&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;set keepalive on/off&lt;/span&gt;
+  idle    = 40   &lt;span class=&quot;org-comment-delimiter&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;idle time used when SO_KEEPALIVE is enabled&lt;/span&gt;
+  intvl   = 10   &lt;span class=&quot;org-comment-delimiter&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;interval between keepalives&lt;/span&gt;
+  keepcnt =  2   &lt;span class=&quot;org-comment-delimiter&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;number of keepalives before close&lt;/span&gt;
+
+  sock.setsockopt(&lt;span class=&quot;org-constant&quot;&gt;:SOL_SOCKET&lt;/span&gt;,  &lt;span class=&quot;org-constant&quot;&gt;:SO_KEEPALIVE&lt;/span&gt;,   enable)
+  sock.setsockopt(&lt;span class=&quot;org-constant&quot;&gt;:IPPROTO_TCP&lt;/span&gt;, &lt;span class=&quot;org-type&quot;&gt;MY_TCP_KEEPIDLE&lt;/span&gt;, idle)
+  sock.setsockopt(&lt;span class=&quot;org-constant&quot;&gt;:IPPROTO_TCP&lt;/span&gt;, &lt;span class=&quot;org-constant&quot;&gt;:TCP_KEEPINTVL&lt;/span&gt;,  intvl)
+  sock.setsockopt(&lt;span class=&quot;org-constant&quot;&gt;:IPPROTO_TCP&lt;/span&gt;, &lt;span class=&quot;org-constant&quot;&gt;:TCP_KEEPCNT&lt;/span&gt;,    keepcnt)
+&lt;span class=&quot;org-keyword&quot;&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+どうやら，macOS 用の &lt;code&gt;TCP_KEEPALIVE&lt;/code&gt; をシンボルで受け付けないようです．これではまりました．
+行儀が悪いですが，0x10 を直接渡しています．(何かいい方法はないのでしょうか?)
+ちなみに 0x10 は， &lt;code&gt;/usr/include/netinet/tcp.h&lt;/code&gt; から調べました:
+&lt;/p&gt;
+
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-c&quot;&gt;&lt;span class=&quot;org-comment-delimiter&quot;&gt;// &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;macOS 10.12.6 (Sierra) /usr/include/netinet/tcp.h&lt;/span&gt;
+&lt;span class=&quot;org-preprocessor&quot;&gt;#define&lt;/span&gt; &lt;span class=&quot;org-variable-name&quot;&gt;TCP_KEEPALIVE&lt;/span&gt; 0x10  &lt;span class=&quot;org-comment-delimiter&quot;&gt;/* &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;idle time used when SO_KEEPALIVE is enabled &lt;/span&gt;&lt;span class=&quot;org-comment-delimiter&quot;&gt;*/&lt;/span&gt;
+&lt;span class=&quot;org-preprocessor&quot;&gt;#define&lt;/span&gt; &lt;span class=&quot;org-variable-name&quot;&gt;TCP_KEEPINTVL&lt;/span&gt; 0x101 &lt;span class=&quot;org-comment-delimiter&quot;&gt;/* &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;interval between keepalives &lt;/span&gt;&lt;span class=&quot;org-comment-delimiter&quot;&gt;*/&lt;/span&gt;
+&lt;span class=&quot;org-preprocessor&quot;&gt;#define&lt;/span&gt; &lt;span class=&quot;org-variable-name&quot;&gt;TCP_KEEPCNT&lt;/span&gt;   0x102 &lt;span class=&quot;org-comment-delimiter&quot;&gt;/* &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;number of keepalives before close &lt;/span&gt;&lt;span class=&quot;org-comment-delimiter&quot;&gt;*/&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-org43bfa71&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org43bfa71&quot;&gt;参考&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org43bfa71&quot;&gt;
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;setsockopt(2)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.winehq.org/pipermail/wine-devel/2015-July/108583.html&quot;&gt;ws2_32: socket keepalive for OSX&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/redis/redis-rb/commit/58859678d781924f6899bf186d19a533b0b92817&quot;&gt;Add support for specifying TCP keepalive configuration · redis/redis-rb@5885967&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content><author><name>Yoshinari Nomura</name></author><summary type="html">はじめに TCP keepalive を使ったプログラムを Ruby で書こうとしてはまったので，メモです．</summary></entry><entry><title type="html">「パスワードは別途お送りします」を Mew でなんとかしたい</title><link href="http://quickhack.net/nom/blog/2017-11-29-mail-decrypter-for-mew.html" rel="alternate" type="text/html" title="「パスワードは別途お送りします」を Mew でなんとかしたい" /><published>2017-11-29T00:00:00+09:00</published><updated>2017-11-29T00:00:00+09:00</updated><id>http://quickhack.net/nom/blog/mail-decrypter-for-mew</id><content type="html" xml:base="http://quickhack.net/nom/blog/2017-11-29-mail-decrypter-for-mew.html">&lt;div id=&quot;outline-container-org3cc5562&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org3cc5562&quot;&gt;はじめに&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org3cc5562&quot;&gt;
+&lt;p&gt;
+&lt;a href=&quot;2017-11-06-password-is-in-another-mail.html&quot;&gt;前回&lt;/a&gt; に引き続き，「パスワードは別途お送りします」についてです．
+今回は，Emacs 上のメーラ Mew で使えるツールの紹介です．
+MH 形式 (1メール1ファイル) でメールを管理しているメーラであれば，
+同じような方法が使えると思います．この場合，サーバが Gmail である必要はありません．
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;!-- more --&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-org8de7946&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org8de7946&quot;&gt;使い方&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org8de7946&quot;&gt;
+&lt;ol class=&quot;org-ol&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/yoshinari-nomura/glima&quot;&gt;glima&lt;/a&gt; をインストールして，axman.el と axezip を使います．&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;
+.emacs に以下を追加します:
+&lt;/p&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-emacs-lisp&quot;&gt;(&lt;span class=&quot;org-keyword&quot;&gt;setq&lt;/span&gt; axman-attachment-store-directory &lt;span class=&quot;org-string&quot;&gt;&quot;~/Downloads&quot;&lt;/span&gt;)
+(&lt;span class=&quot;org-keyword&quot;&gt;setq&lt;/span&gt; load-path
+      (cons &lt;span class=&quot;org-string&quot;&gt;&quot;~/path/to/this/file load-path&quot;&lt;/span&gt;))
+(autoload 'axman-mew-decrypt-current-message-gmail &lt;span class=&quot;org-string&quot;&gt;&quot;axman&quot;&lt;/span&gt;)
+(autoload 'axman-mew-decrypt-current-message-local &lt;span class=&quot;org-string&quot;&gt;&quot;axman&quot;&lt;/span&gt;)
+&lt;/pre&gt;
+&lt;/div&gt;&lt;/li&gt;
+
+&lt;li&gt;Mew の summary buffer (たとえば %inbox) に
+zip メールとパスワードメールが存在する状態で，
+zip メールを表示しておきます．&lt;/li&gt;
+
+&lt;li&gt;M-x &lt;code&gt;axman-mew-decrypt-current-message-local&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;~/Downloads/ に暗号解読後の zip ファイルが置かれていると思います．&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;
+Gmail を Mew から読んでいる場合は，上記以外に
+M-x &lt;code&gt;axman-mew-decrypt-current-message-gmail&lt;/code&gt; で，
+Gmail からzip メールとパスワードメールを探して処理できます．
+両者が同一フォルダになくてもいいので，パスワードメールが同一フォルダに見当らない場合に便利だと思います．
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content><author><name>Yoshinari Nomura</name></author><summary type="html">はじめに 前回 に引き続き，「パスワードは別途お送りします」についてです． 今回は，Emacs 上のメーラ Mew で使えるツールの紹介です． MH 形式 (1メール1ファイル) でメールを管理しているメーラであれば， 同じような方法が使えると思います．この場合，サーバが Gmail である必要はありません．</summary></entry><entry><title type="html">「パスワードは別途お送りします」をなんとかしたい</title><link href="http://quickhack.net/nom/blog/2017-11-06-password-is-in-another-mail.html" rel="alternate" type="text/html" title="「パスワードは別途お送りします」をなんとかしたい" /><published>2017-11-06T00:00:00+09:00</published><updated>2017-11-06T00:00:00+09:00</updated><id>http://quickhack.net/nom/blog/password-is-in-another-mail</id><content type="html" xml:base="http://quickhack.net/nom/blog/2017-11-06-password-is-in-another-mail.html">&lt;div id=&quot;outline-container-org38ee657&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org38ee657&quot;&gt;はじめに&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org38ee657&quot;&gt;
+&lt;p&gt;
+メールの添付ファイルに暗号化 zip を送って，直後に別メールでパスワードだけ送ってくるアレ．
+こんな話をよく聞きます:
+&lt;/p&gt;
+
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;パスワード入力するのが面倒&lt;/li&gt;
+&lt;li&gt;ゲートウェイでの「添付ファイルウィルススキャン」ができないので危険&lt;/li&gt;
+&lt;li&gt;セキュリティ向上の意味がほとんどないのでは?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+タチの悪いことに，送信側は，そういう「メールソリューション」をお金をかけて導入していて，
+ほぼ自動化してくれるので，送信者の意識なく，zip の中身が何であれすべて暗号化してしまいます．
+受け取るほうは，たまったものではありません．
+&lt;/p&gt;
+
+&lt;p&gt;
+そこで，本日のお題は，「受信者側でパスワード別送zipメールに対抗する」です．
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-org2109c01&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org2109c01&quot;&gt;glima&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org2109c01&quot;&gt;
+&lt;p&gt;
+「パスワード別送zipメール」のパスワードを自動で解く方式を考えて実装しました．
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;a href=&quot;https://github.com/yoshinari-nomura/glima&quot;&gt;yoshinari-nomura/glima: Gmail CLI client.&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+原理は簡単．いわゆる「ブルートフォース」をちょっと賢くやるだけです．
+&lt;/p&gt;
+
+&lt;ol class=&quot;org-ol&quot;&gt;
+&lt;li&gt;zip メールのパスワードが書いてそうなメールを探す．
+以下の条件を満すメールを「パスワード候補メール」とします．
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;zipメールと From: が同じ&lt;/li&gt;
+&lt;li&gt;Date: が zipメールの前後 1日以内&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;上で見付けた全ての「パスワード候補メール」から，ASCII-printable
+が連続する文字列を抽出し，「パスワード候補文字列」とする．&lt;/li&gt;
+
+&lt;li&gt;全ての「パスワード候補文字列」を文字列の「エントロピーが高い順」にソートする．
+「エントロピー」というのはここでは，「強いパスワードとされている度合」ぐらいの気持です．&lt;/li&gt;
+
+&lt;li&gt;ソート済みの「パスワード候補文字列」を順番に zip に適用してみる．&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;
+という方式です．これで，驚く程簡単にパスワードが解けます．
+日本語のメールだと，大体，上位 3つぐらいの内にパスワードがヒットするので，解くのには 1秒もかかりません．
+&lt;/p&gt;
+
+&lt;p&gt;
+送る側が採用しているらしい，例の「メールソリューション」が
+「強いパスワード」を付けてくれているおかげで，それを逆手に取ると，
+高確率で真のパスワードが上位に来るというわけです．
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-org7106406&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org7106406&quot;&gt;使い方その1&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org7106406&quot;&gt;
+&lt;ol class=&quot;org-ol&quot;&gt;
+&lt;li&gt;Gmail の設定で，受信メールに &quot;filename:zip -label:decrypted &quot; でフィルタをかけて，
+マッチしたメールに &quot;queue&quot; とでもラベルを付けておきます．&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;
+以下のコマンドを実行します．
+&lt;/p&gt;
+&lt;pre class=&quot;example&quot;&gt;
+glima xzip &quot;in:inbox label:queue&quot; --del-src-labels=queue \
+                                  --del-dst-labels=queue \
+                                  --add-dst-labels=decrypted
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+意味は:
+&lt;/p&gt;
+&lt;ol class=&quot;org-ol&quot;&gt;
+&lt;li&gt;inbox 中にある queue というラベルが付いているメールについて&lt;/li&gt;
+&lt;li&gt;元のメールの添付のzipをパスワードなしのものに置き換えたメールを作成し&lt;/li&gt;
+&lt;li&gt;queue ラベルを剥して，decrypted というラベルを付与し&lt;/li&gt;
+&lt;li&gt;Gmail に再びプッシュする&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;
+ということをやります．
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-org6d27fd7&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org6d27fd7&quot;&gt;使い方その2&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org6d27fd7&quot;&gt;
+&lt;pre class=&quot;example&quot;&gt;
+glima dezip &quot;15f4cf5c3376d343&quot; ~/Downloads/
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+意味は，Gmail の id 15f4cf5c3376d343 というメールの zipを解読して，パスワードなしの
+zip ファイルを ~/Downloads/ に置く
+という意味です．
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-org8a62783&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org8a62783&quot;&gt;使い方その3 (2019-10-23 追記)&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org8a62783&quot;&gt;
+&lt;p&gt;
+watch コマンドは，Gmail を IMAP IDLE で監視して，zip のパスワードをがんがん解いてくれます．
+&lt;/p&gt;
+
+&lt;ol class=&quot;org-ol&quot;&gt;
+&lt;li&gt;Gmail の設定で，受信メールに &quot;filename:zip -label:decrypted &quot; でフィルタをかけて，
+マッチしたメールに &quot;queue&quot; とでもラベルを付けておきます．&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;
+以下のコマンドで glima をバックグラウンド実行しておきます
+&lt;/p&gt;
+&lt;pre class=&quot;example&quot;&gt;
+glima watch queue decrypted &amp;gt;&amp;gt; $HOME/var/log/glima.log 2&amp;gt;&amp;amp;1 &amp;amp;
+&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;
+放置しておくだけで，zip の暗号を勝手にどんどん解いてくれます．
+具体的には，
+&lt;/p&gt;
+
+&lt;ol class=&quot;org-ol&quot;&gt;
+&lt;li&gt;Gmail を監視して queue というラベルが付いているメールが届いたら&lt;/li&gt;
+&lt;li&gt;メール中のzipをパスワードなしのものに置き換えた別メールを作成し&lt;/li&gt;
+&lt;li&gt;別メールから queue ラベルを剥して decrypted というラベルを付与し Gmail に再びプッシュする&lt;/li&gt;
+&lt;li&gt;元メールからは queue ラベルを剥す&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;
+これでパスワード別送zipメールも恐くないですね．
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-org405bba7&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org405bba7&quot;&gt;おわりに&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org405bba7&quot;&gt;
+&lt;p&gt;
+glima という Gmail の CLI クライアントの機能として実装したので使ってみてください．
+自身では，既に半年近く使ってますが，メールを受け取るのが嬉しくなりますよ :)
+&lt;/p&gt;
+
+&lt;p&gt;
+glima は，ラベルを一括で付け直したりなど，他にも便利なコマンドがあります．
+&lt;/p&gt;
+
+&lt;p&gt;
+次回は，Mew などの local フォルダを見るメーラから使う方法を紹介します．
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;!-- more --&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content><author><name>Yoshinari Nomura</name></author><summary type="html">はじめに メールの添付ファイルに暗号化 zip を送って，直後に別メールでパスワードだけ送ってくるアレ． こんな話をよく聞きます:</summary></entry><entry><title type="html">Set your status in Slack with CLI</title><link href="http://quickhack.net/nom/blog/2017-04-19-set-your-status-in-slack-with-cli.html" rel="alternate" type="text/html" title="Set your status in Slack with CLI" /><published>2017-04-19T00:00:00+09:00</published><updated>2017-04-19T00:00:00+09:00</updated><id>http://quickhack.net/nom/blog/set-your-status-in-slack-with-cli</id><content type="html" xml:base="http://quickhack.net/nom/blog/2017-04-19-set-your-status-in-slack-with-cli.html">&lt;div id=&quot;outline-container-org8bd27d3&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org8bd27d3&quot;&gt;Slack の新機能 Status&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org8bd27d3&quot;&gt;
+&lt;p&gt;
+CLI から操作したいよね．ということで，簡単なシェルスクリプトを書いてみました．
+&lt;!-- more --&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-org2eb4e19&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org2eb4e19&quot;&gt;Shell script からステータスを簡単アップデート&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org2eb4e19&quot;&gt;
+&lt;p&gt;
+ステータス機能の詳細は，以下の Slack の blog に書いてありました．
+&lt;a href=&quot;https://slackhq.com/set-your-status-in-slack-28a793914b98&quot;&gt;Set your status in Slack - A new way to let your teammates know what you're up to&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+でも GUI から変更するの面倒ですよね．末尾のようなスクリプトを ame という名前で
+path の通ったところに置いて，
+&lt;/p&gt;
+&lt;pre class=&quot;example&quot;&gt;
+ame :office: &quot;I'm at office!&quot;
+&lt;/pre&gt;
+
+&lt;p&gt;
+などとすると，Slack の status が変わります．
+&lt;/p&gt;
+
+&lt;p&gt;
+Slack の API token は &lt;code&gt;~/.config/ame/config.sh&lt;/code&gt; に置いておきます．
+&lt;/p&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-shell-script&quot;&gt;&lt;span class=&quot;org-variable-name&quot;&gt;DEFAULT_TEAM&lt;/span&gt;=&lt;span class=&quot;org-string&quot;&gt;&quot;yourteam&quot;&lt;/span&gt;
+
+&lt;span class=&quot;org-variable-name&quot;&gt;TOKEN_YOURTEAM&lt;/span&gt;=&lt;span class=&quot;org-string&quot;&gt;&quot;xoxp-xxxxxxxxxx-xxxxxxxxxx-xxxxxxxxxx-xxxxxx&quot;&lt;/span&gt;
+&lt;span class=&quot;org-variable-name&quot;&gt;TOKEN_ANOTHERTEAM&lt;/span&gt;=&lt;span class=&quot;org-string&quot;&gt;&quot;xoxp-xxxxxxxxxx-xxxxxxxxxx-xxxxxxxxxx-xxxxxx&quot;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+あなたの token は，&lt;a href=&quot;https://api.slack.com/custom-integrations/legacy-tokens&quot;&gt;Legacy tokens | Slack&lt;/a&gt; から取れます．に書いてあります．
+&lt;/p&gt;
+
+&lt;p&gt;
+以下 ame スクリプトです．
+gist も置きました: &lt;a href=&quot;https://gist.github.com/yoshinari-nomura/37366e913db502672f5de70553c5cc8e&quot;&gt;Set your status in Slack with CLI&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-shell-script&quot;&gt;&lt;span class=&quot;org-comment-delimiter&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;!/bin/&lt;/span&gt;&lt;span class=&quot;org-keyword&quot;&gt;bash&lt;/span&gt;
+
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;################################################################&lt;/span&gt;
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;## &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;Usage&lt;/span&gt;
+
+&lt;span class=&quot;org-function-name&quot;&gt;usage&lt;/span&gt;() {
+  &lt;span class=&quot;org-builtin&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;org-string&quot;&gt;&quot;ame [-c CONFIG_FILE] [-t TEAM] ICON TEXT&quot;&lt;/span&gt;
+  &lt;span class=&quot;org-builtin&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;org-string&quot;&gt;&quot;  -c Set config file name.&quot;&lt;/span&gt;
+  &lt;span class=&quot;org-builtin&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;org-string&quot;&gt;&quot;  -t Set Slack team name.&quot;&lt;/span&gt;
+  &lt;span class=&quot;org-builtin&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;org-string&quot;&gt;&quot;examples:&quot;&lt;/span&gt;
+  &lt;span class=&quot;org-builtin&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;org-string&quot;&gt;&quot;  ame :office: \&quot;I'm at office\&quot;&quot;&lt;/span&gt;
+  &lt;span class=&quot;org-builtin&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;org-string&quot;&gt;&quot;  ame :house:  \&quot;I'm home\&quot;&quot;&lt;/span&gt;
+} &amp;gt;&amp;amp;2
+
+&lt;span class=&quot;org-function-name&quot;&gt;print_error&lt;/span&gt;() {
+  printf &lt;span class=&quot;org-string&quot;&gt;&quot;Error: $@\n&quot;&lt;/span&gt;
+} &amp;gt;&amp;amp;2
+
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;################################################################&lt;/span&gt;
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;## &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;Update Slack Status&lt;/span&gt;
+
+&lt;span class=&quot;org-function-name&quot;&gt;update_slack_status&lt;/span&gt; () {
+  &lt;span class=&quot;org-builtin&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;org-variable-name&quot;&gt;token&lt;/span&gt;=&lt;span class=&quot;org-string&quot;&gt;&quot;$1&quot;&lt;/span&gt;
+  &lt;span class=&quot;org-builtin&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;org-variable-name&quot;&gt;emoji&lt;/span&gt;=&lt;span class=&quot;org-string&quot;&gt;&quot;$2&quot;&lt;/span&gt;
+  &lt;span class=&quot;org-builtin&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;org-variable-name&quot;&gt;stext&lt;/span&gt;=&lt;span class=&quot;org-string&quot;&gt;&quot;$3&quot;&lt;/span&gt;
+
+  &lt;span class=&quot;org-builtin&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;org-variable-name&quot;&gt;response&lt;/span&gt;=$(curl -s -S -X POST &lt;span class=&quot;org-sh-escaped-newline&quot;&gt;\&lt;/span&gt;
+       -d &lt;span class=&quot;org-string&quot;&gt;&quot;token=$token&quot;&lt;/span&gt; &lt;span class=&quot;org-sh-escaped-newline&quot;&gt;\&lt;/span&gt;
+       --data-urlencode &lt;span class=&quot;org-string&quot;&gt;&quot;profile={\&quot;status_text\&quot;: \&quot;$stext\&quot;, \&quot;status_emoji\&quot;: \&quot;$emoji\&quot;}&quot;&lt;/span&gt; &lt;span class=&quot;org-sh-escaped-newline&quot;&gt;\&lt;/span&gt;
+       https://slack.com/api/users.profile.set &lt;span class=&quot;org-sh-escaped-newline&quot;&gt;\&lt;/span&gt;
+       | sed -n &lt;span class=&quot;org-string&quot;&gt;'s/{&quot;ok&quot;:false,&quot;error&quot;:&quot;\([^&quot;]*\)&quot;.*/\1/p'&lt;/span&gt;)
+
+  &lt;span class=&quot;org-builtin&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;org-string&quot;&gt;&quot;$response&quot;&lt;/span&gt; | tr &lt;span class=&quot;org-string&quot;&gt;'_'&lt;/span&gt; &lt;span class=&quot;org-string&quot;&gt;' '&lt;/span&gt;
+}
+
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;################################################################&lt;/span&gt;
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;## &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;Parse option&lt;/span&gt;
+
+&lt;span class=&quot;org-variable-name&quot;&gt;OPT_CONF&lt;/span&gt;=&lt;span class=&quot;org-string&quot;&gt;&quot;$HOME/.config/ame/config.sh&quot;&lt;/span&gt;
+
+&lt;span class=&quot;org-keyword&quot;&gt;while &lt;/span&gt;&lt;span class=&quot;org-builtin&quot;&gt;getopts&lt;/span&gt; &lt;span class=&quot;org-string&quot;&gt;&quot;c:dt:&quot;&lt;/span&gt; flag
+&lt;span class=&quot;org-keyword&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;org-keyword&quot;&gt;case&lt;/span&gt; $&lt;span class=&quot;org-variable-name&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;org-keyword&quot;&gt; in&lt;/span&gt;
+    &lt;span class=&quot;org-comment-delimiter&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;getopts sets '?' to flag on error.&lt;/span&gt;
+    &lt;span class=&quot;org-string&quot;&gt;\?&lt;/span&gt;|h) &lt;span class=&quot;org-variable-name&quot;&gt;OPT_ERROR&lt;/span&gt;=1
+          ;;
+    c)    &lt;span class=&quot;org-variable-name&quot;&gt;OPT_CONF&lt;/span&gt;=&lt;span class=&quot;org-string&quot;&gt;&quot;$OPTARG&quot;&lt;/span&gt;
+          ;;
+    d)    &lt;span class=&quot;org-variable-name&quot;&gt;OPT_DEBUG&lt;/span&gt;=&lt;span class=&quot;org-string&quot;&gt;&quot;true&quot;&lt;/span&gt;
+          ;;
+    t)    &lt;span class=&quot;org-variable-name&quot;&gt;OPT_TEAM&lt;/span&gt;=&lt;span class=&quot;org-string&quot;&gt;&quot;$OPTARG&quot;&lt;/span&gt;
+          ;;
+  &lt;span class=&quot;org-keyword&quot;&gt;esac&lt;/span&gt;
+&lt;span class=&quot;org-keyword&quot;&gt;done&lt;/span&gt;
+&lt;span class=&quot;org-builtin&quot;&gt;shift&lt;/span&gt; $(( $&lt;span class=&quot;org-variable-name&quot;&gt;OPTIND&lt;/span&gt; - 1 ))
+
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;unknown option check&lt;/span&gt;
+&lt;span class=&quot;org-keyword&quot;&gt;if&lt;/span&gt; [ &lt;span class=&quot;org-string&quot;&gt;&quot;$OPT_ERROR&quot;&lt;/span&gt; = 1 -o $&lt;span class=&quot;org-variable-name&quot;&gt;#&lt;/span&gt; -ne 2 ]; &lt;span class=&quot;org-keyword&quot;&gt;then&lt;/span&gt;
+  usage
+  &lt;span class=&quot;org-keyword&quot;&gt;exit&lt;/span&gt; -1
+&lt;span class=&quot;org-keyword&quot;&gt;fi&lt;/span&gt;
+
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;################################################################&lt;/span&gt;
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;## &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;Read Config&lt;/span&gt;
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;config.sh Example:&lt;/span&gt;
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;DEFAULT_TEAM=&quot;yourteam&quot;&lt;/span&gt;
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;TOKEN_YOURTEAM=&quot;xoxp-xxxxxxxxxx-xxxxxxxxxx-xxxxxxxxxx-xxxxxx&quot;&lt;/span&gt;
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;TOKEN_ANOTERTEAM=&quot;xoxp-xxxxxxxxxx-xxxxxxxxxx-xxxxxxxxxx-xxxxxx&quot;&lt;/span&gt;
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;#&lt;/span&gt;
+
+&lt;span class=&quot;org-keyword&quot;&gt;if&lt;/span&gt; [ -f &lt;span class=&quot;org-string&quot;&gt;&quot;$OPT_CONF&quot;&lt;/span&gt; ]; &lt;span class=&quot;org-keyword&quot;&gt;then&lt;/span&gt;
+  &lt;span class=&quot;org-builtin&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;org-string&quot;&gt;&quot;$OPT_CONF&quot;&lt;/span&gt;
+&lt;span class=&quot;org-keyword&quot;&gt;else&lt;/span&gt;
+  print_error &lt;span class=&quot;org-string&quot;&gt;&quot;config $OPT_CONF not found.&quot;&lt;/span&gt;
+  &lt;span class=&quot;org-keyword&quot;&gt;exit&lt;/span&gt; -1
+&lt;span class=&quot;org-keyword&quot;&gt;fi&lt;/span&gt;
+
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;################################################################&lt;/span&gt;
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;## &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;Set Slack API Token&lt;/span&gt;
+
+&lt;span class=&quot;org-keyword&quot;&gt;if&lt;/span&gt; [ -z &lt;span class=&quot;org-string&quot;&gt;&quot;$OPT_TEAM&quot;&lt;/span&gt; ]; &lt;span class=&quot;org-keyword&quot;&gt;then&lt;/span&gt;
+  &lt;span class=&quot;org-variable-name&quot;&gt;OPT_TEAM&lt;/span&gt;=&lt;span class=&quot;org-string&quot;&gt;&quot;$DEFAULT_TEAM&quot;&lt;/span&gt;
+&lt;span class=&quot;org-keyword&quot;&gt;fi&lt;/span&gt;
+
+&lt;span class=&quot;org-variable-name&quot;&gt;TOKEN_NAME&lt;/span&gt;=TOKEN_$(&lt;span class=&quot;org-builtin&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;org-string&quot;&gt;&quot;$OPT_TEAM&quot;&lt;/span&gt; | tr a-z A-Z)
+&lt;span class=&quot;org-variable-name&quot;&gt;TOKEN&lt;/span&gt;=${&lt;span class=&quot;org-variable-name&quot;&gt;!&lt;/span&gt;TOKEN_NAME}
+
+&lt;span class=&quot;org-keyword&quot;&gt;if&lt;/span&gt; [ -z &lt;span class=&quot;org-string&quot;&gt;&quot;$TOKEN&quot;&lt;/span&gt; ]; &lt;span class=&quot;org-keyword&quot;&gt;then&lt;/span&gt;
+  print_error &lt;span class=&quot;org-string&quot;&gt;&quot;No API Token found for $OPT_TEAM in $OPT_CONF.&quot;&lt;/span&gt;
+  &lt;span class=&quot;org-keyword&quot;&gt;exit&lt;/span&gt; -1
+&lt;span class=&quot;org-keyword&quot;&gt;fi&lt;/span&gt;
+
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;################################################################&lt;/span&gt;
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;## &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;Main&lt;/span&gt;
+
+&lt;span class=&quot;org-keyword&quot;&gt;if&lt;/span&gt; [ -n &lt;span class=&quot;org-string&quot;&gt;&quot;$OPT_DEBUG&quot;&lt;/span&gt; ]; &lt;span class=&quot;org-keyword&quot;&gt;then&lt;/span&gt;
+  &lt;span class=&quot;org-builtin&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;org-string&quot;&gt;&quot;update_slack_status \&quot;$TOKEN\&quot; \&quot;$1\&quot; \&quot;$2\&quot;&quot;&lt;/span&gt;
+  &lt;span class=&quot;org-keyword&quot;&gt;exit&lt;/span&gt; 0
+&lt;span class=&quot;org-keyword&quot;&gt;fi&lt;/span&gt;
+
+&lt;span class=&quot;org-variable-name&quot;&gt;error_message&lt;/span&gt;=$(update_slack_status &lt;span class=&quot;org-string&quot;&gt;&quot;$TOKEN&quot;&lt;/span&gt; &lt;span class=&quot;org-string&quot;&gt;&quot;$1&quot;&lt;/span&gt; &lt;span class=&quot;org-string&quot;&gt;&quot;$2&quot;&lt;/span&gt;)
+
+&lt;span class=&quot;org-keyword&quot;&gt;if&lt;/span&gt; [ -n &lt;span class=&quot;org-string&quot;&gt;&quot;$error_message&quot;&lt;/span&gt; ]; &lt;span class=&quot;org-keyword&quot;&gt;then&lt;/span&gt;
+  print_error &lt;span class=&quot;org-string&quot;&gt;&quot;$error_message.&quot;&lt;/span&gt;
+  &lt;span class=&quot;org-keyword&quot;&gt;exit&lt;/span&gt; 1
+&lt;span class=&quot;org-keyword&quot;&gt;fi&lt;/span&gt;
+
+&lt;span class=&quot;org-keyword&quot;&gt;exit&lt;/span&gt; 0
+
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+Skack は，お手軽にこういうことができるからいいですね．
+僕は，センサから取得した自分の状態を Status に自動で反映させています．
+&lt;/p&gt;
+
+&lt;p&gt;
+Enjoy!
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content><author><name>Yoshinari Nomura</name></author><summary type="html">Slack の新機能 Status CLI から操作したいよね．ということで，簡単なシェルスクリプトを書いてみました．</summary></entry><entry><title type="html">Install Rust</title><link href="http://quickhack.net/nom/blog/2017-04-13-install-rust.html" rel="alternate" type="text/html" title="Install Rust" /><published>2017-04-13T00:00:00+09:00</published><updated>2017-04-13T00:00:00+09:00</updated><id>http://quickhack.net/nom/blog/install-rust</id><content type="html" xml:base="http://quickhack.net/nom/blog/2017-04-13-install-rust.html">&lt;div id=&quot;outline-container-org1565e08&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org1565e08&quot;&gt;Rust install が簡単になった&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org1565e08&quot;&gt;
+&lt;p&gt;
+Rust を Sierra にインストールしてみました．
+ちょっと見ない内に rustup というツールができてたみたいです．
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;!-- more --&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+homebrew とかでもインストールできるみたいですが，公式のおすすめ
+curl &amp;#x2026;|sh でインストールしました．
+&lt;/p&gt;
+
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-shell-script&quot;&gt;% curl https://sh.rustup.rs -sSf | sh
+
+info: downloading installer
+
+Welcome to Rust!
+
+This will download and install the official compiler for the Rust programming
+language, and its package manager, Cargo.
+
+It will add the cargo, rustc, rustup and other commands to Cargo&lt;span class=&quot;org-string&quot;&gt;'s bin&lt;/span&gt;
+&lt;span class=&quot;org-string&quot;&gt;directory, located at:&lt;/span&gt;
+
+&lt;span class=&quot;org-string&quot;&gt;  /Users/nom/.cargo/bin&lt;/span&gt;
+
+&lt;span class=&quot;org-string&quot;&gt;This path will then be added to your PATH environment variable by modifying the&lt;/span&gt;
+&lt;span class=&quot;org-string&quot;&gt;profile files located at:&lt;/span&gt;
+
+&lt;span class=&quot;org-string&quot;&gt;  /Users/nom/.profile&lt;/span&gt;
+&lt;span class=&quot;org-string&quot;&gt;  /Users/nom/.zprofile&lt;/span&gt;
+
+&lt;span class=&quot;org-string&quot;&gt;You can uninstall at any time with rustup self uninstall and these changes will&lt;/span&gt;
+&lt;span class=&quot;org-string&quot;&gt;be reverted.&lt;/span&gt;
+
+&lt;span class=&quot;org-string&quot;&gt;Current installation options:&lt;/span&gt;
+
+&lt;span class=&quot;org-string&quot;&gt;   default host triple: x86_64-apple-darwin&lt;/span&gt;
+&lt;span class=&quot;org-string&quot;&gt;     default toolchain: stable&lt;/span&gt;
+&lt;span class=&quot;org-string&quot;&gt;  modify PATH variable: yes&lt;/span&gt;
+
+&lt;span class=&quot;org-string&quot;&gt;1) Proceed with installation (default)&lt;/span&gt;
+&lt;span class=&quot;org-string&quot;&gt;2) Customize installation&lt;/span&gt;
+&lt;span class=&quot;org-string&quot;&gt;3) Cancel installation&lt;/span&gt;
+
+&lt;span class=&quot;org-string&quot;&gt;...&lt;/span&gt;
+
+&lt;span class=&quot;org-string&quot;&gt;Current installation options:&lt;/span&gt;
+
+&lt;span class=&quot;org-string&quot;&gt;   default host triple: x86_64-apple-darwin&lt;/span&gt;
+&lt;span class=&quot;org-string&quot;&gt;     default toolchain: stable&lt;/span&gt;
+&lt;span class=&quot;org-string&quot;&gt;  modify PATH variable: no&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+とやって， &lt;code&gt;.zshenv&lt;/code&gt; に
+&lt;/p&gt;
+
+&lt;pre class=&quot;example&quot;&gt;
+source $HOME/.cargo/env
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+を足しました．
+&lt;/p&gt;
+
+&lt;p&gt;
+参考: &lt;a href=&quot;https://www.rust-lang.org/ja-JP/index.html&quot;&gt;プログラミング言語 Rust&lt;/a&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content><author><name>Yoshinari Nomura</name></author><summary type="html">Rust install が簡単になった Rust を Sierra にインストールしてみました． ちょっと見ない内に rustup というツールができてたみたいです．</summary></entry><entry><title type="html">Who are you on the repository?</title><link href="http://quickhack.net/nom/blog/2013-07-06-who-are-you-on-the-repository.html" rel="alternate" type="text/html" title="Who are you on the repository?" /><published>2013-07-06T00:00:00+09:00</published><updated>2013-07-06T00:00:00+09:00</updated><id>http://quickhack.net/nom/blog/who-are-you-on-the-repository</id><content type="html" xml:base="http://quickhack.net/nom/blog/2013-07-06-who-are-you-on-the-repository.html">&lt;div id=&quot;outline-container-org61cbcaa&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org61cbcaa&quot;&gt;名を名乗れ!&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org61cbcaa&quot;&gt;
+&lt;p&gt;
+Git の入門書には，大抵，まず自分の名前を設定しましょうと書いてあります．
+たとえば，Pro Git &lt;a href=&quot;http://git-scm.com/book/en/Getting-Started-First-Time-Git-Setup&quot;&gt;Git - First-Time Git Setup&lt;/a&gt; でも．
+&lt;/p&gt;
+
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-shell-script&quot;&gt;$ git config --global user.name &lt;span class=&quot;org-string&quot;&gt;&quot;John Doe&quot;&lt;/span&gt;
+$ git config --global user.email johndoe@example.com
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+これ，設定してて困ったことありませんか? というのが今日の話です．
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;!-- more --&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-org9366bb8&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org9366bb8&quot;&gt;よく忘れるリポジトリ毎の名前変更&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org9366bb8&quot;&gt;
+&lt;p&gt;
+僕は，リポジトリ毎にメールアドレスを変えたいことがよくあります．そんなときは， &lt;code&gt;--global&lt;/code&gt; を付けずに:
+&lt;/p&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-shell-script&quot;&gt;$ cd private-project
+$ git config user.email private@example.com
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;
+とすれば，そのリポジトリだけの local な設定として private@example.com が優先されます．ここまでは常識ですね．
+&lt;/p&gt;
+
+&lt;p&gt;
+ただ，これをよく忘れるんです．忘れると global な名前で commit message が残ってしまって，それに気付かずに push して面倒なことになります．
+なので，僕は，global な user.email を設定していません．
+&lt;/p&gt;
+
+&lt;p&gt;
+では，global な設定をしないで，local な設定も忘れてしまうとどうなるでしょう．
+望まないメールアドレスが外に出て行く心配はないのですが，
+git が適当に自動で付けた名前と email アドレスで commit message が残ります．
+これは，場合によっては，もっと恥ずかしいかもしれません．
+&lt;/p&gt;
+
+&lt;p&gt;
+なので，git は，push して恥ずかしい思いをする前に警告してくれます:
+&lt;/p&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-shell-script&quot;&gt;$ git commit -m &lt;span class=&quot;org-string&quot;&gt;'First import'&lt;/span&gt;
+
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name &lt;span class=&quot;org-string&quot;&gt;&quot;Your Name&quot;&lt;/span&gt;
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;
+かしこいですね．
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-org1a24a5e&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;org1a24a5e&quot;&gt;でもね，できれば Commit する前に教えてよ…&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-org1a24a5e&quot;&gt;
+&lt;p&gt;
+でも，できれば commit する前に教えて欲しい．
+pre-commit hook を設定すればいい気がしますが，そもそもこれを設定するのを忘れる…
+そこで，zsh のプロンプトに出すことにしました．
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;code&gt;~/.zshrc&lt;/code&gt; より抜粋:
+&lt;/p&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-shell-script&quot;&gt;&lt;span class=&quot;org-comment-delimiter&quot;&gt;##&lt;/span&gt;
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;## &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;VCS and RVM info in prompt.&lt;/span&gt;
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;##&lt;/span&gt;
+
+&lt;span class=&quot;org-comment-delimiter&quot;&gt;# &lt;/span&gt;&lt;span class=&quot;org-comment&quot;&gt;http://qiita.com/items/8d5a627d773758dd8078&lt;/span&gt;
++vi-check-git-repository-info() {
+    &lt;span class=&quot;org-builtin&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;org-variable-name&quot;&gt;email&lt;/span&gt;=&lt;span class=&quot;org-string&quot;&gt;&quot;$(git config --local --get user.email |cut -d. -f 1)&quot;&lt;/span&gt;
+
+    &lt;span class=&quot;org-keyword&quot;&gt;if&lt;/span&gt; [[ &lt;span class=&quot;org-string&quot;&gt;&quot;$1&quot;&lt;/span&gt; = 0 ]]; &lt;span class=&quot;org-keyword&quot;&gt;then&lt;/span&gt;
+        &lt;span class=&quot;org-keyword&quot;&gt;if&lt;/span&gt; [[ -n &lt;span class=&quot;org-string&quot;&gt;&quot;$email&quot;&lt;/span&gt; ]]; &lt;span class=&quot;org-keyword&quot;&gt;then&lt;/span&gt;
+            &lt;span class=&quot;org-variable-name&quot;&gt;hook_com&lt;/span&gt;[misc]+=&lt;span class=&quot;org-string&quot;&gt;&quot;:$email&quot;&lt;/span&gt;
+        &lt;span class=&quot;org-keyword&quot;&gt;else&lt;/span&gt;
+            &lt;span class=&quot;org-variable-name&quot;&gt;hook_com&lt;/span&gt;[misc]=&lt;span class=&quot;org-string&quot;&gt;&quot;&quot;&lt;/span&gt;
+        &lt;span class=&quot;org-keyword&quot;&gt;fi&lt;/span&gt;
+    &lt;span class=&quot;org-keyword&quot;&gt;fi&lt;/span&gt;
+
+    &lt;span class=&quot;org-keyword&quot;&gt;if&lt;/span&gt; [[ &lt;span class=&quot;org-string&quot;&gt;&quot;$1&quot;&lt;/span&gt; = 1 ]]; &lt;span class=&quot;org-keyword&quot;&gt;then&lt;/span&gt;
+        &lt;span class=&quot;org-keyword&quot;&gt;if&lt;/span&gt; [[ -z &lt;span class=&quot;org-string&quot;&gt;&quot;$email&quot;&lt;/span&gt; ]]; &lt;span class=&quot;org-keyword&quot;&gt;then&lt;/span&gt;
+            &lt;span class=&quot;org-variable-name&quot;&gt;hook_com&lt;/span&gt;[misc]+=&lt;span class=&quot;org-string&quot;&gt;&quot;- WHO ARE YOU? - &quot;&lt;/span&gt;
+        &lt;span class=&quot;org-keyword&quot;&gt;else&lt;/span&gt;
+            &lt;span class=&quot;org-variable-name&quot;&gt;hook_com&lt;/span&gt;[misc]=&lt;span class=&quot;org-string&quot;&gt;&quot;&quot;&lt;/span&gt;
+        &lt;span class=&quot;org-keyword&quot;&gt;fi&lt;/span&gt;
+    &lt;span class=&quot;org-keyword&quot;&gt;fi&lt;/span&gt;
+}
+
+&lt;span class=&quot;org-keyword&quot;&gt;if&lt;/span&gt; zsh-is-at-least 4.3.11 ; &lt;span class=&quot;org-keyword&quot;&gt;then&lt;/span&gt;
+    &lt;span class=&quot;org-builtin&quot;&gt;autoload&lt;/span&gt; -Uz vcs_info
+    zstyle &lt;span class=&quot;org-string&quot;&gt;':vcs_info:*'&lt;/span&gt; formats &lt;span class=&quot;org-string&quot;&gt;'(%s%m)-[%b]'&lt;/span&gt; &lt;span class=&quot;org-string&quot;&gt;'%m'&lt;/span&gt;
+    zstyle &lt;span class=&quot;org-string&quot;&gt;':vcs_info:*'&lt;/span&gt; actionformats &lt;span class=&quot;org-string&quot;&gt;'(%s)-[%b|%a]'&lt;/span&gt;
+    zstyle &lt;span class=&quot;org-string&quot;&gt;':vcs_info:git+set-message:*'&lt;/span&gt; hooks check-git-repository-info
+    precmd () {
+        &lt;span class=&quot;org-variable-name&quot;&gt;rvm_prompt&lt;/span&gt;=&lt;span class=&quot;org-sh-quoted-exec&quot;&gt;`~/.rvm/bin/rvm-prompt`&lt;/span&gt;
+        &lt;span class=&quot;org-variable-name&quot;&gt;psvar&lt;/span&gt;=()
+        &lt;span class=&quot;org-variable-name&quot;&gt;LANG&lt;/span&gt;=en_US.UTF-8 vcs_info
+        [[ -n &lt;span class=&quot;org-string&quot;&gt;&quot;$vcs_info_msg_1_&quot;&lt;/span&gt; ]] &amp;amp;&amp;amp; &lt;span class=&quot;org-variable-name&quot;&gt;psvar&lt;/span&gt;[1]=&lt;span class=&quot;org-string&quot;&gt;&quot;$vcs_info_msg_1_&quot;&lt;/span&gt;
+        [[ -n &lt;span class=&quot;org-string&quot;&gt;&quot;$vcs_info_msg_0_&quot;&lt;/span&gt; ]] &amp;amp;&amp;amp; &lt;span class=&quot;org-variable-name&quot;&gt;psvar&lt;/span&gt;[2]=&lt;span class=&quot;org-string&quot;&gt;&quot;$vcs_info_msg_0_&quot;&lt;/span&gt;
+        [[ -n &lt;span class=&quot;org-string&quot;&gt;&quot;$rvm_prompt&quot;&lt;/span&gt;      ]] &amp;amp;&amp;amp; &lt;span class=&quot;org-variable-name&quot;&gt;psvar&lt;/span&gt;[3]=&lt;span class=&quot;org-string&quot;&gt;&quot;[$rvm_prompt]&quot;&lt;/span&gt;
+    }
+    &lt;span class=&quot;org-variable-name&quot;&gt;RPROMPT&lt;/span&gt;=&lt;span class=&quot;org-string&quot;&gt;&quot;%1(v|%F{red}%1v%f|)%2(v|%F{green}%2v%f|)%3(v|%F{yellow}%3v%f|)&quot;&lt;/span&gt;
+&lt;span class=&quot;org-keyword&quot;&gt;fi&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;
+この設定で，email を設定していないと，&lt;code&gt;- WHO ARE YOU? -&lt;/code&gt; と聞かれるようになります．
+&lt;/p&gt;
+
+
+&lt;figure&gt;
+&lt;img src=&quot;dat/img/git-prompt-who-are-you.png&quot; alt=&quot;git-prompt-who-are-you.png&quot;&gt;
+
+&lt;figcaption&gt;&lt;span class=&quot;figure-number&quot;&gt;Figure 1: &lt;/span&gt;ローカルな emai が設定されていないとき&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure&gt;
+&lt;img src=&quot;dat/img/git-prompt-with-your-email.png&quot; alt=&quot;git-prompt-with-your-email.png&quot;&gt;
+
+&lt;figcaption&gt;&lt;span class=&quot;figure-number&quot;&gt;Figure 2: &lt;/span&gt;ローカルな emai が設定されているとき&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;
+となります．プロンプト右端は，rvm の情報なので，今回の話とは関係ありません．
+&lt;/p&gt;
+
+&lt;p&gt;
+あと，WHO ARE YOU と聞かれたときに簡単に返答できるようなエイリアスを作っています．
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;code&gt;~/.gitconfig&lt;/code&gt;:
+&lt;/p&gt;
+&lt;pre class=&quot;example&quot;&gt;
+[alias]
+        email-github = config user.email github-username@example.com
+        email-work   = config user.email work-username@example.com
+&lt;/pre&gt;
+
+&lt;p&gt;
+SPAM 対策で複数のメールアドレスを使い分けている人にも有効かもしれません．
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content><author><name>Yoshinari Nomura</name></author><summary type="html">名を名乗れ! Git の入門書には，大抵，まず自分の名前を設定しましょうと書いてあります． たとえば，Pro Git Git - First-Time Git Setup でも．</summary></entry></feed>

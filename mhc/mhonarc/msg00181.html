@@ -1,0 +1,135 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00182] Re: font&#45;lock for MHC -->
+<!--X-From-R13: =?vfb&#45;2022&#45;wc?P?UlDQXE8ynvG5UluQ?= <xhevfhNfjyno.pfpr.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Wed, 29 Sep 1999 11:50:47 +0900 -->
+<!--X-Message-Id: 19990929115045V.kurisu@swlab.csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 19990929100052X.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00182] Re: font-lock for MHC</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00180.html">Date Prev</a>][<a href="msg00182.html">Date Next</a>][<a href="msg00180.html">Thread Prev</a>][<a href="msg00176.html">Thread Next</a>][<a href="maillist.html#00181">Date Index</a>][<a href="threads.html#00181">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00182] Re: font-lock for MHC</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00182] Re: font-lock for MHC</li>
+<li><em>From</em>: &#x30AF;&#x30EA;&#x30B9; &lt;<a href="mailto:kurisu@DOMAIN.HIDDEN">kurisu@xxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Wed, 29 Sep 1999 11:50:47 +0900</li>
+<li><em>In-reply-to</em>: Your message of &quot;Wed, 29 Sep 1999 10:00:54 +0900&quot;	&lt;<a href="mailto:19990929100052X.nom@DOMAIN.HIDDEN">19990929100052X.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Posted</em>: Wed, 29 Sep 1999 11:50:45 +0900</li>
+<li><em>References</em>: &lt;<a href="mailto:19990929100052X.nom@DOMAIN.HIDDEN">19990929100052X.nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>From: Yoshinari NOMURA &lt;nom@xxxxxxxxxxxxxxxxxxx&gt;
+&gt; &#x3046;&#x30FC;&#x3093;&#x3002;&#x305D;&#x308D;&#x305D;&#x308D; 20 &#x306A;&#x306E;&#x304B;&#x306A;&#x3002;
+
+20 &#x306A;&#x306E;&#x3067;&#x3059;&#x3002;
+
+&gt; Subject: [mhc:00176] Re: font-lock for MHC &#x306E;&#x3001;
+&gt; 
+&gt; (add-hook 'mew-summary-scan-sentinel-hook
+&gt; 	  'font-lock-fontify-buffer)
+&gt; 
+&gt; &#x3068;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x90E8;&#x5206;&#x3092;&#x3001;
+&gt;
+&gt; (add-hook 'mew-summary-scan-sentinel-hook
+&gt;  	  'mhc-font-lock-fontify-buffer)
+&gt;
+&gt; (defun mhc-font-lock-fontify-buffer ()
+&gt;  (and (mhc-summary-buffer-p) (font-lock-fontify-buffer)))
+&gt;
+&gt; &#x3068;&#x3059;&#x308B;&#x3068;&#x3046;&#x307E;&#x304F;&#x3044;&#x3063;&#x305F;&#x308A;&#x3057;&#x307E;&#x305B;&#x3093;&#x304B;&#x3002;
+
+&#x3046;&#x307E;&#x304F;&#x3044;&#x3063;&#x305F;&#x308A;&#x3057;&#x3066;&#x3044;&#x308B;&#x307F;&#x305F;&#x3044;&#x3067;&#x3059;&#x3002;
+
+&#x3068;&#x3044;&#x3046;&#x308F;&#x3051;&#x3067;&#x3001;&#x6539;&#x826F;&#x7248;&#x3002;
+----------------------------------------------------------------------
+(add-hook 'mew-summary-scan-sentinel-hook
+	  (lambda ()
+	    (and (mhc-summary-buffer-p) (font-lock-fontify-buffer))
+	    ))
+
+(make-face 'mhc-summary-sunday-face)
+(make-face 'mhc-summary-saturday-face)
+(set-face-foreground 'mhc-summary-sunday-face &quot;red&quot;)
+(set-face-foreground 'mhc-summary-saturday-face &quot;blue&quot;)
+
+(setq mhc-summary-font-lock-keywords
+      '((&quot;^.* (Sun) .*$&quot; . 'mhc-summary-sunday-face)
+	(&quot;^.*  Sat  .*$&quot; . 'mhc-summary-saturday-face))
+      )
+
+(add-hook 'mhc-summary-mode-hook
+	  (function
+	   (lambda ()
+	     (make-local-variable 'font-lock-defaults)
+	     (setq font-lock-defaults '(mhc-summary-font-lock-keywords t))
+	     )))
+----------------------------------------------------------------------
+
+# &#x3055;&#x3066;&#x3001;&#x65C5;&#x306B;&#x51FA;&#x308B;&#x304B;&#x2026;&#x3002;
+---------------------------------------------------------------
+  &#x4E5D;&#x5DDE;&#x5927;&#x5B66;&#x5927;&#x5B66;&#x9662;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x60C5;&#x5831;&#x79D1;&#x5B66;&#x7814;&#x7A76;&#x79D1;&#x60C5;&#x5831;&#x5DE5;&#x5B66;&#x5C02;&#x653B;  &#x6817;&#x6816; &#x76F4;&#x58EB;
+  E-mail kurisu@xxxxxxxxxxxxxxxxxxxxxxxxx
+---------------------------------------------------------------
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00180" href="msg00180.html">[mhc:00181] Re: font-lock for MHC</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00180.html">[mhc:00181] Re: font-lock for MHC</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00182.html">[mhc:00183] mhc does not work</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00180.html">[mhc:00181] Re: font-lock for MHC</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00176.html">[mhc:00177] &#x5C0F;&#x30CD;&#x30BF;</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00181"><strong>Date</strong></a></li>
+<li><a href="threads.html#00181"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

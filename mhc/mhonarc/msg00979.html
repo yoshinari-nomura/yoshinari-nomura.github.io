@@ -1,0 +1,139 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00980] Re: Cannot parse samples/DOT.schedule.sample.jp -->
+<!--X-From-R13: Vvqrlhxv EVWDOW (=?vfb&#45;2022&#45;wc?P?UlDQD3WjLw0bAHCoYSW=?=) <fuvenvNdhvpxunpx.arg> -->
+<!--X-Date: Thu, 10 Aug 2000 17:38:57 +0900 (JST) -->
+<!--X-Message-Id: 20000810.173857.123584448.shirai@rdmg.mgcs.mei.co.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 00Aug10.161714jst.29572@gateway.suri.co.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00980] Re: Cannot parse samples/DOT.schedule.sample.jp</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00978.html">Date Prev</a>][<a href="msg00980.html">Date Next</a>][<a href="msg00975.html">Thread Prev</a>][<a href="msg00980.html">Thread Next</a>][<a href="maillist.html#00979">Date Index</a>][<a href="threads.html#00979">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00980] Re: Cannot parse samples/DOT.schedule.sample.jp</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00980] Re: Cannot parse samples/DOT.schedule.sample.jp</li>
+<li><em>From</em>: Hideyuki SHIRAI (&#x767D;&#x4E95;&#x79C0;&#x884C;) &lt;<a href="mailto:shirai@DOMAIN.HIDDEN">shirai@xxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Thu, 10 Aug 2000 17:38:57 +0900 (JST)</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:00Aug10.161714jst.29572@DOMAIN.HIDDEN">00Aug10.161714jst.29572@xxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Organization</em>: QuickHackers, Tokyo, JAPAN</li>
+<li><em>References</em>: &lt;<a href="mailto:00Aug10.161714jst.29572@DOMAIN.HIDDEN">00Aug10.161714jst.29572@xxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>From: KOIE Hidetaka (&#x9BC9;&#x6C5F;&#x82F1;&#x9686;) &lt;hide@xxxxxxxx&gt; &#x3055;&#x3093;&#x66F0;&#x304F;
+Subject: [mhc:00976] Cannot parse samples/DOT.schedule.sample.jp
+Message-ID: &lt;00Aug10.161714jst.29572@xxxxxxxxxxxxxxxxxx&gt;
+Date: Thu, 10 Aug 2000 16:17:07 +0900
+
+&#x9BC9;&#x6C5F;&gt; CVS&#x306B;&#x3066;trunk&#x306E;mhc&#x3092;&#x8A66;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x304C;
+&#x9BC9;&#x6C5F;&gt; samples/DOT.schedule.sample.jp&#x3092;~/.schdule&#x306B;&#x30B3;&#x30D4;&#x30FC;&#x3057;&#x3066;&#x3082;
+&#x9BC9;&#x6C5F;&gt; &#x306A;&#x305C;&#x304B;&#x30A8;&#x30E9;&#x30FC;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;
+
+&#x6700;&#x8FD1; ~/.schedule &#x3092;&#x4F7F;&#x3063;&#x3066;&#x3044;&#x306A;&#x304B;&#x3063;&#x305F;&#x306E;&#x3067;&#x3001;&#x4E45;&#x3057;&#x3076;&#x308A;&#x306B;&#x8A66;&#x3057;&#x3066;&#x307F;&#x305F;&#x306E;
+&#x3067;&#x3059;&#x304C;&#x3001;&#x3061;&#x3083;&#x3093;&#x3068;&#x52D5;&#x3044;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3057;&#x305F;&#x3002;&#x307B;&#x3068;&#x3093;&#x3069;&#x9BC9;&#x6C5F;&#x3055;&#x3093;&#x3068;&#x540C;&#x3058;&#x74B0;&#x5883;&#x3060;
+&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;
+
+&#x4E00;&#x5EA6;&#x3001;~/.schedule &#x3092;&#x6D88;&#x3057;&#x3066; Emacs + Mew + mhc &#x3092;&#x7ACB;&#x3061;&#x4E0A;&#x3052;&#x76F4;&#x3057;&#x305F;&#x5F8C;&#x3001;
+~/.schedule &#x3092;&#x5FA9;&#x6D3B;&#x3055;&#x305B;&#x3066;&#x3001;'*tmp*' buffer &#x3092;&#x3064;&#x304F;&#x308A;&#x3001;
+
+(defun zzz ()
+  (interactive)
+  (setq records nil)
+  (setq i 0)
+  (mhc-insert-file-contents-as-coding-system
+   mhc-default-coding-system
+   (expand-file-name mhc-schedule-file))
+  (goto-char (point-min))
+  (while (progn (skip-chars-forward &quot; \t\n&quot;) (not (eobp)))
+    (delete-region (point-min) (point))
+    (y-or-n-p &quot;Continue&quot;)
+    (setq i (1+ i))
+    (mhc-header-narrowing
+      (setq records
+	    (cons (mhc-parse-buffer) records))
+      (delete-region (point-min) (point-max)))))
+
+&#x3092; '*tmp*' &#x3067;&#x52D5;&#x304B;&#x3059;&#x3068;&#x3069;&#x3053;&#x3067;&#x30A8;&#x30E9;&#x30FC;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x304B;&#xFF1F;
+
+&#x307E;&#x305F;&#x3001;~/.schedule &#x306E; '#' &#x3067;&#x306F;&#x3058;&#x307E;&#x308B;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x884C;&#x3092;&#x6D88;&#x3057;&#x3066;&#x3001;
+
+-------------------------
+Header&#x884C;
+&#x7A7A;&#x884C;
+Header&#x884C;
+&#x7A7A;&#x884C;
+...
+Header&#x884C;
+&#x7A7A;&#x884C;
+-------------------------
+
+&#x3060;&#x3051;&#x306B;&#x3057;&#x305F;&#x3089;&#x3069;&#x3046;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#xFF1F;
+
+-- 
+&#x767D;&#x4E95;&#x79C0;&#x884C;&#xFF20;&#x308F;&#x304B;&#x3093;&#x306A;&#x3044;
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00980" href="msg00980.html">[mhc:00981] Re: Cannot parse samples/DOT.schedule.sample.jp</a></strong>
+<ul><li><em>From:</em> &#x9BC9;&#x6C5F;&#x82F1;&#x9686;</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="00975" href="msg00975.html">[mhc:00976] Cannot parse samples/DOT.schedule.sample.jp</a></strong>
+<ul><li><em>From:</em> &#x9BC9;&#x6C5F;&#x82F1;&#x9686;</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00978.html">[mhc:00979] Re: Multi Occured Todo</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00980.html">[mhc:00981] Re: Cannot parse samples/DOT.schedule.sample.jp</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00975.html">[mhc:00976] Cannot parse samples/DOT.schedule.sample.jp</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00980.html">[mhc:00981] Re: Cannot parse samples/DOT.schedule.sample.jp</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00979"><strong>Date</strong></a></li>
+<li><a href="threads.html#00979"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

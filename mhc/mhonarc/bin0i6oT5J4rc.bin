@@ -1,0 +1,8 @@
+Debugger entered--Lisp error: (wrong-type-argument wholenump -13)
+  make-string(-13 45)
+  mhc-summary/insert-separator(nil nil)
+  mhc-summary-make-contents(11931 11960 mhc-wl #[(schedule) "À‡" [t] 1] nil)
+  mhc-scan-month(11954 mhc-wl #[(schedule) "À‡" [t] 1] nil)
+  mhc-goto-month(11954 nil)
+  mhc-goto-this-month(nil)
+  call-interactively(mhc-goto-this-month)

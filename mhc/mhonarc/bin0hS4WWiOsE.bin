@@ -1,0 +1,31 @@
+Index: wl-summary.el
+===================================================================
+RCS file: /cvs/root/wanderlust/wl/wl-summary.el,v
+retrieving revision 1.194
+diff -u -b -r1.194 wl-summary.el
+--- wl-summary.el	12 Sep 2002 08:52:48 -0000	1.194
++++ wl-summary.el	22 Sep 2002 18:19:18 -0000
+@@ -5021,8 +5021,12 @@
+ 	(if wl-summary-buffer-disp-msg
+ 	    (wl-summary-redisplay))
+       (if interactive
+-	  (if wl-summary-buffer-next-folder-function
+-	      (funcall wl-summary-buffer-next-folder-function)
++	  (cond
++	   ((and (not downward) wl-summary-buffer-prev-folder-function)
++	    (funcall wl-summary-buffer-prev-folder-function))
++	   ((and downward wl-summary-buffer-next-folder-function)
++	    (funcall wl-summary-buffer-next-folder-function))
++	   (t
+ 	    (when wl-auto-select-next
+ 	      (setq next-entity
+ 		    (if downward
+@@ -5034,7 +5038,7 @@
+ 	     '(lambda () (wl-summary-next-folder-or-exit next-entity))
+ 	     (format
+ 	      "No more messages. Type SPC to go to %s."
+-	      (wl-summary-entity-info-msg next-entity finfo))))))))
++	      (wl-summary-entity-info-msg next-entity finfo)))))))))
+ 
+ (defun wl-summary-prev (&optional interactive)
+   (interactive)

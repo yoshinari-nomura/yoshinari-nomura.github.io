@@ -1,0 +1,108 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00232] signal delete_event on Mhc::DayBook -->
+<!--X-From-R13: Knfhfuv Eubwv <lnfuvNlnfuv.pbz> -->
+<!--X-Date: Thu, 25 Nov 1999 17:12:38 +0900 -->
+<!--X-Message-Id: 19991125031219S.yashi@yashi.com -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00232] signal delete_event on Mhc::DayBook</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00230.html">Date Prev</a>][<a href="msg00232.html">Date Next</a>][<a href="msg00229.html">Thread Prev</a>][<a href="msg00232.html">Thread Next</a>][<a href="maillist.html#00231">Date Index</a>][<a href="threads.html#00231">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00232] signal delete_event on Mhc::DayBook</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00232] signal delete_event on Mhc::DayBook</li>
+<li><em>From</em>: Yasushi Shoji &lt;<a href="mailto:yashi@DOMAIN.HIDDEN">yashi@xxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Thu, 25 Nov 1999 17:12:38 +0900</li>
+<li><em>Posted</em>: Thu, 25 Nov 1999 03:12:19 -0500</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x3053;&#x3093;&#x306B;&#x3061;&#x306F;&#x3002;
+
+mhc ruby&#x7248;&#x3092;&#x59CB;&#x3081;&#x3066;&#x8A66;&#x3057;&#x3066;&#x307F;&#x305F;&#x3060;&#x3051;&#x306A;&#x306E;&#x3067; ML&#x306B;&#x306F;&#x53C2;&#x52A0;&#x3057;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;
+&#x304C;&#x3001;bug(?)&#x3092;&#x898B;&#x4ED8;&#x3051;&#x305F;&#x306E;&#x3067;&#x4E00;&#x5FDC;&#x3001;&#x6295;&#x3052;&#x3066;&#x304A;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x3059;&#x3067;&#x306B;&#x6F70;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B; bug&#x3067;&#x3057;&#x305F;&#x3089;&#x8AAD;&#x307F;&#x306A;&#x304C;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;
+
+window manager&#x306F;&#x3001;WindowMaker 0.60.0&#x3067;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+
+&#x75C7;&#x72B6;: Mhc::DayBook&#x306E; window&#x3092; window manager&#x306E; close button(?)&#x3092;&#x62BC;&#x3057;&#x3066;&#x6D88;
+&#x3059;&#x3068;&#x3001;destroy&#x3055;&#x308C;&#x3066;&#x3057;&#x307E;&#x3046;&#x3002;&#x3088;&#x3063;&#x3066;&#x3001;&#x518D;&#x5EA6;&#x958B;&#x304D;&#x3068;&#x304D;&#x306B; error&#x3068;&#x306A;&#x308B;&#x3002;
+
+&#x4EE5;&#x4E0B;&#x306E; patch&#x3067;&#x76F4;&#x308B;&#x69D8;&#x3067;&#x3059;&#x3002;&#x304C;&#x3001;Toplevel&#x306E; window&#x3059;&#x3079;&#x3066;&#x304C;&#x3053;&#x308C;&#x3067;&#x826F;&#x3044;&#x306E;&#x304B;&#x306F;
+&#x308F;&#x304B;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;
+
+*** mhc-gtk.rb~ Wed Nov 10 04:43:39 1999
+--- mhc-gtk.rb  Thu Nov 25 03:01:32 1999
+***************
+*** 661,666 ****
+--- 661,667 ----
+        print &quot;GtkToplevel destroyed\n&quot; if $DEBUG
+        exit  if active_other_windows == 0
+      }
++     signal_connect('delete_event'){ hide; true; }
+    end
+  
+    def destroyed?
+--
+          yashi
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="00232" href="msg00232.html">[mhc:00233] Re: signal delete_event on Mhc::DayBook</a></strong>
+<ul><li><em>From:</em> Yoshinari NOMURA</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00230.html">[mhc:00231] Re: 0.23 released.</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00232.html">[mhc:00233] Re: signal delete_event on Mhc::DayBook</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00229.html">[mhc:00230] Re: past day's schedule</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00232.html">[mhc:00233] Re: signal delete_event on Mhc::DayBook</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00231"><strong>Date</strong></a></li>
+<li><a href="threads.html#00231"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

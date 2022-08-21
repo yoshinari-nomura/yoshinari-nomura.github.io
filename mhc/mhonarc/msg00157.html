@@ -1,0 +1,113 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:00158] Fw: [Mew&#45;dist 10199] Re: Mew 1.94b51 + IM 122 -->
+<!--X-From-R13: Kbfuvanev @A[GDO <abzNpfpr.xlhfuh&#45;h.np.wc> -->
+<!--X-Date: Wed, 18 Aug 1999 21:17:08 +0900 -->
+<!--X-Message-Id: 19990818211706H.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: multipart/mixed -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:00158] Fw: [Mew-dist 10199] Re: Mew 1.94b51 + IM 122</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg00156.html">Date Prev</a>][<a href="msg00158.html">Date Next</a>][<a href="msg00156.html">Thread Prev</a>][<a href="msg00158.html">Thread Next</a>][<a href="maillist.html#00157">Date Index</a>][<a href="threads.html#00157">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:00158] Fw: [Mew-dist 10199] Re: Mew 1.94b51 + IM 122</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:00158] Fw: [Mew-dist 10199] Re: Mew 1.94b51 + IM 122</li>
+<li><em>From</em>: Yoshinari NOMURA &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Wed, 18 Aug 1999 21:17:08 +0900</li>
+<li><em>Posted</em>: Wed, 18 Aug 1999 21:17:06 +0900</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxxxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x3053;&#x308C;&#x3067;&#x3001;&#x4F8B;&#x306E; 'Q' &#x554F;&#x984C;&#x304C;&#x89E3;&#x6C7A;&#x3059;&#x308B;&#x306E;&#x304B;&#x306A;&#x3002;
+
+</pre><blockquote><small>---&nbsp;<i>Begin&nbsp;Message</i>&nbsp;---</small>
+<ul>
+<li><em>To</em>: <a href="mailto:mew-dist@DOMAIN.HIDDEN">mew-dist@xxxxxxx</a></li>
+<li><em>Subject</em>: [Mew-dist 10199] Re: Mew 1.94b51 + IM 122</li>
+<li><em>From</em>: Hideyuki SHIRAI (&#x767D;&#x4E95;&#x79C0;&#x884C;) &lt;<a href="mailto:shirai@DOMAIN.HIDDEN">shirai@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Wed, 18 Aug 1999 18:58:24 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:19990818143645N.kazu@DOMAIN.HIDDEN">19990818143645N.kazu@xxxxxxxxxx</a>&gt;</li>
+<li><em>Organization</em>: Matsushita Graphic Communication Systems, Inc.</li>
+<li><em>Posted</em>: Wed, 18 Aug 1999 18:57:47 +0900</li>
+<li><em>References</em>: &lt;<a href="mailto:19990818143645N.kazu@DOMAIN.HIDDEN">19990818143645N.kazu@xxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mew-dist@DOMAIN.HIDDEN">mew-dist@xxxxxxx</a></li>
+</ul>
+<pre>From: Kazu Yamamoto (&#x5C71;&#x672C;&#x548C;&#x5F66;) &lt;kazu@xxxxxxxxxx&gt; &#x3055;&#x3093;&#x66F0;&#x304F;
+Subject: [Mew-dist 10184] Mew 1.94b51 + IM 122
+Message-ID: &lt;19990818143645N.kazu@xxxxxxxxxx&gt;
+Date: Wed, 18 Aug 1999 14:37:24 +0900
+
+kazu&gt; Mew 1.94b51 &#x3068; IM 122 &#x3092; ftp.Mew.org:/pub/Mew/beta &#x306B;&#x7F6E;&#x304D;&#x307E;&#x3057;&#x305F;&#x3002;
+
+virtual folder &#x306E; buffer &#x3082; &quot;Q&quot; &#x3067;&#x6D88;&#x3048;&#x305F;&#x65B9;&#x304C;&#x3044;&#x3044;&#x3068;&#x601D;&#x3046;&#x306E;&#x3060;&#x3051;
+&#x3069;&#x3001;&#x3044;&#x304B;&#x304C;&#x306A;&#x3082;&#x306E;&#x3067;&#x3057;&#x3087;&#x3046;&#xFF1F;
+
+-- 
+&#x767D;&#x4E95;&#x79C0;&#x884C; (<a  rel="nofollow" href="mailto:shirai@xxxxxxxxxxxxxxxxxxx">mailto:shirai@xxxxxxxxxxxxxxxxxxx</a>)
+
+--- mew-virtual.el.orig	Wed Aug 18 18:44:14 1999
++++ mew-virtual.el	Wed Aug 18 18:44:44 1999
+@@ -50,6 +50,7 @@
+ 	 (folders (mew-input-folders (buffer-name)))
+ 	 (grep (mew-input-pick-pattern)))
+      (mew-folder-setup folder)
++     (mew-buffers-setup folder)
+      (mew-summary-scan-body mew-prog-imls
+ 			    'mew-virtual-mode
+ 			    folder
+</pre><br><small>---&nbsp;<i>End Message</i>&nbsp;---</small></blockquote>
+
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg00156.html">[mhc:00157] name</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg00158.html">[mhc:00159] 0.22 is out.</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg00156.html">[mhc:00157] name</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg00158.html">[mhc:00159] 0.22 is out.</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#00157"><strong>Date</strong></a></li>
+<li><a href="threads.html#00157"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

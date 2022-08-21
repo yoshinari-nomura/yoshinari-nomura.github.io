@@ -1,0 +1,125 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01870] Re: guess location. -->
+<!--X-From-R13: Kbfuvanev @bzhen <abzNdhvpxunpx.arg> -->
+<!--X-Date: Thu, 30 Oct 2003 19:53:02 +0900 -->
+<!--X-Message-Id: 20031030195302R.nom@csce.kyushu&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 20031013155540J.nom@vintage.csce.kyushu&#45;u.ac.jp -->
+<!--X-Reference: 20031030.162323.78214654.otakem@mui.biglobe.ne.jp -->
+<!--X-Reference: 20031030.182236.143335033.shirai@rdmg.mgcs.mei.co.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01870] Re: guess location.</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01868.html">Date Prev</a>][<a href="msg01870.html">Date Next</a>][<a href="msg01868.html">Thread Prev</a>][<a href="msg01873.html">Thread Next</a>][<a href="maillist.html#01869">Date Index</a>][<a href="threads.html#01869">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01870] Re: guess location.</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01870] Re: guess location.</li>
+<li><em>From</em>: Yoshinari Nomura &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Thu, 30 Oct 2003 19:53:02 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20031030.182236.143335033.shirai@DOMAIN.HIDDEN">20031030.182236.143335033.shirai@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:20031013155540J.nom@DOMAIN.HIDDEN">20031013155540J.nom@xxxxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20031030.162323.78214654.otakem@DOMAIN.HIDDEN">20031030.162323.78214654.otakem@xxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20031030.182236.143335033.shirai@DOMAIN.HIDDEN">20031030.182236.143335033.shirai@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Sender</em>: Yoshinari Nomura &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x4E43;&#x6751;&#x3067;&#x3059;&#xFF0E;
+
+On Thu, 30 Oct 2003 18:22:36 +0900 (JST),
+	Hideyuki SHIRAI (&#x767D;&#x4E95;&#x79C0;&#x884C;) &lt;shirai@xxxxxxxxxxxxx&gt; said:
+
+&gt; (setq mhc-guess-location-list '(&quot;&#x6771;&#x4EAC;&#x30C9;&#x30FC;&#x30E0;&quot;
+&gt; 				&quot;&#x6C5F;&#x6238;&#x5DDD;&#x6CB3;&#x5DDD;&#x6577;&quot;
+&gt; 				&quot;&#x8352;&#x5DDD;&#x6CB3;&#x5DDD;&#x6577;&quot;
+&gt; 				&quot;&#x30DB;&#x30FC;&#x30E0;&#x30B0;&#x30E9;&#x30F3;&#x30C9;&quot;))
+&gt; 
+&gt; (defun mhc-guess-location-setup ()
+&gt;   (when mhc-guess-location-list
+&gt;     (let ((regex (regexp-opt mhc-guess-location-list)))
+&gt;       (unless (assoc regex mhc-guess-location-regexp-list)
+&gt; 	(setq mhc-guess-location-regexp-list
+&gt; 	      (cons `(,regex mhc-guess/make-location-from-string 0)
+&gt; 		    mhc-guess-location-regexp-list))))))
+&gt; 
+&gt; (add-hook 'mhc-setup-hook 'mhc-guess-location-setup)
+&gt; 
+&gt; &#x306A;&#x3053;&#x3068;&#x3092;&#x4ED5;&#x8FBC;&#x3081;&#x3070;&#x3088;&#x3044;&#x3068;&#x3002;
+&gt; 
+&gt; # &#x7570;&#x8AD6;&#x304C;&#x7121;&#x3051;&#x308C;&#x3070;(&#x305D;&#x306E;&#x3046;&#x3061; ^^;;;)&#x3084;&#x3063;&#x3066;&#x304A;&#x304D;&#x307E;&#x3059;&#x3002;
+
+&#x7570;&#x8AD6;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#xFF0E;
+
+&#x5B9F;&#x306F;&#xFF0C;&#x65E2;&#x5B58;&#x30A2;&#x30FC;&#x30C6;&#x30A3;&#x30AF;&#x30EB;&#x306E; X-SC-Location: &#x304B;&#x3089; 
+mhc-guess-location-list &#x76F8;&#x5F53;&#x3092;&#x4F5C;&#x308D;&#x3046;&#x3068;&#x601D;&#x3063;&#x3066;&#x3044;&#x305F;&#x3068;&#x3053;&#x308D;&#x3067;&#x3057;&#x305F;&#xFF0E;
+&#x3067;&#x3082;&#x91CD;&#x305F;&#x304F;&#x306A;&#x308A;&#x305D;&#x3046;&#x3060;&#x3057;&#xFF0C;&#x52B9;&#x679C;&#x306E;&#x7A0B;&#x3082;&#x7591;&#x554F;&#x3067;&#x3059;&#x306D;&#xFF0E;
+--
+nom
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01873" href="msg01873.html">[mhc:01874] Re: guess location.</a></strong>
+<ul><li><em>From:</em> &#x767D;&#x4E95;&#x79C0;&#x884C;</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="01852" href="msg01852.html">[mhc:01853] guess location.</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+<li><strong><a name="01866" href="msg01866.html">[mhc:01867] Re: guess location.</a></strong>
+<ul><li><em>From:</em> Kazuo Otake</li></ul></li>
+<li><strong><a name="01867" href="msg01867.html">[mhc:01868] Re: guess location.</a></strong>
+<ul><li><em>From:</em> &#x767D;&#x4E95;&#x79C0;&#x884C;</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01868.html">[mhc:01869] Re: guess location.</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01870.html">[mhc:01871] Re: mhc2ol on Ruby 1.8</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01868.html">[mhc:01869] Re: guess location.</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01873.html">[mhc:01874] Re: guess location.</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01869"><strong>Date</strong></a></li>
+<li><a href="threads.html#01869"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

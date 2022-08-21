@@ -1,0 +1,108 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:02145] Re: palm2mhc should fsync before clear dirty flag. -->
+<!--X-From-R13: Kbfuvanev @bzhen <abzNdhvpxunpx.arg> -->
+<!--X-Date: Wed, 06 Jul 2005 20:15:18 +0900 -->
+<!--X-Message-Id: 20050706201518Z.nom@vintage.swlab.it.okayama&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 20050705112626E.nom@vintage.swlab.it.okayama&#45;u.ac.jp -->
+<!--X-Reference: w0gll4mdjd1.wl%os@iij.ad.jp -->
+<!--X-Reference: 20050705.145501.226805395.koie@sakura.suri.co.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:02145] Re: palm2mhc should fsync before clear dirty flag.</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg02143.html">Date Prev</a>][<a href="msg02145.html">Date Next</a>][<a href="msg02143.html">Thread Prev</a>][<a href="msg02146.html">Thread Next</a>][<a href="maillist.html#02144">Date Index</a>][<a href="threads.html#02144">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:02145] Re: palm2mhc should fsync before clear dirty flag.</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:02145] Re: palm2mhc should fsync before clear dirty flag.</li>
+<li><em>From</em>: Yoshinari Nomura &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Wed, 06 Jul 2005 20:15:18 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20050705.145501.226805395.koie@DOMAIN.HIDDEN">20050705.145501.226805395.koie@xxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:20050705112626E.nom@DOMAIN.HIDDEN">20050705112626E.nom@xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:w0gll4mdjd1.wl%25os@DOMAIN.HIDDEN">w0gll4mdjd1.wl%os@xxxxxxxxx</a>&gt;	&lt;<a href="mailto:20050705.145501.226805395.koie@DOMAIN.HIDDEN">20050705.145501.226805395.koie@xxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Sender</em>: Yoshinari Nomura &lt;<a href="mailto:nom@DOMAIN.HIDDEN">nom@xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x4E43;&#x6751;&#x3067;&#x3059;&#xFF0E;
+
+&gt;   | &#x3053;&#x306E;&#x5909;&#x66F4;&#x3067;&#x3059;&#x304C;&#xFF0C;system &#x4F7F;&#x3046;&#x306E;&#x3082;&#x30CA;&#x30F3;&#x306A;&#x306E;&#x3067;&#xFF0C;
+&gt;   | Ruby18  &#x4EE5;&#x964D;&#x306A;&#x3089; fsync &#x3059;&#x308B;&#x3068;&#x3044;&#x3046;&#x30B3;&#x30FC;&#x30C9;&#x306B;
+&gt;   | &#x3057;&#x3066;&#x3044;&#x305F;&#x3060;&#x3051;&#x308B;&#x3068;&#x5B09;&#x3057;&#x3044;&#x3067;&#x3059;&#xFF0E;
+&gt; 
+&gt; &#x3053;&#x3093;&#x306A;&#x611F;&#x3058;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;:
+&gt;     f .fsync if RUBY_VERSION &gt;= '1.8'
+&gt; &#x3053;&#x3093;&#x306A;&#x306E;&#x3067;&#x3082;&#x3044;&#x3044;&#x304B;&#x306A;&#x3068;&#x304A;&#x3082;&#x3044;&#x307E;&#x3057;&#x305F;:
+&gt;     f .fsync if f .respond_to?(&quot;fsync&quot;)
+
+&#x5F8C;&#x308D;&#x306E;&#x65B9;&#x304C;&#x3088;&#x3055;&#x3052;&#x3067;&#x3059;&#x306D;&#xFF0E;commit &#x3057;&#x3066;&#x304A;&#x304D;&#x307E;&#x3057;&#x305F;&#xFF0E;
+--
+nom
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="02146" href="msg02146.html">[mhc:02147] Re: palm2mhc should fsync before clear dirty flag.</a></strong>
+<ul><li><em>From:</em> &#x9BC9;&#x6C5F;&#x82F1;&#x9686;</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="02141" href="msg02141.html">[mhc:02142] Re: palm2mhc should fsync before clear dirty flag.</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+<li><strong><a name="02142" href="msg02142.html">[mhc:02143] Re: palm2mhc should fsync before clear dirty flag.</a></strong>
+<ul><li><em>From:</em> OHARA Shigeki</li></ul></li>
+<li><strong><a name="02143" href="msg02143.html">[mhc:02144] Re: palm2mhc should fsync before clear dirty flag.</a></strong>
+<ul><li><em>From:</em> &#x9BC9;&#x6C5F;&#x82F1;&#x9686;</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg02143.html">[mhc:02144] Re: palm2mhc should fsync before clear dirty flag.</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg02145.html">[mhc:02146] patch (mhc-guess.el)</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg02143.html">[mhc:02144] Re: palm2mhc should fsync before clear dirty flag.</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg02146.html">[mhc:02147] Re: palm2mhc should fsync before clear dirty flag.</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#02144"><strong>Date</strong></a></li>
+<li><a href="threads.html#02144"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

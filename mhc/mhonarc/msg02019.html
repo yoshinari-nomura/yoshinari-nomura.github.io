@@ -1,0 +1,123 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:02020] Text/Plain =?ISO&#45;2022&#45;JP?B?GyRCJCskaSROGyhC?= import -->
+<!--X-From-R13: @AUGQVW Khfhxr <abthabthNzin.ovtybor.ar.wc> -->
+<!--X-Date: Thu, 27 Jan 2005 17:50:43 +0900 (JST) -->
+<!--X-Message-Id: 20050127.175043.68543997.nogunogu@mva.biglobe.ne.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:02020] Text/Plain &#x304B;&#x3089;&#x306E; import</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg02018.html">Date Prev</a>][<a href="msg02020.html">Date Next</a>][<a href="msg02015.html">Thread Prev</a>][<a href="msg02021.html">Thread Next</a>][<a href="maillist.html#02019">Date Index</a>][<a href="threads.html#02019">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:02020] Text/Plain &#x304B;&#x3089;&#x306E; import</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:02020] Text/Plain &#x304B;&#x3089;&#x306E; import</li>
+<li><em>From</em>: NOGUCHI Yusuke &lt;<a href="mailto:nogunogu@DOMAIN.HIDDEN">nogunogu@xxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Thu, 27 Jan 2005 17:50:43 +0900 (JST)</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&#x91CE;&#x53E3;&#x3068;&#x7533;&#x3057;&#x307E;&#x3059;&#x3002;
+# &#x65E2;&#x51FA;&#x304B;&#x3082;&#x3057;&#x308C;&#x307E;&#x305B;&#x3093;&#x3002;
+
+&#x30E1;&#x30FC;&#x30EB;&#x306B;&#x6DFB;&#x4ED8;&#x3055;&#x308C;&#x305F; Text/Plain &#x306E;&#x500B;&#x6240;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092; import &#x3067;&#x304D;
+&#x3066;&#x6B32;&#x3057;&#x3044;&#x3068;&#x601D;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+
+mhc 0.25 + snap (mhc-current-snap20050120)
+
+&#x3067;&#x6311;&#x6226;&#x3057;&#x3066;&#x307F;&#x305F;&#x3068;&#x3053;&#x308D;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x30A8;&#x30E9;&#x30FC;&#x3068;&#x306A;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;
+&#x30A8;&#x30E9;&#x30FC;&#x5185;&#x5BB9;&#x3092;&#x898B;&#x308B;&#x306B;&#x3001;mew &#x306E;&#x500B;&#x6240;&#x3067;&#x767A;&#x751F;&#x3057;&#x3066;&#x3044;&#x308B;&#x3088;&#x3046;&#x306A;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;&#x73FE;&#x72B6;
+Text/Plain &#x304B;&#x3089;&#x306E; import &#x5B9F;&#x73FE;&#x306F;&#x96E3;&#x3057;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;?
+
+&#x4EE5;&#x4E0A;&#x3001;&#x3054;&#x691C;&#x8A0E;&#x3044;&#x305F;&#x3060;&#x3051;&#x308C;&#x3070;&#x5E78;&#x3044;&#x3067;&#x3059;
+
+-- 
+NOGUCHI Yusuke &lt;nogunogu@xxxxxxxxxxxxxxxxx&gt;
+
+
+
+Debugger entered--Lisp error: (wrong-type-argument integer-or-marker-p nil)
+  overlays-in(1 nil)
+  mew-unhighlight-region(1 nil)
+  mew-highlight-header-region(1 nil)
+  mew-highlight-header()
+  mhc-mew-highlight-message(nil)
+  funcall(mhc-mew-highlight-message nil)
+  mhc-highlight-message()
+  (progn (insert-buffer (if ... ... import-buffer)) (mhc-header-narrowing (setq msgp ...) (mhc-header-delete-header ... ...)) (mhc-highlight-message) (switch-to-buffer draft-buffer t))
+  (if import-buffer (progn (insert-buffer ...) (mhc-header-narrowing ... ...) (mhc-highlight-message) (switch-to-buffer draft-buffer t)))
+  (let ((draft-buffer ...) (current-date ...) (succeed t) msgp date time subject location category priority alarm) (and (interactive-p) (mhc-window-push)) (set-buffer draft-buffer) (if import-buffer (progn ... ... ... ...)) (condition-case nil (if import-buffer ... ...) (quit ... ... ...)) (if succeed (progn ... ... ... ... ... ... ... ... succeed)))
+  mhc-edit(#&lt;buffer *Mew message*0&gt;)
+  (if (mhc-edit (mhc-summary-get-import-buffer get-original)) nil (mhc-window-pop))
+  (unless (mhc-edit (mhc-summary-get-import-buffer get-original)) (mhc-window-pop))
+  mhc-import(nil)
+  call-interactively(mhc-import)
+
+
+
+
+
+
+
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="02021" href="msg02021.html">[mhc:02022] Re: Text/Plain &#x304B;&#x3089;&#x306E; import</a></strong>
+<ul><li><em>From:</em> &#x767D;&#x4E95;&#x79C0;&#x884C;</li></ul></li>
+<li><strong><a name="02023" href="msg02023.html">[mhc:02024] Re: Text/Plain &#x304B;&#x3089;&#x306E; import</a></strong>
+<ul><li><em>From:</em> &#x9BC9;&#x6C5F;&#x82F1;&#x9686;</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg02018.html">[mhc:02019] Re: mhc-wl and mhc-mail-path</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg02020.html">[mhc:02021] subject &#x306E; guess</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg02015.html">[mhc:02016]</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg02021.html">[mhc:02022] Re: Text/Plain &#x304B;&#x3089;&#x306E; import</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#02019"><strong>Date</strong></a></li>
+<li><a href="threads.html#02019"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

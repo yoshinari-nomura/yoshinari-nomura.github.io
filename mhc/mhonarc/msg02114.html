@@ -1,0 +1,138 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:02115] Re: patch (mhc2ol.in, ruby&#45;ext/lib/mhc&#45;schedule.rb) -->
+<!--X-From-R13: [WKAEVW [nfnabev <zvlbfuvNzrnqbjl.bet> -->
+<!--X-Date: Wed, 27 Apr 2005 06:47:21 +0900 -->
+<!--X-Message-Id: uzmvl2ot2.wl%miyoshi@meadowy.org -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 20050423.202945.68549382.nogunogu@mva.biglobe.ne.jp -->
+<!--X-Reference: u4qdx58rc.wl%miyoshi@meadowy.org -->
+<!--X-Reference: 20050424.192135.63227809.nogunogu@mva.biglobe.ne.jp -->
+<!--X-Reference: 20050426.140022.89373097.nogunogu@mva.biglobe.ne.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:02115] Re: patch (mhc2ol.in, ruby-ext/lib/mhc-schedule.rb)</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg02113.html">Date Prev</a>][<a href="msg02115.html">Date Next</a>][<a href="msg02113.html">Thread Prev</a>][<a href="msg02115.html">Thread Next</a>][<a href="maillist.html#02114">Date Index</a>][<a href="threads.html#02114">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:02115] Re: patch (mhc2ol.in, ruby-ext/lib/mhc-schedule.rb)</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:02115] Re: patch (mhc2ol.in, ruby-ext/lib/mhc-schedule.rb)</li>
+<li><em>From</em>: MIYOSHI Masanori &lt;<a href="mailto:miyoshi@DOMAIN.HIDDEN">miyoshi@xxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Wed, 27 Apr 2005 06:47:21 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20050426.140022.89373097.nogunogu@DOMAIN.HIDDEN">20050426.140022.89373097.nogunogu@xxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>References</em>: &lt;<a href="mailto:20050423.202945.68549382.nogunogu@DOMAIN.HIDDEN">20050423.202945.68549382.nogunogu@xxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:u4qdx58rc.wl%25miyoshi@DOMAIN.HIDDEN">u4qdx58rc.wl%miyoshi@xxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20050424.192135.63227809.nogunogu@DOMAIN.HIDDEN">20050424.192135.63227809.nogunogu@xxxxxxxxxxxxxxxxx</a>&gt;	&lt;<a href="mailto:20050426.140022.89373097.nogunogu@DOMAIN.HIDDEN">20050426.140022.89373097.nogunogu@xxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: Wanderlust/2.15.1 (Almost Unreal) EMIKO/1.14.1 (Choanoflagellata) LIMIT/1.14.8 (Hajinosato) APEL/10.6 Emacs/22.0.50 (i386-msvc-nt5.1.2600) MULE/5.0 (SAKAKI) Meadow/2.20-dev (KIKU)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>&gt;&gt;&gt;&gt;&gt; [mhc : No.02114] &#x306B;&#x3066;
+&gt;&gt;&gt;&gt;&gt; &#x91CE;&#x53E3;&#x3055;&#x3093;&#x306F;&#x66F8;&#x304D;&#x307E;&#x3057;&#x305F;:
+&#x91CE;&#x53E3;&gt; # &#x3053;&#x3053;&#x3089;&#x8FBA;(patch &#x306E;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x95A2;&#x4FC2;&#x306E;&#x5B9A;&#x77F3;)&#x306B;&#x3064;&#x3044;&#x3066;&#x3068;&#x3093;&#x3068;&#x7121;&#x77E5;&#x8B58;&#x3067;&#x3057;&#x3066;...
+&#x91CE;&#x53E3;&gt; # &#x304A;&#x624B;&#x6570;&#x304A;&#x304B;&#x3051;&#x3057;&#x3066;&#x304A;&#x308A;&#x307E;&#x3059;
+
+&#x91CE;&#x53E3;&gt; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+&#x91CE;&#x53E3;&gt; 2005-04-26  NOGUCHI Yusuke  &lt;nogunogu@xxxxxxxxxxxxxxxxx&gt;
+
+&#x91CE;&#x53E3;&gt; 	    * today.in: Support new option(-H).
+&#x91CE;&#x53E3;&gt; 	    -H : Add/Copy mhc articles to Outlook WITHOUT header part.
+&#x91CE;&#x53E3;&gt; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+&#x5909;&#x66F4;&#x3059;&#x308B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306F; mhc2ol.in &#x3067;&#x3059;&#x3088;&#x306D;&#x3002;
+MHC &#x306E; ChangeLog &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x898B;&#x3066;&#x3082;&#x3089;&#x3048;&#x3070;&#x5206;&#x304B;&#x308B;&#x3068;&#x601D;&#x3046;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;&#x5909;&#x66F4;
+&#x7B87;&#x6240;&#x3092;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3060;&#x3051;&#x3067;&#x306A;&#x304F;&#x95A2;&#x6570;(&#x30E1;&#x30BD;&#x30C3;&#x30C9;)&#x5358;&#x4F4D;&#x3067;&#x7279;&#x5B9A;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x671B;&#x307E;&#x3057;&#x3044;
+&#x3067;&#x3059;&#x3002;
+&#x3053;&#x308C;&#x306B;&#x3064;&#x3044;&#x3066;&#x306F;&#x3001;&#x5F53;&#x65B9;&#x3067;&#x3084;&#x3063;&#x3066;&#x304A;&#x304D;&#x307E;&#x3059;&#x3002;
+
+
+&#x4E00;&#x3064;&#x8CEA;&#x554F;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+
+&gt; usage: mhc2ol [[-a | -i | -d | -N] [-H]] [-n] [-s] [-m] [-r dir] [-c category] [YYYYMMDD-yyyymmdd]
+
+&gt;   when '-H' 
+&gt;     if ($flag_noharm || $flag_append || $flag_install)
+&gt;       $flag_export_part = 'body_only'
+&gt;     else
+&gt;       usage()
+&gt;     end
+
+
+&#x3053;&#x306E;&#x90E8;&#x5206;&#x306F;&#x4EE5;&#x4E0B;&#x3067;&#x5341;&#x5206;&#x3060;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;&#x4E0A;&#x8A18;&#x306E;&#x5909;&#x66F4;&#x306B;&#x306F;&#x4F55;&#x304B;&#x610F;&#x56F3;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;
+&#x304B;?
+
+&gt; usage: mhc2ol [[-a | -i | -d | -N]] [-H] [-n] [-s] [-m] [-r dir] [-c category] [YYYYMMDD-yyyymmdd]
+
+&gt;   when '-H' 
+&gt;     $flag_export_part = 'body_only'
+
+--
+&#x4E09;&#x597D; &#x96C5;&#x5247; <a  rel="nofollow" href="http://www.boreas.dti.ne.jp/~miyoshi/">http://www.boreas.dti.ne.jp/~miyoshi/</a>
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="02115" href="msg02115.html">[mhc:02116] Re: patch (mhc2ol.in, ruby-ext/lib/mhc-schedule.rb)</a></strong>
+<ul><li><em>From:</em> NOGUCHI Yusuke</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="02102" href="msg02102.html">[mhc:02103] patch  (mhc2ol.in, ruby-ext/lib/mhc-schedule.rb)</a></strong>
+<ul><li><em>From:</em> NOGUCHI Yusuke</li></ul></li>
+<li><strong><a name="02105" href="msg02105.html">[mhc:02106] Re: patch  (mhc2ol.in, ruby-ext/lib/mhc-schedule.rb)</a></strong>
+<ul><li><em>From:</em> MIYOSHI Masanori</li></ul></li>
+<li><strong><a name="02108" href="msg02108.html">[mhc:02109] Re: patch (mhc2ol.in, ruby-ext/lib/mhc-schedule.rb)</a></strong>
+<ul><li><em>From:</em> NOGUCHI Yusuke</li></ul></li>
+<li><strong><a name="02113" href="msg02113.html">[mhc:02114] Re: patch (mhc2ol.in, ruby-ext/lib/mhc-schedule.rb)</a></strong>
+<ul><li><em>From:</em> NOGUCHI Yusuke</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg02113.html">[mhc:02114] Re: patch (mhc2ol.in, ruby-ext/lib/mhc-schedule.rb)</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg02115.html">[mhc:02116] Re: patch (mhc2ol.in, ruby-ext/lib/mhc-schedule.rb)</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg02113.html">[mhc:02114] Re: patch (mhc2ol.in, ruby-ext/lib/mhc-schedule.rb)</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg02115.html">[mhc:02116] Re: patch (mhc2ol.in, ruby-ext/lib/mhc-schedule.rb)</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#02114"><strong>Date</strong></a></li>
+<li><a href="threads.html#02114"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>

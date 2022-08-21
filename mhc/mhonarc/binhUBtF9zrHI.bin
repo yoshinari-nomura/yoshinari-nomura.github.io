@@ -1,0 +1,20 @@
+--- mhc.el.orig	Thu Apr 27 12:33:18 2000
++++ mhc.el	Thu Apr 27 12:35:08 2000
+@@ -409,7 +409,7 @@
+ 				(group (gnus-group-prefixed-name dir method)))
+ 			   (if (gnus-gethash group gnus-newsrc-hashtb)
+ 			       group
+-			     (mhc-mhc-misc-mkdir-or-higher dir)
++			     (mhc-misc-mkdir-or-higher dir)
+ 			     (gnus-group-read-ephemeral-group
+ 			      group method t nil t))))
+ 		       (list (mhc-gnus-ddate-to-folder ddate)
+@@ -474,6 +474,8 @@
+        ((eq type 'gnus)
+ 	(let (gnus-newsgroup-data)
+ 	  (gnus-summary-mode (mhc-gnus-ddate-to-vgroup-name ddate)))
++	(if (fboundp 'gnus-summary-setup-default-charset)
++	    (gnus-summary-setup-default-charset)) ; for Nana7
+ 	(make-local-variable 'mhc-gnus-skip-cursor-jump)
+ 	(setq mhc-gnus-skip-cursor-jump t)
+ 	(make-local-variable 'gnus-visual)

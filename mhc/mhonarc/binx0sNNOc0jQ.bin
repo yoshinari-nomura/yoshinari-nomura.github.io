@@ -1,0 +1,11 @@
+--- mhc.el.orig	Wed Apr 19 17:27:26 2000
++++ mhc.el	Wed Apr 19 17:27:50 2000
+@@ -429,7 +429,7 @@
+ 				      (save-current-buffer
+ 					(set-buffer temp-buffer)
+ 					(gnus-group-make-group dir method)
+-					(gnus-subscribe-group group))
++					(gnus-subscribe-group group nil))
+ 				    (kill-buffer temp-buffer)))
+ 				group)))
+ 			  (list (mhc-gnus-ddate-to-folder ddate)

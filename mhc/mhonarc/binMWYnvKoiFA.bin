@@ -1,0 +1,29 @@
+--- mhc.el.orig	Tue Feb 29 18:06:50 2000
++++ mhc.el	Sat Mar 04 23:54:34 2000
+@@ -521,14 +521,18 @@
+ (defun mhc-import ()
+   (interactive)
+   (mhc-window-push)
+-  (let* (guess ptr ddate dtime mode sch old)
+-    (if (setq mode (assoc major-mode mhc-summary-message-alist))
+-	(progn
+-	  (if (and (equal mhc-mailer-package 'mew))
+-	      (mew-summary-display-asis))
+-	  (if (equal (cdr mode)
+-		     (save-window-excursion (other-window 1) major-mode))
+-	      (other-window 1))))
++  (let (guess ptr ddate dtime mode sch old)
++    (cond
++     ((eq mhc-mailer-package 'mew)
++      (mew-summary-display-asis)
++      (setq mode (assq major-mode mhc-summary-message-alist))
++      (if (eq (cdr mode)
++	      (save-window-excursion (other-window 1) major-mode))
++	  (other-window 1)))
++     ((eq mhc-mailer-package 'gnus)
++      (gnus-summary-preview-mime-message))
++     ((eq mhc-mailer-package 'wl)
++      (wl-summary-jump-to-current-message)))
+     (delete-other-windows)
+     (condition-case ()
+ 	(if (y-or-n-p "Do you want to import this buffer ? ")

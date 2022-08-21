@@ -1,0 +1,127 @@
+<!-- MHonArc v2.6.16 -->
+<!--X-Subject: [mhc:01877] Re: guess location. -->
+<!--X-From-R13: Fbfuvuvxb EVW[AYOIO / =?WEA&#45;2022&#45;XB?P?UlDQ[wkOow1FEEpoYSW=?= <gbfuvNvf.xlhfna&#45;h.np.wc> -->
+<!--X-Date: Thu, 18 Dec 2003 03:01:44 +0900 -->
+<!--X-Message-Id: 86iskfqq5z.wl%toshi@is.kyusan&#45;u.ac.jp -->
+<!--X-Content-Type: text/plain -->
+<!--X-Reference: 20031013155540J.nom@vintage.csce.kyushu&#45;u.ac.jp -->
+<!--X-Head-End-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>[mhc:01877] Re: guess location.</title>
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="msg01875.html">Date Prev</a>][<a href="msg01877.html">Date Next</a>][<a href="msg01873.html">Thread Prev</a>][<a href="msg01877.html">Thread Next</a>][<a href="maillist.html#01876">Date Index</a>][<a href="threads.html#01876">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>[mhc:01877] Re: guess location.</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>To</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>Subject</em>: [mhc:01877] Re: guess location.</li>
+<li><em>From</em>: Toshihiko SHIMOKAWA / &#x4E0B;&#x5DDD;&#x4FCA;&#x5F66; &lt;<a href="mailto:toshi@DOMAIN.HIDDEN">toshi@xxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Thu, 18 Dec 2003 03:01:44 +0900</li>
+<li><em>In-reply-to</em>: &lt;<a href="mailto:20031013155540J.nom@DOMAIN.HIDDEN">20031013155540J.nom@xxxxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Organization</em>: Dept. of Social Information Systems, Kyushu Sangyo Univ., Fukuoka, Japan</li>
+<li><em>References</em>: &lt;<a href="mailto:20031013155540J.nom@DOMAIN.HIDDEN">20031013155540J.nom@xxxxxxxxxxxxxxxxxxxxxxxxxxx</a>&gt;</li>
+<li><em>Reply-to</em>: <a href="mailto:mhc@DOMAIN.HIDDEN">mhc@xxxxxxxxxxxxx</a></li>
+<li><em>User-agent</em>: Wanderlust/2.11.22 (Wonderwall) SEMI/1.14.5 (&#x82A6;&#x539F;&#x6E29;&#x6CC9;) FLIM/1.14.5 (&#x51FA;&#x753A;&#x67F3;) APEL/10.6 MULE XEmacs/21.4 (patch 9) (Informed Management) (i386--freebsd)</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>At Mon, 13 Oct 2003 15:55:40 +0900,
+Yoshinari Nomura &lt;nom@xxxxxxxxxxxxx&gt; wrote:
+
+&gt;   (3) import &#x306E;&#x969B;&#xFF0C;Alarm &#x3092;&#x8A0A;&#x304F;&#x304B;&#x3069;&#x3046;&#x304B;&#x5236;&#x5FA1;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x305F;&#xFF0E;
+&gt;       (mhc-default-alarm, mhc-ask-alarm)
+
+import &#x306E;&#x6642;&#x3060;&#x3051;&#x3067;&#x306A;&#x304F;&#x3001;edit &#x306E;&#x6642;&#x306B;&#x3082; Alarm &#x3092;&#x8A0A;&#x3051;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B; patch &#x3092;
+&#x4F5C;&#x3063;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002;
+
+-=-=- cut here -=-=- cut here -=-=- cut here -=-=- cut here -=-=-
+Index: mhc.el
+===================================================================
+RCS file: /cvsroot/mhc/emacs/mhc.el,v
+retrieving revision 1.79
+diff -u -r1.79 mhc.el
+--- mhc.el	2003/11/05 01:12:43	1.79
++++ mhc.el	2003/12/17 17:56:21
+@@ -619,11 +619,14 @@
+ 		(setq succeed nil)
+ 		(kill-buffer draft-buffer)))
+ 	  ;; No import (it succeeds).
+-	  (setq date (mhc-input-day &quot;Date: &quot; current-date)
++	  (progn
++	    (setq date (mhc-input-day &quot;Date: &quot; current-date)
+ 		time (mhc-input-time &quot;Time: &quot;)
+ 		subject (mhc-input-subject &quot;Subject: &quot;)
+ 		location (mhc-input-location &quot;Location: &quot;)
+-		category (mhc-input-category &quot;Category: &quot;)))
++		category (mhc-input-category &quot;Category: &quot;))
++	    (if mhc-ask-alarm
++		(setq alarm (mhc-input-alarm &quot;Alarm: &quot; mhc-default-alarm)))))
+       ;; Quit.
+       (quit
+        (and (interactive-p)
+
+-=-=- cut here -=-=- cut here -=-=- cut here -=-=- cut here -=-=-
+--
+&#x3057;&#x3082;&#x304B;&#x308F;&#x3068;&#x3057;&#x3072;&#x3053;
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<ul><li><strong>Follow-Ups</strong>:
+<ul>
+<li><strong><a name="01877" href="msg01877.html">[mhc:01878] Re: guess location.</a></strong>
+<ul><li><em>From:</em> &#x767D;&#x4E95;&#x79C0;&#x884C;</li></ul></li>
+</ul></li></ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name="01852" href="msg01852.html">[mhc:01853] guess location.</a></strong>
+<ul><li><em>From:</em> Yoshinari Nomura</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="msg01875.html">[mhc:01876] Re: today for Panasonic KX-HV210</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="msg01877.html">[mhc:01878] Re: guess location.</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href="msg01873.html">[mhc:01874] Re: guess location.</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="msg01877.html">[mhc:01878] Re: guess location.</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="maillist.html#01876"><strong>Date</strong></a></li>
+<li><a href="threads.html#01876"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+</body>
+</html>
